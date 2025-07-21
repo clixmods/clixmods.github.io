@@ -1,0 +1,28 @@
+profile:
+  # Informations personnelles
+  personal:
+    firstName: "Clément"
+    lastName: "GARCIA"
+    fullName: "Clément GARCIA"
+    greeting: "Bonjour !"
+    title: "Étudiant BUT 3 IUT Montpellier-Sète"
+    subtitle: "Développeur passionné en quête de nouvelles opportunités"
+    bio: "Étudiant en BUT 3 IUT Montpellier-Sète, passionné par le développement logiciel et les nouvelles technologies. Désireux de piloter une équipe de développeurs et d'orienter les projets vers l'excellence."
+    
+  # Image et CV
+  media:
+    profileImage: "/images/profile.jpg"
+    resumeFile: "/cv/CV_Clement_GARCIA.pdf"
+    resumeFilename: "CV_Clement_GARCIA.pdf"
+    
+  # Informations de contact et détails
+  contact:
+    email: "clement.g.developer@gmail.com"
+    linkedin: "linkedin.com/in/clementg4"
+    location: "Montpellier"
+    
+  # Informations supplémentaires
+  details:
+    formation: "BUT 3 Informatique - IUT Montpellier-Sète"
+    speciality: "Développement C#, Unity, SQL"
+    experience: "4+ ans de développement"

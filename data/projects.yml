@@ -1,0 +1,64 @@
+projects:
+  - title: "Vacation Tracker"
+    subtitle: "leaves planning and management"
+    description: "To keep environments balance in need as RESOURCE arena & Share data SCOP/SAGE"
+    fullDescription: "Built a vacation tracking system from scratch with user and admin views, with easy leave management and analytics for improved shared experience."
+    image: "/images/projects/vacation-tracker.jpg"
+    tags: ["#Bookings", "#Full Stack", "#Installer"]
+    technologies: ["React", "Redux", "TypeScript", "AWS", "MongoDB"]
+    category: "projects"
+    featured: true
+    
+  - title: "Disaster Management & Climate Change"
+    subtitle: "Crisis response and environmental monitoring"
+    description: "Helpful application to prevent health threatening degradation for ensuring the safety"
+    fullDescription: "Built a web & mobile app for real-time disaster alerts, crisis management & geo directory, warning multiple stakeholders."
+    image: "/images/projects/disaster-management.jpg"
+    tags: ["#Innovation", "#Climate Tech"]
+    technologies: ["React", "Firebase", "AWS", "PostMan"]
+    category: "projects"
+    featured: true
+    
+  - title: "Carzi: Your Holiday & Airport Transportation Solution"
+    subtitle: "Smart travel logistics platform"
+    description: "Effective transportation solution for holidays, airports, and rail travel"
+    fullDescription: "Carzi simplifies holiday & airport transport with custom scheduling & geo directory, efficient solutions for airports, taxi & partners."
+    image: "/images/projects/carzi-transport.jpg"
+    tags: ["#Sharing Internship"]
+    technologies: ["React", "Redux", "MongoDB", "Firebase"]
+    category: "projects"
+    featured: true
+
+achievements:
+  - title: "Best Innovation Award 2024"
+    subtitle: "Recognition for outstanding technical innovation"
+    description: "Awarded for developing cutting-edge solutions in web development"
+    image: "/images/achievements/innovation-award.jpg"
+    tags: ["#Award", "#Innovation"]
+    technologies: []
+    category: "achievements"
+    
+  - title: "Full Stack Certification"
+    subtitle: "Complete web development mastery"
+    description: "Certified in modern full-stack development technologies"
+    image: "/images/achievements/fullstack-cert.jpg"
+    tags: ["#Certification", "#Full Stack"]
+    technologies: ["React", "Node.js", "MongoDB"]
+    category: "achievements"
+
+hobbies:
+  - title: "Open Source Contributions"
+    subtitle: "Contributing to community projects"
+    description: "Active contributor to various open source projects and libraries"
+    image: "/images/hobbies/opensource.jpg"
+    tags: ["#Open Source", "#Community"]
+    technologies: ["JavaScript", "TypeScript", "React"]
+    category: "hobbies"
+    
+  - title: "Game Development"
+    subtitle: "Creating interactive experiences"
+    description: "Developing indie games using Unity and C# in spare time"
+    image: "/images/hobbies/gamedev.jpg"
+    tags: ["#Game Dev", "#Unity"]
+    technologies: ["Unity", "C#"]
+    category: "hobbies"

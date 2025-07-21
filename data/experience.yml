@@ -1,0 +1,85 @@
+experiences:
+  - title: "Développeur C# / Unity"
+    company: "La Moutarde"
+    logo: "/images/companies/la-moutarde.jpg"
+    period: "oct. 2023 - aujourd'hui"
+    duration: "1 an 10 mois"
+    type: "Contrat en alternance"
+    location: "Montpellier, Occitanie, France - Hybride"
+    status: "current"
+    description: "Participation au développement de projets principaux : Terra Memoria (jeu vidéo) et My Game Showcase (Application web B2B)"
+    projects:
+      - name: "Terra Memoria"
+        description: "Jeu vidéo RPG cozy sorti en mars 2024 sur PC et consoles"
+        tasks:
+          - "Participation à la fin de production de Terra Memoria – RPG cozy sorti en mars 2024 sur PC et consoles (Switch, PS5, Xbox)"
+          - "Correction de bugs"
+          - "Portage console"
+          - "Ergonomie UI/UX, gestion des contrôleurs, intégration souris"
+          - "Travail sur les systèmes de sauvegarde, localisation, et reporting de bugs"
+          - "Portage du jeu sur Epic Games"
+      - name: "My Game Showcase"
+        description: "Application web B2B"
+        tasks:
+          - "Conception d'un outil web permettant de générer des artbooks dynamiques à destination des studios/éditeurs"
+          - "Stack technique : Blazor, SignalR, FastEndpoint, .NET"
+          - "Création d'API REST (upload de fichiers, génération PDF, édition de métadonnées audio)"
+          - "Intégration temps réel (SignalR), architecture modulaire orienté multi-clients / marque blanche"
+          - "Projet pensé pour une exploitation commerciale (B2B), avec une logique de produit réutilisable"
+    skills: ["C#", "Unity", "Blazor", "SignalR", "FastEndpoint", ".NET", "API REST", "UI/UX", "Portage console", "Reporting de bugs"]
+    technologies: ["C#", "Unity", "Blazor", "SignalR", ".NET", "FastEndpoint"]
+    
+  - title: "Caissier"
+    company: "Enseignes Casino"
+    logo: "/images/companies/casino.jpg"
+    period: "avr. 2022 - mai 2022"
+    duration: "2 mois"
+    type: "Emploi saisonnier"
+    location: "Castelnau-le-lez, Occitanie, France"
+    status: "completed"
+    description: "Expérience dans le secteur de la grande distribution, développement des compétences relationnelles et de gestion."
+    tasks:
+      - "Accueil et service client"
+      - "Gestion des transactions et encaissement"
+      - "Travail en équipe dans un environnement dynamique"
+      - "Respect des procédures et de la qualité de service"
+    skills: ["Service client", "Travail en équipe", "Gestion du stress", "Communication"]
+    technologies: []
+    
+  - title: "Réalisation de projet personnel"
+    company: "Pause professionnelle"
+    logo: "/images/companies/personal.jpg"
+    period: "déc. 2016 - juin 2020"
+    duration: "3 ans 7 mois"
+    type: "Projet personnel"
+    location: "Montpellier, France"
+    status: "completed"
+    description: "Période dédiée au développement de compétences techniques en autodidacte et réalisation de projets personnels."
+    projects:
+      - name: "Projets de développement"
+        description: "Apprentissage et maîtrise des technologies web modernes"
+        tasks:
+          - "Apprentissage autodidacte du développement web"
+          - "Réalisation de projets personnels en JavaScript/React"
+          - "Exploration des technologies backend (Node.js, bases de données)"
+          - "Développement de compétences en design UI/UX"
+          - "Participation à des communautés de développeurs"
+    skills: ["Développement web", "JavaScript", "React", "Node.js", "Autodidacte", "UI/UX Design"]
+    technologies: ["JavaScript", "React", "Node.js", "HTML", "CSS"]
+
+internships:
+  - title: "Stage Développement Web"
+    company: "À définir"
+    period: "2025"
+    duration: "3-6 mois"
+    type: "Stage de fin d'études"
+    location: "Montpellier ou remote"
+    status: "seeking"
+    description: "Recherche de stage de fin d'études BUT 3 en développement web full-stack ou mobile."
+    requirements:
+      - "Développement d'applications web modernes"
+      - "Travail en équipe agile"
+      - "Technologies : React, Node.js, ou frameworks similaires"
+      - "Possible remote ou hybride"
+    skills: ["React", "Node.js", "MongoDB", "TypeScript", "Git", "Méthodes agiles"]
+    technologies: ["React", "Node.js", "MongoDB", "TypeScript"]

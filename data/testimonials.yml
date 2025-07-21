@@ -1,0 +1,35 @@
+testimonials:
+  - name: "Jean Dupont"
+    position: "Chef de Projet"
+    company: "TechCorp Solutions"
+    avatar: "/images/avatar1.jpg"
+    rating: 5
+    text: "Clément a fait preuve d'une expertise technique remarquable et d'une capacité d'adaptation exceptionnelle. Son travail sur notre projet a dépassé nos attentes. Je recommande vivement ses services."
+    
+  - name: "Marie Martin"
+    position: "Directrice Technique"
+    company: "InnovateLab"
+    avatar: "/images/avatar2.jpg"
+    rating: 5
+    text: "Un développeur passionné avec une approche méthodique. Clément a su comprendre nos besoins et livrer une solution parfaitement adaptée. Communication excellente tout au long du projet."
+    
+  - name: "Pierre Leroy"
+    position: "Fondateur"
+    company: "StartupFlow"
+    avatar: "/images/avatar3.jpg"
+    rating: 5
+    text: "Travail de qualité exceptionnelle, respect des délais et grande disponibilité. Clément est un véritable professionnel que je recommande sans hésitation pour tout projet de développement."
+    
+  - name: "Sophie Dubois"
+    position: "Product Manager"
+    company: "DigitalWave"
+    avatar: "/images/avatar4.jpg"
+    rating: 5
+    text: "Clément a transformé notre vision en réalité avec une précision remarquable. Son expertise technique et sa créativité ont été des atouts majeurs pour notre équipe."
+    
+  - name: "Lucas Moreau"
+    position: "Lead Developer"
+    company: "CodeForge"
+    avatar: "/images/avatar5.jpg"
+    rating: 5
+    text: "Collaboration exceptionnelle avec Clément. Sa capacité à résoudre des problèmes complexes et son esprit d'équipe en font un développeur de choix pour tout projet ambitieux."
