@@ -3,11 +3,11 @@ profile:
   personal:
     firstName: "Clément"
     lastName: "GARCIA"
-    fullName: "Clément GARCIA"
+    fullName: "Clément 'Clix' GARCIA"
     greeting: "Bonjour !"
-    title: "Étudiant BUT 3 IUT Montpellier-Sète"
-    subtitle: "Développeur passionné en quête de nouvelles opportunités"
-    bio: "Étudiant en BUT 3 IUT Montpellier-Sète, passionné par le développement logiciel et les nouvelles technologies. Désireux de piloter une équipe de développeurs et d'orienter les projets vers l'excellence."
+    title: "Développeur C# / Unity en alternance"
+    subtitle: "Passionné par la création vidéoludique"
+    bio: "Passionné par la création vidéoludique, je suis un développeur polyvalent spécialisé dans les mécaniques de jeu, le design visuel et la production de jeux vidéo. Autodidacte, j'ai débuté en créant des contenus additionnels pour des jeux, ce qui m'a permis d'acquérir une compréhension approfondie des processus de développement. Actuellement étudiant en 3ᵉ année à l'IUT de Montpellier-Sète en filière IAMSI (Intégration d'Application et Management des Systèmes d'Information), je perfectionne mes compétences en gestion de projet et en développement technique. Mon ambition : devenir un chef d'équipe capable de mener des productions vidéoludiques ambitieuses avec succès."
     
   # Image et CV
   media:
@@ -18,11 +18,14 @@ profile:
   # Informations de contact et détails
   contact:
     email: "clement.g.developer@gmail.com"
-    linkedin: "linkedin.com/in/clementg4"
+    phone: "07.67.83.46.09"
+    linkedin: "linkedin.com/in/clixmods"
+    github: "https://github.com/clixmods"
     location: "Montpellier"
+    status: "Étudiant BUT 3 - En alternance chez Studio La Moutarde"
     
   # Informations supplémentaires
   details:
-    formation: "BUT 3 Informatique - IUT Montpellier-Sète"
-    speciality: "Développement C#, Unity, SQL"
-    experience: "4+ ans de développement"
+    formation: "BUT 3 IAMSI - IUT Montpellier-Sète"
+    speciality: "Développement C#, Unity, Blazor, FastEndpoint"
+    experience: "2+ ans de développement professionnel"

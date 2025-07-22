@@ -1,0 +1,93 @@
+technologies:
+  # Technologies principales utilisées
+  - name: "C#"
+    icon: "�"
+    color: "#239120"
+    enabled: true
+    order: 1
+    
+  - name: "Unity"
+    icon: "🎮"
+    color: "#000000"
+    enabled: true
+    order: 2
+    
+  - name: "Blazor"
+    icon: "�️"
+    color: "#512BD4"
+    enabled: true
+    order: 3
+    
+  - name: ".NET"
+    icon: "�"
+    color: "#512BD4"
+    enabled: true
+    order: 4
+    
+  - name: "FastEndpoint"
+    icon: "⚡"
+    color: "#FF6B35"
+    enabled: true
+    order: 5
+    
+  - name: "JavaScript"
+    icon: "�"
+    color: "#F7DF1E"
+    enabled: true
+    order: 6
+    
+  - name: "Vue.js"
+    icon: "�"
+    color: "#4FC08D"
+    enabled: true
+    order: 7
+    
+  # Technologies secondaires
+  - name: "Unreal Engine"
+    icon: "🎯"
+    color: "#0E1128"
+    enabled: false
+    order: 8
+    
+  - name: "C++"
+    icon: "⚡"
+    color: "#00599C"
+    enabled: false
+    order: 9
+    
+  - name: "SQL"
+    icon: "🗄️"
+    color: "#336791"
+    enabled: false
+    order: 10
+    
+  # Technologies désactivées mais disponibles
+  - name: "React"
+    icon: "�"
+    color: "#61DAFB"
+    enabled: false
+    order: 11
+    
+  - name: "TypeScript"
+    icon: "�"
+    color: "#3178C6"
+    enabled: false
+    order: 12
+    
+  - name: "Node.js"
+    icon: "�"
+    color: "#339933"
+    enabled: false
+    order: 13
+    
+  - name: "MongoDB"
+    icon: "�"
+    color: "#47A248"
+    enabled: false
+    order: 14
+    
+  - name: "Python"
+    icon: "�"
+    color: "#3776AB"
+    enabled: false
+    order: 15

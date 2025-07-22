@@ -1,0 +1,59 @@
+site:
+  title: "Portfolio"
+
+navigation:
+  - anchor: "profil"
+    label: "Profil"
+    icon: "👤"
+    active: true
+  - anchor: "competences"
+    label: "Compétences"
+    icon: "⚡"
+  - anchor: "blog"
+    label: "Blog"
+    icon: "📝"
+  - anchor: "projets"
+    label: "Projets"
+    icon: "💼"
+  - anchor: "formation"
+    label: "Formation"
+    icon: "🎓"
+  - anchor: "experiences"
+    label: "Expériences"
+    icon: "🏆"
+  - anchor: "contact"
+    label: "Contact"
+    icon: "📧"
+
+blog:
+  homeLimit: 3
+  dateFormat: "02 Jan 2006"
+
+contact:
+  subjects:
+    - value: "stage"
+      label: "Proposition de stage"
+    - value: "alternance"
+      label: "Proposition d'alternance"
+    - value: "projet"
+      label: "Collaboration projet"
+    - value: "freelance"
+      label: "Mission freelance"
+    - value: "autre"
+      label: "Autre"
+
+social:
+  - title: "LinkedIn"
+    url: "https://linkedin.com/in/clementg4"
+    icon: "💼"
+    external: true
+  - title: "GitHub"
+    url: "https://github.com/clixmods"
+    icon: "🐙"
+    external: true
+  - title: "Email"
+    url: "mailto:clement.g.developer@gmail.com"
+    icon: "📧"
+  - title: "Discord"
+    url: "#"
+    icon: "🎮"

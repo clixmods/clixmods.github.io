@@ -73,16 +73,6 @@ projects:
     category: "projects"
     featured: true
 
-  - title: "Nuketown Zombies"
-    subtitle: "Mod Call of Duty - Recreation complète"
-    description: "Recreation fidèle de la carte iconique Nuketown en mode Zombies"
-    fullDescription: "Projet de modding ambitieux recréant entièrement la carte emblématique Nuketown de Call of Duty en mode Zombies. Développement complet incluant la modélisation 3D, le scripting de gameplay, l'intégration des mécaniques zombies et l'optimisation des performances. Attention particulière portée à l'authenticité visuelle et au gameplay équilibré."
-    image: "/images/projects/nuketown-zombies.jpg"
-    tags: ["#Modding", "#Call of Duty", "#Zombies", "#Level Design"]
-    technologies: ["LUA", "3D Modeling", "Call of Duty Tools", "Level Design"]
-    category: "projects"
-    featured: false
-
   # Game Jams et projets courts
   - title: "Projets Game Jam"
     subtitle: "Global Game Jam 2024 & Itch.io Jams"

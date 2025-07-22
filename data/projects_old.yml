@@ -1,0 +1,64 @@
+projects:
+  - title: "Terra Memoria"
+    subtitle: "Développement UI et gameplay - Studio La Moutarde"
+    description: "JRPG développé en Unity pour Steam, Switch et Xbox Game Pass"
+    fullDescription: "Participation au développement d'un JRPG complet en Unity. Travail sur l'interface utilisateur, les mécaniques de gameplay et l'intégration de fonctionnalités. Projet professionnel réalisé en équipe dans le cadre d'une alternance."
+    image: "/images/projects/terra-memoria.jpg"
+    tags: ["#JRPG", "#Unity", "#Professional"]
+    technologies: ["Unity", "C#", "Game Design"]
+    category: "projects"
+    featured: true
+    
+  - title: "Application Web Blazor"
+    subtitle: "Développement Full-Stack - Studio La Moutarde"
+    description: "Application web moderne développée avec Blazor et FastEndpoint"
+    fullDescription: "Développement d'une application web complète utilisant Blazor pour le frontend et FastEndpoint pour les API. Projet réalisé en alternance démontrant les compétences en développement web moderne avec .NET."
+    image: "/images/projects/blazor-app.jpg"
+    tags: ["#Blazor", "#.NET", "#Web Development"]
+    technologies: ["Blazor", ".NET", "FastEndpoint", "C#"]
+    category: "projects"
+    featured: true
+    
+  - title: "Projet Creative Coding"
+    subtitle: "Projet de fin d'études - e-artsup"
+    description: "Exploration des technologies créatives et interfaces interactives"
+    fullDescription: "Projet créatif réalisé dans le cadre du Bachelor Creative Coding. Exploration des possibilités offertes par les technologies web modernes pour créer des expériences utilisateur innovantes."
+    image: "/images/projects/creative-coding.jpg"
+    tags: ["#Creative Coding", "#Interactive"]
+    technologies: ["JavaScript", "Vue.js"]
+    category: "projects"
+    featured: false
+
+achievements:
+  - title: "Alternance Studio La Moutarde"
+    subtitle: "Développeur C# / Unity en formation"
+    description: "Alternance de 2 ans dans un studio de développement de jeux vidéo"
+    image: "/images/achievements/alternance.jpg"
+    tags: ["#Professional", "#Game Development"]
+    technologies: ["Unity", "C#", "Blazor"]
+    category: "achievements"
+    
+  - title: "Bachelor Creative Coding"
+    subtitle: "Formation spécialisée - e-artsup"
+    description: "Formation en développement créatif et technologies interactives"
+    image: "/images/achievements/bachelor.jpg"
+    tags: ["#Education", "#Creative Tech"]
+    technologies: ["JavaScript", "Vue.js"]
+    category: "achievements"
+
+hobbies:
+  - title: "Développement de Jeux Vidéo"
+    subtitle: "Passion et expertise professionnelle"
+    description: "Développement de jeux indépendants et contribution à des projets professionnels"
+    image: "/images/hobbies/gamedev.jpg"
+    tags: ["#Game Dev", "#Unity", "#Passion"]
+    technologies: ["Unity", "C#", "Game Design"]
+    category: "hobbies"
+    
+  - title: "Level Design"
+    subtitle: "Conception d'expériences de jeu"
+    description: "Création et conception de niveaux pour différents types de jeux"
+    image: "/images/hobbies/leveldesign.jpg"
+    tags: ["#Level Design", "#Game Design"]
+    technologies: ["Unity", "Game Design Tools"]
+    category: "hobbies"

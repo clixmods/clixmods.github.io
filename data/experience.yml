@@ -1,85 +1,94 @@
 experiences:
   - title: "Développeur C# / Unity"
-    company: "La Moutarde"
+    company: "Studio La Moutarde"
     logo: "/images/companies/la-moutarde.jpg"
-    period: "oct. 2023 - aujourd'hui"
-    duration: "1 an 10 mois"
+    period: "2023 - 2025"
+    duration: "2 ans"
     type: "Contrat en alternance"
-    location: "Montpellier, Occitanie, France - Hybride"
+    location: "Montpellier, Occitanie, France"
     status: "current"
-    description: "Participation au développement de projets principaux : Terra Memoria (jeu vidéo) et My Game Showcase (Application web B2B)"
+    description: "Développement C# en alternance avec travail sur la fin de production d'un jeu vidéo et développement d'outils"
     projects:
       - name: "Terra Memoria"
-        description: "Jeu vidéo RPG cozy sorti en mars 2024 sur PC et consoles"
+        description: "Fin de production d'un jeu vidéo sur moteur Unity"
         tasks:
-          - "Participation à la fin de production de Terra Memoria – RPG cozy sorti en mars 2024 sur PC et consoles (Switch, PS5, Xbox)"
-          - "Correction de bugs"
-          - "Portage console"
-          - "Ergonomie UI/UX, gestion des contrôleurs, intégration souris"
-          - "Travail sur les systèmes de sauvegarde, localisation, et reporting de bugs"
-          - "Portage du jeu sur Epic Games"
-      - name: "My Game Showcase"
-        description: "Application web B2B"
+          - "Développement Unity"
+          - "Portage console (Nintendo Switch)"
+          - "Maintenance post-release"
+          - "Développement outils"
+      - name: "Application Web"
+        description: "Développement d'une application Web avec Blazor"
         tasks:
-          - "Conception d'un outil web permettant de générer des artbooks dynamiques à destination des studios/éditeurs"
-          - "Stack technique : Blazor, SignalR, FastEndpoint, .NET"
-          - "Création d'API REST (upload de fichiers, génération PDF, édition de métadonnées audio)"
-          - "Intégration temps réel (SignalR), architecture modulaire orienté multi-clients / marque blanche"
-          - "Projet pensé pour une exploitation commerciale (B2B), avec une logique de produit réutilisable"
-    skills: ["C#", "Unity", "Blazor", "SignalR", "FastEndpoint", ".NET", "API REST", "UI/UX", "Portage console", "Reporting de bugs"]
-    technologies: ["C#", "Unity", "Blazor", "SignalR", ".NET", "FastEndpoint"]
+          - "Framework Blazor (Client side)"
+          - "Développement API sous FastEndpoint"
+          - "Architecture modulaire"
+          - "Intégration temps réel"
+    skills: ["C#", "Unity", "Blazor", "FastEndpoint", ".NET", "Portage console", "Développement outils"]
+    technologies: ["C#", "Unity", "Blazor", "FastEndpoint", ".NET"]
     
-  - title: "Caissier"
-    company: "Enseignes Casino"
-    logo: "/images/companies/casino.jpg"
-    period: "avr. 2022 - mai 2022"
-    duration: "2 mois"
-    type: "Emploi saisonnier"
-    location: "Castelnau-le-lez, Occitanie, France"
-    status: "completed"
-    description: "Expérience dans le secteur de la grande distribution, développement des compétences relationnelles et de gestion."
-    tasks:
-      - "Accueil et service client"
-      - "Gestion des transactions et encaissement"
-      - "Travail en équipe dans un environnement dynamique"
-      - "Respect des procédures et de la qualité de service"
-    skills: ["Service client", "Travail en équipe", "Gestion du stress", "Communication"]
-    technologies: []
-    
-  - title: "Réalisation de projet personnel"
-    company: "Pause professionnelle"
+  # Projets personnels et autodidacte
+  - title: "Développement autodidacte"
+    company: "Projets personnels"
     logo: "/images/companies/personal.jpg"
-    period: "déc. 2016 - juin 2020"
-    duration: "3 ans 7 mois"
-    type: "Projet personnel"
+    period: "2017 - 2023"
+    duration: "6 ans"
+    type: "Autodidacte"
     location: "Montpellier, France"
     status: "completed"
-    description: "Période dédiée au développement de compétences techniques en autodidacte et réalisation de projets personnels."
+    description: "Apprentissage autodidacte du développement de jeux vidéo et création de contenus additionnels"
     projects:
-      - name: "Projets de développement"
-        description: "Apprentissage et maîtrise des technologies web modernes"
+      - name: "Modding Call of Duty: Black Ops 3"
+        description: "Création de contenus pour Steam Workshop - 800,000 téléchargements cumulés"
         tasks:
-          - "Apprentissage autodidacte du développement web"
-          - "Réalisation de projets personnels en JavaScript/React"
-          - "Exploration des technologies backend (Node.js, bases de données)"
-          - "Développement de compétences en design UI/UX"
-          - "Participation à des communautés de développeurs"
-    skills: ["Développement web", "JavaScript", "React", "Node.js", "Autodidacte", "UI/UX Design"]
-    technologies: ["JavaScript", "React", "Node.js", "HTML", "CSS"]
+          - "Développement de mods et cartes personnalisées"
+          - "Administration de communauté modding francophone et anglophone"
+          - "Management communautaire et support technique"
+          - "Participation à plus de 50 contenus communautaires"
+          - "Bêta testing et retours collaboratifs"
+      - name: "Serveur privé Dofus"
+        description: "Exploration des bases de données et assets"
+        tasks:
+          - "Création d'un serveur privé local"
+          - "Exploration des bases de données"
+          - "Manipulation d'assets de jeu"
+    skills: ["Level Design", "Game Design", "Modding", "Community Management", "LUA", "Administration", "800k téléchargements"]
+    technologies: ["LUA", "Call of Duty Modding Tools", "Radiant Black", "Level Editor"]
+
+  # Projet professionnel futur
+  - title: "Projet Aegis"
+    company: "Projet indépendant"
+    logo: "/images/companies/aegis.jpg"
+    period: "2025 - ..."
+    duration: "En cours"
+    type: "Projet professionnel"
+    location: "Montpellier, France"
+    status: "planning"
+    description: "Création d'un jeu vidéo indépendant à but professionnel et fondation future d'entreprise"
+    projects:
+      - name: "Développement de jeu indépendant"
+        description: "Création complète d'un jeu vidéo commercial"
+        tasks:
+          - "Game Design et conception"
+          - "Développement complet sur Unity"
+          - "Gestion de projet indépendant"
+          - "Préparation création d'entreprise"
+    skills: ["Game Design", "Unity", "C#", "Entrepreneuriat", "Gestion projet", "Vision produit"]
+    technologies: ["Unity", "C#", "Game Design Tools"]
 
 internships:
-  - title: "Stage Développement Web"
+  - title: "Recherche de stage de fin d'études"
     company: "À définir"
     period: "2025"
     duration: "3-6 mois"
     type: "Stage de fin d'études"
     location: "Montpellier ou remote"
     status: "seeking"
-    description: "Recherche de stage de fin d'études BUT 3 en développement web full-stack ou mobile."
+    description: "Recherche de stage de fin d'études BUT 3 en développement de jeux vidéo ou applications web."
     requirements:
+      - "Développement Unity/C#"
       - "Développement d'applications web modernes"
       - "Travail en équipe agile"
-      - "Technologies : React, Node.js, ou frameworks similaires"
+      - "Technologies : C#, Unity, Blazor, .NET"
       - "Possible remote ou hybride"
-    skills: ["React", "Node.js", "MongoDB", "TypeScript", "Git", "Méthodes agiles"]
-    technologies: ["React", "Node.js", "MongoDB", "TypeScript"]
+    skills: ["C#", "Unity", "Blazor", ".NET", "FastEndpoint", "Git", "Méthodes agiles"]
+    technologies: ["C#", "Unity", "Blazor", ".NET", "FastEndpoint"]
