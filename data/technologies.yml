@@ -1,0 +1,92 @@
+technologies:
+  - name: "React"
+    icon: "🔵"
+    color: "#61DAFB"
+    enabled: true
+    order: 1
+    
+  - name: "Redux"
+    icon: "🟢"
+    color: "#764ABC"
+    enabled: true
+    order: 2
+    
+  - name: "TypeScript"
+    icon: "🔷"
+    color: "#3178C6"
+    enabled: true
+    order: 3
+    
+  - name: "AWS"
+    icon: "🟣"
+    color: "#FF9900"
+    enabled: true
+    order: 4
+    
+  - name: "Firebase"
+    icon: "🟡"
+    color: "#FFCA28"
+    enabled: true
+    order: 5
+    
+  - name: "PostMan"
+    icon: "🔴"
+    color: "#FF6C37"
+    enabled: true
+    order: 6
+    
+  - name: "MongoDB"
+    icon: "🟢"
+    color: "#47A248"
+    enabled: true
+    order: 7
+    
+  # Technologies désactivées mais disponibles
+  - name: "Node.js"
+    icon: "🟢"
+    color: "#339933"
+    enabled: false
+    order: 8
+    
+  - name: "JavaScript"
+    icon: "🟨"
+    color: "#F7DF1E"
+    enabled: false
+    order: 9
+    
+  - name: "Unity"
+    icon: "⚫"
+    color: "#000000"
+    enabled: false
+    order: 10
+    
+  - name: "C#"
+    icon: "🟦"
+    color: "#239120"
+    enabled: false
+    order: 11
+    
+  # Nouvelles technologies prêtes à être activées
+  - name: "Vue.js"
+    icon: "💚"
+    color: "#4FC08D"
+    enabled: false
+    order: 12
+    
+  - name: "Angular"
+    icon: "🔴"
+    color: "#DD0031"
+    enabled: false
+    order: 13
+    
+  - name: "Python"
+    icon: "🐍"
+    color: "#3776AB"
+    enabled: false
+    order: 14
+    
+  - name: "Docker"
+    icon: "🐋"
+    color: "#2496ED"
+    enabled: false
+    order: 15
