@@ -53,6 +53,156 @@
     {
       "title": "posts",
       "path": "[[workspace]]/content/posts"
+    },
+    {
+      "title": "projects", 
+      "path": "[[workspace]]/content/projects"
+    }
+  ],
+  "frontMatter.content.draftField": {
+    "name": "draft",
+    "type": "boolean"
+  },
+  "frontMatter.data.files": [
+    {
+      "id": "profile",
+      "title": "Profile Data",
+      "file": "data/profile.yml",
+      "schema": {
+        "title": "Profile",
+        "type": "object",
+        "properties": {
+          "profile": {
+            "type": "object",
+            "properties": {
+              "personal": {
+                "type": "object",
+                "title": "Informations personnelles",
+                "properties": {
+                  "firstName": {"type": "string", "title": "Prénom"},
+                  "lastName": {"type": "string", "title": "Nom"},
+                  "fullName": {"type": "string", "title": "Nom complet"},
+                  "greeting": {"type": "string", "title": "Salutation"},
+                  "title": {"type": "string", "title": "Titre"},
+                  "subtitle": {"type": "string", "title": "Sous-titre"},
+                  "bio": {"type": "string", "title": "Biographie", "widget": "textarea"}
+                }
+              },
+              "media": {
+                "type": "object",
+                "title": "Médias",
+                "properties": {
+                  "profileImage": {"type": "string", "title": "Image de profil"},
+                  "resumeFile": {"type": "string", "title": "Fichier CV"},
+                  "resumeFilename": {"type": "string", "title": "Nom du fichier CV"}
+                }
+              },
+              "contact": {
+                "type": "object",
+                "title": "Contact",
+                "properties": {
+                  "email": {"type": "string", "title": "Email"}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "experience",
+      "title": "Experience Data",
+      "file": "data/experience.yml",
+      "schema": {
+        "title": "Experience",
+        "type": "object",
+        "properties": {
+          "experiences": {
+            "type": "array",
+            "title": "Expériences",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {"type": "string", "title": "Poste"},
+                "company": {"type": "string", "title": "Entreprise"},
+                "logo": {"type": "string", "title": "Logo"},
+                "period": {"type": "string", "title": "Période"},
+                "duration": {"type": "string", "title": "Durée"},
+                "type": {"type": "string", "title": "Type de contrat"},
+                "location": {"type": "string", "title": "Lieu"},
+                "status": {"type": "string", "title": "Statut"},
+                "description": {"type": "string", "title": "Description", "widget": "textarea"}
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "skills",
+      "title": "Skills Data", 
+      "file": "data/skills.yml",
+      "schema": {
+        "title": "Skills",
+        "type": "object",
+        "properties": {
+          "skills": {
+            "type": "object",
+            "properties": {
+              "categories": {
+                "type": "array",
+                "title": "Catégories de compétences",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {"type": "string", "title": "Titre de la catégorie"},
+                    "id": {"type": "string", "title": "ID"},
+                    "skills": {
+                      "type": "array",
+                      "title": "Compétences",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {"type": "string", "title": "Nom"},
+                          "icon": {"type": "string", "title": "Icône"},
+                          "level": {"type": "string", "title": "Niveau"},
+                          "experience": {"type": "string", "title": "Expérience"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "technologies",
+      "title": "Technologies Data",
+      "file": "data/technologies.yml",
+      "schema": {
+        "title": "Technologies",
+        "type": "object",
+        "properties": {
+          "technologies": {
+            "type": "array",
+            "title": "Technologies",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {"type": "string", "title": "Nom de la technologie"},
+                "icon": {"type": "string", "title": "Icône (emoji)"},
+                "color": {"type": "string", "title": "Couleur (hex)"},
+                "enabled": {"type": "boolean", "title": "Activé dans les filtres"},
+                "order": {"type": "number", "title": "Ordre d'affichage"}
+              },
+              "required": ["name", "icon", "enabled", "order"]
+            }
+          }
+        }
+      }
     }
   ],
   "frontMatter.git.enabled": true
