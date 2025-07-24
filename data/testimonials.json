@@ -1,0 +1,26 @@
+[
+  {
+    "rating": 5,
+    "name": "Antoine Chollet",
+    "position": "Maître de Conférences en Sciences de Gestion",
+    "company": "Université de Montpellier",
+    "avatar": "/images/avatar6.svg",
+    "text": "Clément a été mon étudiant en BUT Informatique à l'Université de Montpellier. Après être arrivé en 2e année, il a su se donner les moyens pour réussir. En tant qu'alternant dans le secteur du jeu vidéo durant ses études, Clément a su montrer sa détermination et sa passion. Bravo pour ta persévérance et hâte de voir ton évolution !"
+  },
+  {
+    "rating": 5,
+    "name": "Gaëtan Vergeot",
+    "position": "Game Developer & Teacher",
+    "company": "UGU",
+    "avatar": "/images/avatar7.svg",
+    "text": "Dès le début de sa deuxième année d'études où j'ai été son prof de Développement Unity, j'ai pu constater que Clément était impliqué et avait des réflexes importants quand on cherche à devenir développeur : une bonne curiosité et une capacité de recherche qui l'aide à trouver ses réponses. Clément était aussi quelqu'un d'autonome qui essaye des choses à chaque projet sans trop se reposer sur ses acquis."
+  },
+  {
+    "rating": 5,
+    "name": "Lucas Guibert",
+    "position": "Game Programmer / Technical Designer",
+    "company": "e-artstup",
+    "avatar": "/images/avatar8.svg",
+    "text": "J'ai eu l'occasion de suivre le travail de Clément durant toute sa seconde année d'études, en tant qu'intervenant en programmation. J'y ai découvert un développeur curieux et passionné par son travail, qui avait toujours une petite longueur d'avance sur les sujets étudiés. Il a brillamment su alterner entre développement gameplay, rendu et outils selon les besoins des projets et de l'équipe. Clément a toutes les chances de son côté, et je suis persuadé qu'il ira loin !"
+  }
+]
