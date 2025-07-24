@@ -11,6 +11,40 @@ sector = "mods-tools"
 featured = false
 fmContentType = "project-content-type"
 image = "/images/projects/farm/farm-background.jpg"
+
+[[actions]]
+type = "steam"
+label = "Télécharger sur Steam"
+url = "https://steamcommunity.com/sharedfiles/filedetails/?id=1406022761"
+icon = "steam"
+primary = true
+
+[[actions]]
+type = "youtube"
+label = "Voir trailer"
+url = "https://youtu.be/Rtunjby5kVs"
+icon = "youtube"
+primary = false
+
+[[actions]]
+type = "youtube"
+label = "Voir comparatif avec l'original"
+url = "https://youtu.be/UkmfpbKTbXg"
+icon = "youtube"
+primary = false
+
+[[notable_facts]]
+type = "downloads"
+icon = "📥"
+value = "<span class='highlight'>150K+</span>"
+label = "Téléchargements Steam Workshop"
+
+
+[[notable_facts]]
+type = "creator-praise"
+icon = "⭐"
+value = "Félicitations du créateur original"
+label = "Le créateur original m'a félicité pour la remasterisation."
 +++
 
 # FARM - Remasterisation

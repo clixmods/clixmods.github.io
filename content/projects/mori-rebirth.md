@@ -12,6 +12,27 @@ featured = true
 fmContentType = "project-content-type"
 image = "/images/projects/mori-rebirth/téléchargement (1).jpg"
 logo = "/images/projects/mori-rebirth/v2bfea3.png"
+
+[[actions]]
+type = "steam"
+label = "Télécharger sur Steam"
+url = "https://steamcommunity.com/sharedfiles/filedetails/?id=2780964226"
+icon = "steam"
+primary = true
+
+[[actions]]
+type = "youtube"
+label = "Voir trailer"
+url = "https://youtu.be/-dO2vBZx5gA"
+icon = "youtube"
+primary = false
+
+[[notable_facts]]
+type = "downloads"
+icon = "📥"
+value = "<span class='highlight'>150K+</span>"
+label = "Téléchargements Steam Workshop"
+
 +++
 
 # Mori Rebirth

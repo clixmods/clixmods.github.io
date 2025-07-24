@@ -41,16 +41,9 @@ primary = true
 
 [[actions]]
 type = "youtube"
-label = "Voir la vidéo"
-url = "https://youtube.com/watch?v=nuketown-demo"
+label = "Voir comparatif"
+url = "https://youtu.be/e3KIFgqdaKg"
 icon = "youtube"
-primary = false
-
-[[actions]]
-type = "github"
-label = "Code source"
-url = "https://github.com/clixmods/nuketown-zombies"
-icon = "github"
 primary = false
 
 [[notable_facts]]

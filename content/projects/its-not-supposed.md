@@ -11,6 +11,21 @@ sector = "games"
 featured = false
 fmContentType = "project-content-type"
 image = "/images/projects/snide/clement-garcia-snide-leveldesign-2.jpg"
+
+[[actions]]
+type = "download"
+label = "Jouer au jeu"
+url = "https://pepp3rmint.itch.io/d"
+icon = "download"
+primary = true
+
+[[actions]]
+type = "youtube"
+label = "Voir trailer"
+url = "https://youtu.be/k2Qoly745Ys"
+icon = "youtube"
+primary = false
+
 +++
 
 # It's not supposed to do that

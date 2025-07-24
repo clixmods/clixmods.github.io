@@ -12,6 +12,21 @@ featured = true
 fmContentType = "project-content-type"
 logo = "/images/projects/stholen/stholen-logo.png"
 image = "/images/projects/stholen/stholen-background.jpg"
+
+[[actions]]
+type = "download"
+label = "Jouer au jeu"
+url = "https://pepp3rmint.itch.io/stholen"
+icon = "download"
+primary = true
+
+[[actions]]
+type = "youtube"
+label = "Voir trailer"
+url = "https://youtu.be/uXQj8HkRpG0"
+icon = "youtube"
+primary = false
+
 +++
 
 # Stholen

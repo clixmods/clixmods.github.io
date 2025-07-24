@@ -11,6 +11,25 @@ sector = "mods-tools"
 featured = true
 fmContentType = "project-content-type"
 image = "/images/projects/zombies-experience/téléchargement.jpg"
+
+[[notable_facts]]
+type = "downloads"
+icon = "📥"
+value = "<span class='highlight'>270K+</span>"
+label = "Téléchargements Steam Workshop"
+
+[[notable_facts]]
+type = "engine-mod"
+icon = "🛠️"
+label = "Modification poussée du moteur de jeu !"
+value = "Modding moteur avancé"
+
+[[notable_facts]]
+type = "inspiration"
+icon = "✨"
+value = "Inspiration pour la communauté modding"
+label = "Ce mod a inspiré d'autres mods qui ont eu encore plus de succès."
+
 +++
 
 # Zombies Experience

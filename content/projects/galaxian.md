@@ -12,6 +12,28 @@ featured = false
 fmContentType = "project-content-type"
 logo = "/images/projects/galaxian/galaxian-logo.png"
 image = "/images/projects/galaxian/galaxian-background.png"
+
+[[actions]]
+type = "download"
+label = "Jouer au jeu"
+url = "https://clixmods.itch.io/galaxian"
+icon = "download"
+primary = true
+
+[[actions]]
+type = "youtube"
+label = "Voir trailer"
+url = "https://youtu.be/zciQnYmtkHk"
+icon = "youtube"
+primary = false
+
+[[actions]]
+type = "youtube"
+label = "Voir gameplay"
+url = "https://youtu.be/pf0UqgHNkF0"
+icon = "youtube"
+primary = false
+
 +++
 
 # Galaxian

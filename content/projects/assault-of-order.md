@@ -1,3 +1,4 @@
++++
 date = "2022-05-15T10:00:00+02:00"
 draft = false
 title = "Assault of Order"
@@ -10,6 +11,21 @@ category = "projects"
 sector = "games"
 featured = true
 fmContentType = "project-content-type"
+
+[[actions]]
+type = "download"
+label = "Jouer au jeu"
+url = "https://evil0games.itch.io/assault-of-order"
+icon = "download"
+primary = true
+
+[[actions]]
+type = "youtube"
+label = "Voir trailer"
+url = "https://youtu.be/G1OzgE-y5Jk"
+icon = "youtube"
+primary = false
+
 +++
 
 # Assault of Order

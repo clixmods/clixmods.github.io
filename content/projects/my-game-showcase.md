@@ -12,6 +12,8 @@ featured = true
 fmContentType = "project-content-type"
 image = "/images/projects/my-game-showcase/artbook.webp"
 logo = "/images/projects/my-game-showcase/My Game Showcase.webp"
+
+
 +++
 
 # My Game Showcase
