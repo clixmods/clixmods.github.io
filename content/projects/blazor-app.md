@@ -10,6 +10,7 @@ technologies = ["Blazor", ".NET", "FastEndpoint", "C#"]
 category = "projects"
 sector = "apps-web"
 featured = true
+fmContentType = "project-content-type"
 +++
 
 # Application Web Blazor

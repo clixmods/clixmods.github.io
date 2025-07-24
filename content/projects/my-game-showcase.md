@@ -4,12 +4,14 @@ draft = false
 title = "My Game Showcase"
 subtitle = "Plateforme d'artbooks numériques - La Moutarde"
 description = "Application web pour studios de jeux vidéo permettant de créer des artbooks numériques à partir d'assets"
-image = "/images/projects/my-game-showcase.jpg"
-tags = ["Blazor", "FastEndpoint", "SignalR", "Studio Tools"]
-technologies = ["Blazor", ".NET 8", "FastEndpoint", "SignalR", "C#"]
+tags = [ "Blazor", "FastEndpoint", "SignalR", "Studio Tools" ]
+technologies = [ "Blazor", ".NET 8", "FastEndpoint", "SignalR", "C#" ]
 category = "projects"
 sector = "apps-web"
 featured = true
+fmContentType = "project-content-type"
+image = "/images/projects/my-game-showcase/artbook.webp"
+logo = "/images/projects/my-game-showcase/My Game Showcase.webp"
 +++
 
 # My Game Showcase

@@ -10,6 +10,7 @@ technologies = ["PHP", "MySQL", "HTML/CSS", "JavaScript", "GitLab"]
 category = "projects"
 sector = "apps-web"
 featured = true
+fmContentType = "project-content-type"
 +++
 
 # Aspiro Shop - Site e-commerce PHP

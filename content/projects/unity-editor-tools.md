@@ -10,6 +10,7 @@ technologies = ["Unity", "C#", "Editor Scripting"]
 category = "projects"
 sector = "mods-tools"
 featured = true
+fmContentType = "project-content-type"
 +++
 
 # Unity Editor Tools

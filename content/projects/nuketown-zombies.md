@@ -4,7 +4,6 @@ draft = false
 title = "Nuketown Zombies"
 subtitle = "Remasterisation complète de la carte iconique - Black Ops 3"
 description = "Recréation fidèle et améliorée de Nuketown avec nouvelles fonctionnalités et système Zombies Experience"
-image = "/images/projects/nuketown-zombies.jpg"
 tags = [
   "Modding",
   "Project Leadership",
@@ -25,7 +24,13 @@ category = "projects"
 sector = "mods-tools"
 featured = true
 status = "Terminé"
-link = "https://steamcommunity.com/sharedfiles/filedetails/?id=2180904327"
+fmContentType = "project-content-type"
+image = "/images/projects/nuketown/nuketown-zombies.jpg"
+diaporama = [
+  "/images/projects/nuketown/nuketown-zombies-1.jpg",
+  "/images/projects/nuketown/nuketown-zombies-2.jpg",
+  "/images/projects/nuketown/nuketown-zombies-3.jpg"
+]
 
 [[actions]]
 type = "steam"

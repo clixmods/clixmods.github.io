@@ -4,12 +4,14 @@ draft = false
 title = "Galaxian"
 subtitle = "Remake du classique arcade - e-artsup"
 description = "Recréation du jeu d'arcade classique avec mécaniques modernes et game design soigné"
-image = "/images/projects/galaxian.jpg"
-tags = ["Unity", "Arcade", "Classic Game", "Game Design"]
-technologies = ["Unity", "C#", "Game Design", "Programming"]
+tags = [ "Unity", "Arcade", "Classic Game", "Game Design" ]
+technologies = [ "Unity", "C#", "Game Design", "Programming" ]
 category = "projects"
 sector = "games"
 featured = false
+fmContentType = "project-content-type"
+logo = "/images/projects/galaxian/galaxian-logo.png"
+image = "/images/projects/galaxian/galaxian-background.png"
 +++
 
 # Galaxian

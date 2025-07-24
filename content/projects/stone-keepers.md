@@ -11,30 +11,7 @@ technologies = ["Unity", "C#", "Game Design"]
 category = "projects"
 sector = "games"
 featured = true
-
-[[notable_facts]]
-type = "duration"
-icon = "⏱️"
-value = "<span class='highlight'>2</span> mois"
-label = "Temps de développement"
-
-[[notable_facts]]
-type = "award"
-icon = "🏆"
-value = "Concours <span class='highlight'>Pégase</span>"
-label = "Participation officielle"
-
-[[notable_facts]]
-type = "team"
-icon = "👥"
-value = "<span class='highlight'>5</span> personnes"
-label = "Équipe de développement"
-
-[[notable_facts]]
-type = "feature"
-icon = "🎮"
-value = "<span class='highlight'>Unity</span> 2022.3"
-label = "Moteur de jeu utilisé"
+fmContentType = "project-content-type"
 +++
 
 # The Lost City: Stone Keepers

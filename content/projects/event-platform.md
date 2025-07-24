@@ -10,6 +10,7 @@ technologies = ["Symfony", "Vue.js", "API Platform", "Docker", "MySQL"]
 category = "projects"
 sector = "apps-web"
 featured = true
+fmContentType = "project-content-type"
 +++
 
 # Plateforme de gestion d'événements

@@ -4,12 +4,15 @@ draft = false
 title = "Terra Memoria"
 subtitle = "JRPG - Studio La Moutarde"
 description = "Fin de production d'un jeu vidéo commercial sur Unity"
-image = "/images/projects/terra-memoria.jpg"
-tags = ["JRPG", "Unity", "Commercial", "Nintendo Switch"]
-technologies = ["Unity", "C#", "Nintendo Switch", "Steam"]
+tags = [ "JRPG", "Unity", "Commercial", "Nintendo Switch" ]
+technologies = [ "Unity", "C#", "Nintendo Switch", "Steam" ]
 category = "projects"
 sector = "games"
 featured = true
+fmContentType = "project-content-type"
+status = "Terminé"
+logo = "/images/projects/terra-memoria/terra-memoria-logo.png"
+image = "/images/projects/terra-memoria/terra-memoria-background.jpg"
 +++
 
 # Terra Memoria

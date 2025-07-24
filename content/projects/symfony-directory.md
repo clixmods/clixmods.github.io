@@ -1,4 +1,3 @@
-+++
 date = "2024-09-15T10:00:00+02:00"
 draft = false
 title = "Annuaire Symfony"
@@ -10,6 +9,7 @@ technologies = ["Symfony", "Twig", "Docker", "MySQL", "PHP"]
 category = "projects"
 sector = "apps-web"
 featured = true
+fmContentType = "project-content-type"
 +++
 
 # Annuaire Symfony - Application de gestion de profils

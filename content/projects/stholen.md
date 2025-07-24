@@ -4,12 +4,14 @@ draft = false
 title = "Stholen"
 subtitle = "Jeu d'aventure - e-artsup"
 description = "Projet de jeu développé en équipe avec focus sur le level design et la programmation gameplay"
-image = "/images/projects/stholen.jpg"
-tags = ["Unity", "Adventure", "Level Design", "Team Project"]
-technologies = ["Unity", "C#", "Level Design", "Lighting"]
+tags = [ "Unity", "Adventure", "Level Design", "Team Project" ]
+technologies = [ "Unity", "C#", "Level Design", "Lighting" ]
 category = "projects"
 sector = "games"
 featured = true
+fmContentType = "project-content-type"
+logo = "/images/projects/stholen/stholen-logo.png"
+image = "/images/projects/stholen/stholen-background.jpg"
 +++
 
 # Stholen

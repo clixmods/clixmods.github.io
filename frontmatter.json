@@ -44,6 +44,112 @@
           "type": "categories"
         }
       ]
+    },
+    {
+      "name": "project-content-type",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Date de publication",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "Brouillon",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Titre du projet",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Sous-titre",
+          "name": "subtitle",
+          "type": "string"
+        },
+        {
+          "title": "Description du projet",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Image principale",
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "title": "Logo du projet",
+          "name": "logo",
+          "type": "image"
+        },
+        {
+          "title": "Diaporama d'images",
+          "name": "diaporama",
+          "type": "list"
+        },
+        {
+          "title": "Étiquettes",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Technologies utilisées",
+          "name": "technologies",
+          "type": "choice",
+          "choices": [
+            "C++",
+            "Lua",
+            "Level Design",
+            "3D Modeling",
+            "Texturing",
+            "FX",
+            "Sound Design"
+          ]
+        },
+        {
+          "title": "Catégorie",
+          "name": "category",
+          "type": "categories"
+        },
+        {
+          "title": "Secteur d'activité",
+          "name": "sector",
+          "type": "string"
+        },
+        {
+          "title": "Projet à la une",
+          "name": "featured",
+          "type": "boolean"
+        },
+        {
+          "title": "Statut",
+          "name": "status",
+          "type": "choice",
+          "choices": [
+            "Prochainement",
+            "En Cours",
+            "Terminé"
+          ]
+        },
+        {
+          "title": "Actions associées",
+          "name": "actions",
+          "type": "block",
+          "fieldGroup": [
+            "actions_group"
+          ]
+        },
+        {
+          "title": "Faits marquants",
+          "name": "notable_facts",
+          "type": "block",
+          "fieldGroup": [
+            "notable_facts_group"
+          ]
+        }
+      ]
     }
   ],
   "frontMatter.framework.id": "hugo",
@@ -55,7 +161,7 @@
       "path": "[[workspace]]/content/posts"
     },
     {
-      "title": "projects", 
+      "title": "projects",
       "path": "[[workspace]]/content/projects"
     }
   ],
@@ -79,29 +185,63 @@
                 "type": "object",
                 "title": "Informations personnelles",
                 "properties": {
-                  "firstName": {"type": "string", "title": "Prénom"},
-                  "lastName": {"type": "string", "title": "Nom"},
-                  "fullName": {"type": "string", "title": "Nom complet"},
-                  "greeting": {"type": "string", "title": "Salutation"},
-                  "title": {"type": "string", "title": "Titre"},
-                  "subtitle": {"type": "string", "title": "Sous-titre"},
-                  "bio": {"type": "string", "title": "Biographie", "widget": "textarea"}
+                  "firstName": {
+                    "type": "string",
+                    "title": "Prénom"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "title": "Nom"
+                  },
+                  "fullName": {
+                    "type": "string",
+                    "title": "Nom complet"
+                  },
+                  "greeting": {
+                    "type": "string",
+                    "title": "Salutation"
+                  },
+                  "title": {
+                    "type": "string",
+                    "title": "Titre"
+                  },
+                  "subtitle": {
+                    "type": "string",
+                    "title": "Sous-titre"
+                  },
+                  "bio": {
+                    "type": "string",
+                    "title": "Biographie",
+                    "widget": "textarea"
+                  }
                 }
               },
               "media": {
                 "type": "object",
                 "title": "Médias",
                 "properties": {
-                  "profileImage": {"type": "string", "title": "Image de profil"},
-                  "resumeFile": {"type": "string", "title": "Fichier CV"},
-                  "resumeFilename": {"type": "string", "title": "Nom du fichier CV"}
+                  "profileImage": {
+                    "type": "string",
+                    "title": "Image de profil"
+                  },
+                  "resumeFile": {
+                    "type": "string",
+                    "title": "Fichier CV"
+                  },
+                  "resumeFilename": {
+                    "type": "string",
+                    "title": "Nom du fichier CV"
+                  }
                 }
               },
               "contact": {
                 "type": "object",
                 "title": "Contact",
                 "properties": {
-                  "email": {"type": "string", "title": "Email"}
+                  "email": {
+                    "type": "string",
+                    "title": "Email"
+                  }
                 }
               }
             }
@@ -123,15 +263,43 @@
             "items": {
               "type": "object",
               "properties": {
-                "title": {"type": "string", "title": "Poste"},
-                "company": {"type": "string", "title": "Entreprise"},
-                "logo": {"type": "string", "title": "Logo"},
-                "period": {"type": "string", "title": "Période"},
-                "duration": {"type": "string", "title": "Durée"},
-                "type": {"type": "string", "title": "Type de contrat"},
-                "location": {"type": "string", "title": "Lieu"},
-                "status": {"type": "string", "title": "Statut"},
-                "description": {"type": "string", "title": "Description", "widget": "textarea"}
+                "title": {
+                  "type": "string",
+                  "title": "Poste"
+                },
+                "company": {
+                  "type": "string",
+                  "title": "Entreprise"
+                },
+                "logo": {
+                  "type": "string",
+                  "title": "Logo"
+                },
+                "period": {
+                  "type": "string",
+                  "title": "Période"
+                },
+                "duration": {
+                  "type": "string",
+                  "title": "Durée"
+                },
+                "type": {
+                  "type": "string",
+                  "title": "Type de contrat"
+                },
+                "location": {
+                  "type": "string",
+                  "title": "Lieu"
+                },
+                "status": {
+                  "type": "string",
+                  "title": "Statut"
+                },
+                "description": {
+                  "type": "string",
+                  "title": "Description",
+                  "widget": "textarea"
+                }
               }
             }
           }
@@ -140,7 +308,7 @@
     },
     {
       "id": "skills",
-      "title": "Skills Data", 
+      "title": "Skills Data",
       "file": "data/skills.yml",
       "schema": {
         "title": "Skills",
@@ -155,18 +323,36 @@
                 "items": {
                   "type": "object",
                   "properties": {
-                    "title": {"type": "string", "title": "Titre de la catégorie"},
-                    "id": {"type": "string", "title": "ID"},
+                    "title": {
+                      "type": "string",
+                      "title": "Titre de la catégorie"
+                    },
+                    "id": {
+                      "type": "string",
+                      "title": "ID"
+                    },
                     "skills": {
                       "type": "array",
                       "title": "Compétences",
                       "items": {
                         "type": "object",
                         "properties": {
-                          "name": {"type": "string", "title": "Nom"},
-                          "icon": {"type": "string", "title": "Icône"},
-                          "level": {"type": "string", "title": "Niveau"},
-                          "experience": {"type": "string", "title": "Expérience"}
+                          "name": {
+                            "type": "string",
+                            "title": "Nom"
+                          },
+                          "icon": {
+                            "type": "string",
+                            "title": "Icône"
+                          },
+                          "level": {
+                            "type": "string",
+                            "title": "Niveau"
+                          },
+                          "experience": {
+                            "type": "string",
+                            "title": "Expérience"
+                          }
                         }
                       }
                     }
@@ -192,18 +378,95 @@
             "items": {
               "type": "object",
               "properties": {
-                "name": {"type": "string", "title": "Nom de la technologie"},
-                "icon": {"type": "string", "title": "Icône (emoji)"},
-                "color": {"type": "string", "title": "Couleur (hex)"},
-                "enabled": {"type": "boolean", "title": "Activé dans les filtres"},
-                "order": {"type": "number", "title": "Ordre d'affichage"}
+                "name": {
+                  "type": "string",
+                  "title": "Nom de la technologie"
+                },
+                "icon": {
+                  "type": "string",
+                  "title": "Icône (emoji)"
+                },
+                "color": {
+                  "type": "string",
+                  "title": "Couleur (hex)"
+                },
+                "enabled": {
+                  "type": "boolean",
+                  "title": "Activé dans les filtres"
+                },
+                "order": {
+                  "type": "number",
+                  "title": "Ordre d'affichage"
+                }
               },
-              "required": ["name", "icon", "enabled", "order"]
+              "required": [
+                "name",
+                "icon",
+                "enabled",
+                "order"
+              ]
             }
           }
         }
       }
     }
   ],
-  "frontMatter.git.enabled": true
+  "frontMatter.git.enabled": true,
+  "frontMatter.taxonomy.fieldGroups": [
+    {
+      "id": "actions_group",
+      "fields": [
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "label",
+          "name": "label",
+          "type": "string"
+        },
+        {
+          "title": "url",
+          "name": "url",
+          "type": "string"
+        },
+        {
+          "title": "icon",
+          "name": "icon",
+          "type": "string"
+        },
+        {
+          "title": "primary",
+          "name": "primary",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "notable_facts_group",
+      "fields": [
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "icon",
+          "name": "icon",
+          "type": "string"
+        },
+        {
+          "title": "value",
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "title": "label",
+          "name": "label",
+          "type": "string"
+        }
+      ]
+    }
+  ]
 }

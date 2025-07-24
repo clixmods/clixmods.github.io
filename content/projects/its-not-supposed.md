@@ -1,15 +1,16 @@
 +++
 date = "2022-03-15T10:00:00+02:00"
 draft = false
-title = "It's not supposed to do that"
+title = "Snide"
 subtitle = "Projet expérimental - e-artsup"
 description = "Projet de game design expérimental explorant des mécaniques de jeu non-conventionnelles"
-image = "/images/projects/its-not-supposed.jpg"
-tags = ["Unity", "Game Design", "Experimental", "Innovation"]
-technologies = ["Unity", "C#", "Level Design", "Game Design"]
+tags = [ "Unity", "Game Design", "Experimental", "Innovation" ]
+technologies = [ "Unity", "C#", "Level Design", "Game Design" ]
 category = "projects"
 sector = "games"
 featured = false
+fmContentType = "project-content-type"
+image = "/images/projects/snide/clement-garcia-snide-leveldesign-2.jpg"
 +++
 
 # It's not supposed to do that

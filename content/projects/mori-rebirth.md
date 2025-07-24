@@ -4,12 +4,14 @@ draft = false
 title = "Mori Rebirth"
 subtitle = "Projet de modding avancé"
 description = "Modification complète avec systèmes de gameplay étendus et fonctionnalités innovantes"
-image = "/images/projects/mori-rebirth.jpg"
-tags = ["Modding", "Game Systems", "C++", "Innovation"]
-technologies = ["C++", "Game Modding", "Level Design", "Scripting"]
+tags = [ "Modding", "Game Systems", "C++", "Innovation" ]
+technologies = [ "C++", "Game Modding", "Level Design", "Scripting" ]
 category = "projects"
 sector = "mods-tools"
 featured = true
+fmContentType = "project-content-type"
+image = "/images/projects/mori-rebirth/téléchargement (1).jpg"
+logo = "/images/projects/mori-rebirth/v2bfea3.png"
 +++
 
 # Mori Rebirth

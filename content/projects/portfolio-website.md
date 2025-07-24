@@ -1,4 +1,3 @@
-+++
 date = "2025-07-22T07:30:00+02:00"
 draft = false
 title = "Portfolio Website"
@@ -10,6 +9,7 @@ technologies = ["Hugo", "HTML/CSS", "JavaScript", "GitHub Pages"]
 category = "projects"
 sector = "apps-web"
 featured = true
+fmContentType = "project-content-type"
 +++
 
 # Portfolio Website

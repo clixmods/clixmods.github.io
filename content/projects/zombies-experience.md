@@ -4,12 +4,13 @@ draft = false
 title = "Zombies Experience"
 subtitle = "Mod avancé pour Black Ops 3 Steam"
 description = "Modification complète étendant Call of Duty Black Ops 3 avec nouvelles fonctionnalités multijoueur"
-image = "/images/projects/zombies-experience.jpg"
-tags = ["Modding", "C++", "Discord Integration", "Multiplayer"]
-technologies = ["C++", "Discord API", "Game Modding", "Networking"]
+tags = [ "Modding", "C++", "Discord Integration", "Multiplayer" ]
+technologies = [ "C++", "Discord API", "Game Modding", "Networking" ]
 category = "projects"
 sector = "mods-tools"
 featured = true
+fmContentType = "project-content-type"
+image = "/images/projects/zombies-experience/téléchargement.jpg"
 +++
 
 # Zombies Experience
