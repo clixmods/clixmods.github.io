@@ -417,8 +417,7 @@
       "labelField": "name",
       "schema": {
         "title": "Testimonials",
-        "type": "array",
-        "items": {
+
           "type": "object",
           "properties": {
                 "name": {
@@ -437,13 +436,6 @@
                   "type": "string",
                   "title": "Avatar (chemin vers l'image)"
                 },
-                "rating": {
-                  "type": "number",
-                  "title": "Note (1-5)",
-                  "minimum": 1,
-                  "maximum": 5,
-                  "default": 5
-                },
                 "text": {
                   "type": "string",
                   "title": "Message de recommandation",
@@ -457,8 +449,7 @@
                 "text"
               ]
             }
-      }
-    }
+          }
     
   ],
   "frontMatter.git.enabled": true,

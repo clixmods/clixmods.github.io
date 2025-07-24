@@ -1,26 +1,65 @@
 [
   {
-    "rating": 5,
+    "name": "François Bertrand",
+    "position": "Co-fondateur",
+    "company": "La Moutarde",
+    "avatar": "/images/people/francois-bertrand.png",
+    "text": "Clément s’est rapidement imposé comme un élément moteur de notre équipe. Son sens de l’initiative est particulièrement remarquable : il n’hésite pas à aller au-delà des tâches qui lui sont confiées pour suggérer des améliorations et optimiser nos processus. En plus d’être un excellent développeur, Clément fait preuve d’une écoute attentive et d’une grande capacité d’adaptation. Son implication et son envie de progresser font de lui un collaborateur de grande valeur, apprécié tant par ses collègues que par la direction. "
+  },
+  {
     "name": "Antoine Chollet",
     "position": "Maître de Conférences en Sciences de Gestion",
     "company": "Université de Montpellier",
-    "avatar": "/images/avatar6.svg",
+    "avatar": "/images/people/antoine-chollet.jpg",
     "text": "Clément a été mon étudiant en BUT Informatique à l'Université de Montpellier. Après être arrivé en 2e année, il a su se donner les moyens pour réussir. En tant qu'alternant dans le secteur du jeu vidéo durant ses études, Clément a su montrer sa détermination et sa passion. Bravo pour ta persévérance et hâte de voir ton évolution !"
   },
   {
-    "rating": 5,
     "name": "Gaëtan Vergeot",
     "position": "Game Developer & Teacher",
     "company": "UGU",
-    "avatar": "/images/avatar7.svg",
+    "avatar": "/images/people/gaetan-vergeot.jpg",
     "text": "Dès le début de sa deuxième année d'études où j'ai été son prof de Développement Unity, j'ai pu constater que Clément était impliqué et avait des réflexes importants quand on cherche à devenir développeur : une bonne curiosité et une capacité de recherche qui l'aide à trouver ses réponses. Clément était aussi quelqu'un d'autonome qui essaye des choses à chaque projet sans trop se reposer sur ses acquis."
   },
   {
-    "rating": 5,
     "name": "Lucas Guibert",
     "position": "Game Programmer / Technical Designer",
     "company": "e-artstup",
-    "avatar": "/images/avatar8.svg",
+    "avatar": "/images/people/lucas-guibert.png",
     "text": "J'ai eu l'occasion de suivre le travail de Clément durant toute sa seconde année d'études, en tant qu'intervenant en programmation. J'y ai découvert un développeur curieux et passionné par son travail, qui avait toujours une petite longueur d'avance sur les sujets étudiés. Il a brillamment su alterner entre développement gameplay, rendu et outils selon les besoins des projets et de l'équipe. Clément a toutes les chances de son côté, et je suis persuadé qu'il ira loin !"
+  },
+  {
+    "name": "Benoit Toupet",
+    "position": "Ancien Directeur",
+    "company": "e-artsup Montpellier",
+    "avatar": "/images/people/benoit-toupet.jpg",
+    "text": "J’ai eu la chance de compter Clément Garcia parmi nos étudiants d’e-artsup à l’époque où j’en étais directeur. Consciencieux, disponible, réactif, très agréable il s’est montré indispensable aux seins des équipes dans lesquels il a souvent été “lead”."
+  },
+  {
+    "name": "Jesse Moody",
+    "position": "Hard Surface Specialist",
+    "company": "Call of Duty Franchise",
+    "avatar": "/images/people/jesse-moody.jpg",
+    "text": "J'ai l'impression d'avoir travaillé sur la version originale il y a des années. Beau travail pour la mise à jour de la map Farm !"
+  },
+  {
+    "name": "Mike Curran",
+    "position": "Senior Character Artist",
+    "company": "Treyarch",
+    "avatar": "/images/people/mike-curran.jpg",
+    "text": "Excellent travail pour le remaster de Nuketown Zombies !"
+  },
+  {
+    "name": "Anita Messaoui",
+    "position": "MCF en sciences de l’éducation et de la formation",
+    "company": "IUT de Montpellier-Sète",
+    "avatar": "/images/people/anita-messaoui.jpg",
+    "text": "Durant les deux années où je l’ai eu en classe, j’ai pu observer son évolution et ses efforts constants pour développer ses compétences, tant sur le plan académique que personnel. Clément se distingue par une réelle motivation et un intérêt concret pour la communication et le travail en équipe. Il a démontré une capacité à s’impliquer activement dans les projets collectifs, notamment lors du projet collectif de BUT 2."
+  },
+  {
+    "name": "Francis Garcia",
+    "position": "Professeur Ensam Informatique",
+    "company": "IUT Informatique Montpellier",
+    "avatar": "/images/avatar6.svg",
+    "text": "Clément GARCIA, [...] un élève très sérieux, très appliqué et très assidu. Les résultats, obtenus depuis le début de sa scolarité en BUT, ont été au-dessus de la moyenne dans la plupart des unités d’enseignement. Particulièrement à l’aise dans les matières informatiques et plus précisément en système, réseaux et sécurité, dont je suis responsable."
   }
 ]
