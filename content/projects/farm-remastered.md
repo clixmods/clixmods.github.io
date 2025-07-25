@@ -45,6 +45,50 @@ type = "creator-praise"
 icon = "⭐"
 value = "Félicitations du créateur original"
 label = "Le créateur original m'a félicité pour la remasterisation."
+
+# Configuration des tailles (exemple différent)
+contributors_size = "size-small"
+development_time_size = "size-small"
+gallery_size = "size-medium"
+testimonials_size = "size-medium"
+
+# Exemple de contributeurs simples
+[[contributors]]
+name = "Clément 'Clix' Garcia"
+role = "Créateur & Level Designer"
+avatar = "/images/people/clix-avatar.jpg"
+
+[[contributors]]
+name = "Comunauté BO3"
+role = "Feedback et tests"
+
+# Exemple de développement simple
+[development_time]
+total = "3 mois"
+start_date = "Mars 2018"
+end_date = "Juin 2018"
+
+# Exemple de galerie réduite
+[[gallery]]
+url = "/images/projects/farm/farm-1.jpg"
+caption = "Vue principale de la ferme remasterisée"
+
+[[gallery]]
+url = "/images/projects/farm/farm-2.jpg"
+caption = "Comparaison avant/après"
+
+# Testimonials simples
+[[testimonials]]
+quote = "Excellent travail de remasterisation ! La qualité visuelle est impressionnante."
+name = "FarmFan2018"
+role = "Joueur Steam"
+rating = 5
+
+[[testimonials]]
+quote = "Merci de donner une seconde vie à cette carte mythique !"
+name = "RetroGamer"
+role = "Nostalgique BO2"
+rating = 4
 +++
 
 # FARM - Remasterisation

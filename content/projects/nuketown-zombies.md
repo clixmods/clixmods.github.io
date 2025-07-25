@@ -69,6 +69,166 @@ type = "award"
 icon = "⭐"
 value = "Projet <span class='highlight'>phare</span>"
 label = "Reconnaissance communautaire"
+
+# Nouveaux ajouts pour les boîtes d'information
+
+[[contributors]]
+name = "Clément 'Clix' Garcia"
+role = "Chef de projet, Développeur principal"
+avatar = "/images/people/clix-avatar.jpg"
+
+[[contributors]]
+name = "Alexisloic21"
+role = "Scripter, Effets spéciaux"
+avatar = "/images/people/alexisloic21-avatar.jpg"
+
+[[contributors]]
+name = "Communauté modding"
+role = "Assets et feedback"
+avatar = "/images/people/community-avatar.jpg"
+
+[development_time]
+total = "6 mois"
+start_date = "Janvier 2019"
+end_date = "Juillet 2019"
+
+[[development_time.phases]]
+name = "Recherche & Documentation"
+duration = "2 semaines"
+
+[[development_time.phases]]
+name = "Level Design de base"
+duration = "1 mois"
+
+[[development_time.phases]]
+name = "Programmation C++/Lua"
+duration = "2.5 mois"
+
+[[development_time.phases]]
+name = "Assets & Textures"
+duration = "1.5 mois"
+
+[[development_time.phases]]
+name = "Tests & Debug"
+duration = "3 semaines"
+
+[[development_time.phases]]
+name = "Optimisation finale"
+duration = "2 semaines"
+
+[[gallery]]
+url = "/images/projects/nuketown/nuketown-zombies-1.jpg"
+thumbnail = "/images/projects/nuketown/thumb-1.jpg"
+caption = "Vue d'ensemble de la carte remasterisée"
+
+[[gallery]]
+url = "/images/projects/nuketown/nuketown-zombies-2.jpg"
+thumbnail = "/images/projects/nuketown/thumb-2.jpg"
+caption = "Système de zombie spawning amélioré"
+
+[[gallery]]
+url = "/images/projects/nuketown/nuketown-zombies-3.jpg"
+thumbnail = "/images/projects/nuketown/thumb-3.jpg"
+caption = "Interface utilisateur modernisée"
+
+[[gallery]]
+url = "/images/projects/nuketown/nuketown-gameplay.jpg"
+caption = "Action multijoueur en cours"
+
+[[gallery]]
+url = "/images/projects/nuketown/nuketown-effects.jpg"
+caption = "Effets spéciaux et particules"
+
+[[gallery]]
+url = "/images/projects/nuketown/nuketown-weapons.jpg"
+caption = "Système d'armes personnalisées"
+
+[[technical_specs]]
+label = "Moteur"
+value = "Call of Duty: Black Ops 3"
+
+[[technical_specs]]
+label = "Langage principal"
+value = "C++ / Lua scripting"
+
+[[technical_specs]]
+label = "Joueurs supportés"
+value = "1-8 joueurs + bots"
+
+[[technical_specs]]
+label = "Plateforme"
+value = "PC (Steam Workshop)"
+
+[[technical_specs]]
+label = "Taille du projet"
+value = "~2.5 GB"
+
+[[technical_specs]]
+label = "Assets créés"
+value = "200+ textures, 50+ modèles"
+
+[[awards]]
+title = "Projet le plus téléchargé"
+organization = "Steam Workshop BO3"
+date = "2019"
+
+[[awards]]
+title = "Reconnaissance communautaire"
+organization = "Forum CodZ"
+date = "2019"
+
+[[awards]]
+title = "Featured Mod"
+organization = "Treyarch Community"
+date = "2019"
+
+# Configuration des tailles des boîtes
+contributors_size = "size-large"
+development_time_size = "size-medium"
+gallery_size = "size-xl"
+technical_specs_size = "size-medium"
+awards_size = "size-small"
+testimonials_size = "size-large"
+
+# Testimonials du projet
+[[testimonials]]
+quote = "Nuketown Zombies par Clix est absolument incroyable ! La fidélité à l'original tout en apportant des améliorations modernes est remarquable. Le support 8 joueurs change complètement l'expérience."
+name = "ZombieSlayer_2019"
+role = "Joueur Steam Workshop"
+avatar = "/images/people/zombie-player-1.jpg"
+rating = 5
+
+[[testimonials]]
+quote = "En tant que moddeur, je suis impressionné par la qualité technique de ce projet. Le code est propre, les performances excellentes et l'intégration avec BO3 est parfaite."
+name = "ModdingMaster"
+role = "Développeur communautaire"
+rating = 5
+
+[[testimonials]]
+quote = "Meilleure version de Nuketown Zombies que j'ai jamais jouée ! Les bots fonctionnent à merveille et la customisation est dingue. Bravo à toute l'équipe !"
+name = "Sarah_Gaming"
+role = "Streameuse Twitch"
+avatar = "/images/people/sarah-gaming.jpg"
+rating = 4
+
+[[testimonials]]
+quote = "Ce projet prouve que la communauté peut créer du contenu de qualité AAA. Nuketown Zombies de Clix surpasse même certaines cartes officielles en termes d'innovation."
+name = "Alex Chen"
+role = "Critique Gaming - YouTube"
+rating = 5
+
+[[testimonials]]
+quote = "J'ai passé des centaines d'heures sur cette carte avec mes amis. Le support 8 joueurs a révolutionné nos soirées gaming. Un must-have absolu !"
+name = "GamerDude42"
+role = "Joueur hardcore"
+rating = 5
+
+[[testimonials]]
+quote = "En tant que fan de la série depuis World at War, je peux dire que cette recréation capture parfaitement l'esprit de Nuketown tout en modernisant l'expérience."
+name = "OldSchoolZombies"
+role = "Vétéran de la communauté"
+avatar = "/images/people/veteran-player.jpg"
+rating = 4
 +++
 
 # Nuketown Zombies
@@ -360,3 +520,4 @@ Ce projet a posé les fondations de ma carrière et de ma vision du développeme
 - **Satisfaire** une communauté exigeante avec excellence
 
 *Nuketown Zombies demeure un projet fondateur qui continue d'inspirer mon approche du développement de jeux et du leadership créatif.*
+
