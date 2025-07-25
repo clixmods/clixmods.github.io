@@ -376,52 +376,62 @@
       "id": "skills",
       "title": "Skills Data",
       "file": "data/skills.json",
+      "labelField": "title",
       "schema": {
         "title": "Skills",
         "type": "object",
         "properties": {
           "categories": {
-            "type": "array",
-            "title": "Catégories de compétences",
-            "items": {
               "type": "object",
               "properties": {
                 "title": {
-                  "type": "string",
-                  "title": "Titre de la catégorie"
+                  "type": "string"
                 },
                 "id": {
-                  "type": "string",
-                  "title": "Identifiant"
+                  "type": "string"
                 },
                 "skills": {
                   "type": "array",
-                  "title": "Compétences",
                   "items": {
                     "type": "object",
                     "properties": {
                       "name": {
-                        "type": "string",
-                        "title": "Nom de la compétence"
+                        "type": "string"
                       },
                       "icon": {
-                        "type": "string",
-                        "title": "Icône"
+                        "type": "string"
                       },
                       "level": {
-                        "type": "string",
-                        "title": "Niveau"
+                        "type": "string"
                       },
                       "experience": {
-                        "type": "string",
-                        "title": "Expérience"
+                        "type": "string"
                       }
-                    },
-                    "required": ["name", "icon", "level", "experience"]
+                    }
                   }
                 }
+              }
+          },
+          "display": {
+            "type": "object",
+            "title": "Configuration d'affichage",
+            "properties": {
+              "showLevels": {
+                "type": "boolean",
+                "title": "Afficher les niveaux"
               },
-              "required": ["title", "id", "skills"]
+              "showIcons": {
+                "type": "boolean",
+                "title": "Afficher les icônes"
+              },
+              "categoriesPerRow": {
+                "type": "number",
+                "title": "Catégories par ligne"
+              },
+              "skillsPerCategory": {
+                "type": "number",
+                "title": "Compétences par catégorie"
+              }
             }
           }
         },
