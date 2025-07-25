@@ -173,76 +173,109 @@
     {
       "id": "profile",
       "title": "Profile Data",
-      "file": "data/profile.yml",
+      "file": "data/profile.json",
       "schema": {
         "title": "Profile",
         "type": "object",
         "properties": {
-          "profile": {
+          "personal": {
             "type": "object",
+            "title": "Informations personnelles",
             "properties": {
-              "personal": {
-                "type": "object",
-                "title": "Informations personnelles",
-                "properties": {
-                  "firstName": {
-                    "type": "string",
-                    "title": "Prénom"
-                  },
-                  "lastName": {
-                    "type": "string",
-                    "title": "Nom"
-                  },
-                  "fullName": {
-                    "type": "string",
-                    "title": "Nom complet"
-                  },
-                  "greeting": {
-                    "type": "string",
-                    "title": "Salutation"
-                  },
-                  "title": {
-                    "type": "string",
-                    "title": "Titre"
-                  },
-                  "subtitle": {
-                    "type": "string",
-                    "title": "Sous-titre"
-                  },
-                  "bio": {
-                    "type": "string",
-                    "title": "Biographie",
-                    "widget": "textarea"
-                  }
-                }
+              "firstName": {
+                "type": "string",
+                "title": "Prénom"
               },
-              "media": {
-                "type": "object",
-                "title": "Médias",
-                "properties": {
-                  "profileImage": {
-                    "type": "string",
-                    "title": "Image de profil"
-                  },
-                  "resumeFile": {
-                    "type": "string",
-                    "title": "Fichier CV"
-                  },
-                  "resumeFilename": {
-                    "type": "string",
-                    "title": "Nom du fichier CV"
-                  }
-                }
+              "lastName": {
+                "type": "string",
+                "title": "Nom"
               },
-              "contact": {
-                "type": "object",
-                "title": "Contact",
-                "properties": {
-                  "email": {
-                    "type": "string",
-                    "title": "Email"
-                  }
-                }
+              "fullName": {
+                "type": "string",
+                "title": "Nom complet"
+              },
+              "greeting": {
+                "type": "string",
+                "title": "Message d'accueil"
+              },
+              "title": {
+                "type": "string",
+                "title": "Titre professionnel"
+              },
+              "subtitle": {
+                "type": "string",
+                "title": "Sous-titre"
+              },
+              "bio": {
+                "type": "string",
+                "title": "Biographie",
+                "widget": "textarea"
+              }
+            }
+          },
+          "media": {
+            "type": "object",
+            "title": "Médias",
+            "properties": {
+              "profileImage": {
+                "type": "string",
+                "title": "Image de profil"
+              },
+              "resumeFile": {
+                "type": "string",
+                "title": "Fichier CV"
+              },
+              "resumeFilename": {
+                "type": "string",
+                "title": "Nom du fichier CV"
+              }
+            }
+          },
+          "contact": {
+            "type": "object",
+            "title": "Contact",
+            "properties": {
+              "email": {
+                "type": "string",
+                "title": "Email"
+              },
+              "phone": {
+                "type": "string",
+                "title": "Téléphone"
+              },
+              "linkedin": {
+                "type": "string",
+                "title": "LinkedIn"
+              },
+              "github": {
+                "type": "string",
+                "title": "GitHub"
+              },
+              "location": {
+                "type": "string",
+                "title": "Localisation"
+              },
+              "status": {
+                "type": "string",
+                "title": "Statut"
+              }
+            }
+          },
+          "details": {
+            "type": "object",
+            "title": "Détails",
+            "properties": {
+              "formation": {
+                "type": "string",
+                "title": "Formation"
+              },
+              "speciality": {
+                "type": "string",
+                "title": "Spécialité"
+              },
+              "experience": {
+                "type": "string",
+                "title": "Expérience"
               }
             }
           }
@@ -252,162 +285,193 @@
     {
       "id": "experience",
       "title": "Experience Data",
-      "file": "data/experience.yml",
+      "file": "data/experiences.json",
+      "labelField": "title",
       "schema": {
         "title": "Experience",
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Titre du poste"
+            },
+            "company": {
+              "type": "string",
+              "title": "Entreprise"
+            },
+            "logo": {
+              "type": "string",
+              "title": "Logo de l'entreprise"
+            },
+            "period": {
+              "type": "string",
+              "title": "Période"
+            },
+            "duration": {
+              "type": "string",
+              "title": "Durée"
+            },
+            "type": {
+              "type": "string",
+              "title": "Type de contrat"
+            },
+            "location": {
+              "type": "string",
+              "title": "Localisation"
+            },
+            "status": {
+              "type": "string",
+              "title": "Statut",
+              "enum": ["current", "completed"]
+            },
+            "description": {
+              "type": "string",
+              "title": "Description",
+              "widget": "textarea"
+            },
+            "projects": {
+              "type": "array",
+              "title": "Projets",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "title": "Nom du projet"
+                  },
+                  "description": {
+                    "type": "string",
+                    "title": "Description du projet"
+                  },
+                  "tasks": {
+                    "type": "array",
+                    "title": "Tâches",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "skills": {
+              "type": "array",
+              "title": "Compétences",
+              "items": {
+                "type": "string"
+              }
+            },
+            "technologies": {
+              "type": "array",
+              "title": "Technologies",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": ["title", "company", "period", "description"]
+        }
+    
+    },
+    {
+      "id": "skills",
+      "title": "Skills Data",
+      "file": "data/skills.json",
+      "schema": {
+        "title": "Skills",
         "type": "object",
         "properties": {
-          "experiences": {
+          "categories": {
             "type": "array",
-            "title": "Expériences",
+            "title": "Catégories de compétences",
             "items": {
               "type": "object",
               "properties": {
                 "title": {
                   "type": "string",
-                  "title": "Poste"
+                  "title": "Titre de la catégorie"
                 },
-                "company": {
+                "id": {
                   "type": "string",
-                  "title": "Entreprise"
+                  "title": "Identifiant"
                 },
-                "logo": {
-                  "type": "string",
-                  "title": "Logo"
-                },
-                "period": {
-                  "type": "string",
-                  "title": "Période"
-                },
-                "duration": {
-                  "type": "string",
-                  "title": "Durée"
-                },
-                "type": {
-                  "type": "string",
-                  "title": "Type de contrat"
-                },
-                "location": {
-                  "type": "string",
-                  "title": "Lieu"
-                },
-                "status": {
-                  "type": "string",
-                  "title": "Statut"
-                },
-                "description": {
-                  "type": "string",
-                  "title": "Description",
-                  "widget": "textarea"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    {
-      "id": "skills",
-      "title": "Skills Data",
-      "file": "data/skills.yml",
-      "schema": {
-        "title": "Skills",
-        "type": "object",
-        "properties": {
-          "skills": {
-            "type": "object",
-            "properties": {
-              "categories": {
-                "type": "array",
-                "title": "Catégories de compétences",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "type": "string",
-                      "title": "Titre de la catégorie"
-                    },
-                    "id": {
-                      "type": "string",
-                      "title": "ID"
-                    },
-                    "skills": {
-                      "type": "array",
-                      "title": "Compétences",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "name": {
-                            "type": "string",
-                            "title": "Nom"
-                          },
-                          "icon": {
-                            "type": "string",
-                            "title": "Icône"
-                          },
-                          "level": {
-                            "type": "string",
-                            "title": "Niveau"
-                          },
-                          "experience": {
-                            "type": "string",
-                            "title": "Expérience"
-                          }
-                        }
+                "skills": {
+                  "type": "array",
+                  "title": "Compétences",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "title": "Nom de la compétence"
+                      },
+                      "icon": {
+                        "type": "string",
+                        "title": "Icône"
+                      },
+                      "level": {
+                        "type": "string",
+                        "title": "Niveau"
+                      },
+                      "experience": {
+                        "type": "string",
+                        "title": "Expérience"
                       }
-                    }
+                    },
+                    "required": ["name", "icon", "level", "experience"]
                   }
                 }
-              }
+              },
+              "required": ["title", "id", "skills"]
             }
           }
-        }
+        },
+        "required": ["categories"]
       }
     },
     {
       "id": "technologies",
       "title": "Technologies Data",
-      "file": "data/technologies.yml",
+      "file": "data/technologies.json",
+      "labelField": "name",
       "schema": {
         "title": "Technologies",
         "type": "object",
         "properties": {
-          "technologies": {
-            "type": "array",
-            "title": "Technologies",
-            "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string",
-                  "title": "Nom de la technologie"
-                },
-                "icon": {
-                  "type": "string",
-                  "title": "Icône (emoji)"
-                },
-                "color": {
-                  "type": "string",
-                  "title": "Couleur (hex)"
-                },
-                "enabled": {
-                  "type": "boolean",
-                  "title": "Activé dans les filtres"
-                },
-                "order": {
-                  "type": "number",
-                  "title": "Ordre d'affichage"
-                }
-              },
-              "required": [
-                "name",
-                "icon",
-                "enabled",
-                "order"
-              ]
-            }
+          "name": {
+            "type": "string",
+            "title": "Nom de la technologie"
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icône (emoji)"
+          },
+          "color": {
+            "type": "string",
+            "title": "Couleur (hex)"
+          },
+          "enabled": {
+            "type": "boolean",
+            "title": "Activé dans les filtres"
+          },
+          "order": {
+            "type": "number",
+            "title": "Ordre d'affichage"
+          },
+          "experience": {
+            "type": "string",
+            "title": "Expérience"
+          },
+          "level": {
+            "type": "string",
+            "title": "Niveau"
           }
-        }
+        },
+        "required": [
+          "name",
+          "icon",
+          "enabled",
+          "order"
+        ]
       }
     },
     {
@@ -417,39 +481,253 @@
       "labelField": "name",
       "schema": {
         "title": "Testimonials",
-
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Nom complet"
+          },
+          "position": {
+            "type": "string",
+            "title": "Poste / Rang"
+          },
+          "company": {
+            "type": "string",
+            "title": "Entreprise / Organisation"
+          },
+          "avatar": {
+            "type": "string",
+            "title": "Avatar (chemin vers l'image)"
+          },
+          "text": {
+            "type": "string",
+            "title": "Message de recommandation",
+            "widget": "textarea"
+          }
+        },
+        "required": [
+          "name",
+          "position",
+          "company",
+          "text"
+        ]
+      }
+    },
+    {
+      "id": "education",
+      "title": "Education Data",
+      "file": "data/educations.json",
+      "labelField": "title",
+      "schema": {
+        "title": "Education",
           "type": "object",
           "properties": {
-                "name": {
+            "title": {
+              "type": "string",
+              "title": "Titre de la formation"
+            },
+            "institution": {
+              "type": "string",
+              "title": "Institution"
+            },
+            "period": {
+              "type": "string",
+              "title": "Période"
+            },
+            "status": {
+              "type": "string",
+              "title": "Statut"
+            },
+            "description": {
+              "type": "string",
+              "title": "Description",
+              "widget": "textarea"
+            },
+            "skills": {
+              "type": "array",
+              "title": "Compétences acquises",
+              "items": {
+                "type": "string"
+              }
+            },
+            "grade": {
+              "type": "string",
+              "title": "Note/Résultat"
+            },
+            "location": {
+              "type": "string",
+              "title": "Localisation"
+            },
+            "icon": {
+              "type": "string",
+              "title": "Icône"
+            },
+            "color": {
+              "type": "string",
+              "title": "Couleur (hex)"
+            }
+          },
+          "required": ["title", "institution", "period", "status", "description"]
+        }
+    },
+    {
+      "id": "config",
+      "title": "Site Configuration",
+      "file": "data/config.json",
+      "schema": {
+        "title": "Configuration",
+        "type": "object",
+        "properties": {
+          "site": {
+            "type": "object",
+            "title": "Configuration du site",
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Titre du site"
+              }
+            }
+          },
+          "navigation": {
+            "type": "array",
+            "title": "Navigation",
+            "items": {
+              "type": "object",
+              "properties": {
+                "anchor": {
                   "type": "string",
-                  "title": "Nom complet"
+                  "title": "Ancre"
                 },
-                "position": {
+                "label": {
                   "type": "string",
-                  "title": "Poste / Rang"
+                  "title": "Libellé"
                 },
-                "company": {
+                "icon": {
                   "type": "string",
-                  "title": "Entreprise / Organisation"
+                  "title": "Icône"
                 },
-                "avatar": {
-                  "type": "string",
-                  "title": "Avatar (chemin vers l'image)"
-                },
-                "text": {
-                  "type": "string",
-                  "title": "Message de recommandation",
-                  "widget": "textarea"
+                "active": {
+                  "type": "boolean",
+                  "title": "Actif"
                 }
               },
-              "required": [
-                "name",
-                "position",
-                "company",
-                "text"
-              ]
+              "required": ["anchor", "label", "icon"]
             }
           }
+        }
+      }
+    },
+    {
+      "id": "internships",
+      "title": "Internships Data",
+      "file": "data/internships.json",
+      "labelField": "title",
+      "schema": {
+        "title": "Internships",
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Titre du stage"
+            },
+            "company": {
+              "type": "string",
+              "title": "Entreprise"
+            },
+            "period": {
+              "type": "string",
+              "title": "Période"
+            },
+            "duration": {
+              "type": "string",
+              "title": "Durée"
+            },
+            "type": {
+              "type": "string",
+              "title": "Type de stage"
+            },
+            "location": {
+              "type": "string",
+              "title": "Localisation"
+            },
+            "status": {
+              "type": "string",
+              "title": "Statut",
+              "enum": ["seeking", "confirmed", "completed"]
+            },
+            "description": {
+              "type": "string",
+              "title": "Description",
+              "widget": "textarea"
+            },
+            "requirements": {
+              "type": "array",
+              "title": "Exigences",
+              "items": {
+                "type": "string"
+              }
+            },
+            "skills": {
+              "type": "array",
+              "title": "Compétences",
+              "items": {
+                "type": "string"
+              }
+            },
+            "technologies": {
+              "type": "array",
+              "title": "Technologies",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": ["title", "company", "period", "status", "description"]
+        }
+    },
+    {
+      "id": "certifications",
+      "title": "Certifications Data",
+      "file": "data/certifications.json",
+      "labelField": "title",
+      "schema": {
+        "title": "Certifications",
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Titre de la certification"
+            },
+            "issuer": {
+              "type": "string",
+              "title": "Organisme émetteur"
+            },
+            "date": {
+              "type": "string",
+              "title": "Date"
+            },
+            "status": {
+              "type": "string",
+              "title": "Statut",
+              "enum": ["En cours", "Obtenu", "Expiré"]
+            },
+            "description": {
+              "type": "string",
+              "title": "Description",
+              "widget": "textarea"
+            },
+            "icon": {
+              "type": "string",
+              "title": "Icône"
+            },
+            "color": {
+              "type": "string",
+              "title": "Couleur (hex)"
+            }
+          },
+          "required": ["title", "issuer", "date", "status", "description"]
+        }
+      }
     
   ],
   "frontMatter.git.enabled": true,

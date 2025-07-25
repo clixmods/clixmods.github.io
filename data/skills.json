@@ -1,0 +1,214 @@
+{
+  "categories": [
+      {
+        "title": "Langages de Programmation",
+        "id": "languages",
+        "skills": [
+          {
+            "name": "C#",
+            "icon": "🔷",
+            "level": "4 ans d'expérience",
+            "experience": "Expert"
+          },
+          {
+            "name": "LUA",
+            "icon": "🌙",
+            "level": "3 ans d'expérience",
+            "experience": "Advanced"
+          },
+          {
+            "name": "Java",
+            "icon": "☕",
+            "level": "2 ans d'expérience",
+            "experience": "Intermediate"
+          },
+          {
+            "name": "PHP",
+            "icon": "🐘",
+            "level": "2 ans d'expérience",
+            "experience": "Intermediate"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "📜",
+            "level": "2 ans d'expérience",
+            "experience": "Intermediate"
+          },
+          {
+            "name": "SQL",
+            "icon": "🗄️",
+            "level": "2 ans d'expérience",
+            "experience": "Intermediate"
+          },
+          {
+            "name": "HLSL",
+            "icon": "✨",
+            "level": "6 mois d'expérience",
+            "experience": "Beginner"
+          }
+        ]
+      },
+      {
+        "title": "Moteurs de Jeu & Frameworks",
+        "id": "technologies",
+        "skills": [
+          {
+            "name": "Unity",
+            "icon": "🎮",
+            "level": "Moteur principal",
+            "experience": "Expert"
+          },
+          {
+            "name": "Blazor",
+            "icon": "🖥️",
+            "level": "Framework Web",
+            "experience": "Advanced"
+          },
+          {
+            "name": ".NET",
+            "icon": "💜",
+            "level": "Framework",
+            "experience": "Advanced"
+          },
+          {
+            "name": "FastEndpoint",
+            "icon": "⚡",
+            "level": "API Framework",
+            "experience": "Advanced"
+          },
+          {
+            "name": "Unreal Engine",
+            "icon": "🎯",
+            "level": "13 projets étudiants",
+            "experience": "Intermediate"
+          },
+          {
+            "name": "Call of Duty Modding",
+            "icon": "🔫",
+            "level": "800k téléchargements",
+            "experience": "Expert"
+          }
+        ]
+      },
+      {
+        "title": "Spécialisations Game Dev",
+        "id": "gamedev",
+        "skills": [
+          {
+            "name": "Game Design",
+            "icon": "🎲",
+            "level": "Conception mécaniques",
+            "experience": "Expert"
+          },
+          {
+            "name": "Level Design",
+            "icon": "🗺️",
+            "level": "Outils & conception",
+            "experience": "Advanced"
+          },
+          {
+            "name": "Modding",
+            "icon": "🔧",
+            "level": "Steam Workshop",
+            "experience": "Expert"
+          },
+          {
+            "name": "Portage Console",
+            "icon": "🎮",
+            "level": "Nintendo Switch",
+            "experience": "Advanced"
+          },
+          {
+            "name": "Développement Outils",
+            "icon": "⚙️",
+            "level": "Plugins Unity",
+            "experience": "Advanced"
+          },
+          {
+            "name": "Shaders",
+            "icon": "✨",
+            "level": "Éclairage volumétrique",
+            "experience": "Intermediate"
+          }
+        ]
+      },
+      {
+        "title": "Outils de Développement",
+        "id": "tools",
+        "skills": [
+          {
+            "name": "Git",
+            "icon": "📚",
+            "level": "Versionnage",
+            "experience": "Advanced"
+          },
+          {
+            "name": "Visual Studio",
+            "icon": "🔧",
+            "level": "IDE Principal",
+            "experience": "Expert"
+          },
+          {
+            "name": "Unity Editor",
+            "icon": "🎮",
+            "level": "Plugins & outils",
+            "experience": "Expert"
+          },
+          {
+            "name": "Oracle",
+            "icon": "🗄️",
+            "level": "PL/SQL",
+            "experience": "Intermediate"
+          }
+        ]
+      },
+      {
+        "title": "Management & Soft Skills",
+        "id": "management",
+        "skills": [
+          {
+            "name": "Gestion de Projet",
+            "icon": "📋",
+            "level": "Méthodes agiles",
+            "experience": "Advanced"
+          },
+          {
+            "name": "Leadership",
+            "icon": "👑",
+            "level": "Direction d'équipe",
+            "experience": "Advanced"
+          },
+          {
+            "name": "Management Communauté",
+            "icon": "👥",
+            "level": "Administrateur modding",
+            "experience": "Expert"
+          },
+          {
+            "name": "Communication",
+            "icon": "💬",
+            "level": "Présentation",
+            "experience": "Expert"
+          },
+          {
+            "name": "Résolution Problèmes",
+            "icon": "🔍",
+            "level": "Débogage",
+            "experience": "Expert"
+          },
+          {
+            "name": "Vision/Visualisation",
+            "icon": "👁️",
+            "level": "Conception",
+            "experience": "Advanced"
+          }
+        ]
+      }
+    ],
+  "display": {
+    "showLevels": true,
+    "showIcons": true,
+    "categoriesPerRow": 2,
+    "skillsPerCategory": 6
+  }
+}

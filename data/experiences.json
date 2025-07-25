@@ -1,0 +1,98 @@
+ [
+    {
+      "title": "Développeur C# / Unity",
+      "company": "Studio La Moutarde",
+      "logo": "/images/companies/la-moutarde.jpg",
+      "period": "2023 - 2025",
+      "duration": "2 ans",
+      "type": "Contrat en alternance",
+      "location": "Montpellier, Occitanie, France",
+      "status": "current",
+      "description": "Développement C# en alternance avec travail sur la fin de production d'un jeu vidéo et développement d'outils",
+      "projects": [
+        {
+          "name": "Terra Memoria",
+          "description": "Fin de production d'un jeu vidéo sur moteur Unity",
+          "tasks": [
+            "Développement Unity",
+            "Portage console (Nintendo Switch)",
+            "Maintenance post-release",
+            "Développement outils"
+          ]
+        },
+        {
+          "name": "Application Web",
+          "description": "Développement d'une application Web avec Blazor",
+          "tasks": [
+            "Framework Blazor (Client side)",
+            "Développement API sous FastEndpoint",
+            "Architecture modulaire",
+            "Intégration temps réel"
+          ]
+        }
+      ],
+      "skills": ["C#", "Unity", "Blazor", "FastEndpoint", ".NET", "Portage console", "Développement outils"],
+      "technologies": ["C#", "Unity", "Blazor", "FastEndpoint", ".NET"]
+    },
+    {
+      "title": "Développement autodidacte",
+      "company": "Projets personnels",
+      "logo": "/images/companies/personal.jpg",
+      "period": "2017 - 2023",
+      "duration": "6 ans",
+      "type": "Autodidacte",
+      "location": "Montpellier, France",
+      "status": "completed",
+      "description": "Apprentissage autodidacte du développement de jeux vidéo et création de contenus additionnels",
+      "projects": [
+        {
+          "name": "Modding Call of Duty: Black Ops 3",
+          "description": "Création de contenus pour Steam Workshop - 800,000 téléchargements cumulés",
+          "tasks": [
+            "Développement de mods et cartes personnalisées",
+            "Administration de communauté modding francophone et anglophone",
+            "Management communautaire et support technique",
+            "Participation à plus de 50 contenus communautaires",
+            "Bêta testing et retours collaboratifs"
+          ]
+        },
+        {
+          "name": "Serveur privé Dofus",
+          "description": "Exploration des bases de données et assets",
+          "tasks": [
+            "Création d'un serveur privé local",
+            "Exploration des bases de données",
+            "Manipulation d'assets de jeu"
+          ]
+        }
+      ],
+      "skills": ["Level Design", "Game Design", "Modding", "Community Management", "LUA", "Administration", "800k téléchargements"],
+      "technologies": ["LUA", "Call of Duty Modding Tools", "Radiant Black", "Level Editor"]
+    },
+    {
+      "title": "Projet Aegis",
+      "company": "Projet indépendant",
+      "logo": "/images/companies/aegis.jpg",
+      "period": "2025 - ...",
+      "duration": "En cours",
+      "type": "Projet professionnel",
+      "location": "Montpellier, France",
+      "status": "planning",
+      "description": "Création d'un jeu vidéo indépendant à but professionnel et fondation future d'entreprise",
+      "projects": [
+        {
+          "name": "Développement de jeu indépendant",
+          "description": "Création complète d'un jeu vidéo commercial",
+          "tasks": [
+            "Game Design et conception",
+            "Développement complet sur Unity",
+            "Gestion de projet indépendant",
+            "Préparation création d'entreprise"
+          ]
+        }
+      ],
+      "skills": ["Game Design", "Unity", "C#", "Entrepreneuriat", "Gestion projet", "Vision produit"],
+      "technologies": ["Unity", "C#", "Game Design Tools"]
+    }
+  ]
+

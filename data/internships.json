@@ -1,0 +1,21 @@
+ [
+    {
+      "title": "Recherche de stage de fin d'études",
+      "company": "À définir",
+      "period": "2025",
+      "duration": "3-6 mois",
+      "type": "Stage de fin d'études",
+      "location": "Montpellier ou remote",
+      "status": "seeking",
+      "description": "Recherche de stage de fin d'études BUT 3 en développement de jeux vidéo ou applications web.",
+      "requirements": [
+        "Développement Unity/C#",
+        "Développement d'applications web modernes",
+        "Travail en équipe agile",
+        "Technologies : C#, Unity, Blazor, .NET",
+        "Possible remote ou hybride"
+      ],
+      "skills": ["C#", "Unity", "Blazor", ".NET", "FastEndpoint", "Git", "Méthodes agiles"],
+      "technologies": ["C#", "Unity", "Blazor", ".NET", "FastEndpoint"]
+    }
+  ]
