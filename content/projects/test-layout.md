@@ -33,6 +33,74 @@ testimonials_size = "size-xl"
 youtube_size = "size-large"
 youtube_single_size = "size-medium"
 
+# Nouveau widget Clients
+[[clients]]
+name = "TechCorp Solutions"
+logo = "/images/logos/techcorp.png"
+description = "Développement d'applications mobiles"
+role = "Développeur principal"
+
+[[clients]]
+name = "Digital Innovations"
+logo = "/images/logos/digital.png"
+description = "Solutions web sur mesure"
+role = "Consultant technique"
+
+[[clients]]
+name = "StartUp Creative"
+description = "Agence de création numérique"
+role = "Lead Developer"
+
+[[clients]]
+name = "Enterprise Global"
+logo = "/images/logos/enterprise.png"
+description = "Solutions d'entreprise"
+role = "Architecte logiciel"
+
+clients_size = "size-large"
+
+# Nouveau widget Note
+[grade]
+value = "17.5"
+scale = "20"
+subject = "Développement d'Applications Mobiles"
+professor = "Dr. Martin Dupont"
+date = "Juin 2024"
+comment = "Excellent travail sur l'architecture et l'interface utilisateur. Très bonne maîtrise des technologies modernes."
+
+grade_size = "size-medium"
+
+# Nouveau widget Téléchargements
+[downloads]
+total = 15420
+last_updated = "15 décembre 2024"
+
+[[downloads.platforms]]
+name = "Windows"
+count = 8500
+
+[[downloads.platforms]]
+name = "macOS"
+count = 4200
+
+[[downloads.platforms]]
+name = "Linux"
+count = 2720
+
+downloads_size = "size-medium"
+
+# Nouveau widget Classement
+[ranking]
+position = 3
+suffix = "ème"
+total = 127
+event = "Concours National de Développement"
+category = "Applications Mobiles"
+date = "Novembre 2024"
+achievement = "Prix de l'Innovation Technique"
+
+ranking_size = "size-small"
+
 [[contributors]]
 name = "John Doe"
 role = "Lead Designer"
@@ -182,7 +250,6 @@ name = "David Kim"
 role = "Project Manager"
 rating = 4
 
-# Vidéos YouTube de démonstration
 [[youtube_videos]]
 video_id = "hb-kF-VZvnE"
 title = "Présentation du projet Test Layout"
@@ -207,12 +274,12 @@ duration = "5:18"
 views = "2.1K vues"
 date = "il y a 3 jours"
 
-# Vidéo YouTube unique
 [youtube_single]
 video_id = "hb-kF-VZvnE"
-title = "Démonstration en direct du système"
-duration = "4:32"
-
+title = "Démonstration complète du système de layout"
+description = "Présentation détaillée de tous les widgets et leur utilisation dans le portfolio"
+duration = "8:45"
+date = "15 décembre 2024"
 +++
 
 # Test Layout System
