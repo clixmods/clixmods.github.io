@@ -152,15 +152,17 @@ fieldGroup = "galleries_group"
 [[galleries]]
 title = "Images officielles de sortie"
 description = "Captures d'écran officielles pour la promotion"
-size = "size-small"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-zombies-preview.png"
+  caption = "Map preview"
+  fieldGroup = "gallery_group"
 
   [[galleries.images]]
   url = "/images/projects/nuketown/nuketown-steam-logo.jpg"
   caption = "Image de couverture principale"
-
-  [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-official-2.jpg"
-  caption = "Gameplay multijoueur"
 
 [[youtube_galleries]]
 title = "Vidéos de gameplay"

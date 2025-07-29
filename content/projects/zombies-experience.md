@@ -11,6 +11,21 @@ sector = "mods-tools"
 featured = true
 fmContentType = "project-content-type"
 image = "/images/projects/zombies-experience/téléchargement.jpg"
+logo = "/images/projects/zombies-experience/ze-logo.png"
+
+[[actions]]
+type = "steam"
+label = "Voir Complete Edition"
+url = "https://steamcommunity.com/sharedfiles/filedetails/?id=2578476006"
+icon = "steam"
+primary = true
+
+[[actions]]
+type = "steam"
+label = "Voir Lite Edition"
+url = "https://steamcommunity.com/sharedfiles/filedetails/?id=2383464164"
+icon = "steam"
+primary = true
 
 [[notable_facts]]
 type = "downloads"
@@ -25,7 +40,6 @@ value = "<span class='highlight'>120ème place</span>"
 label = "Classement Steam Workshop Black Ops 3 sur plus de 6 000 contenues"
 testimonials_size = "size-medium"
 
-
 [[notable_facts]]
 type = "engine-mod"
 icon = "🛠️"
@@ -38,6 +52,192 @@ icon = "✨"
 value = "Inspiration pour la communauté modding"
 label = "Ce mod a inspiré d'autres mods qui ont eu encore plus de succès."
 
+[[contributors]]
+name = "Clément GARCIA"
+role = "Project Leader / Scripting / Weapons port"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Alain"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "jarik"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "robit"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "skyelord"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "alexisloic21"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "DTZxPorter"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Redspace200"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "HarryBo21"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "DidUKnowIPwn"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "LilRobot"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Symbo"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Scobalula"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Thomascat"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Connor"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "eMoX_MaNgA"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "fusorf"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Sayen"
+role = "Contributor"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Doggydolls"
+role = "Verified Tester"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Pinny"
+role = "Verified Tester"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Afan"
+role = "Verified Tester"
+fieldGroup = "contributors_group"
+
+[[youtube_galleries]]
+title = "Gameplay"
+size = "size-medium"
+fieldGroup = "youtube_galleries_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "GlAAWyMjIRc"
+  title = "Revisit Bo3 Facility Easter Egg 8 Players!"
+  fieldGroup = "youtube_videos_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "qaqE_0rR0hU"
+  title = """
+\r\r\r\r\r
+8 Players on Nacht Der Untoten is a NIGHTMARE!"""
+  fieldGroup = "youtube_videos_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "DF4ETMkDcyQ"
+  title = "Call of Duty Black Ops 3 grischun with 8 player mod"
+  fieldGroup = "youtube_videos_group"
+
+[[testimonials]]
+quote = "This is the greatest mod in the history of Call of Duty!"
+name = "Kmart"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Definitely the way to play Call of Duty Zombies. Absolutely fantastic. Thank you for all of the hard-work and dedication."
+name = "JusticeIroquois"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "This mod is a masterpiece – good job :)"
+name = "skibidimiren"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Great great mod… loving the mod otherwise, thank you so much <3"
+name = "FODEN313"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Great mod"
+name = "Charlie Love"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "This is a good mod, it’s fun to use many different weapons on Black Ops 3 … incredibly fun and has an incredible amount of potential."
+name = "Goop"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Wow, this mod is exactly what BO3 needed!"
+name = "blustudiog16"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "This is an amazing mod man, awesome stuff!"
+name = "John Help"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Fantastic mod"
+name = "Blek"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Loving this mod man. You just revived Black Ops 3 for me."
+name = "Kenny"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Great job so far!"
+name = "AffluentMonkey"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "This mod looks amazing – revolutionary."
+name = "JackScavs"
+fieldGroup = "testimonials_group"
 +++
 
 # Zombies Experience

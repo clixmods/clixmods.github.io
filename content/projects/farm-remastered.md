@@ -12,6 +12,8 @@ featured = false
 fmContentType = "project-content-type"
 image = "/images/projects/farm/farm-background.jpg"
 gallery = [ ]
+status = "Terminé"
+youtube_galleries = [ ]
 
 [[actions]]
 type = "steam"
@@ -60,14 +62,125 @@ testimonials_size = "size-medium"
 [[contributors]]
 name = "Clément 'Clix' Garcia"
 role = "Créateur & Level Designer"
-avatar = "/images/people/clix-avatar.jpg"
+fieldGroup = "contributors_group"
+avatar = "/images/people/clement-garcia.jpg"
 
 [[contributors]]
 name = "Comunauté BO3"
 role = "Feedback et tests"
 
+[[contributors]]
+name = "Clix"
+role = "Mapping + Tranzit's Zombie"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "QuentinFTL"
+role = "Scripts + Grief Mod"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Symbo"
+role = "Scripts, Assets Black Ops 2"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "HarryBO21"
+role = "WunderFizz"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "eMoX MaNgA"
+role = "Chronicles Weapons + Camo Tranzit + Assets Black Ops 2"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "The Bland Death"
+role = "M1911 anim"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "ProRevenge"
+role = "RayGun Mark2"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "alexisloic21"
+role = "Assets Black Ops 2"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Flowing"
+role = "Assets Black Ops 2"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Zeroy"
+role = "Assets WW2"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "BlueShark"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "elijah"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Nosif28"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Skyler"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "shark-ut-ail"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "ragnar"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Gekido"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "EnoR"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "DFuS1oN"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "BGhost314"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Pacito2"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Newman"
+role = "Additional testing help"
+fieldGroup = "contributors_group"
+
 [development_time]
-total = "3 mois"
+total = "1 mois"
 start_date = "Mars 2018"
 end_date = "Juin 2018"
 
@@ -149,6 +262,20 @@ fieldGroup = "galleries_group"
   url = "/images/projects/farm/farm-background.jpg"
   caption = ""
   fieldGroup = "gallery_group"
+
+[[youtube_singles]]
+size = "size-medium"
+video_id = "UkmfpbKTbXg"
+title = "Call of Duty: Black Ops 3 – FARM – Original vs. Remastered"
+video_title = "Call of Duty: Black Ops 3 – FARM – Original vs. Remastered"
+fieldGroup = "youtube_singles_group"
+
+[[youtube_singles]]
+video_id = "xyKyy3FTlEM"
+title = "BLACK OPS3 FARM REMASTERED GAMEPLAY"
+video_title = "BLACK OPS3 FARM REMASTERED GAMEPLAY"
+size = "size-medium"
+fieldGroup = "youtube_singles_group"
 +++
 
 # FARM - Remasterisation
@@ -260,6 +387,11 @@ FARM est une remasterisation complète d'une carte classique pour Call of Duty: 
 - **Radiant** : Éditeur de niveaux spécialisé
 - **Asset Manager** : Gestion des ressources du jeu
 - **Lighting Tools** : Outils d'éclairage avancés
+- **Kronos** : DTZxPorter and Azsry
+- **Maya**
+- **Hydrax** : Uncle Scobalula
+- **Shader map**
+- **Wraith** : DTZxPorter
 
 ### Langages de programmation
 - **Scripting** pour les événements et interactions
@@ -323,3 +455,9 @@ Ce projet de remasterisation m'a permis d'acquérir :
 FARM remasterisé a démontré ma capacité à moderniser et améliorer des environnements existants tout en respectant leur essence originale. Ce projet a renforcé ma compréhension des techniques d'éclairage avancées et de construction d'environnements immersifs.
 
 La carte a été bien accueillie par la communauté pour sa qualité visuelle et son attention aux détails, établissant ma réputation pour les environnements soignés et atmosphériques.
+
+## Remerciements
+
+Un grand merci à la communauté et à tous ceux qui ont contribué de près ou de loin à la réalisation de ce projet. Vos retours, tests et encouragements ont été précieux tout au long de ce processus.
+
+Un remerciement spécial à Treyarch pour avoir créé l'original, et à tous les moddeurs et artistes dont les outils et assets ont été essentiels pour donner vie à cette remasterisation.
