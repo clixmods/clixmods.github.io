@@ -149,6 +149,17 @@ end_date = "Janvier 2024"
   name = "Tests & Optimisation"
   duration = "1 mois"
 
+
+[[awards]]
+title = "Best Design System"
+organization = "Design Awards 2024"
+date = "2024"
+
+[[awards]]
+title = "Innovation Prize"
+organization = "Web Excellence"
+date = "2024"
+
 [[gallery]]
 url = "/images/projects/nuketown/nuketown-1.jpg"
 caption = "Interface principale du système"
@@ -201,15 +212,6 @@ value = "Modern browsers (ES6+)"
 label = "Performance"
 value = "95+ Lighthouse score"
 
-[[awards]]
-title = "Best Design System"
-organization = "Design Awards 2024"
-date = "2024"
-
-[[awards]]
-title = "Innovation Prize"
-organization = "Web Excellence"
-date = "2024"
 
 [[testimonials]]
 quote = "Ce système de layout est révolutionnaire ! La flexibilité est incroyable et l'implémentation est parfaite. Cela va changer ma façon de concevoir des interfaces."

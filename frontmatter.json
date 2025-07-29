@@ -85,11 +85,6 @@
           "type": "image"
         },
         {
-          "title": "Diaporama d'images",
-          "name": "diaporama",
-          "type": "list"
-        },
-        {
           "title": "Étiquettes",
           "name": "tags",
           "type": "tags"
@@ -155,7 +150,7 @@
           "type": "string"
         },
         {
-          "title": "contributors",
+          "title": "Contributeurs",
           "name": "contributors",
           "type": "block",
           "fieldGroup": [
@@ -163,7 +158,7 @@
           ]
         },
         {
-          "title": "development_time",
+          "title": "Temps de développement",
           "name": "development_time",
           "type": "fields",
           "fields": [
@@ -193,7 +188,7 @@
           ]
         },
         {
-          "title": "galleries",
+          "title": "Galleries d'images",
           "name": "galleries",
           "type": "block",
           "fieldGroup": [
@@ -201,7 +196,7 @@
           ]
         },
         {
-          "title": "youtube_galleries",
+          "title": "Playlists Youtube",
           "name": "youtube_galleries",
           "type": "block",
           "fieldGroup": [
@@ -209,7 +204,7 @@
           ]
         },
         {
-          "title": "youtube_singles",
+          "title": "Vidéo Youtube",
           "name": "youtube_singles",
           "type": "block",
           "fieldGroup": [
@@ -217,7 +212,7 @@
           ]
         },
         {
-          "title": "technical_specs",
+          "title": "Spécifications techniques",
           "name": "technical_specs",
           "type": "block",
           "fieldGroup": [
@@ -225,7 +220,7 @@
           ]
         },
         {
-          "title": "awards",
+          "title": "Récompenses",
           "name": "awards",
           "type": "block",
           "fieldGroup": [
@@ -233,19 +228,11 @@
           ]
         },
         {
-          "title": "testimonials",
+          "title": "Témoignages",
           "name": "testimonials",
           "type": "block",
           "fieldGroup": [
             "testimonials_group"
-          ]
-        },
-        {
-          "title": "gallery",
-          "name": "gallery",
-          "type": "block",
-          "fieldGroup": [
-            "gallery_group"
           ]
         }
       ]
@@ -884,27 +871,27 @@
       "labelField": "label",
       "fields": [
         {
-          "title": "type",
+          "title": "Type de bouton",
           "name": "type",
           "type": "string"
         },
         {
-          "title": "label",
+          "title": "Titre du bouton",
           "name": "label",
           "type": "string"
         },
         {
-          "title": "url",
+          "title": "Lien cliquable",
           "name": "url",
           "type": "string"
         },
         {
-          "title": "icon",
+          "title": "Icône",
           "name": "icon",
           "type": "string"
         },
         {
-          "title": "primary",
+          "title": "Bouton principal",
           "name": "primary",
           "type": "boolean"
         }
@@ -912,24 +899,25 @@
     },
     {
       "id": "notable_facts_group",
+      "labelField": "label",
       "fields": [
         {
-          "title": "type",
+          "title": "Type de fait marquant",
           "name": "type",
           "type": "string"
         },
         {
-          "title": "icon",
+          "title": "Icône",
           "name": "icon",
           "type": "string"
         },
         {
-          "title": "value",
+          "title": "Titre du fait marquant",
           "name": "value",
           "type": "string"
         },
         {
-          "title": "label",
+          "title": "Sous-titre du fait marquant",
           "name": "label",
           "type": "string"
         }
@@ -973,37 +961,21 @@
       ]
     },
     {
-      "id": "gallery_group",
-      "labelField": "caption",
-      "fields": [
-        {
-          "title": "url",
-          "name": "url",
-          "type": "string"
-        },
-        {
-          "title": "caption",
-          "name": "caption",
-          "type": "string"
-        }
-      ]
-    },
-    {
       "id": "galleries_group",
       "labelField": "title",
       "fields": [
         {
-          "title": "title",
+          "title": "Nom de la galerie",
           "name": "title",
           "type": "string"
         },
         {
-          "title": "description",
+          "title": "Description de la galerie",
           "name": "description",
           "type": "string"
         },
         {
-          "title": "size",
+          "title": "Taille du widget",
           "name": "size",
           "type": "choice",
           "choices": [
@@ -1092,19 +1064,9 @@
     {
       "id": "youtube_singles_group",
       "labelField": "video_title",
-      "fields": [
+      "fields": [        
         {
-          "title": "title",
-          "name": "title",
-          "type": "string"
-        },
-        {
-          "title": "description",
-          "name": "description",
-          "type": "string"
-        },
-        {
-          "title": "size",
+          "title": "Taille du widget",
           "name": "size",
           "type": "choice",
           "choices": [
@@ -1115,27 +1077,27 @@
           ]
         },
         {
-          "title": "video_id",
+          "title": "Id de la vidéo",
           "name": "video_id",
           "type": "string"
         },
         {
-          "title": "video_title",
+          "title": "Titre de la vidéo",
           "name": "video_title",
           "type": "string"
         },
         {
-          "title": "video_description",
+          "title": "Description de la vidéo",
           "name": "video_description",
           "type": "string"
         },
         {
-          "title": "duration",
+          "title": "Durée",
           "name": "duration",
           "type": "string"
         },
         {
-          "title": "date",
+          "title": "Date de publication",
           "name": "date",
           "type": "string"
         }
@@ -1211,43 +1173,38 @@
       "labelField": "name",
       "fields": [
         {
-          "title": "quote",
+          "title": "Témoignage",
           "name": "quote",
           "type": "string"
         },
         {
-          "title": "name",
+          "title": "Témoigneur",
           "name": "name",
           "type": "string"
         },
         {
-          "title": "role",
+          "title": "Rôle",
           "name": "role",
           "type": "string"
         },
         {
           "title": "avatar",
           "name": "avatar",
-          "type": "string"
-        },
-        {
-          "title": "rating",
-          "name": "rating",
-          "type": "number"
+          "type": "image"
         }
       ]
     },
     {
       "id": "gallery_group",
-      "labelField": "title",
+      "labelField": "caption",
       "fields": [
         {
-          "title": "url",
+          "title": "URL de l'image",
           "name": "url",
           "type": "image"
         },
         {
-          "title": "caption",
+          "title": "Légende",
           "name": "caption",
           "type": "string"
         }

@@ -11,7 +11,6 @@ sector = "mods-tools"
 featured = false
 fmContentType = "project-content-type"
 image = "/images/projects/farm/farm-background.jpg"
-gallery = [ ]
 status = "Terminé"
 youtube_galleries = [ ]
 
@@ -188,55 +187,55 @@ end_date = "Juin 2018"
 quote = "Great faithful recreation, fun with friends for sure! My video if anyone's interested https://youtu.be/V95-5AtGX7o"
 name = "Tactical Loser"
 role = "Joueur & créateur de contenu"
-rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Awesome remaster! Feels like an official treyarch map :)"
 name = "gigity_74"
 role = "Joueur Steam"
-rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "This is one of my favorite map remakes of all time, feels basically like an official Treyarch remake, I hope you plan on remaking more maps with this quality!"
 name = "taco bell crocs"
 role = "Joueur passionné"
-rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "I truly hope you make more maps like this. Quality is hard to find in the workshop and is so well done, excited for what you make next!"
 name = "CharCharD™"
 role = "Joueur & critique"
-rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "i love this, it looks amazing, and the gameplay is amazing, just as high quality as zombie chronicals, hell i forgot i was playing a custom map, amazing work dude"
 name = "Cherry Coke™"
 role = "Joueur Steam"
-rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Phenomenal remake dude, you should be very proud of this! :D"
 name = "Ping"
 role = "Joueur Steam"
-rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "A pretty good remake of the orginal map. i didnt find any bugs or issues. zombie spawning is okay aswell unlike other maps. 10/10"
 name = "cybergod"
 role = "Joueur expérimenté"
-rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "This has got to be the greatest custom remastered map i've ever played in my opinion."
 name = "zombiedude9976"
 role = "Joueur passionné"
-rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Instantly one of my favorite maps in a while, congrats on the release!"
 name = "Astraxis"
 role = "Joueur & reviewer"
-rating = 5
+fieldGroup = "testimonials_group"
 
 [[galleries]]
 title = "Gallerie de projet"
@@ -245,7 +244,6 @@ fieldGroup = "galleries_group"
 
   [[galleries.images]]
   url = "/images/projects/farm/farm-2.jpg"
-  caption = ""
   fieldGroup = "gallery_group"
 
   [[galleries.images]]

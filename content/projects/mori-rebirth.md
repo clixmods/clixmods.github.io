@@ -1,9 +1,12 @@
 +++
-date = "2020-03-15T10:00:00+02:00"
+date = "2022-03-18T10:00:00+02:00"
 draft = false
 title = "Mori Rebirth"
 subtitle = "Projet de modding avancé"
-description = "Modification complète avec systèmes de gameplay étendus et fonctionnalités innovantes"
+description = """
+Following the events of "Alpha Omega" and "Mori", trapped alone and afraid in her bunker, Dr Hale, the only survivor of the Japanese Broken Arrow facility, is awaiting rescue from our heroes.
+
+Experience the rebirth of a custom zombies classic with an expanded map, new quests, weapons, challenges and more."""
 tags = [ "Modding", "Game Systems", "C++", "Innovation" ]
 technologies = [ "C++", "Game Modding", "Level Design", "Scripting" ]
 category = "projects"
@@ -12,9 +15,7 @@ featured = true
 fmContentType = "project-content-type"
 image = "/images/projects/mori-rebirth/mori-background.jpg"
 logo = "/images/projects/mori-rebirth/mori-logo.png"
-diaporama = [ ]
 status = "Terminé"
-gallery = [ ]
 
 [[actions]]
 type = "steam"
@@ -43,7 +44,6 @@ icon = "📥"
 value = "<span class='highlight'>40ème place</span>"
 label = "Classement Steam Workshop Black Ops 3 sur plus de 6 000 contenues"
 testimonials_size = "size-medium"
-
 
 [[testimonials]]
 quote = "very well made, super beautiful, everything works seamlessly. very talented crew behind this. i saw a lot of people complaining about the ee but i didnt think it was that bad.. at first lol. about halfway through it became so tedious i just gave up and quit. if i was playing in a group maybe it wouldn't have been so bad. its not even that each step is that bad, its just that it goes on foreverrrr. like damn. so many steps. anyway overall epic map just a bit too involved with the ee. overall excellent map 9.9/10"
