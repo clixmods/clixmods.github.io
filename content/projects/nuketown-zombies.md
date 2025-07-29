@@ -26,11 +26,7 @@ featured = true
 status = "Terminé"
 fmContentType = "project-content-type"
 image = "/images/projects/nuketown/nuketown-zombies.jpg"
-diaporama = [
-  "/images/projects/nuketown/nuketown-zombies-1.jpg",
-  "/images/projects/nuketown/nuketown-zombies-2.jpg",
-  "/images/projects/nuketown/nuketown-zombies-3.jpg"
-]
+diaporama = [ ]
 
 [[actions]]
 type = "steam"
@@ -53,10 +49,11 @@ value = "<span class='highlight'>800K+</span>"
 label = "Téléchargements Steam Workshop"
 
 [[notable_facts]]
-type = "duration"
-icon = "⏱️"
-value = "<span class='highlight'>6</span> mois"
-label = "Développement intensif"
+type = "ladder"
+icon = "📥"
+value = "<span class='highlight'>10ème place</span>"
+label = "Classement Steam Workshop Black Ops 3 sur plus de 6 000 contenues"
+testimonials_size = "size-medium"
 
 [[notable_facts]]
 type = "feature"
@@ -121,49 +118,44 @@ size = "size-large"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-zombies-1.jpg"
-  thumbnail = "/images/projects/nuketown/thumb-1.jpg"
+  url = "/images/projects/nuketown/nuketown-1.jpg"
   caption = "Vue d'ensemble de la carte remasterisée"
 
   [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-zombies-2.jpg"
-  thumbnail = "/images/projects/nuketown/thumb-2.jpg"
-  caption = "Système de zombie spawning amélioré"
+  url = "/images/projects/nuketown/nuketown-2.jpg"
+  caption = "Vue d'ensemble de la carte remasterisée"
 
   [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-zombies-3.jpg"
-  thumbnail = "/images/projects/nuketown/thumb-3.jpg"
-  caption = "Interface utilisateur modernisée"
+  url = "/images/projects/nuketown/nuketown-3.jpg"
+  caption = "Vue d'ensemble de la carte remasterisée"
 
   [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-gameplay.jpg"
-  caption = "Action multijoueur en cours"
+  url = "/images/projects/nuketown/nuketown-4.jpg"
+  caption = "Vue d'ensemble de la carte remasterisée"
 
   [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-effects.jpg"
-  caption = "Effets spéciaux et particules"
+  url = "/images/projects/nuketown/nuketown-5.jpg"
+  caption = "Vue d'ensemble de la carte remasterisée"
 
   [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-weapons.jpg"
-  caption = "Système d'armes personnalisées"
+  url = "/images/projects/nuketown/nuketown-6.jpg"
+  caption = "Vue d'ensemble de la carte remasterisée"
 
   [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-dev-1.jpg"
-  thumbnail = "/images/projects/nuketown/thumb-dev-1.jpg"
-  caption = "Interface de développement"
+  url = "/images/projects/nuketown/nuketown-7.jpg"
+  caption = "Vue d'ensemble de la carte remasterisée"
 
   [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-dev-2.jpg"
-  thumbnail = "/images/projects/nuketown/thumb-dev-2.jpg"
-  caption = "Tests en cours"
+  url = "/images/projects/nuketown/nuketown-zombies.jpg"
+  caption = "Vue d'ensemble de la carte remasterisée"
 
 [[galleries]]
 title = "Images officielles de sortie"
 description = "Captures d'écran officielles pour la promotion"
-size = "size-xl"
+size = "size-small"
 
   [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-official-1.jpg"
+  url = "/images/projects/nuketown/nuketown-steam-logo.jpg"
   caption = "Image de couverture principale"
 
   [[galleries.images]]
@@ -174,52 +166,31 @@ size = "size-xl"
 title = "Vidéos de gameplay"
 description = "Démonstrations et parties en cours"
 size = "size-large"
+fieldGroup = "youtube_galleries_group"
 
   [[youtube_galleries.videos]]
-  video_id = "e3KIFgqdaKg"
-  title = "Comparatif Black Ops 2 vs Black Ops 3"
-  description = "Comparaison détaillée entre les versions"
-  duration = "10:32"
+  video_id = "zKFy-_mrLiw"
+  duration = "16:59"
   date = "2019-07-15"
+  title = "Du ZOMBIE A 8 JOUEURS en 1 PARTIE sur NUKETOWN REMASTER ?? 😱 | Custom Zombies #88"
+  fieldGroup = "youtube_videos_group"
 
   [[youtube_galleries.videos]]
-  video_id = "dQw4w9WgXcQ"
-  title = "Gameplay 8 joueurs"
-  description = "Partie complète avec 8 joueurs"
-  duration = "25:18"
+  video_id = "mudExAYOt_Q"
+  title = "JE TESTE NUKETOWN ZOMBIES REMASTER EN AVANT PREMIÈRE !! 😍 (Découverte, et elle est ouf)"
+  duration = "12:52"
   date = "2019-07-20"
-
-[[youtube_galleries]]
-title = "Vidéos de développement"
-description = "Processus de création et behind-the-scenes"
-size = "size-medium"
-
-  [[youtube_galleries.videos]]
-  video_id = "test123456"
-  title = "Making-of : Level Design"
-  description = "Processus de création de la carte"
-  duration = "15:45"
-  date = "2019-06-01"
+  fieldGroup = "youtube_videos_group"
 
 [[youtube_singles]]
 title = "Trailer officiel"
 description = "Bande-annonce de lancement"
 size = "size-medium"
 video_id = "e3KIFgqdaKg"
-video_title = "Nuketown Zombies - Trailer de lancement"
-video_description = "Découvrez la remasterisation complète de Nuketown"
+video_title = "Comparatif Black Ops 2 vs Black Ops 3"
+video_description = "Comparaison détaillée entre les versions"
 duration = "2:34"
 date = "2019-07-15"
-
-[[youtube_singles]]
-title = "Tutoriel de gameplay"
-description = "Guide pour bien débuter"
-size = "size-small"
-video_id = "tutorial123"
-video_title = "Comment bien jouer à Nuketown Zombies"
-video_description = "Tips et astuces pour survivre plus longtemps"
-duration = "8:12"
-date = "2019-08-01"
 
 [[technical_specs]]
 label = "Moteur"

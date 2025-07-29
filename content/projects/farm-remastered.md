@@ -11,6 +11,7 @@ sector = "mods-tools"
 featured = false
 fmContentType = "project-content-type"
 image = "/images/projects/farm/farm-background.jpg"
+gallery = [ ]
 
 [[actions]]
 type = "steam"
@@ -40,6 +41,13 @@ value = "<span class='highlight'>150K+</span>"
 label = "Téléchargements Steam Workshop"
 
 [[notable_facts]]
+type = "ladder"
+icon = "📥"
+value = "<span class='highlight'>105ème place</span>"
+label = "Classement Steam Workshop Black Ops 3 sur plus de 6 000 contenues"
+testimonials_size = "size-medium"
+
+[[notable_facts]]
 type = "creator-praise"
 icon = "⭐"
 value = "Félicitations du créateur original"
@@ -62,14 +70,6 @@ role = "Feedback et tests"
 total = "3 mois"
 start_date = "Mars 2018"
 end_date = "Juin 2018"
-
-[[gallery]]
-url = "/images/projects/farm/farm-1.jpg"
-caption = "Vue principale de la ferme remasterisée"
-
-[[gallery]]
-url = "/images/projects/farm/farm-2.jpg"
-caption = "Comparaison avant/après"
 
 [[testimonials]]
 quote = "Great faithful recreation, fun with friends for sure! My video if anyone's interested https://youtu.be/V95-5AtGX7o"
@@ -124,6 +124,31 @@ quote = "Instantly one of my favorite maps in a while, congrats on the release!"
 name = "Astraxis"
 role = "Joueur & reviewer"
 rating = 5
+
+[[galleries]]
+title = "Gallerie de projet"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/farm/farm-2.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/farm/farm-3.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/farm/farm-4.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/farm/farm-background.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
 +++
 
 # FARM - Remasterisation

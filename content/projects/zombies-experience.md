@@ -19,6 +19,14 @@ value = "<span class='highlight'>270K+</span>"
 label = "Téléchargements Steam Workshop"
 
 [[notable_facts]]
+type = "ladder"
+icon = "📥"
+value = "<span class='highlight'>120ème place</span>"
+label = "Classement Steam Workshop Black Ops 3 sur plus de 6 000 contenues"
+testimonials_size = "size-medium"
+
+
+[[notable_facts]]
 type = "engine-mod"
 icon = "🛠️"
 label = "Modification poussée du moteur de jeu !"

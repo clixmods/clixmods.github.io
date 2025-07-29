@@ -881,6 +881,7 @@
   "frontMatter.taxonomy.fieldGroups": [
     {
       "id": "actions_group",
+      "labelField": "label",
       "fields": [
         {
           "title": "type",
@@ -936,6 +937,7 @@
     },
     {
       "id": "contributors_group",
+      "labelField": "name",
       "fields": [
         {
           "title": "name",
@@ -950,12 +952,13 @@
         {
           "title": "avatar",
           "name": "avatar",
-          "type": "string"
+          "type": "image"
         }
       ]
     },
     {
       "id": "phases_group",
+      "labelField": "name",
       "fields": [
         {
           "title": "name",
@@ -971,6 +974,7 @@
     },
     {
       "id": "gallery_group",
+      "labelField": "caption",
       "fields": [
         {
           "title": "url",
@@ -986,6 +990,7 @@
     },
     {
       "id": "galleries_group",
+      "labelField": "title",
       "fields": [
         {
           "title": "title",
@@ -1020,6 +1025,7 @@
     },
     {
       "id": "youtube_videos_group",
+      "labelField": "title",
       "fields": [
         {
           "title": "video_id",
@@ -1050,6 +1056,7 @@
     },
     {
       "id": "youtube_galleries_group",
+      "labelField": "title",
       "fields": [
         {
           "title": "title",
@@ -1084,6 +1091,7 @@
     },
     {
       "id": "youtube_singles_group",
+      "labelField": "video_title",
       "fields": [
         {
           "title": "title",
@@ -1200,6 +1208,7 @@
     },
     {
       "id": "testimonials_group",
+      "labelField": "name",
       "fields": [
         {
           "title": "quote",
@@ -1230,11 +1239,12 @@
     },
     {
       "id": "gallery_group",
+      "labelField": "title",
       "fields": [
         {
           "title": "url",
           "name": "url",
-          "type": "string"
+          "type": "image"
         },
         {
           "title": "caption",
