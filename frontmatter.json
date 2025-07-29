@@ -148,6 +148,105 @@
           "fieldGroup": [
             "notable_facts_group"
           ]
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "contributors",
+          "name": "contributors",
+          "type": "block",
+          "fieldGroup": [
+            "contributors_group"
+          ]
+        },
+        {
+          "title": "development_time",
+          "name": "development_time",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "total",
+              "name": "total",
+              "type": "string"
+            },
+            {
+              "title": "start_date",
+              "name": "start_date",
+              "type": "datetime"
+            },
+            {
+              "title": "end_date",
+              "name": "end_date",
+              "type": "datetime"
+            },
+            {
+              "title": "phases",
+              "name": "phases",
+              "type": "block",
+              "fieldGroup": [
+                "phases_group"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "galleries",
+          "name": "galleries",
+          "type": "block",
+          "fieldGroup": [
+            "galleries_group"
+          ]
+        },
+        {
+          "title": "youtube_galleries",
+          "name": "youtube_galleries",
+          "type": "block",
+          "fieldGroup": [
+            "youtube_galleries_group"
+          ]
+        },
+        {
+          "title": "youtube_singles",
+          "name": "youtube_singles",
+          "type": "block",
+          "fieldGroup": [
+            "youtube_singles_group"
+          ]
+        },
+        {
+          "title": "technical_specs",
+          "name": "technical_specs",
+          "type": "block",
+          "fieldGroup": [
+            "technical_specs_group"
+          ]
+        },
+        {
+          "title": "awards",
+          "name": "awards",
+          "type": "block",
+          "fieldGroup": [
+            "awards_group"
+          ]
+        },
+        {
+          "title": "testimonials",
+          "name": "testimonials",
+          "type": "block",
+          "fieldGroup": [
+            "testimonials_group"
+          ]
+        },
+        {
+          "title": "gallery",
+          "name": "gallery",
+          "type": "block",
+          "fieldGroup": [
+            "gallery_group"
+          ]
         }
       ]
     }
@@ -289,88 +388,95 @@
       "labelField": "title",
       "schema": {
         "title": "Experience",
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string",
-              "title": "Titre du poste"
-            },
-            "company": {
-              "type": "string",
-              "title": "Entreprise"
-            },
-            "logo": {
-              "type": "string",
-              "title": "Logo de l'entreprise"
-            },
-            "period": {
-              "type": "string",
-              "title": "Période"
-            },
-            "duration": {
-              "type": "string",
-              "title": "Durée"
-            },
-            "type": {
-              "type": "string",
-              "title": "Type de contrat"
-            },
-            "location": {
-              "type": "string",
-              "title": "Localisation"
-            },
-            "status": {
-              "type": "string",
-              "title": "Statut",
-              "enum": ["current", "completed"]
-            },
-            "description": {
-              "type": "string",
-              "title": "Description",
-              "widget": "textarea"
-            },
-            "projects": {
-              "type": "array",
-              "title": "Projets",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "title": "Nom du projet"
-                  },
-                  "description": {
-                    "type": "string",
-                    "title": "Description du projet"
-                  },
-                  "tasks": {
-                    "type": "array",
-                    "title": "Tâches",
-                    "items": {
-                      "type": "string"
-                    }
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Titre du poste"
+          },
+          "company": {
+            "type": "string",
+            "title": "Entreprise"
+          },
+          "logo": {
+            "type": "string",
+            "title": "Logo de l'entreprise"
+          },
+          "period": {
+            "type": "string",
+            "title": "Période"
+          },
+          "duration": {
+            "type": "string",
+            "title": "Durée"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type de contrat"
+          },
+          "location": {
+            "type": "string",
+            "title": "Localisation"
+          },
+          "status": {
+            "type": "string",
+            "title": "Statut",
+            "enum": [
+              "current",
+              "completed"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "widget": "textarea"
+          },
+          "projects": {
+            "type": "array",
+            "title": "Projets",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Nom du projet"
+                },
+                "description": {
+                  "type": "string",
+                  "title": "Description du projet"
+                },
+                "tasks": {
+                  "type": "array",
+                  "title": "Tâches",
+                  "items": {
+                    "type": "string"
                   }
                 }
               }
-            },
-            "skills": {
-              "type": "array",
-              "title": "Compétences",
-              "items": {
-                "type": "string"
-              }
-            },
-            "technologies": {
-              "type": "array",
-              "title": "Technologies",
-              "items": {
-                "type": "string"
-              }
             }
           },
-          "required": ["title", "company", "period", "description"]
-        }
-    
+          "skills": {
+            "type": "array",
+            "title": "Compétences",
+            "items": {
+              "type": "string"
+            }
+          },
+          "technologies": {
+            "type": "array",
+            "title": "Technologies",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "title",
+          "company",
+          "period",
+          "description"
+        ]
+      }
     },
     {
       "id": "skills",
@@ -382,35 +488,35 @@
         "type": "object",
         "properties": {
           "categories": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "type": "string"
-                },
-                "id": {
-                  "type": "string"
-                },
-                "skills": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "name": {
-                        "type": "string"
-                      },
-                      "icon": {
-                        "type": "string"
-                      },
-                      "level": {
-                        "type": "string"
-                      },
-                      "experience": {
-                        "type": "string"
-                      }
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "skills": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
+                    },
+                    "level": {
+                      "type": "string"
+                    },
+                    "experience": {
+                      "type": "string"
                     }
                   }
                 }
               }
+            }
           },
           "display": {
             "type": "object",
@@ -435,7 +541,9 @@
             }
           }
         },
-        "required": ["categories"]
+        "required": [
+          "categories"
+        ]
       }
     },
     {
@@ -530,55 +638,61 @@
       "labelField": "title",
       "schema": {
         "title": "Education",
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string",
-              "title": "Titre de la formation"
-            },
-            "institution": {
-              "type": "string",
-              "title": "Institution"
-            },
-            "period": {
-              "type": "string",
-              "title": "Période"
-            },
-            "status": {
-              "type": "string",
-              "title": "Statut"
-            },
-            "description": {
-              "type": "string",
-              "title": "Description",
-              "widget": "textarea"
-            },
-            "skills": {
-              "type": "array",
-              "title": "Compétences acquises",
-              "items": {
-                "type": "string"
-              }
-            },
-            "grade": {
-              "type": "string",
-              "title": "Note/Résultat"
-            },
-            "location": {
-              "type": "string",
-              "title": "Localisation"
-            },
-            "icon": {
-              "type": "string",
-              "title": "Icône"
-            },
-            "color": {
-              "type": "string",
-              "title": "Couleur (hex)"
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Titre de la formation"
+          },
+          "institution": {
+            "type": "string",
+            "title": "Institution"
+          },
+          "period": {
+            "type": "string",
+            "title": "Période"
+          },
+          "status": {
+            "type": "string",
+            "title": "Statut"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "widget": "textarea"
+          },
+          "skills": {
+            "type": "array",
+            "title": "Compétences acquises",
+            "items": {
+              "type": "string"
             }
           },
-          "required": ["title", "institution", "period", "status", "description"]
-        }
+          "grade": {
+            "type": "string",
+            "title": "Note/Résultat"
+          },
+          "location": {
+            "type": "string",
+            "title": "Localisation"
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icône"
+          },
+          "color": {
+            "type": "string",
+            "title": "Couleur (hex)"
+          }
+        },
+        "required": [
+          "title",
+          "institution",
+          "period",
+          "status",
+          "description"
+        ]
+      }
     },
     {
       "id": "config",
@@ -621,7 +735,11 @@
                   "title": "Actif"
                 }
               },
-              "required": ["anchor", "label", "icon"]
+              "required": [
+                "anchor",
+                "label",
+                "icon"
+              ]
             }
           }
         }
@@ -634,66 +752,76 @@
       "labelField": "title",
       "schema": {
         "title": "Internships",
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string",
-              "title": "Titre du stage"
-            },
-            "company": {
-              "type": "string",
-              "title": "Entreprise"
-            },
-            "period": {
-              "type": "string",
-              "title": "Période"
-            },
-            "duration": {
-              "type": "string",
-              "title": "Durée"
-            },
-            "type": {
-              "type": "string",
-              "title": "Type de stage"
-            },
-            "location": {
-              "type": "string",
-              "title": "Localisation"
-            },
-            "status": {
-              "type": "string",
-              "title": "Statut",
-              "enum": ["seeking", "confirmed", "completed"]
-            },
-            "description": {
-              "type": "string",
-              "title": "Description",
-              "widget": "textarea"
-            },
-            "requirements": {
-              "type": "array",
-              "title": "Exigences",
-              "items": {
-                "type": "string"
-              }
-            },
-            "skills": {
-              "type": "array",
-              "title": "Compétences",
-              "items": {
-                "type": "string"
-              }
-            },
-            "technologies": {
-              "type": "array",
-              "title": "Technologies",
-              "items": {
-                "type": "string"
-              }
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Titre du stage"
+          },
+          "company": {
+            "type": "string",
+            "title": "Entreprise"
+          },
+          "period": {
+            "type": "string",
+            "title": "Période"
+          },
+          "duration": {
+            "type": "string",
+            "title": "Durée"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type de stage"
+          },
+          "location": {
+            "type": "string",
+            "title": "Localisation"
+          },
+          "status": {
+            "type": "string",
+            "title": "Statut",
+            "enum": [
+              "seeking",
+              "confirmed",
+              "completed"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "widget": "textarea"
+          },
+          "requirements": {
+            "type": "array",
+            "title": "Exigences",
+            "items": {
+              "type": "string"
             }
           },
-          "required": ["title", "company", "period", "status", "description"]
-        }
+          "skills": {
+            "type": "array",
+            "title": "Compétences",
+            "items": {
+              "type": "string"
+            }
+          },
+          "technologies": {
+            "type": "array",
+            "title": "Technologies",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "title",
+          "company",
+          "period",
+          "status",
+          "description"
+        ]
+      }
     },
     {
       "id": "certifications",
@@ -702,43 +830,52 @@
       "labelField": "title",
       "schema": {
         "title": "Certifications",
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string",
-              "title": "Titre de la certification"
-            },
-            "issuer": {
-              "type": "string",
-              "title": "Organisme émetteur"
-            },
-            "date": {
-              "type": "string",
-              "title": "Date"
-            },
-            "status": {
-              "type": "string",
-              "title": "Statut",
-              "enum": ["En cours", "Obtenu", "Expiré"]
-            },
-            "description": {
-              "type": "string",
-              "title": "Description",
-              "widget": "textarea"
-            },
-            "icon": {
-              "type": "string",
-              "title": "Icône"
-            },
-            "color": {
-              "type": "string",
-              "title": "Couleur (hex)"
-            }
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Titre de la certification"
           },
-          "required": ["title", "issuer", "date", "status", "description"]
-        }
+          "issuer": {
+            "type": "string",
+            "title": "Organisme émetteur"
+          },
+          "date": {
+            "type": "string",
+            "title": "Date"
+          },
+          "status": {
+            "type": "string",
+            "title": "Statut",
+            "enum": [
+              "En cours",
+              "Obtenu",
+              "Expiré"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "widget": "textarea"
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icône"
+          },
+          "color": {
+            "type": "string",
+            "title": "Couleur (hex)"
+          }
+        },
+        "required": [
+          "title",
+          "issuer",
+          "date",
+          "status",
+          "description"
+        ]
       }
-    
+    }
   ],
   "frontMatter.git.enabled": true,
   "frontMatter.taxonomy.fieldGroups": [
@@ -793,6 +930,315 @@
         {
           "title": "label",
           "name": "label",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "contributors_group",
+      "fields": [
+        {
+          "title": "name",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "title": "role",
+          "name": "role",
+          "type": "string"
+        },
+        {
+          "title": "avatar",
+          "name": "avatar",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "phases_group",
+      "fields": [
+        {
+          "title": "name",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "title": "duration",
+          "name": "duration",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "gallery_group",
+      "fields": [
+        {
+          "title": "url",
+          "name": "url",
+          "type": "string"
+        },
+        {
+          "title": "caption",
+          "name": "caption",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "galleries_group",
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "size",
+          "name": "size",
+          "type": "choice",
+          "choices": [
+            "size-small",
+            "size-medium",
+            "size-large",
+            "size-xl"
+          ]
+        },
+        {
+          "title": "images",
+          "name": "images",
+          "type": "block",
+          "fieldGroup": [
+            "gallery_group"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "youtube_videos_group",
+      "fields": [
+        {
+          "title": "video_id",
+          "name": "video_id",
+          "type": "string"
+        },
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "duration",
+          "name": "duration",
+          "type": "string"
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "youtube_galleries_group",
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "size",
+          "name": "size",
+          "type": "choice",
+          "choices": [
+            "size-small",
+            "size-medium",
+            "size-large",
+            "size-xl"
+          ]
+        },
+        {
+          "title": "videos",
+          "name": "videos",
+          "type": "block",
+          "fieldGroup": [
+            "youtube_videos_group"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "youtube_singles_group",
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "size",
+          "name": "size",
+          "type": "choice",
+          "choices": [
+            "size-small",
+            "size-medium",
+            "size-large",
+            "size-xl"
+          ]
+        },
+        {
+          "title": "video_id",
+          "name": "video_id",
+          "type": "string"
+        },
+        {
+          "title": "video_title",
+          "name": "video_title",
+          "type": "string"
+        },
+        {
+          "title": "video_description",
+          "name": "video_description",
+          "type": "string"
+        },
+        {
+          "title": "duration",
+          "name": "duration",
+          "type": "string"
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "technical_specs_group",
+      "fields": [
+        {
+          "title": "label",
+          "name": "label",
+          "type": "string"
+        },
+        {
+          "title": "value",
+          "name": "value",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "id": "awards_group",
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "organization",
+          "name": "organization",
+          "type": "string"
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "contributors_size",
+          "name": "contributors_size",
+          "type": "string"
+        },
+        {
+          "title": "development_time_size",
+          "name": "development_time_size",
+          "type": "string"
+        },
+        {
+          "title": "gallery_size",
+          "name": "gallery_size",
+          "type": "string"
+        },
+        {
+          "title": "technical_specs_size",
+          "name": "technical_specs_size",
+          "type": "string"
+        },
+        {
+          "title": "awards_size",
+          "name": "awards_size",
+          "type": "string"
+        },
+        {
+          "title": "testimonials_size",
+          "name": "testimonials_size",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "testimonials_group",
+      "fields": [
+        {
+          "title": "quote",
+          "name": "quote",
+          "type": "string"
+        },
+        {
+          "title": "name",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "title": "role",
+          "name": "role",
+          "type": "string"
+        },
+        {
+          "title": "avatar",
+          "name": "avatar",
+          "type": "string"
+        },
+        {
+          "title": "rating",
+          "name": "rating",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "gallery_group",
+      "fields": [
+        {
+          "title": "url",
+          "name": "url",
+          "type": "string"
+        },
+        {
+          "title": "caption",
+          "name": "caption",
           "type": "string"
         }
       ]

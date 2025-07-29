@@ -10,8 +10,8 @@ category = "projects"
 sector = "mods-tools"
 featured = true
 fmContentType = "project-content-type"
-image = "/images/projects/mori-rebirth/téléchargement (1).jpg"
-logo = "/images/projects/mori-rebirth/v2bfea3.png"
+image = "/images/projects/mori-rebirth/mori-background.jpg"
+logo = "/images/projects/mori-rebirth/mori-logo.png"
 
 [[actions]]
 type = "steam"
@@ -32,7 +32,72 @@ type = "downloads"
 icon = "📥"
 value = "<span class='highlight'>150K+</span>"
 label = "Téléchargements Steam Workshop"
+testimonials_size = "size-medium"
 
+[[testimonials]]
+quote = "very well made, super beautiful, everything works seamlessly. very talented crew behind this. i saw a lot of people complaining about the ee but i didnt think it was that bad.. at first lol. about halfway through it became so tedious i just gave up and quit. if i was playing in a group maybe it wouldn't have been so bad. its not even that each step is that bad, its just that it goes on foreverrrr. like damn. so many steps. anyway overall epic map just a bit too involved with the ee. overall excellent map 9.9/10"
+name = "lethalFED"
+role = "Joueur Steam"
+rating = 5
+
+[[testimonials]]
+quote = "Great easter egg, wild bossfight and crazy weapons! W map! https://www.youtube.com/live/ri6Z_knXj6k"
+name = "spudgaming99"
+role = "Joueur & créateur de contenu"
+rating = 5
+
+[[testimonials]]
+quote = "one of the best maps ever made"
+name = "Sataviissataa"
+role = "Joueur passionné"
+rating = 5
+
+[[testimonials]]
+quote = "EE for this map is pretty damn cool. Just finished it in 2 hours with a 3 man on the first attempt. Will say there were a few tough spots but the boss fight was very fun and chaotic. GG's to everyone that helped build this"
+name = "Sensei La Dew"
+role = "Joueur avancé"
+rating = 5
+
+[[testimonials]]
+quote = "Map is A1 quality. Easter egg can be less trial and error-y but it is damn near the classic treyarch quality. Anyone whos complaining about complex easter eggs are babies lmao W map, W buildables, W best weapon pack and wonder weapons, W challenge system, W map layout, W side EE. Huge W"
+name = "Dankpression"
+role = "Joueur expérimenté"
+rating = 5
+
+[[testimonials]]
+quote = "Masterpiece. The step of the pressure plates remembered me of the good old well done treyarch easter eggs. The map in general feels very polished and definitely one of the top 3 best custom maps to date."
+name = "Skipshg03"
+role = "Joueur passionné"
+rating = 5
+
+[[testimonials]]
+quote = "Absolutely brilliant map! The map flow is some of the best I have seen and is far better than the original Mori layout. The aesthetics of this map are on another level with the vibrance being just enough that it is not overwhelming but rather immersive. The gun play on this map is fantastic with the map default weapons being the black ops 4 weapons they are ported perfectly and do not feel underwhelming. Overall, I would have to say this map is worthy of being in my top 5 custom zombies maps of all time."
+name = "DrSprinkleTinkle"
+role = "Joueur & critique"
+rating = 5
+
+[[testimonials]]
+quote = "Best map I have ever played!"
+name = "Creed"
+role = "Joueur passionné"
+rating = 5
+
+[[testimonials]]
+quote = "Here is our full easter egg playthrough: https://www.youtube.com/watch?v=rV2tJ7fNJcM&ab_channel=AscendedZombie Thank you for the incredible map!"
+name = "Ascended Zombie"
+role = "Joueur & créateur de contenu"
+rating = 5
+
+[[testimonials]]
+quote = "Fantastic remake and additions from the original. My friends and I managed to complete the easter egg awhile back, and this was our impressions and map completion: https://youtu.be/qOr1cVub5rY"
+name = "Watchful Wolf"
+role = "Joueur & reviewer"
+rating = 5
+
+[development_time]
+total = "fsdfsdfsd"
+start_date = "2025-07-29T08:06:24.651Z"
+end_date = "2025-07-29T08:06:25.301Z"
 +++
 
 # Mori Rebirth

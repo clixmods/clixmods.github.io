@@ -39,20 +39,16 @@ icon = "📥"
 value = "<span class='highlight'>150K+</span>"
 label = "Téléchargements Steam Workshop"
 
-
 [[notable_facts]]
 type = "creator-praise"
 icon = "⭐"
 value = "Félicitations du créateur original"
 label = "Le créateur original m'a félicité pour la remasterisation."
-
-# Configuration des tailles (exemple différent)
 contributors_size = "size-small"
 development_time_size = "size-small"
 gallery_size = "size-medium"
 testimonials_size = "size-medium"
 
-# Exemple de contributeurs simples
 [[contributors]]
 name = "Clément 'Clix' Garcia"
 role = "Créateur & Level Designer"
@@ -62,13 +58,11 @@ avatar = "/images/people/clix-avatar.jpg"
 name = "Comunauté BO3"
 role = "Feedback et tests"
 
-# Exemple de développement simple
 [development_time]
 total = "3 mois"
 start_date = "Mars 2018"
 end_date = "Juin 2018"
 
-# Exemple de galerie réduite
 [[gallery]]
 url = "/images/projects/farm/farm-1.jpg"
 caption = "Vue principale de la ferme remasterisée"
@@ -77,18 +71,59 @@ caption = "Vue principale de la ferme remasterisée"
 url = "/images/projects/farm/farm-2.jpg"
 caption = "Comparaison avant/après"
 
-# Testimonials simples
 [[testimonials]]
-quote = "Excellent travail de remasterisation ! La qualité visuelle est impressionnante."
-name = "FarmFan2018"
+quote = "Great faithful recreation, fun with friends for sure! My video if anyone's interested https://youtu.be/V95-5AtGX7o"
+name = "Tactical Loser"
+role = "Joueur & créateur de contenu"
+rating = 5
+
+[[testimonials]]
+quote = "Awesome remaster! Feels like an official treyarch map :)"
+name = "gigity_74"
 role = "Joueur Steam"
 rating = 5
 
 [[testimonials]]
-quote = "Merci de donner une seconde vie à cette carte mythique !"
-name = "RetroGamer"
-role = "Nostalgique BO2"
-rating = 4
+quote = "This is one of my favorite map remakes of all time, feels basically like an official Treyarch remake, I hope you plan on remaking more maps with this quality!"
+name = "taco bell crocs"
+role = "Joueur passionné"
+rating = 5
+
+[[testimonials]]
+quote = "I truly hope you make more maps like this. Quality is hard to find in the workshop and is so well done, excited for what you make next!"
+name = "CharCharD™"
+role = "Joueur & critique"
+rating = 5
+
+[[testimonials]]
+quote = "i love this, it looks amazing, and the gameplay is amazing, just as high quality as zombie chronicals, hell i forgot i was playing a custom map, amazing work dude"
+name = "Cherry Coke™"
+role = "Joueur Steam"
+rating = 5
+
+[[testimonials]]
+quote = "Phenomenal remake dude, you should be very proud of this! :D"
+name = "Ping"
+role = "Joueur Steam"
+rating = 5
+
+[[testimonials]]
+quote = "A pretty good remake of the orginal map. i didnt find any bugs or issues. zombie spawning is okay aswell unlike other maps. 10/10"
+name = "cybergod"
+role = "Joueur expérimenté"
+rating = 5
+
+[[testimonials]]
+quote = "This has got to be the greatest custom remastered map i've ever played in my opinion."
+name = "zombiedude9976"
+role = "Joueur passionné"
+rating = 5
+
+[[testimonials]]
+quote = "Instantly one of my favorite maps in a while, congrats on the release!"
+name = "Astraxis"
+role = "Joueur & reviewer"
+rating = 5
 +++
 
 # FARM - Remasterisation

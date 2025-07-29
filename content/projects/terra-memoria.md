@@ -1,5 +1,4 @@
 +++
-
 date = "2025-07-22T10:00:00+02:00"
 draft = false
 title = "Terra Memoria"
@@ -61,6 +60,191 @@ type = "critical-bug-switch"
 icon = "🛠️"
 label = "Aide précieuse : résolution d'un bug critique sur Nintendo Switch !"
 value = "Résolution bug critique sur Nintendo Switch"
+
+[[galleries]]
+title = "Image du jeu"
+description = ""
+size = "size-large"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 01.png"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 02.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 03.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 04.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 05.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 06.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 07.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 08.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 09.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 10.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 11.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 12.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 13.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 14.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 15.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/terra-memoria/_Terra Memoria - Screenshot - 16.jpg"
+  caption = ""
+  fieldGroup = "gallery_group"
+
+[[youtube_singles]]
+title = "Terra Memoria - Gameplay Trailer"
+video_id = "79WDIdvr4uo"
+size = "size-medium"
+fieldGroup = "youtube_singles_group"
+
+[[youtube_singles]]
+video_id = "SLd_fCFqm80"
+size = "size-medium"
+title = """
+\r\r\r\r\r\r
+TERRA MEMORIA - Launch trailer"""
+fieldGroup = "youtube_singles_group"
+
+[[youtube_galleries]]
+title = "Vidéos de gameplay des joueurs"
+description = "Vidéos de gameplay des joueurs"
+size = "size-large"
+fieldGroup = "youtube_galleries_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "e8hHLRqaLBQ"
+  fieldGroup = "youtube_videos_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "d94Gl0c9Pp4"
+  title = "Terra Memoria Review - The Grandia-Like RPG You Need to Play?"
+  fieldGroup = "youtube_videos_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "RjZCRbFm8x8"
+  title = "Terra Memoria: A Leap of Faith"
+  fieldGroup = "youtube_videos_group"
+
+[[contributors]]
+name = "Francois Bertrand"
+role = "Game Director / Developer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Anthony Expert"
+role = "Art Director / 2D Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Yponeko"
+role = "Composer / Sound-Designer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Elisa Beiram"
+role = "Narrative-Designer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Emerick Aussignac"
+role = "Developer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Elise Ramseier"
+role = "3D Artist / UI Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Alicia Val"
+role = "Art Director / 2D-3D Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Robin Nicolet"
+role = "Game-Designer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Guillaume Laugé"
+role = "Level-Designer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Vincent Muffato"
+role = "Junior Developer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Simon Gosse"
+role = "Junior Developer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Nolwenn Armand"
+role = "Junior 3D Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Clement Garcia"
+role = "Junior Developer"
+fieldGroup = "contributors_group"
 
 +++
 

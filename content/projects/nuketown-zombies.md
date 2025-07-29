@@ -70,8 +70,6 @@ icon = "⭐"
 value = "Projet <span class='highlight'>phare</span>"
 label = "Reconnaissance communautaire"
 
-# Nouveaux ajouts pour les boîtes d'information
-
 [[contributors]]
 name = "Clément 'Clix' Garcia"
 role = "Chef de projet, Développeur principal"
@@ -92,56 +90,136 @@ total = "6 mois"
 start_date = "Janvier 2019"
 end_date = "Juillet 2019"
 
-[[development_time.phases]]
-name = "Recherche & Documentation"
-duration = "2 semaines"
+  [[development_time.phases]]
+  name = "Recherche & Documentation"
+  duration = "2 semaines"
 
-[[development_time.phases]]
-name = "Level Design de base"
-duration = "1 mois"
+  [[development_time.phases]]
+  name = "Level Design de base"
+  duration = "1 mois"
 
-[[development_time.phases]]
-name = "Programmation C++/Lua"
-duration = "2.5 mois"
+  [[development_time.phases]]
+  name = "Programmation C++/Lua"
+  duration = "2.5 mois"
 
-[[development_time.phases]]
-name = "Assets & Textures"
-duration = "1.5 mois"
+  [[development_time.phases]]
+  name = "Assets & Textures"
+  duration = "1.5 mois"
 
-[[development_time.phases]]
-name = "Tests & Debug"
-duration = "3 semaines"
+  [[development_time.phases]]
+  name = "Tests & Debug"
+  duration = "3 semaines"
 
-[[development_time.phases]]
-name = "Optimisation finale"
-duration = "2 semaines"
+  [[development_time.phases]]
+  name = "Optimisation finale"
+  duration = "2 semaines"
 
-[[gallery]]
-url = "/images/projects/nuketown/nuketown-zombies-1.jpg"
-thumbnail = "/images/projects/nuketown/thumb-1.jpg"
-caption = "Vue d'ensemble de la carte remasterisée"
+[[galleries]]
+title = "Screenshots de production"
+description = "Images principales du projet et captures de gameplay"
+size = "size-large"
+fieldGroup = "galleries_group"
 
-[[gallery]]
-url = "/images/projects/nuketown/nuketown-zombies-2.jpg"
-thumbnail = "/images/projects/nuketown/thumb-2.jpg"
-caption = "Système de zombie spawning amélioré"
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-zombies-1.jpg"
+  thumbnail = "/images/projects/nuketown/thumb-1.jpg"
+  caption = "Vue d'ensemble de la carte remasterisée"
 
-[[gallery]]
-url = "/images/projects/nuketown/nuketown-zombies-3.jpg"
-thumbnail = "/images/projects/nuketown/thumb-3.jpg"
-caption = "Interface utilisateur modernisée"
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-zombies-2.jpg"
+  thumbnail = "/images/projects/nuketown/thumb-2.jpg"
+  caption = "Système de zombie spawning amélioré"
 
-[[gallery]]
-url = "/images/projects/nuketown/nuketown-gameplay.jpg"
-caption = "Action multijoueur en cours"
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-zombies-3.jpg"
+  thumbnail = "/images/projects/nuketown/thumb-3.jpg"
+  caption = "Interface utilisateur modernisée"
 
-[[gallery]]
-url = "/images/projects/nuketown/nuketown-effects.jpg"
-caption = "Effets spéciaux et particules"
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-gameplay.jpg"
+  caption = "Action multijoueur en cours"
 
-[[gallery]]
-url = "/images/projects/nuketown/nuketown-weapons.jpg"
-caption = "Système d'armes personnalisées"
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-effects.jpg"
+  caption = "Effets spéciaux et particules"
+
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-weapons.jpg"
+  caption = "Système d'armes personnalisées"
+
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-dev-1.jpg"
+  thumbnail = "/images/projects/nuketown/thumb-dev-1.jpg"
+  caption = "Interface de développement"
+
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-dev-2.jpg"
+  thumbnail = "/images/projects/nuketown/thumb-dev-2.jpg"
+  caption = "Tests en cours"
+
+[[galleries]]
+title = "Images officielles de sortie"
+description = "Captures d'écran officielles pour la promotion"
+size = "size-xl"
+
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-official-1.jpg"
+  caption = "Image de couverture principale"
+
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-official-2.jpg"
+  caption = "Gameplay multijoueur"
+
+[[youtube_galleries]]
+title = "Vidéos de gameplay"
+description = "Démonstrations et parties en cours"
+size = "size-large"
+
+  [[youtube_galleries.videos]]
+  video_id = "e3KIFgqdaKg"
+  title = "Comparatif Black Ops 2 vs Black Ops 3"
+  description = "Comparaison détaillée entre les versions"
+  duration = "10:32"
+  date = "2019-07-15"
+
+  [[youtube_galleries.videos]]
+  video_id = "dQw4w9WgXcQ"
+  title = "Gameplay 8 joueurs"
+  description = "Partie complète avec 8 joueurs"
+  duration = "25:18"
+  date = "2019-07-20"
+
+[[youtube_galleries]]
+title = "Vidéos de développement"
+description = "Processus de création et behind-the-scenes"
+size = "size-medium"
+
+  [[youtube_galleries.videos]]
+  video_id = "test123456"
+  title = "Making-of : Level Design"
+  description = "Processus de création de la carte"
+  duration = "15:45"
+  date = "2019-06-01"
+
+[[youtube_singles]]
+title = "Trailer officiel"
+description = "Bande-annonce de lancement"
+size = "size-medium"
+video_id = "e3KIFgqdaKg"
+video_title = "Nuketown Zombies - Trailer de lancement"
+video_description = "Découvrez la remasterisation complète de Nuketown"
+duration = "2:34"
+date = "2019-07-15"
+
+[[youtube_singles]]
+title = "Tutoriel de gameplay"
+description = "Guide pour bien débuter"
+size = "size-small"
+video_id = "tutorial123"
+video_title = "Comment bien jouer à Nuketown Zombies"
+video_description = "Tips et astuces pour survivre plus longtemps"
+duration = "8:12"
+date = "2019-08-01"
 
 [[technical_specs]]
 label = "Moteur"
@@ -181,54 +259,59 @@ date = "2019"
 title = "Featured Mod"
 organization = "Treyarch Community"
 date = "2019"
-
-# Configuration des tailles des boîtes
 contributors_size = "size-large"
 development_time_size = "size-medium"
-gallery_size = "size-xl"
 technical_specs_size = "size-medium"
 awards_size = "size-small"
 testimonials_size = "size-large"
 
-# Testimonials du projet
 [[testimonials]]
-quote = "Nuketown Zombies par Clix est absolument incroyable ! La fidélité à l'original tout en apportant des améliorations modernes est remarquable. Le support 8 joueurs change complètement l'expérience."
-name = "ZombieSlayer_2019"
-role = "Joueur Steam Workshop"
-avatar = "/images/people/zombie-player-1.jpg"
+quote = "Greetings, I review, showcase maps and do guides as well – here is our short play‑through with shield part locations!"
+name = "Neon Slice"
+role = "Map reviewer & guide creator"
 rating = 5
 
 [[testimonials]]
-quote = "En tant que moddeur, je suis impressionné par la qualité technique de ce projet. Le code est propre, les performances excellentes et l'intégration avec BO3 est parfaite."
-name = "ModdingMaster"
-role = "Développeur communautaire"
+quote = "I literally can NOT say anything negative about this map […] Everything is pretty much the same to a T […] Clix is now my waifu."
+name = "K2.EXE"
+role = "Joueur passionné"
 rating = 5
 
 [[testimonials]]
-quote = "Meilleure version de Nuketown Zombies que j'ai jamais jouée ! Les bots fonctionnent à merveille et la customisation est dingue. Bravo à toute l'équipe !"
-name = "Sarah_Gaming"
-role = "Streameuse Twitch"
-avatar = "/images/people/sarah-gaming.jpg"
-rating = 4
-
-[[testimonials]]
-quote = "Ce projet prouve que la communauté peut créer du contenu de qualité AAA. Nuketown Zombies de Clix surpasse même certaines cartes officielles en termes d'innovation."
-name = "Alex Chen"
-role = "Critique Gaming - YouTube"
+quote = "Fantastic map […] classic Nuketown brought into BO3 – here’s the video I made."
+name = "Hally"
+role = "Joueur & créateur de contenu"
 rating = 5
 
 [[testimonials]]
-quote = "J'ai passé des centaines d'heures sur cette carte avec mes amis. Le support 8 joueurs a révolutionné nos soirées gaming. Un must-have absolu !"
-name = "GamerDude42"
-role = "Joueur hardcore"
-rating = 5
-
-[[testimonials]]
-quote = "En tant que fan de la série depuis World at War, je peux dire que cette recréation capture parfaitement l'esprit de Nuketown tout en modernisant l'expérience."
-name = "OldSchoolZombies"
+quote = "I have always come back to this custom map […] it has always felt like it belonged on BO3 […] I honestly wish I knew how to mod so I could take up the mantle for this."
+name = "EddieBaledy"
 role = "Vétéran de la communauté"
-avatar = "/images/people/veteran-player.jpg"
-rating = 4
+rating = 5
+
+[[testimonials]]
+quote = "First off I just want to say this map is amazing! It's super stunning to play the map in BO3."
+name = "Morgyn"
+role = "Joueur expérimenté"
+rating = 5
+
+[[testimonials]]
+quote = "Awesome remake, the new EE is interesting and different […]"
+name = "Phil MePeker"
+role = "Joueur avancé"
+rating = 5
+
+[[testimonials]]
+quote = "An absolute great remake, this is definitely one of the best on this workshop. It's filled to the brim with details and additional mechanics which open up more gameplay options to both hardcore and casual players."
+name = "BritishPie"
+role = "Joueur & critique"
+rating = 5
+
+[[testimonials]]
+quote = "A near 1‑to‑1 remake of a classic map […] Only the nimblest zombie players will make it to high rounds here."
+name = "CodySir"
+role = "Joueur expérimenté"
+rating = 5
 +++
 
 # Nuketown Zombies
