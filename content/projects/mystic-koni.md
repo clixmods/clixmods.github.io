@@ -2,24 +2,24 @@
 date = "2025-01-12T00:00:00+02:00"
 draft = false
 title = "Mystic Koni"
-logo = "/images/projects/logos/mystic-koni-logo.png"
 subtitle = "Jeu de puzzle féérique - Itch.io Release"
 description = "Mystic Koni est un jeu de puzzle poétique où vous incarnez une fée vivant dans un arbre sacré mourant. Résolvez des énigmes pour restaurer les cœurs racines et sauver votre arbre !"
-image = "/images/projects/mystic-koni.jpg"
-tags = ["Puzzle", "Féerique", "Itch.io", "Aventure", "Poétique"]
-technologies = ["Unity", "C#", "Game Design", "Puzzle Design"]
+tags = [ "Puzzle", "Féerique", "Itch.io", "Aventure", "Poétique" ]
+technologies = [ "Unity", "C#", "Game Design", "Puzzle Design" ]
 category = "projects"
 sector = "games"
 featured = false
 fmContentType = "project-content-type"
+logo = "/images/projects/mystic-koni/mystic_koni_logo.png"
+image = "/images/projects/mystic-koni/mystic-koni-2.png"
 
 [[actions]]
 type = "download"
 label = "Télécharger le jeu"
-url = "https://mystos21.itch.io/mystic-koni"
+url = "https://mystos21.itch.io/global-game-jam-game"
 icon = "download"
 primary = true
-
+fieldGroup = "actions_group"
 +++
 
 # Mystic Koni

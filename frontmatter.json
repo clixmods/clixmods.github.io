@@ -868,7 +868,7 @@
   "frontMatter.taxonomy.fieldGroups": [
     {
       "id": "actions_group",
-      "labelField": "label",
+      "labelField": "name",
       "fields": [
         {
           "title": "Type de bouton",

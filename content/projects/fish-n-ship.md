@@ -1,32 +1,128 @@
 +++
-date = "2023-11-01T00:00:00+02:00"
+date = "2023-12-01T00:00:00+02:00"
 draft = false
 title = "Fish N Ship - Cœur de Ville en Lumière"
-logo = "/images/projects/logos/fish-n-ship-logo.png"
 subtitle = "Projet événementiel - Cœur de Ville en Lumières, Montpellier"
 description = "Création vidéoludique réalisée lors de l'événement 'Cœur de Ville en Lumières' à Montpellier, en collaboration avec e-artsup."
-image = "/images/projects/fish-n-ship.jpg"
-tags = ["Event", "Unity", "Montpellier", "e-artsup", "Game Jam"]
-technologies = ["Unity", "C#", "Game Design", "Event Production"]
+tags = [ "Event", "Unity", "Montpellier", "e-artsup", "Game Jam" ]
+technologies = [ "Unity", "C#", "Game Design", "Event Production" ]
 category = "projects"
 sector = "games"
 featured = false
 fmContentType = "project-content-type"
+status = "Terminé"
+image = "/images/projects/fishnship/background.png"
+testimonials = [ ]
 
 [[actions]]
 type = "download"
 label = "Télécharger le jeu"
-url = "https://clixmods.itch.io/fish-n-ship"
+url = "https://c3leste.itch.io/fish-n-ship"
 icon = "download"
 primary = true
+fieldGroup = "actions_group"
 
 [[actions]]
 type = "youtube"
 label = "Voir présentation"
-url = "https://www.youtube.com/watch?v=PLACEHOLDER"
+url = "https://youtu.be/yAe60nYvsmI"
 icon = "youtube"
 primary = false
+fieldGroup = "actions_group"
 
+[[youtube_singles]]
+size = "size-large"
+video_id = "yAe60nYvsmI"
+video_title = '"Cœur de Ville en Lumières" (Montpellier) par les étudiants en Jeux Vidéo'
+duration = "6:32"
+date = "26 mars 2024"
+fieldGroup = "youtube_singles_group"
+
+[[contributors]]
+name = "Agathe Roux"
+role = "Project management, VFX Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Théo Vicini"
+role = "Project management, Developper"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Gabriel de Castro"
+role = "Developper"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Victoria Vang"
+role = "3D Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Lucas Michelat"
+role = "3D Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Alizée Corbin"
+role = "3D Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Bruno Bracelli"
+role = "3D Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Benjamin Henck"
+role = "3D Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Océane Escriva"
+role = "UI Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Soundouss Khattabi"
+role = "VFX Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Matthieu Osten"
+role = "Developper"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Alexandre Boulet"
+role = "Sound Designer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Manille Brun"
+role = "Partial implication"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Loona Pelacuer"
+role = "Partial implication"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Sal Carles"
+role = "Partial implication"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Liam Cali"
+role = "Partial implication"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Clément GARCIA"
+role = "Assistance développeur"
+fieldGroup = "contributors_group"
+avatar = "/images/people/clement-garcia.jpg"
 +++
 
 # Fish N Ship - Cœur de Ville en Lumière

@@ -12,6 +12,7 @@ featured = false
 fmContentType = "project-content-type"
 logo = "/images/projects/galaxian/galaxian-logo.png"
 image = "/images/projects/galaxian/galaxian-background.png"
+status = "Terminé"
 
 [[actions]]
 type = "download"
@@ -19,6 +20,7 @@ label = "Jouer au jeu"
 url = "https://clixmods.itch.io/galaxian"
 icon = "download"
 primary = true
+fieldGroup = "actions_group"
 
 [[actions]]
 type = "youtube"
@@ -26,6 +28,7 @@ label = "Voir trailer"
 url = "https://youtu.be/zciQnYmtkHk"
 icon = "youtube"
 primary = false
+fieldGroup = "actions_group"
 
 [[actions]]
 type = "youtube"
@@ -33,7 +36,80 @@ label = "Voir gameplay"
 url = "https://youtu.be/pf0UqgHNkF0"
 icon = "youtube"
 primary = false
+fieldGroup = "actions_group"
 
+[[contributors]]
+name = "Clément GARCIA"
+role = "Lead développeur"
+fieldGroup = "contributors_group"
+avatar = "/images/people/clement-garcia.jpg"
+
+[[contributors]]
+name = "DUCARME Aymeric"
+role = "Developper"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "VANG Victoria"
+role = "Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "HENCK Benjamin"
+role = "Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "BRACELLI Bruno"
+role = "Artist"
+fieldGroup = "contributors_group"
+
+[development_time]
+total = "1 Mois"
+
+[[galleries]]
+size = "size-medium"
+title = "Image du jeu"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/galaxian/galaxian-final-result.jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/galaxian/galaxian-1.gif"
+
+  [[galleries.images]]
+  url = "/images/projects/galaxian/galaxian-2.gif"
+
+  [[galleries.images]]
+  url = "/images/projects/galaxian/galaxian-3.gif"
+
+[[youtube_singles]]
+size = "size-medium"
+video_title = "Trailer"
+video_id = "zciQnYmtkHk"
+duration = "0:26"
+date = "20 février 2022"
+fieldGroup = "youtube_singles_group"
+
+[[youtube_galleries]]
+title = "Gameplays"
+size = "size-medium"
+fieldGroup = "youtube_galleries_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "pf0UqgHNkF0"
+  title = "GALAXIAN - Gameplay"
+  duration = "1:53"
+  date = "28 juin 2022"
+  fieldGroup = "youtube_videos_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "fPlUc-noS5s"
+  title = "Galaxian! (Remastered)"
+  duration = "6:41"
+  date = "28 mai 2023"
+  fieldGroup = "youtube_videos_group"
 +++
 
 # Galaxian
