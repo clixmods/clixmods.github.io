@@ -2,16 +2,17 @@
 date = "2023-03-09T00:00:00+02:00"
 draft = false
 title = "Stay In The Light"
-logo = "/images/projects/logos/stay-in-the-light-logo.png"
 subtitle = "Jeu d'horreur en hôpital abandonné - Itch.io Release"
 description = "Stay In The Light est un jeu d'horreur à la première personne, se déroulant dans un hôpital abandonné. Trouvez votre chemin dans l'obscurité, mais attention à votre lampe qui chauffe vite... et à ce qui pourrait rôder dans le noir."
-image = "/images/projects/stay-in-the-light.jpg"
-tags = ["Horror", "Survival", "Unity", "Itch.io", "Hospital"]
-technologies = ["Unity", "C#", "Level Design", "Sound Design"]
+tags = [ "Horror", "Survival", "Unity", "Itch.io", "Hospital" ]
+technologies = [ "Unity", "C#", "Level Design", "Sound Design" ]
 category = "projects"
 sector = "games"
 featured = false
 fmContentType = "project-content-type"
+image = "/images/projects/stay-in-the-light/stay-background.png"
+logo = "/images/projects/stay-in-the-light/stay-logo.png"
+status = "Terminé"
 
 [[actions]]
 type = "download"
@@ -20,36 +21,137 @@ url = "https://leahoa.itch.io/stay-in-the-light"
 icon = "download"
 primary = true
 
+[[galleries]]
+title = "Gallerie"
+size = "size-large"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/stay-in-the-light/stay-1.jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/stay-in-the-light/stay-2.jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/stay-in-the-light/stay-3.png"
+
+  [[galleries.images]]
+  url = "/images/projects/stay-in-the-light/stay-5.png"
+
+  [[galleries.images]]
+  url = "/images/projects/stay-in-the-light/stay-7.png"
+
+[[galleries]]
+title = " "
+size = "size-large"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/stay-in-the-light/stay-9.gif"
+
+  [[galleries.images]]
+  url = "/images/projects/stay-in-the-light/stay-8.gif"
+
+  [[galleries.images]]
+  url = "/images/projects/stay-in-the-light/stay-6.gif"
+
+  [[galleries.images]]
+  url = "/images/projects/stay-in-the-light/stay-4.gif"
+
+[[youtube_singles]]
+size = "size-medium"
+video_id = "ocflDWHgnz4"
+video_title = "Trailer"
+duration = "1:04"
+fieldGroup = "youtube_singles_group"
+
+[[youtube_galleries]]
+title = "Gameplay des joueurs"
+size = "size-medium"
+fieldGroup = "youtube_galleries_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "6g7NeNNauAU"
+  title = "I was quiet as a ... light !?"
+  duration = "5:15"
+  fieldGroup = "youtube_videos_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "0KXDClBm_FU"
+  title = "I cannot beat this game - Stay in the light"
+  duration = "4:23"
+  fieldGroup = "youtube_videos_group"
+
+[[contributors]]
+name = "leahoa"
+role = "Artiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "CiceronAudio"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "xalizc"
+role = "Artiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Chloé DUMAS"
+role = "Sound Designer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Evil0Games"
+role = "Développeur / Trailer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Clément GARCIA"
+role = "Développeur"
+fieldGroup = "contributors_group"
+avatar = "/images/people/clement-garcia.jpg"
+
+[[contributors]]
+name = "JeremyFerreira"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Clément Courtois"
+role = "Artiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "TomAaprix"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Pepp3rMint"
+role = "Artiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Nilleee"
+role = "Artiste"
+fieldGroup = "contributors_group"
+
+[[testimonials]]
+quote = "Damn, another #horror game in the dark ! #StayInTheLight"
+name = "Siviovi"
+role = "Joueur Itch.io"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "cool game but to difficult for me lol"
+name = "nhojipooh"
+role = "Joueur Itch.io"
+fieldGroup = "testimonials_group"
 +++
 
 # Stay In The Light
 
 ## Description du projet
 
-**Stay In The Light** est un jeu d'horreur à la première personne qui plonge le joueur dans un hôpital abandonné. L'objectif est de trouver la sortie, mais la lumière est rare et la lampe torche surchauffe rapidement. L'ambiance oppressante et la gestion de la lumière sont au cœur de l'expérience.
-
-## Caractéristiques principales
-
-- Exploration d'un hôpital abandonné
-- Gestion de la lumière et de la batterie de la lampe
-- Ambiance sonore immersive (Sound Design : Chloé Dumas)
-- Suspense et tension psychologique
-
-## Technologies utilisées
-
-- Unity (C#)
-- Level Design
-- Sound Design
-
-## Contributeurs
-
-- E-Artsup Game Design 2 Montpellier
-- Chloé Dumas (Sound Design)
-
-## Lien de téléchargement
-
-Téléchargez le jeu sur itch.io : [Stay In The Light sur itch.io](https://leahoa.itch.io/stay-in-the-light)
-
----
-
-**Stay In The Light** vous met au défi de survivre dans l'obscurité... ou de découvrir si vous êtes vraiment seul !

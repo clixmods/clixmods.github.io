@@ -2,55 +2,81 @@
 date = "2024-01-30T00:00:00+02:00"
 draft = false
 title = "Ultimate Pigeon War 3000"
-logo = "/images/projects/logos/ultimate-pigeon-war-3000-logo.png"
 subtitle = "Action multijoueur déjantée - Game Jam"
 description = "Ultimate Pigeon War 3000 est un jeu d'action multijoueur délirant où des pigeons s'affrontent dans des batailles épiques. Réalisé lors d'une game jam, ce projet met en avant l'humour, la compétition et la créativité de l'équipe."
-image = "/images/projects/ultimate-pigeon-war-3000.jpg"
-tags = ["Action", "Multijoueur", "Game Jam", "Humour", "Itch.io"]
-technologies = ["Unity", "C#", "Pixel Art", "Sound Design"]
+tags = [ "Action", "Multijoueur", "Game Jam", "Humour", "Itch.io" ]
+technologies = [ "Unity", "C#", "Pixel Art", "Sound Design" ]
 category = "projects"
 sector = "games"
 featured = false
 fmContentType = "project-content-type"
+logo = "/images/projects/pigeon-war/pigeon-war-logo.png"
+image = "/images/projects/pigeon-war/pigeon-war-background.png"
+status = "Terminé"
 
 [[actions]]
 type = "download"
-label = "Télécharger la version Jam (Windows)"
+label = "Télécharger le jeu"
 url = "https://agatha05.itch.io/ultimate-pigeon-war-3000"
 icon = "download"
 primary = true
 
+[[galleries]]
+title = "Gallerie du projet"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/pigeon-war/pigeon-war-1.png"
+
+  [[galleries.images]]
+  url = "/images/projects/pigeon-war/pigeon-war-2.png"
+
+  [[galleries.images]]
+  url = "/images/projects/pigeon-war/pigeon-war-3.png"
+
+[[galleries]]
+title = "Photos"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/pigeon-war/photo-1.jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/pigeon-war/photo-2.jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/pigeon-war/photo-3.jpg"
+
+[[contributors]]
+name = "Denis BECLE"
+role = "Sound Designer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Julien DELAUNAY"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Clément GARCIA"
+role = "Développeur"
+fieldGroup = "contributors_group"
+avatar = "/images/people/clement-garcia.jpg"
+
+[[contributors]]
+name = "Aïden HERVIOU"
+role = "Graphiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Agathe ROUX"
+role = "Graphiste"
+fieldGroup = "contributors_group"
 +++
 
 # Ultimate Pigeon War 3000
 
 ## Description du projet
 
-**Ultimate Pigeon War 3000** est un jeu d'action multijoueur où des pigeons s'affrontent dans des combats absurdes et hilarants. Le jeu a été développé lors d'une game jam, mettant en avant l'humour et la compétition entre amis.
-
-## Caractéristiques principales
-
-- Combats de pigeons déjantés
-- Univers graphique humoristique
-- Multijoueur local
-- Sound design original
-
-## Équipe du projet
-
-- Sound Designer : Denis Becle
-- Développeurs : Julien Delaunay, Clément Garcia
-- Graphistes : Aïden Herviou, Agathe Roux
-
-## Technologies utilisées
-
-- Unity (C#)
-- Pixel Art
-- Sound Design
-
-## Lien de téléchargement
-
-Téléchargez la version Jam sur itch.io : [Ultimate Pigeon War 3000 sur itch.io](https://agatha05.itch.io/ultimate-pigeon-war-3000)
-
----
-
-**Ultimate Pigeon War 3000** propose une expérience multijoueur fun et décalée, parfaite pour des parties entre amis !

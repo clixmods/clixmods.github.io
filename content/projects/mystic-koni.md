@@ -1,5 +1,5 @@
 +++
-date = "2025-01-12T00:00:00+02:00"
+date = "2023-01-28T22:00:00.000Z"
 draft = false
 title = "Mystic Koni"
 subtitle = "Jeu de puzzle féérique - Itch.io Release"
@@ -12,6 +12,7 @@ featured = false
 fmContentType = "project-content-type"
 logo = "/images/projects/mystic-koni/mystic_koni_logo.png"
 image = "/images/projects/mystic-koni/mystic-koni-2.png"
+status = "Terminé"
 
 [[actions]]
 type = "download"
@@ -20,30 +21,84 @@ url = "https://mystos21.itch.io/global-game-jam-game"
 icon = "download"
 primary = true
 fieldGroup = "actions_group"
+
+[[contributors]]
+name = "Clément GARCIA"
+role = "Développeur / Game Designer"
+fieldGroup = "contributors_group"
+avatar = "/images/people/clement-garcia.jpg"
+
+[[contributors]]
+name = "Aymeric DUCARME"
+role = "Game Developer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Maël REY"
+role = "Game Designer/Level Designer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Léa HOAROAU"
+role = "Graphic Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Xavier GAPPE"
+role = "Graphic Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Alix GRANLIN"
+role = "Graphic Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Jennyfer GARDIENNET"
+role = "Graphic Artist"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Alexis BOISSELET-CHANEL"
+role = "Sound Designer"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Antoine CAHUREL"
+role = "Music"
+fieldGroup = "contributors_group"
+
+[development_time]
+total = "2 Jours"
+
+[[galleries]]
+title = "Images du jeu"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/mystic-koni/mystic-koni-1.png"
+
+  [[galleries.images]]
+  url = "/images/projects/mystic-koni/mystic-koni-2.png"
+
+[[galleries]]
+title = "Photos"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/mystic-koni/photo-groupe.jpg"
+
+[[youtube_singles]]
+size = "size-medium"
+video_id = "slu6XRkOEFA"
+video_title = "Aftermovie - Global Game Jam 2023 Montpellier - Root_Access"
+duration = "3:53"
+date = "10 mai 2023"
+fieldGroup = "youtube_singles_group"
 +++
 
 # Mystic Koni
 
-## Description du projet
 
-**Mystic Koni** est un jeu de puzzle féérique qui se déroule dans un arbre sacré en train de dépérir. Vous incarnez une petite fée dont la mission est de sauver son arbre en restaurant les trois cœurs racines qui l'alimentent. Pour cela, il faudra résoudre trois énigmes dans des terriers sous l'arbre.
-
-## Caractéristiques principales
-
-- Univers poétique et immersif
-- 3 puzzles à résoudre dans des environnements variés
-- Ambiance sonore relaxante
-- Histoire centrée sur la nature et la magie
-
-## Technologies utilisées
-
-- Unity (C#)
-- Game & Puzzle Design
-
-## Lien de téléchargement
-
-Téléchargez le jeu sur itch.io : [Mystic Koni sur itch.io](https://mystos21.itch.io/mystic-koni)
-
----
-
-**Mystic Koni** propose une aventure courte et poétique, idéale pour les amateurs de puzzles et d'univers féeriques.
