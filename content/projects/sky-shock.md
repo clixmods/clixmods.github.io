@@ -107,6 +107,44 @@ fieldGroup = "galleries_group"
   [[galleries.images]]
   fieldGroup = "gallery_group"
   url = "/images/projects/sky-shock/skyshock-photo-13.jpg"
+
+[[youtube_singles]]
+size = "size-medium"
+video_id = "_grRfFS_FtA"
+video_title = "Gameplay"
+duration = "2:38"
+fieldGroup = "youtube_singles_group"
+
+[[contributors]]
+name = "Clément GARCIA"
+role = "Développeur"
+fieldGroup = "contributors_group"
+avatar = "/images/people/clement-garcia.jpg"
+
+[[contributors]]
+name = "Théo CAROUGE"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Léa HOARAUX"
+role = "Artiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Xavier GAPPE"
+role = "Artiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Oscar DURAN"
+role = "Artiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "Shaim SOMSANITH"
+role = "Artiste"
+fieldGroup = "contributors_group"
 +++
 
 # Sky Shock

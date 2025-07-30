@@ -2,54 +2,85 @@
 date = "2021-12-17T00:00:00+02:00"
 draft = false
 title = "Demon's Tower"
-logo = "/images/projects/logos/demons-tower-logo.png"
 subtitle = "Action-Roguelite - Itch.io Release"
 description = "Demon's Tower est un action-roguelite où vous incarnez un héros devant vaincre le donjon et le plus grand démon pour sauver le village. Attention, chaque mort vous fait perdre votre équipement !"
-image = "/images/projects/demons-tower.jpg"
-tags = ["Action", "Roguelite", "Donjon", "Itch.io", "Unity"]
-technologies = ["Unity", "C#", "Game Design", "Pixel Art"]
+tags = [ "Action", "Roguelite", "Donjon", "Itch.io", "Unity" ]
+technologies = [ "Unity", "C#", "Game Design", "Pixel Art" ]
 category = "projects"
 sector = "games"
 featured = false
 fmContentType = "project-content-type"
+status = "Terminé"
+image = "/images/projects/demons-tower/dt-bg.webp"
 
 [[actions]]
 type = "download"
-label = "Télécharger Demon's Tower"
+label = "Jouer au jeu"
 url = "https://dimenchine-page.itch.io/demons-tower"
 icon = "download"
 primary = true
 
+[development_time]
+total = "2 mois"
+
+[[galleries]]
+title = "Images"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/demons-tower/dt-1.gif"
+
+  [[galleries.images]]
+  url = "/images/projects/demons-tower/dt-2.gif"
+
+  [[galleries.images]]
+  url = "/images/projects/demons-tower/dt-3.gif"
+
+[[notable_facts]]
+value = "1er jeu vidéo !"
+label = "C'est le tout premier projet de jeu vidéo que j'ai réalisé"
+fieldGroup = "notable_facts_group"
+
+[[youtube_singles]]
+size = "size-medium"
+video_id = "Ldk0INa8wS0"
+video_title = "Gameplay"
+duration = "4:23"
+fieldGroup = "youtube_singles_group"
+
+[[contributors]]
+name = "Clément GARCIA"
+role = "Développeur"
+fieldGroup = "contributors_group"
+avatar = "/images/people/clement-garcia.jpg"
+
+[[contributors]]
+name = "KAPRIS Dimitri"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "JAUBERT Tom"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "HENCK Benjamin"
+role = "Graphiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "MICHELAT Lucas"
+role = "Graphiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+name = "CALI Liam"
+role = "Graphiste"
+fieldGroup = "contributors_group"
 +++
 
 # Demon's Tower
 
 ## Description du projet
-
-**Demon's Tower** est un jeu d'action-roguelite dans lequel vous incarnez un héros chargé de vaincre le donjon et le plus grand démon pour sauver le village. Attention, de nombreux monstres se dressent sur votre route, et chaque mort vous fait perdre votre équipement ! Utilisez le bon type d'arme pour vaincre chaque ennemi et triomphez du boss final.
-
-## Caractéristiques principales
-
-- Progression à travers des salles de donjon
-- Système de mort permanente avec perte d'équipement
-- Combats stratégiques selon le type d'ennemi
-- Boss de fin de niveau
-
-## Équipe du projet
-
-- Développeurs : Dimitri Kapris, Clément Garcia, Tom Jaubert
-- Artistes : Liam Cali, Lucas Michelat, Benjamin Henck
-
-## Technologies utilisées
-
-- Unity (C#)
-- Pixel Art
-- Game Design
-
-## Lien de téléchargement
-
-Téléchargez le jeu sur itch.io : [Demon's Tower sur itch.io](https://dimenchine-page.itch.io/demons-tower)
-
----
-
-**Demon's Tower** propose un défi relevé pour les amateurs de roguelite et d'action, avec une progression exigeante et des combats stratégiques !
