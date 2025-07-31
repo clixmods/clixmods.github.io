@@ -21,28 +21,27 @@ icon = "download"
 primary = true
 
 [[contributors]]
-name = "Clément GARCIA"
-role = "Développeur"
-fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
-
-[[contributors]]
-name = "Gabriel De Castro"
+person = "clement-garcia"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Julia Boffin"
+person = "gabriel-de-castro"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "julia-boffin"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Manille Brun"
+person = "manille-brun"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Loona Pelacuer"
+person = "loona-pelacuer"
 role = "Artiste"
 fieldGroup = "contributors_group"
 

@@ -23,48 +23,47 @@ primary = true
 fieldGroup = "actions_group"
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Développeur / Game Designer"
 fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
 
 [[contributors]]
-name = "Aymeric DUCARME"
+person = "aymeric-ducarme"
 role = "Game Developer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Maël REY"
+person = "mael-rey"
 role = "Game Designer/Level Designer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Léa HOAROAU"
+person = "lea-hoaraux"
 role = "Graphic Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Xavier GAPPE"
+person = "xavier-gappe"
 role = "Graphic Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Alix GRANLIN"
+person = "alix-granlin"
 role = "Graphic Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Jennyfer GARDIENNET"
+person = "jennyfer-gardiennet"
 role = "Graphic Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Alexis BOISSELET-CHANEL"
+person = "alexis-boisselet-chanel"
 role = "Sound Designer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Antoine CAHUREL"
+person = "antoine-cahurel"
 role = "Music"
 fieldGroup = "contributors_group"
 

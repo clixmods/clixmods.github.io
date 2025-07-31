@@ -68,19 +68,19 @@ value = "Projet <span class='highlight'>phare</span>"
 label = "Reconnaissance communautaire"
 
 [[contributors]]
-name = "Clément 'Clix' Garcia"
+person = "clement-garcia"
 role = "Chef de projet, Développeur principal"
-avatar = "/images/people/clix-avatar.jpg"
+fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Alexisloic21"
+person = "alexisloic21"
 role = "Scripter, Effets spéciaux"
-avatar = "/images/people/alexisloic21-avatar.jpg"
+fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Communauté modding"
+person = "communaute-modding"
 role = "Assets et feedback"
-avatar = "/images/people/community-avatar.jpg"
+fieldGroup = "contributors_group"
 
 [development_time]
 total = "6 mois"
@@ -240,49 +240,56 @@ testimonials_size = "size-large"
 
 [[testimonials]]
 quote = "Greetings, I review, showcase maps and do guides as well – here is our short play‑through with shield part locations!"
-name = "Neon Slice"
+person = "neon-slice"
 role = "Map reviewer & guide creator"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "I literally can NOT say anything negative about this map […] Everything is pretty much the same to a T […] Clix is now my waifu."
-name = "K2.EXE"
+person = "k2-exe"
 role = "Joueur passionné"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Fantastic map […] classic Nuketown brought into BO3 – here’s the video I made."
-name = "Hally"
+person = "hally"
 role = "Joueur & créateur de contenu"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "I have always come back to this custom map […] it has always felt like it belonged on BO3 […] I honestly wish I knew how to mod so I could take up the mantle for this."
-name = "EddieBaledy"
+person = "eddiebaledy"
 role = "Vétéran de la communauté"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "First off I just want to say this map is amazing! It's super stunning to play the map in BO3."
-name = "Morgyn"
+person = "morgyn"
 role = "Joueur expérimenté"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Awesome remake, the new EE is interesting and different […]"
-name = "Phil MePeker"
+person = "phil-mepeker"
 role = "Joueur avancé"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "An absolute great remake, this is definitely one of the best on this workshop. It's filled to the brim with details and additional mechanics which open up more gameplay options to both hardcore and casual players."
-name = "BritishPie"
+person = "britishpie"
 role = "Joueur & critique"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "A near 1‑to‑1 remake of a classic map […] Only the nimblest zombie players will make it to high rounds here."
-name = "CodySir"
+person = "codysir"
 role = "Joueur expérimenté"
 rating = 5
 +++

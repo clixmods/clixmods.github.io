@@ -182,67 +182,67 @@ fieldGroup = "youtube_galleries_group"
   fieldGroup = "youtube_videos_group"
 
 [[contributors]]
-name = "Francois Bertrand"
+person = "francois-bertrand"
 role = "Game Director / Developer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Anthony Expert"
+person = "anthony-expert"
 role = "Art Director / 2D Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Yponeko"
+person = "yponeko"
 role = "Composer / Sound-Designer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Elisa Beiram"
+person = "elisa-beiram"
 role = "Narrative-Designer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Emerick Aussignac"
+person = "emerick-aussignac"
 role = "Developer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Elise Ramseier"
+person = "elise-ramseier"
 role = "3D Artist / UI Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Alicia Val"
+person = "alicia-val"
 role = "Art Director / 2D-3D Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Robin Nicolet"
+person = "robin-nicolet"
 role = "Game-Designer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Guillaume Laugé"
+person = "guillaume-lauge"
 role = "Level-Designer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Vincent Muffato"
+person = "vincent-muffato"
 role = "Junior Developer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Simon Gosse"
+person = "simon-gosse"
 role = "Junior Developer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Nolwenn Armand"
+person = "nolwenn-armand"
 role = "Junior 3D Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Clement Garcia"
+person = "clement-garcia"
 role = "Junior Developer"
 fieldGroup = "contributors_group"
 

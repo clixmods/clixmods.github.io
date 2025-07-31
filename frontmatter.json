@@ -257,6 +257,34 @@
   },
   "frontMatter.data.files": [
     {
+      "id": "people",
+      "title": "People Database",
+      "file": "data/people.json",
+      "labelField": "name",
+      "schema": {
+        "title": "Person",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Nom complet"
+          },
+          "avatar": {
+            "type": "string",
+            "title": "Avatar (chemin vers l'image)"
+          },
+          "id": {
+            "type": "string",
+            "title": "Identifiant unique"
+          }
+        },
+        "required": [
+          "name",
+          "id"
+        ]
+      }
+    },
+    {
       "id": "profile",
       "title": "Profile Data",
       "file": "data/profile.json",
@@ -925,22 +953,20 @@
     },
     {
       "id": "contributors_group",
-      "labelField": "name",
+      "labelField": "person",
       "fields": [
         {
-          "title": "name",
-          "name": "name",
-          "type": "string"
+          "title": "Personne",
+          "name": "person",
+          "type": "dataFile",
+          "dataFileId": "people",
+          "dataFileKey": "id",
+          "dataFileValue": "name"
         },
         {
-          "title": "role",
+          "title": "Rôle dans le projet",
           "name": "role",
           "type": "string"
-        },
-        {
-          "title": "avatar",
-          "name": "avatar",
-          "type": "image"
         }
       ]
     },
@@ -1170,7 +1196,7 @@
     },
     {
       "id": "testimonials_group",
-      "labelField": "name",
+      "labelField": "person",
       "fields": [
         {
           "title": "Témoignage",
@@ -1178,19 +1204,17 @@
           "type": "string"
         },
         {
-          "title": "Témoigneur",
-          "name": "name",
-          "type": "string"
+          "title": "Personne",
+          "name": "person",
+          "type": "dataFile",
+          "dataFileId": "people",
+          "dataFileKey": "id",
+          "dataFileValue": "name"
         },
         {
-          "title": "Rôle",
+          "title": "Rôle/Contexte",
           "name": "role",
           "type": "string"
-        },
-        {
-          "title": "avatar",
-          "name": "avatar",
-          "type": "image"
         }
       ]
     },

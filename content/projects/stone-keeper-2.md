@@ -35,63 +35,62 @@ icon = "youtube"
 primary = false
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Développeur"
 fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
 
 [[contributors]]
-name = "Léa HOAREAU"
+person = "lea-hoaraux"
 role = "2D, 3D, Texturing & Lighting"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Alix GRANLIN"
+person = "alix-granlin"
 role = "3D, Texturing & Lighting"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Bruno DAVILA"
+person = "bruno-davila"
 role = "Enviro Artist 3D"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Xavier GAPPE"
+person = "xavier-gappe"
 role = "Enviro Artist 3D & Level Design"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Oscar DURAND"
+person = "oscar-durandd"
 role = "RIG Animator 3D"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Jérémy Ferreira da Silva"
+person = "jeremy-ferreira"
 role = "Développeur & Tech Art"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Dimitri Kapris"
+person = "dimitri-kapris"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Théo CAROUGE"
+person = "theo-carouge"
 role = "Développeur & Level Design"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Chloé Dumas"
+person = "chloe-dumas"
 role = "Sound Design & Musique"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Kaze"
+person = "kaze"
 role = "Sound Design & Musique"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Rakotomalala Ambinitsoa Landy"
+person = "landy-rakotomalala"
 role = "Musique"
 fieldGroup = "contributors_group"
 

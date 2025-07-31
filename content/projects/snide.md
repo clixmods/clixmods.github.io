@@ -29,33 +29,32 @@ icon = "youtube"
 primary = false
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Développeur / Game Design / Level Design"
-avatar = "/images/people/clement-garcia.jpg"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Théo VICINI"
+person = "theo-vicini"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Benjamin HENCK"
+person = "benjamin-henck"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Loona PELACUER"
+person = "loona-pelacuer"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Manille BRUN"
+person = "manille-brun"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "LIAM CALI"
+person = "liam-cali"
 role = "Artiste"
 fieldGroup = "contributors_group"
 

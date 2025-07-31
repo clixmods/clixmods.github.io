@@ -134,48 +134,47 @@ fieldGroup = "galleries_group"
   url = "/images/projects/stone-keeper/concept-art-player.png"
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Lead Développeur / Game Design / Level Design"
 fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
 
 [[contributors]]
-name = "Théo Carouge"
+person = "theo-carouge"
 role = "Développeur / Level Design"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Jérémy Ferreira"
+person = "jeremy-ferreira"
 role = "Gameplay developer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Alix Granlin"
+person = "alix-granlin"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Léa HOARAUX"
+person = "lea-hoaraux"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Xavier GAPPE"
+person = "xavier-gappe"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Oscar DURAND"
+person = "oscar-durandd"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Chloé DUMAS"
+person = "chloe-dumas"
 role = "Sound Designer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Landy RAKOTOMALALA"
+person = "landy-rakotomalala"
 role = "Sound Designer"
 fieldGroup = "contributors_group"
 
@@ -198,55 +197,55 @@ fieldGroup = "youtube_singles_group"
 
 [[testimonials]]
 quote = "Loved it ! Je l’ai terminé : superbe, excellente bande-son, très bon gameplay."
-name = "ASWhalerGamer"
+person = "aswhalergamer"
 role = "Vidéaste"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Just UNBELIEVABLE, STUNNING, INCROYABLE !"
-name = "ThierryFerreira-g8d"
+person = "thierryferreira-g8d"
 role = "Joueur passionné"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Très beaux design, super clean."
-name = "julesrainjonneau1002"
+person = "julesrainjonneau1002"
 role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "J’ai adoré, c’est un jeu passionnant."
-name = "feustein1423"
+person = "feustein1423"
 role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Wow ! It looks totally amazing !!!"
-name = "helenbaldwin4447"
+person = "helenbaldwin4447"
 role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Beau projet, bravo l’équipe ! 👏🔥"
-name = "arthurfoubert4334"
+person = "arthurfoubert4334"
 role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Mais ça a l’air dingue ! Ubisoft doit déjà vouloir racheter les droits !"
-name = "BackBlack3000"
+person = "backblack3000"
 role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Ça a l’air génial ! Bravo !"
-name = "austinlune2265"
+person = "austinlune2265"
 role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Le jeu a l’air incroyable… hâte qu’il sorte 🤯"
-name = "billalsaadallah7158"
+person = "billalsaadallah7158"
 role = "Joueur"
 fieldGroup = "testimonials_group"
 +++

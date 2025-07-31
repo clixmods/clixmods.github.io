@@ -61,77 +61,78 @@ duration = "0:55"
 fieldGroup = "youtube_singles_group"
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Gabriel De Castro"
+person = "gabriel-de-castro"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Théo VICINI"
+person = "theo-vicini"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Dimitri KAPRIS"
+person = "dimitri-kapris"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "David TEXEIRA"
+person = "david-texeira"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Jeremy FERREIRA"
+person = "jeremy-ferreira"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Agathe ROUX"
+person = "agathe-roux"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Julia BOFFIN"
+person = "julia-boffin"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Aiden HERVIOU"
+person = "aiden-herviou"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Benjamin HENCK"
+person = "benjamin-henck"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Liam CALI"
+person = "liam-cali"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Manille BRUN"
+person = "manille-brun"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Océane ESCRIVA"
+person = "oceane-escriva"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Clément COURTOIS"
+person = "clement-courtois"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Shaim SOMSANITH"
+person = "shaim-somsanith"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 +++
+

@@ -67,52 +67,53 @@ duration = "1:16"
 fieldGroup = "youtube_singles_group"
 
 [[contributors]]
-name = "Marion Abrial"
+person = "marion-abrial"
 role = "Auteur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Theo Carouge"
+person = "theo-carouge"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "alixgranlin"
+person = "alix-granlin"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "C3leste"
+person = "theo-vicini"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "viic"
+person = "viic"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Xavier Gappe"
+person = "xavier-gappe"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "leahoa"
+person = "lea-hoaraux"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Evil0Games"
+person = "matthieu-osten"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "brudva"
+person = "brudva"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 +++
+

@@ -13,7 +13,20 @@ fmContentType = "project-content-type"
 image = "/images/projects/my-game-showcase/artbook.webp"
 logo = "/images/projects/my-game-showcase/My Game Showcase.webp"
 
+[[contributors]]
+person = "francois-bertrand"
+role = "Chef de projet / Développeur"
+fieldGroup = "contributors_group"
 
+[[contributors]]
+person = "anthony-expert"
+role = "Artiste"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "clement-garcia"
+role = "Développeur"
+fieldGroup = "contributors_group"
 +++
 
 # My Game Showcase

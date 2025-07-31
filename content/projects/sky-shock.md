@@ -116,33 +116,32 @@ duration = "2:38"
 fieldGroup = "youtube_singles_group"
 
 [[contributors]]
-name = "Clément GARCIA"
-role = "Développeur"
-fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
-
-[[contributors]]
-name = "Théo CAROUGE"
+person = "clement-garcia"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Léa HOARAUX"
+person = "theo-carouge"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "lea-hoaraux"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Xavier GAPPE"
+person = "xavier-gappe"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Oscar DURAN"
+person = "oscar-durand"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Shaim SOMSANITH"
+person = "shaim-somsanith"
 role = "Artiste"
 fieldGroup = "contributors_group"
 +++

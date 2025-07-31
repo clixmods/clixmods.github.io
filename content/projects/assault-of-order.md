@@ -17,7 +17,7 @@ image = "/images/projects/assault-of-order/clement-garcia-aoo-leveldesign-3.jpg"
 [[actions]]
 type = "download"
 label = "Jouer au jeu"
-url = "https://evil0games.itch.io/assault-of-order"
+url = "https://matthieu-osten.itch.io/assault-of-order"
 icon = "download"
 primary = true
 
@@ -29,43 +29,42 @@ icon = "youtube"
 primary = false
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Développeur / Environnement builder / Lighting"
 fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
 
 [[contributors]]
-name = "KHATTABI Soundouss"
+person = "soundouss-khattabi"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "ABRIAL Marion"
+person = "marion-abrial"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "OUZAGUA Nassim"
+person = "ouzagua-nassim"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "SOMSANITH Shaim"
+person = "shaim-somsanith"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "COURTOIS Clément"
+person = "clement-courtois"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "DUCARME Aymeric"
+person = "aymeric-ducarme"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "OSTEN Matthieu"
+person = "matthieu-osten"
 role = "Développeur"
 fieldGroup = "contributors_group"
 

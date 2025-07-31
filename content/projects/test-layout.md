@@ -102,31 +102,34 @@ achievement = "Prix de l'Innovation Technique"
 ranking_size = "size-small"
 
 [[contributors]]
-name = "John Doe"
+person = "john-doe"
 role = "Lead Designer"
-avatar = "/images/people/john-avatar.jpg"
+fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Jane Smith"
+person = "jane-smith"
 role = "Frontend Developer"
-avatar = "/images/people/jane-avatar.jpg"
+fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Bob Wilson"
+person = "bob-wilson"
 role = "Backend Developer"
+fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Alice Brown"
+person = "alice-brown"
 role = "UI/UX Designer"
-avatar = "/images/people/alice-avatar.jpg"
+fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Team Alpha"
+person = "team-alpha"
 role = "Quality Assurance"
+fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Community Contributors"
+person = "community-contributors"
 role = "Feedback & Testing"
+fieldGroup = "contributors_group"
 
 [development_time]
 total = "8 mois"
@@ -215,42 +218,45 @@ value = "95+ Lighthouse score"
 
 [[testimonials]]
 quote = "Ce système de layout est révolutionnaire ! La flexibilité est incroyable et l'implémentation est parfaite. Cela va changer ma façon de concevoir des interfaces."
-name = "Sarah Johnson"
+person = "sarah-johnson"
 role = "Senior UI Designer chez Google"
-avatar = "/images/people/sarah-google.jpg"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "En tant que développeur frontend, j'apprécie particulièrement la propreté du code et la performance du système. Excellent travail !"
-name = "Mike Chen"
+person = "mike-chen"
 role = "Frontend Lead Developer"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "L'expérience utilisateur est exceptionnelle sur tous les devices. Le responsive design est impeccable."
-name = "Lisa Rodriguez"
+person = "lisa-rodriguez"
 role = "UX Researcher"
-avatar = "/images/people/lisa-ux.jpg"
 rating = 4
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Ce projet démontre une maîtrise technique impressionnante. Le système de grille CSS est particulièrement bien pensé."
-name = "Alex Kumar"
+person = "alex-kumar"
 role = "Technical Architect"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Perfect implementation of modern design principles. This will be my new reference for layout systems!"
-name = "Emma Thompson"
+person = "emma-thompson"
 role = "Design System Lead"
-avatar = "/images/people/emma-design.jpg"
 rating = 5
+fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "La documentation est claire et les exemples sont parfaits. Facile à intégrer dans nos projets existants."
-name = "David Kim"
+person = "david-kim"
 role = "Project Manager"
 rating = 4
+fieldGroup = "testimonials_group"
 
 [[youtube_videos]]
 video_id = "hb-kF-VZvnE"

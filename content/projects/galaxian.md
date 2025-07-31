@@ -39,34 +39,32 @@ primary = false
 fieldGroup = "actions_group"
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Lead développeur"
 fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
 
 [[contributors]]
-name = "DUCARME Aymeric"
+person = "aymeric-ducarme"
 role = "Developper"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "VANG Victoria"
+person = "victoria-vang"
 role = "Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "HENCK Benjamin"
+person = "benjamin-henck"
 role = "Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "BRACELLI Bruno"
+person = "bruno-bracelli"
 role = "Artist"
 fieldGroup = "contributors_group"
 
 [development_time]
 total = "1 Mois"
-
 [[galleries]]
 size = "size-medium"
 title = "Image du jeu"

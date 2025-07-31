@@ -83,70 +83,69 @@ fieldGroup = "youtube_galleries_group"
   fieldGroup = "youtube_videos_group"
 
 [[contributors]]
-name = "leahoa"
+person = "lea-hoaraux"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "CiceronAudio"
+person = "aymeric-ducarme"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "xalizc"
+person = "xalizc"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Chloé DUMAS"
+person = "chloe-dumas"
 role = "Sound Designer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Evil0Games"
+person = "matthieu-osten"
 role = "Développeur / Trailer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Clément GARCIA"
-role = "Développeur"
-fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
-
-[[contributors]]
-name = "JeremyFerreira"
+person = "clement-garcia"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Clément Courtois"
+person = "jeremy-ferreira"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "clement-courtois"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "TomAaprix"
+person = "jaubert-tom"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Pepp3rMint"
+person = "loona-pelacuer"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Nilleee"
+person = "nilleee"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[testimonials]]
 quote = "Damn, another #horror game in the dark ! #StayInTheLight"
-name = "Siviovi"
+person = "siviovi"
 role = "Joueur Itch.io"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "cool game but to difficult for me lol"
-name = "nhojipooh"
+person = "nhojipooh"
 role = "Joueur Itch.io"
 fieldGroup = "testimonials_group"
 +++

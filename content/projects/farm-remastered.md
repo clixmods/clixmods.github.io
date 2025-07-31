@@ -59,122 +59,122 @@ gallery_size = "size-medium"
 testimonials_size = "size-medium"
 
 [[contributors]]
-name = "Clément 'Clix' Garcia"
+person = "clement-garcia"
 role = "Créateur & Level Designer"
 fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
 
 [[contributors]]
-name = "Comunauté BO3"
+person = "comunaute-bo3"
 role = "Feedback et tests"
+fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Clix"
+person = "clement-garcia"
 role = "Mapping + Tranzit's Zombie"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "QuentinFTL"
+person = "quentinftl"
 role = "Scripts + Grief Mod"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Symbo"
+person = "symbo"
 role = "Scripts, Assets Black Ops 2"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "HarryBO21"
+person = "harrybo21"
 role = "WunderFizz"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "eMoX MaNgA"
+person = "emox"
 role = "Chronicles Weapons + Camo Tranzit + Assets Black Ops 2"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "The Bland Death"
+person = "the-bland-death"
 role = "M1911 anim"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "ProRevenge"
+person = "prorevenge"
 role = "RayGun Mark2"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "alexisloic21"
+person = "alexisloic21"
 role = "Assets Black Ops 2"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Flowing"
+person = "flowing"
 role = "Assets Black Ops 2"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Zeroy"
+person = "zeroy"
 role = "Assets WW2"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "BlueShark"
+person = "blueshark"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "elijah"
+person = "elijah"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Nosif28"
+person = "nosif28"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Skyler"
+person = "skyler"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "shark-ut-ail"
+person = "shark-ut-ail"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "ragnar"
+person = "ragnar"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Gekido"
+person = "gekido"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "EnoR"
+person = "enor"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "DFuS1oN"
+person = "dfus1on"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "BGhost314"
+person = "bghost314"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Pacito2"
+person = "pacito2"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Newman"
+person = "newman"
 role = "Additional testing help"
 fieldGroup = "contributors_group"
 
@@ -182,58 +182,57 @@ fieldGroup = "contributors_group"
 total = "1 mois"
 start_date = "Mars 2018"
 end_date = "Juin 2018"
-
 [[testimonials]]
 quote = "Great faithful recreation, fun with friends for sure! My video if anyone's interested https://youtu.be/V95-5AtGX7o"
-name = "Tactical Loser"
+person = "tactical-loser"
 role = "Joueur & créateur de contenu"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Awesome remaster! Feels like an official treyarch map :)"
-name = "gigity_74"
+person = "gigity-74"
 role = "Joueur Steam"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "This is one of my favorite map remakes of all time, feels basically like an official Treyarch remake, I hope you plan on remaking more maps with this quality!"
-name = "taco bell crocs"
+person = "taco-bell-crocs"
 role = "Joueur passionné"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "I truly hope you make more maps like this. Quality is hard to find in the workshop and is so well done, excited for what you make next!"
-name = "CharCharD™"
+person = "charchard"
 role = "Joueur & critique"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "i love this, it looks amazing, and the gameplay is amazing, just as high quality as zombie chronicals, hell i forgot i was playing a custom map, amazing work dude"
-name = "Cherry Coke™"
+person = "cherry-coke"
 role = "Joueur Steam"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Phenomenal remake dude, you should be very proud of this! :D"
-name = "Ping"
+person = "ping"
 role = "Joueur Steam"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "A pretty good remake of the orginal map. i didnt find any bugs or issues. zombie spawning is okay aswell unlike other maps. 10/10"
-name = "cybergod"
+person = "cybergod"
 role = "Joueur expérimenté"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "This has got to be the greatest custom remastered map i've ever played in my opinion."
-name = "zombiedude9976"
+person = "zombiedude9976"
 role = "Joueur passionné"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Instantly one of my favorite maps in a while, congrats on the release!"
-name = "Astraxis"
+person = "astraxis"
 role = "Joueur & reviewer"
 fieldGroup = "testimonials_group"
 

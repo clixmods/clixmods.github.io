@@ -39,90 +39,89 @@ date = "26 mars 2024"
 fieldGroup = "youtube_singles_group"
 
 [[contributors]]
-name = "Agathe Roux"
+person = "agathe-roux"
 role = "Project management, VFX Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Théo Vicini"
+person = "theo-vicini"
 role = "Project management, Developper"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Gabriel de Castro"
+person = "gabriel-de-castro"
 role = "Developper"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Victoria Vang"
+person = "victoria-vang"
 role = "3D Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Lucas Michelat"
+person = "lucas-michelat"
 role = "3D Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Alizée Corbin"
+person = "alizee-corbin"
 role = "3D Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Bruno Bracelli"
+person = "bruno-bracelli"
 role = "3D Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Benjamin Henck"
+person = "benjamin-henck"
 role = "3D Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Océane Escriva"
+person = "oceane-escriva"
 role = "UI Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Soundouss Khattabi"
+person = "soundouss-khattabi"
 role = "VFX Artist"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Matthieu Osten"
+person = "matthieu-osten"
 role = "Developper"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Alexandre Boulet"
+person = "alexandre-boulet"
 role = "Sound Designer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Manille Brun"
+person = "manille-brun"
 role = "Partial implication"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Loona Pelacuer"
+person = "loona-pelacuer"
 role = "Partial implication"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Sal Carles"
+person = "sal-carles"
 role = "Partial implication"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Liam Cali"
+person = "liam-cali"
 role = "Partial implication"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Assistance développeur"
 fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
 +++
 
 # Fish N Ship - Cœur de Ville en Lumière

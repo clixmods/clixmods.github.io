@@ -50,33 +50,32 @@ duration = "4:23"
 fieldGroup = "youtube_singles_group"
 
 [[contributors]]
-name = "Clément GARCIA"
-role = "Développeur"
-fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
-
-[[contributors]]
-name = "KAPRIS Dimitri"
+person = "clement-garcia"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "JAUBERT Tom"
+person = "dimitri-kapris"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "HENCK Benjamin"
+person = "jaubert-tom"
+role = "Développeur"
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "benjamin-henck"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "MICHELAT Lucas"
+person = "lucas-michelat"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "CALI Liam"
+person = "liam-cali"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 +++

@@ -29,33 +29,32 @@ icon = "youtube"
 primary = false
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Développeur / Level Designer / Game Design"
 fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
 
 [[contributors]]
-name = "Jeremy FERREIRA"
+person = "jeremy-ferreira"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Julia BOFFIN"
+person = "julia-boffin"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Clément COURTOIS"
+person = "clement-courtois"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Manille BRUN"
+person = "manille-brun"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Loona PELACUER"
+person = "loona-pelacuer"
 role = "Artiste"
 fieldGroup = "contributors_group"
 

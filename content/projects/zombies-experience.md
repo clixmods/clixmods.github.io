@@ -53,107 +53,107 @@ value = "Inspiration pour la communauté modding"
 label = "Ce mod a inspiré d'autres mods qui ont eu encore plus de succès."
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Project Leader / Scripting / Weapons port"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Alain"
+person = "alain"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "jarik"
+person = "jarik"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "robit"
+person = "robit"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "skyelord"
+person = "skyelord"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "alexisloic21"
+person = "alexisloic21"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "DTZxPorter"
+person = "dtzxporter"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Redspace200"
+person = "redspace200"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "HarryBo21"
+person = "harrybo21"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "DidUKnowIPwn"
+person = "diduknowipwn"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "LilRobot"
+person = "lilrobot"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Symbo"
+person = "symbo"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Scobalula"
+person = "scobalula"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Thomascat"
+person = "thomascat"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Connor"
+person = "connor"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "eMoX_MaNgA"
+person = "emox"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "fusorf"
+person = "fusorf"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Sayen"
+person = "sayen-raigin"
 role = "Contributor"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Doggydolls"
+person = "doggydolls"
 role = "Verified Tester"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Pinny"
+person = "pinny"
 role = "Verified Tester"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Afan"
+person = "afan"
 role = "Verified Tester"
 fieldGroup = "contributors_group"
 
@@ -181,62 +181,74 @@ fieldGroup = "youtube_galleries_group"
 
 [[testimonials]]
 quote = "This is the greatest mod in the history of Call of Duty!"
-name = "Kmart"
+person = "kmart"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Definitely the way to play Call of Duty Zombies. Absolutely fantastic. Thank you for all of the hard-work and dedication."
-name = "JusticeIroquois"
+person = "justiceiroquois"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "This mod is a masterpiece – good job :)"
-name = "skibidimiren"
+person = "skibidimiren"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Great great mod… loving the mod otherwise, thank you so much <3"
-name = "FODEN313"
+person = "foden313"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Great mod"
-name = "Charlie Love"
+person = "charlie-love"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "This is a good mod, it’s fun to use many different weapons on Black Ops 3 … incredibly fun and has an incredible amount of potential."
-name = "Goop"
+person = "goop"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Wow, this mod is exactly what BO3 needed!"
-name = "blustudiog16"
+person = "blustudiog16"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "This is an amazing mod man, awesome stuff!"
-name = "John Help"
+person = "john-help"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Fantastic mod"
-name = "Blek"
+person = "blek"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Loving this mod man. You just revived Black Ops 3 for me."
-name = "Kenny"
+person = "kenny"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Great job so far!"
-name = "AffluentMonkey"
+person = "affluentmonkey"
+role = ""
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "This mod looks amazing – revolutionary."
-name = "JackScavs"
+person = "jackscavs"
+role = ""
 fieldGroup = "testimonials_group"
 +++
 

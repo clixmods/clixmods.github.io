@@ -50,28 +50,27 @@ fieldGroup = "galleries_group"
   url = "/images/projects/pigeon-war/photo-3.jpg"
 
 [[contributors]]
-name = "Denis BECLE"
+person = "denis-becle"
 role = "Sound Designer"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Julien DELAUNAY"
+person = "julien-delaunay"
 role = "Développeur"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Clément GARCIA"
+person = "clement-garcia"
 role = "Développeur"
 fieldGroup = "contributors_group"
-avatar = "/images/people/clement-garcia.jpg"
 
 [[contributors]]
-name = "Aïden HERVIOU"
+person = "aiden-herviou"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 
 [[contributors]]
-name = "Agathe ROUX"
+person = "agathe-roux"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 +++
