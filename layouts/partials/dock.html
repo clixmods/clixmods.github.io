@@ -1,0 +1,86 @@
+<!-- Dock de navigation principal -->
+<nav id="dock" role="navigation" aria-label="Navigation principale">
+  <ul class="dock-list">
+    <!-- Profil -->
+    <li class="dock-item">
+      <a href="{{ "/" | relURL }}" class="dock-button" aria-label="Profil - Accueil">
+        <svg class="dock-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span class="dock-label">Profil</span>
+      </a>
+    </li>
+    
+    <!-- Compétences -->
+    <li class="dock-item">
+      <a href="{{ "/#skills" | relURL }}" class="dock-button" aria-label="Compétences techniques">
+        <svg class="dock-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+        <span class="dock-label">Compétences</span>
+      </a>
+    </li>
+    
+    <!-- Blog -->
+    <li class="dock-item">
+      <a href="{{ "/posts" | relURL }}" class="dock-button" aria-label="Blog technique">
+        <svg class="dock-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span class="dock-label">Blog</span>
+      </a>
+    </li>
+    
+    <!-- Projets -->
+    <li class="dock-item">
+      <a href="{{ "/projects" | relURL }}" class="dock-button" aria-label="Mes projets">
+        <svg class="dock-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        <span class="dock-label">Projets</span>
+      </a>
+    </li>
+    
+    <!-- Formation -->
+    <li class="dock-item">
+      <a href="{{ "/#education" | relURL }}" class="dock-button" aria-label="Formation et certifications">
+        <svg class="dock-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+        </svg>
+        <span class="dock-label">Formation</span>
+      </a>
+    </li>
+    
+    <!-- Expériences -->
+    <li class="dock-item">
+      <a href="{{ "/#experience" | relURL }}" class="dock-button" aria-label="Expériences professionnelles">
+        <svg class="dock-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <span class="dock-label">Expériences</span>
+      </a>
+    </li>
+    
+    <!-- Contact -->
+    <li class="dock-item">
+      <a href="{{ "/#contact" | relURL }}" class="dock-button" aria-label="Me contacter">
+        <svg class="dock-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22 6 12 13 2 6"></polyline>
+        </svg>
+        <span class="dock-label">Contact</span>
+      </a>
+    </li>
+  </ul>
+</nav>
