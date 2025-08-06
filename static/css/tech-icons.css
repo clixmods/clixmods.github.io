@@ -1,0 +1,132 @@
+/* Styles pour les icônes de technologies SVG */
+.tech-icon-svg {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+    filter: brightness(0.9) contrast(1.1);
+    transition: all 0.3s ease;
+}
+
+.tech-icon-emoji {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+/* Dans les badges de filtre de technologies */
+.tech-badge .tech-icon-svg {
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
+    filter: brightness(1) contrast(1);
+}
+
+.tech-badge:hover .tech-icon-svg {
+    filter: brightness(1.1) contrast(1.2);
+    transform: scale(1.1);
+}
+
+/* Dans les tuiles de projets */
+.ps5-tile-tech-item .tech-icon-svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}
+
+/* Dans les chips de technologie des expériences */
+.tech-chip .tech-icon-svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}
+
+/* Dans la section skills */
+.skill-icon .tech-icon-svg {
+    width: 28px;
+    height: 28px;
+    margin-right: 0;
+}
+
+.skill-icon .tech-icon-emoji {
+    margin-right: 0;
+    font-size: 1.4em;
+}
+
+/* Adaptation pour le mode sombre */
+@media (prefers-color-scheme: dark) {
+    .tech-icon-svg {
+        filter: brightness(1.1) contrast(0.9) saturate(1.1);
+    }
+    
+    .tech-badge:hover .tech-icon-svg {
+        filter: brightness(1.3) contrast(1) saturate(1.2);
+    }
+}
+
+/* Animation au survol pour les icônes dans les badges */
+.tech-badge {
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Assure que les icônes SVG s'alignent bien avec le texte */
+.tech-badge, .tech-chip, .ps5-tile-tech-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tech-badge .tech-icon-svg,
+.tech-badge .tech-icon-emoji,
+.tech-chip .tech-icon-svg,
+.tech-chip .tech-icon-emoji,
+.ps5-tile-tech-item .tech-icon-svg,
+.ps5-tile-tech-item .tech-icon-emoji,
+.skill-icon .tech-icon-svg,
+.skill-icon .tech-icon-emoji {
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+/* Assure l'alignement vertical dans les skill-blocks */
+.skill-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+/* Responsive - Icônes plus grandes sur grands écrans */
+@media (min-width: 1200px) {
+    .tech-icon-svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .skill-icon .tech-icon-svg {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .tech-badge .tech-icon-svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .skill-icon .tech-icon-emoji {
+        font-size: 1.6em;
+    }
+    
+    .skill-icon {
+        width: 44px;
+        height: 44px;
+    }
+}

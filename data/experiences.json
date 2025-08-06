@@ -1,91 +1,40 @@
- [
-    {
-      "title": "Développeur C# / Unity",
-      "company": "Studio La Moutarde",
-      "logo": "/images/companies/la-moutarde.jpg",
-      "period": "2023 - 2025",
-      "duration": "2 ans",
-      "type": "Contrat en alternance",
-      "location": "Montpellier, Occitanie, France",
-      "status": "current",
-      "description": "Développement C# en alternance avec travail sur la fin de production d'un jeu vidéo et développement d'outils",
-      "projects_layout": "horizontal",
-      "projects": [
-        {
-          "project_ref": "terra-memoria",
-          "role_description": "Participation à la fin de production avec focus sur le portage Nintendo Switch"
-        },
-        {
-          "project_ref": "my-game-showcase",
-          "role_description": "Développement complet de l'application web avec architecture moderne"
-        }
-      ],
-      "skills": ["C#", "Unity", "Blazor", "FastEndpoint", ".NET", "Portage console", "Développement outils"],
-      "technologies": ["C#", "Unity", "Blazor", "FastEndpoint", ".NET"]
-    },
-    {
-      "title": "Développement autodidacte",
-      "company": "Projets personnels",
-      "logo": "/images/companies/personal.jpg",
-      "period": "2017 - 2023",
-      "duration": "6 ans",
-      "type": "Autodidacte",
-      "location": "Montpellier, France",
-      "status": "completed",
-      "description": "Apprentissage autodidacte du développement de jeux vidéo et création de contenus additionnels",
-      "projects_layout": "vertical",
-      "projects": [
-        {
-          "project_ref": "nuketown-zombies",
-          "role_description": "Créateur principal et community manager, développement de 50+ contenus"
-        },
-        {
-          "project_ref": "farm-remastered",
-          "role_description": "Développement et administration technique"
-        },
-        {
-          "project_ref": "zombies-experience",
-          "role_description": "Développement et administration technique"
-        },
-        {
-          "project_ref": "mori-rebirth",
-          "role_description": "Développement et administration technique"
-        },
-        {
-          "name": "Serveur privé Dofus",
-          "description": "Exploration des bases de données et assets",
-          "tasks": [
-            "Création d'un serveur privé local",
-            "Exploration des bases de données",
-            "Manipulation d'assets de jeu"
-          ],
-          "technologies": ["MySQL", "Database Management", "Game Assets"],
-          "link": null,
-          "role_description": "Développement et administration technique"
-        }
-      ],
-      "skills": ["Level Design", "Game Design", "Modding", "Community Management", "LUA", "Administration", "800k téléchargements"],
-      "technologies": ["LUA", "Call of Duty Modding Tools", "Radiant Black", "Level Editor"]
-    },
-    {
-      "title": "Projet Aegis",
-      "company": "Projet indépendant",
-      "logo": "/images/companies/aegis.jpg",
-      "period": "2025 - ...",
-      "duration": "En cours",
-      "type": "Projet professionnel",
-      "location": "Montpellier, France",
-      "status": "planning",
-      "description": "Création d'un jeu vidéo indépendant à but professionnel et fondation future d'entreprise",
-      "projects_layout": "horizontal",
-      "projects": [
-        {
-          "project_ref": "projet-aegis",
-          "role_description": "Fondateur et développeur principal, vision entrepreneuriale complète"
-        }
-      ],
-      "skills": ["Game Design", "Unity", "C#", "Entrepreneuriat", "Gestion projet", "Vision produit"],
-      "technologies": ["Unity", "C#", "Game Design Tools"]
-    }
-  ]
-
+[
+  {
+    "title": "Développeur C# / Unity",
+    "company": "Studio La Moutarde",
+    "logo": "/images/companies/la-moutarde.png",
+    "period": "2023 - 2025",
+    "duration": "2 ans",
+    "type": "Contrat en alternance",
+    "location": "Montpellier, Occitanie, France",
+    "status": "current",
+    "description": "Développement C# en alternance avec travail sur la fin de production d'un jeu vidéo et développement d'outils",
+    "projects_layout": "horizontal",
+    "projects": [
+      {
+        "project_ref": "terra-memoria",
+        "role_description": "Participation à la fin de production avec focus sur le portage Nintendo Switch"
+      },
+      {
+        "project_ref": "my-game-showcase",
+        "role_description": "Développement complet de l'application web avec architecture moderne"
+      }
+    ],
+    "skills": [
+      "C#",
+      "Unity",
+      "Blazor",
+      "FastEndpoint",
+      ".NET",
+      "Portage console",
+      "Développement outils"
+    ],
+    "technologies": [
+      "C#",
+      "Unity",
+      "Blazor",
+      "FastEndpoint",
+      ".NET"
+    ]
+  }
+]
