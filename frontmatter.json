@@ -890,6 +890,162 @@
           "description"
         ]
       }
+    },
+    {
+      "id": "trophies",
+      "title": "Trophies Data",
+      "file": "data/trophies.json",
+      "labelField": "name",
+      "schema": {
+        "title": "Trophy",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Identifiant unique du trophée"
+          },
+          "name": {
+            "type": "string",
+            "title": "Nom du trophée"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description du trophée"
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icône emoji du trophée"
+          },
+          "rarity": {
+            "type": "string",
+            "title": "Rareté du trophée",
+            "enum": [
+              "common",
+              "rare",
+              "epic",
+              "legendary"
+            ]
+          },
+          "requirement": {
+            "type": "string",
+            "title": "Condition d'obtention"
+          },
+          "category": {
+            "type": "string",
+            "title": "Catégorie du trophée",
+            "enum": [
+              "exploration",
+              "engagement", 
+              "content",
+              "interaction",
+              "action",
+              "social",
+              "achievement",
+              "speed"
+            ]
+          },
+          "points": {
+            "type": "number",
+            "title": "Points attribués"
+          },
+          "enabled": {
+            "type": "boolean",
+            "title": "Trophée activé"
+          },
+          "order": {
+            "type": "number",
+            "title": "Ordre d'affichage"
+          },
+          "condition_type": {
+            "type": "string",
+            "title": "Type de condition",
+            "enum": [
+              "page_visit",
+              "visited_count",
+              "theme_change",
+              "time_spent",
+              "action_performed",
+              "section_viewed",
+              "all_sections_visited",
+              "all_trophies_unlocked",
+              "speed_navigation"
+            ]
+          },
+          "condition_data": {
+            "type": "object",
+            "title": "Données de condition",
+            "properties": {
+              "paths": {
+                "type": "array",
+                "title": "Chemins de pages",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "exclude_paths": {
+                "type": "array",
+                "title": "Chemins à exclure",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "storage_key": {
+                "type": "string",
+                "title": "Clé de stockage localStorage"
+              },
+              "min_count": {
+                "type": "number",
+                "title": "Nombre minimum requis"
+              },
+              "theme": {
+                "type": "string",
+                "title": "Thème requis"
+              },
+              "min_minutes": {
+                "type": "number",
+                "title": "Minutes minimum requises"
+              },
+              "action": {
+                "type": "string",
+                "title": "Action à effectuer"
+              },
+              "section": {
+                "type": "string",
+                "title": "Section à visiter"
+              },
+              "required_sections": {
+                "type": "array",
+                "title": "Sections requises",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "min_pages": {
+                "type": "number",
+                "title": "Nombre minimum de pages"
+              },
+              "max_minutes": {
+                "type": "number",
+                "title": "Temps maximum en minutes"
+              }
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "icon",
+          "rarity",
+          "requirement",
+          "category",
+          "points",
+          "enabled",
+          "order",
+          "condition_type",
+          "condition_data"
+        ]
+      }
     }
   ],
   "frontMatter.git.enabled": true,
