@@ -42,6 +42,35 @@
           "title": "Categories",
           "name": "categories",
           "type": "categories"
+        },
+        {
+          "title": "subtitle",
+          "name": "subtitle",
+          "type": "string"
+        },
+        {
+          "title": "category",
+          "name": "category",
+          "type": "categories"
+        },
+        {
+          "title": "technologies",
+          "name": "technologies",
+          "type": "choice",
+          "choices": [
+            "Animation",
+            "Aquarelle"
+          ]
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "image",
+          "name": "image",
+          "type": "image"
         }
       ]
     },
@@ -935,7 +964,7 @@
             "title": "Catégorie du trophée",
             "enum": [
               "exploration",
-              "engagement", 
+              "engagement",
               "content",
               "interaction",
               "action",
@@ -1246,7 +1275,7 @@
     {
       "id": "youtube_singles_group",
       "labelField": "video_title",
-      "fields": [        
+      "fields": [
         {
           "title": "Taille du widget",
           "name": "size",
