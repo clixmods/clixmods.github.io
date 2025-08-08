@@ -1,4 +1,22 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
 theme = 'portfolio.theme'
+
+# Multilingual configuration
+defaultContentLanguage = 'fr'
+# Keep French at root, English under /en/
+defaultContentLanguageInSubdir = false
+
+[languages]
+	[languages.fr]
+		languageName = 'Français'
+		languageCode = 'fr-fr'
+		weight = 1
+		title = "Portfolio — Clément 'Clix' GARCIA"
+	[languages.en]
+		languageName = 'English'
+		languageCode = 'en-us'
+		weight = 2
+		title = "Portfolio — Clément 'Clix' GARCIA"
+
+# Optional: surface missing i18n keys during development
+# enableMissingTranslationPlaceholders = true

@@ -1,0 +1,24 @@
+{
+  "site": {
+    "title": "Portfolio"
+  },
+  "blog": {
+    "homeLimit": 3,
+    "dateFormat": "Jan 02, 2006"
+  },
+  "contact": {
+    "subjects": [
+      { "value": "internship", "label": "Internship proposal" },
+      { "value": "apprenticeship", "label": "Apprenticeship offer" },
+      { "value": "project", "label": "Project collaboration" },
+      { "value": "freelance", "label": "Freelance mission" },
+      { "value": "other", "label": "Other" }
+    ]
+  },
+  "social": [
+    { "title": "LinkedIn", "url": "https://linkedin.com/in/clementg4", "icon": "💼", "external": true },
+    { "title": "GitHub", "url": "https://github.com/clixmods", "icon": "🐙", "external": true },
+    { "title": "Email", "url": "mailto:clement.g.developer@gmail.com", "icon": "📧" },
+    { "title": "Discord", "url": "#", "icon": "🎮" }
+  ]
+}

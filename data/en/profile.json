@@ -1,0 +1,29 @@
+{
+  "personal": {
+    "firstName": "Clément",
+    "lastName": "GARCIA",
+    "fullName": "Clément 'Clix' GARCIA",
+    "greeting": "Hello!",
+    "title": "C# / Unity Developer (apprenticeship)",
+    "subtitle": "Passionate about game creation",
+    "bio": "Passionate about video game creation, I'm a versatile developer specialized in gameplay mechanics, visual design, and game production. Self-taught, I started by creating additional content for games, which gave me a deep understanding of development processes. Currently a 3rd-year student at IUT Montpellier-Sète in the IAMSI program (Application Integration and Information Systems Management), I'm refining my skills in project management and technical development. My ambition: to become a team lead capable of driving ambitious game productions to success."
+  },
+  "media": {
+    "profileImage": "/images/people/clement-garcia.jpg",
+    "resumeFile": "/cv/CV_Clement_GARCIA_EN.pdf",
+    "resumeFilename": "CV_Clement_GARCIA_EN.pdf"
+  },
+  "contact": {
+    "email": "clement.g.developer@gmail.com",
+    "phone": "+33 7 67 83 46 09",
+    "linkedin": "linkedin.com/in/clixmods",
+    "github": "https://github.com/clixmods",
+    "location": "Montpellier",
+    "status": "BUT 3 Student - Apprentice at Studio La Moutarde"
+  },
+  "details": {
+    "formation": "BUT 3 IAMSI - IUT Montpellier-Sète",
+    "speciality": "C#, Unity, Blazor, FastEndpoint development",
+    "experience": "2+ years of professional development"
+  }
+}
