@@ -21,7 +21,7 @@ technologies = [
   "Sound Design"
 ]
 category = "projects"
-sector = "mods-tools"
+sector = "mods"
 featured = true
 status = "Terminé"
 fmContentType = "project-content-type"

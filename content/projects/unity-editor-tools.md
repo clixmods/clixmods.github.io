@@ -8,7 +8,7 @@ image = "/images/projects/unity-tools.jpg"
 tags = ["Unity", "Editor", "Tools", "Productivity"]
 technologies = ["Unity", "C#", "Editor Scripting"]
 category = "projects"
-sector = "mods-tools"
+sector = "tools"
 featured = true
 fmContentType = "project-content-type"
 +++

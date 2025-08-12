@@ -8,7 +8,7 @@ image = "/images/projects/aspiro-shop.jpg"
 tags = ["PHP", "MVC", "E-commerce", "Security", "PDO"]
 technologies = ["PHP", "MySQL", "HTML/CSS", "JavaScript", "GitLab"]
 category = "projects"
-sector = "apps-web"
+sector = "appsweb-etude"
 featured = true
 fmContentType = "project-content-type"
 +++

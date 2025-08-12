@@ -7,7 +7,7 @@ image = "/images/projects/portfolio-website.jpg"
 tags = ["Hugo", "Static Site", "Portfolio", "GitHub Pages"]
 technologies = ["Hugo", "HTML/CSS", "JavaScript", "GitHub Pages"]
 category = "projects"
-sector = "apps-web"
+sector = "appsweb-professionnel"
 featured = true
 fmContentType = "project-content-type"
 +++

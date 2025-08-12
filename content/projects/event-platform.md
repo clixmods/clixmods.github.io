@@ -8,7 +8,7 @@ image = "/images/projects/event-platform.jpg"
 tags = ["Symfony", "Vue.js", "API REST", "JWT", "Docker"]
 technologies = ["Symfony", "Vue.js", "API Platform", "Docker", "MySQL"]
 category = "projects"
-sector = "apps-web"
+sector = "appsweb-etude"
 featured = true
 fmContentType = "project-content-type"
 +++

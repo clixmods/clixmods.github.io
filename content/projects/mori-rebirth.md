@@ -10,7 +10,7 @@ Experience the rebirth of a custom zombies classic with an expanded map, new que
 tags = [ "Modding", "Game Systems", "C++", "Innovation" ]
 technologies = [ "C++", "Game Modding", "Level Design", "Scripting" ]
 category = "projects"
-sector = "mods-tools"
+sector = "mods"
 featured = true
 fmContentType = "project-content-type"
 image = "/images/projects/mori-rebirth/mori-background.jpg"

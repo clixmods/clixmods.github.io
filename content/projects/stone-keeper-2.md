@@ -12,7 +12,7 @@ technologies = [
   "Procedural Generation"
 ]
 category = "projects"
-sector = "games"
+sector = "games-personnel"
 featured = true
 fmContentType = "project-content-type"
 logo = "/images/projects/stone-keeper-2/stone-keeper2-logo.png"

@@ -16,7 +16,7 @@ tags = [
 ]
 technologies = [ "Unity", "C#", "Game Design" ]
 category = "projects"
-sector = "games"
+sector = "games-personnel"
 featured = false
 fmContentType = "project-content-type"
 status = "Terminé"

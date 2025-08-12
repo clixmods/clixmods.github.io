@@ -7,7 +7,7 @@ image = "/images/projects/symfony-directory.jpg"
 tags = ["Symfony", "Twig", "Docker", "MySQL", "Security"]
 technologies = ["Symfony", "Twig", "Docker", "MySQL", "PHP"]
 category = "projects"
-sector = "apps-web"
+sector = "appsweb-etude"
 featured = true
 fmContentType = "project-content-type"
 +++

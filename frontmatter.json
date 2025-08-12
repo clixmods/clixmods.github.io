@@ -140,7 +140,17 @@
         {
           "title": "Secteur d'activité",
           "name": "sector",
-          "type": "string"
+          "type": "choice",
+          "choices": [
+            "games-professionnel",
+            "games-personnel",
+            "games-gamejams",
+            "appsweb-professionnel",
+            "appsweb-etude",
+            "mods",
+            "tools"
+          ],
+          "description": "Valeurs combinées (ex: games-professionnel). Pas de champ subsector séparé."
         },
         {
           "title": "Projet à la une",
@@ -263,7 +273,7 @@
           "fieldGroup": [
             "testimonials_group"
           ]
-        }
+  }
       ]
     }
   ],
