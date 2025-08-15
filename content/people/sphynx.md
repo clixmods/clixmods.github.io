@@ -1,0 +1,24 @@
+---
+date: "2025-08-14T22:45:06.615Z"
+draft: false
+title: "Sphynx"
+id: "sphynx"
+avatar: ""
+position: ""
+company: ""
+bio: "Profil de Sphynx"
+email: ""
+linkedin: ""
+github: ""
+website: ""
+fmContentType: "person-content-type"
+---
+
+# Sphynx
+
+Profil de **Sphynx**.
+
+## Informations
+
+- **ID**: sphynx
+- **Nom complet**: Sphynx

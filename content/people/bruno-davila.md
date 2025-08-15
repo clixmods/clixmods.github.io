@@ -1,0 +1,24 @@
+---
+date: "2025-08-14T22:45:06.615Z"
+draft: false
+title: "Bruno DAVILA"
+id: "bruno-davila"
+avatar: ""
+position: ""
+company: ""
+bio: "Profil de Bruno DAVILA"
+email: ""
+linkedin: ""
+github: ""
+website: ""
+fmContentType: "person-content-type"
+---
+
+# Bruno DAVILA
+
+Profil de **Bruno DAVILA**.
+
+## Informations
+
+- **ID**: bruno-davila
+- **Nom complet**: Bruno DAVILA

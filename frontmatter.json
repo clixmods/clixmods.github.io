@@ -273,7 +273,78 @@
           "fieldGroup": [
             "testimonials_group"
           ]
-  }
+        }
+      ]
+    },
+    {
+      "name": "person-content-type",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "id",
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "title": "avatar",
+          "name": "avatar",
+          "type": "image"
+        },
+        {
+          "title": "position",
+          "name": "position",
+          "type": "string"
+        },
+        {
+          "title": "company",
+          "name": "company",
+          "type": "string"
+        },
+        {
+          "title": "bio",
+          "name": "bio",
+          "type": "string"
+        },
+        {
+          "title": "email",
+          "name": "email",
+          "type": "string"
+        },
+        {
+          "title": "linkedin",
+          "name": "linkedin",
+          "type": "string"
+        },
+        {
+          "title": "github",
+          "name": "github",
+          "type": "string"
+        },
+        {
+          "title": "website",
+          "name": "website",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        }
       ]
     }
   ],
@@ -288,6 +359,10 @@
     {
       "title": "projects",
       "path": "[[workspace]]/content/projects"
+    },
+    {
+      "title": "people",
+      "path": "[[workspace]]/content/people"
     }
   ],
   "frontMatter.content.draftField": {
@@ -310,7 +385,8 @@
           },
           "avatar": {
             "type": "string",
-            "title": "Avatar (chemin vers l'image)"
+            "title": "Avatar (chemin vers l'image)",
+            "description": "Chemin relatif vers l'image depuis le dossier static/ (ex: images/avatars/nom.jpg)"
           },
           "id": {
             "type": "string",
