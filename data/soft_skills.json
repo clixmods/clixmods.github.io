@@ -1,9 +1,4 @@
 [
-  {
-    "category": {
-      "title": "Management & Soft Skills",
-      "id": "soft-skills",
-      "skills": [
         {
           "name": "Gestion de Projet",
           "icon": "📋",
@@ -47,6 +42,4 @@
           "experience": "Advanced"
         }
       ]
-    }
-  }
-]
+

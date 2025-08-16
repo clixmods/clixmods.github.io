@@ -54,15 +54,6 @@
           "type": "categories"
         },
         {
-          "title": "technologies",
-          "name": "technologies",
-          "type": "choice",
-          "choices": [
-            "Animation",
-            "Aquarelle"
-          ]
-        },
-        {
           "title": "fmContentType",
           "name": "fmContentType",
           "type": "string"
@@ -119,18 +110,44 @@
           "type": "tags"
         },
         {
-          "title": "Technologies utilisées",
-          "name": "technologies",
-          "type": "choice",
-          "choices": [
-            "C++",
-            "Lua",
-            "Level Design",
-            "3D Modeling",
-            "Texturing",
-            "FX",
-            "Sound Design"
-          ]
+          "title": "Langages de programmation",
+          "name": "programming_languages",
+          "type": "dataFile",
+          "dataFileId": "programming_languages_simple",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les langages de programmation utilisés dans ce projet"
+        },
+        {
+          "title": "Frameworks & Moteurs",
+          "name": "frameworks_engines",
+          "type": "dataFile",
+          "dataFileId": "frameworks_engines_simple",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les frameworks et moteurs utilisés"
+        },
+        {
+          "title": "Spécialités",
+          "name": "specialties",
+          "type": "dataFile",
+          "dataFileId": "specialties",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les spécialités impliquées dans ce projet"
+        },
+        {
+          "title": "Soft Skills",
+          "name": "soft_skills",
+          "type": "dataFile",
+          "dataFileId": "soft_skills",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les soft skills nécessaires pour ce projet"
         },
         {
           "title": "Catégorie",
@@ -591,13 +608,7 @@
             "items": {
               "type": "string"
             }
-          },
-          "technologies": {
-            "type": "array",
-            "title": "Technologies",
-            "items": {
-              "type": "string"
-            }
+          }
           }
         },
         "required": [
@@ -606,121 +617,6 @@
           "period",
           "description"
         ]
-      }
-    },
-    {
-      "id": "skills",
-      "title": "Skills Data",
-      "file": "data/skills.json",
-      "labelField": "title",
-      "schema": {
-        "title": "Skills",
-        "type": "object",
-        "properties": {
-          "categories": {
-            "type": "object",
-            "properties": {
-              "title": {
-                "type": "string"
-              },
-              "id": {
-                "type": "string"
-              },
-              "skills": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    },
-                    "icon": {
-                      "type": "string"
-                    },
-                    "level": {
-                      "type": "string"
-                    },
-                    "experience": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "display": {
-            "type": "object",
-            "title": "Configuration d'affichage",
-            "properties": {
-              "showLevels": {
-                "type": "boolean",
-                "title": "Afficher les niveaux"
-              },
-              "showIcons": {
-                "type": "boolean",
-                "title": "Afficher les icônes"
-              },
-              "categoriesPerRow": {
-                "type": "number",
-                "title": "Catégories par ligne"
-              },
-              "skillsPerCategory": {
-                "type": "number",
-                "title": "Compétences par catégorie"
-              }
-            }
-          }
-        },
-        "required": [
-          "categories"
-        ]
-      }
-    },
-    {
-      "id": "technologies",
-      "title": "Technologies Data",
-      "file": "data/technologies.json",
-      "labelField": "name",
-      "schema": {
-        "title": "Technologies",
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "title": "Nom de la technologie"
-          },
-          "icon": {
-            "type": "string",
-            "title": "Icône (emoji)"
-          },
-          "color": {
-            "type": "string",
-            "title": "Couleur (hex)"
-          },
-          "enabled": {
-            "type": "boolean",
-            "title": "Activé dans les filtres"
-          },
-          "order": {
-            "type": "number",
-            "title": "Ordre d'affichage"
-          },
-          "experience": {
-            "type": "string",
-            "title": "Expérience"
-          },
-          "level": {
-            "type": "string",
-            "title": "Niveau"
-          }
-        },
-        "required": [
-          "name",
-          "icon",
-          "enabled",
-          "order"
-        ]
-      }
     },
     {
       "id": "testimonials",
@@ -759,6 +655,122 @@
           "company",
           "text"
         ]
+      }
+    },
+    {
+      "id": "programming_languages_simple",
+      "title": "Programming Languages Data",
+      "file": "data/programming_languages.json",
+      "labelField": "name",
+      "schema": {
+        "title": "Programming Language",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Nom"
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icône"
+          },
+          "color": {
+            "type": "string",
+            "title": "Couleur"
+          }
+        },
+        "required": ["name"]
+      }
+    },
+    {
+      "id": "frameworks_engines_simple",
+      "title": "Frameworks & Engines Data",
+      "file": "data/frameworks_engines.json",
+      "labelField": "name",
+      "schema": {
+        "title": "Framework",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Nom"
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icône"
+          },
+          "color": {
+            "type": "string",
+            "title": "Couleur"
+          }
+        },
+        "required": ["name"]
+      }
+    },
+    {
+      "id": "specialties",
+      "title": "Specialties Data",
+      "file": "data/specialties.json",
+      "labelField": "name",
+      "schema": {
+        "title": "Specialty",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "ID"
+          },
+          "name": {
+            "type": "string",
+            "title": "Nom"
+          },
+          "displayName": {
+            "type": "string",
+            "title": "Nom d'affichage"
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icône"
+          },
+          "experience": {
+            "type": "string",
+            "title": "Expérience"
+          }
+        },
+        "required": ["id", "name"]
+      }
+    },
+    {
+      "id": "soft_skills",
+      "title": "Soft Skills Data",
+      "file": "data/soft_skills.json",
+      "labelField": "name",
+      "schema": {
+        "title": "Soft Skill",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "ID"
+          },
+          "name": {
+            "type": "string",
+            "title": "Nom"
+          },
+          "displayName": {
+            "type": "string",
+            "title": "Nom d'affichage"
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icône"
+          },
+          "experience": {
+            "type": "string",
+            "title": "Expérience"
+          }
+        },
+        "required": ["id", "name"]
       }
     },
     {
@@ -935,13 +947,7 @@
             "items": {
               "type": "string"
             }
-          },
-          "technologies": {
-            "type": "array",
-            "title": "Technologies",
-            "items": {
-              "type": "string"
-            }
+          }
           }
         },
         "required": [
@@ -951,8 +957,8 @@
           "status",
           "description"
         ]
-      }
-    },
+      },
+  
     {
       "id": "certifications",
       "title": "Certifications Data",

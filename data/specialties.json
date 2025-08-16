@@ -1,9 +1,4 @@
 [
-  {
-    "category": {
-      "title": "Spécialisations Game Dev",
-      "id": "specialties",
-      "skills": [
         {
           "name": "Game Design",
           "icon": "🎲",
@@ -54,6 +49,3 @@
           "experience": "Intermediate"
         }
       ]
-    }
-  }
-]

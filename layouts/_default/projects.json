@@ -1,0 +1,16 @@
+{{/* Génération des données JSON pour les projets */}}
+{{- $projects := slice -}}
+{{- range where .Site.RegularPages "Type" "projects" -}}
+  {{- $project := dict
+    "title" .Title
+    "description" (.Params.description | default .Summary)
+    "technologies" .Params.technologies
+    "url" .Permalink
+    "sector" .Params.sector
+    "featured" .Params.featured
+    "date" .Date.Format "2006-01-02"
+  -}}
+  {{- $projects = $projects | append $project -}}
+{{- end -}}
+
+{{- $projects | jsonify -}}

@@ -1,0 +1,91 @@
+// Styles pour les technologies séparées
+
+.tech-section-bottom {
+    margin-bottom: 1rem;
+    
+    .tech-label-bottom {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--text-color-secondary);
+    }
+    
+    .tech-pills-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+
+// Styles différents pour chaque type de technologie
+.tech-pill-bottom {
+    &.programming-language {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+    }
+    
+    &.framework-engine {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        border: none;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(240, 147, 251, 0.4);
+        }
+    }
+    
+    &.other-tech {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: white;
+        border: none;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 172, 254, 0.4);
+        }
+    }
+}
+
+// Responsive pour les technologies séparées
+@media (max-width: 768px) {
+    .tech-section-bottom {
+        margin-bottom: 0.8rem;
+        
+        .tech-label-bottom {
+            font-size: 0.8rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .tech-pills-bottom {
+            gap: 0.3rem;
+        }
+    }
+    
+    .tech-pill-bottom {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+// Pour la grille de projets, ajoutons des indicateurs visuels
+.ps5-tile-tech-item {
+    &.programming-language-indicator::before {
+        content: "💻 ";
+    }
+    
+    &.framework-engine-indicator::before {
+        content: "⚡ ";
+    }
+    
+    &.other-tech-indicator::before {
+        content: "🔧 ";
+    }
+}

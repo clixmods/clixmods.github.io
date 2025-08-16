@@ -1,38 +1,79 @@
 [
   {
-    "category": {
-      "title": "Langages de Programmation",
-      "id": "programming-languages",
-      "skills": [
-        {
-          "technologyRef": "C#",
-          "customSubtitle": null
-        },
-        {
-          "technologyRef": "LUA",
-          "customSubtitle": null
-        },
-        {
-          "technologyRef": "Java",
-          "customSubtitle": null
-        },
-        {
-          "technologyRef": "PHP",
-          "customSubtitle": null
-        },
-        {
-          "technologyRef": "JavaScript",
-          "customSubtitle": null
-        },
-        {
-          "technologyRef": "SQL",
-          "customSubtitle": null
-        },
-        {
-          "technologyRef": "HLSL",
-          "customSubtitle": "Shaders HLSL"
-        }
-      ]
-    }
+    "name": "C#",
+    "icon": "🔷",
+    "iconSvg": "/images/technologies/C#-(CSharp).svg",
+    "color": "#239120",
+    "enabled": true,
+    "order": 1,
+    "experience": "4 ans",
+    "level": "Expert"
+  },
+  {
+    "name": "GSC",
+    "experience": "4 ans",
+    "icon": "fsdfsd",
+    "order": 0,
+    "enabled": true
+  },
+  {
+    "name": "LUA",
+    "icon": "🌙",
+    "iconSvg": "/images/technologies/Lua.svg",
+    "color": "#000080",
+    "enabled": true,
+    "order": 6,
+    "experience": "3 ans",
+    "level": "Avancé"
+  },
+  {
+    "name": "SQL",
+    "icon": "🗄️",
+    "iconSvg": "/images/technologies/PostgresSQL.svg",
+    "color": "#336791",
+    "enabled": true,
+    "order": 7,
+    "experience": "2 ans",
+    "level": "Intermédiaire"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "📜",
+    "iconSvg": "/images/technologies/JavaScript.svg",
+    "color": "#F7DF1E",
+    "enabled": true,
+    "order": 8,
+    "experience": "2 ans",
+    "level": "Intermédiaire"
+  },
+  {
+    "name": "Java",
+    "icon": "☕",
+    "iconSvg": "/images/technologies/Java.svg",
+    "color": "#007396",
+    "enabled": false,
+    "order": 11,
+    "experience": "2 ans",
+    "level": "Intermédiaire"
+  },
+  {
+    "name": "PHP",
+    "icon": "🐘",
+    "iconSvg": "/images/technologies/PHP.svg",
+    "color": "#777BB4",
+    "enabled": false,
+    "order": 12,
+    "experience": "2 ans",
+    "level": "Intermédiaire"
+  },
+  {
+    "name": "HLSL",
+    "icon": "✨",
+    "iconSvg": null,
+    "color": "#FF6B6B",
+    "enabled": false,
+    "order": 13,
+    "experience": "6 mois",
+    "level": "Débutant"
   }
 ]
