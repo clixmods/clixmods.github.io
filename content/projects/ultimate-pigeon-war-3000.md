@@ -5,7 +5,6 @@ title = "Ultimate Pigeon War 3000"
 subtitle = "Action multijoueur déjantée - Game Jam"
 description = "Ultimate Pigeon War 3000 est un jeu d'action multijoueur délirant où des pigeons s'affrontent dans des batailles épiques. Réalisé lors d'une game jam, ce projet met en avant l'humour, la compétition et la créativité de l'équipe."
 tags = [ "Action", "Multijoueur", "Game Jam", "Humour", "Itch.io" ]
-technologies = [ "Unity", "C#", "Pixel Art", "Sound Design" ]
 category = "projects"
 sector = "games-gamejams"
 featured = false
@@ -13,6 +12,12 @@ fmContentType = "project-content-type"
 logo = "/images/projects/pigeon-war/pigeon-war-logo.png"
 image = "/images/projects/pigeon-war/pigeon-war-background.png"
 status = "Terminé"
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Pixel Art", "Sound Design" ]
 
 [[actions]]
 type = "download"
@@ -78,4 +83,3 @@ fieldGroup = "contributors_group"
 # Ultimate Pigeon War 3000
 
 ## Description du projet
-

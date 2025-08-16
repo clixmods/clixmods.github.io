@@ -14,7 +14,6 @@ tags = [
   "studentproject",
   "targets"
 ]
-technologies = [ "Unity", "C#", "Game Design" ]
 category = "projects"
 sector = "games-personnel"
 featured = false
@@ -22,6 +21,12 @@ fmContentType = "project-content-type"
 status = "Terminé"
 image = "/images/projects/on-target/ontarget-2.jpeg"
 logo = "/images/projects/on-target/ontarget-banner.png"
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Game Design" ]
 
 [[actions]]
 type = "download"

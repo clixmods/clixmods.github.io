@@ -4,8 +4,7 @@ draft = false
 title = "Terra Memoria"
 subtitle = "JRPG - Studio La Moutarde"
 description = "Fin de production d'un jeu vidéo commercial sur Unity"
-tags = [ "JRPG", "Unity", "Commercial", "Nintendo Switch" ]
-technologies = [ "Unity", "C#", "Nintendo Switch", "Steam" ]
+tags = [ "JRPG", "Commercial", "Nintendo Switch" ]
 category = "projects"
 sector = "games-professionnel"
 featured = true
@@ -13,6 +12,10 @@ fmContentType = "project-content-type"
 status = "Terminé"
 logo = "/images/projects/terra-memoria/terra-memoria-logo.png"
 image = "/images/projects/terra-memoria/terra-memoria-background.jpg"
+frameworks_engines = [ "Unity" ]
+programming_languages = [ "C#" ]
+specialties = [ "Portage Console" ]
+soft_skills = [ "Résolution Problèmes", "Communication" ]
 
 [[actions]]
 type = "steam"
@@ -157,7 +160,7 @@ fieldGroup = "youtube_singles_group"
 video_id = "SLd_fCFqm80"
 size = "size-medium"
 title = """
-\r\r\r\r\r\r
+\r\r\r\r\r\r\r\r\r\r\r\r
 TERRA MEMORIA - Launch trailer"""
 fieldGroup = "youtube_singles_group"
 
@@ -245,7 +248,6 @@ fieldGroup = "contributors_group"
 person = "clement-garcia"
 role = "Junior Developer"
 fieldGroup = "contributors_group"
-
 +++
 
 # Terra Memoria

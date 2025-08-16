@@ -5,7 +5,6 @@ title = "The Lost City: Stone Keeper"
 subtitle = "PFA Deuxième Année - e-artsup"
 description = "Aventure épique inspirée de Tunic dans l'Atlantide"
 tags = [ "Adventure", "Unity", "Team Project", "Atlantis" ]
-technologies = ["Unity", "C#", "Game Design"]
 category = "projects"
 sector = "games-personnel"
 featured = true
@@ -13,6 +12,16 @@ fmContentType = "project-content-type"
 logo = "/images/projects/stone-keeper/stone-keeper-logo.png"
 status = "Terminé"
 image = "/images/projects/stone-keeper/stone-keeper-10 .jpg"
+frameworks_engines = [ "Unity" ]
+programming_languages = [ "C#" ]
+specialties = [ "Game Design", "Level Design", "Développement Outils" ]
+soft_skills = [
+  "Leadership",
+  "Gestion de Projet",
+  "Résolution Problèmes",
+  "Vision/Visualisation",
+  "Communication"
+]
 
 [[actions]]
 type = "download"

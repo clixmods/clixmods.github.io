@@ -5,13 +5,18 @@ title = "Witchable"
 subtitle = "Simulation d'alchimiste - Itch.io Release"
 description = "Witchable est un jeu de simulation où vous incarnez un alchimiste dans son laboratoire. Servez rapidement les potions demandées par vos clients à l'aide de différentes machines et ingrédients !"
 tags = [ "Simulation", "Alchimie", "Itch.io", "Gestion", "Unity" ]
-technologies = [ "Unity", "C#", "Game Design", "UI Design" ]
 category = "projects"
 sector = "games-gamejams"
 featured = false
 fmContentType = "project-content-type"
 logo = "/images/projects/witchable/witchable-logo.png"
 image = "/images/projects/witchable/witchable-background.png"
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Game Design", "UI Design" ]
 
 [[actions]]
 type = "download"

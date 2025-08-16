@@ -5,28 +5,22 @@ title = "Nuketown Zombies"
 subtitle = "Remasterisation complète de la carte iconique - Black Ops 3"
 description = "Recréation fidèle et améliorée de Nuketown avec nouvelles fonctionnalités et système Zombies Experience"
 tags = [
-  "Modding",
-  "Project Leadership",
-  "Level Design",
-  "Programming",
-  "3D Modeling"
+  "Game Design",
+  "Game Development",
+  "Multiplayer",
+  "Remaster",
+  "Zombies"
 ]
-technologies = [
-  "C++",
-  "Lua",
-  "Level Design",
-  "3D Modeling",
-  "Texturing",
-  "FX",
-  "Sound Design"
-]
+programming_languages = ["C++", "Lua"]
+frameworks_engines = []
 category = "projects"
 sector = "mods"
 featured = true
 status = "Terminé"
 fmContentType = "project-content-type"
 image = "/images/projects/nuketown/nuketown-zombies.jpg"
-diaporama = [ ]
+
+specialties = [ "Level Design", "3D Modeling", "Texturing", "FX", "Sound Design" ]
 
 [[actions]]
 type = "steam"
@@ -583,4 +577,3 @@ Ce projet a posé les fondations de ma carrière et de ma vision du développeme
 - **Satisfaire** une communauté exigeante avec excellence
 
 *Nuketown Zombies demeure un projet fondateur qui continue d'inspirer mon approche du développement de jeux et du leadership créatif.*
-

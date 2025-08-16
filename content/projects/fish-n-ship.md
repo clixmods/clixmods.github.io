@@ -5,7 +5,6 @@ title = "Fish N Ship - Cœur de Ville en Lumière"
 subtitle = "Projet événementiel - Cœur de Ville en Lumières, Montpellier"
 description = "Création vidéoludique réalisée lors de l'événement 'Cœur de Ville en Lumières' à Montpellier, en collaboration avec e-artsup."
 tags = [ "Event", "Unity", "Montpellier", "e-artsup", "Game Jam" ]
-technologies = [ "Unity", "C#", "Game Design", "Event Production" ]
 category = "projects"
 sector = "games-personnel"
 featured = false
@@ -13,6 +12,14 @@ fmContentType = "project-content-type"
 status = "Terminé"
 image = "/images/projects/fishnship/background.png"
 testimonials = [ ]
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Game Design" ]
+
+soft_skills = [ "Event Production" ]
 
 [[actions]]
 type = "download"

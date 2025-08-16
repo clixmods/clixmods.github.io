@@ -5,7 +5,6 @@ title = "Stay In The Light"
 subtitle = "Jeu d'horreur en hôpital abandonné - Itch.io Release"
 description = "Stay In The Light est un jeu d'horreur à la première personne, se déroulant dans un hôpital abandonné. Trouvez votre chemin dans l'obscurité, mais attention à votre lampe qui chauffe vite... et à ce qui pourrait rôder dans le noir."
 tags = [ "Horror", "Survival", "Unity", "Itch.io", "Hospital" ]
-technologies = [ "Unity", "C#", "Level Design", "Sound Design" ]
 category = "projects"
 sector = "games-personnel"
 featured = false
@@ -13,6 +12,12 @@ fmContentType = "project-content-type"
 image = "/images/projects/stay-in-the-light/stay-background.png"
 logo = "/images/projects/stay-in-the-light/stay-logo.png"
 status = "Terminé"
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Level Design", "Sound Design" ]
 
 [[actions]]
 type = "download"
@@ -153,4 +158,3 @@ fieldGroup = "testimonials_group"
 # Stay In The Light
 
 ## Description du projet
-

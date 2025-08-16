@@ -5,12 +5,15 @@ title = "Test Layout System"
 subtitle = "Démonstration complète du système de boîtes"
 description = "Projet de test pour démontrer toutes les tailles et fonctionnalités des boîtes d'information"
 tags = [ "Test", "Layout", "Design System" ]
-technologies = [ "Hugo", "CSS Grid", "JavaScript" ]
 category = "projects"
 sector = "test"
 featured = false
 fmContentType = "project-content-type"
 image = "/images/projects/test/test-layout.jpg"
+
+frameworks_engines = [ "Hugo" ]
+
+programming_languages = [ "CSS Grid", "JavaScript" ]
 
 [[actions]]
 type = "github"

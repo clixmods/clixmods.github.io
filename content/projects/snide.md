@@ -5,7 +5,6 @@ title = "Snide"
 subtitle = "Projet expérimental - e-artsup"
 description = "Projet de game design expérimental explorant des mécaniques de jeu non-conventionnelles"
 tags = [ "Unity", "Game Design", "Experimental", "Innovation" ]
-technologies = [ "Unity", "C#", "Level Design", "Game Design" ]
 category = "projects"
 sector = "games-personnel"
 featured = false
@@ -13,6 +12,12 @@ fmContentType = "project-content-type"
 logo = "/images/projects/snide/snide-logo.jpg.png"
 image = "/images/projects/snide/snide-1.png"
 status = "Terminé"
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Level Design", "Game Design" ]
 
 [[actions]]
 type = "download"
@@ -109,4 +114,3 @@ fieldGroup = "youtube_singles_group"
 +++
 
 # It's not supposed to do that
-

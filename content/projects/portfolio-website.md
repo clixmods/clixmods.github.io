@@ -1,3 +1,4 @@
++++
 date = "2025-07-22T07:30:00+02:00"
 draft = false
 title = "Portfolio Website"
@@ -5,7 +6,9 @@ subtitle = "Site web personnel avec Hugo"
 description = "Site portfolio moderne développé avec Hugo et déployé avec GitHub Pages"
 image = "/images/projects/portfolio-website.jpg"
 tags = ["Hugo", "Static Site", "Portfolio", "GitHub Pages"]
-technologies = ["Hugo", "HTML/CSS", "JavaScript", "GitHub Pages"]
+frameworks_engines = [ "Hugo" ]
+programming_languages = [ "HTML/CSS", "JavaScript" ]
+specialties = [ "GitHub Pages" ]
 category = "projects"
 sector = "appsweb-professionnel"
 featured = true

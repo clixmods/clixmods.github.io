@@ -14,7 +14,6 @@ tags = [
   "underwater",
   "Unity"
 ]
-technologies = [ "Unity", "C#", "Game Design" ]
 category = "projects"
 sector = "games-personnel"
 featured = false
@@ -23,6 +22,12 @@ status = "Terminé"
 image = "/images/projects/bubble-wars/bubble-wars-bg.png"
 logo = "/images/projects/bubble-wars/bubble-wars-logo.png"
 galleries = [ ]
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Game Design" ]
 
 [[actions]]
 type = "download"

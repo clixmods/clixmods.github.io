@@ -5,12 +5,6 @@ title = "Stone Keeper 2"
 subtitle = "Projet Avancé - Suite de l'aventure épique"
 description = "La suite tant attendue de Stone Keeper avec des mécaniques étendues et un monde plus vaste"
 tags = [ "Adventure", "Unity", "Sequel", "Open World", "Atlantis" ]
-technologies = [
-  "Unity",
-  "C#",
-  "Advanced Game Design",
-  "Procedural Generation"
-]
 category = "projects"
 sector = "games-personnel"
 featured = true
@@ -19,6 +13,10 @@ logo = "/images/projects/stone-keeper-2/stone-keeper2-logo.png"
 image = "/images/projects/stone-keeper-2/stone-keeper2-2.png"
 status = "Terminé"
 technical_specs = [ ]
+frameworks_engines = [ "Unity", ".NET" ]
+programming_languages = [ "C#" ]
+soft_skills = [ "Résolution Problèmes", "Gestion de Projet" ]
+specialties = [ "Développement Outils" ]
 
 [[actions]]
 type = "download"
@@ -156,4 +154,4 @@ fieldGroup = "galleries_group"
   url = "/images/projects/stone-keeper-2/stone-keeper2-ingame-3.jpg"
 +++
 
-# Stone Keeper 2: 
+# Stone Keeper 2:

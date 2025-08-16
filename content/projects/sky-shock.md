@@ -5,7 +5,6 @@ title = "Sky Shock"
 subtitle = "Shoot'em up arcade - Itch.io Release"
 description = "Sky Shock est un shoot'em up arcade dynamique, disponible gratuitement sur itch.io. Défiez les vagues d'ennemis dans un univers rétro et coloré !"
 tags = [ "Arcade", "Shoot'em up", "Unity", "Itch.io", "Retro" ]
-technologies = [ "Unity", "C#", "Pixel Art", "Game Design" ]
 category = "projects"
 sector = "games-personnel"
 featured = false
@@ -13,6 +12,12 @@ fmContentType = "project-content-type"
 logo = "/images/projects/sky-shock/skyshock-logo.png"
 image = "/images/projects/sky-shock/skyshock-2.jpg"
 status = "Terminé"
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Pixel Art", "Game Design" ]
 
 [[actions]]
 type = "download"
@@ -149,4 +154,3 @@ fieldGroup = "contributors_group"
 # Sky Shock
 
 ## Description du projet
-

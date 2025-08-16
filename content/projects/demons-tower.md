@@ -5,13 +5,18 @@ title = "Demon's Tower"
 subtitle = "Action-Roguelite - Itch.io Release"
 description = "Demon's Tower est un action-roguelite où vous incarnez un héros devant vaincre le donjon et le plus grand démon pour sauver le village. Attention, chaque mort vous fait perdre votre équipement !"
 tags = [ "Action", "Roguelite", "Donjon", "Itch.io", "Unity" ]
-technologies = [ "Unity", "C#", "Game Design", "Pixel Art" ]
 category = "projects"
 sector = "games-personnel"
 featured = false
 fmContentType = "project-content-type"
 status = "Terminé"
 image = "/images/projects/demons-tower/dt-bg.webp"
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Game Design", "Pixel Art" ]
 
 [[actions]]
 type = "download"

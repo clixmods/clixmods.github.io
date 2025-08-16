@@ -5,7 +5,6 @@ title = "Assault of Order"
 subtitle = "Projet de fin d'année 1ère année - e-artsup"
 description = "Premier projet de jeu complet avec UML et développement C# avancé"
 tags = [ "Unity", "First Year", "UML", "Game Development" ]
-technologies = [ "Unity", "C#", "UML", "Game Design" ]
 category = "projects"
 sector = "games-personnel"
 featured = true
@@ -13,6 +12,12 @@ fmContentType = "project-content-type"
 status = "Terminé"
 logo = "/images/projects/assault-of-order/assault-of-order-logo.png"
 image = "/images/projects/assault-of-order/clement-garcia-aoo-leveldesign-3.jpg"
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Game Design" ]
 
 [[actions]]
 type = "download"

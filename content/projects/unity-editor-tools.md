@@ -1,16 +1,17 @@
-+++
-date = "2025-07-22T08:00:00+02:00"
++++date = "2025-07-22T08:00:00+02:00"
 draft = false
 title = "Unity Editor Tools"
 subtitle = "Outils de développement personnalisés"
 description = "Collection d'outils Unity pour améliorer le workflow de développement"
 image = "/images/projects/unity-tools.jpg"
 tags = ["Unity", "Editor", "Tools", "Productivity"]
-technologies = ["Unity", "C#", "Editor Scripting"]
 category = "projects"
 sector = "tools"
 featured = true
 fmContentType = "project-content-type"
+frameworks_engines = [ "Unity" ]
+programming_languages = [ "C#" ]
+specialties = [ "Editor Scripting" ]
 +++
 
 # Unity Editor Tools

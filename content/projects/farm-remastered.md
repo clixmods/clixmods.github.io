@@ -5,7 +5,6 @@ title = "FARM"
 subtitle = "Remasterisation de carte - Black Ops 3"
 description = "Recréation moderne d'une carte classique avec level building et éclairage avancés"
 tags = [ "Level Building", "Lighting", "Remaster", "Environment" ]
-technologies = [ "Level Design", "Lighting", "3D Modeling", "Texturing" ]
 category = "projects"
 sector = "mods"
 featured = false
@@ -13,6 +12,8 @@ fmContentType = "project-content-type"
 image = "/images/projects/farm/farm-background.jpg"
 status = "Terminé"
 youtube_galleries = [ ]
+
+specialties = [ "Level Design", "Lighting", "3D Modeling", "Texturing" ]
 
 [[actions]]
 type = "steam"

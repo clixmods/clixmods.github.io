@@ -5,7 +5,6 @@ title = "Mystic Koni"
 subtitle = "Jeu de puzzle féérique - Itch.io Release"
 description = "Mystic Koni est un jeu de puzzle poétique où vous incarnez une fée vivant dans un arbre sacré mourant. Résolvez des énigmes pour restaurer les cœurs racines et sauver votre arbre !"
 tags = [ "Puzzle", "Féerique", "Itch.io", "Aventure", "Poétique" ]
-technologies = [ "Unity", "C#", "Game Design", "Puzzle Design" ]
 category = "projects"
 sector = "games-gamejams"
 featured = false
@@ -13,6 +12,12 @@ fmContentType = "project-content-type"
 logo = "/images/projects/mystic-koni/mystic_koni_logo.png"
 image = "/images/projects/mystic-koni/mystic-koni-2.png"
 status = "Terminé"
+
+frameworks_engines = [ "Unity" ]
+
+programming_languages = [ "C#" ]
+
+specialties = [ "Game Design", "Puzzle Design" ]
 
 [[actions]]
 type = "download"
@@ -99,5 +104,3 @@ fieldGroup = "youtube_singles_group"
 +++
 
 # Mystic Koni
-
-
