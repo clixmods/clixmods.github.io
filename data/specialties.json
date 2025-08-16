@@ -1,0 +1,59 @@
+[
+  {
+    "category": {
+      "title": "Spécialisations Game Dev",
+      "id": "specialties",
+      "skills": [
+        {
+          "name": "Game Design",
+          "icon": "🎲",
+          "iconSvg": null,
+          "level": "Conception mécaniques",
+          "experience": "Expert"
+        },
+        {
+          "name": "Level Design",
+          "icon": "🗺️",
+          "iconSvg": null,
+          "level": "Outils & conception",
+          "experience": "Advanced"
+        },
+        {
+          "name": "Modding",
+          "icon": "🔧",
+          "iconSvg": null,
+          "level": "Steam Workshop",
+          "experience": "Expert"
+        },
+        {
+          "name": "Call of Duty Modding",
+          "icon": "🔫",
+          "iconSvg": null,
+          "level": "800k téléchargements",
+          "experience": "Expert"
+        },
+        {
+          "name": "Portage Console",
+          "icon": "🎮",
+          "iconSvg": null,
+          "level": "Nintendo Switch",
+          "experience": "Advanced"
+        },
+        {
+          "name": "Développement Outils",
+          "icon": "⚙️",
+          "iconSvg": null,
+          "level": "Plugins Unity",
+          "experience": "Advanced"
+        },
+        {
+          "name": "Shaders",
+          "icon": "✨",
+          "iconSvg": null,
+          "level": "Éclairage volumétrique",
+          "experience": "Intermediate"
+        }
+      ]
+    }
+  }
+]

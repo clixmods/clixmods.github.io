@@ -1,0 +1,52 @@
+[
+  {
+    "category": {
+      "title": "Management & Soft Skills",
+      "id": "soft-skills",
+      "skills": [
+        {
+          "name": "Gestion de Projet",
+          "icon": "📋",
+          "iconSvg": null,
+          "level": "Méthodes agiles",
+          "experience": "Advanced"
+        },
+        {
+          "name": "Leadership",
+          "icon": "👑",
+          "iconSvg": null,
+          "level": "Direction d'équipe",
+          "experience": "Advanced"
+        },
+        {
+          "name": "Management Communauté",
+          "icon": "👥",
+          "iconSvg": null,
+          "level": "Administrateur modding",
+          "experience": "Expert"
+        },
+        {
+          "name": "Communication",
+          "icon": "💬",
+          "iconSvg": null,
+          "level": "Présentation",
+          "experience": "Expert"
+        },
+        {
+          "name": "Résolution Problèmes",
+          "icon": "🔍",
+          "iconSvg": null,
+          "level": "Débogage",
+          "experience": "Expert"
+        },
+        {
+          "name": "Vision/Visualisation",
+          "icon": "👁️",
+          "iconSvg": null,
+          "level": "Conception",
+          "experience": "Advanced"
+        }
+      ]
+    }
+  }
+]

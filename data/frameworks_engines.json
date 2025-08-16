@@ -1,0 +1,30 @@
+[
+  {
+    "category": {
+      "title": "Moteurs de Jeu & Frameworks",
+      "id": "frameworks-engines",
+      "skills": [
+        {
+          "technologyRef": "Unity",
+          "customSubtitle": "Moteur principal"
+        },
+        {
+          "technologyRef": "Blazor",
+          "customSubtitle": "Framework Web"
+        },
+        {
+          "technologyRef": ".NET",
+          "customSubtitle": "Framework"
+        },
+        {
+          "technologyRef": "FastEndpoint",
+          "customSubtitle": "API Framework"
+        },
+        {
+          "technologyRef": "Unreal Engine",
+          "customSubtitle": "13 projets étudiants"
+        }
+      ]
+    }
+  }
+]

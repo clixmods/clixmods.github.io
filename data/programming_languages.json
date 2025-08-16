@@ -1,0 +1,38 @@
+[
+  {
+    "category": {
+      "title": "Langages de Programmation",
+      "id": "programming-languages",
+      "skills": [
+        {
+          "technologyRef": "C#",
+          "customSubtitle": null
+        },
+        {
+          "technologyRef": "LUA",
+          "customSubtitle": null
+        },
+        {
+          "technologyRef": "Java",
+          "customSubtitle": null
+        },
+        {
+          "technologyRef": "PHP",
+          "customSubtitle": null
+        },
+        {
+          "technologyRef": "JavaScript",
+          "customSubtitle": null
+        },
+        {
+          "technologyRef": "SQL",
+          "customSubtitle": null
+        },
+        {
+          "technologyRef": "HLSL",
+          "customSubtitle": "Shaders HLSL"
+        }
+      ]
+    }
+  }
+]
