@@ -1,45 +1,51 @@
 [
-        {
-          "name": "Gestion de Projet",
-          "icon": "📋",
-          "iconSvg": null,
-          "level": "Méthodes agiles",
-          "experience": "Advanced"
-        },
-        {
-          "name": "Leadership",
-          "icon": "👑",
-          "iconSvg": null,
-          "level": "Direction d'équipe",
-          "experience": "Advanced"
-        },
-        {
-          "name": "Management Communauté",
-          "icon": "👥",
-          "iconSvg": null,
-          "level": "Administrateur modding",
-          "experience": "Expert"
-        },
-        {
-          "name": "Communication",
-          "icon": "💬",
-          "iconSvg": null,
-          "level": "Présentation",
-          "experience": "Expert"
-        },
-        {
-          "name": "Résolution Problèmes",
-          "icon": "🔍",
-          "iconSvg": null,
-          "level": "Débogage",
-          "experience": "Expert"
-        },
-        {
-          "name": "Vision/Visualisation",
-          "icon": "👁️",
-          "iconSvg": null,
-          "level": "Conception",
-          "experience": "Advanced"
-        }
-      ]
+  {
+    "name": "Gestion de Projet",
+    "icon": "📋",
+    "iconPath": null,
+    "color": "#4CAF50",
+    "displayedInPortfolio": true,
+    "subtitle": "Méthodes agiles"
+  },
+  {
+    "name": "Leadership",
+    "icon": "👑",
+    "iconPath": null,
+    "color": "#FF9800",
+    "displayedInPortfolio": true,
+    "subtitle": "Direction d'équipe"
+  },
+  {
+    "name": "Management Communauté",
+    "icon": "👥",
+    "iconPath": null,
+    "color": "#2196F3",
+    "displayedInPortfolio": true,
+    "subtitle": "Administrateur modding"
+  },
+  {
+    "name": "Communication",
+    "icon": "💬",
+    "iconPath": null,
+    "color": "#9C27B0",
+    "displayedInPortfolio": true,
+    "subtitle": "Présentation"
+  },
+  {
+    "name": "Résolution Problèmes",
+    "icon": "🔍",
+    "iconPath": null,
+    "color": "#FF5722",
+    "displayedInPortfolio": true,
+    "subtitle": "Débogage"
+  },
+  {
+    "name": "Vision/Visualisation",
+    "icon": "👁️",
+    "iconPath": null,
+    "color": "#607D8B",
+    "displayedInPortfolio": true,
+    "subtitle": "Conception"
+  }
+]
 

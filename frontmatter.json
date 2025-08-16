@@ -609,7 +609,6 @@
               "type": "string"
             }
           }
-          }
         },
         "required": [
           "title",
@@ -617,6 +616,7 @@
           "period",
           "description"
         ]
+      }
     },
     {
       "id": "testimonials",
@@ -668,18 +668,30 @@
         "properties": {
           "name": {
             "type": "string",
-            "title": "Nom"
+            "title": "Nom du langage"
           },
-          "icon": {
+          "experience": {
+            "type": "number",
+            "title": "Expérience (en années)",
+            "description": "1 = 1 an, 0.5 = 6 mois"
+          },
+          "iconPath": {
             "type": "string",
-            "title": "Icône"
+            "title": "Chemin vers l'icône SVG",
+            "description": "Chemin relatif depuis le dossier static/ (ex: images/technologies/C#.svg)"
           },
           "color": {
             "type": "string",
-            "title": "Couleur"
+            "title": "Couleur",
+            "widget": "colorPicker"
+          },
+          "displayedInPortfolio": {
+            "type": "boolean",
+            "title": "Affiché dans la section portfolio",
+            "description": "Ce langage de programmation est-il mis en avant dans le portfolio ?"
           }
         },
-        "required": ["name"]
+        "required": ["name", "experience", "displayedInPortfolio"]
       }
     },
     {
@@ -693,18 +705,29 @@
         "properties": {
           "name": {
             "type": "string",
-            "title": "Nom"
+            "title": "Nom du framework/moteur"
           },
-          "icon": {
+          "experience": {
+            "type": "number",
+            "title": "Expérience (en années)",
+            "description": "1 = 1 an, 0.5 = 6 mois"
+          },
+          "iconPath": {
             "type": "string",
-            "title": "Icône"
+            "title": "Chemin vers l'icône SVG",
+            "description": "Chemin relatif depuis le dossier static/ (ex: images/technologies/Unity.svg)"
           },
           "color": {
             "type": "string",
-            "title": "Couleur"
+            "title": "Couleur",
+            "widget": "colorPicker"
+          },
+          "displayedInPortfolio": {
+            "type": "boolean",
+            "title": "Affiché dans le portfolio"
           }
         },
-        "required": ["name"]
+        "required": ["name", "experience", "displayedInPortfolio"]
       }
     },
     {
@@ -716,28 +739,36 @@
         "title": "Specialty",
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "title": "ID"
-          },
           "name": {
             "type": "string",
-            "title": "Nom"
-          },
-          "displayName": {
-            "type": "string",
-            "title": "Nom d'affichage"
+            "title": "Nom de la spécialité"
           },
           "icon": {
             "type": "string",
-            "title": "Icône"
+            "title": "Icône emoji",
+            "description": "Emoji utilisé si pas d'iconPath défini"
+          },
+          "iconPath": {
+            "type": "string",
+            "title": "Chemin vers l'icône SVG",
+            "description": "Chemin relatif depuis le dossier static/ (ex: images/technologies/Unity.svg)"
+          },
+          "displayedInPortfolio": {
+            "type": "boolean",
+            "title": "Affiché dans le portfolio"
           },
           "experience": {
+            "type": "number",
+            "title": "Expérience (en années)",
+            "description": "1 = 1 an, 0.5 = 6 mois"
+          },
+          "subtitle": {
             "type": "string",
-            "title": "Expérience"
+            "title": "Sous-titre",
+            "description": "Texte affiché sous le nom dans le portfolio"
           }
         },
-        "required": ["id", "name"]
+        "required": ["name", "displayedInPortfolio", "subtitle"]
       }
     },
     {
@@ -749,28 +780,33 @@
         "title": "Soft Skill",
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "title": "ID"
-          },
           "name": {
             "type": "string",
             "title": "Nom"
           },
-          "displayName": {
-            "type": "string",
-            "title": "Nom d'affichage"
-          },
           "icon": {
             "type": "string",
-            "title": "Icône"
+            "title": "Icône (emoji)"
           },
-          "experience": {
+          "iconPath": {
             "type": "string",
-            "title": "Expérience"
+            "title": "Chemin vers l'icône SVG"
+          },
+          "color": {
+            "type": "string",
+            "title": "Couleur",
+            "widget": "colorPicker"
+          },
+          "displayedInPortfolio": {
+            "type": "boolean",
+            "title": "Affiché dans le portfolio"
+          },
+          "subtitle": {
+            "type": "string",
+            "title": "Sous-titre"
           }
         },
-        "required": ["id", "name"]
+        "required": ["name", "displayedInPortfolio"]
       }
     },
     {
@@ -948,7 +984,6 @@
               "type": "string"
             }
           }
-          }
         },
         "required": [
           "title",
@@ -957,8 +992,8 @@
           "status",
           "description"
         ]
-      },
-  
+      }
+    },
     {
       "id": "certifications",
       "title": "Certifications Data",
