@@ -12,7 +12,7 @@ tags = [
   "Zombies"
 ]
 programming_languages = [ "C++", "GSC", "LUA" ]
-frameworks_engines = [ ]
+frameworks_engines = [ "Black Ops III engine" ]
 category = "projects"
 sector = "mods"
 featured = true
@@ -24,7 +24,8 @@ specialties = [
   "3D Modeling",
   "Texturing",
   "FX",
-  "Sound Design"
+  "Sound Design",
+  "Modding"
 ]
 
 [[actions]]

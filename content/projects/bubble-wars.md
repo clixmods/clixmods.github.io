@@ -22,12 +22,9 @@ status = "Terminé"
 image = "/images/projects/bubble-wars/bubble-wars-bg.png"
 logo = "/images/projects/bubble-wars/bubble-wars-logo.png"
 galleries = [ ]
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Game Design" ]
+specialties = [ "Shaders" ]
 
 [[actions]]
 type = "download"
@@ -140,4 +137,3 @@ person = "shaim-somsanith"
 role = "Graphiste"
 fieldGroup = "contributors_group"
 +++
-

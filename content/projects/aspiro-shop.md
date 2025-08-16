@@ -1,15 +1,16 @@
-+++date = "2023-11-15T10:00:00+02:00"
++++
+date = "2023-11-15T10:00:00+02:00"
 draft = false
 title = "Aspiro Shop"
 subtitle = "Site e-commerce PHP/MVC - IUT Montpellier"
 description = "Plateforme de vente en ligne complète avec architecture MVC et sécurité avancée"
-image = "/images/projects/aspiro-shop.jpg"
-tags = ["PHP", "MVC", "E-commerce", "Security", "PDO"]
+tags = [ "PHP", "MVC", "E-commerce", "Security", "PDO" ]
 category = "projects"
 sector = "appsweb-etude"
 featured = true
 fmContentType = "project-content-type"
-programming_languages = [ "PHP", "MySQL", "HTML/CSS", "JavaScript" ]
+programming_languages = [ "PHP", "MySQL", "JavaScript", "HTML", "CSS" ]
+soft_skills = [ "Gestion de Projet" ]
 +++
 
 # Aspiro Shop - Site e-commerce PHP

@@ -12,12 +12,10 @@ fmContentType = "project-content-type"
 status = "Terminé"
 logo = "/images/projects/assault-of-order/assault-of-order-logo.png"
 image = "/images/projects/assault-of-order/clement-garcia-aoo-leveldesign-3.jpg"
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Game Design" ]
+specialties = [ "Game Design", "Développement Outils" ]
+soft_skills = [ "Résolution Problèmes", "Communication" ]
 
 [[actions]]
 type = "download"

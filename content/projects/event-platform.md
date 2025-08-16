@@ -1,15 +1,15 @@
-+++date = "2024-11-15T10:00:00+02:00"
++++
+date = "2024-11-15T10:00:00+02:00"
 draft = false
 title = "Plateforme de gestion d'événements"
 subtitle = "Application web full-stack - IUT Montpellier"
 description = "Application web pour la gestion d'événements avec architecture découplée Symfony/Vue.js"
-image = "/images/projects/event-platform.jpg"
-tags = ["Symfony", "Vue.js", "API REST", "JWT", "Docker"]
+tags = [ "Symfony", "Vue.js", "API REST", "JWT", "Docker" ]
 category = "projects"
 sector = "appsweb-etude"
 featured = true
 fmContentType = "project-content-type"
-frameworks_engines = [ "Symfony", "Docker" ]
+frameworks_engines = [ "Symfony", "Vue.js" ]
 programming_languages = [ "MySQL" ]
 +++
 

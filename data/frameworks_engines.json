@@ -40,5 +40,15 @@
     "color": "#000000",
     "displayedInPortfolio": true,
     "experience": 0
+  },
+  {
+    "name": "Symfony",
+    "experience": 1,
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Vue.js",
+    "experience": 1,
+    "displayedInPortfolio": true
   }
 ]

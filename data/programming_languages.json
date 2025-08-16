@@ -72,5 +72,22 @@
     "experience": 0.25,
     "iconPath": "images/technologies/C.svg",
     "displayedInPortfolio": true
+  },
+  {
+    "name": "HTML",
+    "experience": 2,
+    "iconPath": "images/technologies/HTML.svg",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "CSS",
+    "experience": 2,
+    "iconPath": "images/technologies/css.svg",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "MySQL",
+    "experience": 1,
+    "displayedInPortfolio": true
   }
 ]
