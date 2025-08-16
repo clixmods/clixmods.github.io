@@ -20,21 +20,18 @@
         "role_description": "Développement complet de l'application web avec architecture moderne"
       }
     ],
-    "skills": [
-      "C#",
-      "Unity",
-      "Blazor",
-      "FastEndpoint",
-      ".NET",
-      "Portage console",
-      "Développement outils"
+    "programming_languages": [
+      "C#"
     ],
-    "technologies": [
-      "C#",
+    "frameworks_engines": [
       "Unity",
-      "Blazor",
+      "Blazor", 
       "FastEndpoint",
       ".NET"
+    ],
+    "specialties": [
+      "Portage Console",
+      "Développement Outils"
     ]
   }
 ]

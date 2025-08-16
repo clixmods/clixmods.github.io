@@ -363,6 +363,213 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "experience-content-type",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "Brouillon",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Titre du poste",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Entreprise",
+          "name": "company",
+          "type": "string"
+        },
+        {
+          "title": "Logo de l'entreprise",
+          "name": "logo",
+          "type": "image"
+        },
+        {
+          "title": "Période",
+          "name": "period",
+          "type": "string"
+        },
+        {
+          "title": "Durée",
+          "name": "duration",
+          "type": "string"
+        },
+        {
+          "title": "Type de contrat",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "Localisation",
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "title": "Statut",
+          "name": "status",
+          "type": "choice",
+          "choices": [
+            "current",
+            "completed"
+          ]
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Langages de programmation",
+          "name": "programming_languages",
+          "type": "dataFile",
+          "dataFileId": "programming_languages_simple",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les langages de programmation utilisés dans cette expérience"
+        },
+        {
+          "title": "Frameworks & Moteurs",
+          "name": "frameworks_engines",
+          "type": "dataFile",
+          "dataFileId": "frameworks_engines_simple",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les frameworks et moteurs utilisés"
+        },
+        {
+          "title": "Spécialités",
+          "name": "specialties",
+          "type": "dataFile",
+          "dataFileId": "specialties",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les spécialités impliquées dans cette expérience"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "experience-content-type",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "company",
+          "name": "company",
+          "type": "string"
+        },
+        {
+          "title": "logo",
+          "name": "logo",
+          "type": "string"
+        },
+        {
+          "title": "period",
+          "name": "period",
+          "type": "string"
+        },
+        {
+          "title": "duration",
+          "name": "duration",
+          "type": "string"
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "location",
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "title": "status",
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "projects_layout",
+          "name": "projects_layout",
+          "type": "string"
+        },
+        {
+          "title": "projects",
+          "name": "projects",
+          "type": "block",
+          "fieldGroup": [
+            "projects_group"
+          ]
+        },
+        {
+          "title": "programming_languages",
+          "name": "programming_languages",
+          "type": "choice",
+          "choices": [
+            "C#"
+          ]
+        },
+        {
+          "title": "frameworks_engines",
+          "name": "frameworks_engines",
+          "type": "choice",
+          "choices": [
+            "Unity",
+            "Blazor",
+            "FastEndpoint",
+            ".NET"
+          ]
+        },
+        {
+          "title": "specialties",
+          "name": "specialties",
+          "type": "choice",
+          "choices": [
+            "Portage Console",
+            "Développement Outils"
+          ]
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "draft"
+        }
+      ]
     }
   ],
   "frontMatter.framework.id": "hugo",
@@ -380,6 +587,10 @@
     {
       "title": "people",
       "path": "[[workspace]]/content/people"
+    },
+    {
+      "title": "experiences",
+      "path": "[[workspace]]/content/experiences"
     }
   ],
   "frontMatter.content.draftField": {
@@ -575,8 +786,7 @@
           },
           "description": {
             "type": "string",
-            "title": "Description",
-            "widget": "textarea"
+            "title": "Description"
           },
           "projects": {
             "type": "array",
@@ -584,27 +794,34 @@
             "items": {
               "type": "object",
               "properties": {
-                "name": {
+                "project_ref": {
                   "type": "string",
-                  "title": "Nom du projet"
+                  "title": "Référence projet"
                 },
-                "description": {
+                "role_description": {
                   "type": "string",
-                  "title": "Description du projet"
-                },
-                "tasks": {
-                  "type": "array",
-                  "title": "Tâches",
-                  "items": {
-                    "type": "string"
-                  }
+                  "title": "Description du rôle"
                 }
               }
             }
           },
-          "skills": {
+          "programming_languages": {
             "type": "array",
-            "title": "Compétences",
+            "title": "Langages de programmation",
+            "items": {
+              "type": "string"
+            }
+          },
+          "frameworks_engines": {
+            "type": "array",
+            "title": "Frameworks & Moteurs",
+            "items": {
+              "type": "string"
+            }
+          },
+          "specialties": {
+            "type": "array",
+            "title": "Spécialités",
             "items": {
               "type": "string"
             }
@@ -691,7 +908,11 @@
             "description": "Ce langage de programmation est-il mis en avant dans le portfolio ?"
           }
         },
-        "required": ["name", "experience", "displayedInPortfolio"]
+        "required": [
+          "name",
+          "experience",
+          "displayedInPortfolio"
+        ]
       }
     },
     {
@@ -727,7 +948,11 @@
             "title": "Affiché dans le portfolio"
           }
         },
-        "required": ["name", "experience", "displayedInPortfolio"]
+        "required": [
+          "name",
+          "experience",
+          "displayedInPortfolio"
+        ]
       }
     },
     {
@@ -768,7 +993,11 @@
             "description": "Texte affiché sous le nom dans le portfolio"
           }
         },
-        "required": ["name", "displayedInPortfolio", "subtitle"]
+        "required": [
+          "name",
+          "displayedInPortfolio",
+          "subtitle"
+        ]
       }
     },
     {
@@ -806,7 +1035,10 @@
             "title": "Sous-titre"
           }
         },
-        "required": ["name", "displayedInPortfolio"]
+        "required": [
+          "name",
+          "displayedInPortfolio"
+        ]
       }
     },
     {
@@ -1542,6 +1774,21 @@
         {
           "title": "Légende",
           "name": "caption",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "id": "projects_group",
+      "fields": [
+        {
+          "title": "project_ref",
+          "name": "project_ref",
+          "type": "string"
+        },
+        {
+          "title": "role_description",
+          "name": "role_description",
           "type": "string"
         }
       ]
