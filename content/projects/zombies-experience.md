@@ -5,7 +5,7 @@ title = "Zombies Experience"
 subtitle = "Mod avancé pour Black Ops 3 Steam"
 description = "Modification complète étendant Call of Duty Black Ops 3 avec nouvelles fonctionnalités multijoueur"
 tags = [ "Modding", "C++", "Discord Integration", "Multiplayer" ]
-programming_languages = [ "GSC", "LUA" ]
+programming_languages = [ "LUA" ]
 specialties = [ "Modding" ]
 category = "projects"
 sector = "mods"
@@ -172,7 +172,7 @@ fieldGroup = "youtube_galleries_group"
   [[youtube_galleries.videos]]
   video_id = "qaqE_0rR0hU"
   title = """
-\r\r\r\r\r\r\r\r\r\r\r\r\r\r
+\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
 8 Players on Nacht Der Untoten is a NIGHTMARE!"""
   fieldGroup = "youtube_videos_group"
 

@@ -12,8 +12,9 @@ fmContentType = "project-content-type"
 image = "/images/projects/farm/farm-background.jpg"
 status = "Terminé"
 youtube_galleries = [ ]
-
 specialties = [ "Level Design", "Lighting", "3D Modeling", "Texturing" ]
+frameworks_engines = [ "Black Ops III engine" ]
+programming_languages = [ "GSC" ]
 
 [[actions]]
 type = "steam"
@@ -183,6 +184,7 @@ fieldGroup = "contributors_group"
 total = "1 mois"
 start_date = "Mars 2018"
 end_date = "Juin 2018"
+
 [[testimonials]]
 quote = "Great faithful recreation, fun with friends for sure! My video if anyone's interested https://youtu.be/V95-5AtGX7o"
 person = "tactical-loser"

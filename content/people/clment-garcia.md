@@ -11,16 +11,12 @@ email: ""
 linkedin: ""
 github: ""
 website: ""
-fmContentType: people
+fmContentType: person-content-type
 ---
 
 # Clément GARCIA
 
 Profil de **Clément GARCIA**.
-
-## Avatar
-
-![Avatar de Clément GARCIA](/images/people/clement-garcia.jpg)
 
 ## Informations
 

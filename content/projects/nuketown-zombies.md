@@ -11,16 +11,21 @@ tags = [
   "Remaster",
   "Zombies"
 ]
-programming_languages = ["C++", "Lua"]
-frameworks_engines = []
+programming_languages = [ "C++", "GSC", "LUA" ]
+frameworks_engines = [ ]
 category = "projects"
 sector = "mods"
 featured = true
 status = "Terminé"
 fmContentType = "project-content-type"
 image = "/images/projects/nuketown/nuketown-zombies.jpg"
-
-specialties = [ "Level Design", "3D Modeling", "Texturing", "FX", "Sound Design" ]
+specialties = [
+  "Level Design",
+  "3D Modeling",
+  "Texturing",
+  "FX",
+  "Sound Design"
+]
 
 [[actions]]
 type = "steam"
