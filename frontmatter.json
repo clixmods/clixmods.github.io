@@ -394,14 +394,16 @@
           "type": "image"
         },
         {
-          "title": "Période",
-          "name": "period",
-          "type": "string"
+          "title": "Date de début",
+          "name": "start_date",
+          "type": "datetime",
+          "description": "Date de début de l'expérience"
         },
         {
-          "title": "Durée",
-          "name": "duration",
-          "type": "string"
+          "title": "Date de fin",
+          "name": "end_date",
+          "type": "datetime",
+          "description": "Date de fin de l'expérience (laisser vide si en cours)"
         },
         {
           "title": "Type de contrat",
@@ -412,15 +414,6 @@
           "title": "Localisation",
           "name": "location",
           "type": "string"
-        },
-        {
-          "title": "Statut",
-          "name": "status",
-          "type": "choice",
-          "choices": [
-            "current",
-            "completed"
-          ]
         },
         {
           "title": "Description",
@@ -461,57 +454,6 @@
           "title": "fmContentType",
           "name": "fmContentType",
           "type": "string"
-        }
-      ]
-    },
-    {
-      "name": "experience-content-type",
-      "pageBundle": false,
-      "fields": [
-        {
-          "title": "title",
-          "name": "title",
-          "type": "string"
-        },
-        {
-          "title": "company",
-          "name": "company",
-          "type": "string"
-        },
-        {
-          "title": "logo",
-          "name": "logo",
-          "type": "string"
-        },
-        {
-          "title": "period",
-          "name": "period",
-          "type": "string"
-        },
-        {
-          "title": "duration",
-          "name": "duration",
-          "type": "string"
-        },
-        {
-          "title": "type",
-          "name": "type",
-          "type": "string"
-        },
-        {
-          "title": "location",
-          "name": "location",
-          "type": "string"
-        },
-        {
-          "title": "status",
-          "name": "status",
-          "type": "string"
-        },
-        {
-          "title": "description",
-          "name": "description",
-          "type": "string"
         },
         {
           "title": "projects_layout",
@@ -527,47 +469,14 @@
           ]
         },
         {
-          "title": "programming_languages",
-          "name": "programming_languages",
-          "type": "choice",
-          "choices": [
-            "C#"
-          ]
-        },
-        {
-          "title": "frameworks_engines",
-          "name": "frameworks_engines",
-          "type": "choice",
-          "choices": [
-            "Unity",
-            "Blazor",
-            "FastEndpoint",
-            ".NET"
-          ]
-        },
-        {
-          "title": "specialties",
-          "name": "specialties",
-          "type": "choice",
-          "choices": [
-            "Portage Console",
-            "Développement Outils"
-          ]
-        },
-        {
-          "title": "fmContentType",
-          "name": "fmContentType",
+          "title": "period",
+          "name": "period",
           "type": "string"
         },
         {
-          "title": "date",
-          "name": "date",
-          "type": "datetime"
-        },
-        {
-          "title": "draft",
-          "name": "draft",
-          "type": "draft"
+          "title": "status",
+          "name": "status",
+          "type": "string"
         }
       ]
     }
@@ -760,13 +669,15 @@
             "type": "string",
             "title": "Logo de l'entreprise"
           },
-          "period": {
+          "start_date": {
             "type": "string",
-            "title": "Période"
+            "title": "Date de début",
+            "format": "date-time"
           },
-          "duration": {
+          "end_date": {
             "type": "string",
-            "title": "Durée"
+            "title": "Date de fin",
+            "format": "date-time"
           },
           "type": {
             "type": "string",
@@ -775,14 +686,6 @@
           "location": {
             "type": "string",
             "title": "Localisation"
-          },
-          "status": {
-            "type": "string",
-            "title": "Statut",
-            "enum": [
-              "current",
-              "completed"
-            ]
           },
           "description": {
             "type": "string",
@@ -1782,14 +1685,19 @@
       "id": "projects_group",
       "fields": [
         {
-          "title": "project_ref",
+          "title": "Référence du projet",
           "name": "project_ref",
-          "type": "string"
+          "type": "contentRelationship",
+          "contentTypeName": "project-content-type",
+          "contentTypeValue": "path",
+          "multiple": false,
+          "description": "Sélectionnez un projet existant"
         },
         {
-          "title": "role_description",
+          "title": "Description du rôle",
           "name": "role_description",
-          "type": "string"
+          "type": "string",
+          "description": "Décrivez votre rôle spécifique dans ce projet"
         }
       ]
     }

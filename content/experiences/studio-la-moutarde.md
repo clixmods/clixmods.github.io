@@ -2,20 +2,23 @@
 title: Développeur C# / Unity
 company: Studio La Moutarde
 logo: /images/companies/la-moutarde.png
-period: 2023 - 2025
-duration: 2 ans
+start_date: 2023-09-01T00:00:00.000Z
+end_date: 2025-08-31T00:00:00.000Z
 type: Contrat en alternance
 location: Montpellier, Occitanie, France
-status: current
 description: Développement C# en alternance avec travail sur la fin de production d'un jeu vidéo et développement d'outils
 projects_layout: horizontal
 projects:
-    - project_ref: terra-memoria
-      role_description: Participation à la fin de production avec focus sur le portage Nintendo Switch
-    - project_ref: my-game-showcase
-      role_description: Développement complet de l'application web avec architecture moderne
+    - role_description: Participation à la fin de production avec focus sur le portage Nintendo Switch
+      project_ref: terra-memoria
+      fieldGroup: projects_group
+    - role_description: Développement complet de l'application web avec architecture moderne
+      project_ref: my-game-showcase
+      fieldGroup: projects_group
 programming_languages:
     - C#
+    - HTML
+    - CSS
 frameworks_engines:
     - Unity
     - Blazor

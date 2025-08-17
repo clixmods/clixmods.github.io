@@ -2,6 +2,7 @@
 date = "2025-01-15T10:00:00+02:00"
 draft = false
 title = "My Game Showcase"
+slug = "my-game-showcase"
 subtitle = "Plateforme d'artbooks numériques - La Moutarde"
 description = "Application web pour studios de jeux vidéo permettant de créer des artbooks numériques à partir d'assets"
 tags = [ "Blazor", "FastEndpoint", "SignalR", "Studio Tools" ]
