@@ -479,6 +479,120 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "education-content-type",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "Brouillon",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Titre de la formation",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Institution",
+          "name": "institution",
+          "type": "string"
+        },
+        {
+          "title": "Ville",
+          "name": "city",
+          "type": "string"
+        },
+        {
+          "title": "Date de début",
+          "name": "start_date",
+          "type": "datetime",
+          "description": "Date de début de la formation"
+        },
+        {
+          "title": "Date de fin",
+          "name": "end_date",
+          "type": "datetime",
+          "description": "Date de fin de la formation"
+        },
+        {
+          "title": "Statut",
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Langages de programmation",
+          "name": "programming_languages",
+          "type": "dataFile",
+          "dataFileId": "programming_languages_simple",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les langages de programmation appris"
+        },
+        {
+          "title": "Frameworks & Moteurs",
+          "name": "frameworks_engines",
+          "type": "dataFile",
+          "dataFileId": "frameworks_engines_simple",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les frameworks et moteurs étudiés"
+        },
+        {
+          "title": "Spécialités",
+          "name": "specialties",
+          "type": "dataFile",
+          "dataFileId": "specialties",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les spécialités couvertes dans cette formation"
+        },
+        {
+          "title": "Soft Skills",
+          "name": "soft_skills",
+          "type": "dataFile",
+          "dataFileId": "soft_skills",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les soft skills développées"
+        },
+        {
+          "title": "Note/Résultat",
+          "name": "grade",
+          "type": "string"
+        },
+        {
+          "title": "Icône",
+          "name": "icon",
+          "type": "string"
+        },
+        {
+          "title": "Couleur",
+          "name": "color",
+          "type": "string",
+          "description": "Couleur hex (ex: #4fd1c7)"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        }
+      ]
     }
   ],
   "frontMatter.framework.id": "hugo",
@@ -500,6 +614,10 @@
     {
       "title": "experiences",
       "path": "[[workspace]]/content/experiences"
+    },
+    {
+      "title": "educations",
+      "path": "[[workspace]]/content/educations"
     }
   ],
   "frontMatter.content.draftField": {
@@ -507,35 +625,6 @@
     "type": "boolean"
   },
   "frontMatter.data.files": [
-    {
-      "id": "people",
-      "title": "People Database",
-      "file": "data/people.json",
-      "labelField": "name",
-      "schema": {
-        "title": "Person",
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "title": "Nom complet"
-          },
-          "avatar": {
-            "type": "string",
-            "title": "Avatar (chemin vers l'image)",
-            "description": "Chemin relatif vers l'image depuis le dossier static/ (ex: images/avatars/nom.jpg)"
-          },
-          "id": {
-            "type": "string",
-            "title": "Identifiant unique"
-          }
-        },
-        "required": [
-          "name",
-          "id"
-        ]
-      }
-    },
     {
       "id": "profile",
       "title": "Profile Data",
@@ -649,107 +738,17 @@
       }
     },
     {
-      "id": "experience",
-      "title": "Experience Data",
-      "file": "data/experiences.json",
-      "labelField": "title",
-      "schema": {
-        "title": "Experience",
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string",
-            "title": "Titre du poste"
-          },
-          "company": {
-            "type": "string",
-            "title": "Entreprise"
-          },
-          "logo": {
-            "type": "string",
-            "title": "Logo de l'entreprise"
-          },
-          "start_date": {
-            "type": "string",
-            "title": "Date de début",
-            "format": "date-time"
-          },
-          "end_date": {
-            "type": "string",
-            "title": "Date de fin",
-            "format": "date-time"
-          },
-          "type": {
-            "type": "string",
-            "title": "Type de contrat"
-          },
-          "location": {
-            "type": "string",
-            "title": "Localisation"
-          },
-          "description": {
-            "type": "string",
-            "title": "Description"
-          },
-          "projects": {
-            "type": "array",
-            "title": "Projets",
-            "items": {
-              "type": "object",
-              "properties": {
-                "project_ref": {
-                  "type": "string",
-                  "title": "Référence projet"
-                },
-                "role_description": {
-                  "type": "string",
-                  "title": "Description du rôle"
-                }
-              }
-            }
-          },
-          "programming_languages": {
-            "type": "array",
-            "title": "Langages de programmation",
-            "items": {
-              "type": "string"
-            }
-          },
-          "frameworks_engines": {
-            "type": "array",
-            "title": "Frameworks & Moteurs",
-            "items": {
-              "type": "string"
-            }
-          },
-          "specialties": {
-            "type": "array",
-            "title": "Spécialités",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "required": [
-          "title",
-          "company",
-          "period",
-          "description"
-        ]
-      }
-    },
-    {
       "id": "testimonials",
       "title": "Testimonials",
       "file": "data/testimonials.json",
-      "labelField": "name",
+      "labelField": "personId",
       "schema": {
         "title": "Testimonials",
         "type": "object",
         "properties": {
-          "name": {
+          "personId": {
             "type": "string",
-            "title": "Nom complet"
+            "title": "ID de la personne"
           },
           "position": {
             "type": "string",
@@ -759,10 +758,6 @@
             "type": "string",
             "title": "Entreprise / Organisation"
           },
-          "avatar": {
-            "type": "string",
-            "title": "Avatar (chemin vers l'image)"
-          },
           "text": {
             "type": "string",
             "title": "Message de recommandation",
@@ -770,7 +765,7 @@
           }
         },
         "required": [
-          "name",
+          "personId",
           "position",
           "company",
           "text"
@@ -941,69 +936,6 @@
         "required": [
           "name",
           "displayedInPortfolio"
-        ]
-      }
-    },
-    {
-      "id": "education",
-      "title": "Education Data",
-      "file": "data/educations.json",
-      "labelField": "title",
-      "schema": {
-        "title": "Education",
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string",
-            "title": "Titre de la formation"
-          },
-          "institution": {
-            "type": "string",
-            "title": "Institution"
-          },
-          "period": {
-            "type": "string",
-            "title": "Période"
-          },
-          "status": {
-            "type": "string",
-            "title": "Statut"
-          },
-          "description": {
-            "type": "string",
-            "title": "Description",
-            "widget": "textarea"
-          },
-          "skills": {
-            "type": "array",
-            "title": "Compétences acquises",
-            "items": {
-              "type": "string"
-            }
-          },
-          "grade": {
-            "type": "string",
-            "title": "Note/Résultat"
-          },
-          "location": {
-            "type": "string",
-            "title": "Localisation"
-          },
-          "icon": {
-            "type": "string",
-            "title": "Icône"
-          },
-          "color": {
-            "type": "string",
-            "title": "Couleur (hex)"
-          }
-        },
-        "required": [
-          "title",
-          "institution",
-          "period",
-          "status",
-          "description"
         ]
       }
     },
@@ -1405,10 +1337,11 @@
         {
           "title": "Personne",
           "name": "person",
-          "type": "dataFile",
-          "dataFileId": "people",
-          "dataFileKey": "id",
-          "dataFileValue": "name"
+          "type": "contentRelationship",
+          "contentTypeName": "person-content-type",
+          "contentTypeValue": "slug",
+          "multiple": false,
+          "description": "Sélectionnez une personne existante"
         },
         {
           "title": "Rôle dans le projet",
@@ -1653,10 +1586,11 @@
         {
           "title": "Personne",
           "name": "person",
-          "type": "dataFile",
-          "dataFileId": "people",
-          "dataFileKey": "id",
-          "dataFileValue": "name"
+          "type": "contentRelationship",
+          "contentTypeName": "person-content-type",
+          "contentTypeValue": "slug",
+          "multiple": false,
+          "description": "Sélectionnez une personne existante"
         },
         {
           "title": "Rôle/Contexte",
