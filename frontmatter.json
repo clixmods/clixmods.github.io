@@ -1689,7 +1689,7 @@
           "name": "project_ref",
           "type": "contentRelationship",
           "contentTypeName": "project-content-type",
-          "contentTypeValue": "path",
+          "contentTypeValue": "slug",
           "multiple": false,
           "description": "Sélectionnez un projet existant"
         },
