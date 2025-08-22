@@ -1,0 +1,19 @@
+{{ define "main" }}
+<main>
+    <article>
+        <header>
+            <h1>{{ .Title }}</h1>
+            {{ if .Params.description }}
+                <p class="description">{{ .Params.description }}</p>
+            {{ end }}
+        </header>
+        
+        <div class="content">
+            {{ .Content }}
+        </div>
+    </article>
+</main>
+
+{{/* Inclure l'auto-person-modal pour toutes les pages */}}
+{{ partial "auto-person-modal.html" . }}
+{{ end }}

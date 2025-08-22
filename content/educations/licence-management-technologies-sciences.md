@@ -2,8 +2,8 @@
 title: Licence Management Technologies et Sciences
 institution: IAE
 city: Montpellier
-start_date: 2021-09-01T00:00:00.000Z
-end_date: 2023-06-30T00:00:00.000Z
+start_date: 2024-09-01T00:00:00.000Z
+end_date: 2025-06-30T00:00:00.000Z
 status: Obtenu
 description: Formation en management des technologies et sciences, développement d'applications et conduite de projet.
 soft_skills:

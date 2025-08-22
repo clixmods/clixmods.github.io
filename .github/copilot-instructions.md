@@ -1,98 +1,116 @@
 # Portfolio Hugo Site - AI Coding Instructions
 
-This is a **French developer portfolio** built with Hugo static site generator, featuring a custom theme with macOS-inspired UI components.
+This is a **French developer portfolio** built with Hugo static site generator, featuring a custom theme with macOS-inspired UI components and sophisticated content management.
 
 ## Architecture Overview
 
-### Hugo Structure
-- **Main site**: `/` with `hugo.toml` config and French content in `/content/`
-- **Custom theme**: `/themes/portfolio.theme/` (separate git submodule)
-- **Data-driven**: JSON files in `/data/` drive most content (profile, skills, projects, etc.)
-- **Bilingual-ready**: Uses `hugo.toml` and structured content types via `frontmatter.json`
+### Core Structure
+- **Main site**: `/` with bilingual Hugo config (`hugo.toml`) defaulting to French
+- **Custom theme**: `/themes/portfolio.theme/` (separate git submodule with its own layouts/assets)
+- **Data-driven architecture**: Structured JSON files in `/data/` control most UI and content
+- **Content management**: FrontMatter CMS integration via extensive `frontmatter.json` (1639+ lines)
 
-### Key Components
-- **Dock Navigation**: macOS-style dock (`/themes/portfolio.theme/layouts/_partials/dock.html`)
-- **Profile Section**: Data from `/data/profile.json` with French personal info
-- **Projects**: Markdown files in `/content/projects/` with technology filtering
-- **Blog**: French technical posts in `/content/posts/`
-- **Technology Management**: Automated tech badges via `/data/technologies.json`
+### Key Data Files
+- `data/profile.json` + `data/profile.en.json`: Personal info with bilingual support
+- `data/programming_languages.json`: Tech stack with SVG icons, experience levels, colors
+- `data/frameworks_engines.json`: Frameworks with display preferences and experience
+- `data/config.json` + `data/config.en.json`: Navigation with French labels and emoji icons
+- `data/certifications.json`, `data/testimonials.json`, `data/trophies.json`: Portfolio content
 
-## Content Management Patterns
+### Content Architecture
+Multiple content types organized in `/content/` with TOML frontmatter:
+- **Projects** (`/content/projects/`): Tech filtering via exact name matching with data files
+- **Blog posts** (`/content/posts/`): French technical content with technology tags
+- **People** (`/content/people/`): Professional network profiles and collaborators
+- **Experiences/Educations**: Professional and academic background
 
-### Technology System
-Technologies are centrally managed in `/data/technologies.json` with:
-```json
-{
-  "name": "C#", "icon": "🔷", "color": "#239120", 
-  "enabled": true, "order": 1, "experience": "4 ans", "level": "Expert"
-}
-```
-Projects reference these by exact name match in their `technologies` frontmatter field.
+## Critical Development Patterns
 
-### Project Structure
-Project files use TOML frontmatter:
-```toml
-title = "Project Name"
-technologies = ["Hugo", "HTML/CSS", "JavaScript"]
-sector = "apps-web"
-featured = true
-fmContentType = "project-content-type"
-```
+### Technology Data Integration
+Technologies are managed across **multiple JSON files** (not a single file):
+- `programming_languages.json`: Languages with `experience` (years) and `displayedInPortfolio` boolean
+- `frameworks_engines.json`: Frameworks with same structure
+- `specialties.json`, `soft_skills.json`: Additional skill categories
 
-### FrontMatter CMS Integration
-The site uses FrontMatter CMS with extensive configuration in `frontmatter.json` (1400+ lines) defining content types, fields, and editorial workflows.
+Projects reference these by **exact string matching** in their `technologies` frontmatter arrays. Always maintain consistency between data file `name` fields and project technology references.
+
+### FrontMatter CMS Workflows
+The `frontmatter.json` defines complex content types and field groups:
+- Custom content types like `"project-content-type"` with specialized fields
+- Field groups for contributors, actions, notable facts with repeatable sections
+- Data file integration allowing UI selection from JSON data sources
+- Automated field validation and editorial workflows
+
+### Theme Architecture
+Custom theme in `/themes/portfolio.theme/` with:
+- Modular SCSS in `/assets/scss/` with component-based organization
+- Interactive JavaScript in `/assets/js/` (e.g., `skill-modal.js` with 937+ lines)
+- Template hierarchy: `baseof.html` → section layouts → partials
+- Asset pipeline handling SVG icons, SCSS compilation, JS bundling
 
 ## Development Workflow
 
 ### Local Development
+Use the VS Code task "Hugo Serve" which runs:
 ```bash
-hugo serve --bind 0.0.0.0 --baseURL http://localhost --navigateToChanged
+hugo serve -D
 ```
-Use the existing VS Code task "Hugo Serve" which runs this command in background mode.
+This runs in background mode with fast rebuilds. The build output shows it generates 505+ pages (FR) + 7 pages (EN) with hot reload on file changes.
 
-### Theme Development
-- Custom theme lives in `/themes/portfolio.theme/` 
-- Main layout: `baseof.html` with French comments and macOS-style components
-- Partials organized by feature: `dock.html`, `profile.html`, `projects.html`, etc.
-- SCSS modules in `/themes/portfolio.theme/assets/scss/`
+### Key Commands & Scripts
+- `scripts/generate-tech-config.js`: Generates technology configurations with predefined colors/icons for 40+ common technologies
+- `scripts/update-experience-fields.js`: Auto-updates calculated fields when experience dates change
+- `scripts/experience-utils.js`, `scripts/trophies-utils.js`: Utility functions for content processing
 
-### Technology Badge Generation
-Use `/scripts/generate-tech-config.js` to generate technology configurations with predefined colors and icons for common tech stacks.
+### Asset Management Strategy
+- **Static assets**: `/static/images/` organized by type (`/technologies/`, `/projects/`, `/people/`)
+- **Theme assets**: `/themes/portfolio.theme/assets/` for SCSS/JS that need Hugo processing
+- **Generated output**: `/public/` (excluded from git) with processed CSS, optimized images
+- **Technology icons**: Prefer SVG files in `/static/images/technologies/` over emoji
 
-## Critical Patterns
+### Bilingual Support
+Hugo's multilingual setup with:
+- French as default language at root (`/`)
+- English under `/en/` subdirectory
+- Separate data files: `profile.json` (FR) + `profile.en.json` (EN)
+- Language-specific navigation in `config.json` vs `config.en.json`
 
-### Data File Integration
-Most content comes from JSON files in `/data/`:
-- `profile.json`: Personal info in French
-- `technologies.json`: Tech stack with SVG icons and experience levels
-- `config.json`: Site navigation with French labels and emoji icons
+## Critical Integration Points
 
-### Asset Management
-- Images stored in `/static/images/` with organized subdirectories
-- Technology SVGs in `/static/images/technologies/`
-- Generated assets in `/public/` (excluded from git)
+### FrontMatter CMS Data Files
+The `frontMatter.data.files` configuration creates editable interfaces for:
+- Profile data with complex nested objects (personal, media, contact, details)
+- Technology data with validation schemas and field groups
+- Content type definitions with custom field groups like `contributors_group`, `actions_group`
 
-### Content Types
-Three main content types via FrontMatter CMS:
-1. **Projects**: `/content/projects/` with tech filtering
-2. **Blog Posts**: `/content/posts/` with French technical content
-3. **Landing**: Special pages like `/content/landing.md`
+### Technology Display Logic
+Projects use arrays like `programming_languages = ["C#"]` and `frameworks_engines = ["Unity", "Blazor"]` which must match the `name` field in respective JSON data files exactly. The theme renders these with icons, colors, and experience levels from the data files.
+
+### Content Type System
+Three main FrontMatter content types:
+1. **"project-content-type"**: Complex projects with contributors, tech stacks, sectors
+2. **"default"**: Blog posts and general content
+3. Specialized types for people, experiences, educations with custom field validations
 
 ## Specific Conventions
 
-### French Language
-- All content, comments, and UI text in French
-- Personal branding: "Clément 'Clix' GARCIA"
-- Professional focus: Game development and Unity/C#
+### French-First Development
+- All UI text and content in French (user-facing content)
+- **All documentation and code comments must be in English**
+- Personal branding: "Clément 'Clix' GARCIA" 
+- Professional focus: Game development, Unity/C#, alternance work-study program
+- Error messages and debug output in French
 
-### Technology Integration
-- Always update `/data/technologies.json` when adding new tech
-- Use exact name matching between projects and technology data
-- SVG icons preferred over emoji for technologies
+### Data File Patterns
+- JSON files use consistent `name`, `icon`/`iconPath`, `color`, `displayedInPortfolio`, `experience` fields
+- Boolean flags like `featured`, `enabled` control UI visibility
+- Order/priority controlled by numeric `order` or `experience` values
+- SVG icon paths follow `/images/technologies/{Technology}.svg` pattern
 
-### Theme Customization
-- Modify theme files in `/themes/portfolio.theme/layouts/`
-- SCSS changes go in theme's `/assets/scss/` directory
-- JavaScript components in theme's `/assets/js/`
+### Theme Development
+- SCSS organized in modules under `/themes/portfolio.theme/assets/scss/`
+- JavaScript components support complex interactions (skill modals, project filtering)
+- Layout inheritance: `baseof.html` → specific layouts → partials
+- Asset pipeline: Hugo processes SCSS/JS, outputs to `/public/css/` and `/public/js/`
 
-When adding new features, maintain the data-driven approach and ensure French localization throughout.
+When making changes, always verify data file consistency, maintain French localization, and test both desktop and mobile layouts with the macOS-inspired design system.

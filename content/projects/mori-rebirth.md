@@ -4,8 +4,8 @@ draft = false
 title = "Mori Rebirth"
 subtitle = "Projet de modding avancé"
 description = """
-Following the events of "Alpha Omega" and "Mori", trapped alone and afraid in her bunker, Dr Hale, the only survivor of the Japanese Broken Arrow facility, is awaiting rescue from our heroes.\r\r\r\r\r\r\r
-\r\r\r\r\r\r\r
+Following the events of "Alpha Omega" and "Mori", trapped alone and afraid in her bunker, Dr Hale, the only survivor of the Japanese Broken Arrow facility, is awaiting rescue from our heroes.\r\r\r\r\r\r\r\r
+\r\r\r\r\r\r\r\r
 Experience the rebirth of a custom zombies classic with an expanded map, new quests, weapons, challenges and more."""
 tags = [ "Modding", "Game Systems", "C++", "Innovation" ]
 category = "projects"
@@ -17,6 +17,7 @@ logo = "/images/projects/mori-rebirth/mori-logo.png"
 status = "Terminé"
 programming_languages = [ "GSC" ]
 specialties = [ "Level Design" ]
+frameworks_engines = [ "Black Ops III engine" ]
 
 [[actions]]
 type = "steam"

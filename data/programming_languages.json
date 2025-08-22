@@ -2,7 +2,7 @@
   {
     "name": "C#",
     "icon": "🔷",
-    "iconPath": "/images/technologies/C#-(CSharp).svg",
+    "iconPath": "/images/technologies/CSharp.svg",
     "color": "#239120",
     "displayedInPortfolio": true,
     "experience": 4
@@ -58,36 +58,50 @@
   {
     "name": "C++",
     "experience": 1,
-    "iconPath": "images/technologies/C++.svg",
+    "iconPath": "images/technologies/CPlusPlus.svg",
+    "color": "#00599C",
     "displayedInPortfolio": true
   },
   {
     "name": "GSC",
     "experience": 4,
-    "icon": "fsdfsd",
+    "iconPath": "images/technologies/bo3.png",
+    "color": "#FF6600",
     "displayedInPortfolio": true
   },
   {
     "name": "C",
     "experience": 0.25,
     "iconPath": "images/technologies/C.svg",
+    "color": "#A8B9CC",
     "displayedInPortfolio": true
   },
   {
     "name": "HTML",
     "experience": 2,
-    "iconPath": "images/technologies/HTML.svg",
+    "iconPath": "images/technologies/HTML5.svg",
+    "color": "#E34F26",
     "displayedInPortfolio": true
   },
   {
     "name": "CSS",
     "experience": 2,
-    "iconPath": "images/technologies/css.svg",
+    "iconPath": "images/technologies/CSS3.svg",
+    "color": "#1572B6",
     "displayedInPortfolio": true
   },
   {
     "name": "MySQL",
     "experience": 1,
+    "iconPath": "images/technologies/MySQL.svg",
+    "color": "#4479A1",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Oracle SQL",
+    "experience": 0.5,
+    "iconPath": "images/technologies/Oracle.svg",
+    "color": "#F80000",
     "displayedInPortfolio": true
   }
 ]

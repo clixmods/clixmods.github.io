@@ -150,6 +150,16 @@
           "description": "Sélectionnez les soft skills nécessaires pour ce projet"
         },
         {
+          "title": "Outils",
+          "name": "tools",
+          "type": "dataFile",
+          "dataFileId": "tools",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les outils utilisés dans ce projet"
+        },
+        {
           "title": "Catégorie",
           "name": "category",
           "type": "categories"
@@ -451,6 +461,16 @@
           "description": "Sélectionnez les spécialités impliquées dans cette expérience"
         },
         {
+          "title": "Outils",
+          "name": "tools",
+          "type": "dataFile",
+          "dataFileId": "tools",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les outils utilisés dans cette expérience"
+        },
+        {
           "title": "fmContentType",
           "name": "fmContentType",
           "type": "string"
@@ -570,6 +590,16 @@
           "dataFileValue": "name",
           "multiple": true,
           "description": "Sélectionnez les soft skills développées"
+        },
+        {
+          "title": "Outils",
+          "name": "tools",
+          "type": "dataFile",
+          "dataFileId": "tools",
+          "dataFileKey": "name",
+          "dataFileValue": "name",
+          "multiple": true,
+          "description": "Sélectionnez les outils utilisés dans cette formation"
         },
         {
           "title": "Note/Résultat",
@@ -1267,6 +1297,56 @@
           "order",
           "condition_type",
           "condition_data"
+        ]
+      }
+    },
+    {
+      "id": "tools",
+      "title": "Tools Data",
+      "file": "data/tools.json",
+      "labelField": "name",
+      "schema": {
+        "title": "Tool",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Nom de l'outil"
+          },
+          "category": {
+            "type": "string",
+            "title": "Catégorie",
+            "enum": ["version_control", "quality_tools", "cloud", "ide", "project_management", "other"]
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "experience": {
+            "type": "number",
+            "title": "Expérience (en années)"
+          },
+          "iconPath": {
+            "type": "string",
+            "title": "Chemin vers l'icône SVG"
+          },
+          "color": {
+            "type": "string",
+            "title": "Couleur hexadécimale"
+          },
+          "displayedInPortfolio": {
+            "type": "boolean",
+            "title": "Affiché dans le portfolio"
+          }
+        },
+        "required": [
+          "name",
+          "category",
+          "description",
+          "experience",
+          "iconPath",
+          "color",
+          "displayedInPortfolio"
         ]
       }
     }

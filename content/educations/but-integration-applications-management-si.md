@@ -13,7 +13,8 @@ programming_languages:
   - JavaScript
 frameworks_engines:
   - .NET
-  - Spring Boot
+  - Symfony
+  - Vue.js
 specialties:
   - Gestion des données
   - Développement d'applications

@@ -8,21 +8,21 @@
   },
   {
     "name": "Blazor",
-    "iconPath": null,
+    "iconPath": "images/technologies/Blazor.png",
     "color": "#512BD4",
     "displayedInPortfolio": true,
     "experience": 1
   },
   {
     "name": "FastEndpoint",
-    "iconPath": "/images/technologies/FastAPI.svg",
+    "iconPath": "/images/technologies/fastendpoint.png",
     "color": "#FF6B35",
     "displayedInPortfolio": true,
     "experience": 1
   },
   {
     "name": ".NET",
-    "iconPath": "/images/technologies/.NET.svg",
+    "iconPath": "/images/technologies/DotNET.svg",
     "color": "#512BD4",
     "displayedInPortfolio": true,
     "experience": 2
@@ -31,24 +31,56 @@
     "name": "Unreal Engine",
     "iconPath": "/images/technologies/Unreal-Engine.svg",
     "color": "#0E1128",
-    "displayedInPortfolio": false,
+    "displayedInPortfolio": true,
     "experience": 2
   },
   {
     "name": "Black Ops III engine",
-    "iconPath": "null",
+    "iconPath": "images/technologies/bo3.png",
     "color": "#000000",
     "displayedInPortfolio": true,
-    "experience": 0
+    "experience": 6
   },
   {
     "name": "Symfony",
     "experience": 1,
-    "displayedInPortfolio": true
+    "displayedInPortfolio": true,
+    "iconPath": "images/technologies/Symfony.svg",
+    "color": "#000000"
   },
   {
     "name": "Vue.js",
     "experience": 1,
+    "displayedInPortfolio": true,
+    "iconPath": "images/technologies/Vue.js.svg",
+    "color": "#4FC08D"
+  },
+  {
+    "name": "Hugo",
+    "experience": 1,
+    "iconPath": "images/technologies/hugo.svg",
+    "displayedInPortfolio": true,
+    "color": "#FF4088"
+  },
+  {
+    "name": "JavaFX",
+    "experience": 2,
+    "iconPath": "/images/technologies/JavaFX.svg",
+    "color": "#FF6B1A",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Cassandra",
+    "experience": 0.5,
+    "iconPath": "images/technologies/Cassandra.svg",
+    "color": "#1287B1",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "MongoDB",
+    "experience": 0.5,
+    "iconPath": "images/technologies/MongoDB.svg",
+    "color": "#47A248",
     "displayedInPortfolio": true
   }
 ]

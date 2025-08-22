@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="20" fill="#10A37F"/>
+  <circle cx="35" cy="35" r="12" fill="#FFF"/>
+  <circle cx="65" cy="35" r="12" fill="#FFF"/>
+  <path fill="#10A37F" d="M32 32h6v6h-6v-6zM62 32h6v6h-6v-6z"/>
+  <path d="M25 60 Q50 75 75 60" stroke="#FFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <text x="50" y="85" text-anchor="middle" fill="#FFF" font-size="12" font-family="Arial">GPT</text>
+</svg>

@@ -54,5 +54,53 @@
     "displayedInPortfolio": true,
     "experience": 2,
     "subtitle": "Éclairage volumétrique"
+  },
+  {
+    "name": "Algorithmique",
+    "icon": "🧮",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Structures de données"
+  },
+  {
+    "name": "Interface utilisateur",
+    "icon": "🖥️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Design & ergonomie"
+  },
+  {
+    "name": "Programmation orientée objet",
+    "icon": "🎯",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 4,
+    "subtitle": "Conception et architecture logicielle"
+  },
+  {
+    "name": "Gestion de versions avec Git",
+    "icon": "🌿",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 4,
+    "subtitle": "Git Flow, workflows avancés"
+  },
+  {
+    "name": "Sécurité et optimisation",
+    "icon": "🔒",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 3,
+    "subtitle": "Bonnes pratiques de développement"
+  },
+  {
+    "name": "Design Pattern et refactoring",
+    "icon": "🏗️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 3,
+    "subtitle": "Architecture et maintenabilité du code"
   }
 ]

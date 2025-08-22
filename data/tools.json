@@ -1,0 +1,164 @@
+[
+  {
+    "name": "GitLab",
+    "category": "version_control",
+    "description": "Gestion de versions, CI/CD, collaboration en équipe",
+    "experience": 3,
+    "iconPath": "images/technologies/GitLab.svg",
+    "color": "#FCA326",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "GitHub",
+    "category": "version_control",
+    "description": "Gestion de versions, CI/CD, collaboration en équipe",
+    "experience": 4,
+    "iconPath": "images/technologies/GitHub.svg",
+    "color": "#181717",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "SonarQube",
+    "category": "quality_tools",
+    "description": "Analyse de code pour garantir qualité et sécurité",
+    "experience": 2,
+    "iconPath": "images/technologies/SonarQube.svg",
+    "color": "#4E9BCD",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Azure",
+    "category": "cloud",
+    "description": "Déploiement et gestion d'applications cloud",
+    "experience": 2,
+    "iconPath": "images/technologies/Azure.svg",
+    "color": "#0078D4",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Fork",
+    "category": "version_control",
+    "description": "Collaboration et gestion des repositories par le biais d'une interface graphique",
+    "experience": 3,
+    "iconPath": "images/technologies/Fork.svg",
+    "color": "#8B5CF6",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Visual Studio",
+    "category": "ide",
+    "description": "Environnement de développement intégré principal",
+    "experience": 4,
+    "iconPath": "images/technologies/VisualStudio.svg",
+    "color": "#5C2D91",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "JetBrains",
+    "category": "ide",
+    "description": "Suite d'environnements de développement",
+    "experience": 3,
+    "iconPath": "images/technologies/JetBrains.svg",
+    "color": "#000000",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Trello",
+    "category": "project_management",
+    "description": "Gestion de tâches et organisation de projets",
+    "experience": 3,
+    "iconPath": "images/technologies/Trello.svg",
+    "color": "#0079BF",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "ClickUp",
+    "category": "project_management",
+    "description": "Plateforme de productivité et gestion de projets",
+    "experience": 2,
+    "iconPath": "images/technologies/ClickUp.svg",
+    "color": "#7B68EE",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "HacknPlan",
+    "category": "project_management",
+    "description": "Gestion de projets spécialisée pour le développement de jeux",
+    "experience": 2,
+    "iconPath": "images/technologies/HacknPlan.svg",
+    "color": "#FF6B35",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Notion",
+    "category": "project_management",
+    "description": "Espace de travail collaboratif et documentation",
+    "experience": 3,
+    "iconPath": "images/technologies/Notion.svg",
+    "color": "#000000",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Photoshop",
+    "category": "design",
+    "description": "Retouche d'images et création graphique",
+    "experience": 4,
+    "iconPath": "images/technologies/Photoshop.svg",
+    "color": "#31A8FF",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "SonyVegas",
+    "category": "video_editing",
+    "description": "Montage vidéo professionnel",
+    "experience": 3,
+    "iconPath": "images/technologies/SonyVegas.svg",
+    "color": "#0066CC",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Davinci Resolve",
+    "category": "video_editing",
+    "description": "Montage vidéo et étalonnage de couleurs",
+    "experience": 2,
+    "iconPath": "images/technologies/DavinciResolve.svg",
+    "color": "#233A51",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Visual Studio Code",
+    "category": "ide",
+    "description": "Éditeur de code léger et polyvalent",
+    "experience": 5,
+    "iconPath": "images/technologies/VisualStudioCode.svg",
+    "color": "#007ACC",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Sublime Text",
+    "category": "ide",
+    "description": "Éditeur de texte avancé pour le développement",
+    "experience": 3,
+    "iconPath": "images/technologies/SublimeText.svg",
+    "color": "#FF9800",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "ChatGPT",
+    "category": "ai_tools",
+    "description": "Assistant IA pour le développement et la recherche",
+    "experience": 2,
+    "iconPath": "images/technologies/ChatGPT.svg",
+    "color": "#10A37F",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "Copilot",
+    "category": "ai_tools",
+    "description": "Assistant de programmation IA intégré",
+    "experience": 2,
+    "iconPath": "images/technologies/Copilot.svg",
+    "color": "#000000",
+    "displayedInPortfolio": true
+  }
+]
