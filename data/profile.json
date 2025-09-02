@@ -21,6 +21,12 @@
       "location": "Montpellier",
       "status": "Étudiant BUT 3 - En alternance chez Studio La Moutarde"
     },
+    "availability": {
+      "status": "En contrat",
+      "message": "Actuellement en alternance",
+      "available": false,
+      "nextAvailable": "Septembre 2026"
+    },
     "details": {
       "formation": "BUT 3 IAMSI - IUT Montpellier-Sète",
       "speciality": "Développement C#, Unity, Blazor, FastEndpoint",

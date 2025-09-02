@@ -21,6 +21,12 @@
     "location": "Montpellier",
     "status": "BUT 3 Student - Apprentice at Studio La Moutarde"
   },
+  "availability": {
+    "status": "Under contract",
+    "message": "Currently in apprenticeship",
+    "available": false,
+    "nextAvailable": "September 2026"
+  },
   "details": {
     "formation": "BUT 3 IAMSI - IUT Montpellier-Sète",
     "speciality": "C#, Unity, Blazor, FastEndpoint development",
