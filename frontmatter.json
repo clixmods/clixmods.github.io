@@ -478,7 +478,13 @@
         {
           "title": "projects_layout",
           "name": "projects_layout",
-          "type": "string"
+          "type": "choice",
+          "choices": [
+            "vertical",
+            "horizontal"
+          ],
+          "default": "vertical",
+          "description": "Choisissez l'affichage des projets : vertical ou horizontal"
         },
         {
           "title": "projects",
@@ -497,6 +503,15 @@
           "title": "status",
           "name": "status",
           "type": "string"
+        },
+        {
+          "title": "soft_skills",
+          "name": "soft_skills",
+          "type": "choice",
+          "choices": [
+            "Travail en équipe",
+            "Gestion du temps"
+          ]
         }
       ]
     },
@@ -1316,7 +1331,14 @@
           "category": {
             "type": "string",
             "title": "Catégorie",
-            "enum": ["version_control", "quality_tools", "cloud", "ide", "project_management", "other"]
+            "enum": [
+              "version_control",
+              "quality_tools",
+              "cloud",
+              "ide",
+              "project_management",
+              "other"
+            ]
           },
           "description": {
             "type": "string",
