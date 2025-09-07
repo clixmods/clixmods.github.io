@@ -363,6 +363,11 @@
           "type": "string"
         },
         {
+          "title": "discord",
+          "name": "discord",
+          "type": "string"
+        },
+        {
           "title": "website",
           "name": "website",
           "type": "string"
@@ -520,11 +525,6 @@
       "pageBundle": false,
       "fields": [
         {
-          "title": "Date",
-          "name": "date",
-          "type": "datetime"
-        },
-        {
           "title": "Brouillon",
           "name": "draft",
           "type": "draft"
@@ -624,7 +624,14 @@
         {
           "title": "Icône",
           "name": "icon",
-          "type": "string"
+          "type": "string",
+          "description": "Émoji à utiliser si pas de logo d'école"
+        },
+        {
+          "title": "Logo de l'école",
+          "name": "school_logo",
+          "type": "image",
+          "description": "Logo de l'école (priorité sur l'icône émoji)"
         },
         {
           "title": "Couleur",
@@ -636,6 +643,14 @@
           "title": "fmContentType",
           "name": "fmContentType",
           "type": "string"
+        },
+        {
+          "title": "years_detail",
+          "name": "years_detail",
+          "type": "block",
+          "fieldGroup": [
+            "years_detail_group"
+          ]
         }
       ]
     }
@@ -1734,6 +1749,65 @@
           "name": "role_description",
           "type": "string",
           "description": "Décrivez votre rôle spécifique dans ce projet"
+        }
+      ]
+    },
+    {
+      "id": "years_detail_group",
+      "fields": [
+        {
+          "title": "Année",
+          "name": "year",
+          "type": "number",
+          "description": "Numéro de l'année (1, 2, 3, etc.)"
+        },
+        {
+          "title": "Statut",
+          "name": "status",
+          "type": "choice",
+          "choices": [
+            {
+              "id": "validated",
+              "title": "Validée"
+            },
+            {
+              "id": "in_progress",
+              "title": "En cours"
+            },
+            {
+              "id": "skipped",
+              "title": "Admission directe"
+            },
+            {
+              "id": "not_taken",
+              "title": "Non faite"
+            },
+            {
+              "id": "completed",
+              "title": "Terminée"
+            }
+          ],
+          "description": "Statut de cette année d'études"
+        },
+        {
+          "title": "Label",
+          "name": "label",
+          "type": "choice",
+          "choices": [
+            "Validée",
+            "Validée - Alternance",
+            "En cours",
+            "En cours - Alternance",
+            "Admis directement en 2ème année",
+            "Admis directement en 3ème année",
+            "Non effectuée",
+            "Terminée",
+            "Redoublement",
+            "Mention Bien",
+            "Mention Très Bien",
+            "Obtenu"
+          ],
+          "description": "Description détaillée du statut de l'année"
         }
       ]
     }

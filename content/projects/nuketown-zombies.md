@@ -19,14 +19,13 @@ featured = true
 status = "Terminé"
 fmContentType = "project-content-type"
 image = "/images/projects/nuketown/nuketown-zombies.jpg"
-specialties = [
-  "Level Design",
-  "3D Modeling",
-  "Texturing",
-  "FX",
-  "Sound Design",
-  "Modding"
+specialties = [ "Level Design", "Modding", "Environment Modeling" ]
+soft_skills = [
+  "Management Communauté",
+  "Gestion de Projet",
+  "Résolution Problèmes"
 ]
+tools = [ "Fork", "Visual Studio Code", "Sublime Text", "Photoshop" ]
 
 [[actions]]
 type = "steam"

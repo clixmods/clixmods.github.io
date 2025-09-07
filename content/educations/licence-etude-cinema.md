@@ -14,8 +14,12 @@ grade: 1ère année validée
 icon: 🎬
 color: "#f59e0b"
 fmContentType: education-content-type
-date: 2020-09-01T00:00:00.000Z
 draft: false
+school_logo: /images/schools/logo-paul-valery.png
+years_detail:
+  - status: validated
+    label: Validée
+    fieldGroup: years_detail_group
 ---
 
 ## Description de la formation

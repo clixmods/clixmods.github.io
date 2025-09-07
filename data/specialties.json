@@ -102,5 +102,10 @@
     "displayedInPortfolio": true,
     "experience": 3,
     "subtitle": "Architecture et maintenabilité du code"
+  },
+  {
+    "name": "Environment Modeling",
+    "displayedInPortfolio": false,
+    "subtitle": "3D Modeling"
   }
 ]

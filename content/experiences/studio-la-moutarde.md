@@ -27,6 +27,9 @@ frameworks_engines:
 specialties:
     - Portage Console
     - Développement Outils
+soft_skills:
+    - Gestion de Projet
+    - Communication
 fmContentType: experience-content-type
 date: 2023-01-01T00:00:00.000Z
 draft: false

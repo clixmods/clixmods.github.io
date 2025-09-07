@@ -18,13 +18,14 @@ specialties:
 soft_skills:
   - Travail en équipe
   - Créativité
-  - Résolution de problèmes
+  - Résolution Problèmes
+  - Gestion de Projet
 grade: Obtenu
 icon: 🎮
 color: "#8b5cf6"
 fmContentType: education-content-type
-date: 2021-09-01T00:00:00.000Z
 draft: false
+school_logo: /images/schools/eartsup_logo.png
 ---
 
 ## Description de la formation

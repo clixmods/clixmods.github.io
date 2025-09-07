@@ -17,8 +17,8 @@ grade: Obtenu
 icon: 🎓
 color: "#4fd1c7"
 fmContentType: education-content-type
-date: 2021-09-01T00:00:00.000Z
 draft: false
+school_logo: /images/schools/iae-logo.png
 ---
 
 ## Description de la formation

@@ -49,7 +49,7 @@
     "category": "ide",
     "description": "Environnement de développement intégré principal",
     "experience": 4,
-    "iconPath": "images/technologies/VisualStudio.svg",
+    "iconPath": "images/technologies/Visual-Studio.svg",
     "color": "#5C2D91",
     "displayedInPortfolio": true
   },
@@ -103,7 +103,7 @@
     "category": "design",
     "description": "Retouche d'images et création graphique",
     "experience": 4,
-    "iconPath": "images/technologies/Photoshop.svg",
+    "iconPath": "images/technologies/Adobe-Photoshop.svg",
     "color": "#31A8FF",
     "displayedInPortfolio": true
   },
