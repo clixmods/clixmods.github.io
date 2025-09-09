@@ -44,22 +44,22 @@
           "type": "categories"
         },
         {
-          "title": "subtitle",
+          "title": "Sous-titre",
           "name": "subtitle",
           "type": "string"
         },
         {
-          "title": "category",
+          "title": "Catégorie",
           "name": "category",
           "type": "categories"
         },
         {
-          "title": "fmContentType",
+          "title": "Type de contenu",
           "name": "fmContentType",
           "type": "string"
         },
         {
-          "title": "image",
+          "title": "Image principale",
           "name": "image",
           "type": "image"
         }
@@ -211,7 +211,7 @@
           ]
         },
         {
-          "title": "fmContentType",
+          "title": "Type de contenu",
           "name": "fmContentType",
           "type": "string"
         },
@@ -229,22 +229,22 @@
           "type": "fields",
           "fields": [
             {
-              "title": "total",
+              "title": "Durée totale",
               "name": "total",
               "type": "string"
             },
             {
-              "title": "start_date",
+              "title": "Date de début",
               "name": "start_date",
               "type": "datetime"
             },
             {
-              "title": "end_date",
+              "title": "Date de fin",
               "name": "end_date",
               "type": "datetime"
             },
             {
-              "title": "phases",
+              "title": "Phases de développement",
               "name": "phases",
               "type": "block",
               "fieldGroup": [
@@ -308,22 +308,22 @@
       "pageBundle": false,
       "fields": [
         {
-          "title": "date",
+          "title": "Date de création",
           "name": "date",
           "type": "datetime"
         },
         {
-          "title": "draft",
+          "title": "Brouillon",
           "name": "draft",
           "type": "draft"
         },
         {
-          "title": "title",
+          "title": "Nom de la personne",
           "name": "title",
           "type": "string"
         },
         {
-          "title": "id",
+          "title": "Identifiant unique",
           "name": "id",
           "type": "string"
         },
@@ -363,17 +363,17 @@
           "type": "string"
         },
         {
-          "title": "discord",
+          "title": "Discord",
           "name": "discord",
           "type": "string"
         },
         {
-          "title": "website",
+          "title": "Site web",
           "name": "website",
           "type": "string"
         },
         {
-          "title": "fmContentType",
+          "title": "Type de contenu",
           "name": "fmContentType",
           "type": "string"
         }
@@ -1472,12 +1472,12 @@
       "labelField": "name",
       "fields": [
         {
-          "title": "name",
+          "title": "Nom de la phase",
           "name": "name",
           "type": "string"
         },
         {
-          "title": "duration",
+          "title": "Durée",
           "name": "duration",
           "type": "string"
         }
@@ -1509,7 +1509,7 @@
           ]
         },
         {
-          "title": "images",
+          "title": "Images de la galerie",
           "name": "images",
           "type": "block",
           "fieldGroup": [
@@ -1523,27 +1523,27 @@
       "labelField": "title",
       "fields": [
         {
-          "title": "video_id",
+          "title": "ID de la vidéo YouTube",
           "name": "video_id",
           "type": "string"
         },
         {
-          "title": "title",
+          "title": "Titre de la vidéo",
           "name": "title",
           "type": "string"
         },
         {
-          "title": "description",
+          "title": "Description",
           "name": "description",
           "type": "string"
         },
         {
-          "title": "duration",
+          "title": "Durée",
           "name": "duration",
           "type": "string"
         },
         {
-          "title": "date",
+          "title": "Date de publication",
           "name": "date",
           "type": "string"
         }
@@ -1554,17 +1554,17 @@
       "labelField": "title",
       "fields": [
         {
-          "title": "title",
+          "title": "Titre de la galerie",
           "name": "title",
           "type": "string"
         },
         {
-          "title": "description",
+          "title": "Description de la galerie",
           "name": "description",
           "type": "string"
         },
         {
-          "title": "size",
+          "title": "Taille du widget",
           "name": "size",
           "type": "choice",
           "choices": [
@@ -1575,7 +1575,7 @@
           ]
         },
         {
-          "title": "videos",
+          "title": "Vidéos de la galerie",
           "name": "videos",
           "type": "block",
           "fieldGroup": [
@@ -1630,14 +1630,14 @@
       "id": "technical_specs_group",
       "fields": [
         {
-          "title": "label",
+          "title": "Nom de la spécification",
           "name": "label",
           "type": "string"
         },
         {
-          "title": "value",
+          "title": "Valeur",
           "name": "value",
-          "type": "datetime"
+          "type": "string"
         }
       ]
     },
