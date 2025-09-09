@@ -1645,49 +1645,19 @@
       "id": "awards_group",
       "fields": [
         {
-          "title": "title",
+          "title": "Titre du prix",
           "name": "title",
           "type": "string"
         },
         {
-          "title": "organization",
+          "title": "Organisation",
           "name": "organization",
           "type": "string"
         },
         {
-          "title": "date",
+          "title": "Date d'obtention",
           "name": "date",
           "type": "datetime"
-        },
-        {
-          "title": "contributors_size",
-          "name": "contributors_size",
-          "type": "string"
-        },
-        {
-          "title": "development_time_size",
-          "name": "development_time_size",
-          "type": "string"
-        },
-        {
-          "title": "gallery_size",
-          "name": "gallery_size",
-          "type": "string"
-        },
-        {
-          "title": "technical_specs_size",
-          "name": "technical_specs_size",
-          "type": "string"
-        },
-        {
-          "title": "awards_size",
-          "name": "awards_size",
-          "type": "string"
-        },
-        {
-          "title": "testimonials_size",
-          "name": "testimonials_size",
-          "type": "string"
         }
       ]
     },

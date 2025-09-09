@@ -27,6 +27,10 @@ soft_skills = [
 ]
 tools = [ "Fork", "Visual Studio Code", "Sublime Text", "Photoshop" ]
 
+[[technical_specs]]
+label = "Plateforme"
+value = "PC (Steam Workshop)"
+
 [[actions]]
 type = "steam"
 label = "Télécharger sur Steam"
@@ -193,30 +197,6 @@ video_description = "Comparaison détaillée entre les versions"
 duration = "2:34"
 date = "2019-07-15"
 
-[[technical_specs]]
-label = "Moteur"
-value = "Call of Duty: Black Ops 3"
-
-[[technical_specs]]
-label = "Langage principal"
-value = "C++ / Lua scripting"
-
-[[technical_specs]]
-label = "Joueurs supportés"
-value = "1-8 joueurs + bots"
-
-[[technical_specs]]
-label = "Plateforme"
-value = "PC (Steam Workshop)"
-
-[[technical_specs]]
-label = "Taille du projet"
-value = "~2.5 GB"
-
-[[technical_specs]]
-label = "Assets créés"
-value = "200+ textures, 50+ modèles"
-
 [[awards]]
 title = "Projet le plus téléchargé"
 organization = "Steam Workshop BO3"
@@ -231,11 +211,6 @@ date = "2019"
 title = "Featured Mod"
 organization = "Treyarch Community"
 date = "2019"
-contributors_size = "size-large"
-development_time_size = "size-medium"
-technical_specs_size = "size-medium"
-awards_size = "size-small"
-testimonials_size = "size-large"
 
 [[testimonials]]
 quote = "Greetings, I review, showcase maps and do guides as well – here is our short play‑through with shield part locations!"

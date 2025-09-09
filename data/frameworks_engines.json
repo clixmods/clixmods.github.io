@@ -8,7 +8,7 @@
   },
   {
     "name": "Blazor",
-    "iconPath": "images/technologies/Blazor.png",
+    "iconPath": "/images/technologies/Blazor.png",
     "color": "#512BD4",
     "displayedInPortfolio": true,
     "experience": 1
@@ -36,7 +36,7 @@
   },
   {
     "name": "Black Ops III engine",
-    "iconPath": "images/technologies/bo3.png",
+    "iconPath": "/images/technologies/bo3.png",
     "color": "#000000",
     "displayedInPortfolio": true,
     "experience": 6
@@ -45,20 +45,20 @@
     "name": "Symfony",
     "experience": 1,
     "displayedInPortfolio": true,
-    "iconPath": "images/technologies/Symfony.svg",
+    "iconPath": "/images/technologies/Symfony.svg",
     "color": "#000000"
   },
   {
     "name": "Vue.js",
     "experience": 1,
     "displayedInPortfolio": true,
-    "iconPath": "images/technologies/Vue.js.svg",
+    "iconPath": "/images/technologies/Vue.js.svg",
     "color": "#4FC08D"
   },
   {
     "name": "Hugo",
     "experience": 1,
-    "iconPath": "images/technologies/hugo.svg",
+    "iconPath": "/images/technologies/Hugo.svg",
     "displayedInPortfolio": true,
     "color": "#FF4088"
   },
@@ -72,14 +72,14 @@
   {
     "name": "Cassandra",
     "experience": 0.5,
-    "iconPath": "images/technologies/Cassandra.svg",
+    "iconPath": "/images/technologies/Apache-Cassandra.svg",
     "color": "#1287B1",
     "displayedInPortfolio": true
   },
   {
     "name": "MongoDB",
     "experience": 0.5,
-    "iconPath": "images/technologies/MongoDB.svg",
+    "iconPath": "/images/technologies/MongoDB.svg",
     "color": "#47A248",
     "displayedInPortfolio": true
   }
