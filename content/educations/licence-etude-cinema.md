@@ -20,6 +20,9 @@ years_detail:
   - status: validated
     label: Validée
     fieldGroup: years_detail_group
+tools:
+  - Photoshop
+  - Davinci Resolve
 ---
 
 ## Description de la formation

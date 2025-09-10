@@ -12,10 +12,17 @@ featured = true
 fmContentType = "project-content-type"
 image = "/images/projects/my-game-showcase/artbook.webp"
 logo = "/images/projects/my-game-showcase/My Game Showcase.webp"
-
-frameworks_engines = [ "Blazor", ".NET 8", "FastEndpoint", "SignalR" ]
-
-programming_languages = [ "C#" ]
+frameworks_engines = [ "Blazor", "FastEndpoint", "SignalR", "Unity", ".NET" ]
+programming_languages = [ "C#", "HTML", "CSS", "JavaScript" ]
+specialties = [
+  "Interface utilisateur",
+  "Design Pattern et refactoring",
+  "Développement Outils",
+  "Portage Console"
+]
+soft_skills = [ "Résolution Problèmes" ]
+tools = [ "Azure", "Fork", "JetBrains", "ClickUp" ]
+status = "En Cours"
 
 [[contributors]]
 person = "francois-bertrand"

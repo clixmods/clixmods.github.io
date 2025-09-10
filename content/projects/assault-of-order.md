@@ -16,6 +16,7 @@ frameworks_engines = [ "Unity" ]
 programming_languages = [ "C#" ]
 specialties = [ "Game Design", "Développement Outils" ]
 soft_skills = [ "Résolution Problèmes", "Communication" ]
+tools = [ "Fork", "Visual Studio", "HacknPlan", "SonyVegas" ]
 
 [[actions]]
 type = "download"

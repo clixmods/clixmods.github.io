@@ -23,8 +23,9 @@ image = "/images/projects/bubble-wars/bubble-wars-bg.png"
 logo = "/images/projects/bubble-wars/bubble-wars-logo.png"
 galleries = [ ]
 frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
+programming_languages = [ "C#", "HLSL" ]
 specialties = [ "Shaders" ]
+tools = [ "JetBrains", "Fork" ]
 
 [[actions]]
 type = "download"

@@ -12,14 +12,11 @@ fmContentType = "project-content-type"
 status = "Terminé"
 image = "/images/projects/fishnship/background.png"
 testimonials = [ ]
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Game Design" ]
-
-soft_skills = [ "Event Production" ]
+specialties = [ "Shaders" ]
+soft_skills = [ "Résolution Problèmes" ]
+tools = [ "Fork", "JetBrains" ]
 
 [[actions]]
 type = "download"

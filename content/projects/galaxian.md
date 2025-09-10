@@ -12,11 +12,16 @@ fmContentType = "project-content-type"
 logo = "/images/projects/galaxian/galaxian-logo.png"
 image = "/images/projects/galaxian/galaxian-background.png"
 status = "Terminé"
-specialties = [ "Game Design" ]
+specialties = [
+  "Game Design",
+  "Algorithmique",
+  "Gestion de versions avec Git"
+]
 programming_languages = [ "C#" ]
 frameworks = [ "Unity" ]
-
 frameworks_engines = [ "Unity" ]
+soft_skills = [ "Résolution Problèmes", "Communication", "Gestion de Projet" ]
+tools = [ "GitHub", "Fork", "JetBrains", "Trello", "SonyVegas" ]
 
 [[actions]]
 type = "download"

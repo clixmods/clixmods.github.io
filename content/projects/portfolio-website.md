@@ -12,6 +12,8 @@ category = "projects"
 sector = "appsweb-professionnel"
 featured = true
 fmContentType = "project-content-type"
+soft_skills = [ ]
+tools = [ "Copilot", "Visual Studio Code" ]
 +++
 
 # Portfolio Website
