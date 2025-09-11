@@ -6,6 +6,10 @@ defaultContentLanguage = 'fr'
 # Keep French at root, English under /en/
 defaultContentLanguageInSubdir = false
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [languages]
 	[languages.fr]
 		languageName = 'Français'
