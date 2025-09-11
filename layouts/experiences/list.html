@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="container">
+    <main class="main-content">
+        <!-- Section Expérience - Identique à la page d'accueil -->
+        <section id="experiences">
+            {{ partial "experience.html" . }}
+        </section>
+    </main>
+</div>
+
+<!-- Auto-include person modal if needed -->
+{{ partial "auto-person-modal.html" . }}
+{{ end }}

@@ -28,12 +28,14 @@
     {
       "anchor": "formation",
       "label": "Formation",
-      "icon": "🎓"
+      "icon": "🎓",
+      "url": "/educations/"
     },
     {
       "anchor": "experiences",
       "label": "Expériences",
-      "icon": "🏆"
+      "icon": "🏆",
+      "url": "/experiences/"
     }
   ],
   "blog": {

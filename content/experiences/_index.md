@@ -1,10 +1,6 @@
 ---
-title: "Expériences Professionnelles"
-description: "Mon parcours professionnel et mes expériences en développement"
+title: "Expérience Professionnelle"
+description: "Mon parcours professionnel, des projets concrets aux compétences développées en entreprise"
 layout: list
 draft: false
 ---
-
-# Expériences Professionnelles
-
-Cette section regroupe mes différentes expériences professionnelles dans le domaine du développement logiciel et du jeu vidéo.

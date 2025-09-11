@@ -640,6 +640,13 @@
           "description": "Couleur hex (ex: #4fd1c7)"
         },
         {
+          "title": "Affiché dans le portfolio",
+          "name": "displayedInPortfolio",
+          "type": "boolean",
+          "default": true,
+          "description": "Cocher pour afficher cette formation dans la timeline du portfolio"
+        },
+        {
           "title": "fmContentType",
           "name": "fmContentType",
           "type": "string"
@@ -651,6 +658,25 @@
           "fieldGroup": [
             "years_detail_group"
           ]
+        },
+        {
+          "title": "Projets réalisés",
+          "name": "projects",
+          "type": "contentRelationship",
+          "contentTypeName": "project-content-type",
+          "contentTypeValue": "slug",
+          "multiple": true,
+          "description": "Sélectionnez les projets réalisés pendant cette formation"
+        },
+        {
+          "title": "Témoignages",
+          "name": "testimonials",
+          "type": "dataFile",
+          "dataFileId": "testimonials",
+          "dataFileKey": "personId",
+          "dataFileValue": "personId",
+          "multiple": true,
+          "description": "Sélectionnez les témoignages depuis la base de données existante"
         }
       ]
     }

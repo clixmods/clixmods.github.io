@@ -2,6 +2,42 @@
   "site": {
     "title": "Portfolio"
   },
+  "navigation": [
+    {
+      "anchor": "profile",
+      "label": "Profile",
+      "icon": "👤",
+      "active": true
+    },
+    {
+      "anchor": "skills",
+      "label": "Skills",
+      "icon": "⚡",
+      "url": "/en/competences/"
+    },
+    {
+      "anchor": "blog",
+      "label": "Blog",
+      "icon": "📝"
+    },
+    {
+      "anchor": "projects",
+      "label": "Projects",
+      "icon": "💼"
+    },
+    {
+      "anchor": "education",
+      "label": "Education",
+      "icon": "🎓",
+      "url": "/en/educations/"
+    },
+    {
+      "anchor": "experiences",
+      "label": "Experiences",
+      "icon": "🏆",
+      "url": "/en/experiences/"
+    }
+  ],
   "blog": {
     "homeLimit": 3,
     "dateFormat": "Jan 02, 2006"

@@ -37,26 +37,16 @@ grade: En cours
 school_logo: /images/schools/iut_logo.png
 icon: 💻
 color: "#6366f1"
+displayedInPortfolio: true
 fmContentType: education-content-type
 draft: false
+projects:
+  - annuaire-symfony
+  - plateforme-de-gestion-evenements
+  - blackjack-javafx
+  - aspiro-shop
+testimonials:
+  - "antoine-chollet"
+  - "anita-messaoui"
+  - "francis-garcia"
 ---
-
-## Description de la formation
-
-Formation spécialisée en intégration d'applications et management des systèmes d'information. Admission en 2ème année en alternance.
-
-### Compétences développées
-
-- **Gestion des données** : Administration et optimisation des bases de données
-- **Développement d'application** : Conception et développement d'applications métier
-- **Optimisation** : Performance et amélioration des systèmes
-- **Communication de système** : Intégration et interfaçage de systèmes
-- **Conduire un projet** : Gestion de projets informatiques
-
-### Détails
-
-- **Institution** : IUT Montpellier-Sète
-- **Période** : 2023 - 2025
-- **Statut** : En cours (3ème année)
-- **Localisation** : Montpellier, France
-- **Formation en alternance** depuis la 2ème année

@@ -20,36 +20,25 @@ soft_skills:
   - Créativité
   - Résolution Problèmes
   - Gestion de Projet
+projects:
+  - galaxian
+  - bubble-wars
+  - assault-order
+  - witchable
+  - lost-city-stone-keeper
+  - fish-ship-cœur-de-ville-en-lumiere
+  - stone-keeper-2
+  - stholen
+  - stay-light
 grade: Obtenu
 icon: 🎮
 color: "#8b5cf6"
+displayedInPortfolio: true
 fmContentType: education-content-type
 draft: false
 school_logo: /images/schools/eartsup_logo.png
+testimonials:
+  - "benoit-toupet"
+  - "gaetan-vergeot"
+  - "lucas-guibert"
 ---
-
-## Description de la formation
-
-Formation spécialisée en développement de jeux vidéo avec 13 projets réalisés sur Unity et Unreal Engine en équipe.
-
-### Compétences acquises
-
-- **Développement de jeux vidéo** : Programmation gameplay, systèmes de jeu
-- **Travail en équipe** : Collaboration en équipe pluridisciplinaire
-- **Unity** : Maîtrise du moteur Unity 3D
-- **Unreal Engine** : Développement sur Unreal Engine
-- **Game Design** : Conception et équilibrage de gameplay
-
-### Projets réalisés
-
-**13 projets** développés en équipe sur différents moteurs :
-- Projets Unity 3D
-- Projets Unreal Engine
-- Travail collaboratif avec des artistes et designers
-
-### Détails
-
-- **Institution** : e-artsup - Montpellier
-- **Période** : 2021 - 2023
-- **Statut** : Obtenu
-- **Localisation** : Montpellier, France
