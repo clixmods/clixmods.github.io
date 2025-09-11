@@ -1,9 +1,9 @@
 {{/* 
-  Helper pour calculer automatiquement les données d'une expérience 
+  Helper to automatically calculate experience data 
   Usage: {{ partial "helpers/experience-data.html" . }}
   
-  Input: Page d'expérience avec start_date et end_date
-  Output: Dict avec period, duration, status calculés
+  Input: Experience page with start_date and end_date
+  Output: Dict with calculated period, duration, status
 */}}
 
 {{- $experience := . -}}
@@ -11,12 +11,12 @@
 {{- $endDate := "" -}}
 {{- $now := now -}}
 
-{{/* Gestion de la date de fin */}}
+{{/* Handle end date */}}
 {{- if $experience.Params.end_date -}}
   {{- $endDate = time $experience.Params.end_date -}}
 {{- end -}}
 
-{{/* Calcul de la période */}}
+{{/* Calculate period */}}
 {{- $startYear := $startDate.Year -}}
 {{- $period := "" -}}
 {{- if $endDate -}}
@@ -26,7 +26,7 @@
   {{- $period = printf "%d - Présent" $startYear -}}
 {{- end -}}
 
-{{/* Calcul de la durée */}}
+{{/* Calculate duration */}}
 {{- $targetDate := $now -}}
 {{- if $endDate -}}
   {{- $targetDate = $endDate -}}
@@ -67,7 +67,7 @@
   {{- $duration = printf "%s %s" $yearText $monthText -}}
 {{- end -}}
 
-{{/* Calcul du statut */}}
+{{/* Status calculation */}}
 {{- $status := "current" -}}
 {{- if $endDate -}}
   {{- if $endDate.Before $now -}}
@@ -75,7 +75,7 @@
   {{- end -}}
 {{- end -}}
 
-{{/* Retour du dictionnaire */}}
+{{/* Return dictionary */}}
 {{- return dict 
   "period" $period 
   "duration" $duration 

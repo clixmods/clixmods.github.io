@@ -28,7 +28,7 @@
             <h4>{{ i18n "programming_languages" | default "Langages de programmation" }}</h4>
             <div class="skills-grid">
                 {{ range .Site.Data.programming_languages }}
-                    {{/* Conversion de l'expérience numérique en texte */}}
+                    {{/* Convert numeric experience to text */}}
                     {{ $experienceText := "" }}
                     {{ if .experience }}
                         {{ $exp := float .experience }}
@@ -89,7 +89,7 @@
             <div class="skills-grid">
                 {{ range .Site.Data.frameworks_engines }}
                     {{ if not (or (in .name "Unity") (in .name "Unreal") (in .name "engine") (in .name "Engine")) }}
-                    {{/* Conversion de l'expérience numérique en texte */}}
+                    {{/* Convert numeric experience to text */}}
                     {{ $experienceText := "" }}
                     {{ if .experience }}
                         {{ $exp := float .experience }}
@@ -151,7 +151,7 @@
             <div class="skills-grid">
                 {{ range .Site.Data.frameworks_engines }}
                     {{ if or (in .name "Unity") (in .name "Unreal") (in .name "engine") (in .name "Engine") }}
-                    {{/* Conversion de l'expérience numérique en texte */}}
+                    {{/* Convert numeric experience to text */}}
                     {{ $experienceText := "" }}
                     {{ if .experience }}
                         {{ $exp := float .experience }}
@@ -213,7 +213,7 @@
             <div class="skills-grid">
                 {{ range sort .Site.Data.tools "experience" "desc" }}
                     {{ if eq .category "ide" }}
-                    {{/* Conversion de l'expérience numérique en texte */}}
+                    {{/* Convert numeric experience to text */}}
                     {{ $experienceText := "" }}
                     {{ if .experience }}
                         {{ $exp := float .experience }}
@@ -275,7 +275,7 @@
             <div class="skills-grid">
                 {{ range sort .Site.Data.tools "experience" "desc" }}
                     {{ if ne .category "ide" }}
-                    {{/* Conversion de l'expérience numérique en texte */}}
+                    {{/* Convert numeric experience to text */}}
                     {{ $experienceText := "" }}
                     {{ if .experience }}
                         {{ $exp := float .experience }}

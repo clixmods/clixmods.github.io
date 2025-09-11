@@ -1,17 +1,17 @@
-// Test script pour vérifier les données du modal person
+// Test script to verify person modal data
 console.log('=== TEST PERSON MODAL DATA ===');
 
-// Vérifier que les données sont chargées
+// Verify that data is loaded
 console.log('People loaded:', window.portfolioPeople ? window.portfolioPeople.length : 'NOT LOADED');
 console.log('Testimonials loaded:', window.portfolioTestimonials ? window.portfolioTestimonials.length : 'NOT LOADED');
 console.log('Projects loaded:', window.portfolioProjects ? window.portfolioProjects.length : 'NOT LOADED');
 
-// Tester une personne spécifique
+// Test a specific person
 const testPersonId = 'clement-garcia';
 const testPerson = window.portfolioPeople ? window.portfolioPeople.find(p => p.id === testPersonId) : null;
 console.log(`Person ${testPersonId}:`, testPerson);
 
-// Trouver les projets pour cette personne
+// Find projects for this person
 if (window.portfolioProjects) {
     const personProjects = window.portfolioProjects.filter(project => 
         project.contributors && project.contributors.some(contributor => contributor.person === testPersonId)
@@ -19,5 +19,5 @@ if (window.portfolioProjects) {
     console.log(`Projects for ${testPersonId}:`, personProjects);
 }
 
-// Tester l'ouverture du modal (optionnel)
+// Test modal opening (optional)
 // window.openPersonModal && window.openPersonModal(testPersonId);
