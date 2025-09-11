@@ -24,7 +24,7 @@
     "experience": 2,
     "iconPath": "images/technologies/SonarQube.svg",
     "color": "#4E9BCD",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "Azure",
@@ -42,7 +42,7 @@
     "experience": 3,
     "iconPath": "images/technologies/Fork.svg",
     "color": "#8B5CF6",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "Visual Studio",
@@ -78,7 +78,7 @@
     "experience": 2,
     "iconPath": "images/technologies/ClickUp.svg",
     "color": "#7B68EE",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "HacknPlan",
@@ -87,7 +87,7 @@
     "experience": 2,
     "iconPath": "images/technologies/HacknPlan.svg",
     "color": "#FF6B35",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "Notion",
@@ -114,7 +114,7 @@
     "experience": 3,
     "iconPath": "images/technologies/SonyVegas.svg",
     "color": "#0066CC",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "Davinci Resolve",
@@ -123,7 +123,7 @@
     "experience": 2,
     "iconPath": "images/technologies/DavinciResolve.svg",
     "color": "#233A51",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "Visual Studio Code",
@@ -141,7 +141,7 @@
     "experience": 3,
     "iconPath": "images/technologies/SublimeText.svg",
     "color": "#FF9800",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "ChatGPT",
@@ -150,7 +150,7 @@
     "experience": 2,
     "iconPath": "images/technologies/ChatGPT.svg",
     "color": "#10A37F",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "Copilot",
@@ -159,6 +159,6 @@
     "experience": 2,
     "iconPath": "images/technologies/Copilot.svg",
     "color": "#000000",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   }
 ]

@@ -51,7 +51,7 @@
     "name": "Shaders",
     "icon": "✨",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 2,
     "subtitle": "Éclairage volumétrique"
   },
@@ -59,7 +59,7 @@
     "name": "Algorithmique",
     "icon": "🧮",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 2,
     "subtitle": "Structures de données"
   },
@@ -67,7 +67,7 @@
     "name": "Interface utilisateur",
     "icon": "🖥️",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 2,
     "subtitle": "Design & ergonomie"
   },
@@ -91,7 +91,7 @@
     "name": "Sécurité et optimisation",
     "icon": "🔒",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 3,
     "subtitle": "Bonnes pratiques de développement"
   },
@@ -99,7 +99,7 @@
     "name": "Design Pattern et refactoring",
     "icon": "🏗️",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 3,
     "subtitle": "Architecture et maintenabilité du code"
   },

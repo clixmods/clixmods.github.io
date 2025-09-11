@@ -1,0 +1,85 @@
+{{/* 
+  Helper pour calculer automatiquement les données d'une expérience 
+  Usage: {{ partial "helpers/experience-data.html" . }}
+  
+  Input: Page d'expérience avec start_date et end_date
+  Output: Dict avec period, duration, status calculés
+*/}}
+
+{{- $experience := . -}}
+{{- $startDate := time $experience.Params.start_date -}}
+{{- $endDate := "" -}}
+{{- $now := now -}}
+
+{{/* Gestion de la date de fin */}}
+{{- if $experience.Params.end_date -}}
+  {{- $endDate = time $experience.Params.end_date -}}
+{{- end -}}
+
+{{/* Calcul de la période */}}
+{{- $startYear := $startDate.Year -}}
+{{- $period := "" -}}
+{{- if $endDate -}}
+  {{- $endYear := $endDate.Year -}}
+  {{- $period = printf "%d - %d" $startYear $endYear -}}
+{{- else -}}
+  {{- $period = printf "%d - Présent" $startYear -}}
+{{- end -}}
+
+{{/* Calcul de la durée */}}
+{{- $targetDate := $now -}}
+{{- if $endDate -}}
+  {{- $targetDate = $endDate -}}
+{{- end -}}
+
+{{- $diffSeconds := $targetDate.Sub $startDate -}}
+{{- $diffDays := div $diffSeconds.Seconds 86400 -}}
+{{- $diffMonths := div $diffDays 30.44 -}}
+{{- $years := int (div $diffMonths 12) -}}
+{{- $months := int (mod $diffMonths 12) -}}
+
+{{- $duration := "" -}}
+{{- if eq $years 0 -}}
+  {{- if eq $months 1 -}}
+    {{- $duration = "1 mois" -}}
+  {{- else -}}
+    {{- $duration = printf "%d mois" $months -}}
+  {{- end -}}
+{{- else if eq $months 0 -}}
+  {{- if eq $years 1 -}}
+    {{- $duration = "1 an" -}}
+  {{- else -}}
+    {{- $duration = printf "%d ans" $years -}}
+  {{- end -}}
+{{- else -}}
+  {{- $yearText := "" -}}
+  {{- if eq $years 1 -}}
+    {{- $yearText = "1 an" -}}
+  {{- else -}}
+    {{- $yearText = printf "%d ans" $years -}}
+  {{- end -}}
+  {{- $monthText := "" -}}
+  {{- if eq $months 1 -}}
+    {{- $monthText = "1 mois" -}}
+  {{- else -}}
+    {{- $monthText = printf "%d mois" $months -}}
+  {{- end -}}
+  {{- $duration = printf "%s %s" $yearText $monthText -}}
+{{- end -}}
+
+{{/* Calcul du statut */}}
+{{- $status := "current" -}}
+{{- if $endDate -}}
+  {{- if $endDate.Before $now -}}
+    {{- $status = "completed" -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Retour du dictionnaire */}}
+{{- return dict 
+  "period" $period 
+  "duration" $duration 
+  "status" $status 
+  "start_date" $startDate
+  "end_date" $endDate
+-}}

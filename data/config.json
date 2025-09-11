@@ -12,7 +12,8 @@
     {
       "anchor": "competences",
       "label": "Compétences",
-      "icon": "⚡"
+      "icon": "⚡",
+      "url": "/competences/"
     },
     {
       "anchor": "blog",

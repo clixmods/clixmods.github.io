@@ -17,7 +17,7 @@
     "name": "FastEndpoint",
     "iconPath": "/images/technologies/fastendpoint.png",
     "color": "#FF6B35",
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 1
   },
   {
@@ -67,20 +67,20 @@
     "experience": 2,
     "iconPath": "/images/technologies/JavaFX.svg",
     "color": "#FF6B1A",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "Cassandra",
     "experience": 0.5,
     "iconPath": "/images/technologies/Apache-Cassandra.svg",
     "color": "#1287B1",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "MongoDB",
     "experience": 0.5,
     "iconPath": "/images/technologies/MongoDB.svg",
     "color": "#47A248",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   }
 ]

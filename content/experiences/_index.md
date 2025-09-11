@@ -1,6 +1,7 @@
 ---
 title: "Expériences Professionnelles"
 description: "Mon parcours professionnel et mes expériences en développement"
+layout: list
 draft: false
 ---
 

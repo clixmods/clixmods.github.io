@@ -52,7 +52,7 @@
     "icon": "✨",
     "iconPath": null,
     "color": "#FF6B6B",
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 0.5
   },
   {
@@ -74,7 +74,7 @@
     "experience": 0.25,
     "iconPath": "images/technologies/C.svg",
     "color": "#A8B9CC",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "HTML",
@@ -95,13 +95,13 @@
     "experience": 1,
     "iconPath": "images/technologies/MySQL.svg",
     "color": "#4479A1",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "Oracle SQL",
     "experience": 0.5,
     "iconPath": "images/technologies/Oracle.svg",
     "color": "#F80000",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   }
 ]
