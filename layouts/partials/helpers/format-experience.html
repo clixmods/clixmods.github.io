@@ -1,0 +1,46 @@
+{{/* 
+  Helper to format experience from numeric value to French text
+  Usage: {{ partial "helpers/format-experience.html" .experience }}
+  
+  Input: Numeric experience value (e.g., 2.5)
+  Output: Formatted French text (e.g., "2 ans et 6 mois")
+*/}}
+
+{{- $experience := . -}}
+{{- $experienceText := "" -}}
+
+{{- if $experience -}}
+  {{- $exp := float $experience -}}
+  {{- $years := int (math.Floor $exp) -}}
+  {{- $months := int (math.Round (mul (sub $exp (math.Floor $exp)) 12)) -}}
+  
+  {{- if eq $years 0 -}}
+    {{- if eq $months 1 -}}
+      {{- $experienceText = "1 mois" -}}
+    {{- else -}}
+      {{- $experienceText = printf "%d mois" $months -}}
+    {{- end -}}
+  {{- else if eq $months 0 -}}
+    {{- if eq $years 1 -}}
+      {{- $experienceText = "1 an" -}}
+    {{- else -}}
+      {{- $experienceText = printf "%d ans" $years -}}
+    {{- end -}}
+  {{- else -}}
+    {{- if eq $years 1 -}}
+      {{- if eq $months 1 -}}
+        {{- $experienceText = "1 an et 1 mois" -}}
+      {{- else -}}
+        {{- $experienceText = printf "1 an et %d mois" $months -}}
+      {{- end -}}
+    {{- else -}}
+      {{- if eq $months 1 -}}
+        {{- $experienceText = printf "%d ans et 1 mois" $years -}}
+      {{- else -}}
+        {{- $experienceText = printf "%d ans et %d mois" $years $months -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $experienceText -}}
