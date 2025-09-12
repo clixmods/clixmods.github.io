@@ -10,10 +10,10 @@
       "active": true
     },
     {
-      "anchor": "competences",
+      "anchor": "skills",
       "label": "Compétences",
       "icon": "⚡",
-      "url": "/competences/"
+      "url": "/skills/"
     },
     {
       "anchor": "blog",
