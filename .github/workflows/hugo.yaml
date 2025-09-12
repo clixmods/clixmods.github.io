@@ -79,10 +79,9 @@ jobs:
             hugo-
       - name: Remove console.log statements
         run: |
-          find . -name "*.html" -type f -exec sed -i 's/.*console\.log.*;//g' {} \;
-          find . -name "*.js" -type f -exec sed -i -E 's/console\.(log|error|warn|info|debug)\([^)]*\);?//g' {} \;
-          find . -name "*.js" -type f -exec sed -i -E 's/console\.(log|error|warn|info|debug)\(([^()]*|\([^)]*\))*\);?//g' {} \;
-          find . -name "*.js" -type f -exec sed -i -E 's/,console\.(log|error|warn|info|debug)\(([^()]*|\([^)]*\))*\)//g' {} \;
+          find . -name "*.html" -type f -exec sed -i '/console\.log/d' {} \;
+          npm install -g uglify-js
+          find . -name "*.js" -type f -exec sh -c 'uglifyjs "$1" --compress drop_console=true --beautify --output "$1"' _ {} \;
       - name: Build the site
         run: |
           hugo \
