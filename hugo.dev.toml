@@ -1,4 +1,4 @@
-baseURL = 'https://clixmods.github.io/portfolio/'
+baseURL = 'http://localhost:1313/'
 theme = 'portfolio.theme'
 
 # Multilingual configuration
