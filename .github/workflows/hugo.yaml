@@ -69,6 +69,10 @@ jobs:
       - name: Configure Git
         run: |
           git config core.quotepath false
+      - name: Remove console.log statements
+        run: |
+          find . -name "*.html" -type f -exec sed -i 's/.*console\.log.*;//g' {} \;
+          find . -name "*.js" -type f -exec sed -i 's/.*console\.log.*;//g' {} \;
       - name: Cache restore
         id: cache-restore
         uses: actions/cache/restore@v4
