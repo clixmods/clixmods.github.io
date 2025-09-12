@@ -80,8 +80,9 @@ jobs:
       - name: Remove console.log statements
         run: |
           find . -name "*.html" -type f -exec sed -i 's/.*console\.log.*;//g' {} \;
-          find . -name "*.js" -type f -exec sed -i -E 's/console\.(log|error|warn|info|debug)\([^)]*\);//g' {} \;
-          find . -name "*.js" -type f -exec sed -i -E 's/console\.(log|error|warn|info|debug)\([^}]*\}[^)]*\);//g' {} \;
+          find . -name "*.js" -type f -exec sed -i -E 's/console\.(log|error|warn|info|debug)\([^)]*\);?//g' {} \;
+          find . -name "*.js" -type f -exec sed -i -E 's/console\.(log|error|warn|info|debug)\(([^()]*|\([^)]*\))*\);?//g' {} \;
+          find . -name "*.js" -type f -exec sed -i -E 's/,console\.(log|error|warn|info|debug)\(([^()]*|\([^)]*\))*\)//g' {} \;
       - name: Build the site
         run: |
           hugo \
