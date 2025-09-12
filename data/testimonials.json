@@ -2,8 +2,20 @@
   {
     "personId": "francois-bertrand",
     "company": "La Moutarde",
-    "position": "Co-fondateur",
+    "position": "Co-fondateur / Directeur de jeu",
     "text": "Clément s’est rapidement imposé comme un élément moteur de notre équipe. Son sens de l’initiative est particulièrement remarquable : il n’hésite pas à aller au-delà des tâches qui lui sont confiées pour suggérer des améliorations et optimiser nos processus. En plus d’être un excellent développeur, Clément fait preuve d’une écoute attentive et d’une grande capacité d’adaptation. Son implication et son envie de progresser font de lui un collaborateur de grande valeur, apprécié tant par ses collègues que par la direction. "
+  },
+  {
+    "personId": "anthony-expert",
+    "company": "La Moutarde",
+    "position": "Co-fondateur / Directeur Artistique",
+    "text": "J’ai eu la chance de travailler avec Clément durant son alternance au sein de notre équipe. Il s’est rapidement intégré et a montré une grande autonomie, une vraie capacité d’adaptation ainsi qu’une excellente maîtrise d'Unity. Il m’a souvent surpris par la qualité de son travail au point de me faire oublier qu’il était encore alternant. Son absence se faisait toujours sentir lorsqu’il était en cours, preuve de l’impact positif qu’il avait au quotidien. Toujours volontaire, curieux et impliqué, il a su apporter des solutions concrètes et efficaces aux projets sur lesquels il est intervenu. Son sérieux et sa motivation en font un collaborateur de confiance que je recommande vivement."
+  },
+  {
+    "personId": "mony-cazamea",
+    "company": "La Moutarde",
+    "position": "Artiste",
+    "text": "J'ai eu le plaisir de travailler régulièrement aux côtés de Clément chez La Moutarde. Mes compétences étant dans un domaine différent, je ne pourrais juger de ses aptitudes en dev. Mais en tant que coéquipier, Clément est quelqu'un de très agréable à côtoyer : sérieux, professionnel et toujours impliqué dans ses missions. Il sait aussi apporter une touche de bonne humeur et d’humour au quotidien. Il est rigoureux et curieux, il ne rechigne pas face à la critique et s'améliore chaque jour. Je retravaillerai avec lui avec plaisir si nos chemins se croisent !"
   },
   {
     "personId": "antoine-chollet",
