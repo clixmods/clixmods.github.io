@@ -185,6 +185,12 @@
           "type": "boolean"
         },
         {
+          "title": "Afficher sur le CV",
+          "name": "featuredInCV",
+          "type": "boolean",
+          "description": "Prioritaire pour la section Projets du CV"
+        },
+        {
           "title": "Statut",
           "name": "status",
           "type": "choice",
