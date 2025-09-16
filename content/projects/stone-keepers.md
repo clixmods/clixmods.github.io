@@ -8,6 +8,7 @@ tags = [ "Adventure", "Unity", "Team Project", "Atlantis" ]
 category = "projects"
 sector = "games-personnel"
 featured = true
+featuredInCV = true
 fmContentType = "project-content-type"
 logo = "/images/projects/stone-keeper/stone-keeper-logo.png"
 status = "Terminé"

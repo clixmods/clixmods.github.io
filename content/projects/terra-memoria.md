@@ -8,6 +8,7 @@ tags = [ "JRPG", "Commercial", "Nintendo Switch" ]
 category = "projects"
 sector = "games-professionnel"
 featured = true
+featuredInCV = true
 fmContentType = "project-content-type"
 status = "Terminé"
 logo = "/images/projects/terra-memoria/terra-memoria-logo.png"
