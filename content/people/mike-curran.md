@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-15T16:11:19.778Z"
 draft: false
 title: "Mike Curran"
@@ -13,13 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Mike Curran
-
-Profil de **Mike Curran**.
-
-## Position
-Senior Character Artist
-
-## Entreprise
-Treyarch

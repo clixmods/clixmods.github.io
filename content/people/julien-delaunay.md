@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Julien DELAUNAY"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Julien DELAUNAY
-
-Profil de **Julien DELAUNAY**.
-
-## Informations
-
-- **ID**: julien-delaunay
-- **Nom complet**: Julien DELAUNAY

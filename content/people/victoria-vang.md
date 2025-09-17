@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Victoria Vang"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Victoria Vang
-
-Profil de **Victoria Vang**.
-
-## Informations
-
-- **ID**: victoria-vang
-- **Nom complet**: Victoria Vang

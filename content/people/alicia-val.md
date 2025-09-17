@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Alicia Val"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Alicia Val
-
-Profil de **Alicia Val**.
-
-## Informations
-
-- **ID**: alicia-val
-- **Nom complet**: Alicia Val

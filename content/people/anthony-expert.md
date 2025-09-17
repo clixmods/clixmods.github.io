@@ -1,4 +1,4 @@
----
+﻿---
 date: 2025-08-14T22:45:06.615Z
 draft: false
 title: Anthony EXPERT
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: person-content-type
 ---
-
-# Anthony Expert
-
-Profil de **Anthony Expert**.
-
-## Informations
-
-- **ID**: anthony-expert
-- **Nom complet**: Anthony Expert

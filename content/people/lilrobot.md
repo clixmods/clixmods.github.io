@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "LilRobot"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# LilRobot
-
-Profil de **LilRobot**.
-
-## Informations
-
-- **ID**: lilrobot
-- **Nom complet**: LilRobot

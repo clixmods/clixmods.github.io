@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-15T16:11:19.765Z"
 draft: false
 title: "Antoine Chollet"
@@ -13,13 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Antoine Chollet
-
-Profil de **Antoine Chollet**.
-
-## Position
-Maître de Conférences en Sciences de Gestion
-
-## Entreprise
-Université de Montpellier

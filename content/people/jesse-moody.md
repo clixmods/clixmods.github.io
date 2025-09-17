@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-15T16:11:19.777Z"
 draft: false
 title: "Jesse Moody"
@@ -13,13 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Jesse Moody
-
-Profil de **Jesse Moody**.
-
-## Position
-Hard Surface Specialist
-
-## Entreprise
-Call of Duty Franchise

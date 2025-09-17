@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "BritishPie"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# BritishPie
-
-Profil de **BritishPie**.
-
-## Informations
-
-- **ID**: britishpie
-- **Nom complet**: BritishPie

@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "David DOS SANTOS"
@@ -13,16 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# David DOS SANTOS
-
-Profil de **David DOS SANTOS**.
-
-## Avatar
-
-![Avatar de David DOS SANTOS]( )
-
-## Informations
-
-- **ID**: dfus1on
-- **Nom complet**: David DOS SANTOS

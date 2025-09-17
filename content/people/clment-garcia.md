@@ -1,4 +1,4 @@
----
+﻿---
 date: 2025-08-14T22:45:06.615Z
 draft: false
 title: Clément GARCIA
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: person-content-type
 ---
-
-# Clément GARCIA
-
-Profil de **Clément GARCIA**.
-
-## Informations
-
-- **ID**: clement-garcia
-- **Nom complet**: Clément GARCIA

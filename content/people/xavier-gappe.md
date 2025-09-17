@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Xavier GAPPE"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Xavier GAPPE
-
-Profil de **Xavier GAPPE**.
-
-## Informations
-
-- **ID**: xavier-gappe
-- **Nom complet**: Xavier GAPPE

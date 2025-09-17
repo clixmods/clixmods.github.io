@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Guillaume Laugé"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Guillaume Laugé
-
-Profil de **Guillaume Laugé**.
-
-## Informations
-
-- **ID**: guillaume-lauge
-- **Nom complet**: Guillaume Laugé

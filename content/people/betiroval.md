@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "BetiroVal"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# BetiroVal
-
-Profil de **BetiroVal**.
-
-## Informations
-
-- **ID**: betiroval
-- **Nom complet**: BetiroVal

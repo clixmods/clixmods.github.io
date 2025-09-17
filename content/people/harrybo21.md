@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "HarryBO21"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# HarryBO21
-
-Profil de **HarryBO21**.
-
-## Informations
-
-- **ID**: harrybo21
-- **Nom complet**: HarryBO21

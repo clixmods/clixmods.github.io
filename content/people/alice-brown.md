@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Alice Brown"
@@ -13,16 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Alice Brown
-
-Profil de **Alice Brown**.
-
-## Avatar
-
-![Avatar de Alice Brown](/images/people/alice-avatar.jpg)
-
-## Informations
-
-- **ID**: alice-brown
-- **Nom complet**: Alice Brown

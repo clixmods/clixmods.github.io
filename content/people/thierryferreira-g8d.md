@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "ThierryFerreira-g8d"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# ThierryFerreira-g8d
-
-Profil de **ThierryFerreira-g8d**.
-
-## Informations
-
-- **ID**: thierryferreira-g8d
-- **Nom complet**: ThierryFerreira-g8d

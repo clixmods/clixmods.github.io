@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Manille BRUN"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Manille BRUN
-
-Profil de **Manille BRUN**.
-
-## Informations
-
-- **ID**: manille-brun
-- **Nom complet**: Manille BRUN

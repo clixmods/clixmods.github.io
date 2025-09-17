@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "spudgaming99"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# spudgaming99
-
-Profil de **spudgaming99**.
-
-## Informations
-
-- **ID**: spudgaming99
-- **Nom complet**: spudgaming99

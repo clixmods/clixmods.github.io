@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Tactical Loser"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Tactical Loser
-
-Profil de **Tactical Loser**.
-
-## Informations
-
-- **ID**: tactical-loser
-- **Nom complet**: Tactical Loser

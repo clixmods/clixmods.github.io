@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Nosif28"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Nosif28
-
-Profil de **Nosif28**.
-
-## Informations
-
-- **ID**: nosif28
-- **Nom complet**: Nosif28

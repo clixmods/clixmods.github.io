@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-15T16:11:19.773Z"
 draft: false
 title: "Lucas Guibert"
@@ -13,13 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Lucas Guibert
-
-Profil de **Lucas Guibert**.
-
-## Position
-Game Programmer / Technical Designer
-
-## Entreprise
-e-artsup Montpellier

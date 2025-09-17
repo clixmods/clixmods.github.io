@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Jennyfer GARDIENNET"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Jennyfer GARDIENNET
-
-Profil de **Jennyfer GARDIENNET**.
-
-## Informations
-
-- **ID**: jennyfer-gardiennet
-- **Nom complet**: Jennyfer GARDIENNET

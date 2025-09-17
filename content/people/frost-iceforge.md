@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Frost Iceforge"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Frost Iceforge
-
-Profil de **Frost Iceforge**.
-
-## Informations
-
-- **ID**: frost-iceforge
-- **Nom complet**: Frost Iceforge

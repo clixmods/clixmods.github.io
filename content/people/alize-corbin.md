@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Alizée Corbin"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Alizée Corbin
-
-Profil de **Alizée Corbin**.
-
-## Informations
-
-- **ID**: alizee-corbin
-- **Nom complet**: Alizée Corbin

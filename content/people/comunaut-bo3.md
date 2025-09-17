@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Comunauté BO3"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Comunauté BO3
-
-Profil de **Comunauté BO3**.
-
-## Informations
-
-- **ID**: comunaute-bo3
-- **Nom complet**: Comunauté BO3

@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "feustein1423"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# feustein1423
-
-Profil de **feustein1423**.
-
-## Informations
-
-- **ID**: feustein1423
-- **Nom complet**: feustein1423

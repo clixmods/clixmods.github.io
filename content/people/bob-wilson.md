@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Bob Wilson"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Bob Wilson
-
-Profil de **Bob Wilson**.
-
-## Informations
-
-- **ID**: bob-wilson
-- **Nom complet**: Bob Wilson

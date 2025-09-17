@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "NateSmithZombies"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# NateSmithZombies
-
-Profil de **NateSmithZombies**.
-
-## Informations
-
-- **ID**: natesmithzombies
-- **Nom complet**: NateSmithZombies

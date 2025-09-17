@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-15T16:11:19.770Z"
 draft: false
 title: "Gaëtan Vergeot"
@@ -13,13 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Gaëtan Vergeot
-
-Profil de **Gaëtan Vergeot**.
-
-## Position
-Game Developer & Teacher
-
-## Entreprise
-UGU

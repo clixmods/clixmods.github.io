@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "shark-ut-ail"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# shark-ut-ail
-
-Profil de **shark-ut-ail**.
-
-## Informations
-
-- **ID**: shark-ut-ail
-- **Nom complet**: shark-ut-ail

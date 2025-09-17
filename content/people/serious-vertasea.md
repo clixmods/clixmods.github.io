@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Serious / Vertasea"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Serious / Vertasea
-
-Profil de **Serious / Vertasea**.
-
-## Informations
-
-- **ID**: serious-vertasea
-- **Nom complet**: Serious / Vertasea

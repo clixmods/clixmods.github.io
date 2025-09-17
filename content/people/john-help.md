@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "John Help"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# John Help
-
-Profil de **John Help**.
-
-## Informations
-
-- **ID**: john-help
-- **Nom complet**: John Help

@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Watchful Wolf"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Watchful Wolf
-
-Profil de **Watchful Wolf**.
-
-## Informations
-
-- **ID**: watchful-wolf
-- **Nom complet**: Watchful Wolf

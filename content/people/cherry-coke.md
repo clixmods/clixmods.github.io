@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Cherry Coke™"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Cherry Coke™
-
-Profil de **Cherry Coke™**.
-
-## Informations
-
-- **ID**: cherry-coke
-- **Nom complet**: Cherry Coke™

@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-15T16:11:19.776Z"
 draft: false
 title: "Benoit Toupet"
@@ -13,13 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Benoit Toupet
-
-Profil de **Benoit Toupet**.
-
-## Position
-Ancien Directeur
-
-## Entreprise
-e-artsup Montpellier

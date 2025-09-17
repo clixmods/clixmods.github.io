@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "billalsaadallah7158"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# billalsaadallah7158
-
-Profil de **billalsaadallah7158**.
-
-## Informations
-
-- **ID**: billalsaadallah7158
-- **Nom complet**: billalsaadallah7158

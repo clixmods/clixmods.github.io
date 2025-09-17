@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "QuietWolf"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# QuietWolf
-
-Profil de **QuietWolf**.
-
-## Informations
-
-- **ID**: quietwolf
-- **Nom complet**: QuietWolf

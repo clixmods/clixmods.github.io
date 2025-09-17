@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Dimitri KAPRIS"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Dimitri KAPRIS
-
-Profil de **Dimitri KAPRIS**.
-
-## Informations
-
-- **ID**: dimitri-kapris
-- **Nom complet**: Dimitri KAPRIS

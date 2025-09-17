@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Pacito2"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Pacito2
-
-Profil de **Pacito2**.
-
-## Informations
-
-- **ID**: pacito2
-- **Nom complet**: Pacito2

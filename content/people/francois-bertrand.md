@@ -1,4 +1,4 @@
----
+﻿---
 date: 2025-08-14T22:45:06.615Z
 draft: false
 title: Francois BERTRAND
@@ -14,12 +14,3 @@ website: sqdqsdqsd
 fmContentType: person-content-type
 discord: ogfodhj
 ---
-
-# Francois BERTRAND
-
-Profil de **Francois BERTRAND**.
-
-## Informations
-
-- **ID**: francois-bertrand
-- **Nom complet**: Francois BERTRAND

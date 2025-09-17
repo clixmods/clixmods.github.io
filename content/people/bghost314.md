@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "BGhost314"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# BGhost314
-
-Profil de **BGhost314**.
-
-## Informations
-
-- **ID**: bghost314
-- **Nom complet**: BGhost314

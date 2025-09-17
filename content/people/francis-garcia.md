@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-15T16:11:19.782Z"
 draft: false
 title: "Francis Garcia"
@@ -13,13 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Francis Garcia
-
-Profil de **Francis Garcia**.
-
-## Position
-Professeur Ensam Informatique
-
-## Entreprise
-IUT Informatique Montpellier

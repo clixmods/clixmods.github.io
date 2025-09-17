@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Bruno BRACELLI"
@@ -13,16 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Bruno BRACELLI
-
-Profil de **Bruno BRACELLI**.
-
-## Avatar
-
-![Avatar de Bruno BRACELLI]( )
-
-## Informations
-
-- **ID**: bruno-bracelli
-- **Nom complet**: Bruno BRACELLI

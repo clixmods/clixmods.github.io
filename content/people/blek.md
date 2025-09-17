@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Blek"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Blek
-
-Profil de **Blek**.
-
-## Informations
-
-- **ID**: blek
-- **Nom complet**: Blek

@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "viic"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# viic
-
-Profil de **viic**.
-
-## Informations
-
-- **ID**: viic
-- **Nom complet**: viic

@@ -1,4 +1,4 @@
----
+﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
 title: "Julia BOFFIN"
@@ -13,12 +13,3 @@ github: ""
 website: ""
 fmContentType: "person-content-type"
 ---
-
-# Julia BOFFIN
-
-Profil de **Julia BOFFIN**.
-
-## Informations
-
-- **ID**: julia-boffin
-- **Nom complet**: Julia BOFFIN
