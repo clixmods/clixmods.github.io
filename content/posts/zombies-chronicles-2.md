@@ -1,6 +1,6 @@
 ---
-title: "Zombies Chronicles 2 – Cadeau des fans"
-subtitle: "Un DLC gratuit remasterisé par la communauté pour prolonger la nostalgie"
+title: Zombies Chronicles 2 – Cadeau des fans
+subtitle: Un DLC gratuit remasterisé par la communauté pour prolonger la nostalgie
 date: 2025-08-09T10:15:00+02:00
 draft: false
 category: tech
@@ -13,9 +13,10 @@ tags:
 technologies:
   - Modding Tools
   - Steam Workshop
-image: /images/blog/zombies-chronicles-2.jpg
+image: /images/posts/zc-2.jpg
 description: "Zombies Chronicles 2 : un projet fan-made qui remasterise des cartes cultes de Black Ops 3 pour la communauté."
 fmContentType: default
+preview: /images/posts/zc-2.jpg
 ---
 
 # 🧟‍♂️ Zombies Chronicles 2 – Un cadeau des fans pour les fans 🎁
@@ -45,8 +46,7 @@ Ce projet s’est construit sur :
 
 ## 📺 Contenu vidéo
 
-- Présentation détaillée par Flapix : [Voir la vidéo](LIEN_VIDEO_FLAPIX)
-- Aperçu complet (gameplay / features) : [Regarder sur YouTube](LIEN_GAMEPLAY_YOUTUBE)
+{{< youtube id="TLiUQLFeI_s" >}}
 
 ## 💡 Ce que représente Zombies Chronicles 2
 
