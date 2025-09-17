@@ -1,6 +1,10 @@
 baseURL = 'https://clixmods.github.io/'
 theme = 'portfolio.theme'
 
+# Build configuration
+buildDrafts = false
+buildFuture = false
+
 # Multilingual configuration
 defaultContentLanguage = 'fr'
 # Keep French at root, English under /en/

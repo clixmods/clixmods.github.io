@@ -1,5 +1,5 @@
 ---
-title: "Interview Stone Keeper – Projet étudiant"
+title: Interview Stone Keeper – Projet étudiant
 subtitle: "Retour d'expérience : conception, production et anecdotes de développement"
 date: 2025-08-09T10:00:00+02:00
 draft: false

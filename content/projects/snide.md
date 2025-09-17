@@ -112,5 +112,3 @@ video_title = "SNIDE - Gameplay"
 duration = "4:20"
 fieldGroup = "youtube_singles_group"
 +++
-
-# It's not supposed to do that
