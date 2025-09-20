@@ -23,9 +23,9 @@
       "status": "Étudiant BUT 3 - En alternance chez Studio La Moutarde"
     },
     "availability": {
-      "status": "En contrat",
-      "message": "Actuellement en alternance",
-      "available": false,
+      "status": "En recherche d'emploi",
+      "message": "En recherche d'emploi",
+      "available": true,
       "nextAvailable": "Septembre 2026"
     },
     "details": {
