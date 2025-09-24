@@ -17,6 +17,8 @@ frameworks_engines = [ "Unity" ]
 programming_languages = [ "C#" ]
 specialties = [ "Portage Console" ]
 soft_skills = [ "Résolution Problèmes", "Communication" ]
+tile_size = "1x1"
+technical_specs = [ ]
 
 [[actions]]
 type = "steam"
@@ -161,7 +163,7 @@ fieldGroup = "youtube_singles_group"
 video_id = "SLd_fCFqm80"
 size = "size-medium"
 title = """
-\r\r\r\r\r\r\r\r\r\r\r\r
+\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
 TERRA MEMORIA - Launch trailer"""
 fieldGroup = "youtube_singles_group"
 

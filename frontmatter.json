@@ -66,6 +66,18 @@
       ]
     },
     {
+      "name": "projects-index",
+      "pageBundle": false,
+      "fields": [
+        { "title": "Titre", "name": "title", "type": "string" },
+        { "title": "Description", "name": "description", "type": "string" },
+        { "title": "Activer la mosaïque", "name": "projects_mosaic", "type": "boolean", "default": true },
+        { "title": "Unités largeur (px)", "name": "infobox_unit_w", "type": "number", "default": 360 },
+        { "title": "Unités hauteur (px)", "name": "infobox_unit_h", "type": "number", "default": 220 },
+        { "title": "Lignes (1-4)", "name": "infobox_rows", "type": "number", "default": 3 }
+      ]
+    },
+    {
       "name": "project-content-type",
       "pageBundle": false,
       "fields": [
@@ -98,6 +110,27 @@
           "title": "Image principale",
           "name": "image",
           "type": "image"
+        },
+        {
+          "title": "Taille de tuile (mosaic)",
+          "name": "tile_size",
+          "type": "string",
+          "description": "Format w×h en unités (ex: 1x1, 2x1, 2x2, 3x2). Utilisé en mode mosaïque.",
+          "default": "1x1"
+        },
+        {
+          "title": "Afficher dans la mosaïque",
+          "name": "show_in_mosaic",
+          "type": "boolean",
+          "description": "Inclure cette tuile dans le layout mosaïque (si activé côté page).",
+          "default": true
+        },
+        {
+          "title": "Ordre dans la mosaïque",
+          "name": "mosaic_order",
+          "type": "number",
+          "description": "Ordre d'affichage (croissant) pour organiser les tuiles en mosaïque.",
+          "default": 999
         },
         {
           "title": "Logo du projet",
