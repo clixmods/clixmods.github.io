@@ -101,6 +101,17 @@ Three main FrontMatter content types:
 - Professional focus: Game development, Unity/C#, alternance work-study program
 - Error messages and debug output in French
 
+### JavaScript Development Rules
+- **NEVER generate HTML strings in JavaScript** - This is strictly forbidden
+- **NEVER use createElement for complex UI structures** - Use Hugo partials instead
+- **NEVER implement temporary solutions** - Always implement complete, final solutions
+- **MINIMAL DOM manipulation only** - Only for dynamic interactions, not structure
+- JavaScript should only handle: events, data processing, CSS class toggling, attribute changes
+- All HTML structure must come from Hugo partials (server-side rendering)
+- Separate presentation (HTML/Hugo) from behavior (JavaScript) completely
+- When you see HTML generation in JS, replace it with Hugo partials + minimal JS interactions
+- Always finish implementations completely - no TODO comments or placeholder code
+
 ### Data File Patterns
 - JSON files use consistent `name`, `icon`/`iconPath`, `color`, `displayedInPortfolio`, `experience` fields
 - Boolean flags like `featured`, `enabled` control UI visibility
