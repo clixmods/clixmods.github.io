@@ -339,6 +339,104 @@
           "fieldGroup": [
             "testimonials_group"
           ]
+        },
+        {
+          "title": "Ordre des widgets",
+          "name": "widget_order",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "Contributeurs",
+              "name": "contributors",
+              "type": "number",
+              "description": "Position du widget Contributeurs (10, 20, 30...)",
+              "default": 10
+            },
+            {
+              "title": "Temps de développement",
+              "name": "development_time",
+              "type": "number",
+              "description": "Position du widget Temps de développement",
+              "default": 20
+            },
+            {
+              "title": "Galerie",
+              "name": "gallery",
+              "type": "number",
+              "description": "Position du widget Galerie",
+              "default": 30
+            },
+            {
+              "title": "Spécifications techniques",
+              "name": "technical_specs",
+              "type": "number",
+              "description": "Position du widget Spécifications techniques",
+              "default": 40
+            },
+            {
+              "title": "Spécialités",
+              "name": "specialties",
+              "type": "number",
+              "description": "Position du widget Spécialités",
+              "default": 50
+            },
+            {
+              "title": "Outils",
+              "name": "tools",
+              "type": "number",
+              "description": "Position du widget Outils",
+              "default": 60
+            },
+            {
+              "title": "Récompenses",
+              "name": "awards",
+              "type": "number",
+              "description": "Position du widget Récompenses",
+              "default": 70
+            },
+            {
+              "title": "Témoignages",
+              "name": "testimonials",
+              "type": "number",
+              "description": "Position du widget Témoignages",
+              "default": 80
+            },
+            {
+              "title": "Vidéos YouTube",
+              "name": "youtube_videos",
+              "type": "number",
+              "description": "Position du widget Vidéos YouTube",
+              "default": 90
+            },
+            {
+              "title": "Clients",
+              "name": "clients",
+              "type": "number",
+              "description": "Position du widget Clients",
+              "default": 100
+            },
+            {
+              "title": "Note",
+              "name": "grade",
+              "type": "number",
+              "description": "Position du widget Note",
+              "default": 110
+            },
+            {
+              "title": "Téléchargements",
+              "name": "downloads",
+              "type": "number",
+              "description": "Position du widget Téléchargements",
+              "default": 120
+            },
+            {
+              "title": "Classement",
+              "name": "ranking",
+              "type": "number",
+              "description": "Position du widget Classement",
+              "default": 130
+            }
+          ]
         }
       ]
     },
@@ -1574,6 +1672,13 @@
           ]
         },
         {
+          "title": "Ordre d'affichage",
+          "name": "order",
+          "type": "number",
+          "description": "Position de cette galerie dans la grille (10, 20, 30...)",
+          "default": 30
+        },
+        {
           "title": "Images de la galerie",
           "name": "images",
           "type": "block",
@@ -1629,17 +1734,6 @@
           "type": "string"
         },
         {
-          "title": "Taille du widget",
-          "name": "size",
-          "type": "choice",
-          "choices": [
-            "size-small",
-            "size-medium",
-            "size-large",
-            "size-xl"
-          ]
-        },
-        {
           "title": "Vidéos de la galerie",
           "name": "videos",
           "type": "block",
@@ -1653,17 +1747,6 @@
       "id": "youtube_singles_group",
       "labelField": "video_title",
       "fields": [
-        {
-          "title": "Taille du widget",
-          "name": "size",
-          "type": "choice",
-          "choices": [
-            "size-small",
-            "size-medium",
-            "size-large",
-            "size-xl"
-          ]
-        },
         {
           "title": "Id de la vidéo",
           "name": "video_id",
@@ -1688,6 +1771,13 @@
           "title": "Date de publication",
           "name": "date",
           "type": "string"
+        },
+        {
+          "title": "Ordre d'affichage",
+          "name": "order",
+          "type": "number",
+          "description": "Position de cette vidéo dans la grille (10, 20, 30...)",
+          "default": 90
         }
       ]
     },
