@@ -1,0 +1,45 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "competitors_group",
+  "labelField": "name",
+  "fields": [
+    {
+      "title": "Nom du concurrent",
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "title": "Position",
+      "name": "position",
+      "type": "number",
+      "description": "Position dans le classement"
+    },
+    {
+      "title": "Avatar/Photo",
+      "name": "avatar",
+      "type": "image"
+    },
+    {
+      "title": "Score",
+      "name": "score",
+      "type": "string",
+      "description": "Score obtenu"
+    },
+    {
+      "title": "Équipe",
+      "name": "team",
+      "type": "string",
+      "description": "Nom de l'équipe si applicable"
+    },
+    {
+      "title": "Pays",
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "title": "Organisation",
+      "name": "organization",
+      "type": "string"
+    }
+  ]
+}

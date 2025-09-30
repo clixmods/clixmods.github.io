@@ -1,0 +1,29 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "timeline_group",
+  "labelField": "period",
+  "fields": [
+    {
+      "title": "Période",
+      "name": "period",
+      "type": "string",
+      "description": "Nom de la période (ex: Janvier 2024, Q1 2024)"
+    },
+    {
+      "title": "Nombre de téléchargements",
+      "name": "count",
+      "type": "number",
+      "description": "Nombre de téléchargements durant cette période"
+    },
+    {
+      "title": "Date de début",
+      "name": "start_date",
+      "type": "datetime"
+    },
+    {
+      "title": "Date de fin",
+      "name": "end_date",
+      "type": "datetime"
+    }
+  ]
+}

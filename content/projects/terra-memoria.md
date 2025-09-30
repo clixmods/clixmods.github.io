@@ -175,11 +175,17 @@ fieldGroup = "youtube_galleries_group"
 
   [[youtube_galleries.videos]]
   video_id = "e8hHLRqaLBQ"
+  title = "Terra Memoria - Le J-RPG indé de 2024 ? | Démo"
   fieldGroup = "youtube_videos_group"
 
   [[youtube_galleries.videos]]
   video_id = "d94Gl0c9Pp4"
   title = "Terra Memoria Review - The Grandia-Like RPG You Need to Play?"
+  fieldGroup = "youtube_videos_group"
+
+  [[youtube_galleries.videos]]
+  video_id = "RjZCRbFm8x8"
+  title = "Terra Memoria: A Leap of Faith"
   fieldGroup = "youtube_videos_group"
 
   [[youtube_galleries.videos]]

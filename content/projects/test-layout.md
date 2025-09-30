@@ -10,9 +10,7 @@ sector = "test"
 featured = false
 fmContentType = "project-content-type"
 image = "/images/projects/test/test-layout.jpg"
-
 frameworks_engines = [ "Hugo" ]
-
 programming_languages = [ "CSS Grid", "JavaScript" ]
 
 [[actions]]
@@ -33,10 +31,8 @@ gallery_size = "size-large"
 technical_specs_size = "size-medium"
 awards_size = "size-small"
 testimonials_size = "size-xl"
-youtube_size = "size-large"
 youtube_single_size = "size-medium"
 
-# Nouveau widget Clients
 [[clients]]
 name = "TechCorp Solutions"
 logo = "/images/logos/techcorp.png"
@@ -59,10 +55,8 @@ name = "Enterprise Global"
 logo = "/images/logos/enterprise.png"
 description = "Solutions d'entreprise"
 role = "Architecte logiciel"
-
 clients_size = "size-large"
 
-# Nouveau widget Note
 [grade]
 value = "17.5"
 scale = "20"
@@ -70,29 +64,25 @@ subject = "Développement d'Applications Mobiles"
 professor = "Dr. Martin Dupont"
 date = "Juin 2024"
 comment = "Excellent travail sur l'architecture et l'interface utilisateur. Très bonne maîtrise des technologies modernes."
-
 grade_size = "size-medium"
 
-# Nouveau widget Téléchargements
 [downloads]
-total = 15420
+total = 15_420
 last_updated = "15 décembre 2024"
 
-[[downloads.platforms]]
-name = "Windows"
-count = 8500
+  [[downloads.platforms]]
+  name = "Windows"
+  count = 8_500
 
-[[downloads.platforms]]
-name = "macOS"
-count = 4200
+  [[downloads.platforms]]
+  name = "macOS"
+  count = 4_200
 
-[[downloads.platforms]]
-name = "Linux"
-count = 2720
+  [[downloads.platforms]]
+  name = "Linux"
+  count = 2_720
+  downloads_size = "size-medium"
 
-downloads_size = "size-medium"
-
-# Nouveau widget Classement
 [ranking]
 position = 3
 suffix = "ème"
@@ -101,7 +91,6 @@ event = "Concours National de Développement"
 category = "Applications Mobiles"
 date = "Novembre 2024"
 achievement = "Prix de l'Innovation Technique"
-
 ranking_size = "size-small"
 
 [[contributors]]
@@ -154,7 +143,6 @@ end_date = "Janvier 2024"
   [[development_time.phases]]
   name = "Tests & Optimisation"
   duration = "1 mois"
-
 
 [[awards]]
 title = "Best Design System"
@@ -217,7 +205,6 @@ value = "Modern browsers (ES6+)"
 [[technical_specs]]
 label = "Performance"
 value = "95+ Lighthouse score"
-
 
 [[testimonials]]
 quote = "Ce système de layout est révolutionnaire ! La flexibilité est incroyable et l'implémentation est parfaite. Cela va changer ma façon de concevoir des interfaces."
@@ -291,6 +278,30 @@ title = "Démonstration complète du système de layout"
 description = "Présentation détaillée de tous les widgets et leur utilisation dans le portfolio"
 duration = "8:45"
 date = "15 décembre 2024"
+
+[widget_order]
+contributors = 25
+development_time = 20
+gallery = 30
+technical_specs = 40
+specialties = 50
+tools = 60
+awards = 70
+testimonials = 80
+youtube_videos = 90
+clients = 100
+grade = 110
+downloads = 120
+ranking = 130
+
+[[galleries]]
+title = "tete"
+description = "tetet"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/people/anthony-expert.jpg"
 +++
 
 # Test Layout System
@@ -327,7 +338,6 @@ gallery_size: "size-large"
 technical_specs_size: "size-medium"
 awards_size: "size-small"
 testimonials_size: "size-xl"
-youtube_size: "size-large"
 ```
 
 Ce test valide le bon fonctionnement de toutes les combinaisons possibles.

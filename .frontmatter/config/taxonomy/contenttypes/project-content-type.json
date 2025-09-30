@@ -263,6 +263,176 @@
       ]
     },
     {
+      "title": "Clients",
+      "name": "clients",
+      "type": "block",
+      "fieldGroup": [
+        "clients_group"
+      ]
+    },
+    {
+      "title": "Note académique",
+      "name": "grade",
+      "type": "fields",
+      "fields": [
+        {
+          "title": "Matière/Cours",
+          "name": "subject",
+          "type": "string"
+        },
+        {
+          "title": "Note obtenue",
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "title": "Note maximale",
+          "name": "scale",
+          "type": "string"
+        },
+        {
+          "title": "Pourcentage",
+          "name": "percentage",
+          "type": "string"
+        },
+        {
+          "title": "Date de l'évaluation",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "Professeur/Évaluateur",
+          "name": "professor",
+          "type": "string"
+        },
+        {
+          "title": "Établissement",
+          "name": "institution",
+          "type": "string"
+        },
+        {
+          "title": "Semestre",
+          "name": "semester",
+          "type": "string"
+        },
+        {
+          "title": "Année académique",
+          "name": "academic_year",
+          "type": "string"
+        },
+        {
+          "title": "Commentaire",
+          "name": "comment",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "title": "Téléchargements",
+      "name": "downloads",
+      "type": "fields",
+      "fields": [
+        {
+          "title": "Total des téléchargements",
+          "name": "total",
+          "type": "number",
+          "description": "Nombre total de téléchargements (sans espaces, ex: 800000)"
+        },
+        {
+          "title": "Plateformes",
+          "name": "platforms",
+          "type": "block",
+          "fieldGroup": [
+            "downloads_group"
+          ]
+        },
+        {
+          "title": "Dernière mise à jour",
+          "name": "last_updated",
+          "type": "datetime"
+        },
+        {
+          "title": "Timeline des téléchargements",
+          "name": "timeline",
+          "type": "block",
+          "fieldGroup": [
+            "timeline_group"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Classement",
+      "name": "ranking",
+      "type": "fields",
+      "fields": [
+        {
+          "title": "Position",
+          "name": "position",
+          "type": "number",
+          "description": "Position dans le classement (ex: 1, 2, 3)"
+        },
+        {
+          "title": "Nom de l'événement",
+          "name": "event",
+          "type": "string",
+          "description": "Nom spécifique de l'événement (ex: 'Steam Workshop Contest 2024')"
+        },
+        {
+          "title": "Type d'événement",
+          "name": "event_type",
+          "type": "choice",
+          "choices": [
+            "Compétition",
+            "Concours",
+            "Classement",
+            "Ranking",
+            "Contest",
+            "Challenge",
+            "Tournoi",
+            "Leaderboard"
+          ],
+          "default": "Classement",
+          "description": "Type d'événement pour l'affichage"
+        },
+        {
+          "title": "Total de participants",
+          "name": "total",
+          "type": "number",
+          "description": "Nombre total de participants"
+        },
+        {
+          "title": "Suffixe (è, er, ème...)",
+          "name": "suffix",
+          "type": "string",
+          "default": "è"
+        },
+        {
+          "title": "Nombre total de participants (détaillé)",
+          "name": "total_participants",
+          "type": "number"
+        },
+        {
+          "title": "Date de la compétition",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "Catégorie",
+          "name": "category",
+          "type": "string"
+        },
+        {
+          "title": "Concurrents",
+          "name": "competitors",
+          "type": "block",
+          "fieldGroup": [
+            "competitors_group"
+          ]
+        }
+      ]
+    },
+    {
       "title": "Ordre des widgets",
       "name": "widget_order",
       "type": "fields",

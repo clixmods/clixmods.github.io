@@ -1,0 +1,44 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "clients_group",
+  "labelField": "name",
+  "fields": [
+    {
+      "title": "Nom du client",
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "title": "Logo du client",
+      "name": "logo",
+      "type": "image"
+    },
+    {
+      "title": "Rôle/Relation",
+      "name": "role",
+      "type": "string",
+      "description": "Type de relation ou rôle du client (ex: Éditeur, Partenaire, Client)"
+    },
+    {
+      "title": "Secteur d'activité",
+      "name": "sector",
+      "type": "string"
+    },
+    {
+      "title": "Secteurs multiples",
+      "name": "sectors",
+      "type": "tags",
+      "description": "Liste des secteurs d'activité (prioritaire sur 'sector')"
+    },
+    {
+      "title": "Description",
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "title": "URL du site web",
+      "name": "url",
+      "type": "string"
+    }
+  ]
+}

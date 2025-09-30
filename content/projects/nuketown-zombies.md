@@ -26,6 +26,7 @@ soft_skills = [
   "Résolution Problèmes"
 ]
 tools = [ "Fork", "Visual Studio Code", "Sublime Text", "Photoshop" ]
+awards = [ ]
 
 [[technical_specs]]
 label = "Plateforme"
@@ -115,9 +116,26 @@ end_date = "Juillet 2019"
   duration = "2 semaines"
 
 [[galleries]]
+title = "Images officielles de sortie"
+description = "Captures d'écran officielles pour la promotion"
+size = "size-medium"
+order = "100"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-zombies-preview.png"
+  caption = "Map preview"
+  fieldGroup = "gallery_group"
+
+  [[galleries.images]]
+  url = "/images/projects/nuketown/nuketown-steam-logo.jpg"
+  caption = "Image de couverture principale"
+
+[[galleries]]
 title = "Screenshots de production"
 description = "Images principales du projet et captures de gameplay"
 size = "size-large"
+order = "9"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
@@ -152,21 +170,6 @@ fieldGroup = "galleries_group"
   url = "/images/projects/nuketown/nuketown-zombies.jpg"
   caption = "Vue d'ensemble de la carte remasterisée"
 
-[[galleries]]
-title = "Images officielles de sortie"
-description = "Captures d'écran officielles pour la promotion"
-size = "size-medium"
-fieldGroup = "galleries_group"
-
-  [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-zombies-preview.png"
-  caption = "Map preview"
-  fieldGroup = "gallery_group"
-
-  [[galleries.images]]
-  url = "/images/projects/nuketown/nuketown-steam-logo.jpg"
-  caption = "Image de couverture principale"
-
 [[youtube_galleries]]
 title = "Vidéos de gameplay"
 description = "Démonstrations et parties en cours"
@@ -196,21 +199,8 @@ video_title = "Comparatif Black Ops 2 vs Black Ops 3"
 video_description = "Comparaison détaillée entre les versions"
 duration = "2:34"
 date = "2019-07-15"
-
-[[awards]]
-title = "Projet le plus téléchargé"
-organization = "Steam Workshop BO3"
-date = "2019"
-
-[[awards]]
-title = "Reconnaissance communautaire"
-organization = "Forum CodZ"
-date = "2019"
-
-[[awards]]
-title = "Featured Mod"
-organization = "Treyarch Community"
-date = "2019"
+order = "30"
+fieldGroup = "youtube_singles_group"
 
 [[testimonials]]
 quote = "Greetings, I review, showcase maps and do guides as well – here is our short play‑through with shield part locations!"
@@ -266,6 +256,41 @@ quote = "A near 1‑to‑1 remake of a classic map […] Only the nimblest zom
 person = "codysir"
 role = "Joueur expérimenté"
 rating = 5
+
+[widget_order]
+contributors = 10
+development_time = 80
+gallery = 30
+specialties = 2
+tools = 3
+awards = 70
+testimonials = 20
+youtube_videos = 90
+clients = 100
+grade = 110
+downloads = 120
+ranking = 130
+technical_specs = 1
+
+[ranking]
+suffix = "è"
+position = 10
+event = "Steam Workshop Black Ops 3"
+event_type = "Classement"
+total = 6000
+total_participants = 6000
+date = "2019-07-01T00:00:00+02:00"
+category = "Custom Zombies Maps"
+
+[downloads]
+last_updated = "2025-09-30T08:32:44.670Z"
+total = 800000
+
+  [[downloads.platforms]]
+  name = "Steam Workshop"
+  downloads = 800000
+  launch_date = "2019-07-15T08:00:00+02:00"
+  fieldGroup = "downloads_group"
 +++
 
 # Nuketown Zombies

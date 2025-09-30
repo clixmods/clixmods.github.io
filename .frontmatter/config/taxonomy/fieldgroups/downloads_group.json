@@ -1,0 +1,44 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "downloads_group",
+  "labelField": "name",
+  "fields": [
+    {
+      "title": "Nom de la plateforme",
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "title": "Nombre de téléchargements",
+      "name": "downloads",
+      "type": "number",
+      "description": "Nombre de téléchargements sur cette plateforme"
+    },
+    {
+      "title": "Icône/Logo de la plateforme",
+      "name": "icon",
+      "type": "image"
+    },
+    {
+      "title": "URL de téléchargement",
+      "name": "url",
+      "type": "string"
+    },
+    {
+      "title": "Date de lancement",
+      "name": "launch_date",
+      "type": "datetime"
+    },
+    {
+      "title": "Statut",
+      "name": "status",
+      "type": "choice",
+      "choices": [
+        "active",
+        "discontinued",
+        "coming_soon"
+      ],
+      "default": "active"
+    }
+  ]
+}

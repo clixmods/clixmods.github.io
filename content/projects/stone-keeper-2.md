@@ -10,13 +10,19 @@ sector = "games-personnel"
 featured = true
 fmContentType = "project-content-type"
 logo = "/images/projects/stone-keeper-2/stone-keeper2-logo.png"
-image = "/images/projects/stone-keeper-2/stone-keeper2-2.png"
 status = "Terminé"
 technical_specs = [ ]
 frameworks_engines = [ "Unity", ".NET" ]
 programming_languages = [ "C#" ]
 soft_skills = [ "Résolution Problèmes", "Gestion de Projet" ]
-specialties = [ "Développement Outils" ]
+specialties = [
+  "Développement Outils",
+  "Interface utilisateur",
+  "Design Pattern et refactoring",
+  "Programmation orientée objet"
+]
+image = "/images/projects/stone-keeper-2/stone-keeper2-2.jpg"
+tools = [ "JetBrains", "Trello", "Photoshop", "Fork", "GitHub" ]
 
 [[actions]]
 type = "download"
@@ -96,7 +102,8 @@ fieldGroup = "contributors_group"
 size = "size-medium"
 video_id = "j4MpNqSn3YQ"
 video_title = "Trailer"
-duration = "1:52"
+order = "1"
+video_description = "test"
 fieldGroup = "youtube_singles_group"
 
 [[youtube_singles]]
@@ -105,13 +112,14 @@ video_id = "3Ymzq5T5whc"
 duration = "6:59"
 date = "27 mai 2025"
 video_title = "Stone Keeper 2 - BEST OF STREAMERS"
+order = "90"
 fieldGroup = "youtube_singles_group"
 
 [development_time]
 total = "6 mois"
 
 [[galleries]]
-title = "Gallerie"
+title = "Galerie"
 size = "size-medium"
 fieldGroup = "galleries_group"
 
@@ -152,6 +160,43 @@ fieldGroup = "galleries_group"
 
   [[galleries.images]]
   url = "/images/projects/stone-keeper-2/stone-keeper2-ingame-3.jpg"
+
+[widget_order]
+contributors = 10
+development_time = 20
+gallery = 30
+technical_specs = 40
+specialties = 50
+tools = 60
+awards = 70
+testimonials = 80
+youtube_videos = 90
+clients = 100
+grade = 110
+downloads = 120
+ranking = 130
 +++
 
 # Stone Keeper 2:
+
+Projet réalisé en distanciel dans le cadre d’un travail de groupe à E-artsup, basé sur l’univers de mon précédent jeu. Ce projet a été particulièrement exigeant, car mené en parallèle de plusieurs autres productions. Mon rôle a été dans la continuité technique et l’amélioration des systèmes existants, ainsi que dans la conception de nouveaux outils de jeu et de gestion. Le projet a aussi intégré une structuration plus poussée autour du QA, du bug tracking et du travail collaboratif.
+
+## Développement & systèmes
+- Réintégration et adaptation des systèmes du jeu précédent (héritage gameplay)
+- Développement du système de sauvegarde avancée (multi-slots, extensible)
+- Implémentation du système de gestion de scène (loading dynamique, transitions)
+- Programmation des périphériques de contrôle (manette/souris) avec affichage dynamique d’icônes contextuelles
+
+## Interface & expérience utilisateur
+- Conception et développement de l’interface utilisateur (UI système & graphique)
+- Création des menus, navigation, gestion des inputs et retour visuel
+
+## Outils & QA
+- Intégration d’un système de report de bug en jeu via Trello (API)
+- Participation active à la phase de QA : détection, reproduction et correction de bugs
+- Développement de plusieurs outils internes pour faciliter le debug et la navigation dans le projet
+
+## Organisation & collaboration
+- Participation à l’organisation globale : tâches, standardisation sur Discord, mise en place de process d’équipe
+- Communication régulière sur l’avancement technique, coordination avec les pôles artistiques et design
+
