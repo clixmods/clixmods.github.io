@@ -1,0 +1,16 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "technical_specs_group",
+  "fields": [
+    {
+      "title": "Nom de la spécification",
+      "name": "label",
+      "type": "string"
+    },
+    {
+      "title": "Valeur",
+      "name": "value",
+      "type": "string"
+    }
+  ]
+}

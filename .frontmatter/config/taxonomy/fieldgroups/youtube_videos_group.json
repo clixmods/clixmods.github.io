@@ -1,0 +1,32 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "youtube_videos_group",
+  "labelField": "title",
+  "fields": [
+    {
+      "title": "ID de la vidéo YouTube",
+      "name": "video_id",
+      "type": "string"
+    },
+    {
+      "title": "Titre de la vidéo",
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "title": "Description",
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "title": "Durée",
+      "name": "duration",
+      "type": "string"
+    },
+    {
+      "title": "Date de publication",
+      "name": "date",
+      "type": "string"
+    }
+  ]
+}

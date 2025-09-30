@@ -1,0 +1,32 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "actions_group",
+  "labelField": "name",
+  "fields": [
+    {
+      "title": "Type de bouton",
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "title": "Titre du bouton",
+      "name": "label",
+      "type": "string"
+    },
+    {
+      "title": "Lien cliquable",
+      "name": "url",
+      "type": "string"
+    },
+    {
+      "title": "Icône",
+      "name": "icon",
+      "type": "string"
+    },
+    {
+      "title": "Bouton principal",
+      "name": "primary",
+      "type": "boolean"
+    }
+  ]
+}

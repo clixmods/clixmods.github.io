@@ -1,0 +1,32 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "youtube_galleries_group",
+  "labelField": "title",
+  "fields": [
+    {
+      "title": "Titre de la galerie",
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "title": "Description de la galerie",
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "title": "Ordre d'affichage",
+      "name": "order",
+      "type": "string",
+      "description": "Position de cette vidéo dans la grille (10, 20, 30...)",
+      "default": "65"
+    },
+    {
+      "title": "Vidéos de la galerie",
+      "name": "videos",
+      "type": "block",
+      "fieldGroup": [
+        "youtube_videos_group"
+      ]
+    }
+  ]
+}

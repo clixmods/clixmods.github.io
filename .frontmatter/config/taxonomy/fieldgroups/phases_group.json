@@ -1,0 +1,17 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "phases_group",
+  "labelField": "name",
+  "fields": [
+    {
+      "title": "Nom de la phase",
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "title": "Durée",
+      "name": "duration",
+      "type": "string"
+    }
+  ]
+}

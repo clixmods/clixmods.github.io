@@ -1,0 +1,142 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.contenttypes.schema.json",
+  "name": "experience-content-type",
+  "pageBundle": false,
+  "fields": [
+    {
+      "title": "Date",
+      "name": "date",
+      "type": "datetime"
+    },
+    {
+      "title": "Brouillon",
+      "name": "draft",
+      "type": "draft"
+    },
+    {
+      "title": "Titre du poste",
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "title": "Entreprise",
+      "name": "company",
+      "type": "string"
+    },
+    {
+      "title": "Logo de l'entreprise",
+      "name": "logo",
+      "type": "image"
+    },
+    {
+      "title": "Date de début",
+      "name": "start_date",
+      "type": "datetime",
+      "description": "Date de début de l'expérience"
+    },
+    {
+      "title": "Date de fin",
+      "name": "end_date",
+      "type": "datetime",
+      "description": "Date de fin de l'expérience (laisser vide si en cours)"
+    },
+    {
+      "title": "Type de contrat",
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "title": "Localisation",
+      "name": "location",
+      "type": "string"
+    },
+    {
+      "title": "Description",
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "title": "Langages de programmation",
+      "name": "programming_languages",
+      "type": "dataFile",
+      "dataFileId": "programming_languages_simple",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les langages de programmation utilisés dans cette expérience"
+    },
+    {
+      "title": "Frameworks & Moteurs",
+      "name": "frameworks_engines",
+      "type": "dataFile",
+      "dataFileId": "frameworks_engines_simple",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les frameworks et moteurs utilisés"
+    },
+    {
+      "title": "Spécialités",
+      "name": "specialties",
+      "type": "dataFile",
+      "dataFileId": "specialties",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les spécialités impliquées dans cette expérience"
+    },
+    {
+      "title": "Outils",
+      "name": "tools",
+      "type": "dataFile",
+      "dataFileId": "tools",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les outils utilisés dans cette expérience"
+    },
+    {
+      "title": "fmContentType",
+      "name": "fmContentType",
+      "type": "string"
+    },
+    {
+      "title": "projects_layout",
+      "name": "projects_layout",
+      "type": "choice",
+      "choices": [
+        "vertical",
+        "horizontal"
+      ],
+      "default": "vertical",
+      "description": "Choisissez l'affichage des projets : vertical ou horizontal"
+    },
+    {
+      "title": "projects",
+      "name": "projects",
+      "type": "block",
+      "fieldGroup": [
+        "projects_group"
+      ]
+    },
+    {
+      "title": "period",
+      "name": "period",
+      "type": "string"
+    },
+    {
+      "title": "status",
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "title": "soft_skills",
+      "name": "soft_skills",
+      "type": "choice",
+      "choices": [
+        "Travail en équipe",
+        "Gestion du temps"
+      ]
+    }
+  ]
+}

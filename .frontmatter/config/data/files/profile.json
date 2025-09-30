@@ -1,0 +1,113 @@
+{
+  "$schema": "https://frontmatter.codes/config/data.files.schema.json",
+  "id": "profile",
+  "title": "Profile Data",
+  "file": "data/profile.json",
+  "schema": {
+    "title": "Profile",
+    "type": "object",
+    "properties": {
+      "personal": {
+        "type": "object",
+        "title": "Informations personnelles",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "title": "Prénom"
+          },
+          "lastName": {
+            "type": "string",
+            "title": "Nom"
+          },
+          "fullName": {
+            "type": "string",
+            "title": "Nom complet"
+          },
+          "greeting": {
+            "type": "string",
+            "title": "Message d'accueil"
+          },
+          "title": {
+            "type": "string",
+            "title": "Titre professionnel"
+          },
+          "subtitle": {
+            "type": "string",
+            "title": "Sous-titre"
+          },
+          "bio": {
+            "type": "string",
+            "title": "Biographie",
+            "widget": "textarea"
+          }
+        }
+      },
+      "media": {
+        "type": "object",
+        "title": "Médias",
+        "properties": {
+          "profileImage": {
+            "type": "string",
+            "title": "Image de profil"
+          },
+          "resumeFile": {
+            "type": "string",
+            "title": "Fichier CV"
+          },
+          "resumeFilename": {
+            "type": "string",
+            "title": "Nom du fichier CV"
+          }
+        }
+      },
+      "contact": {
+        "type": "object",
+        "title": "Contact",
+        "properties": {
+          "email": {
+            "type": "string",
+            "title": "Email"
+          },
+          "phone": {
+            "type": "string",
+            "title": "Téléphone"
+          },
+          "linkedin": {
+            "type": "string",
+            "title": "LinkedIn"
+          },
+          "github": {
+            "type": "string",
+            "title": "GitHub"
+          },
+          "location": {
+            "type": "string",
+            "title": "Localisation"
+          },
+          "status": {
+            "type": "string",
+            "title": "Statut"
+          }
+        }
+      },
+      "details": {
+        "type": "object",
+        "title": "Détails",
+        "properties": {
+          "formation": {
+            "type": "string",
+            "title": "Formation"
+          },
+          "speciality": {
+            "type": "string",
+            "title": "Spécialité"
+          },
+          "experience": {
+            "type": "string",
+            "title": "Expérience"
+          }
+        }
+      }
+    }
+  }
+}

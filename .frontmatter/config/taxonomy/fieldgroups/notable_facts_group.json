@@ -1,0 +1,27 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "notable_facts_group",
+  "labelField": "label",
+  "fields": [
+    {
+      "title": "Type de fait marquant",
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "title": "Icône",
+      "name": "icon",
+      "type": "string"
+    },
+    {
+      "title": "Titre du fait marquant",
+      "name": "value",
+      "type": "string"
+    },
+    {
+      "title": "Sous-titre du fait marquant",
+      "name": "label",
+      "type": "string"
+    }
+  ]
+}

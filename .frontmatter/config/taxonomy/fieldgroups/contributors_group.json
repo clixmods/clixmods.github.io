@@ -1,0 +1,21 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "contributors_group",
+  "labelField": "person",
+  "fields": [
+    {
+      "title": "Personne",
+      "name": "person",
+      "type": "contentRelationship",
+      "contentTypeName": "person-content-type",
+      "contentTypeValue": "slug",
+      "multiple": false,
+      "description": "Sélectionnez une personne existante"
+    },
+    {
+      "title": "Rôle dans le projet",
+      "name": "role",
+      "type": "string"
+    }
+  ]
+}

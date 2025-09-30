@@ -1,0 +1,36 @@
+{
+  "$schema": "https://frontmatter.codes/config/data.files.schema.json",
+  "id": "testimonials",
+  "title": "Testimonials",
+  "file": "data/testimonials.json",
+  "labelField": "personId",
+  "schema": {
+    "title": "Testimonials",
+    "type": "object",
+    "properties": {
+      "personId": {
+        "type": "string",
+        "title": "ID de la personne"
+      },
+      "position": {
+        "type": "string",
+        "title": "Poste / Rang"
+      },
+      "company": {
+        "type": "string",
+        "title": "Entreprise / Organisation"
+      },
+      "text": {
+        "type": "string",
+        "title": "Message de recommandation",
+        "widget": "textarea"
+      }
+    },
+    "required": [
+      "personId",
+      "position",
+      "company",
+      "text"
+    ]
+  }
+}

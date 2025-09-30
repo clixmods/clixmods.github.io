@@ -1,0 +1,43 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "galleries_group",
+  "labelField": "title",
+  "fields": [
+    {
+      "title": "Nom de la galerie",
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "title": "Description de la galerie",
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "title": "Taille du widget",
+      "name": "size",
+      "type": "choice",
+      "choices": [
+        "size-small",
+        "size-medium",
+        "size-large",
+        "size-xl"
+      ]
+    },
+    {
+      "title": "Ordre d'affichage",
+      "name": "order",
+      "type": "string",
+      "description": "Position de cette vidéo dans la grille (10, 20, 30...)",
+      "default": "30"
+    },
+    {
+      "title": "Images de la galerie",
+      "name": "images",
+      "type": "block",
+      "fieldGroup": [
+        "gallery_group"
+      ]
+    }
+  ]
+}

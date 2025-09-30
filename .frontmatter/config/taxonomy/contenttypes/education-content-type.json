@@ -1,0 +1,161 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.contenttypes.schema.json",
+  "name": "education-content-type",
+  "pageBundle": false,
+  "fields": [
+    {
+      "title": "Brouillon",
+      "name": "draft",
+      "type": "draft"
+    },
+    {
+      "title": "Titre de la formation",
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "title": "Institution",
+      "name": "institution",
+      "type": "string"
+    },
+    {
+      "title": "Ville",
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "title": "Date de début",
+      "name": "start_date",
+      "type": "datetime",
+      "description": "Date de début de la formation"
+    },
+    {
+      "title": "Date de fin",
+      "name": "end_date",
+      "type": "datetime",
+      "description": "Date de fin de la formation"
+    },
+    {
+      "title": "Statut",
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "title": "Description",
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "title": "Langages de programmation",
+      "name": "programming_languages",
+      "type": "dataFile",
+      "dataFileId": "programming_languages_simple",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les langages de programmation appris"
+    },
+    {
+      "title": "Frameworks & Moteurs",
+      "name": "frameworks_engines",
+      "type": "dataFile",
+      "dataFileId": "frameworks_engines_simple",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les frameworks et moteurs étudiés"
+    },
+    {
+      "title": "Spécialités",
+      "name": "specialties",
+      "type": "dataFile",
+      "dataFileId": "specialties",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les spécialités couvertes dans cette formation"
+    },
+    {
+      "title": "Soft Skills",
+      "name": "soft_skills",
+      "type": "dataFile",
+      "dataFileId": "soft_skills",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les soft skills développées"
+    },
+    {
+      "title": "Outils",
+      "name": "tools",
+      "type": "dataFile",
+      "dataFileId": "tools",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les outils utilisés dans cette formation"
+    },
+    {
+      "title": "Note/Résultat",
+      "name": "grade",
+      "type": "string"
+    },
+    {
+      "title": "Icône",
+      "name": "icon",
+      "type": "string",
+      "description": "Émoji à utiliser si pas de logo d'école"
+    },
+    {
+      "title": "Logo de l'école",
+      "name": "school_logo",
+      "type": "image",
+      "description": "Logo de l'école (priorité sur l'icône émoji)"
+    },
+    {
+      "title": "Couleur",
+      "name": "color",
+      "type": "string",
+      "description": "Couleur hex (ex: #4fd1c7)"
+    },
+    {
+      "title": "Affiché dans le portfolio",
+      "name": "displayedInPortfolio",
+      "type": "boolean",
+      "default": true,
+      "description": "Cocher pour afficher cette formation dans la timeline du portfolio"
+    },
+    {
+      "title": "fmContentType",
+      "name": "fmContentType",
+      "type": "string"
+    },
+    {
+      "title": "years_detail",
+      "name": "years_detail",
+      "type": "block",
+      "fieldGroup": [
+        "years_detail_group"
+      ]
+    },
+    {
+      "title": "Projets réalisés",
+      "name": "projects",
+      "type": "contentRelationship",
+      "contentTypeName": "project-content-type",
+      "contentTypeValue": "slug",
+      "multiple": true,
+      "description": "Sélectionnez les projets réalisés pendant cette formation"
+    },
+    {
+      "title": "Témoignages",
+      "name": "testimonials",
+      "type": "dataFile",
+      "dataFileId": "testimonials",
+      "dataFileKey": "personId",
+      "dataFileValue": "personId",
+      "multiple": true,
+      "description": "Sélectionnez les témoignages depuis la base de données existante"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://frontmatter.codes/config/data.files.schema.json",
+  "id": "specialties",
+  "title": "Specialties Data",
+  "file": "data/specialties.json",
+  "labelField": "name",
+  "schema": {
+    "title": "Specialty",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Nom de la spécialité"
+      },
+      "icon": {
+        "type": "string",
+        "title": "Icône emoji",
+        "description": "Emoji utilisé si pas d'iconPath défini"
+      },
+      "iconPath": {
+        "type": "string",
+        "title": "Chemin vers l'icône SVG",
+        "description": "Chemin relatif depuis le dossier static/ (ex: images/technologies/Unity.svg)"
+      },
+      "displayedInPortfolio": {
+        "type": "boolean",
+        "title": "Affiché dans le portfolio"
+      },
+      "experience": {
+        "type": "number",
+        "title": "Expérience (en années)",
+        "description": "1 = 1 an, 0.5 = 6 mois"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Sous-titre",
+        "description": "Texte affiché sous le nom dans le portfolio"
+      }
+    },
+    "required": [
+      "name",
+      "displayedInPortfolio",
+      "subtitle"
+    ]
+  }
+}

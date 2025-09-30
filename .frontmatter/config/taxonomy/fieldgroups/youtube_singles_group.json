@@ -1,0 +1,40 @@
+
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "youtube_singles_group",
+  "labelField": "video_title",
+  "fields": [
+    {
+      "title": "Id de la vidéo",
+      "name": "video_id",
+      "type": "string"
+    },
+    {
+      "title": "Titre de la vidéo",
+      "name": "video_title",
+      "type": "string"
+    },
+    {
+      "title": "Description de la vidéo",
+      "name": "video_description",
+      "type": "string"
+    },
+    {
+      "title": "Durée",
+      "name": "duration",
+      "type": "string"
+    },
+    {
+      "title": "Date de publication",
+      "name": "date",
+      "type": "datetime"
+    },
+    {
+      "title": "Ordre d'affichage",
+      "name": "order",
+      "type": "string",
+      "description": "Position de cette vidéo dans la grille (10, 20, 30...)",
+      "default": "90"
+    }
+  ]
+}

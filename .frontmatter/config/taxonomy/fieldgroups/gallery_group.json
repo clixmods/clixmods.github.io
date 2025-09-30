@@ -1,0 +1,17 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "gallery_group",
+  "labelField": "caption",
+  "fields": [
+    {
+      "title": "URL de l'image",
+      "name": "url",
+      "type": "image"
+    },
+    {
+      "title": "Légende",
+      "name": "caption",
+      "type": "string"
+    }
+  ]
+}

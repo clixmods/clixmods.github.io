@@ -1,0 +1,42 @@
+{
+  "$schema": "https://frontmatter.codes/config/data.files.schema.json",
+  "id": "programming_languages_simple",
+  "title": "Programming Languages Data",
+  "file": "data/programming_languages.json",
+  "labelField": "name",
+  "schema": {
+    "title": "Programming Language",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Nom du langage"
+      },
+      "experience": {
+        "type": "number",
+        "title": "Expérience (en années)",
+        "description": "1 = 1 an, 0.5 = 6 mois"
+      },
+      "iconPath": {
+        "type": "string",
+        "title": "Chemin vers l'icône SVG",
+        "description": "Chemin relatif depuis le dossier static/ (ex: images/technologies/C#.svg)"
+      },
+      "color": {
+        "type": "string",
+        "title": "Couleur",
+        "widget": "colorPicker"
+      },
+      "displayedInPortfolio": {
+        "type": "boolean",
+        "title": "Affiché dans la section portfolio",
+        "description": "Ce langage de programmation est-il mis en avant dans le portfolio ?"
+      }
+    },
+    "required": [
+      "name",
+      "experience",
+      "displayedInPortfolio"
+    ]
+  }
+}

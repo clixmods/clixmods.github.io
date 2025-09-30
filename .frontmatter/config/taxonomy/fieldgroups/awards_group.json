@@ -1,0 +1,21 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "awards_group",
+  "fields": [
+    {
+      "title": "Titre du prix",
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "title": "Organisation",
+      "name": "organization",
+      "type": "string"
+    },
+    {
+      "title": "Date d'obtention",
+      "name": "date",
+      "type": "datetime"
+    }
+  ]
+}

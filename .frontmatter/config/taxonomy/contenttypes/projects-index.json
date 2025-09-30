@@ -1,0 +1,13 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.contenttypes.schema.json",
+  "name": "projects-index",
+  "pageBundle": false,
+  "fields": [
+    { "title": "Titre", "name": "title", "type": "string" },
+    { "title": "Description", "name": "description", "type": "string" },
+    { "title": "Activer la mosaïque", "name": "projects_mosaic", "type": "boolean", "default": true },
+    { "title": "Unités largeur (px)", "name": "infobox_unit_w", "type": "number", "default": 360 },
+    { "title": "Unités hauteur (px)", "name": "infobox_unit_h", "type": "number", "default": 220 },
+    { "title": "Lignes (1-4)", "name": "infobox_rows", "type": "number", "default": 3 }
+  ]
+}

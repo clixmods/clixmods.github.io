@@ -1,0 +1,77 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.contenttypes.schema.json",
+  "name": "person-content-type",
+  "pageBundle": false,
+  "fields": [
+    {
+      "title": "Date de création",
+      "name": "date",
+      "type": "datetime"
+    },
+    {
+      "title": "Brouillon",
+      "name": "draft",
+      "type": "draft"
+    },
+    {
+      "title": "Nom de la personne",
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "title": "Identifiant unique",
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "title": "avatar",
+      "name": "avatar",
+      "type": "image"
+    },
+    {
+      "title": "position",
+      "name": "position",
+      "type": "string"
+    },
+    {
+      "title": "company",
+      "name": "company",
+      "type": "string"
+    },
+    {
+      "title": "bio",
+      "name": "bio",
+      "type": "string"
+    },
+    {
+      "title": "email",
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "title": "linkedin",
+      "name": "linkedin",
+      "type": "string"
+    },
+    {
+      "title": "github",
+      "name": "github",
+      "type": "string"
+    },
+    {
+      "title": "Discord",
+      "name": "discord",
+      "type": "string"
+    },
+    {
+      "title": "Site web",
+      "name": "website",
+      "type": "string"
+    },
+    {
+      "title": "Type de contenu",
+      "name": "fmContentType",
+      "type": "string"
+    }
+  ]
+}

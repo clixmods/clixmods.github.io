@@ -1,0 +1,26 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "testimonials_group",
+  "labelField": "person",
+  "fields": [
+    {
+      "title": "Témoignage",
+      "name": "quote",
+      "type": "string"
+    },
+    {
+      "title": "Personne",
+      "name": "person",
+      "type": "contentRelationship",
+      "contentTypeName": "person-content-type",
+      "contentTypeValue": "slug",
+      "multiple": false,
+      "description": "Sélectionnez une personne existante"
+    },
+    {
+      "title": "Rôle/Contexte",
+      "name": "role",
+      "type": "string"
+    }
+  ]
+}

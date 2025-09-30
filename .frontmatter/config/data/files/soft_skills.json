@@ -1,0 +1,42 @@
+{
+  "$schema": "https://frontmatter.codes/config/data.files.schema.json",
+  "id": "soft_skills",
+  "title": "Soft Skills Data",
+  "file": "data/soft_skills.json",
+  "labelField": "name",
+  "schema": {
+    "title": "Soft Skill",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Nom"
+      },
+      "icon": {
+        "type": "string",
+        "title": "Icône (emoji)"
+      },
+      "iconPath": {
+        "type": "string",
+        "title": "Chemin vers l'icône SVG"
+      },
+      "color": {
+        "type": "string",
+        "title": "Couleur",
+        "widget": "colorPicker"
+      },
+      "displayedInPortfolio": {
+        "type": "boolean",
+        "title": "Affiché dans le portfolio"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Sous-titre"
+      }
+    },
+    "required": [
+      "name",
+      "displayedInPortfolio"
+    ]
+  }
+}

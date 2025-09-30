@@ -1,0 +1,60 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "years_detail_group",
+  "fields": [
+    {
+      "title": "Année",
+      "name": "year",
+      "type": "number",
+      "description": "Numéro de l'année (1, 2, 3, etc.)"
+    },
+    {
+      "title": "Statut",
+      "name": "status",
+      "type": "choice",
+      "choices": [
+        {
+          "id": "validated",
+          "title": "Validée"
+        },
+        {
+          "id": "in_progress",
+          "title": "En cours"
+        },
+        {
+          "id": "skipped",
+          "title": "Admission directe"
+        },
+        {
+          "id": "not_taken",
+          "title": "Non faite"
+        },
+        {
+          "id": "completed",
+          "title": "Terminée"
+        }
+      ],
+      "description": "Statut de cette année d'études"
+    },
+    {
+      "title": "Label",
+      "name": "label",
+      "type": "choice",
+      "choices": [
+        "Validée",
+        "Validée - Alternance",
+        "En cours",
+        "En cours - Alternance",
+        "Admis directement en 2ème année",
+        "Admis directement en 3ème année",
+        "Non effectuée",
+        "Terminée",
+        "Redoublement",
+        "Mention Bien",
+        "Mention Très Bien",
+        "Obtenu"
+      ],
+      "description": "Description détaillée du statut de l'année"
+    }
+  ]
+}

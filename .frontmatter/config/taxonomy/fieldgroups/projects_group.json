@@ -1,0 +1,21 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "projects_group",
+  "fields": [
+    {
+      "title": "Référence du projet",
+      "name": "project_ref",
+      "type": "contentRelationship",
+      "contentTypeName": "project-content-type",
+      "contentTypeValue": "slug",
+      "multiple": false,
+      "description": "Sélectionnez un projet existant"
+    },
+    {
+      "title": "Description du rôle",
+      "name": "role_description",
+      "type": "string",
+      "description": "Décrivez votre rôle spécifique dans ce projet"
+    }
+  ]
+}

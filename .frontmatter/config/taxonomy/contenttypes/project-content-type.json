@@ -1,0 +1,364 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.contenttypes.schema.json",
+  "name": "project-content-type",
+  "pageBundle": false,
+  "fields": [
+    {
+      "title": "Date de publication",
+      "name": "date",
+      "type": "datetime"
+    },
+    {
+      "title": "Brouillon",
+      "name": "draft",
+      "type": "draft"
+    },
+    {
+      "title": "Titre du projet",
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "title": "Sous-titre",
+      "name": "subtitle",
+      "type": "string"
+    },
+    {
+      "title": "Description du projet",
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "title": "Image principale",
+      "name": "image",
+      "type": "image"
+    },
+    {
+      "title": "Taille de tuile (mosaic)",
+      "name": "tile_size",
+      "type": "string",
+      "description": "Format w×h en unités (ex: 1x1, 2x1, 2x2, 3x2). Utilisé en mode mosaïque.",
+      "default": "1x1"
+    },
+    {
+      "title": "Afficher dans la mosaïque",
+      "name": "show_in_mosaic",
+      "type": "boolean",
+      "description": "Inclure cette tuile dans le layout mosaïque (si activé côté page).",
+      "default": true
+    },
+    {
+      "title": "Ordre dans la mosaïque",
+      "name": "mosaic_order",
+      "type": "number",
+      "description": "Ordre d'affichage (croissant) pour organiser les tuiles en mosaïque.",
+      "default": 999
+    },
+    {
+      "title": "Logo du projet",
+      "name": "logo",
+      "type": "image"
+    },
+    {
+      "title": "Étiquettes",
+      "name": "tags",
+      "type": "tags"
+    },
+    {
+      "title": "Langages de programmation",
+      "name": "programming_languages",
+      "type": "dataFile",
+      "dataFileId": "programming_languages_simple",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les langages de programmation utilisés dans ce projet"
+    },
+    {
+      "title": "Frameworks & Moteurs",
+      "name": "frameworks_engines",
+      "type": "dataFile",
+      "dataFileId": "frameworks_engines_simple",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les frameworks et moteurs utilisés"
+    },
+    {
+      "title": "Spécialités",
+      "name": "specialties",
+      "type": "dataFile",
+      "dataFileId": "specialties",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les spécialités impliquées dans ce projet"
+    },
+    {
+      "title": "Soft Skills",
+      "name": "soft_skills",
+      "type": "dataFile",
+      "dataFileId": "soft_skills",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les soft skills nécessaires pour ce projet"
+    },
+    {
+      "title": "Outils",
+      "name": "tools",
+      "type": "dataFile",
+      "dataFileId": "tools",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez les outils utilisés dans ce projet"
+    },
+    {
+      "title": "Catégorie",
+      "name": "category",
+      "type": "categories"
+    },
+    {
+      "title": "Secteur d'activité",
+      "name": "sector",
+      "type": "choice",
+      "choices": [
+        "games-professionnel",
+        "games-personnel",
+        "games-gamejams",
+        "appsweb-professionnel",
+        "appsweb-etude",
+        "mods",
+        "tools"
+      ],
+      "description": "Valeurs combinées (ex: games-professionnel). Pas de champ subsector séparé."
+    },
+    {
+      "title": "Projet à la une",
+      "name": "featured",
+      "type": "boolean"
+    },
+    {
+      "title": "Afficher sur le CV",
+      "name": "featuredInCV",
+      "type": "boolean",
+      "description": "Prioritaire pour la section Projets du CV"
+    },
+    {
+      "title": "Statut",
+      "name": "status",
+      "type": "choice",
+      "choices": [
+        "Prochainement",
+        "En Cours",
+        "Terminé"
+      ]
+    },
+    {
+      "title": "Actions associées",
+      "name": "actions",
+      "type": "block",
+      "fieldGroup": [
+        "actions_group"
+      ]
+    },
+    {
+      "title": "Faits marquants",
+      "name": "notable_facts",
+      "type": "block",
+      "fieldGroup": [
+        "notable_facts_group"
+      ]
+    },
+    {
+      "title": "Type de contenu",
+      "name": "fmContentType",  
+      "type": "string"
+    },
+    {
+      "title": "Contributeurs",
+      "name": "contributors",
+      "type": "block",
+      "fieldGroup": [
+        "contributors_group"
+      ]
+    },
+    {
+      "title": "Temps de développement",
+      "name": "development_time",
+      "type": "fields",
+      "fields": [
+        {
+          "title": "Durée totale",
+          "name": "total",
+          "type": "string"
+        },
+        {
+          "title": "Date de début",
+          "name": "start_date",
+          "type": "datetime"
+        },
+        {
+          "title": "Date de fin",
+          "name": "end_date",
+          "type": "datetime"
+        },
+        {
+          "title": "Phases de développement",
+          "name": "phases",
+          "type": "block",
+          "fieldGroup": [
+            "phases_group"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Galleries d'images",
+      "name": "galleries",
+      "type": "block",
+      "fieldGroup": [
+        "galleries_group"
+      ]
+    },
+    {
+      "title": "Playlists Youtube",
+      "name": "youtube_galleries",
+      "type": "block",
+      "fieldGroup": [
+        "youtube_galleries_group"
+      ]
+    },
+    {
+      "title": "Vidéo Youtube",
+      "name": "youtube_singles",
+      "type": "block",
+      "fieldGroup": [
+        "youtube_singles_group"
+      ]
+    },
+    {
+      "title": "Spécifications techniques",
+      "name": "technical_specs",
+      "type": "block",
+      "fieldGroup": [
+        "technical_specs_group"
+      ]
+    },
+    {
+      "title": "Récompenses",
+      "name": "awards",
+      "type": "block",
+      "fieldGroup": [
+        "awards_group"
+      ]
+    },
+    {
+      "title": "Témoignages",
+      "name": "testimonials",
+      "type": "block",
+      "fieldGroup": [
+        "testimonials_group"
+      ]
+    },
+    {
+      "title": "Ordre des widgets",
+      "name": "widget_order",
+      "type": "fields",
+      "fields": [
+        {
+          "title": "Contributeurs",
+          "name": "contributors",
+          "type": "number",
+          "description": "Position du widget Contributeurs (10, 20, 30...)",
+          "default": 10
+        },
+        {
+          "title": "Temps de développement",
+          "name": "development_time",
+          "type": "number",
+          "description": "Position du widget Temps de développement",
+          "default": 20
+        },
+        {
+          "title": "Galerie",
+          "name": "gallery",
+          "type": "number",
+          "description": "Position du widget Galerie",
+          "default": 30
+        },
+        {
+          "title": "Spécifications techniques",
+          "name": "technical_specs",
+          "type": "number",
+          "description": "Position du widget Spécifications techniques",
+          "default": 40
+        },
+        {
+          "title": "Spécialités",
+          "name": "specialties",
+          "type": "number",
+          "description": "Position du widget Spécialités",
+          "default": 50
+        },
+        {
+          "title": "Outils",
+          "name": "tools",
+          "type": "number",
+          "description": "Position du widget Outils",
+          "default": 60
+        },
+        {
+          "title": "Récompenses",
+          "name": "awards",
+          "type": "number",
+          "description": "Position du widget Récompenses",
+          "default": 70
+        },
+        {
+          "title": "Témoignages",
+          "name": "testimonials",
+          "type": "number",
+          "description": "Position du widget Témoignages",
+          "default": 80
+        },
+        {
+          "title": "Vidéos YouTube",
+          "name": "youtube_videos",
+          "type": "number",
+          "description": "Position du widget Vidéos YouTube",
+          "default": 90
+        },
+        {
+          "title": "Clients",
+          "name": "clients",
+          "type": "number",
+          "description": "Position du widget Clients",
+          "default": 100
+        },
+        {
+          "title": "Note",
+          "name": "grade",
+          "type": "number",
+          "description": "Position du widget Note",
+          "default": 110
+        },
+        {
+          "title": "Téléchargements",
+          "name": "downloads",
+          "type": "number",
+          "description": "Position du widget Téléchargements",
+          "default": 120
+        },
+        {
+          "title": "Classement",
+          "name": "ranking",
+          "type": "number",
+          "description": "Position du widget Classement",
+          "default": 130
+        }
+      ]
+    }
+  ]
+}

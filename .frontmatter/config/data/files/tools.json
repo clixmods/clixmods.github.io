@@ -1,0 +1,58 @@
+{
+  "$schema": "https://frontmatter.codes/config/data.files.schema.json",
+  "id": "tools",
+  "title": "Tools Data",
+  "file": "data/tools.json",
+  "labelField": "name",
+  "schema": {
+    "title": "Tool",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Nom de l'outil"
+      },
+      "category": {
+        "type": "string",
+        "title": "Catégorie",
+        "enum": [
+          "version_control",
+          "quality_tools",
+          "cloud",
+          "ide",
+          "project_management",
+          "other"
+        ]
+      },
+      "description": {
+        "type": "string",
+        "title": "Description"
+      },
+      "experience": {
+        "type": "number",
+        "title": "Expérience (en années)"
+      },
+      "iconPath": {
+        "type": "string",
+        "title": "Chemin vers l'icône SVG"
+      },
+      "color": {
+        "type": "string",
+        "title": "Couleur hexadécimale"
+      },
+      "displayedInPortfolio": {
+        "type": "boolean",
+        "title": "Affiché dans le portfolio"
+      }
+    },
+    "required": [
+      "name",
+      "category",
+      "description",
+      "experience",
+      "iconPath",
+      "color",
+      "displayedInPortfolio"
+    ]
+  }
+}
