@@ -473,6 +473,13 @@
           "default": 50
         },
         {
+          "title": "Soft Skills",
+          "name": "soft_skills",
+          "type": "number",
+          "description": "Position du widget Soft Skills (compétences transversales)",
+          "default": 55
+        },
+        {
           "title": "Outils",
           "name": "tools",
           "type": "number",

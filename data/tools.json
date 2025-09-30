@@ -81,6 +81,15 @@
     "displayedInPortfolio": false
   },
   {
+    "name": "Discord",
+    "category": "communication",
+    "description": "Communication d'équipe et discussions techniques",
+    "experience": 4,
+    "iconPath": "images/technologies/Discord.svg",
+    "color": "#5865F2",
+    "displayedInPortfolio": true
+  },
+  {
     "name": "HacknPlan",
     "category": "project_management",
     "description": "Gestion de projets spécialisée pour le développement de jeux",

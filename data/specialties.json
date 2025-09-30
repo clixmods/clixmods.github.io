@@ -40,12 +40,52 @@
     "subtitle": "Nintendo Switch"
   },
   {
+    "name": "Portage Plateforme",
+    "icon": "🔄",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Multi-plateformes (Steam, Epic, Xbox, PlayStation)"
+  },
+  {
+    "name": "Expérience utilisateur (UX)",
+    "icon": "👤",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Ergonomie et interface"
+  },
+  {
+    "name": "Optimisation Performance",
+    "icon": "⚡",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "CPU/GPU et mémoire"
+  },
+  {
+    "name": "Maintenance & Débogage",
+    "icon": "🐛",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Correctifs et résolution de bugs"
+  },
+  {
     "name": "Développement Outils",
     "icon": "⚙️",
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 3,
-    "subtitle": "Plugins Unity"
+    "subtitle": "Plugins Unity et outils de production"
+  },
+  {
+    "name": "Développement Gameplay",
+    "icon": "🕹️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 3,
+    "subtitle": "Mécaniques de jeu et systèmes"
   },
   {
     "name": "Shaders",
