@@ -1,10 +1,10 @@
 +++
-date = "2025-07-22T10:00:00+02:00"
+date = "2024-03-27T09:00:00.000Z"
 draft = false
 title = "Terra Memoria"
 subtitle = "JRPG - Studio La Moutarde"
-description = "Fin de production d'un jeu vidéo commercial sur Unity"
-tags = [ "JRPG", "Commercial", "Nintendo Switch" ]
+description = "Participation à la fin de production et à la maintenance post-release d'un RPG commercial multi-plateformes"
+tags = [ "JRPG", "Commercial", "Nintendo Switch", "Multi-plateformes" ]
 category = "projects"
 sector = "games-professionnel"
 featured = true
@@ -15,10 +15,29 @@ logo = "/images/projects/terra-memoria/terra-memoria-logo.png"
 image = "/images/projects/terra-memoria/terra-memoria-background.jpg"
 frameworks_engines = [ "Unity" ]
 programming_languages = [ "C#" ]
-specialties = [ "Portage Console" ]
-soft_skills = [ "Résolution Problèmes", "Communication" ]
+specialties = [
+  "Portage Console",
+  "Portage Plateforme",
+  "Expérience utilisateur (UX)",
+  "Optimisation Performance",
+  "Maintenance & Débogage",
+  "Développement Gameplay",
+  "Développement Outils"
+]
+soft_skills = [ "Résolution Problèmes", "Communication", "Travail d'équipe" ]
 tile_size = "1x1"
 technical_specs = [ ]
+tools = [
+  "ClickUp",
+  "JetBrains",
+  "Photoshop",
+  "Sublime Text",
+  "Azure",
+  "Fork",
+  "Visual Studio",
+  "Visual Studio Code",
+  "Discord"
+]
 
 [[actions]]
 type = "steam"
@@ -53,6 +72,13 @@ type = "playstation"
 label = "Acheter sur PlayStation Store"
 url = "https://store.playstation.com/fr-fr/concept/10008921"
 icon = "playstation"
+primary = false
+
+[[actions]]
+type = "epic"
+label = "Acheter sur Epic Games Store"
+url = "https://store.epicgames.com/p/terra-memoria"
+icon = "epic-games"
 primary = false
 
 [[notable_facts]]
@@ -154,17 +180,18 @@ fieldGroup = "galleries_group"
   fieldGroup = "gallery_group"
 
 [[youtube_singles]]
-title = "Terra Memoria - Gameplay Trailer"
 video_id = "79WDIdvr4uo"
 size = "size-medium"
+video_title = "Terra Memoria - Gameplay Trailer"
+order = "45"
 fieldGroup = "youtube_singles_group"
 
 [[youtube_singles]]
 video_id = "SLd_fCFqm80"
 size = "size-medium"
-title = """
-\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
-TERRA MEMORIA - Launch trailer"""
+video_title = "Terra Memoria - Launch Trailer"
+date = "2025-09-30T11:06:28.000Z"
+order = "45"
 fieldGroup = "youtube_singles_group"
 
 [[youtube_galleries]]
@@ -257,42 +284,61 @@ fieldGroup = "contributors_group"
 person = "clement-garcia"
 role = "Junior Developer"
 fieldGroup = "contributors_group"
+
+[ranking]
+event_type = ""
+suffix = ""
+
+[widget_order]
+contributors = 10
+development_time = 20
+gallery = 30
+technical_specs = 40
+specialties = 50
+tools = 130
+awards = 70
+testimonials = 80
+youtube_videos = 90
+clients = 100
+grade = 110
+downloads = 120
+ranking = 130
+soft_skills = 55
 +++
 
 # Terra Memoria
 
 ## Description du projet
 
-Participation à la fin de production d'un JRPG complet développé sur Unity. Ce projet commercial m'a permis de travailler sur tous les aspects de la finalisation d'un jeu vidéo destiné à une distribution multi-plateformes.
+> *"Terra Memoria se déroule dans le monde de Terra, où la pénurie de cristaux magiques et le réveil soudain de machines anciennes poussent six amis à mener une enquéte extraordinaire."*
+
+**Terra Memoria** est un RPG cozy développé sous Unity par le **studio indépendant La Moutarde** et édité par **Dear Villagers**. Mélant pixel art et 3D low-poly, il propose une aventure centrée sur l'exploration, la narration et l'artisanat, dans un univers coloré et chaleureux. Le jeu est sorti le **27 mars 2024** sur PC (Steam & Epic Games Store), Nintendo Switch, Xbox Series S/X et PlayStation 5.
 
 ## Mes contributions
-### Portage Nintendo Switch
-- Optimisation des performances pour la console Nintendo Switch
-- Adaptation de l'interface utilisateur pour les spécificités de la console
-- Tests et débogage sur hardware physique
 
-### Maintenance post-release
-- Correction de bugs critiques après la sortie
-- Mise à jour de contenu et améliorations
-- Support technique continu
+Participation à la fin de production du RPG et à sa maintenance post-release. Première immersion dans un projet professionnel complet, en conditions réelles, avec des enjeux de qualité et de conformité multi-plateformes.
 
-### Développement d'outils de production
-- Création d'outils internes pour faciliter le workflow de l'équipe
-- Automatisation de tâches répétitives
-- Amélioration des pipelines de build
+### Maintenance & expérience utilisateur
 
-## Technologies utilisées
+- **Correction de bugs critiques** : softlocks, corruptions de sauvegardes, crashs mémoire sur Switch
+- **Résolution d'anomalies de scripts internes**
+- **Optimisation ergonomique des menus** : meilleure prise en charge de la souris, intégration de boutons interactifs
+- **Production d'outils internes** : ex. export PDF du guide de jeu pour création de goodies.
 
-- **Unity Engine** : Moteur principal du jeu
-- **C#** : Langage de programmation principal
-- **Nintendo Switch SDK** : Pour le portage console
-- **Steam SDK** : Intégration des fonctionnalités Steam
+### Portage console & intégration Epic Games
+
+- **Travail sur le portage Nintendo Switch** : analyse CPU/GPU, optimisation des temps de chargement, résolution plantage critique.
+- **Intégration Epic Games Store** : succès, sauvegardes cloud, gestion des tokens d'accès
+- **Contribution au suivi multiplateforme** avec les outils internes 
+
+### Organisation & process qualité
+
+- **Suivi en intégration continue** des correctifs en fin de cycle de production
+- **Utilisation des workflows QA du studio** : User Report, ClickUp, discussions techniques.
+- **Collaboration étroite avec l’équipe de testeurs / QA** : feed-back sur les rapports de bugs, reproduction de scénarios, validation des correctifs et retests
 
 ## Résultats
 
-Terra Memoria est un projet commercial distribué sur :
-- Steam (PC)
-- Nintendo Switch eShop
-- Xbox Game Pass
+Ce projet m'a donné une expérience précieuse dans le développement commercial de jeux vidéo : de la fin de production à la maintenance post-release, en passant par le portage console et l'intégration multi-plateformes. Une immersion totale dans les process professionnels d'un studio de développement en collaboration avec un éditeur (Dear Villagers).
 
-Ce projet m'a donné une expérience précieuse dans le développement commercial de jeux vidéo et la gestion des contraintes de production.
+
