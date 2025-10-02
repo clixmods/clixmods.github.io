@@ -22,7 +22,6 @@ specialties = [ "Game Design", "Pixel Art" ]
 type = "download"
 label = "Jouer au jeu"
 url = "https://dimenchine-page.itch.io/demons-tower"
-icon = "download"
 primary = true
 
 [development_time]

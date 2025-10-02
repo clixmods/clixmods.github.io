@@ -20,21 +20,18 @@ programming_languages = [ "GSC" ]
 type = "steam"
 label = "Télécharger sur Steam"
 url = "https://steamcommunity.com/sharedfiles/filedetails/?id=1406022761"
-icon = "steam"
 primary = true
 
 [[actions]]
 type = "youtube"
 label = "Voir trailer"
 url = "https://youtu.be/Rtunjby5kVs"
-icon = "youtube"
 primary = false
 
 [[actions]]
 type = "youtube"
 label = "Voir comparatif avec l'original"
 url = "https://youtu.be/UkmfpbKTbXg"
-icon = "youtube"
 primary = false
 
 [[notable_facts]]

@@ -27,7 +27,6 @@ tools = [ "GitHub", "Fork", "JetBrains", "Trello", "SonyVegas" ]
 type = "download"
 label = "Jouer au jeu"
 url = "https://clixmods.itch.io/galaxian"
-icon = "download"
 primary = true
 fieldGroup = "actions_group"
 
@@ -35,7 +34,6 @@ fieldGroup = "actions_group"
 type = "youtube"
 label = "Voir trailer"
 url = "https://youtu.be/zciQnYmtkHk"
-icon = "youtube"
 primary = false
 fieldGroup = "actions_group"
 
@@ -43,7 +41,6 @@ fieldGroup = "actions_group"
 type = "youtube"
 label = "Voir gameplay"
 url = "https://youtu.be/pf0UqgHNkF0"
-icon = "youtube"
 primary = false
 fieldGroup = "actions_group"
 

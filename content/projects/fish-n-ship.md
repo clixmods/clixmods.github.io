@@ -22,7 +22,6 @@ tools = [ "Fork", "JetBrains" ]
 type = "download"
 label = "Télécharger le jeu"
 url = "https://c3leste.itch.io/fish-n-ship"
-icon = "download"
 primary = true
 fieldGroup = "actions_group"
 
@@ -30,7 +29,6 @@ fieldGroup = "actions_group"
 type = "youtube"
 label = "Voir présentation"
 url = "https://youtu.be/yAe60nYvsmI"
-icon = "youtube"
 primary = false
 fieldGroup = "actions_group"
 

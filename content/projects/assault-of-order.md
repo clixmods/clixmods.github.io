@@ -22,14 +22,12 @@ tools = [ "Fork", "Visual Studio", "HacknPlan", "SonyVegas" ]
 type = "download"
 label = "Jouer au jeu"
 url = "https://matthieu-osten.itch.io/assault-of-order"
-icon = "download"
 primary = true
 
 [[actions]]
 type = "youtube"
 label = "Voir trailer"
 url = "https://youtu.be/G1OzgE-y5Jk"
-icon = "youtube"
 primary = false
 
 [[contributors]]

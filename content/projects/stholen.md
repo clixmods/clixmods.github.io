@@ -23,14 +23,12 @@ specialties = [ "Level Design", "Lighting" ]
 type = "download"
 label = "Jouer au jeu"
 url = "https://pepp3rmint.itch.io/stholen"
-icon = "download"
 primary = true
 
 [[actions]]
 type = "youtube"
 label = "Voir trailer"
 url = "https://youtu.be/uXQj8HkRpG0"
-icon = "youtube"
 primary = false
 
 [[contributors]]

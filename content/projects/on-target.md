@@ -32,14 +32,12 @@ specialties = [ "Game Design" ]
 type = "download"
 label = "Télécharger le jeu"
 url = "https://susucre95.itch.io/aimlab"
-icon = "download"
 primary = true
 
 [[actions]]
 type = "youtube"
 label = "Voir trailer"
 url = "https://youtu.be/ssTq4zDsCWA"
-icon = "youtube"
 primary = false
 
 [development_time]

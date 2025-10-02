@@ -20,14 +20,12 @@ frameworks_engines = [ "Black Ops III engine" ]
 type = "steam"
 label = "Voir Complete Edition"
 url = "https://steamcommunity.com/sharedfiles/filedetails/?id=2578476006"
-icon = "steam"
 primary = true
 
 [[actions]]
 type = "steam"
 label = "Voir Lite Edition"
 url = "https://steamcommunity.com/sharedfiles/filedetails/?id=2383464164"
-icon = "steam"
 primary = true
 
 [[notable_facts]]

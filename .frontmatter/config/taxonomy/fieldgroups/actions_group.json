@@ -1,27 +1,39 @@
 {
   "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
   "id": "actions_group",
-  "labelField": "name",
+  "labelField": "label",
   "fields": [
     {
       "title": "Type de bouton",
       "name": "type",
-      "type": "string"
+      "type": "choice",
+      "choices": [
+        "steam",
+        "youtube",
+        "github",
+        "download",
+        "switch",
+        "xbox",
+        "playstation",
+        "epic",
+        "itch",
+        "website",
+        "demo",
+        "documentation"
+      ],
+      "default": "website"
     },
     {
       "title": "Titre du bouton",
       "name": "label",
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     {
       "title": "Lien cliquable",
       "name": "url",
-      "type": "string"
-    },
-    {
-      "title": "Icône",
-      "name": "icon",
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     {
       "title": "Bouton principal",

@@ -32,7 +32,6 @@ soft_skills = [ "Communication", "Résolution Problèmes" ]
 type = "github"
 label = "Voir le code source"
 url = "#"
-icon = "github"
 primary = true
 
 [development_time]

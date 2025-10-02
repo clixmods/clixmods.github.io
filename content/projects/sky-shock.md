@@ -23,14 +23,12 @@ specialties = [ "Pixel Art", "Game Design" ]
 type = "download"
 label = "Jouer sur itch.io"
 url = "https://clixmods.itch.io/sky-shock"
-icon = "download"
 primary = true
 
 [[actions]]
 type = "youtube"
 label = "Voir trailer"
 url = "https://www.youtube.com/watch?v=PLACEHOLDER"
-icon = "youtube"
 primary = false
 
 [development_time]

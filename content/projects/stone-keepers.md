@@ -28,21 +28,18 @@ soft_skills = [
 type = "download"
 label = "Jouer au jeu"
 url = "https://clixmods.itch.io/the-lost-city-stone-keeper"
-icon = "download"
 primary = true
 
 [[actions]]
 type = "youtube"
 label = "Voir trailer"
 url = "https://www.youtube.com/watch?v=Qmm1tJqgf6c"
-icon = "youtube"
 primary = false
 
 [[actions]]
 type = "youtube"
 label = "Voir gameplay"
 url = "https://youtu.be/A3r9UJdJzaM"
-icon = "youtube"
 primary = false
 
 [development_time]

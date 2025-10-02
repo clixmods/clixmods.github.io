@@ -36,14 +36,13 @@ value = "PC (Steam Workshop)"
 type = "steam"
 label = "Télécharger sur Steam"
 url = "https://steamcommunity.com/sharedfiles/filedetails/?id=2180904327"
-icon = "steam"
 primary = true
+fieldGroup = "actions_group"
 
 [[actions]]
 type = "youtube"
 label = "Voir comparatif"
 url = "https://youtu.be/e3KIFgqdaKg"
-icon = "youtube"
 primary = false
 
 [[notable_facts]]

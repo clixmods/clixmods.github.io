@@ -23,7 +23,6 @@ specialties = [ "Game Design", "Puzzle Design" ]
 type = "download"
 label = "Télécharger le jeu"
 url = "https://mystos21.itch.io/global-game-jam-game"
-icon = "download"
 primary = true
 fieldGroup = "actions_group"
 

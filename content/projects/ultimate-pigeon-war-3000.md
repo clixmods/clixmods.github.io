@@ -23,7 +23,6 @@ specialties = [ "Pixel Art", "Sound Design" ]
 type = "download"
 label = "Télécharger le jeu"
 url = "https://agatha05.itch.io/ultimate-pigeon-war-3000"
-icon = "download"
 primary = true
 
 [[galleries]]

@@ -22,7 +22,6 @@ specialties = [ "Game Design", "UI Design" ]
 type = "download"
 label = "Jouer au jeu"
 url = "https://rhino-gabriel.itch.io/witchable"
-icon = "download"
 primary = true
 
 [[contributors]]

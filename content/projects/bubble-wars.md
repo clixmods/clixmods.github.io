@@ -31,14 +31,12 @@ tools = [ "JetBrains", "Fork" ]
 type = "download"
 label = "Télécharger le jeu"
 url = "https://hitomi1011.itch.io/bubble-wars"
-icon = "download"
 primary = true
 
 [[actions]]
 type = "youtube"
 label = "Voir trailer"
 url = "https://youtu.be/cJiNj2vDAlA"
-icon = "youtube"
 primary = false
 
 [development_time]

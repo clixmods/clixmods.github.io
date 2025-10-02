@@ -24,14 +24,12 @@ tools = [ "Sublime Text", "Visual Studio Code" ]
 type = "steam"
 label = "Télécharger sur Steam"
 url = "https://steamcommunity.com/sharedfiles/filedetails/?id=2780964226"
-icon = "steam"
 primary = true
 
 [[actions]]
 type = "youtube"
 label = "Voir trailer"
 url = "https://youtu.be/-dO2vBZx5gA"
-icon = "youtube"
 primary = false
 
 [[notable_facts]]

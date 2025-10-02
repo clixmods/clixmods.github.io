@@ -23,14 +23,12 @@ specialties = [ "Level Design", "Game Design" ]
 type = "download"
 label = "Jouer au jeu"
 url = "https://pepp3rmint.itch.io/d"
-icon = "download"
 primary = true
 
 [[actions]]
 type = "youtube"
 label = "Voir trailer"
 url = "https://youtu.be/k2Qoly745Ys"
-icon = "youtube"
 primary = false
 
 [[contributors]]

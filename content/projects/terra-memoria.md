@@ -43,42 +43,36 @@ tools = [
 type = "steam"
 label = "Acheter sur Steam"
 url = "https://store.steampowered.com/app/1912750/Terra_Memoria/"
-icon = "steam"
 primary = true
 
 [[actions]]
 type = "youtube"
 label = "Voir trailer"
 url = "https://youtu.be/SLd_fCFqm80"
-icon = "youtube"
 primary = false
 
 [[actions]]
 type = "switch"
 label = "Acheter sur Nintendo Switch eShop"
 url = "https://www.nintendo.fr/Jeux/Jeux-a-telecharger-sur-Nintendo-Switch/Terra-Memoria-2550952.html"
-icon = "nintendo-switch"
 primary = false
 
 [[actions]]
 type = "xbox"
 label = "Acheter sur Xbox"
 url = "https://www.xbox.com/fr-FR/games/store/terra-memoria/9n8p7w7d6g7j"
-icon = "xbox"
 primary = false
 
 [[actions]]
 type = "playstation"
 label = "Acheter sur PlayStation Store"
 url = "https://store.playstation.com/fr-fr/concept/10008921"
-icon = "playstation"
 primary = false
 
 [[actions]]
 type = "epic"
 label = "Acheter sur Epic Games Store"
 url = "https://store.epicgames.com/p/terra-memoria"
-icon = "epic-games"
 primary = false
 
 [[notable_facts]]

@@ -23,7 +23,6 @@ specialties = [ "Level Design", "Sound Design" ]
 type = "download"
 label = "Télécharger le jeu"
 url = "https://leahoa.itch.io/stay-in-the-light"
-icon = "download"
 primary = true
 
 [[galleries]]
