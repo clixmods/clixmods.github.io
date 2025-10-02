@@ -270,24 +270,25 @@ grade = 110
 downloads = 120
 ranking = 130
 technical_specs = 1
+soft_skills = 55
 
 [ranking]
 suffix = "è"
 position = 10
 event = "Steam Workshop Black Ops 3"
 event_type = "Classement"
-total = 6000
-total_participants = 6000
+total = 6_000
+total_participants = 6_000
 date = "2019-07-01T00:00:00+02:00"
 category = "Custom Zombies Maps"
 
 [downloads]
 last_updated = "2025-09-30T08:32:44.670Z"
-total = 800000
+total = 800_000
 
   [[downloads.platforms]]
   name = "Steam Workshop"
-  downloads = 800000
+  downloads = 800_000
   launch_date = "2019-07-15T08:00:00+02:00"
   fieldGroup = "downloads_group"
 +++

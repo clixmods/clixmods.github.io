@@ -23,7 +23,7 @@ specialties = [
 ]
 soft_skills = [ "Résolution Problèmes" ]
 tools = [ "Azure", "Fork", "JetBrains", "ClickUp" ]
-status = "En Cours"
+status = "Terminé"
 
 [[contributors]]
 person = "francois-bertrand"
@@ -39,6 +39,26 @@ fieldGroup = "contributors_group"
 person = "clement-garcia"
 role = "Développeur"
 fieldGroup = "contributors_group"
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
+
+[widget_order]
+gallery = 30
+contributors = 10
+development_time = 20
+technical_specs = 40
+specialties = 50
+soft_skills = 55
+tools = 60
+awards = 70
+testimonials = 80
+youtube_videos = 90
+clients = 100
+grade = 110
+downloads = 120
+ranking = 130
 +++
 
 # My Game Showcase

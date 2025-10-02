@@ -1,5 +1,5 @@
 +++
-date = "2024-01-01T10:00:00+02:00"
+date = "2025-09-30T09:23:39.576Z"
 draft = false
 title = "Test Layout System"
 subtitle = "Démonstration complète du système de boîtes"
@@ -12,17 +12,16 @@ fmContentType = "project-content-type"
 image = "/images/projects/test/test-layout.jpg"
 frameworks_engines = [ "Hugo" ]
 programming_languages = [ "CSS Grid", "JavaScript" ]
+youtube_galleries = [ ]
 
 [[actions]]
 type = "github"
 label = "Voir sur GitHub"
 url = "#"
-icon = "github"
 primary = true
 
 [[notable_facts]]
 type = "feature"
-icon = "🎨"
 value = "Système de <span class='highlight'>grille</span>"
 label = "Layout flexible 12 colonnes"
 contributors_size = "size-xl"
@@ -62,13 +61,13 @@ value = "17.5"
 scale = "20"
 subject = "Développement d'Applications Mobiles"
 professor = "Dr. Martin Dupont"
-date = "Juin 2024"
+date = "2025-09-30T09:23:50.924Z"
 comment = "Excellent travail sur l'architecture et l'interface utilisateur. Très bonne maîtrise des technologies modernes."
 grade_size = "size-medium"
 
 [downloads]
 total = 15_420
-last_updated = "15 décembre 2024"
+last_updated = "2025-09-30T09:23:53.206Z"
 
   [[downloads.platforms]]
   name = "Windows"
@@ -89,9 +88,9 @@ suffix = "ème"
 total = 127
 event = "Concours National de Développement"
 category = "Applications Mobiles"
-date = "Novembre 2024"
 achievement = "Prix de l'Innovation Technique"
 ranking_size = "size-small"
+event_type = "Classement"
 
 [[contributors]]
 person = "john-doe"
@@ -254,7 +253,6 @@ title = "Présentation du projet Test Layout"
 description = "Une démonstration complète du système de layout avec tous les composants et fonctionnalités."
 duration = "4:32"
 views = "1.2K vues"
-date = "il y a 2 jours"
 
 [[youtube_videos]]
 video_id = "dQw4w9WgXcQ"
@@ -262,7 +260,6 @@ title = "Tutorial - Configuration avancée"
 description = "Apprenez à configurer et personnaliser le système selon vos besoins spécifiques."
 duration = "7:45"
 views = "856 vues"
-date = "il y a 1 semaine"
 
 [[youtube_videos]]
 video_id = "jNQXAC9IVRw"
@@ -270,14 +267,19 @@ title = "Responsive Design - Best Practices"
 description = "Découvrez les meilleures pratiques pour un design responsive optimal sur tous les appareils."
 duration = "5:18"
 views = "2.1K vues"
-date = "il y a 3 jours"
 
-[youtube_single]
+
+[[youtube_singles]]
 video_id = "hb-kF-VZvnE"
 title = "Démonstration complète du système de layout"
 description = "Présentation détaillée de tous les widgets et leur utilisation dans le portfolio"
 duration = "8:45"
-date = "15 décembre 2024"
+date = "2025-09-30T09:24:50.671Z"
+fieldGroup = "youtube_singles_group"
+
+[[youtube_singles]]
+video_id = "fsdf"
+fieldGroup = "youtube_singles_group"
 
 [widget_order]
 contributors = 25
