@@ -1,0 +1,25 @@
+{
+  "$schema": "https://frontmatter.codes/config/data.files.schema.json",
+  "id": "icons",
+  "title": "Icons Data",
+  "file": "data/icons.json",
+  "labelField": "id",
+  "schema": {
+    "title": "Icon",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "title": "Identifiant unique"
+      },
+      "path": {
+        "type": "string",
+        "title": "Chemin vers l'icône SVG"
+      }
+    },
+    "required": [
+      "id",
+      "path"
+    ]
+  }
+}

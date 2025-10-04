@@ -1,0 +1,114 @@
+[
+  {
+    "id": "profile",
+    "path": "images/icons/profile.svg"
+  },
+  {
+    "id": "skills",
+    "path": "images/icons/skills.svg"
+  },
+  {
+    "id": "blog",
+    "path": "images/icons/blog.svg"
+  },
+  {
+    "id": "projects",
+    "path": "images/icons/projects.svg"
+  },
+  {
+    "id": "education",
+    "path": "images/icons/education.svg"
+  },
+  {
+    "id": "experiences",
+    "path": "images/icons/experiences.svg"
+  },
+  {
+    "id": "arrow-right",
+    "path": "images/icons/arrow-right.svg"
+  },
+  {
+    "id": "external-link",
+    "path": "images/icons/external-link.svg"
+  },
+  {
+    "id": "lightning",
+    "path": "images/icons/lightning.svg"
+  },
+  {
+    "id": "star",
+    "path": "images/icons/star.svg"
+  },
+  {
+    "id": "check-circle",
+    "path": "images/icons/check-circle.svg"
+  },
+  {
+    "id": "download",
+    "path": "images/icons/download.svg"
+  },
+  {
+    "id": "sun",
+    "path": "images/icons/sun.svg"
+  },
+  {
+    "id": "moon",
+    "path": "images/icons/moon.svg"
+  },
+  {
+    "id": "steam",
+    "path": "images/icons/steam.svg"
+  },
+  {
+    "id": "youtube",
+    "path": "images/icons/youtube.svg"
+  },
+  {
+    "id": "github",
+    "path": "images/icons/github.svg"
+  },
+  {
+    "id": "nintendo-switch",
+    "path": "images/icons/nintendo-switch.svg"
+  },
+  {
+    "id": "xbox",
+    "path": "images/icons/xbox.svg"
+  },
+  {
+    "id": "playstation",
+    "path": "images/icons/playstation.svg"
+  },
+  {
+    "id": "epic-games",
+    "path": "images/icons/epic-games.svg"
+  },
+  {
+    "id": "itch-io",
+    "path": "images/icons/itch-io.svg"
+  },
+  {
+    "id": "discord",
+    "path": "images/icons/discord.svg"
+  },
+  {
+    "id": "linkedin",
+    "path": "images/icons/linkedin.svg"
+  },
+  {
+    "id": "email",
+    "path": "images/icons/email.svg"
+  },
+  {
+    "id": "location",
+    "path": "images/icons/location.svg"
+  },
+  {
+    "id": "calendar",
+    "path": "images/icons/calendar.svg"
+  },
+  {
+    "id": "clock",
+    "path": "images/icons/clock.svg"
+  }
+]
