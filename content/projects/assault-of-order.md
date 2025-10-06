@@ -1,5 +1,5 @@
 +++
-date = "2022-05-15T10:00:00+02:00"
+date = "2022-07-01T08:00:00.000Z"
 draft = false
 title = "Assault of Order"
 subtitle = "Projet de fin d'année 1ère année - e-artsup"
@@ -14,14 +14,28 @@ logo = "/images/projects/assault-of-order/assault-of-order-logo.png"
 image = "/images/projects/assault-of-order/clement-garcia-aoo-leveldesign-3.jpg"
 frameworks_engines = [ "Unity" ]
 programming_languages = [ "C#" ]
-specialties = [ "Game Design", "Développement Outils" ]
+specialties = [
+  "Développement Outils",
+  "Lighting",
+  "Environnement Building",
+  "Développement Gameplay",
+  "Gestion de versions avec Git",
+  "Algorithmique"
+]
 soft_skills = [ "Résolution Problèmes", "Communication" ]
-tools = [ "Fork", "Visual Studio", "HacknPlan", "SonyVegas" ]
+tools = [
+  "Fork",
+  "Visual Studio",
+  "HacknPlan",
+  "SonyVegas",
+  "GitHub",
+  "Discord"
+]
 
 [[actions]]
 type = "download"
 label = "Jouer au jeu"
-url = "https://matthieu-osten.itch.io/assault-of-order"
+url = "https://evil0games.itch.io/assault-of-order"
 primary = true
 
 [[actions]]
@@ -72,10 +86,13 @@ fieldGroup = "contributors_group"
 
 [development_time]
 total = "2 Mois"
+start_date = "2022-05-30T22:00:00.000Z"
+end_date = "2022-06-30T22:00:00.000Z"
 
 [[galleries]]
 title = "Photo"
 size = "size-medium"
+order = "90"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
@@ -84,6 +101,7 @@ fieldGroup = "galleries_group"
 [[galleries]]
 title = "Gameplay"
 size = "size-medium"
+order = "90"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
@@ -141,9 +159,52 @@ size = "size-medium"
 video_id = "G1OzgE-y5Jk"
 video_title = "Trailer"
 duration = "1:35"
+order = "1"
 fieldGroup = "youtube_singles_group"
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
+
+[widget_order]
+contributors = 10
+development_time = 20
+gallery = 30
+technical_specs = 40
+specialties = 50
+soft_skills = 55
+tools = 60
+awards = 70
+testimonials = 80
+youtube_videos = 90
+clients = 100
+grade = 110
+downloads = 120
+ranking = 130
 +++
 
 # Assault of Order
 
 ## Description du projet
+
+Projet de fin de première année réalisé à E-artsup  
+Jeu de stratégie au tour par tour inspiré des XCOM, où deux équipes s'affrontent sur un champ de bataille en grille  
+Chaque unité dispose de ses propres capacités et compétences, ce qui pousse le joueur à réfléchir, planifier et anticiper chaque action pour remporter la victoire
+
+Sur ce projet, j'étais principalement orienté sur la partie technique et la conception des systèmes de jeu  
+Mon objectif était de donner vie au cœur du gameplay : la grille, le déplacement des unités et le déroulement des tours de jeu  
+J'ai également contribué à la mise en place de l'environnement visuel du jeu et de son éclairage
+
+## Développement & Gameplay
+
+- Conception complète du système de grille de jeu (cases, coordonnées, interactions)
+- Développement d'outils internes permettant de peindre les cases directement dans l'éditeur Unity
+- Implémentation d'un algorithme de pathfinding de type A* pour le déplacement intelligent des unités
+- Visualisation du chemin parcouru et du coût de déplacement sur la grille
+- Programmation du système de tour par tour (gestion du joueur A et B, ordre des unités, transitions)
+- Gestion des tours et de l'état du jeu : phase de sélection, déplacement, attaque, fin de manche
+
+## Environnement & Lighting
+
+- Réalisation de l'environnement building à partir du level design fourni par l'équipe
+- Travail sur le lighting général du jeu (ambiance, lisibilité, contraste)
