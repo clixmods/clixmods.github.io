@@ -1,5 +1,5 @@
 +++
-date = "2022-10-15T10:00:00+02:00"
+date = "2022-12-20T09:00:00.000Z"
 draft = false
 title = "Stholen"
 subtitle = "Jeu d'aventure - e-artsup"
@@ -122,7 +122,7 @@ suffix = "è"
 
 [widget_order]
 contributors = 10
-development_time = 20
+development_time = 54
 gallery = 30
 awards = 70
 technical_specs = 20
@@ -135,4 +135,9 @@ grade = 110
 clients = 100
 downloads = 120
 ranking = 130
+
+[development_time]
+start_date = "2025-10-29T23:00:00.000Z"
+end_date = "2025-12-19T23:00:00.000Z"
+total = "2 mois"
 +++
