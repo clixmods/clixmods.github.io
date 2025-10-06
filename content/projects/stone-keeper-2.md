@@ -19,7 +19,12 @@ specialties = [
   "Développement Outils",
   "Interface utilisateur",
   "Design Pattern et refactoring",
-  "Programmation orientée objet"
+  "Programmation orientée objet",
+  "Game Design",
+  "Expérience utilisateur (UX)",
+  "Maintenance & Débogage",
+  "Optimisation Performance",
+  "Architecture Logicielle"
 ]
 image = "/images/projects/stone-keeper-2/stone-keeper2-2.jpg"
 tools = [ "JetBrains", "Trello", "Photoshop", "Fork", "GitHub" ]
@@ -117,6 +122,8 @@ fieldGroup = "youtube_singles_group"
 
 [development_time]
 total = "6 mois"
+end_date = "2024-06-30T22:00:00.000Z"
+start_date = "2023-12-31T23:00:00.000Z"
 
 [[galleries]]
 title = "Galerie"
@@ -175,11 +182,16 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+soft_skills = 55
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++
 
-# Stone Keeper 2:
+# Stone Keeper 2
 
-Projet réalisé en distanciel dans le cadre d’un travail de groupe à E-artsup, basé sur l’univers de mon précédent jeu. Ce projet a été particulièrement exigeant, car mené en parallèle de plusieurs autres productions. Mon rôle a été dans la continuité technique et l’amélioration des systèmes existants, ainsi que dans la conception de nouveaux outils de jeu et de gestion. Le projet a aussi intégré une structuration plus poussée autour du QA, du bug tracking et du travail collaboratif.
+Projet réalisé en distanciel dans le cadre d’un travail de groupe à E-artsup, basé sur l’univers de mon précédent jeu. Ce projet a été particulièrement exigeant, car mené en parallèle de mes études à l'IUT et de mon alternance chez le studio La Moutarde. Mon rôle a été dans la continuité technique et l’amélioration des systèmes existants, ainsi que dans la conception de nouveaux outils de jeu et de gestion. Le projet a aussi intégré une structuration plus poussée autour du QA, du bug tracking et du travail collaboratif.
 
 ## Développement & systèmes
 - Réintégration et adaptation des systèmes du jeu précédent (héritage gameplay)
