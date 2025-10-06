@@ -27,6 +27,10 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++
 
 # Aspiro Shop - Site e-commerce PHP

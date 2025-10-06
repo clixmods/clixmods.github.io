@@ -59,122 +59,122 @@ testimonials_size = "size-medium"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Créateur & Level Designer"
+roles = ["Level Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "comunaute-bo3"
-role = "Feedback et tests"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Mapping + Tranzit's Zombie"
+roles = ["Level Designer", "Assets"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "quentinftl"
-role = "Scripts + Grief Mod"
+roles = ["Développeur", "Moddeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "symbo"
-role = "Scripts, Assets Black Ops 2"
+roles = ["Développeur", "Assets"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "harrybo21"
-role = "WunderFizz"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "emox"
-role = "Chronicles Weapons + Camo Tranzit + Assets Black Ops 2"
+roles = ["Assets", "Texturing"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "the-bland-death"
-role = "M1911 anim"
+roles = ["Animateur 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "prorevenge"
-role = "RayGun Mark2"
+roles = ["Assets"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alexisloic21"
-role = "Assets Black Ops 2"
+roles = ["Assets"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "flowing"
-role = "Assets Black Ops 2"
+roles = ["Assets"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "zeroy"
-role = "Assets WW2"
+roles = ["Assets"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "blueshark"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "elijah"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "nosif28"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "skyler"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "shark-ut-ail"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "ragnar"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "gekido"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "enor"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "dfus1on"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "bghost314"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "pacito2"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "newman"
-role = "Additional testing help"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [development_time]
@@ -185,55 +185,55 @@ end_date = "Juin 2018"
 [[testimonials]]
 quote = "Great faithful recreation, fun with friends for sure! My video if anyone's interested https://youtu.be/V95-5AtGX7o"
 person = "tactical-loser"
-role = "Joueur & créateur de contenu"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Awesome remaster! Feels like an official treyarch map :)"
 person = "gigity-74"
-role = "Joueur Steam"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "This is one of my favorite map remakes of all time, feels basically like an official Treyarch remake, I hope you plan on remaking more maps with this quality!"
 person = "taco-bell-crocs"
-role = "Joueur passionné"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "I truly hope you make more maps like this. Quality is hard to find in the workshop and is so well done, excited for what you make next!"
 person = "charchard"
-role = "Joueur & critique"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "i love this, it looks amazing, and the gameplay is amazing, just as high quality as zombie chronicals, hell i forgot i was playing a custom map, amazing work dude"
 person = "cherry-coke"
-role = "Joueur Steam"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Phenomenal remake dude, you should be very proud of this! :D"
 person = "ping"
-role = "Joueur Steam"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "A pretty good remake of the orginal map. i didnt find any bugs or issues. zombie spawning is okay aswell unlike other maps. 10/10"
 person = "cybergod"
-role = "Joueur expérimenté"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "This has got to be the greatest custom remastered map i've ever played in my opinion."
 person = "zombiedude9976"
-role = "Joueur passionné"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Instantly one of my favorite maps in a while, congrats on the release!"
 person = "astraxis"
-role = "Joueur & reviewer"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[galleries]]

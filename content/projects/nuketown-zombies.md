@@ -72,17 +72,17 @@ label = "Reconnaissance communautaire"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Chef de projet, Développeur principal"
+roles = ["Chef de projet", "Lead développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alexisloic21"
-role = "Scripter, Effets spéciaux"
+roles = ["Développeur", "Artiste VFX"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "communaute-modding"
-role = "Assets et feedback"
+roles = ["Assets", "QA Testeur"]
 fieldGroup = "contributors_group"
 
 [development_time]

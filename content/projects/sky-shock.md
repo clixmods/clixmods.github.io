@@ -120,32 +120,32 @@ fieldGroup = "youtube_singles_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-carouge"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xavier-gappe"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "oscar-durand"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "shaim-somsanith"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [widget_order]

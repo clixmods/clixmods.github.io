@@ -158,47 +158,47 @@ fieldGroup = "galleries_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Lead Développeur / Game Design / Level Design"
+roles = ["Lead développeur", "Game Designer", "Level Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-carouge"
-role = "Développeur / Level Design"
+roles = ["Développeur", "Level Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jeremy-ferreira"
-role = "Gameplay developer"
+roles = ["Développeur gameplay"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alix-granlin"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xavier-gappe"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "oscar-durandd"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "chloe-dumas"
-role = "Sound Designer"
+roles = ["Sound Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "landy-rakotomalala"
-role = "Sound Designer"
+roles = ["Sound Designer"]
 fieldGroup = "contributors_group"
 
 [[youtube_singles]]

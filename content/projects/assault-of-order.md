@@ -46,42 +46,42 @@ primary = false
 
 [[contributors]]
 person = "clement-garcia"
-role = "Développeur / Environnement builder / Lighting"
+roles = ["Développeur", "Level Designer", "Lighting"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "soundouss-khattabi"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "marion-abrial"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "ouzagua-nassim"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "shaim-somsanith"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-courtois"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "aymeric-ducarme"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "matthieu-osten"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [development_time]

@@ -71,47 +71,47 @@ fieldGroup = "youtube_singles_group"
 
 [[contributors]]
 person = "marion-abrial"
-role = "Auteur"
+roles = ["Game Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-carouge"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alix-granlin"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-vicini"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "viic"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xavier-gappe"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "matthieu-osten"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]

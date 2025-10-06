@@ -1,0 +1,43 @@
+{
+  "id": "role_contributor",
+  "title": "Rôles contributeurs",
+  "file": "data/role-contributor.json",
+  "fileType": "json",
+  "labelField": "name",
+  "schema": {
+    "title": "Rôle contributeur",
+    "type": "object",
+    "required": ["name", "category"],
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Nom du rôle"
+      },
+      "category": {
+        "type": "string",
+        "title": "Catégorie",
+        "enum": [
+          "Management",
+          "Development",
+          "Design",
+          "Art",
+          "Animation",
+          "Audio",
+          "Level Design",
+          "Assets",
+          "UI/UX",
+          "Support",
+          "QA",
+          "VFX",
+          "Tools",
+          "Community",
+          "Marketing"
+        ]
+      },
+      "icon": {
+        "type": "string",
+        "title": "Icône (emoji)"
+      }
+    }
+  }
+}

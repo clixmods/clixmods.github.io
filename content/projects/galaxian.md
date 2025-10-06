@@ -46,27 +46,27 @@ fieldGroup = "actions_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Lead développeur"
+roles = ["Lead développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "aymeric-ducarme"
-role = "Developper"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "victoria-vang"
-role = "Artist"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "benjamin-henck"
-role = "Artist"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "bruno-bracelli"
-role = "Artist"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [development_time]

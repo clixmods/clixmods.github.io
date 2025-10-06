@@ -32,17 +32,17 @@ status = "En production"
 
 [[contributors]]
 person = "francois-bertrand"
-role = "Chef de projet / Développeur"
+roles = ["Chef de projet", "Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "anthony-expert"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [ranking]

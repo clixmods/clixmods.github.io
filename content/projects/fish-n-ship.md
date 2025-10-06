@@ -42,87 +42,87 @@ fieldGroup = "youtube_singles_group"
 
 [[contributors]]
 person = "agathe-roux"
-role = "Project management, VFX Artist"
+roles = ["Gestion de projet", "Artiste VFX"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-vicini"
-role = "Project management, Developper"
+roles = ["Gestion de projet", "Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "gabriel-de-castro"
-role = "Developper"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "victoria-vang"
-role = "3D Artist"
+roles = ["Artiste 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lucas-michelat"
-role = "3D Artist"
+roles = ["Artiste 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alizee-corbin"
-role = "3D Artist"
+roles = ["Artiste 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "bruno-bracelli"
-role = "3D Artist"
+roles = ["Artiste 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "benjamin-henck"
-role = "3D Artist"
+roles = ["Artiste 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "oceane-escriva"
-role = "UI Artist"
+roles = ["UI/UX"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "soundouss-khattabi"
-role = "VFX Artist"
+roles = ["Artiste VFX"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "matthieu-osten"
-role = "Developper"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alexandre-boulet"
-role = "Sound Designer"
+roles = ["Sound Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "manille-brun"
-role = "Partial implication"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "loona-pelacuer"
-role = "Partial implication"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "sal-carles"
-role = "Partial implication"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "liam-cali"
-role = "Partial implication"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Assistance développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [widget_order]

@@ -55,107 +55,107 @@ label = "Ce mod a inspiré d'autres mods qui ont eu encore plus de succès."
 
 [[contributors]]
 person = "clement-garcia"
-role = "Project Leader / Scripting / Weapons port"
+roles = ["Chef de projet", "Développeur", "Assets"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alain"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jarik"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "robit"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "skyelord"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alexisloic21"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "dtzxporter"
-role = "Contributor"
+roles = ["Développeur outils"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "redspace200"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "harrybo21"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "diduknowipwn"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lilrobot"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "symbo"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "scobalula"
-role = "Contributor"
+roles = ["Développeur outils"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "thomascat"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "connor"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "emox"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "fusorf"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "sayen-raigin"
-role = "Contributor"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "doggydolls"
-role = "Verified Tester"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "pinny"
-role = "Verified Tester"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "afan"
-role = "Verified Tester"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[youtube_galleries]]

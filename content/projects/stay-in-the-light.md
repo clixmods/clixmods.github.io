@@ -88,32 +88,32 @@ fieldGroup = "youtube_galleries_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "aymeric-ducarme"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xalizc"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "chloe-dumas"
-role = "Sound Designer"
+roles = ["Sound Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "matthieu-osten"
-role = "Développeur / Trailer"
+roles = ["Développeur", "Vidéaste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
@@ -144,13 +144,13 @@ fieldGroup = "contributors_group"
 [[testimonials]]
 quote = "Damn, another #horror game in the dark ! #StayInTheLight"
 person = "siviovi"
-role = "Joueur Itch.io"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "cool game but to difficult for me lol"
 person = "nhojipooh"
-role = "Joueur Itch.io"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [widget_order]

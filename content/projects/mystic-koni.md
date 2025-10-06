@@ -28,47 +28,47 @@ fieldGroup = "actions_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Développeur / Game Designer"
+roles = ["Développeur", "Game Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "aymeric-ducarme"
-role = "Game Developer"
+roles = ["Développeur gameplay"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "mael-rey"
-role = "Game Designer/Level Designer"
+roles = ["Game Designer", "Level Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-role = "Graphic Artist"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xavier-gappe"
-role = "Graphic Artist"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alix-granlin"
-role = "Graphic Artist"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jennyfer-gardiennet"
-role = "Graphic Artist"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alexis-boisselet-chanel"
-role = "Sound Designer"
+roles = ["Sound Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "antoine-cahurel"
-role = "Music"
+roles = ["Musique"]
 fieldGroup = "contributors_group"
 
 [development_time]

@@ -33,32 +33,32 @@ primary = false
 
 [[contributors]]
 person = "clement-garcia"
-role = "Développeur / Game Design / Level Design"
+roles = ["Développeur", "Game Designer", "Level Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-vicini"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "benjamin-henck"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "loona-pelacuer"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "manille-brun"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "liam-cali"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [development_time]

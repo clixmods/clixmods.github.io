@@ -13,9 +13,20 @@
       "description": "Sélectionnez une personne existante"
     },
     {
-      "title": "Rôle dans le projet",
+      "title": "Rôles dans le projet",
+      "name": "roles",
+      "type": "dataFile",
+      "dataFileId": "role_contributor",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": true,
+      "description": "Sélectionnez un ou plusieurs rôles pour ce contributeur"
+    },
+    {
+      "title": "Rôle personnalisé (texte libre)",
       "name": "role",
-      "type": "string"
+      "type": "string",
+      "description": "Utilisez ce champ pour un rôle spécifique non listé, ou laissez vide si vous utilisez la liste de rôles ci-dessus"
     }
   ]
 }

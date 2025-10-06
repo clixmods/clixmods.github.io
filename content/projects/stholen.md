@@ -38,32 +38,32 @@ primary = false
 
 [[contributors]]
 person = "clement-garcia"
-role = "Développeur / Level Designer / Game Design"
+roles = ["Développeur", "Level Designer", "Game Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jeremy-ferreira"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "julia-boffin"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-courtois"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "manille-brun"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "loona-pelacuer"
-role = "Artiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[youtube_singles]]

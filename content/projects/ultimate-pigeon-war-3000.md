@@ -55,27 +55,27 @@ fieldGroup = "galleries_group"
 
 [[contributors]]
 person = "denis-becle"
-role = "Sound Designer"
+roles = ["Sound Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "julien-delaunay"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "aiden-herviou"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "agathe-roux"
-role = "Graphiste"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [widget_order]

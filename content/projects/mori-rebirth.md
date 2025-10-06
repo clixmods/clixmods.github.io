@@ -51,69 +51,69 @@ testimonials_size = "size-medium"
 [[testimonials]]
 quote = "very well made, super beautiful, everything works seamlessly. very talented crew behind this. i saw a lot of people complaining about the ee but i didnt think it was that bad.. at first lol. about halfway through it became so tedious i just gave up and quit. if i was playing in a group maybe it wouldn't have been so bad. its not even that each step is that bad, its just that it goes on foreverrrr. like damn. so many steps. anyway overall epic map just a bit too involved with the ee. overall excellent map 9.9/10"
 person = "lethalfed"
-role = "Joueur Steam"
+role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Great easter egg, wild bossfight and crazy weapons! W map! https://www.youtube.com/live/ri6Z_knXj6k"
 person = "spudgaming99"
-role = "Joueur & créateur de contenu"
+role = "Joueur"
 rating = 5
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "one of the best maps ever made"
 person = "sataviissataa"
-role = "Joueur passionné"
+role = "Joueur"
 rating = 5
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "EE for this map is pretty damn cool. Just finished it in 2 hours with a 3 man on the first attempt. Will say there were a few tough spots but the boss fight was very fun and chaotic. GG's to everyone that helped build this"
 person = "sensei-la-dew"
-role = "Joueur avancé"
+role = "Joueur"
 rating = 5
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Map is A1 quality. Easter egg can be less trial and error-y but it is damn near the classic treyarch quality. Anyone whos complaining about complex easter eggs are babies lmao W map, W buildables, W best weapon pack and wonder weapons, W challenge system, W map layout, W side EE. Huge W"
 person = "dankpression"
-role = "Joueur expérimenté"
+role = "Joueur"
 rating = 5
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Masterpiece. The step of the pressure plates remembered me of the good old well done treyarch easter eggs. The map in general feels very polished and definitely one of the top 3 best custom maps to date."
 person = "skipshg03"
-role = "Joueur passionné"
+role = "Joueur"
 rating = 5
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Absolutely brilliant map! The map flow is some of the best I have seen and is far better than the original Mori layout. The aesthetics of this map are on another level with the vibrance being just enough that it is not overwhelming but rather immersive. The gun play on this map is fantastic with the map default weapons being the black ops 4 weapons they are ported perfectly and do not feel underwhelming. Overall, I would have to say this map is worthy of being in my top 5 custom zombies maps of all time."
 person = "drsprinkletinkle"
-role = "Joueur & critique"
+role = "Joueur"
 rating = 5
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Best map I have ever played!"
 person = "creed"
-role = "Joueur passionné"
+role = "Joueur"
 rating = 5
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Here is our full easter egg playthrough: https://www.youtube.com/watch?v=rV2tJ7fNJcM&ab_channel=AscendedZombie Thank you for the incredible map!"
 person = "ascended-zombie"
-role = "Joueur & créateur de contenu"
+role = "Joueur"
 rating = 5
 fieldGroup = "testimonials_group"
 
 [[testimonials]]
 quote = "Fantastic remake and additions from the original. My friends and I managed to complete the easter egg awhile back, and this was our impressions and map completion: https://youtu.be/qOr1cVub5rY"
 person = "watchful-wolf"
-role = "Joueur & reviewer"
+role = "Joueur"
 rating = 5
 fieldGroup = "testimonials_group"
 
@@ -198,282 +198,282 @@ fieldGroup = "galleries_group"
 
 [[contributors]]
 person = "emox"
-role = "Project lead, Level designer, Developer"
+roles = ["Chef de projet", "Level Designer", "Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alexisloic21"
-role = "Lead scripting, Quests, Boss, Core systems"
+roles = ["Lead développeur", "Game Designer", "Développeur gameplay"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "robit"
-role = "Mapping, Weapons, HUD, Visuals, General support"
+roles = ["Level Designer", "Assets", "UI/UX", "Artiste", "Support technique"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-role = "Mapping, Game modes, XP systems"
+roles = ["Level Designer", "Développeur gameplay", "Systèmes de jeu"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xzoay"
-role = "Dr. Hale voice"
+roles = ["Voix-off"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "sphynx"
-role = "Items, Elemental table, Testing, Scripting support"
+roles = ["Assets", "Game Designer", "QA Testeur", "Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "symbo"
-role = "Plants, Traps, Scripting support"
+roles = ["Assets", "Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "nefariousdrh"
-role = "Weapon & item animations"
+roles = ["Animateur 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "raptroes"
-role = "Side quests, Scripting support"
+roles = ["Game Designer", "Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "gcpeinhardt"
-role = "Weapon ports, Re-Pack system"
+roles = ["Assets", "Systèmes de jeu"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "sayen-raigin"
-role = "Elemental weapon, Scripting support"
+roles = ["Assets", "Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "harrybo21"
-role = "Nova Crawlers, Perks, Powerups"
+roles = ["Assets", "Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "quentinftl"
-role = "Zone names, Scripting support"
+roles = ["UI/UX", "Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "planet"
-role = "Animation tools, Scripting support"
+roles = ["Développeur outils", "Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "serious-vertasea"
-role = "Scripting support"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "natesmithzombies"
-role = "Reference scripts"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "thomascat"
-role = "Perk animations, Rigging"
+roles = ["Animateur 3D", "Rigging"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "betiroval"
-role = "Electric Cherry model"
+roles = ["Artiste 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "titopricus"
-role = "Weapon models/animations"
+roles = ["Artiste 3D", "Animateur 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lilrobot"
-role = "Inspect script"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "madgaz"
-role = "T7 model packs"
+roles = ["Assets"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "frost-iceforge"
-role = "Zombie eye FX"
+roles = ["Artiste VFX"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "hitmanvere"
-role = "Puke Ray textures"
+roles = ["Texturing"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "zeroy"
-role = "WW2 packs, Testing, General support"
+roles = ["Assets", "QA Testeur", "Support technique"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "ardivee"
-role = "Testing, Tools, Mods"
+roles = ["QA Testeur", "Développeur outils", "Moddeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "divinefury"
-role = "Animations, Testing, Powerup models"
+roles = ["Animateur 3D", "QA Testeur", "Artiste 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "quietwolf"
-role = "Renders"
+roles = ["Artiste"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "apexmodder"
-role = "T8 barriers"
+roles = ["Assets"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "dark7x"
-role = "T8 Nebula camo"
+roles = ["Texturing"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jarik"
-role = "LUI decompiler"
+roles = ["Développeur outils"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lilrifa"
-role = "LUA help"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "noobforlunch"
-role = "LUA help"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "kingslayer"
-role = "LUA help"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "greendonut"
-role = "LUA help"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "mikeyray"
-role = "LUA help"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "the-d3v-team"
-role = "L3akMod"
+roles = ["Développeur outils"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "dtzxporter"
-role = "L3akMod"
+roles = ["Développeur outils"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "se2dev"
-role = "L3akMod"
+roles = ["Développeur outils"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "nukem"
-role = "L3akMod"
+roles = ["Développeur outils"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "scobalula"
-role = "Modding tools"
+roles = ["Développeur outils"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "dtzxporter"
-role = "ExportX"
+roles = ["Développeur outils"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "modme"
-role = "Community"
+roles = ["Communauté"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "t7mods"
-role = "Community"
+roles = ["Communauté"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "devraw"
-role = "Community"
+roles = ["Communauté"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "mod-tools-discord"
-role = "Community"
+roles = ["Communauté"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "swank"
-role = "Trailer, Testing"
+roles = ["Vidéaste", "QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "glitch"
-role = "Loading screen"
+roles = ["Artiste 2D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "retconner"
-role = "Loading screen artwork"
+roles = ["Artiste 2D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lebelge1989"
-role = "Testing"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "mickey"
-role = "Testing"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "pxl"
-role = "Testing"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "kenshin9977"
-role = "Testing"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "brutstone"
-role = "Testing"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "pistasooka19"
-role = "Testing"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "bigjoe"
-role = "Testing"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "muttern"
-role = "Testing"
+roles = ["QA Testeur"]
 fieldGroup = "contributors_group"
 
 [[youtube_singles]]

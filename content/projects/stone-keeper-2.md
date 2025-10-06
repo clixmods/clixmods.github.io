@@ -45,52 +45,52 @@ primary = false
 
 [[contributors]]
 person = "clement-garcia"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-role = "2D, 3D, Texturing & Lighting"
+roles = ["Artiste 2D", "Artiste 3D", "Texturing", "Lighting"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alix-granlin"
-role = "3D, Texturing & Lighting"
+roles = ["Artiste 3D", "Texturing", "Lighting"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "bruno-davila"
-role = "Enviro Artist 3D"
+roles = ["Artiste 3D"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xavier-gappe"
-role = "Enviro Artist 3D & Level Design"
+roles = ["Artiste 3D", "Level Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "oscar-durandd"
-role = "RIG Animator 3D"
+roles = ["Animateur 3D", "Rigging"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jeremy-ferreira"
-role = "Développeur & Tech Art"
+roles = ["Développeur", "Tech Art"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "dimitri-kapris"
-role = "Développeur"
+roles = ["Développeur"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-carouge"
-role = "Développeur & Level Design"
+roles = ["Développeur", "Level Designer"]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "chloe-dumas"
-role = "Sound Design & Musique"
+roles = ["Sound Designer", "Musique"]
 fieldGroup = "contributors_group"
 
 [[contributors]]

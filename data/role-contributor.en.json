@@ -1,0 +1,320 @@
+[
+  {
+    "name": "Project Manager",
+    "category": "Management",
+    "icon": "👑",
+    "weight": 100
+  },
+  {
+    "name": "Project Lead",
+    "category": "Management",
+    "icon": "👑",
+    "weight": 100
+  },
+  {
+    "name": "Lead Developer",
+    "category": "Development",
+    "icon": "💻",
+    "weight": 95
+  },
+  {
+    "name": "Developer",
+    "category": "Development",
+    "icon": "💻",
+    "weight": 70
+  },
+  {
+    "name": "Junior Developer",
+    "category": "Development",
+    "icon": "💻",
+    "weight": 60
+  },
+  {
+    "name": "Frontend Developer",
+    "category": "Development",
+    "icon": "�",
+    "weight": 65
+  },
+  {
+    "name": "Backend Developer",
+    "category": "Development",
+    "icon": "⚙️",
+    "weight": 65
+  },
+  {
+    "name": "Pair Programming",
+    "category": "Development",
+    "icon": "👥",
+    "weight": 70
+  },
+  {
+    "name": "Lead Scripting",
+    "category": "Development",
+    "icon": "📜",
+    "weight": 85
+  },
+  {
+    "name": "Gameplay Developer",
+    "category": "Development",
+    "icon": "🎮",
+    "weight": 75
+  },
+  {
+    "name": "Scripting Support",
+    "category": "Development",
+    "icon": "📜",
+    "weight": 50
+  },
+  {
+    "name": "Tech Art",
+    "category": "Development",
+    "icon": "🎨",
+    "weight": 80
+  },
+  {
+    "name": "Software Architect",
+    "category": "Development",
+    "icon": "🏗️",
+    "weight": 90
+  },
+  {
+    "name": "Developer Assistance",
+    "category": "Development",
+    "icon": "🤝",
+    "weight": 50
+  },
+  {
+    "name": "Level Designer",
+    "category": "Design",
+    "icon": "🗺️",
+    "weight": 70
+  },
+  {
+    "name": "Game Designer",
+    "category": "Design",
+    "icon": "🎮",
+    "weight": 75
+  },
+  {
+    "name": "Lead Designer",
+    "category": "Design",
+    "icon": "�",
+    "weight": 95
+  },
+  {
+    "name": "Narrative Designer",
+    "category": "Design",
+    "icon": "📖",
+    "weight": 70
+  },
+  {
+    "name": "Artist",
+    "category": "Art",
+    "icon": "🎨",
+    "weight": 60
+  },
+  {
+    "name": "2D Artist",
+    "category": "Art",
+    "icon": "🎨",
+    "weight": 65
+  },
+  {
+    "name": "3D Artist",
+    "category": "Art",
+    "icon": "🎨",
+    "weight": 65
+  },
+  {
+    "name": "UI Artist",
+    "category": "Art",
+    "icon": "🎨",
+    "weight": 65
+  },
+  {
+    "name": "VFX Artist",
+    "category": "Art",
+    "icon": "✨",
+    "weight": 70
+  },
+  {
+    "name": "3D Environment Artist",
+    "category": "Art",
+    "icon": "🌲",
+    "weight": 70
+  },
+  {
+    "name": "Art Director",
+    "category": "Art",
+    "icon": "�",
+    "weight": 95
+  },
+  {
+    "name": "Texturing",
+    "category": "Art",
+    "icon": "🎨",
+    "weight": 60
+  },
+  {
+    "name": "Lighting",
+    "category": "Art",
+    "icon": "💡",
+    "weight": 55
+  },
+  {
+    "name": "Visuals",
+    "category": "Art",
+    "icon": "👁️",
+    "weight": 50
+  },
+  {
+    "name": "Renders",
+    "category": "Art",
+    "icon": "�️",
+    "weight": 50
+  },
+  {
+    "name": "3D Animator",
+    "category": "Animation",
+    "icon": "🎬",
+    "weight": 65
+  },
+  {
+    "name": "Rigging",
+    "category": "Animation",
+    "icon": "🎬",
+    "weight": 60
+  },
+  {
+    "name": "Sound Designer",
+    "category": "Audio",
+    "icon": "🔊",
+    "weight": 65
+  },
+  {
+    "name": "Composer",
+    "category": "Audio",
+    "icon": "🎵",
+    "weight": 70
+  },
+  {
+    "name": "Music",
+    "category": "Audio",
+    "icon": "🎵",
+    "weight": 65
+  },
+  {
+    "name": "Voice Acting",
+    "category": "Audio",
+    "icon": "�",
+    "weight": 55
+  },
+  {
+    "name": "Mapping",
+    "category": "Level Design",
+    "icon": "🗺️",
+    "weight": 65
+  },
+  {
+    "name": "Assets",
+    "category": "Assets",
+    "icon": "�",
+    "weight": 55
+  },
+  {
+    "name": "HUD",
+    "category": "UI/UX",
+    "icon": "📊",
+    "weight": 60
+  },
+  {
+    "name": "General Support",
+    "category": "Support",
+    "icon": "🤝",
+    "weight": 40
+  },
+  {
+    "name": "Tester",
+    "category": "QA",
+    "icon": "🧪",
+    "weight": 35
+  },
+  {
+    "name": "Verified Tester",
+    "category": "QA",
+    "icon": "✅",
+    "weight": 40
+  },
+  {
+    "name": "Feedback",
+    "category": "QA",
+    "icon": "💬",
+    "weight": 30
+  },
+  {
+    "name": "Game Design",
+    "category": "Design",
+    "icon": "🎮",
+    "weight": 75
+  },
+  {
+    "name": "Game Systems",
+    "category": "Development",
+    "icon": "⚙️",
+    "weight": 70
+  },
+  {
+    "name": "Tools",
+    "category": "Tools",
+    "icon": "🛠️",
+    "weight": 55
+  },
+  {
+    "name": "Modding",
+    "category": "Tools",
+    "icon": "🔧",
+    "weight": 50
+  },
+  {
+    "name": "Video Creator",
+    "category": "Marketing",
+    "icon": "🎬",
+    "weight": 45
+  },
+  {
+    "name": "Creator",
+    "category": "Management",
+    "icon": "👑",
+    "weight": 100
+  },
+  {
+    "name": "Contributor",
+    "category": "Support",
+    "icon": "🤝",
+    "weight": 40
+  },
+  {
+    "name": "Project Management",
+    "category": "Management",
+    "icon": "📋",
+    "weight": 95
+  },
+  {
+    "name": "Partial Involvement",
+    "category": "Support",
+    "icon": "🤝",
+    "weight": 35
+  },
+  {
+    "name": "Technical Consultant",
+    "category": "Support",
+    "icon": "🤓",
+    "weight": 50
+  },
+  {
+    "name": "Player",
+    "category": "Community",
+    "icon": "🎮",
+    "weight": 10
+  }
+]
