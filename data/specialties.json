@@ -144,8 +144,31 @@
     "subtitle": "Architecture et maintenabilité du code"
   },
   {
-    "name": "Environment Modeling",
-    "displayedInPortfolio": false,
-    "subtitle": "3D Modeling"
+    "name": "Développement d'API",
+    "icon": "🔌",
+    "experience": 2,
+    "displayedInPortfolio": true,
+    "subtitle": "API REST et temps réel"
+  },
+  {
+    "name": "Architecture Logicielle",
+    "icon": "🏗️",
+    "experience": 3,
+    "displayedInPortfolio": true,
+    "subtitle": "Conception modulaire et scalable"
+  },
+  {
+    "name": "Temps Réel",
+    "icon": "⚡",
+    "experience": 2,
+    "displayedInPortfolio": true,
+    "subtitle": "Synchronisation et notifications"
+  },
+  {
+    "name": "Gestion de Fichiers",
+    "icon": "📁",
+    "experience": 3,
+    "displayedInPortfolio": true,
+    "subtitle": "Upload, traitement et métadonnées"
   }
 ]

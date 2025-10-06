@@ -13,17 +13,22 @@ featuredInCV = true
 fmContentType = "project-content-type"
 image = "/images/projects/my-game-showcase/artbook.webp"
 logo = "/images/projects/my-game-showcase/My Game Showcase.webp"
-frameworks_engines = [ "Blazor", "FastEndpoint", "SignalR", "Unity", ".NET" ]
+frameworks_engines = [ "Blazor", "FastEndpoint", "SignalR", "Unity", ".NET", "TagLib#" ]
 programming_languages = [ "C#", "HTML", "CSS", "JavaScript" ]
 specialties = [
   "Interface utilisateur",
   "Design Pattern et refactoring",
   "Développement Outils",
-  "Portage Console"
+  "Développement d'API",
+  "Architecture Logicielle",
+  "Temps Réel",
+  "Gestion de Fichiers",
+  "Portage Console",
+  "Optimisation Performance"
 ]
-soft_skills = [ "Résolution Problèmes" ]
+soft_skills = [ "Résolution Problèmes", "Communication", "Travail d'équipe" ]
 tools = [ "Azure", "Fork", "JetBrains", "ClickUp" ]
-status = "Terminé"
+status = "En production"
 
 [[contributors]]
 person = "francois-bertrand"
@@ -45,7 +50,6 @@ event_type = "Classement"
 suffix = "è"
 
 [widget_order]
-gallery = 30
 contributors = 10
 development_time = 20
 technical_specs = 40
@@ -59,78 +63,90 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+gallery = 30
 +++
 
 # My Game Showcase
 
 ## Description du projet
 
-Développement d'une application web innovante destinée aux studios de jeux vidéo et éditeurs, permettant de centraliser, structurer et valoriser leurs assets (images, musiques) sous forme d'artbooks numériques en quelques clics !
+> *"Transformez vos assets d'images et musiques de vos jeux vidéos à une application type artbook livrable en quelques minutes."* — Studio La Moutarde
 
-## Architecture & développement backend
+**My Game Showcase** est une **solution B2B** qui transforme des lots d'images et musiques en **applications vitrines prêtes à la soumission** sur **PS5, Xbox Series et Nintendo Switch**. Le tout, directement depuis une **plateforme web**, qui génère une **application** destinée aux utilisateurs finaux.
 
-### API moderne avec .NET 8
-- **Implémentation de l'API** en .NET 8 avec le framework FastEndpoint (MinimalAPI typées)
-- **Architecture robuste** avec séparation claire des responsabilités
-- **Performance optimisée** pour la gestion de gros volumes d'assets
+Développée pour les studios de jeux vidéo et éditeurs, cette application web permet de **centraliser, structurer et valoriser leurs assets** (images, musiques) sous forme d'**artbooks numériques** en quelques clics.
 
-### Synchronisation temps réel
-- **Implémentation de SignalR** pour la synchronisation en temps réel entre utilisateurs
-- **Collaboration live** sur les projets d'artbook
-- **Notifications instantanées** des modifications
+## Mes contributions
 
-### Gestion avancée des fichiers
-- **Upload intelligent** avec support de formats variés
-- **Gestion des métadonnées** automatique et manuelle
-- **Nettoyage automatique** des fichiers résiduels
-- **Traitement spécifique** selon le type d'asset et l'usage
+J'ai contribué à la **conception et au développement** de cette solution B2B, intervenant aussi bien sur l'**architecture backend** (API .NET 8, SignalR) que sur le **frontend Blazor** et les **fonctionnalités avancées** de génération d'applications.
 
-## Développement frontend
+### Implémentation de l'API backend
 
-### Interface Blazor moderne
-- **Développement de pages** sous Blazor avec composants réutilisables
-- **Composants d'édition** pour collections multimédia avancées
-- **Navigation fluide** et intuitive
-- **Upload de fichiers** avec preview et gestion d'erreurs
+- Implémentation de l'**API complète en .NET 8** avec FastEndpoint (MinimalAPI typées)
+- **Architecture modulaire** séparant les responsabilités (upload, traitement, export)
+- Gestion des **uploads de fichiers** volumineux avec validation côté serveur
+- **Édition de métadonnées audio** avec TagLib#
+- **Génération de PDF** dynamiques
 
-### Intégration backend
-- **Consommation d'API** sécurisée et optimisée
-- **Gestion d'état** client sophistiquée
-- **Interface responsive** adaptée à tous les écrans
+### Implémentation de SignalR pour synchronisation temps réel
 
-## Fonctionnalités avancées
+Les traitements longs (conversion, génération PDF) nécessitent un retour d'information instantané pour l'utilisateur et une synchronisation entre utilisateurs.
 
-### Génération automatique
-- **Création d'applications** automatique à partir des assets uploadés
-- **Templates personnalisables** selon les besoins du studio
-- **Export multi-format** (web, PDF, application standalone)
+**Solution technique** :
+- **Implémentation de SignalR** pour notifications bidirectionnelles
+- Mise à jour en temps réel de la progression des traitements (conversion audio/vidéo, génération d'exports)
+- **Synchronisation multi-utilisateurs** pour édition collaborative
 
-### Prévisualisation dynamique
-- **Build démo** en temps réel
-- **Aperçu instantané** des modifications
-- **Mode présentation** pour clients et partenaires
+**Impact** : Expérience utilisateur fluide avec feedback instantané sur les opérations longues.
 
-### Traitement intelligent
-- **Reconnaissance automatique** des types d'assets
-- **Optimisation** selon la destination (web, print, mobile)
-- **Compression intelligente** préservant la qualité
+### Gestion avancée des fichiers (upload, résiduels, nettoyage, métadonnées)
 
-## Technologies utilisées
+**Solution technique** :
+- **Système d'upload intelligent** avec validation et gestion des erreurs
+- Extraction automatique des **métadonnées**
+- **Nettoyage automatique** des fichiers résiduels et temporaires
+- Traitement spécifique par type d'asset avec support multi-formats
+- Gestion de la mémoire optimisée pour fichiers volumineux
 
-- **.NET 8** : Framework backend moderne
-- **Blazor** : Framework frontend interactif
-- **FastEndpoint** : API minimaliste et performante
-- **SignalR** : Communication temps réel
-- **C#** : Langage principal de développement
+**Impact** : Zéro saisie manuelle pour la majorité des assets, réduction drastique des erreurs.
 
-## Impact pour les studios
+### Développement frontend : pages et composants
 
-Cette plateforme révolutionne la façon dont les studios valorisent leurs créations :
-- **Gain de temps** considérable dans la création d'artbooks
-- **Standardisation** des processus de présentation
-- **Valorisation** professionnelle des assets
-- **Collaboration** facilitée entre équipes créatives
+**Solution technique** :
+- **Développement de pages sous le framework Blazor** pour l'administration des projets et artbooks
+- **Création de composants réutilisables** pour édition de collections multimédia
+- Composant d'**upload avec preview temps réel** et gestion des erreurs
+- **Navigation contextuelle** adaptée au workflow utilisateur
+- **Intégration de l'API backend** 
 
-## Résultats
+**Impact** : Interface professionnelle et accessible, réduisant le temps d'apprentissage.
 
-L'application permet aux studios de transformer leurs assets en présentations professionnelles en quelques clics, offrant une nouvelle façon de partager et commercialiser leurs créations artistiques.
+### Fonctionnalités avancées : génération automatique et prévisualisation
+
+**Solution technique** :
+- **Génération automatique d'applications** à partir des assets uploadés
+- System de **build démo en temps réel** pour prévisualisation dynamique
+- Support de **formats variés** avec traitement spécifique pour chaque usage
+- **Export multi-plateforme** (PS5, Xbox, Switch, PDF, ZIP)
+
+**Impact** : De l'upload des assets à l'application console livrée en quelques clics.
+
+### Architecture multi-clients et marque blanche
+
+**Problématique** : Concevoir une solution réutilisable pour plusieurs studios/éditeurs avec leurs propres identités visuelles.
+
+**Solution technique** :
+- Architecture **multi-tenant** avec isolation des données par client
+- Système de **branding dynamique** (logos, couleurs, thèmes personnalisables)
+
+### Conception orientée produit commercial
+
+**Solution technique** :
+- Conception avec logique de **produit réutilisable** et extensible
+- Documentation technique et guides d'intégration
+- Gestion des versions et rétrocompatibilité
+- Tests automatisés sur modules critiques
+
+## Conclusion
+
+**My Game Showcase** m'a permis de travailler au croisement produit/technique : rendre un outil utile, fiable et rapide pour des équipes sous pression en fin de production.
