@@ -118,5 +118,21 @@ fieldGroup = "contributors_group"
 person = "brudva"
 role = "Graphiste"
 fieldGroup = "contributors_group"
+
+[widget_order]
+contributors = 10
+development_time = 20
+gallery = 30
+technical_specs = 40
+specialties = 50
+soft_skills = 55
+tools = 60
+awards = 70
+testimonials = 80
+youtube_videos = 90
+clients = 100
+grade = 110
+downloads = 120
+ranking = 130
 +++
 

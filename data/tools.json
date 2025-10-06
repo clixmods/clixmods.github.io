@@ -169,5 +169,23 @@
     "iconPath": "images/technologies/Copilot.svg",
     "color": "#000000",
     "displayedInPortfolio": false
+  },
+  {
+    "name": "Radiant",
+    "category": "level_editor",
+    "description": "Level editor pour Black Ops 3, création de cartes et environnements",
+    "experience": 2,
+    "iconPath": "images/technologies/Radiant.svg",
+    "color": "#FF6B00",
+    "displayedInPortfolio": true
+  },
+  {
+    "name": "AutoDesk Maya",
+    "category": "3d_modeling",
+    "description": "Modélisation de props, animation et création d'assets 3D",
+    "experience": 2,
+    "iconPath": "images/technologies/AutoDesk-Maya.svg",
+    "color": "#00B4A5",
+    "displayedInPortfolio": true
   }
 ]

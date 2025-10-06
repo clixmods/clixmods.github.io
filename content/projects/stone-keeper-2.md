@@ -1,5 +1,5 @@
 +++
-date = "2025-07-24T14:00:00+02:00"
+date = "2025-07-24T12:00:00.000Z"
 draft = false
 title = "Stone Keeper 2"
 subtitle = "Projet Avancé - Suite de l'aventure épique"

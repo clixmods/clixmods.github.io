@@ -11,7 +11,7 @@
     {
       "title": "Nombre de téléchargements",
       "name": "downloads",
-      "type": "number",
+      "type": "string",
       "description": "Nombre de téléchargements sur cette plateforme"
     },
     {
