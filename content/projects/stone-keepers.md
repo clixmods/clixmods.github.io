@@ -1,5 +1,5 @@
 +++
-date = "2023-06-30T09:00:00+02:00"
+date = "2023-06-30T07:00:00.000Z"
 draft = false
 title = "The Lost City: Stone Keeper"
 subtitle = "PFA Deuxième Année - e-artsup"
@@ -15,7 +15,19 @@ status = "Terminé"
 image = "/images/projects/stone-keeper/stone-keeper-10 .jpg"
 frameworks_engines = [ "Unity" ]
 programming_languages = [ "C#" ]
-specialties = [ "Game Design", "Level Design", "Développement Outils" ]
+specialties = [
+  "Game Design",
+  "Level Design",
+  "Développement Outils",
+  "Développement Gameplay",
+  "Shaders",
+  "Architecture Logicielle",
+  "Optimisation Performance",
+  "Programmation orientée objet",
+  "Interface utilisateur",
+  "Gestion de versions avec Git",
+  "Maintenance & Débogage"
+]
 soft_skills = [
   "Leadership",
   "Gestion de Projet",
@@ -23,6 +35,7 @@ soft_skills = [
   "Vision/Visualisation",
   "Communication"
 ]
+tools = [ "Fork", "JetBrains", "Trello", "Discord", "Photoshop" ]
 
 [[actions]]
 type = "download"
@@ -65,6 +78,7 @@ end_date = "2023-06-29T22:00:00.000Z"
 [[galleries]]
 title = "Images promotionnelle"
 size = "size-medium"
+order = "1"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
@@ -110,8 +124,21 @@ fieldGroup = "galleries_group"
   url = "/images/projects/stone-keeper/stone-keeper-16.jpg"
 
 [[galleries]]
+title = "Concept Art"
+size = "size-medium"
+order = "60"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/stone-keeper/concept-art-golem.png"
+
+  [[galleries.images]]
+  url = "/images/projects/stone-keeper/concept-art-player.png"
+
+[[galleries]]
 title = "Photos"
 size = "size-medium"
+order = "70"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
@@ -128,17 +155,6 @@ fieldGroup = "galleries_group"
 
   [[galleries.images]]
   url = "/images/projects/stone-keeper/photo-mediatheque-4.jpg"
-
-[[galleries]]
-title = "Concept Art"
-size = "size-medium"
-fieldGroup = "galleries_group"
-
-  [[galleries.images]]
-  url = "/images/projects/stone-keeper/concept-art-golem.png"
-
-  [[galleries.images]]
-  url = "/images/projects/stone-keeper/concept-art-player.png"
 
 [[contributors]]
 person = "clement-garcia"
@@ -192,6 +208,7 @@ video_title = "Trailer de sortie"
 video_description = "Bande annonce de sortie du jeu"
 duration = "1:34"
 date = "30 juin 2023"
+order = "30"
 fieldGroup = "youtube_singles_group"
 
 [[youtube_singles]]
@@ -255,79 +272,80 @@ quote = "Le jeu a l’air incroyable… hâte qu’il sorte 🤯"
 person = "billalsaadallah7158"
 role = "Joueur"
 fieldGroup = "testimonials_group"
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
+
+[widget_order]
+contributors = 10
+development_time = 20
+gallery = 30
+technical_specs = 40
+specialties = 50
+soft_skills = 55
+tools = 60
+awards = 70
+testimonials = 80
+youtube_videos = 90
+clients = 100
+grade = 110
+downloads = 120
+ranking = 130
 +++
 
-# The Lost City: Stone Keepers
+# The Lost City: Stone Keeper
 
-## Description du projet
+> Plongez dans une aventure épique à travers les mystères de l'Atlantide. Inspiré par le style captivant de **Tunic**, ce titre transporte le joueur dans un monde fantastique rempli de merveilles et de dangers.  
+Explorez des ruines anciennes, affrontez des créatures mythiques et percez les secrets de la légendaire cité engloutie.
 
-Projet de fin d'année (PFA) réalisé en équipe durant ma deuxième année à e-artsup. Un jeu d'aventure captivant qui transporte le joueur dans les mystères de l'Atlantide perdue.
+## Un projet personnel devenu aventure collective
 
-## Concept et inspiration
+Stone Keeper est un projet qui me tient particulièrement à cœur — c'est un jeu que j'ai imaginé et voulu créer depuis longtemps.
+À l'origine, il s'agissait d'un concept personnel que j'ai proposé comme base de notre projet de fin d'année à E-artsup.
+Ce rêve s'est concrétisé grâce à une équipe motivée et passionnée, avec laquelle nous avons donné vie à cet univers en seulement deux mois de production intense.
 
-### Vision artistique
-Inspiré du style visuel et du gameplay de **Tunic**, notre jeu plonge les joueurs dans un monde fantastique rempli de merveilles anciennes et de secrets à découvrir.
+Ce projet représente pour moi bien plus qu'un simple exercice académique : c'est le premier jeu que j'ai vraiment porté, dirigé techniquement et façonné de bout en bout — de la vision initiale à la version jouable.
+Je garde une grande fierté du résultat final, à la fois pour la qualité atteinte et pour la cohésion humaine qui a accompagné sa création.
 
-### Univers narratif
-- **Cadre** : Les ruines mystérieuses de l'Atlantide
-- **Protagoniste** : Un gardien des pierres ancestrales
-- **Quête** : Restaurer l'équilibre magique de la cité perdue
+### Contexte
 
-## Gameplay et mécaniques
+Projet de fin d'année concluant ma deuxième année à **E-artsup**.  
+Durant 2 mois de production, j'ai assuré le développement technique, la coordination d'équipe et la structuration du projet.
 
-### Exploration
-- Monde ouvert avec ruines anciennes à explorer
-- Secrets cachés et passages secrets
-- Environnements variés : temples, jardins engloutis, palais royaux
 
-### Combat
-- Système de combat contre des créatures mythiques
-- Gardiens anciens et boss épiques
-- Magie élémentaire et armes ancestrales
+# Mes contributions
 
-### Résolution de mystères
-- Énigmes basées sur l'histoire de l'Atlantide
-- Mécaniques de puzzle intégrées à l'exploration
-- Découverte progressive de la lore du monde
+## Développement (Gameplay & Systèmes)
 
-## Développement en équipe
+- **Initialisation du projet** : architecture, modèle de fonctionnement, structuration UML  
+- **Caméra** : utilisation de *Cinemachine* pour une vue isométrique/perspective avec transitions dynamiques  
+- **Interface utilisateur** : barre de vie et d'endurance, menus (pause, titre, crédits)  
+- **Système de données persistantes** : sauvegarde et chargement des données du joueur  
+- **Système d'interaction** : objets interactifs avec comportements extensibles  
+- **Système de triggers** : architecture flexible utilisée dans le level design 
+- **Système de dégâts** : architecture extensible pour gérer les entités *damageable*  
+- **Système audio** : création d'un *Audio Alias System* facilitant la gestion et la réutilisation des sons  
+- **Systèmes de gameplay spécifiques** : *Heal Pool*, *Characteristic Upgrade*, phases de boss
 
-### Mon rôle
-- **Programmation gameplay** : Mécaniques de combat et d'exploration
-- **Intégration assets** : Liaison entre art et programmation
-- **Game design** : Conception des énigmes et du level design
+---
 
-### Collaboration
-- Équipe de 5 personnes (2 programmeurs, 2 artistes, 1 game designer)
-- Méthode agile avec sprints de 2 semaines
-- Prototypage rapide et itération continue
+## Tech Art & Shaders
 
-## Technologies utilisées
+- **Light Cookie Material** : shader de projection dynamique (scroll, mask, couleur)  
+- **Water Simulation** : shader de vagues basé sur Gerstner Waves, avec écume et paramètres avancés  
+- **Material Interactable Object** : shader pour objets interactifs avec effets visuels adaptatifs  
+- **Material Character** : shader URP étendu (effets de dégâts, invincibilité, vent, focus)  
+- **Post-Process Transition** : transitions visuelles dynamiques entre volumes via triggers  
 
-- **Unity 2022.3 LTS** : Moteur de jeu principal
-- **C#** : Programmation gameplay et outils
-- **Git** : Versioning et collaboration
-- **Trello** : Gestion de projet agile
+##  Game Design & Level Design
 
-## Réalisations techniques
+- Conception des **zones principales** : intro, HUB, donjon 1, donjon 2 (prototype), boss final  
+- Conception des mécaniques de gameplay et la cohérence de l'univers  
+- **Rédaction du Game Design Document** et définition des mécaniques clés  
 
-### Systèmes développés
-- Controller de personnage fluide avec animations
-- Système de combat avec combos et magie
-- AI basique pour les ennemis
-- Système de sauvegarde/chargement
+## Management & Méthodes agiles
 
-### Optimisations
-- Gestion de la mémoire pour les environnements larges
-- LOD system pour les modèles 3D
-- Occlusion culling pour les performances
-
-## Résultats et apprentissages
-
-Ce projet académique m'a permis de :
-- Développer mes compétences en travail d'équipe
-- Apprendre la gestion d'un projet game dev complet
-- Maîtriser Unity dans un contexte professionnel
-- Comprendre les enjeux de la production de jeux
-
-**The Lost City: Stone Keepers** représente ma première expérience complète de développement d'un jeu d'envergure, posant les bases de ma passion pour la création de mondes interactifs.
+- Mise en place d'une **organisation agile** : planification, gestion des sprints et suivi hebdomadaire  
+- Définition du **pipeline de production** (Trello, Git, Discord) et des standards d'intégration  
+- Suivi de la **qualité du projet** (correction de bugs, itérations rapides)
