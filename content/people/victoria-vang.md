@@ -1,7 +1,7 @@
 ﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
-title: "Victoria Vang"
+title: "Victoria VANG"
 id: "victoria-vang"
 avatar: ""
 position: ""
