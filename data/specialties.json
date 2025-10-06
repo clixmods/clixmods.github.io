@@ -16,6 +16,22 @@
     "subtitle": "Outils & conception"
   },
   {
+    "name": "Lighting",
+    "icon": "💡",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Éclairage et ambiance"
+  },
+  {
+    "name": "Environnement Building",
+    "icon": "🏗️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Construction d'environnements"
+  },
+  {
     "name": "Modding",
     "icon": "🔧",
     "iconPath": null,

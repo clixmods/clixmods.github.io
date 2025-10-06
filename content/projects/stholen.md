@@ -12,12 +12,17 @@ fmContentType = "project-content-type"
 logo = "/images/projects/stholen/stholen-logo.png"
 image = "/images/projects/stholen/stholen-background.jpg"
 status = "Terminé"
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Level Design", "Lighting" ]
+specialties = [
+  "Level Design",
+  "Lighting",
+  "Développement Gameplay",
+  "Game Design",
+  "Environnement Building"
+]
+tools = [ "GitHub", "Fork", "JetBrains", "Discord" ]
+soft_skills = [ "Communication", "Résolution Problèmes" ]
 
 [[actions]]
 type = "download"
@@ -67,11 +72,13 @@ video_id = "uXQj8HkRpG0"
 video_title = "Trailer"
 duration = "0:37"
 date = "15 décembre 2022"
+order = "1"
 fieldGroup = "youtube_singles_group"
 
 [[galleries]]
 title = "Gallerie"
 size = "size-medium"
+order = "99"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
@@ -108,6 +115,24 @@ fieldGroup = "galleries_group"
 
   [[galleries.images]]
   url = "/images/projects/stholen/stholen-level-7.jpg"
-+++
 
-# Stholen
+[ranking]
+event_type = "Classement"
+suffix = "è"
+
+[widget_order]
+contributors = 10
+development_time = 20
+gallery = 30
+awards = 70
+technical_specs = 20
+specialties = 50
+soft_skills = 55
+tools = 60
+testimonials = 80
+youtube_videos = 90
+grade = 110
+clients = 100
+downloads = 120
+ranking = 130
++++
