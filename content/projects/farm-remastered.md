@@ -59,128 +59,125 @@ testimonials_size = "size-medium"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Level Designer"]
-fieldGroup = "contributors_group"
-
-[[contributors]]
-person = "comunaute-bo3"
-roles = ["QA Testeur"]
-fieldGroup = "contributors_group"
-
-[[contributors]]
-person = "clement-garcia"
-roles = ["Level Designer", "Assets"]
+roles = [
+  "Level Designer",
+  "Chef de projet",
+  "Artiste environnement 3D",
+  "Mapping",
+  "Lighting",
+  "Texturing"
+]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "quentinftl"
-roles = ["Développeur", "Moddeur"]
+roles = [ "Développeur", "Moddeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "symbo"
-roles = ["Développeur", "Assets"]
+roles = [ "Développeur", "Assets" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "harrybo21"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "emox"
-roles = ["Assets", "Texturing"]
+roles = [ "Assets", "Texturing" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "the-bland-death"
-roles = ["Animateur 3D"]
+roles = [ "Animateur 3D" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "prorevenge"
-roles = ["Assets"]
+roles = [ "Assets" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alexisloic21"
-roles = ["Assets"]
+roles = [ "Assets" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "flowing"
-roles = ["Assets"]
+roles = [ "Assets" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "zeroy"
-roles = ["Assets"]
+roles = [ "Assets" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "blueshark"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "elijah"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "nosif28"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "skyler"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "shark-ut-ail"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "ragnar"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "gekido"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "enor"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "dfus1on"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "bghost314"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "pacito2"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "newman"
-roles = ["QA Testeur"]
+roles = [ "Testeur" ]
 fieldGroup = "contributors_group"
 
 [development_time]
 total = "1 mois"
-start_date = "Mars 2018"
-end_date = "Juin 2018"
+start_date = "2018-05-18T09:31:38.000Z"
+end_date = "2018-06-18T09:31:38.000Z"
 
 [[testimonials]]
 quote = "Great faithful recreation, fun with friends for sure! My video if anyone's interested https://youtu.be/V95-5AtGX7o"
@@ -237,8 +234,9 @@ role = "Joueur"
 fieldGroup = "testimonials_group"
 
 [[galleries]]
-title = "Gallerie de projet"
+title = "Galerie"
 size = "size-medium"
+order = "1"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
@@ -289,13 +287,30 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
+position = 105
+event = "Steam Workshop de Black Ops 3"
+total = 6_000
+
+[downloads]
+total = 172_513
+last_updated = "2025-10-07T09:40:29.518Z"
+
+  [[downloads.platforms]]
+  icon = "/images/icons/steam.svg"
+  name = "Steam"
+  downloads = "172513"
+  fieldGroup = "downloads_group"
 +++
 
 # FARM - Remasterisation
 
 ## Description du projet
 
-FARM est une remasterisation complète d'une carte classique pour Call of Duty: Black Ops 3 Steam. Ce projet de modding se concentre sur l'amélioration visuelle et technique d'un environnement existant, en utilisant les capacités modernes du moteur pour créer une expérience renouvelée.
+FARM est une remasterisation complète d'une carte zombie de Call Of Duty: Black Ops 2 pour Call of Duty: Black Ops 3. Ce projet de modding se concentre sur l'amélioration visuelle et technique d'un environnement existant, en utilisant les capacités modernes du moteur pour créer une expérience renouvelée.
 
 ## Level Building et construction
 
@@ -311,166 +326,19 @@ FARM est une remasterisation complète d'une carte classique pour Call of Duty: 
 - **Géométrie optimisée** pour le rendu
 - **Collision meshes** précis pour le gameplay
 
-### Environnement rural authentique
-- **Atmosphère fermière** fidèle au thème
-- **Structures agricoles** détaillées et réalistes
-- **Paysage naturel** intégré harmonieusement
-- **Props environnementaux** créant l'immersion
-
-## Éclairage et ambiance
-
-### Design d'éclairage atmosphérique
-- **Éclairage naturel** simulant différents moments
-- **Ambiance rurale** chaleureuse et accueillante
-- **Contrastes** créant de la profondeur visuelle
-- **Cohérence** avec le thème environnemental
-
-### Techniques d'éclairage avancées
-- **Lightmapping** haute qualité pour les surfaces statiques
-- **Éclairage dynamique** pour les éléments interactifs
-- **Shadows mapping** précis et optimisé
-- **Ambient lighting** créant l'ambiance générale
-
-### Effets lumineux spécialisés
-- **Rayons de soleil** filtrant à travers les structures
-- **Éclairage intérieur** chaleureux des bâtiments
-- **Reflets** sur les surfaces métalliques et l'eau
-- **Particules** illuminées pour l'atmosphère
-
 ## Recherche et développement
-
-### Étude de l'environnement rural
-- **Références photographiques** d'environnements fermiers
-- **Analyse** des matériaux et textures authentiques
-- **Compréhension** de l'éclairage naturel rural
-- **Inspiration** de fermes réelles pour l'authenticité
 
 ### Techniques de modding avancées
 - **Exploration** des possibilités du moteur BO3
 - **Expérimentation** avec les outils d'éclairage
 - **Optimisation** des performances sans sacrifier la qualité
-- **Innovation** dans l'utilisation des assets
 
-## Développement environnemental
+## Résultats
 
-### Création d'atmosphère
-- **Sons d'ambiance** ruraux et naturels
-- **Détails visuels** renforçant l'immersion
-- **Cohérence** thématique dans tous les éléments
-- **Storytelling** environnemental subtil
+FARM remasterisé a démontré ma capacité à moderniser et améliorer des environnements existants tout en respectant leur essence originale. Ce projet a renforcé ma compréhension des techniques d'éclairage avancées et de construction d'environnements 3D.
 
-### Assets et props
-- **Équipement agricole** authentique
-- **Végétation** naturelle et variée
-- **Structures** en bois et métal vieillies
-- **Éléments décoratifs** créant la vie
-
-## Effets visuels générés par ordinateur
-
-### Particules atmosphériques
-- **Poussière** en suspension dans les rayons de soleil
-- **Pollen** et particules végétales
-- **Vapeur** et effets de chaleur estivale
-- **Nuages** et effets météorologiques
-
-### Post-processing et filtres
-- **Color grading** pour l'ambiance rurale
-- **Bloom** subtil pour les sources lumineuses
-- **Depth of field** créant la profondeur
-- **Tone mapping** pour l'exposition réaliste
-
-## Développement technique
-
-### Optimisation des performances
-- **LOD** (Level of Detail) pour les objets distants
-- **Occlusion culling** pour masquer les éléments non-visibles
-- **Texture streaming** pour la gestion mémoire
-- **Batch rendering** pour réduire les draw calls
-
-### Compatibilité et stabilité
-- **Tests** sur différentes configurations matérielles
-- **Optimisation** pour maintenir 60 FPS constants
-- **Debugging** des problèmes de performance
-- **Validation** de la stabilité long terme
-
-## Langages et technologies
-
-### Outils de développement
-- **Call of Duty Mod Tools** : Suite d'outils principale
-- **Radiant** : Éditeur de niveaux spécialisé
-- **Asset Manager** : Gestion des ressources du jeu
-- **Lighting Tools** : Outils d'éclairage avancés
-- **Kronos** : DTZxPorter and Azsry
-- **Maya**
-- **Hydrax** : Uncle Scobalula
-- **Shader map**
-- **Wraith** : DTZxPorter
-
-### Langages de programmation
-- **Scripting** pour les événements et interactions
-- **Shader** programming pour les effets visuels
-- **Configuration** files pour les paramètres
-- **Asset** description languages
-
-## Recherche artistique
-
-### Direction esthétique
-- **Palette de couleurs** terre et naturelle
-- **Matériaux** authentiques et vieillis
-- **Proportions** réalistes et harmonieuses
-- **Style** cohérent avec l'univers du jeu
-
-### Influences créatives
-- **Architecture** rurale traditionnelle
-- **Paysages** agricoles américains
-- **Photographie** de fermes historiques
-- **Références** cinématographiques rurales
-
-## Effets lumineux générés par ordinateur
-
-### Simulation d'éclairage naturel
-- **Cycle jour/nuit** simulé par l'éclairage statique
-- **Température de couleur** variable selon les zones
-- **Intensité lumineuse** adaptée aux espaces
-- **Réflexions** et rebonds lumineux réalistes
-
-### Effets spéciaux lumineux
-- **Volumetric lighting** dans la poussière
-- **Caustics** sur les surfaces d'eau
-- **Subsurface scattering** pour la végétation
-- **HDR rendering** pour la dynamique étendue
-
-## Compétences développées
-
-Ce projet de remasterisation m'a permis d'acquérir :
-- **Maîtrise** des outils de level design professionnels
-- **Compréhension** approfondie de l'éclairage 3D
-- **Sensibilité** artistique pour les environnements
-- **Techniques** d'optimisation avancées
-- **Workflow** efficace pour les projets de modding
-
-## Apprentissages techniques
-
-### Sur l'éclairage
-- **Importance** de la cohérence lumineuse
-- **Impact** de l'éclairage sur l'ambiance
-- **Techniques** de baking et optimisation
-- **Équilibre** entre qualité et performance
-
-### Sur le level design
-- **Construction** méthodique d'environnements
-- **Attention** aux détails architecturaux
-- **Flow** et navigation intuitive
-- **Immersion** par l'authenticité
-
-## Résultats et impact
-
-FARM remasterisé a démontré ma capacité à moderniser et améliorer des environnements existants tout en respectant leur essence originale. Ce projet a renforcé ma compréhension des techniques d'éclairage avancées et de construction d'environnements immersifs.
-
-La carte a été bien accueillie par la communauté pour sa qualité visuelle et son attention aux détails, établissant ma réputation pour les environnements soignés et atmosphériques.
+La carte a été bien accueillie par la communauté pour sa qualité visuelle et son attention aux détails, établissant une première réputation.
 
 ## Remerciements
-
-Un grand merci à la communauté et à tous ceux qui ont contribué de près ou de loin à la réalisation de ce projet. Vos retours, tests et encouragements ont été précieux tout au long de ce processus.
 
 Un remerciement spécial à Treyarch pour avoir créé l'original, et à tous les moddeurs et artistes dont les outils et assets ont été essentiels pour donner vie à cette remasterisation.
