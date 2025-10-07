@@ -54,25 +54,25 @@ primary = false
 [[actions]]
 type = "switch"
 label = "Acheter sur Nintendo Switch eShop"
-url = "https://www.nintendo.fr/Jeux/Jeux-a-telecharger-sur-Nintendo-Switch/Terra-Memoria-2550952.html"
+url = "https://www.nintendo.com/fr-fr/Jeux/Jeux-a-telecharger-sur-Nintendo-Switch/Terra-Memoria-2544516.html"
 primary = false
 
 [[actions]]
 type = "xbox"
 label = "Acheter sur Xbox"
-url = "https://www.xbox.com/fr-FR/games/store/terra-memoria/9n8p7w7d6g7j"
+url = "https://www.xbox.com/fr-FR/games/store/terra-memoria/9NMZ4K5V7JPC"
 primary = false
 
 [[actions]]
 type = "playstation"
 label = "Acheter sur PlayStation Store"
-url = "https://store.playstation.com/fr-fr/concept/10008921"
+url = "https://store.playstation.com/fr-fr/concept/10008701"
 primary = false
 
 [[actions]]
 type = "epic"
 label = "Acheter sur Epic Games Store"
-url = "https://store.epicgames.com/p/terra-memoria"
+url = "https://store.epicgames.com/fr/p/terra-memoria-8b0a0e"
 primary = false
 
 [[notable_facts]]
@@ -216,67 +216,67 @@ fieldGroup = "youtube_galleries_group"
 
 [[contributors]]
 person = "francois-bertrand"
-roles = ["Game Director", "Développeur"]
+roles = [ "Game Director", "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "anthony-expert"
-roles = ["Directeur artistique", "Artiste 2D"]
+roles = [ "Directeur artistique", "Artiste 2D" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "yponeko"
-roles = ["Musique", "Sound Designer"]
+roles = [ "Musique", "Sound Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "elisa-beiram"
-roles = ["Narrative Designer"]
+roles = [ "Narrative Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "emerick-aussignac"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "elise-ramseier"
-roles = ["Artiste 3D", "UI/UX"]
+roles = [ "Artiste 3D", "UI/UX" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alicia-val"
-roles = ["Directeur artistique", "Artiste 2D", "Artiste 3D"]
+roles = [ "Directeur artistique", "Artiste 2D", "Artiste 3D" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "robin-nicolet"
-roles = ["Game Designer"]
+roles = [ "Game Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "guillaume-lauge"
-roles = ["Level Designer"]
+roles = [ "Level Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "vincent-muffato"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "simon-gosse"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "nolwenn-armand"
-roles = ["Artiste 3D"]
+roles = [ "Artiste 3D" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [ranking]
