@@ -12,12 +12,11 @@ fmContentType = "project-content-type"
 logo = "/images/projects/pigeon-war/pigeon-war-logo.png"
 image = "/images/projects/pigeon-war/pigeon-war-background.png"
 status = "Terminé"
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Pixel Art", "Sound Design" ]
+specialties = [ "Développement Gameplay" ]
+soft_skills = [ "Communication" ]
+tools = [ "GitHub", "JetBrains", "Discord" ]
 
 [[actions]]
 type = "download"
@@ -55,27 +54,27 @@ fieldGroup = "galleries_group"
 
 [[contributors]]
 person = "denis-becle"
-roles = ["Sound Designer"]
+roles = [ "Sound Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "julien-delaunay"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "aiden-herviou"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "agathe-roux"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [widget_order]
@@ -93,8 +92,8 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++
-
-# Ultimate Pigeon War 3000
-
-## Description du projet

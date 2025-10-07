@@ -6,18 +6,25 @@ subtitle = "Shoot'em up arcade - Itch.io Release"
 description = "Sky Shock est un shoot'em up arcade dynamique, disponible gratuitement sur itch.io. Défiez les vagues d'ennemis dans un univers rétro et coloré !"
 tags = [ "Arcade", "Shoot'em up", "Unity", "Itch.io", "Retro" ]
 category = "projects"
-sector = "games-personnel"
+sector = "games-gamejams"
 featured = false
 fmContentType = "project-content-type"
 logo = "/images/projects/sky-shock/skyshock-logo.png"
 image = "/images/projects/sky-shock/skyshock-2.jpg"
 status = "Terminé"
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Pixel Art", "Game Design" ]
+specialties = [
+  "Game Design",
+  "Level Design",
+  "Développement Gameplay",
+  "Interface utilisateur",
+  "Intégration Audio",
+  "Lighting",
+  "Shaders"
+]
+soft_skills = [ "Gestion de Projet", "Communication", "Résolution Problèmes" ]
+tools = [ "GitHub", "Fork", "JetBrains", "Discord" ]
 
 [[actions]]
 type = "download"
@@ -27,8 +34,8 @@ primary = true
 
 [[actions]]
 type = "youtube"
-label = "Voir trailer"
-url = "https://www.youtube.com/watch?v=PLACEHOLDER"
+label = "Voir gameplay"
+url = "https://youtu.be/_grRfFS_FtA"
 primary = false
 
 [development_time]
@@ -37,6 +44,7 @@ total = "10 jours"
 [[galleries]]
 title = "Images du jeu"
 size = "size-medium"
+order = "1"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
@@ -120,32 +128,32 @@ fieldGroup = "youtube_singles_group"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-carouge"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xavier-gappe"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "oscar-durand"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "shaim-somsanith"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [widget_order]
@@ -163,8 +171,8 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++
-
-# Sky Shock
-
-## Description du projet

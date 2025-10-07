@@ -186,5 +186,13 @@
     "experience": 3,
     "displayedInPortfolio": true,
     "subtitle": "Upload, traitement et métadonnées"
+  },
+  {
+    "name": "Intégration Audio",
+    "icon": "🎵",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 1,
+    "subtitle": "Effets sonores et ambiances"
   }
 ]

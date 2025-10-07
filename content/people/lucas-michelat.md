@@ -1,7 +1,7 @@
 ﻿---
 date: "2025-08-14T22:45:06.615Z"
 draft: false
-title: "Lucas Michelat"
+title: "Lucas MICHELAT"
 id: "lucas-michelat"
 avatar: ""
 position: ""

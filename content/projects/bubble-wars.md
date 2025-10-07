@@ -24,8 +24,14 @@ logo = "/images/projects/bubble-wars/bubble-wars-logo.png"
 galleries = [ ]
 frameworks_engines = [ "Unity" ]
 programming_languages = [ "C#", "HLSL" ]
-specialties = [ "Shaders" ]
+specialties = [
+  "Shaders",
+  "Développement Gameplay",
+  "Architecture Logicielle",
+  "Intégration Audio"
+]
 tools = [ "JetBrains", "Fork" ]
+soft_skills = [ "Communication", "Résolution Problèmes" ]
 
 [[actions]]
 type = "download"
@@ -52,6 +58,7 @@ size = "size-medium"
 video_id = "CQOXrE_DX2I"
 video_title = "Gameplay"
 duration = "2:12"
+order = "1"
 fieldGroup = "youtube_singles_group"
 
 [[youtube_singles]]
@@ -63,77 +70,77 @@ fieldGroup = "youtube_singles_group"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "gabriel-de-castro"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-vicini"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "dimitri-kapris"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "david-texeira"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jeremy-ferreira"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "agathe-roux"
-roles = ["Artiste"]
+roles = [ "Artiste", "Chef de projet" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "julia-boffin"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "aiden-herviou"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "benjamin-henck"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "liam-cali"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "manille-brun"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "oceane-escriva"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-courtois"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "shaim-somsanith"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [widget_order]
@@ -143,7 +150,7 @@ gallery = 30
 technical_specs = 40
 specialties = 50
 soft_skills = 55
-tools = 60
+tools = 120
 awards = 70
 testimonials = 80
 youtube_videos = 90
@@ -151,4 +158,8 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++

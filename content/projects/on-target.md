@@ -21,12 +21,11 @@ fmContentType = "project-content-type"
 status = "Terminé"
 image = "/images/projects/on-target/ontarget-2.jpeg"
 logo = "/images/projects/on-target/ontarget-banner.png"
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Game Design" ]
+specialties = [ "Développement Outils" ]
+tools = [ "Fork", "JetBrains" ]
+notable_facts = [ ]
 
 [[actions]]
 type = "download"
@@ -46,21 +45,15 @@ total = "1 mois"
 [[galleries]]
 title = "Images"
 size = "size-medium"
+order = "10"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
-  url = "/images/projects/on-target/ot-1.png"
+  fieldGroup = "gallery_group"
+  url = "/images/projects/on-target/ontarget-1.jpeg"
 
   [[galleries.images]]
-  url = "/images/projects/on-target/ot-2.png"
-
-  [[galleries.images]]
-  url = "/images/projects/on-target/ot-3.png"
-
-[[notable_facts]]
-value = "Inspiré d'Aimlab"
-label = "Un jeu pour améliorer vos compétences de tir"
-fieldGroup = "notable_facts_group"
+  url = "/images/projects/on-target/ontarget-2.jpeg"
 
 [[youtube_singles]]
 size = "size-medium"
@@ -71,47 +64,47 @@ fieldGroup = "youtube_singles_group"
 
 [[contributors]]
 person = "marion-abrial"
-roles = ["Game Designer"]
+roles = [ "Game Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-carouge"
-roles = ["Développeur"]
+roles = [ "Développeur", "Chef de projet", "Game Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alix-granlin"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-vicini"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "viic"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xavier-gappe"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "matthieu-osten"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
@@ -134,5 +127,8 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
-+++
 
+[ranking]
+event_type = "Classement"
+suffix = "è"
++++

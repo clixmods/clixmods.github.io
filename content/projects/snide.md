@@ -1,5 +1,5 @@
 +++
-date = "2022-03-15T10:00:00+02:00"
+date = "2022-04-08T07:00:00.000Z"
 draft = false
 title = "Snide"
 subtitle = "Projet expérimental - e-artsup"
@@ -12,12 +12,22 @@ fmContentType = "project-content-type"
 logo = "/images/projects/snide/snide-logo.jpg.png"
 image = "/images/projects/snide/snide-1.png"
 status = "Terminé"
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Level Design", "Game Design" ]
+specialties = [
+  "Level Design",
+  "Game Design",
+  "Lighting",
+  "Développement Gameplay",
+  "Interface utilisateur"
+]
+soft_skills = [
+  "Gestion de Projet",
+  "Leadership",
+  "Communication",
+  "Résolution Problèmes"
+]
+tools = [ "Fork", "Notion", "Discord", "GitHub", "JetBrains" ]
 
 [[actions]]
 type = "download"
@@ -33,39 +43,39 @@ primary = false
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur", "Game Designer", "Level Designer"]
+roles = [ "Développeur", "Game Designer", "Level Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-vicini"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "benjamin-henck"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "loona-pelacuer"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "manille-brun"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "liam-cali"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [development_time]
 total = "3 semaines"
 
 [[galleries]]
-title = "Gallerie du jeu"
+title = "Galerie du jeu"
 size = "size-medium"
 fieldGroup = "galleries_group"
 
@@ -108,6 +118,7 @@ size = "size-medium"
 video_id = "yuhqGHe_UKU"
 video_title = "SNIDE - Gameplay"
 duration = "4:20"
+order = "1"
 fieldGroup = "youtube_singles_group"
 
 [widget_order]
@@ -125,4 +136,8 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++

@@ -13,10 +13,11 @@ status = "Terminé"
 image = "/images/projects/fishnship/background.png"
 testimonials = [ ]
 frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
+programming_languages = [ "C#", "HLSL" ]
 specialties = [ "Shaders" ]
 soft_skills = [ "Résolution Problèmes" ]
 tools = [ "Fork", "JetBrains" ]
+logo = "/images/projects/fishnship/logo.png"
 
 [[actions]]
 type = "download"
@@ -38,91 +39,92 @@ video_id = "yAe60nYvsmI"
 video_title = '"Cœur de Ville en Lumières" (Montpellier) par les étudiants en Jeux Vidéo'
 duration = "6:32"
 date = "26 mars 2024"
+order = "1"
 fieldGroup = "youtube_singles_group"
 
 [[contributors]]
 person = "agathe-roux"
-roles = ["Gestion de projet", "Artiste VFX"]
+roles = [ "Gestion de projet", "Artiste VFX" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-vicini"
-roles = ["Gestion de projet", "Développeur"]
+roles = [ "Gestion de projet", "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "gabriel-de-castro"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "victoria-vang"
-roles = ["Artiste 3D"]
+roles = [ "Artiste 3D" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lucas-michelat"
-roles = ["Artiste 3D"]
+roles = [ "Artiste 3D" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alizee-corbin"
-roles = ["Artiste 3D"]
+roles = [ "Artiste 3D" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "bruno-bracelli"
-roles = ["Artiste 3D"]
+roles = [ "Artiste 3D" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "benjamin-henck"
-roles = ["Artiste 3D"]
+roles = [ "Artiste 3D" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "oceane-escriva"
-roles = ["UI/UX"]
+roles = [ "UI/UX" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "soundouss-khattabi"
-roles = ["Artiste VFX"]
+roles = [ "Artiste VFX" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "matthieu-osten"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alexandre-boulet"
-roles = ["Sound Designer"]
+roles = [ "Sound Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "manille-brun"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "loona-pelacuer"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "sal-carles"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "liam-cali"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur"]
+roles = [ "Support général" ]
 fieldGroup = "contributors_group"
 
 [widget_order]
@@ -140,38 +142,8 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++
-
-# Fish N Ship - Cœur de Ville en Lumière
-
-## Description du projet
-
-**Fish N Ship** est un jeu vidéo créé dans le cadre de l'événement "Cœur de Ville en Lumières" à Montpellier en novembre 2023, par les étudiants en Jeux Vidéo de e-artsup. Ce projet collaboratif a permis de mettre en avant la créativité et le savoir-faire des étudiants lors d'une manifestation culturelle majeure de la ville.
-
-## Contexte et organisation
-
-- **Événement** : Cœur de Ville en Lumières, Montpellier
-- **Date** : Novembre 2023
-- **École associée** : e-artsup, l’école de la passion créative
-- **Rôle** : Aide et assistance, conception et développement du jeu
-- **Collaboration** : Projet réalisé en équipe avec d'autres étudiants
-
-## Objectifs et expérience
-
-- Mettre en valeur le patrimoine de Montpellier à travers une expérience vidéoludique originale
-- Favoriser la collaboration et la créativité au sein d'une équipe pluridisciplinaire
-- Présenter le jeu au public lors de l'événement
-
-## Fonctionnalités principales
-
-- Gameplay accessible et immersif
-- Univers graphique inspiré par la ville de Montpellier
-- Défis et mécaniques adaptés à un public large
-
-## Remerciements
-
-Merci à e-artsup et à tous les contributeurs pour leur implication dans ce projet événementiel.
-
----
-
-**Fish N Ship** illustre l'engagement des étudiants de e-artsup dans la création de jeux vidéo innovants et leur capacité à valoriser la culture locale à travers le numérique.

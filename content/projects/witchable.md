@@ -11,12 +11,17 @@ featured = false
 fmContentType = "project-content-type"
 logo = "/images/projects/witchable/witchable-logo.png"
 image = "/images/projects/witchable/witchable-background.png"
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Game Design", "UI Design" ]
+specialties = [
+  "Game Design",
+  "Développement Gameplay",
+  "Interface utilisateur",
+  "Architecture Logicielle",
+  "Expérience utilisateur (UX)"
+]
+soft_skills = [ "Communication", "Résolution Problèmes" ]
+tools = [ "GitHub", "Fork", "JetBrains", "Discord" ]
 
 [[actions]]
 type = "download"
@@ -26,27 +31,27 @@ primary = true
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "gabriel-de-castro"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "julia-boffin"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "manille-brun"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "loona-pelacuer"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [development_time]
@@ -67,8 +72,8 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++
-
-# Witchable
-
-## Description du projet

@@ -11,12 +11,16 @@ featured = false
 fmContentType = "project-content-type"
 status = "Terminé"
 image = "/images/projects/demons-tower/dt-bg.webp"
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Game Design", "Pixel Art" ]
+specialties = [
+  "Lighting",
+  "Développement Gameplay",
+  "Interface utilisateur",
+  "Expérience utilisateur (UX)"
+]
+soft_skills = [ "Communication", "Résolution Problèmes" ]
+tools = [ "GitHub", "Fork", "Visual Studio", "Discord" ]
 
 [[actions]]
 type = "download"
@@ -51,36 +55,37 @@ size = "size-medium"
 video_id = "Ldk0INa8wS0"
 video_title = "Gameplay"
 duration = "4:23"
+order = "2"
 fieldGroup = "youtube_singles_group"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "dimitri-kapris"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jaubert-tom"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "benjamin-henck"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lucas-michelat"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "liam-cali"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [widget_order]
@@ -98,8 +103,8 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++
-
-# Demon's Tower
-
-## Description du projet

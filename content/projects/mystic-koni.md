@@ -12,12 +12,11 @@ fmContentType = "project-content-type"
 logo = "/images/projects/mystic-koni/mystic_koni_logo.png"
 image = "/images/projects/mystic-koni/mystic-koni-2.png"
 status = "Terminé"
-
 frameworks_engines = [ "Unity" ]
-
 programming_languages = [ "C#" ]
-
-specialties = [ "Game Design", "Puzzle Design" ]
+specialties = [ "Game Design", "Level Design", "Développement Gameplay" ]
+soft_skills = [ "Gestion de Projet", "Résolution Problèmes", "Communication" ]
+tools = [ "GitHub", "Fork", "JetBrains", "Discord" ]
 
 [[actions]]
 type = "download"
@@ -28,47 +27,47 @@ fieldGroup = "actions_group"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur", "Game Designer"]
+roles = [ "Développeur", "Game Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "aymeric-ducarme"
-roles = ["Développeur gameplay"]
+roles = [ "Développeur gameplay" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "mael-rey"
-roles = ["Game Designer", "Level Designer"]
+roles = [ "Game Designer", "Level Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xavier-gappe"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alix-granlin"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jennyfer-gardiennet"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alexis-boisselet-chanel"
-roles = ["Sound Designer"]
+roles = [ "Sound Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "antoine-cahurel"
-roles = ["Musique"]
+roles = [ "Musique" ]
 fieldGroup = "contributors_group"
 
 [development_time]
@@ -77,6 +76,7 @@ total = "2 Jours"
 [[galleries]]
 title = "Images du jeu"
 size = "size-medium"
+order = "1"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
@@ -116,6 +116,8 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
-+++
 
-# Mystic Koni
+[ranking]
+event_type = "Classement"
+suffix = "è"
++++

@@ -12,22 +12,37 @@ fmContentType = "project-content-type"
 image = "/images/projects/stay-in-the-light/stay-background.png"
 logo = "/images/projects/stay-in-the-light/stay-logo.png"
 status = "Terminé"
-
 frameworks_engines = [ "Unity" ]
-
-programming_languages = [ "C#" ]
-
-specialties = [ "Level Design", "Sound Design" ]
+programming_languages = [ "C#", "HLSL" ]
+specialties = [
+  "Level Design",
+  "Intégration Audio",
+  "Lighting",
+  "Environnement Building",
+  "Développement Gameplay",
+  "Shaders",
+  "Interface utilisateur",
+  "Expérience utilisateur (UX)"
+]
+soft_skills = [ "Communication", "Résolution Problèmes" ]
+tools = [ "GitHub", "Fork", "Notion", "JetBrains" ]
 
 [[actions]]
 type = "download"
 label = "Télécharger le jeu"
-url = "https://leahoa.itch.io/stay-in-the-light"
+url = "https://eartsup.itch.io/stay-ine-the-light"
 primary = true
+
+[[actions]]
+type = "youtube"
+label = "Voir trailer"
+url = "https://youtu.be/ocflDWHgnz4"
+fieldGroup = "actions_group"
 
 [[galleries]]
 title = "Gallerie"
 size = "size-large"
+order = "99"
 fieldGroup = "galleries_group"
 
   [[galleries.images]]
@@ -88,32 +103,32 @@ fieldGroup = "youtube_galleries_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-roles = ["Artiste"]
+roles = [ "Artiste", "Chef de projet" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "aymeric-ducarme"
-roles = ["Développeur"]
+roles = [ "Développeur", "Chef de projet" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xalizc"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "chloe-dumas"
-roles = ["Sound Designer"]
+roles = [ "Sound Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "matthieu-osten"
-roles = ["Développeur", "Vidéaste"]
+roles = [ "Développeur", "Vidéaste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
@@ -141,18 +156,6 @@ person = "nilleee"
 role = "Artiste"
 fieldGroup = "contributors_group"
 
-[[testimonials]]
-quote = "Damn, another #horror game in the dark ! #StayInTheLight"
-person = "siviovi"
-role = "Joueur"
-fieldGroup = "testimonials_group"
-
-[[testimonials]]
-quote = "cool game but to difficult for me lol"
-person = "nhojipooh"
-role = "Joueur"
-fieldGroup = "testimonials_group"
-
 [widget_order]
 contributors = 10
 development_time = 20
@@ -168,8 +171,56 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
+
+[[testimonials]]
+quote = "Damn, another #horror game in the dark ! #StayInTheLight"
+person = "siviovi"
+role = "Joueur"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "cool game but to difficult for me lol"
+person = "nhojipooh"
+role = "Joueur"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Very cool game! That one jumpscare got me good!"
+person = "tyverzion"
+role = "Joueur"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "i really hope you guys make more. It was so short and i was just getting into it lol. Intense all the way through and I'm looking to what's next from you. Good job !"
+person = "mrdreaming"
+role = "Joueur"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Pretty good short horror game looking forward to play more of your games"
+person = "palaros"
+role = "Joueur"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Pretty unnerving game! I almost got caught a few times, but I somehow managed to survive! Really enjoyed it though! Great job!"
+person = "rashemon"
+role = "Joueur"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Haha! I enjoyed your game!"
+person = "yacchu"
+role = "Joueur"
+fieldGroup = "testimonials_group"
+
+[[testimonials]]
+quote = "Good game!"
+person = "evapilot03"
+role = "Joueur"
+fieldGroup = "testimonials_group"
 +++
-
-# Stay In The Light
-
-## Description du projet
