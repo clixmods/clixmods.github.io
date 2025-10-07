@@ -1,20 +1,33 @@
 +++
-date = "2021-08-15T10:00:00+02:00"
+date = "2021-08-18T10:00:00+02:00"
 draft = false
 title = "Zombies Experience"
 subtitle = "Mod avancé pour Black Ops 3 Steam"
 description = "Modification complète étendant Call of Duty Black Ops 3 avec nouvelles fonctionnalités multijoueur"
 tags = [ "Modding", "C++", "Discord Integration", "Multiplayer" ]
 programming_languages = [ "LUA", "C++", "GSC" ]
-specialties = [ "Modding" ]
+specialties = [
+  "Modding",
+  "Game Design",
+  "Expérience utilisateur (UX)",
+  "Développement Gameplay",
+  "Interface utilisateur",
+  "Optimisation Performance"
+]
 category = "projects"
 sector = "mods"
 featured = true
 fmContentType = "project-content-type"
 image = "/images/projects/zombies-experience/téléchargement.jpg"
 logo = "/images/projects/zombies-experience/ze-logo.png"
-soft_skills = [ "Management Communauté", "Résolution Problèmes" ]
+soft_skills = [
+  "Management Communauté",
+  "Résolution Problèmes",
+  "Gestion de Projet",
+  "Communication"
+]
 frameworks_engines = [ "Black Ops III engine" ]
+tools = [ "Visual Studio", "Visual Studio Code", "Photoshop" ]
 
 [[actions]]
 type = "steam"
@@ -55,107 +68,107 @@ label = "Ce mod a inspiré d'autres mods qui ont eu encore plus de succès."
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Chef de projet", "Développeur", "Assets"]
+roles = [ "Chef de projet", "Développeur", "Assets" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alain"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jarik"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "robit"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "skyelord"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alexisloic21"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "dtzxporter"
-roles = ["Développeur outils"]
+roles = [ "Développeur outils" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "redspace200"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "harrybo21"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "diduknowipwn"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lilrobot"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "symbo"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "scobalula"
-roles = ["Développeur outils"]
+roles = [ "Développeur outils" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "thomascat"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "connor"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "emox"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "fusorf"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "sayen-raigin"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "doggydolls"
-roles = ["QA Testeur"]
+roles = [ "QA Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "pinny"
-roles = ["QA Testeur"]
+roles = [ "QA Testeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "afan"
-roles = ["QA Testeur"]
+roles = [ "QA Testeur" ]
 fieldGroup = "contributors_group"
 
 [[youtube_galleries]]
@@ -171,7 +184,7 @@ fieldGroup = "youtube_galleries_group"
   [[youtube_galleries.videos]]
   video_id = "qaqE_0rR0hU"
   title = """
-\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
+\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
 8 Players on Nacht Der Untoten is a NIGHTMARE!"""
   fieldGroup = "youtube_videos_group"
 
@@ -265,15 +278,83 @@ testimonials = 80
 youtube_videos = 90
 clients = 100
 grade = 110
-downloads = 120
+downloads = 85
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
+position = 120
+event = "Steam Workshop de Black Ops 3"
+total = 6_000
+
+[development_time]
+total = "1 an"
+start_date = "2020-09-01T09:49:25.000Z"
+end_date = "2021-11-25T10:49:25.000Z"
+
+[downloads]
+total = 279_253
+last_updated = "2025-10-07T09:53:33.177Z"
+
+  [[downloads.platforms]]
+  name = "Lite édition (Steam Workshop)"
+  downloads = "151211"
+  fieldGroup = "downloads_group"
+  icon = "/images/icons/steam.svg"
+
+  [[downloads.platforms]]
+  name = "Complete édition (Steam Workshop)"
+  downloads = "128042"
+  fieldGroup = "downloads_group"
+  icon = "/images/icons/steam.svg"
+
+[[galleries]]
+title = "Galerie"
+size = "size-medium"
+order = "90"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement.jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (2).jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (3).jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (4).jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (5).jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (6).jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (7).jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (9).jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (10).jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (11).jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (12).jpg"
+
+  [[galleries.images]]
+  url = "/images/projects/zombies-experience/téléchargement (13).jpg"
 +++
 
 # Zombies Experience
 
-## Description du projet
-
-Zombies Experience est un mod complet pour Call of Duty: Black Ops 3 Steam qui transforme l'expérience de jeu multijoueur. Ce projet ambitieux étend considérablement les capacités du jeu original en ajoutant de nouvelles fonctionnalités techniques et sociales.
+Zombies Experience est un mod pour Call of Duty: Black Ops 3 qui transforme l'expérience de jeu. Ce projet ambitieux étend considérablement les capacités du jeu original en ajoutant de nouvelles fonctionnalités.
 
 ## Fonctionnalités principales
 
@@ -287,23 +368,16 @@ Zombies Experience est un mod complet pour Call of Duty: Black Ops 3 Steam qui t
 - **Nouveaux modes** de jeu créés spécifiquement pour 8 joueurs
 - **Variantes** des modes classiques adaptées
 - **Équilibrage** des mécaniques pour les groupes plus larges
-- **Progression** et récompenses ajustées
 
 ## Intégrations techniques avancées
 
 ### Discord Rich Presence
-- **Intégration native** avec l'API Discord
+- **Intégration via un wrapper**
 - **Affichage temps réel** du statut de jeu
 - **Informations détaillées** : carte, mode, joueurs
-- **Invitations** directes depuis Discord
+- **Invitations** directes des parties depuis Discord
 
-### Système de playlist serveur
-- **Synchronisation automatique** des cartes depuis un serveur
-- **Mise à jour dynamique** des rotations de cartes
-- **Gestion centralisée** du contenu
-- **Téléchargement automatique** des nouvelles cartes
-
-### Kits d'armes multi-générations
+### Kits d'armes
 - **Arsenal étendu** avec armes de différents Black Ops
 - **Personnalisation** par joueur du kit d'armes
 - **Équilibrage** entre les différentes générations
@@ -314,20 +388,6 @@ Zombies Experience est un mod complet pour Call of Duty: Black Ops 3 Steam qui t
 ### Programmation C++ avancée
 - **Modification du code source** du jeu
 - **Injection de code** et hooks système
-- **Gestion mémoire** avancée pour les nouvelles fonctionnalités
-- **Optimisation** des performances critiques
-
-### Architecture modulaire
-- **Système de plugins** pour les fonctionnalités
-- **API interne** pour l'extensibilité
-- **Configuration** flexible et paramétrable
-- **Compatibilité** avec d'autres mods
-
-### Networking et synchronisation
-- **Protocoles réseau** étendus pour 8 joueurs
-- **Synchronisation** des données de jeu complexes
-- **Gestion des déconnexions** et reconnexions
-- **Anti-cheat** intégré pour maintenir l'équité
 
 ## Recherche et développement
 
@@ -335,72 +395,26 @@ Zombies Experience est un mod complet pour Call of Duty: Black Ops 3 Steam qui t
 - **Analyse** approfondie du moteur Black Ops 3
 - **Compréhension** des systèmes internes
 - **Identification** des points d'extension
-- **Documentation** des découvertes
 
 ### Innovation technique
 - **Solutions créatives** aux limitations du moteur
 - **Contournement** des restrictions multijoueur
-- **Optimisations** non-évidentes
 - **Stabilité** dans des conditions non-prévues
-
-## Intégration API Discord
-
-### Rich Presence avancée
-- **État détaillé** du jeu en temps réel
-- **Métadonnées** riches (carte, round, joueurs)
-- **Temps de jeu** et progression
-- **Images** et icônes contextuelles
-
-### Fonctionnalités sociales
-- **Invitations de partie** directes
-- **Statut d'activité** partagé
-- **Intégration** avec les serveurs Discord
-- **Notifications** d'événements de jeu
 
 ## Gestion de contenu
 
-### Système de cartes dynamique
-- **Serveur central** de distribution
-- **API REST** pour la gestion du contenu
-- **Versionning** des cartes et mods
-- **Rollback** automatique en cas de problème
-
-### Base de données de contenu
-- **Métadonnées** des cartes et modes
-- **Ratings** et statistiques communautaires
-- **Système de tags** pour la découverte
-- **Modération** du contenu
+### Système de playlist de cartes dynamique
+- **Affichage en temps réel** des cartes compatibles avec le mod directement en jeu
 
 ## Impact communautaire
 
 ### Adoption et usage
 - **Communauté active** de joueurs réguliers
-- **Serveurs dédiés** utilisant le mod
-- **Événements communautaires** organisés
+- **Serveurs dédiés** utilisant le mod avec plus de 2000 joueur à son pic.
 - **Feedback continu** pour l'amélioration
 
-### Contributions open source
-- **Documentation** pour autres moddeurs
-- **Outils** partagés avec la communauté
+### Contributions 
 - **Support** pour projets dérivés
-- **Mentorat** de nouveaux moddeurs
-
-## Technologies utilisées
-
-- **C++** : Programmation système et modifications moteur
-- **Discord API** : Intégration Rich Presence
-- **HTTP/REST** : Communication serveur pour playlists
-- **Windows API** : Intégration système profonde
-- **Git** : Versioning du projet complexe
-
-## Compétences développées
-
-Ce projet m'a permis de maîtriser :
-- **Reverse engineering** de logiciels complexes
-- **Programmation système** de bas niveau
-- **Intégration d'APIs** externes
-- **Gestion de projet** technique long terme
-- **Développement communautaire**
 
 ## Défis techniques surmontés
 
@@ -408,16 +422,12 @@ Ce projet m'a permis de maîtriser :
 - **Contournement** des limites 4 joueurs hardcodées
 - **Stabilisation** du networking étendu
 - **Maintien** des performances originales
-- **Compatibilité** avec les mises à jour officielles
-
-### Intégration externe
-- **API Discord** non-documentée pour les jeux
-- **Synchronisation** serveur-client robuste
-- **Gestion** des erreurs réseau
-- **Sécurité** des communications
+- **Compatibilité** avec les contenues originaux et personnalisé de la communauté
 
 ## Résultats et reconnaissance
 
-Zombies Experience a transformé l'expérience Black Ops 3 pour des milliers de joueurs, démontrant une expertise technique avancée en modding et développement système, ainsi qu'une capacité à créer des solutions innovantes aux limitations techniques existantes.
+Zombies Experience a transformé l'expérience Black Ops 3 pour des milliers de joueurs, démontrant une maîtrise technique en modding et développement, ainsi qu'une capacité à créer des solutions innovantes aux limitations techniques existantes.
 
-Le projet continue d'évoluer avec des mises à jour régulières et reste une référence dans la communauté du modding Black Ops 3.
+### Influence sur la communauté
+Ce projet a servi d'inspiration et de fondation technique pour d'autres mods majeurs de la communauté Black Ops 3, dont certains ont connu un succès encore plus important. Les techniques de modification du moteur et d'extension multijoueur développées pour Zombies Experience ont établi de nouveaux standards pour le modding avancé dans la communauté.
+

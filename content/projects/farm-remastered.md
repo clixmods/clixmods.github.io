@@ -12,9 +12,21 @@ fmContentType = "project-content-type"
 image = "/images/projects/farm/farm-background.jpg"
 status = "Terminé"
 youtube_galleries = [ ]
-specialties = [ "Level Design", "Lighting", "3D Modeling", "Texturing" ]
+specialties = [
+  "Level Design",
+  "Lighting",
+  "Environnement Building",
+  "Modding"
+]
 frameworks_engines = [ "Black Ops III engine" ]
 programming_languages = [ "GSC" ]
+soft_skills = [ "Gestion de Projet" ]
+tools = [
+  "Visual Studio Code",
+  "Sublime Text",
+  "AutoDesk Maya",
+  "Radiant"
+]
 
 [[actions]]
 type = "steam"
