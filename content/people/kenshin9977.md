@@ -1,12 +1,12 @@
-﻿---
-date: "2025-08-14T22:45:06.615Z"
+---
+date: "2025-10-07T12:00:00.000Z"
 draft: false
-title: "Communauté modding"
-id: "communaute-modding"
+title: "Kenshin9977"
+id: "kenshin9977"
 avatar: ""
 position: ""
 company: ""
-bio: "Profil de Communauté modding"
+bio: "Profil de Kenshin9977"
 email: ""
 linkedin: ""
 github: ""

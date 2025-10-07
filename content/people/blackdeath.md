@@ -1,12 +1,12 @@
-﻿---
-date: "2025-08-14T22:45:06.615Z"
+---
+date: "2025-10-06T12:00:00.000Z"
 draft: false
-title: "Communauté modding"
-id: "communaute-modding"
+title: "BLackDeath"
+id: "blackdeath"
 avatar: ""
 position: ""
 company: ""
-bio: "Profil de Communauté modding"
+bio: "Profil de BLackDeath"
 email: ""
 linkedin: ""
 github: ""

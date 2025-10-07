@@ -1,12 +1,12 @@
-﻿---
-date: "2025-08-14T22:45:06.615Z"
+---
+date: "2025-10-06T12:00:00.000Z"
 draft: false
-title: "Communauté modding"
-id: "communaute-modding"
+title: "Symbiote"
+id: "symbiote"
 avatar: ""
 position: ""
 company: ""
-bio: "Profil de Communauté modding"
+bio: "Profil de Symbiote"
 email: ""
 linkedin: ""
 github: ""
