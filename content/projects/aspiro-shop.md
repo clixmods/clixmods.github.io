@@ -10,7 +10,22 @@ sector = "appsweb-etude"
 featured = true
 fmContentType = "project-content-type"
 programming_languages = [ "PHP", "MySQL", "JavaScript", "HTML", "CSS" ]
-soft_skills = [ "Gestion de Projet" ]
+soft_skills = [
+  "Gestion de Projet",
+  "Communication",
+  "Résolution Problèmes",
+  "Leadership"
+]
+specialties = [
+  "Programmation orientée objet",
+  "Architecture Logicielle",
+  "Sécurité et optimisation",
+  "Gestion de versions avec Git",
+  "Design Pattern et refactoring",
+  "Développement d'API"
+]
+tools = [ "GitLab", "JetBrains", "Fork" ]
+image = "/images/projects/aspiro-shop/preview.jpeg"
 
 [widget_order]
 contributors = 10
@@ -31,128 +46,96 @@ ranking = 130
 [ranking]
 event_type = "Classement"
 suffix = "è"
+
+[[actions]]
+type = "github"
+label = "Voir github"
+url = "https://github.com/clixmods/archive-aspiro-shop"
+fieldGroup = "actions_group"
+
+[[galleries]]
+title = "Aperçu"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  url = "/images/projects/aspiro-shop/preview.jpeg"
+
+[[contributors]]
+person = "clement-garcia"
+roles = [ "Développeur" ]
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "baptiste-lespinasse"
+roles = [ "Développeur" ]
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "quentin-grelier"
+roles = [ "Développeur" ]
+fieldGroup = "contributors_group"
 +++
 
-# Aspiro Shop - Site e-commerce PHP
+## Présentation
 
-## Description du projet
+Développement d'un site de vente en ligne dans le cadre d'un projet d'étude à l'IUT Montpellier-Sète, servant de synthèse à notre apprentissage du développement web orienté PHP. L'objectif : proposer une plateforme complète, sécurisée et fonctionnelle, selon une architecture MVC rigoureuse.
 
-Développement d'un site de vente en ligne complet dans le cadre d'un projet d'étude à l'IUT Montpellier-Sète. Ce projet sert de synthèse à notre apprentissage du développement web orienté PHP, avec pour objectif de proposer une plateforme e-commerce complète, sécurisée et fonctionnelle selon une architecture MVC rigoureuse.
+## Mes contributions
 
-## Développement front & back
+### Interface utilisateur
+- Création d'une interface utilisateur fluide et sécurisée avec formulaires validés
+- Conformité HTML/CSS et respect des standards web
+- Système d'inscription et d'authentification par e-mail
 
-### Interface utilisateur moderne
-- **Interface fluide et sécurisée** avec design responsive
-- **Formulaires avancés** avec validation côté client et serveur
-- **Inscription par e-mail** avec confirmation et activation
-- **Navigation intuitive** et expérience utilisateur optimisée
+### Gestion des sessions
+- Implémentation d'un système complet de sessions utilisateurs
+- Séparation claire entre l'interface front-end et le back
+- Gestion des permissions et des rôles utilisateurs
 
-### Système de sessions avancé
-- **Gestion complète des sessions** utilisateurs
-- **Séparation front/back** avec contrôles d'accès
-- **Persistance des données** entre les sessions
-- **Sécurisation** des données sensibles
-
-### Opérations CRUD complètes
-- **Mise en œuvre des opérations CRUD** avec PDO
-- **Respect des bonnes pratiques MVC** strictes
-- **Validation des données** à tous les niveaux
-- **Gestion des erreurs** robuste
+### Opérations CRUD
+- Mise en œuvre des opérations CRUD avec PDO
+- Respect strict des bonnes pratiques de l'architecture MVC
+- Séparation des responsabilités entre modèles, vues et contrôleurs
 
 ## Architecture & sécurité
 
-### Architecture MVC rigoureuse
-- **Chargement automatique** des classes avec autoloader PSR-4
-- **Gestion dynamique des routes** avec URLs relatives
-- **Séparation stricte** des responsabilités MVC
-- **Configuration centralisée** et modulaire
+### Architecture modulaire
+- Chargement automatique des classes (autoloading)
+- Gestion dynamique des routes avec URLs relatives
+- Structure de dossiers claire et maintenable
 
-### Sécurisation avancée
-- **Échappement systématique** des données d'affichage
-- **Validation et filtrage** des entrées utilisateur
-- **Contrôle d'accès** granulaire par rôle
-- **Protection contre les attaques** courantes (XSS, CSRF, injection)
+### Sécurisation des données
+- Sécurisation des vues (échappement des données, validation des entrées)
+- Contrôle d'accès strict aux différentes parties de l'application
+- Utilisation de requêtes préparées pour toutes les interactions avec la base de données
+- Contraintes de clés étrangères pour garantir l'intégrité référentielle
 
-### Base de données sécurisée
-- **Requêtes préparées** exclusivement avec PDO
-- **Contraintes de clés étrangères** pour l'intégrité
-- **Chiffrement des mots de passe** avec algorithmes modernes
-- **Protection contre le brute force** avec limitations
-
-## Fonctionnalités e-commerce
-
-### Gestion du panier
-- **Panier persistant** même pour les visiteurs non connectés
-- **Gestion des quantités** et calculs automatiques
-- **Sauvegarde en base** pour les utilisateurs connectés
-- **Nettoyage automatique** des paniers abandonnés
-
-### Système de commandes
-- **Historique des commandes** complet
-- **Suivi des statuts** (en cours, expédiée, livrée)
-- **Génération de factures** PDF automatique
-- **Notifications email** à chaque étape
-
-### Feedback utilisateur
-- **Messages flash** contextuels
-- **Gestion des erreurs** de saisie
-- **Redirections intelligentes** après actions
-- **Confirmation** des actions importantes
+### Protection contre les attaques
+- Chiffrement des mots de passe avec algorithmes modernes
+- Protection contre les injections SQL
+- Mesures anti-brute force
+- Validation et sanitisation de toutes les entrées utilisateur
 
 ## Fonctionnalités avancées
 
-### Administration
-- **Interface d'administration** complète
-- **Gestion des produits** (CRUD complet)
-- **Gestion des utilisateurs** et modération
-- **Statistiques** de vente et analytics
+### Gestion du panier
+- Panier persistant même pour les visiteurs non connectés
+- Sauvegarde du panier lors de la connexion
+- Mise à jour en temps réel des quantités et des prix
 
-### Démo et évaluation
-- **Base de données de démonstration** préparée
-- **Jeux de données** réalistes pour les tests
-- **Documentation utilisateur** complète
-- **Guide d'installation** détaillé
+### Historique et commandes
+- Système complet de gestion des commandes
+- Historique détaillé pour chaque utilisateur
+- Suivi de l'état des commandes
 
-## Outils & méthodologie
+### Expérience utilisateur
+- Système de feedback utilisateur avec messages flash
+- Affichage clair des erreurs de saisie
+- Redirections intelligentes après les actions
+- Interface intuitive et responsive
 
-### Gestion de projet GitLab
-- **Repository GitLab** avec organisation claire
-- **Gestion des tâches** avec issues et milestones
-- **Branches feature** avec workflow structuré
-- **Merge requests** avec revue de code systématique
-
-### Développement structuré
-- **Architecture modulaire** évolutive
-- **Convention de nommage** claire et cohérente
-- **Implémentation progressive** avec tests manuels
-- **Suivi des erreurs** et debugging méthodique
-
-### Tests et validation
-- **Tests manuels** systématiques de toutes les fonctionnalités
-- **Validation des formulaires** côté client et serveur
-- **Tests de sécurité** pour détecter les vulnérabilités
-- **Tests de charge** pour valider les performances
-
-## Technologies utilisées
-
-- **PHP 8.1** : Langage backend moderne
-- **MySQL/MariaDB** : Base de données relationnelle
-- **HTML5/CSS3** : Frontend responsive
-- **JavaScript** : Interactions côté client
-- **PDO** : Interface base de données sécurisée
-- **GitLab** : Versioning et collaboration
-
-## Compétences développées
-
-Ce projet m'a permis de maîtriser :
-- **Architecture MVC** en PHP pur
-- **Sécurité web** et bonnes pratiques
-- **Développement e-commerce** complet
-- **Gestion de projet** avec GitLab
-- **Travail en équipe** sur un projet complexe
-
-## Résultats
-
-Plateforme e-commerce complète et sécurisée démontrant une maîtrise solide du développement web PHP et des principes de sécurité, avec une expérience concrète de la gestion de projet collaborative.
-
-**Lien de démonstration** : [AspiraShop](https://aspira-shop.demo.com)
+### Préparation pour l'évaluation
+- Base de données de démonstration propre et structurée
+- Déploiement en ligne pour faciliter l'évaluation
+- Documentation complète du projet
