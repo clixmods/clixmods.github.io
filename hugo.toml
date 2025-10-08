@@ -26,5 +26,17 @@ defaultContentLanguageInSubdir = false
 		weight = 2
 		title = "Portfolio — Clément 'Clix' GARCIA"
 
+# Module mounts - Allow Hugo to process static images as resources
+[module]
+  [[module.mounts]]
+    source = "static/images"
+    target = "assets/images"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
 # Optional: surface missing i18n keys during development
 # enableMissingTranslationPlaceholders = true
