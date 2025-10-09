@@ -59,15 +59,15 @@
     "name": "Portage Plateforme",
     "icon": "🔄",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 2,
-    "subtitle": "Multi-plateformes (Steam, Epic, Xbox, PlayStation)"
+    "subtitle": "Multi-plateformes (Steam, Epic, Xbox, PlayStation, Nintendo Switch)"
   },
   {
     "name": "Expérience utilisateur (UX)",
     "icon": "👤",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 2,
     "subtitle": "Ergonomie et interface"
   },
@@ -75,7 +75,7 @@
     "name": "Optimisation Performance",
     "icon": "⚡",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 2,
     "subtitle": "CPU/GPU et mémoire"
   },
@@ -139,7 +139,7 @@
     "name": "Gestion de versions avec Git",
     "icon": "🌿",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 4,
     "subtitle": "Git Flow, workflows avancés"
   },
@@ -177,21 +177,21 @@
     "name": "Temps Réel",
     "icon": "⚡",
     "experience": 2,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "subtitle": "Synchronisation et notifications"
   },
   {
     "name": "Gestion de Fichiers",
     "icon": "📁",
     "experience": 3,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "subtitle": "Upload, traitement et métadonnées"
   },
   {
     "name": "Intégration Audio",
     "icon": "🎵",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 1,
     "subtitle": "Effets sonores et ambiances"
   }
