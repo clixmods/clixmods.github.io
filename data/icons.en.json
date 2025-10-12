@@ -164,10 +164,6 @@
     "path": "images/icons/alert-circle.svg"
   },
   {
-    "id": "chevron-down",
-    "path": "images/icons/chevron-down.svg"
-  },
-  {
     "id": "image",
     "path": "images/icons/image.svg"
   },
