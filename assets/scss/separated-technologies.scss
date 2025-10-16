@@ -75,8 +75,8 @@
     }
 }
 
-// Pour la grille de projets, ajoutons des indicateurs visuels
-.ps5-tile-tech-item {
+// Pour la grille de projets, ajoutons des indicateurs visuels - unified card system
+.project-card-unified-tech-item {
     &.programming-language-indicator::before {
         content: "💻 ";
     }

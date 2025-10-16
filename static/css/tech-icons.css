@@ -29,8 +29,8 @@
     transform: scale(1.1);
 }
 
-/* Dans les tuiles de projets */
-.ps5-tile-tech-item .tech-icon-svg {
+/* Dans les tuiles de projets - unified card system */
+.project-card-unified-tech-item .tech-icon-svg {
     width: 20px;
     height: 20px;
     margin-right: 4px;
@@ -77,7 +77,7 @@
 }
 
 /* Assure que les icônes SVG s'alignent bien avec le texte */
-.tech-badge, .tech-chip, .ps5-tile-tech-item {
+.tech-badge, .tech-chip, .project-card-unified-tech-item {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -87,8 +87,8 @@
 .tech-badge .tech-icon-emoji,
 .tech-chip .tech-icon-svg,
 .tech-chip .tech-icon-emoji,
-.ps5-tile-tech-item .tech-icon-svg,
-.ps5-tile-tech-item .tech-icon-emoji,
+.project-card-unified-tech-item .tech-icon-svg,
+.project-card-unified-tech-item .tech-icon-emoji,
 .skill-icon .tech-icon-svg,
 .skill-icon .tech-icon-emoji {
     margin-right: 0;
