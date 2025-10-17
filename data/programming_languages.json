@@ -28,7 +28,7 @@
     "icon": "📜",
     "iconPath": "/images/technologies/JavaScript.svg",
     "color": "#F7DF1E",
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 2
   },
   {
@@ -88,7 +88,7 @@
     "experience": 2,
     "iconPath": "images/technologies/CSS3.svg",
     "color": "#1572B6",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": false
   },
   {
     "name": "MySQL",

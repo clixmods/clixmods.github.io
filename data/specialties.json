@@ -19,7 +19,7 @@
     "name": "Lighting",
     "icon": "💡",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 2,
     "subtitle": "Éclairage et ambiance"
   },
@@ -27,7 +27,7 @@
     "name": "Environnement Building",
     "icon": "🏗️",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 2,
     "subtitle": "Construction d'environnements"
   },
@@ -35,7 +35,7 @@
     "name": "Modding",
     "icon": "🔧",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 4,
     "subtitle": "Steam Workshop"
   },
@@ -43,7 +43,7 @@
     "name": "Call of Duty Modding",
     "icon": "🔫",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 4,
     "subtitle": "800k téléchargements"
   },
@@ -83,7 +83,7 @@
     "name": "Maintenance & Débogage",
     "icon": "🐛",
     "iconPath": null,
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 2,
     "subtitle": "Correctifs et résolution de bugs"
   },

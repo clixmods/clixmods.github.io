@@ -24,7 +24,7 @@
     "name": "SignalR",
     "iconPath": "/images/technologies/SignalR.svg",
     "color": "#512BD4",
-    "displayedInPortfolio": true,
+    "displayedInPortfolio": false,
     "experience": 1
   },
   {
