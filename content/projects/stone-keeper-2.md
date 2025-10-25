@@ -23,7 +23,7 @@ specialties = [
   "Game Design",
   "Expérience utilisateur (UX)",
   "Maintenance & Débogage",
-  "Optimisation Performance",
+  "Optimisation",
   "Architecture Logicielle"
 ]
 image = "/images/projects/stone-keeper-2/stone-keeper2-2.jpg"

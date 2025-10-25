@@ -1,0 +1,31 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "tools_group",
+  "labelField": "tool",
+  "fields": [
+    {
+      "title": "Outil",
+      "name": "tool",
+      "type": "dataFile",
+      "dataFileId": "tools",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": false,
+      "description": "Sélectionnez un outil"
+    },
+    {
+      "title": "Afficher dans la liste",
+      "name": "displayInList",
+      "type": "boolean",
+      "default": true,
+      "description": "Afficher cet outil dans la vue liste des formations"
+    },
+    {
+      "title": "Afficher dans le CV",
+      "name": "displayInCV",
+      "type": "boolean",
+      "default": true,
+      "description": "Afficher cet outil dans le CV"
+    }
+  ]
+}

@@ -46,6 +46,14 @@
     "color": "#607D8B",
     "displayedInPortfolio": true,
     "subtitle": "Conception"
+  },
+  {
+    "name": "Travail en équipe",
+    "icon": "🤝",
+    "iconPath": null,
+    "color": "#00BCD4",
+    "displayedInPortfolio": true,
+    "subtitle": "Collaboration"
   }
 ]
 

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "programming_languages_group",
+  "labelField": "language",
+  "fields": [
+    {
+      "title": "Langage",
+      "name": "language",
+      "type": "dataFile",
+      "dataFileId": "programming_languages_simple",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": false,
+      "description": "Sélectionnez un langage de programmation"
+    },
+    {
+      "title": "Afficher dans la liste",
+      "name": "displayInList",
+      "type": "boolean",
+      "default": true,
+      "description": "Afficher ce langage dans la vue liste des formations"
+    },
+    {
+      "title": "Afficher dans le CV",
+      "name": "displayInCV",
+      "type": "boolean",
+      "default": true,
+      "description": "Afficher ce langage dans le CV"
+    }
+  ]
+}

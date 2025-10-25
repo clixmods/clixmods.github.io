@@ -19,7 +19,7 @@ specialties = [
   "Portage Console",
   "Portage Plateforme",
   "Expérience utilisateur (UX)",
-  "Optimisation Performance",
+  "Optimisation",
   "Maintenance & Débogage",
   "Développement Gameplay",
   "Développement Outils"

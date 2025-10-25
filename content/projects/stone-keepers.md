@@ -22,7 +22,7 @@ specialties = [
   "Développement Gameplay",
   "Shaders",
   "Architecture Logicielle",
-  "Optimisation Performance",
+  "Optimisation",
   "Programmation orientée objet",
   "Interface utilisateur",
   "Gestion de versions avec Git",

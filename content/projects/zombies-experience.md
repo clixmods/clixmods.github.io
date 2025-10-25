@@ -12,7 +12,7 @@ specialties = [
   "Expérience utilisateur (UX)",
   "Développement Gameplay",
   "Interface utilisateur",
-  "Optimisation Performance"
+  "Optimisation"
 ]
 category = "projects"
 sector = "mods"

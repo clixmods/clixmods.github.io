@@ -7,19 +7,39 @@ end_date: 2023-06-30T00:00:00.000Z
 status: Obtenu
 description: Formation spécialisée en développement de jeux vidéo avec 13 projets réalisés sur Unity et Unreal Engine en équipe.
 programming_languages:
-  - C#
-  - C++
+  - language: C#
+    displayInList: true
+    displayInCV: true
+  - language: C++
+    displayInList: true
+    displayInCV: true
 frameworks_engines:
-  - Unity
-  - Unreal Engine
+  - framework: Unity
+    displayInList: true
+    displayInCV: true
+  - framework: Unreal Engine
+    displayInList: true
+    displayInCV: true
 specialties:
-  - Développement de jeux vidéo
-  - Game Design
+  - specialty: Développement de jeux vidéo
+    displayInList: true
+    displayInCV: true
+  - specialty: Game Design
+    displayInList: true
+    displayInCV: true
 soft_skills:
-  - Travail en équipe
-  - Créativité
-  - Résolution Problèmes
-  - Gestion de Projet
+  - skill: Travail en équipe
+    displayInList: true
+    displayInCV: true
+  - skill: Créativité
+    displayInList: true
+    displayInCV: false
+  - skill: Résolution Problèmes
+    displayInList: false
+    displayInCV: false
+  - skill: Gestion de Projet
+    displayInList: true
+    displayInCV: true
 projects:
   - galaxian
   - bubble-wars

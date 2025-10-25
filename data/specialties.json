@@ -72,7 +72,7 @@
     "subtitle": "Ergonomie et interface"
   },
   {
-    "name": "Optimisation Performance",
+    "name": "Optimisation",
     "icon": "⚡",
     "iconPath": null,
     "displayedInPortfolio": false,
@@ -194,5 +194,21 @@
     "displayedInPortfolio": false,
     "experience": 1,
     "subtitle": "Effets sonores et ambiances"
+  },
+  {
+    "name": "Gestion des données",
+    "icon": "🗄️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Bases de données et stockage"
+  },
+  {
+    "name": "Développement d'applications",
+    "icon": "💻",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Applications web et logiciels"
   }
 ]

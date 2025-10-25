@@ -26,7 +26,7 @@ specialties = [
   "Lighting",
   "Développement Gameplay",
   "Interface utilisateur",
-  "Optimisation Performance"
+  "Optimisation"
 ]
 soft_skills = [
   "Management Communauté",

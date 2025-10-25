@@ -103,5 +103,13 @@
     "iconPath": "images/technologies/Oracle.svg",
     "color": "#F80000",
     "displayedInPortfolio": false
+  },
+  {
+    "name": "Python",
+    "icon": "🐍",
+    "iconPath": "/images/technologies/Python.svg",
+    "color": "#3776AB",
+    "displayedInPortfolio": true,
+    "experience": 1
   }
 ]

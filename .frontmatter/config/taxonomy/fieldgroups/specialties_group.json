@@ -1,0 +1,31 @@
+{
+  "$schema": "https://frontmatter.codes/config/taxonomy.fieldgroups.schema.json",
+  "id": "specialties_group",
+  "labelField": "specialty",
+  "fields": [
+    {
+      "title": "Spécialité",
+      "name": "specialty",
+      "type": "dataFile",
+      "dataFileId": "specialties",
+      "dataFileKey": "name",
+      "dataFileValue": "name",
+      "multiple": false,
+      "description": "Sélectionnez une spécialité"
+    },
+    {
+      "title": "Afficher dans la liste",
+      "name": "displayInList",
+      "type": "boolean",
+      "default": true,
+      "description": "Afficher cette spécialité dans la vue liste des formations"
+    },
+    {
+      "title": "Afficher dans le CV",
+      "name": "displayInCV",
+      "type": "boolean",
+      "default": true,
+      "description": "Afficher cette spécialité dans le CV"
+    }
+  ]
+}

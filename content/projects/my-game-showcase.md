@@ -24,7 +24,7 @@ specialties = [
   "Temps Réel",
   "Gestion de Fichiers",
   "Portage Console",
-  "Optimisation Performance"
+  "Optimisation"
 ]
 soft_skills = [ "Résolution Problèmes", "Communication", "Travail d'équipe" ]
 tools = [ "Azure", "Fork", "JetBrains", "ClickUp" ]

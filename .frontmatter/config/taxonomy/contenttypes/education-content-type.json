@@ -48,52 +48,47 @@
     {
       "title": "Langages de programmation",
       "name": "programming_languages",
-      "type": "dataFile",
-      "dataFileId": "programming_languages_simple",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
-      "multiple": true,
-      "description": "Sélectionnez les langages de programmation appris"
+      "type": "block",
+      "fieldGroup": [
+        "programming_languages_group"
+      ],
+      "description": "Ajoutez les langages de programmation avec options d'affichage"
     },
     {
       "title": "Frameworks & Moteurs",
       "name": "frameworks_engines",
-      "type": "dataFile",
-      "dataFileId": "frameworks_engines_simple",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
-      "multiple": true,
-      "description": "Sélectionnez les frameworks et moteurs étudiés"
+      "type": "block",
+      "fieldGroup": [
+        "frameworks_engines_group"
+      ],
+      "description": "Ajoutez les frameworks et moteurs avec options d'affichage"
     },
     {
       "title": "Spécialités",
       "name": "specialties",
-      "type": "dataFile",
-      "dataFileId": "specialties",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
-      "multiple": true,
-      "description": "Sélectionnez les spécialités couvertes dans cette formation"
+      "type": "block",
+      "fieldGroup": [
+        "specialties_group"
+      ],
+      "description": "Ajoutez les spécialités avec options d'affichage"
     },
     {
       "title": "Soft Skills",
       "name": "soft_skills",
-      "type": "dataFile",
-      "dataFileId": "soft_skills",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
-      "multiple": true,
-      "description": "Sélectionnez les soft skills développées"
+      "type": "block",
+      "fieldGroup": [
+        "soft_skills_group"
+      ],
+      "description": "Ajoutez les soft skills avec options d'affichage"
     },
     {
       "title": "Outils",
       "name": "tools",
-      "type": "dataFile",
-      "dataFileId": "tools",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
-      "multiple": true,
-      "description": "Sélectionnez les outils utilisés dans cette formation"
+      "type": "block",
+      "fieldGroup": [
+        "tools_group"
+      ],
+      "description": "Ajoutez les outils avec options d'affichage"
     },
     {
       "title": "Note/Résultat",
