@@ -21,7 +21,7 @@
     "iconPath": null,
     "color": "#2196F3",
     "displayedInPortfolio": true,
-    "subtitle": "Administrateur modding"
+    "subtitle": "Admin modding"
   },
   {
     "name": "Communication",
@@ -37,7 +37,7 @@
     "iconPath": null,
     "color": "#FF5722",
     "displayedInPortfolio": true,
-    "subtitle": "Débogage"
+    "subtitle": "Debug"
   },
   {
     "name": "Vision/Visualisation",

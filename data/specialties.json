@@ -5,7 +5,7 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 4,
-    "subtitle": "Conception mécaniques"
+    "subtitle": "Conception"
   },
   {
     "name": "Level Design",
@@ -13,7 +13,7 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 3,
-    "subtitle": "Outils & conception"
+    "subtitle": "Outils & maps"
   },
   {
     "name": "Lighting",
@@ -21,7 +21,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 2,
-    "subtitle": "Éclairage et ambiance"
+    "subtitle": "Éclairage"
   },
   {
     "name": "Environnement Building",
@@ -29,7 +29,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 2,
-    "subtitle": "Construction d'environnements"
+    "subtitle": "Construction d'enviro"
   },
   {
     "name": "Modding",
@@ -45,7 +45,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 4,
-    "subtitle": "800k téléchargements"
+    "subtitle": "800k downloads"
   },
   {
     "name": "Portage Console",
@@ -61,7 +61,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 2,
-    "subtitle": "Multi-plateformes (Steam, Epic, Xbox, PlayStation, Nintendo Switch)"
+    "subtitle": "Multi-plateformes"
   },
   {
     "name": "Expérience utilisateur (UX)",
@@ -69,7 +69,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 2,
-    "subtitle": "Ergonomie et interface"
+    "subtitle": "Ergonomie UI"
   },
   {
     "name": "Optimisation",
@@ -85,7 +85,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 2,
-    "subtitle": "Correctifs et résolution de bugs"
+    "subtitle": "Correctifs bugs"
   },
   {
     "name": "Développement Outils",
@@ -93,7 +93,7 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 3,
-    "subtitle": "Plugins Unity et outils de production"
+    "subtitle": "Plugins Unity et outils"
   },
   {
     "name": "Développement Gameplay",
@@ -101,7 +101,7 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 3,
-    "subtitle": "Mécaniques de jeu et systèmes"
+    "subtitle": "Mécaniques de jeu"
   },
   {
     "name": "Shaders",
@@ -109,7 +109,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 2,
-    "subtitle": "Éclairage volumétrique"
+    "subtitle": "Éclairage volumé"
   },
   {
     "name": "Algorithmique",
@@ -117,7 +117,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 2,
-    "subtitle": "Structures de données"
+    "subtitle": "Structures données"
   },
   {
     "name": "Interface utilisateur",
@@ -125,7 +125,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 2,
-    "subtitle": "Design & ergonomie"
+    "subtitle": "Design UI"
   },
   {
     "name": "Programmation orientée objet",
@@ -133,7 +133,7 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 4,
-    "subtitle": "Conception et architecture logicielle"
+    "subtitle": "Conception et archi"
   },
   {
     "name": "Gestion de versions avec Git",
@@ -141,7 +141,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 4,
-    "subtitle": "Git Flow, workflows avancés"
+    "subtitle": "Git Flow"
   },
   {
     "name": "Sécurité et optimisation",
@@ -149,7 +149,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 3,
-    "subtitle": "Bonnes pratiques de développement"
+    "subtitle": "Bonnes pratiques"
   },
   {
     "name": "Design Pattern et refactoring",
@@ -157,35 +157,35 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 3,
-    "subtitle": "Architecture et maintenabilité du code"
+    "subtitle": "Architecture code"
   },
   {
     "name": "Développement d'API",
     "icon": "🔌",
     "experience": 2,
     "displayedInPortfolio": true,
-    "subtitle": "API REST et temps réel"
+    "subtitle": "API REST"
   },
   {
     "name": "Architecture Logicielle",
     "icon": "🏗️",
     "experience": 3,
     "displayedInPortfolio": true,
-    "subtitle": "Conception modulaire et scalable"
+    "subtitle": "Conception modulaire"
   },
   {
     "name": "Temps Réel",
     "icon": "⚡",
     "experience": 2,
     "displayedInPortfolio": false,
-    "subtitle": "Synchronisation et notifications"
+    "subtitle": "Synchronisation"
   },
   {
     "name": "Gestion de Fichiers",
     "icon": "📁",
     "experience": 3,
     "displayedInPortfolio": false,
-    "subtitle": "Upload, traitement et métadonnées"
+    "subtitle": "Upload & traitement"
   },
   {
     "name": "Intégration Audio",
@@ -193,7 +193,7 @@
     "iconPath": null,
     "displayedInPortfolio": false,
     "experience": 1,
-    "subtitle": "Effets sonores et ambiances"
+    "subtitle": "Effets sonores"
   },
   {
     "name": "Gestion des données",
@@ -201,7 +201,7 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 2,
-    "subtitle": "Bases de données et stockage"
+    "subtitle": "Bases de données"
   },
   {
     "name": "Développement d'applications",
@@ -209,6 +209,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 2,
-    "subtitle": "Applications web et logiciels"
+    "subtitle": "Applications web"
   }
 ]
