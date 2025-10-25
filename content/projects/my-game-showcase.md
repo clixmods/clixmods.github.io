@@ -70,7 +70,7 @@ gallery = 30
 
 ## Description du projet
 
-> *"Transformez vos assets d'images et musiques de vos jeux vidéos à une application type artbook livrable en quelques minutes."* — Studio La Moutarde
+> *"Transformez vos assets d'images et musiques de vos jeux vidéos à une application type artbook livrable en quelques minutes."* - Studio La Moutarde
 
 **My Game Showcase** est une **solution B2B** qui transforme des lots d'images et musiques en **applications vitrines prêtes à la soumission** sur **PS5, Xbox Series et Nintendo Switch**. Le tout, directement depuis une **plateforme web**, qui génère une **application** destinée aux utilisateurs finaux.
 

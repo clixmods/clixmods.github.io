@@ -301,11 +301,11 @@ Explorez des ruines anciennes, affrontez des créatures mythiques et percez les 
 
 ## Un projet personnel devenu aventure collective
 
-Stone Keeper est un projet qui me tient particulièrement à cœur — c'est un jeu que j'ai imaginé et voulu créer depuis longtemps.
+Stone Keeper est un projet qui me tient particulièrement à cœur - c'est un jeu que j'ai imaginé et voulu créer depuis longtemps.
 À l'origine, il s'agissait d'un concept personnel que j'ai proposé comme base de notre projet de fin d'année à E-artsup.
 Ce rêve s'est concrétisé grâce à une équipe motivée et passionnée, avec laquelle nous avons donné vie à cet univers en seulement deux mois de production intense.
 
-Ce projet représente pour moi bien plus qu'un simple exercice académique : c'est le premier jeu que j'ai vraiment porté, dirigé techniquement et façonné de bout en bout — de la vision initiale à la version jouable.
+Ce projet représente pour moi bien plus qu'un simple exercice académique : c'est le premier jeu que j'ai vraiment porté, dirigé techniquement et façonné de bout en bout - de la vision initiale à la version jouable.
 Je garde une grande fierté du résultat final, à la fois pour la qualité atteinte et pour la cohésion humaine qui a accompagné sa création.
 
 ### Contexte

@@ -1,6 +1,6 @@
 ---
 title: "Deux projets aux Pégases du Jeu Vidéo 2025"
-subtitle: "Stone Keeper et Terra Memoria parmi les nommés — une double fierté"
+subtitle: "Stone Keeper et Terra Memoria parmi les nommés - une double fierté"
 date: 2025-08-09T10:30:00+02:00
 draft: false
 category: tech
@@ -21,7 +21,7 @@ fmContentType: default
 
 # 🚀 Deux projets aux Pégases du Jeu Vidéo 2025
 
-En tant que développeur **C# / Unity**, j’ai eu la chance de voir **deux projets** auxquels j’ai contribué figurer parmi les nommés aux **Pégases du Jeu Vidéo 2025** — une belle reconnaissance pour un parcours encore jeune mais déjà riche en expériences.
+En tant que développeur **C# / Unity**, j'ai eu la chance de voir **deux projets** auxquels j'ai contribué figurer parmi les nommés aux **Pégases du Jeu Vidéo 2025** - une belle reconnaissance pour un parcours encore jeune mais déjà riche en expériences.
 
 ## 🎮 Stone Keeper – Un projet étudiant ambitieux
 

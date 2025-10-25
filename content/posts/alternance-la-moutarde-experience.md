@@ -27,7 +27,7 @@ fmContentType: default
 Entre octobre 2023 et 2025, mon alternance au studio indépendant **La Moutarde** a combiné trois axes majeurs :
 
 1. 🔧 Support post-release & portage d'un titre fraîchement lancé
-2. 🧪 Prototypage d'un **projet interne confidentiel** — sans entrer dans la nature exacte du produit
+2. 🧪 Prototypage d'un **projet interne confidentiel** - sans entrer dans la nature exacte du produit
 3. 🛠️ Co-construction d'un outil **B2B** générateur d'applications média multiplateformes (*My Game Showcase*)
 
 Cette période a également accompagné une évolution du **système d'information** (adoption d'un ERP) pour soutenir la diversification vers un modèle mixte B2C / B2B.
@@ -37,7 +37,7 @@ Cette période a également accompagné une évolution du **système d'informati
 Après la sortie publique d'un projet narratif (27 mars 2024), l'équipe cœur s'est resserrée (≈ 4–5 personnes) autour de deux enjeux : assurer une **post-release de qualité** et amorcer un **revenu produit récurrent** via un outil valorisable auprès d'autres studios/éditeurs.
 
 ---
-## 🚀 Projet 1 — Post-release & portage plateforme
+## 🚀 Projet 1 - Post-release & portage plateforme
 Objectifs : stabiliser, améliorer, étendre la présence du produit.
 
 ### Debug & stabilité
@@ -54,10 +54,10 @@ Objectifs : stabiliser, améliorer, étendre la présence du produit.
 
 > Résultat : un processus reproductible, inspectable et prêt pour l'automatisation.
 
-*(Chiffres internes supprimés — insérer ultérieurement : temps moyen de résolution, volume de corrections, crash rate avant/après.)*
+*(Chiffres internes supprimés - insérer ultérieurement : temps moyen de résolution, volume de corrections, crash rate avant/après.)*
 
 ---
-## 🧪 Projet 2 — Prototypage interne : prototyper une boucle cohérente
+## 🧪 Projet 2 - Prototypage interne : prototyper une boucle cohérente
 Projet interne confidentiel : on ne détaille pas la nature exacte du produit. Focalisation sur la méthodologie de prototypage.
 
 Axes traités :
@@ -73,7 +73,7 @@ Approche : prototype jetable → mesure → conservation des briques robustes un
 *(Placeholders à compléter : durée moyenne d'une interaction, taux de réussite initial vs itéré, métriques d'engagement internes.)*
 
 ---
-## 🛠️ Projet 3 — My Game Showcase (outil B2B)
+## 🛠️ Projet 3 - My Game Showcase (outil B2B)
 **But** : permettre à un studio de générer rapidement des applications riches (art, musiques, vidéos, textes) exportables vers plusieurs plateformes desktop/console sans pipeline interne lourd.
 
 ### Architecture fonctionnelle

@@ -17,16 +17,14 @@ defaultContentLanguageInSubdir = false
 [languages]
 	[languages.fr]
 		languageName = 'Français'
-		languageCode = 'fr-fr'
-		weight = 1
-		title = "Portfolio — Clément 'Clix' GARCIA"
-	[languages.en]
-		languageName = 'English'
-		languageCode = 'en-us'
-		weight = 2
-		title = "Portfolio — Clément 'Clix' GARCIA"
-
-# Module mounts - Allow Hugo to process static images as resources
+	languageCode = 'fr-fr'
+	weight = 1
+	title = "Portfolio - Clément 'Clix' GARCIA"
+[languages.en]
+	languageName = 'English'
+	languageCode = 'en-us'
+	weight = 2
+	title = "Portfolio - Clément 'Clix' GARCIA"# Module mounts - Allow Hugo to process static images as resources
 [module]
   [[module.mounts]]
     source = "static/images"

@@ -105,6 +105,7 @@ Three main FrontMatter content types:
 - **NEVER use emojis in article titles, subtitles, or project descriptions** - They look childish and scream "AI-generated"
 - **NEVER use emojis in blog post content** - This is a professional portfolio, not a social media post
 - Emojis are ONLY acceptable in UI navigation elements (already defined in `config.json`)
+- **NEVER use em dash "—" (tiret cadratin)** - Always use simple hyphen "-" instead
 - Professional, technical writing style - let the content speak for itself
 - Avoid overly enthusiastic or marketing-like language that signals AI generation
 

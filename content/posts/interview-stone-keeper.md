@@ -34,9 +34,9 @@ Dans cette discussion, nous revenons sur :
 
 🔗 **Voir l’interview complète** : [Regarder sur YouTube](AJOUTER_URL_YOUTUBE_ICI)
 
-> Si vous avez des questions sur le gameplay, l’architecture technique ou l’organisation de l’équipe, n’hésitez pas à me les poser en commentaire ou à me contacter directement.
+> Si vous avez des questions sur le gameplay, l'architecture technique ou l'organisation de l'équipe, n'hésitez pas à me les poser en commentaire ou à me contacter directement.
 
-Un grand merci à **Thomas** pour son intérêt et la pertinence de ses questions — ce fut un échange riche et inspirant.
+Un grand merci à **Thomas** pour son intérêt et la pertinence de ses questions - ce fut un échange riche et inspirant.
 
 ---
 
