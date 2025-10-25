@@ -12,13 +12,15 @@ defaultContentLanguageInSubdir = false
 
 [languages]
 	[languages.fr]
-	languageName = 'Français'
-	languageCode = 'fr-fr'
-	weight = 1
-	title = "Portfolio - Clément 'Clix' GARCIA"
-[languages.en]
-	languageName = 'English'
-	languageCode = 'en-us'
-	weight = 2
-	title = "Portfolio - Clément 'Clix' GARCIA"# Optional: surface missing i18n keys during development
+		languageName = 'Français'
+		languageCode = 'fr-fr'
+		weight = 1
+		title = "Portfolio - Clément 'Clix' GARCIA"
+	[languages.en]
+		languageName = 'English'
+		languageCode = 'en-us'
+		weight = 2
+		title = "Portfolio - Clément 'Clix' GARCIA"
+		
+# Optional: surface missing i18n keys during development
 # enableMissingTranslationPlaceholders = true

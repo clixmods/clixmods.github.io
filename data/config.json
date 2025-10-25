@@ -45,12 +45,8 @@
   "contact": {
     "subjects": [
       {
-        "value": "stage",
-        "label": "Proposition de stage"
-      },
-      {
-        "value": "alternance",
-        "label": "Proposition d'alternance"
+        "value": "emploi",
+        "label": "Proposition d'emploi (CDD/CDI)"
       },
       {
         "value": "projet",

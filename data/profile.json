@@ -20,16 +20,16 @@
       "github": "https://github.com/clixmods",
       "discord": "clixmods",
       "location": "Montpellier",
-      "status": "Étudiant BUT 3 - En alternance chez Studio La Moutarde"
+      "status": "Disponible pour CDD/CDI"
     },
     "availability": {
       "status": "En recherche d'emploi",
-      "message": "En recherche d'emploi",
+      "message": "Disponible immédiatement",
       "available": true,
-      "nextAvailable": "Septembre 2026"
+      "nextAvailable": "Immédiatement"
     },
     "details": {
-      "formation": "BUT 3 IAMSI - IUT Montpellier-Sète",
+      "formation": "BUT 3 IAMSI - IUT Montpellier-Sète (Diplômé)",
       "speciality": "Développement C#, Unity, Blazor, FastEndpoint",
       "experience": "2+ ans de développement professionnel"
     }
