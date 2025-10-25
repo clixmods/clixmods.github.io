@@ -43,13 +43,17 @@ soft_skills:
 projects:
   - galaxian
   - bubble-wars
-  - assault-order
+  - assault-of-order
   - witchable
-  - lost-city-stone-keeper
-  - fish-ship-cœur-de-ville-en-lumiere
+  - stone-keepers
+  - fish-n-ship
   - stone-keeper-2
   - stholen
-  - stay-light
+  - stay-in-the-light
+  - demons-tower
+  - on-target
+  - snide
+  - sky-shock
 grade: Obtenu
 icon: 🎮
 color: "#8b5cf6"
@@ -58,7 +62,7 @@ fmContentType: education-content-type
 draft: false
 school_logo: /images/schools/eartsup_logo.png
 testimonials:
-  - "benoit-toupet"
-  - "gaetan-vergeot"
-  - "lucas-guibert"
+  - benoit-toupet
+  - gaetan-vergeot
+  - lucas-guibert
 ---
