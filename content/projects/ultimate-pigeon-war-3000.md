@@ -2,8 +2,8 @@
 date = "2024-01-30T00:00:00+02:00"
 draft = false
 title = "Ultimate Pigeon War 3000"
-subtitle = "Action multijoueur déjantée - Game Jam"
-description = "Ultimate Pigeon War 3000 est un jeu d'action multijoueur délirant où des pigeons s'affrontent dans des batailles épiques. Réalisé lors d'une game jam, ce projet met en avant l'humour, la compétition et la créativité de l'équipe."
+subtitle = "Jeu d'action délirant réalisé en game jam"
+description = "Jeu d'action et JAM délirant où des pigeons s'affrontent dans des combats avec humour"
 tags = [ "Action", "Multijoueur", "Game Jam", "Humour", "Itch.io" ]
 category = "projects"
 sector = "games-gamejams"

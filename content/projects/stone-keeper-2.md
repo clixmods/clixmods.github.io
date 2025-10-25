@@ -2,8 +2,8 @@
 date = "2025-07-24T12:00:00.000Z"
 draft = false
 title = "Stone Keeper 2"
-subtitle = "Projet Avancé - Suite de l'aventure épique"
-description = "La suite tant attendue de Stone Keeper avec des mécaniques étendues et un monde plus vaste"
+subtitle = "Jeu isométrique d'action aventure"
+description = "Suite de Stone Keeper avec des mécaniques étendues et un monde plus vaste"
 tags = [ "Adventure", "Unity", "Sequel", "Open World", "Atlantis" ]
 category = "projects"
 sector = "games-personnel"

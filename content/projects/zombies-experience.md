@@ -2,7 +2,7 @@
 date = "2021-08-18T10:00:00+02:00"
 draft = false
 title = "Zombies Experience"
-subtitle = "Mod avancé pour Black Ops 3 Steam"
+subtitle = "Mod avancé étendant Call of Duty Black Ops 3"
 description = "Modification complète étendant Call of Duty Black Ops 3 avec nouvelles fonctionnalités multijoueur"
 tags = [ "Modding", "C++", "Discord Integration", "Multiplayer" ]
 programming_languages = [ "LUA", "C++", "GSC" ]
@@ -360,9 +360,8 @@ Zombies Experience est un mod pour Call of Duty: Black Ops 3 qui transforme l'ex
 
 ### Extension multijoueur 8 joueurs
 - **Modification du moteur** pour supporter 8 joueurs simultanés
-- **Refonte du networking** pour la stabilité avec plus de joueurs
 - **Optimisation des performances** pour maintenir la fluidité
-- **Compatibilité** avec les cartes existantes
+- **Compatibilité** avec les cartes existantes et celle crée par les joueurs
 
 ### Modes de jeu multiples
 - **Nouveaux modes** de jeu créés spécifiquement pour 8 joueurs
@@ -378,7 +377,7 @@ Zombies Experience est un mod pour Call of Duty: Black Ops 3 qui transforme l'ex
 - **Invitations** directes des parties depuis Discord
 
 ### Kits d'armes
-- **Arsenal étendu** avec armes de différents Black Ops
+- **Arsenal étendu** avec armes des différents jeu Black Ops (1, 2, 3 et 4)
 - **Personnalisation** par joueur du kit d'armes
 - **Équilibrage** entre les différentes générations
 - **Préférences sauvegardées** pour chaque joueur
@@ -386,8 +385,7 @@ Zombies Experience est un mod pour Call of Duty: Black Ops 3 qui transforme l'ex
 ## Développement technique
 
 ### Programmation C++ avancée
-- **Modification du code source** du jeu
-- **Injection de code** et hooks système
+- **Injection de code** via un dll
 
 ## Recherche et développement
 
@@ -412,9 +410,6 @@ Zombies Experience est un mod pour Call of Duty: Black Ops 3 qui transforme l'ex
 - **Communauté active** de joueurs réguliers
 - **Serveurs dédiés** utilisant le mod avec plus de 2000 joueur à son pic.
 - **Feedback continu** pour l'amélioration
-
-### Contributions 
-- **Support** pour projets dérivés
 
 ## Défis techniques surmontés
 

@@ -2,8 +2,8 @@
 date = "2020-07-29T08:00:00.000Z"
 draft = false
 title = "Nuketown Zombies"
-subtitle = "Remasterisation complète de la carte iconique - Black Ops 3"
-description = "Recréation fidèle et améliorée de Nuketown avec nouvelles fonctionnalités et système Zombies Experience"
+subtitle = "Remasterisation de carte - Black Ops 3"
+description = "Recréation fidèle et améliorée de Nuketown Zombies de Black Ops 2 sur Call Of Duty: Black Ops 3"
 tags = [
   "Game Design",
   "Game Development",
@@ -56,7 +56,7 @@ primary = false
 [[notable_facts]]
 type = "downloads"
 icon = "📥"
-value = "<span class='highlight'>800K+</span>"
+value = "<span class='highlight'>600K+</span>"
 label = "Téléchargements Steam Workshop"
 
 [[notable_facts]]
@@ -540,11 +540,11 @@ category = "Custom Zombies Maps"
 
 [downloads]
 last_updated = "2025-09-30T08:32:44.670Z"
-total = 800_000
+total = 600_000
 
   [[downloads.platforms]]
   name = "Steam Workshop"
-  downloads = 800_000
+  downloads = 600_000
   launch_date = "2019-07-15T08:00:00+02:00"
   fieldGroup = "downloads_group"
 +++
@@ -557,7 +557,7 @@ Remasterisation complète de la carte iconique Nuketown Zombies de Call of Duty:
 
 ## Vision créative
 
-Après le succès de FARM, j'ai choisi de m'attaquer à Nuketown Zombies car c'était une carte que j'avais particulièrement appréciée sur Black Ops 2, malgré l'absence regrettable de quête ou de secrets alors que sa place dans la chronologie des Zombies offrait un potentiel narratif exceptionnel.
+Après le succès de FARM, j'ai choisi de m'attaquer à Nuketown Zombies car c'était une carte que j'avais particulièrement appréciée sur Black Ops 2, malgré l'absence regrettable de quête ou de secrets alors que sa place dans l'histoire du mode Zombies offrait un potentiel narratif.
 
 L'objectif initial était de créer un remake plutôt qu'un simple remaster, en préservant le gameplay fondamental tout en étendant considérablement le potentiel de la carte avec des zones supplémentaires et une quête cohérente avec l'univers du jeu.
 
@@ -571,7 +571,7 @@ Ce projet a marqué ma véritable initiation au monde de la programmation. Nuket
 - **Analyse approfondie** de tous les fichiers pour comprendre la logique
 - **Conversion manuelle** du code pour la compatibilité Black Ops 3
 - **Adaptation** des différences entre les moteurs de jeu
-- **Correction** et optimisation après plusieurs semaines de travail
+- **Correction** et optimisation
 
 ## Innovation : Zombies Experience
 
@@ -585,23 +585,21 @@ Ce projet a introduit des fonctionnalités révolutionnaires qui deviendront plu
 - **Équilibrage** du gameplay pour les grandes équipes
 
 #### Système de bots intelligents
-- **Programmation avancée** de l'IA des bots
-- **Comportements réalistes** adaptés au mode Zombies
-- **Intégration transparente** avec les joueurs humains
+- **Programmation** de l'IA des bots
+- **Comportements** adaptés au mode Zombies
 - **Possibilité de jouer en solo** avec l'IA
 
 #### Personnalisation poussée
 - **Choix du game feel** : Black Ops 2 ou Black Ops 3 (reproduction des mécaniques du précédent opus)
 - **Customisation HUD** selon les préférences entre les différents Black Ops (1,2 et 3)
 - **Kits d'armes personnalisables** pour chaque style de jeu (chaque joueur pouvait choisir les armes qu'il souhaitait utiliser durant sa partie, une fonctionnalité inédite)
-- **Paramètres de partie** entièrement configurables
+- **Paramètres de partie** entièrement configurables comme la difficulté
 
 ## Processus de création
 
 ### Phase d'analyse et conception
 - **Étude approfondie** de l'architecture originale
-- **Relevé des minimaps** pour les repères de mapping
-- **Utilisation** des documents de scale standard des développeurs
+- **Utilisation** des documents de scale standard des développeurs pour les portes, escaliers, etc...
 - **Import d'assets** de la carte originale pour référence
 
 ### Blockout et base technique
@@ -613,7 +611,7 @@ Ce projet a introduit des fonctionnalités révolutionnaires qui deviendront plu
 ## Level Design et construction
 
 ### Recréation fidèle de Nuketown
-- **Reproduction à l'œil** des bâtiments iconiques
+- **Reproduction à l'œil** des bâtiments
 - **Adaptation** au scale standard du jeu
 - **Préservation** du gameplay originel
 - **Amélioration** de la géométrie pour les performances
@@ -621,8 +619,6 @@ Ce projet a introduit des fonctionnalités révolutionnaires qui deviendront plu
 ### Construction technique
 - **Modélisation** précise des bâtiments et du terrain
 - **Optimisation** des collisions pour un gameplay fluide
-- **Intégration** harmonieuse des éléments de gameplay
-- **Tests itératifs** pour l'équilibrage
 
 ## Contenu et fonctionnalités
 
@@ -639,14 +635,14 @@ Ce projet a introduit des fonctionnalités révolutionnaires qui deviendront plu
 
 ### Effets visuels et audio
 - **Système FX** personnalisé pour l'ambiance post-apocalyptique
-- **Sound design** immersif avec spatialisation 3D
+- **Sound design** immersif
 - **Éclairage dynamique** pour renforcer l'atmosphère
 - **Post-processing** pour l'esthétique finale
 
 ## Impact et héritage
 
 ### Succès communautaire
-Avec plus de 800 000 téléchargements et une place dans le top 10 du Workshop Black Ops 3, Nuketown Zombies a marqué la communauté par son ambition et sa qualité d'exécution. Les retours positifs des joueurs et créateurs de contenu ont confirmé la pertinence des choix techniques et artistiques.
+Avec plus de 600 000 téléchargements et une place dans le top 10 du Workshop Black Ops 3, Nuketown Zombies a marqué la communauté par son ambition et sa qualité d'exécution. Les retours positifs des joueurs et créateurs de contenu ont confirmé la pertinence des choix techniques et artistiques.
 
 ### Révolution technique
 Ce projet a introduit pour la première fois le support 8 joueurs et un système de bots intelligents dans le modding Zombies, des innovations qui ont inspiré de nombreux créateurs et établi de nouveaux standards pour la communauté.

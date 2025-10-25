@@ -2,8 +2,8 @@
 date = "2022-12-20T09:00:00.000Z"
 draft = false
 title = "Stholen"
-subtitle = "Jeu d'aventure - e-artsup"
-description = "Projet de jeu développé en équipe avec focus sur le level design et la programmation gameplay"
+subtitle = "Jeu cozy"
+description = "Jeu cozy - Absorbez tout ce que vous pouvez avec votre soucoupe volante, allant d'une simple carotte à des habitations"
 tags = [ "Unity", "Adventure", "Level Design", "Team Project" ]
 category = "projects"
 sector = "games-personnel"

@@ -2,8 +2,8 @@
 date = "2022-03-18T09:00:00.000Z"
 draft = false
 title = "Mori Rebirth"
-subtitle = "Projet de modding avancé"
-description = "Suite aux événements d'\"Alpha Omega\" et de \"Mori\", piégée seule et effrayée dans son bunker, le Dr Hale, seule survivante de l'installation japonaise Broken Arrow, attend d'être secourue par nos héros."
+subtitle = "Carte pour le mode zombie de Black Ops 3"
+description = "Carte zombie personnalisée pour le mode zombie de Call Of Duty: Black Ops 3"
 tags = [ "Modding", "Game Systems", "C++", "Innovation" ]
 category = "projects"
 sector = "mods"

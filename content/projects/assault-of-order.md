@@ -187,13 +187,13 @@ ranking = 130
 
 ## Description du projet
 
-Projet de fin de première année réalisé à E-artsup  
-Jeu de stratégie au tour par tour inspiré des XCOM, où deux équipes s'affrontent sur un champ de bataille en grille  
-Chaque unité dispose de ses propres capacités et compétences, ce qui pousse le joueur à réfléchir, planifier et anticiper chaque action pour remporter la victoire
+Projet de fin de première année réalisé à E-artsup. 
+Jeu de stratégie au tour par tour inspiré des XCOM, où deux équipes s'affrontent sur un champ de bataille en grille.  
+Chaque unité dispose de ses propres capacités et compétences, ce qui pousse le joueur à réfléchir, planifier et anticiper chaque action pour remporter la victoire.
 
-Sur ce projet, j'étais principalement orienté sur la partie technique et la conception des systèmes de jeu  
-Mon objectif était de donner vie au cœur du gameplay : la grille, le déplacement des unités et le déroulement des tours de jeu  
-J'ai également contribué à la mise en place de l'environnement visuel du jeu et de son éclairage
+Sur ce projet, j'étais principalement orienté sur la partie technique et la conception des systèmes de jeu.  
+Mon objectif était de donner vie au cœur du gameplay : la grille, le déplacement des unités et le déroulement des tours de jeu.  
+J'ai également contribué à la mise en place de l'environnement visuel du jeu et de son éclairage.
 
 ## Développement & Gameplay
 

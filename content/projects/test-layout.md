@@ -1,6 +1,6 @@
 +++
 date = "2025-09-30T09:23:39.576Z"
-draft = false
+draft = true
 title = "Test Layout System"
 subtitle = "Démonstration complète du système de boîtes"
 description = "Projet de test pour démontrer toutes les tailles et fonctionnalités des boîtes d'information"
@@ -268,7 +268,6 @@ description = "Découvrez les meilleures pratiques pour un design responsive opt
 duration = "5:18"
 views = "2.1K vues"
 
-
 [[youtube_singles]]
 video_id = "hb-kF-VZvnE"
 title = "Démonstration complète du système de layout"
@@ -295,6 +294,7 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+soft_skills = 55
 
 [[galleries]]
 title = "tete"

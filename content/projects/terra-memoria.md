@@ -2,7 +2,7 @@
 date = "2024-03-27T09:00:00.000Z"
 draft = false
 title = "Terra Memoria"
-subtitle = "JRPG - Studio La Moutarde"
+subtitle = "JRPG développé par Studio La Moutarde"
 description = "Participation à la fin de production et à la maintenance post-release d'un RPG commercial multi-plateformes"
 tags = [ "JRPG", "Commercial", "Nintendo Switch", "Multi-plateformes" ]
 category = "projects"

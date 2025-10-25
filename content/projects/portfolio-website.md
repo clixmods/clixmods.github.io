@@ -1,6 +1,6 @@
 +++
 date = "2025-07-22T07:30:00+02:00"
-draft = false
+draft = true
 title = "Portfolio Website"
 subtitle = "Site web personnel avec Hugo"
 description = "Site portfolio moderne développé avec Hugo et déployé avec GitHub Pages"

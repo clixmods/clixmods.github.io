@@ -1,10 +1,11 @@
-+++date = "2025-07-22T08:00:00+02:00"
-draft = false
++++
+date = "2025-07-22T08:00:00+02:00"
+draft = true
 title = "Unity Editor Tools"
 subtitle = "Outils de développement personnalisés"
 description = "Collection d'outils Unity pour améliorer le workflow de développement"
 image = "/images/projects/unity-tools.jpg"
-tags = ["Unity", "Editor", "Tools", "Productivity"]
+tags = [ "Unity", "Editor", "Tools", "Productivity" ]
 category = "projects"
 sector = "tools"
 featured = true
@@ -28,6 +29,10 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++
 
 # Unity Editor Tools

@@ -2,8 +2,8 @@
 date = "2023-06-30T07:00:00.000Z"
 draft = false
 title = "The Lost City: Stone Keeper"
-subtitle = "PFA Deuxième Année - e-artsup"
-description = "Aventure épique inspirée de Tunic dans l'Atlantide"
+subtitle = "Jeu isométrique d'action aventure"
+description = "Jeu isométrique d'action et aventure, réalisé en tant que projet de fin d'étude"
 tags = [ "Adventure", "Unity", "Team Project", "Atlantis" ]
 category = "projects"
 sector = "games-personnel"
@@ -158,47 +158,47 @@ fieldGroup = "galleries_group"
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Lead développeur", "Game Designer", "Level Designer"]
+roles = [ "Lead développeur", "Game Designer", "Level Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "theo-carouge"
-roles = ["Développeur", "Level Designer"]
+roles = [ "Développeur", "Level Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jeremy-ferreira"
-roles = ["Développeur gameplay"]
+roles = [ "Développeur gameplay" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "alix-granlin"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "lea-hoaraux"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "xavier-gappe"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "oscar-durandd"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "chloe-dumas"
-roles = ["Sound Designer"]
+roles = [ "Sound Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "landy-rakotomalala"
-roles = ["Sound Designer"]
+roles = [ "Sound Designer" ]
 fieldGroup = "contributors_group"
 
 [[youtube_singles]]

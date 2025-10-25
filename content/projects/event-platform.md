@@ -1,6 +1,6 @@
 +++
 date = "2024-11-15T10:00:00+02:00"
-draft = false
+draft = true
 title = "Plateforme de gestion d'événements"
 subtitle = "Application web full-stack - IUT Montpellier"
 description = "Application web pour la gestion d'événements avec architecture découplée Symfony/Vue.js"
@@ -27,6 +27,10 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++
 
 # Plateforme de gestion d'événements

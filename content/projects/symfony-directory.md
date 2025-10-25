@@ -1,11 +1,11 @@
 +++
 date = "2024-09-15T10:00:00+02:00"
-draft = false
+draft = true
 title = "Annuaire Symfony"
 subtitle = "Application de gestion de profils - IUT Montpellier"
 description = "Application web sécurisée avec système d'authentification et gestion des rôles utilisateurs"
 image = "/images/projects/symfony-directory.jpg"
-tags = ["Symfony", "Twig", "Docker", "MySQL", "Security"]
+tags = [ "Symfony", "Twig", "Docker", "MySQL", "Security" ]
 frameworks_engines = [ "Symfony", "Docker" ]
 programming_languages = [ "PHP", "MySQL" ]
 specialties = [ "Twig" ]
@@ -29,6 +29,10 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
+
+[ranking]
+event_type = "Classement"
+suffix = "è"
 +++
 
 # Annuaire Symfony - Application de gestion de profils

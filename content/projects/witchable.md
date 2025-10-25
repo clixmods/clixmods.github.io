@@ -2,8 +2,8 @@
 date = "2022-01-17T00:00:00+02:00"
 draft = false
 title = "Witchable"
-subtitle = "Simulation d'alchimiste - Itch.io Release"
-description = "Witchable est un jeu de simulation où vous incarnez un alchimiste dans son laboratoire. Servez rapidement les potions demandées par vos clients à l'aide de différentes machines et ingrédients !"
+subtitle = "Jeu d'alchimiste avec gestion du temps"
+description = "Jeu où vous incarnez un alchimiste devant servir rapidement les potions demandées à l'aide de différentes machines et ingrédients"
 tags = [ "Simulation", "Alchimie", "Itch.io", "Gestion", "Unity" ]
 category = "projects"
 sector = "games-gamejams"

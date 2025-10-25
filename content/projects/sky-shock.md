@@ -2,8 +2,8 @@
 date = "2022-06-01T00:00:00+02:00"
 draft = false
 title = "Sky Shock"
-subtitle = "Shoot'em up arcade - Itch.io Release"
-description = "Sky Shock est un shoot'em up arcade dynamique, disponible gratuitement sur itch.io. Défiez les vagues d'ennemis dans un univers rétro et coloré !"
+subtitle = "Shoot'em up arcade"
+description = "Shoot'em up arcade, défiez les vagues d'ennemis dans un univers rétro et coloré !"
 tags = [ "Arcade", "Shoot'em up", "Unity", "Itch.io", "Retro" ]
 category = "projects"
 sector = "games-gamejams"

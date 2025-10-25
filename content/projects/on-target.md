@@ -1,9 +1,9 @@
 +++
 date = "2023-04-07T00:00:00+02:00"
-draft = false
+draft = true
 title = "On Target"
-subtitle = "Simulation de tir - Itch.io Release"
-description = "On Target est un jeu inspiré du gameplay d'Aimlab, conçu par des étudiants en Game Design. Dans un univers cyberpunk, améliorez vos compétences de visée et de tir en ciblant des drones depuis votre plateforme."
+subtitle = "Simulation de tir"
+description = "Jeu inspiré du gameplay d'Aimlab pour améliorer vos compétences de visée en ciblant des drones depuis votre plateforme"
 tags = [
   "3D",
   "aimlablike",

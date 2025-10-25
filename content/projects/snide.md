@@ -2,7 +2,7 @@
 date = "2022-04-08T07:00:00.000Z"
 draft = false
 title = "Snide"
-subtitle = "Projet expérimental - e-artsup"
+subtitle = "Jeu expérimental avec mécaniques non-conventionnelles"
 description = "Projet de game design expérimental explorant des mécaniques de jeu non-conventionnelles"
 tags = [ "Unity", "Game Design", "Experimental", "Innovation" ]
 category = "projects"

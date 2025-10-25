@@ -2,8 +2,8 @@
 date = "2023-01-28T22:00:00.000Z"
 draft = false
 title = "Mystic Koni"
-subtitle = "Jeu de puzzle féérique - Itch.io Release"
-description = "Mystic Koni est un jeu de puzzle poétique où vous incarnez une fée vivant dans un arbre sacré mourant. Résolvez des énigmes pour restaurer les cœurs racines et sauver votre arbre !"
+subtitle = "Jeu de puzzle"
+description = "Jeu de puzzle où vous incarnez une fée vivant dans un arbre sacré mourant et devez résoudre des énigmes pour le sauver"
 tags = [ "Puzzle", "Féerique", "Itch.io", "Aventure", "Poétique" ]
 category = "projects"
 sector = "games-gamejams"

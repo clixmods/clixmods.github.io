@@ -1,9 +1,9 @@
 +++
 date = "2018-06-15T10:00:00+02:00"
 draft = false
-title = "FARM"
+title = "Farm"
 subtitle = "Remasterisation de carte - Black Ops 3"
-description = "Recréation moderne d'une carte classique avec level building et éclairage avancés"
+description = "Recréation fidèle et améliorée de Farm de Black Ops 2 sur Call Of Duty: Black Ops 3"
 tags = [ "Level Building", "Lighting", "Remaster", "Environment" ]
 category = "projects"
 sector = "mods"
@@ -318,19 +318,17 @@ last_updated = "2025-10-07T09:40:29.518Z"
   fieldGroup = "downloads_group"
 +++
 
-# FARM - Remasterisation
+# Farm - Remasterisation
 
 ## Description du projet
 
-FARM est une remasterisation complète d'une carte zombie de Call Of Duty: Black Ops 2 pour Call of Duty: Black Ops 3. Ce projet de modding se concentre sur l'amélioration visuelle et technique d'un environnement existant, en utilisant les capacités modernes du moteur pour créer une expérience renouvelée.
+Farm est une remasterisation d'une carte zombie du même nom de Call Of Duty: Black Ops 2 pour Call of Duty: Black Ops 3. Ce projet de modding se concentre sur l'amélioration visuelle et technique d'un environnement existant, en utilisant les capacités modernes du moteur pour créer une expérience renouvelée.
 
 ## Level Building et construction
 
 ### Reconstrution moderne
-- **Analyse** de la carte originale pour comprendre son essence
-- **Reconstruction** complète avec les outils modernes
-- **Amélioration** de la géométrie et des proportions
-- **Optimisation** pour les performances actuelles
+- **Analyse** de la carte originale
+- **Reconstruction** complète avec les outils de Black Ops 3
 
 ### Techniques de construction avancées
 - **Modélisation précise** des environnements
