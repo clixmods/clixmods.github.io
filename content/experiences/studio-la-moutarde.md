@@ -3,7 +3,7 @@ title: Développeur C# / Unity
 company: Studio La Moutarde
 logo: /images/companies/la-moutarde.png
 start_date: 2023-09-01T00:00:00.000Z
-end_date: 2025-08-31T00:00:00.000Z
+end_date: 2025-09-01T00:00:00.000Z
 type: Contrat en alternance
 location: Montpellier, Occitanie, France
 description: Développement C# en alternance avec travail sur la fin de production d'un jeu vidéo et développement d'outils
