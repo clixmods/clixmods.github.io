@@ -101,6 +101,13 @@ Three main FrontMatter content types:
 - Professional focus: Game development, Unity/C#, alternance work-study program
 - Error messages and debug output in French
 
+### Content Writing Rules
+- **NEVER use emojis in article titles, subtitles, or project descriptions** - They look childish and scream "AI-generated"
+- **NEVER use emojis in blog post content** - This is a professional portfolio, not a social media post
+- Emojis are ONLY acceptable in UI navigation elements (already defined in `config.json`)
+- Professional, technical writing style - let the content speak for itself
+- Avoid overly enthusiastic or marketing-like language that signals AI generation
+
 ### JavaScript Development Rules
 - **NEVER generate HTML strings in JavaScript** - This is strictly forbidden
 - **NEVER use createElement for complex UI structures** - Use Hugo partials instead

@@ -170,5 +170,13 @@
   {
     "id": "grade",
     "path": "images/icons/grade.svg"
+  },
+  {
+    "id": "phone",
+    "path": "images/icons/phone.svg"
+  },
+  {
+    "id": "artstation",
+    "path": "images/icons/artstation.svg"
   }
 ]

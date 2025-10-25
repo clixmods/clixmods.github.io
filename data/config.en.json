@@ -55,6 +55,8 @@
     { "title": "LinkedIn", "url": "https://linkedin.com/in/clementg4", "icon": "💼", "external": true },
     { "title": "GitHub", "url": "https://github.com/clixmods", "icon": "🐙", "external": true },
     { "title": "Email", "url": "mailto:clement.g.developer@gmail.com", "icon": "📧" },
-    { "title": "Discord", "url": "#", "icon": "🎮" }
+    { "title": "Discord", "url": "#", "icon": "🎮" },
+    { "title": "Phone", "url": "#", "icon": "📱" },
+    { "title": "ArtStation", "url": "https://www.artstation.com/clix/", "icon": "🎨", "external": true }
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://frontmatter.codes/config/data.files.schema.json",
+  "id": "certifications",
+  "title": "Certifications",
+  "file": "data/certifications.json",
+  "labelField": "title",
+  "schema": {
+    "title": "Certification",
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Titre de la certification"
+      },
+      "issuer": {
+        "type": "string",
+        "title": "Émetteur"
+      },
+      "date": {
+        "type": "string",
+        "title": "Date"
+      },
+      "status": {
+        "type": "string",
+        "title": "Statut",
+        "enum": [
+          "En cours",
+          "Obtenu",
+          "En attente"
+        ]
+      },
+      "description": {
+        "type": "string",
+        "title": "Description",
+        "widget": "textarea"
+      },
+      "icon": {
+        "type": "string",
+        "title": "Icône (emoji)"
+      },
+      "color": {
+        "type": "string",
+        "title": "Couleur (hex)"
+      }
+    },
+    "required": [
+      "title",
+      "issuer",
+      "date",
+      "status"
+    ]
+  }
+}

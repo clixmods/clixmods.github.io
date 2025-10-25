@@ -18,17 +18,17 @@
   {
     "id": "portfolio_explorer",
     "name": "Explorateur de Portfolio",
-    "description": "Découvrez la section portfolio",
+    "description": "Explorer toute la page d'accueil",
     "icon": "💼",
     "rarity": "common",
-    "requirement": "Visiter la section portfolio",
+    "requirement": "Atteindre le bas de la page d'accueil",
     "category": "exploration",
     "points": 10,
     "enabled": true,
     "order": 2,
-    "condition_type": "page_visit",
+    "condition_type": "scrolled_to_bottom",
     "condition_data": {
-      "paths": ["/portfolio"]
+      "page": "home"
     }
   },
   {
@@ -74,7 +74,7 @@
     "requirement": "Activer le mode sombre",
     "category": "interaction",
     "points": 10,
-    "enabled": true,
+    "enabled": false,
     "order": 5,
     "condition_type": "theme_change",
     "condition_data": {
@@ -110,7 +110,7 @@
     "order": 7,
     "condition_type": "action_performed",
     "condition_data": {
-      "action": "cv_downloaded"
+      "action": "cvDownloaded"
     }
   },
   {
@@ -126,25 +126,23 @@
     "order": 8,
     "condition_type": "visited_count",
     "condition_data": {
-      "storage_key": "visitedSocialLinks",
+      "storage_key": "socialClicks",
       "min_count": 2
     }
   },
   {
     "id": "technology_explorer",
     "name": "Explorateur de Technologies",
-    "description": "Consultez la section des compétences techniques",
+    "description": "Ouvrez la modal d'une compétence technique",
     "icon": "🔧",
     "rarity": "common",
-    "requirement": "Voir les technologies utilisées",
-    "category": "exploration",
+    "requirement": "Ouvrir une modal de compétence",
+    "category": "interaction",
     "points": 15,
     "enabled": true,
     "order": 9,
-    "condition_type": "section_viewed",
-    "condition_data": {
-      "section": "technologies"
-    }
+    "condition_type": "skill_modal_opened",
+    "condition_data": {}
   },
   {
     "id": "completionist",
@@ -159,7 +157,7 @@
     "order": 10,
     "condition_type": "all_sections_visited",
     "condition_data": {
-      "required_sections": ["home", "portfolio", "projects", "posts", "technologies"]
+      "required_sections": ["home", "skills", "projects", "posts", "educations", "experiences"]
     }
   },
   {
