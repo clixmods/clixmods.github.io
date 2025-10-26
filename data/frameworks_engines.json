@@ -22,7 +22,7 @@
   },
   {
     "name": "SignalR",
-    "iconPath": "/images/technologies/SignalR.svg",
+    "iconPath": "/images/technologies/signalR_logo.png",
     "color": "#512BD4",
     "displayedInPortfolio": false,
     "experience": 1
@@ -72,7 +72,7 @@
   {
     "name": "JavaFX",
     "experience": 2,
-    "iconPath": "/images/technologies/JavaFX.svg",
+    "iconPath": "/images/technologies/JavaFX_Logo.png",
     "color": "#FF6B1A",
     "displayedInPortfolio": false
   },

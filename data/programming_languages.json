@@ -18,7 +18,7 @@
   {
     "name": "SQL",
     "icon": "🗄️",
-    "iconPath": "/images/technologies/PostgresSQL.svg",
+    "iconPath": "/images/technologies/Sql_data_base_with_logo.svg",
     "color": "#336791",
     "displayedInPortfolio": true,
     "experience": 2
