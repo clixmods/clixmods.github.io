@@ -83,7 +83,7 @@
   },
   {
     "id": "time_keeper",
-    "name": "Gardien du Temps HELLO",
+    "name": "Gardien du Temps",
     "description": "Restez sur le site pendant plus de 5 minutes",
     "icon": "⏰",
     "rarity": "rare",
