@@ -1,8 +1,8 @@
 ---
 title: "École privée : promesses non tenues"
-subtitle: "Retour d'expérience sur un changement de politique d'alternance et ses impacts"
+subtitle: Retour d'expérience sur un changement de politique d'alternance et ses impacts
 date: 2025-08-09T10:45:00+02:00
-draft: false
+draft: true
 category: parcours
 tags:
   - Parcours
@@ -14,7 +14,7 @@ technologies:
   - Unity
   - C#
 image: /images/blog/ecole-privee-promesses.jpg
-description: "Analyse personnelle d'un revirement de politique d'alternance dans une école privée et de ses conséquences financières et professionnelles."
+description: Analyse personnelle d'un revirement de politique d'alternance dans une école privée et de ses conséquences financières et professionnelles.
 fmContentType: default
 ---
 

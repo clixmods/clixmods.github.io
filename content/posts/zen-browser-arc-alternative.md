@@ -2,7 +2,7 @@
 title: "Zen Browser : Ce qu'Arc aurait dû être"
 subtitle: Quand l'open-source rencontre la productivité navigateur
 date: 2025-08-07T22:26:23.011Z
-draft: false
+draft: true
 category: tech
 tags:
     - Navigateur

@@ -1,8 +1,8 @@
 ---
-title: "Deux projets aux Pégases du Jeu Vidéo 2025"
-subtitle: "Stone Keeper et Terra Memoria parmi les nommés - une double fierté"
+title: Deux projets aux Pégases du Jeu Vidéo 2025
+subtitle: Stone Keeper et Terra Memoria parmi les nommés - une double fierté
 date: 2025-08-09T10:30:00+02:00
-draft: false
+draft: true
 category: tech
 tags:
   - Pégases
@@ -15,7 +15,7 @@ technologies:
   - Unity
   - C#
 image: /images/projects/stone-keeper/stone-keeper-7.jpg
-description: "Retour sur la nomination de Stone Keeper (projet étudiant) et Terra Memoria (projet professionnel) aux Pégases du Jeu Vidéo 2025."
+description: Retour sur la nomination de Stone Keeper (projet étudiant) et Terra Memoria (projet professionnel) aux Pégases du Jeu Vidéo 2025.
 fmContentType: default
 ---
 

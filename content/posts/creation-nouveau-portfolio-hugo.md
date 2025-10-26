@@ -2,22 +2,22 @@
 title: Comment j'ai créé mon nouveau portfolio Hugo
 subtitle: "De Notion à Hugo : l'histoire d'une migration vers un portfolio sur mesure"
 date: 2025-08-07T22:09:52.591Z
-draft: false
+draft: true
 category: tech
 tags:
-    - Hugo
-    - Portfolio
-    - Development
-    - Migration
-    - Front Matter CMS
-    - GitHub Pages
+  - Hugo
+  - Portfolio
+  - Development
+  - Migration
+  - Front Matter CMS
+  - GitHub Pages
 technologies:
-    - Hugo
-    - JavaScript
-    - HTML/CSS
-    - Front Matter CMS
-    - GitHub Pages
-    - Git
+  - Hugo
+  - JavaScript
+  - HTML/CSS
+  - Front Matter CMS
+  - GitHub Pages
+  - Git
 image: /images/blog/creation-portfolio-hugo.jpg
 description: "Retour d'expérience sur la création de mon nouveau portfolio avec Hugo : choix techniques, défis rencontrés et solutions mises en place."
 fmContentType: default

@@ -1,8 +1,8 @@
 ---
 title: "Alternance chez La Moutarde : post-release, portage, prototypage & B2B"
-subtitle: "Retour structuré sur une alternance terrain mêlant support produit, R&D et outillage"
+subtitle: Retour structuré sur une alternance terrain mêlant support produit, R&D et outillage
 date: 2025-08-09T11:00:00+02:00
-draft: false
+draft: true
 category: parcours
 tags:
   - Alternance

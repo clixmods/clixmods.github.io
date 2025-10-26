@@ -54,6 +54,22 @@
     "color": "#00BCD4",
     "displayedInPortfolio": true,
     "subtitle": "Collaboration"
+  },
+  {
+    "name": "Créativité",
+    "icon": "💡",
+    "iconPath": null,
+    "color": "#E91E63",
+    "displayedInPortfolio": false,
+    "subtitle": "Innovation"
+  },
+  {
+    "name": "Analyse critique",
+    "icon": "🎯",
+    "iconPath": null,
+    "color": "#673AB7",
+    "displayedInPortfolio": false,
+    "subtitle": "Évaluation"
   }
 ]
 

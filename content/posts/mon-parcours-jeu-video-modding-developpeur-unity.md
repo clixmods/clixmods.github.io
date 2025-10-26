@@ -2,7 +2,7 @@
 title: "Mon Parcours dans le Jeu Vidéo : Du Modding Amateur à Développeur Unity"
 subtitle: "De moddeur amateur à développeur Unity : un chemin atypique et formateur"
 date: 2025-08-12T12:00:00+02:00
-draft: false
+draft: true
 category: parcours
 tags:
   - Parcours

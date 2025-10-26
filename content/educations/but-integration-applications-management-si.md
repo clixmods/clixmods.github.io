@@ -126,4 +126,20 @@ testimonials:
   - antoine-chollet
   - anita-messaoui
   - francis-garcia
+tools:
+  - tool: Visual Studio
+    displayInList: false
+    displayInCV: false
+  - tool: SonarQube
+    displayInList: false
+    displayInCV: false
+  - tool: Trello
+    displayInList: false
+    displayInCV: false
+  - tool: JetBrains
+    displayInList: false
+    displayInCV: false
+  - tool: GitLab
+    displayInList: false
+    displayInCV: false
 ---

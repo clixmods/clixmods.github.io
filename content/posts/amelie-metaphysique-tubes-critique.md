@@ -2,7 +2,7 @@
 title: Amélie et La métaphysique des tubes - mini-critique
 subtitle: Un joli film aquarellé qui parle d'enfance, de mort et de curiosité avec douceur… et beaucoup d'intelligence
 date: 2025-08-07T16:00:00+02:00
-draft: false
+draft: true
 category: culture
 tags:
     - Cinéma
@@ -14,7 +14,7 @@ technologies:
     - Animation
     - Aquarelle
 description: "Une mini-critique du film d'animation sur l'enfance d'Amélie Nothomb au Japon : un regard tendre et intelligent sur l'enfance, la mort et la curiosité."
-preview: /images/projects/stone-keeper-2/stone-keeper2-3.png
+preview: /images/posts/amelie-et-la-metaphysique-des-tubes-affiche.jpg
 fmContentType: default
 ---
 

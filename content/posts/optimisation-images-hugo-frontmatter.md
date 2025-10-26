@@ -1,11 +1,17 @@
 +++
 title = "Optimiser automatiquement vos images statiques avec Hugo : Module Mounts et WebP"
 date = 2025-10-08
-draft = false
+draft = true
 description = "Comment transformer vos images statiques en ressources Hugo optimisées sans toucher à votre workflow FrontMatter CMS. Découvrez la technique des module mounts pour convertir automatiquement vos images en WebP."
 image = "/images/posts/hugo-image-optimization/hero.jpg"
 category = "tech"
-tags = ["Hugo", "Performance", "WebP", "Optimisation", "FrontMatter CMS"]
+tags = [
+  "Hugo",
+  "Performance",
+  "WebP",
+  "Optimisation",
+  "FrontMatter CMS"
+]
 +++
 
 # Le problème : Images statiques vs Optimisation Hugo
