@@ -128,10 +128,6 @@
     "path": "images/icons/globe.svg"
   },
   {
-    "id": "battery",
-    "path": "images/icons/battery.svg"
-  },
-  {
     "id": "close",
     "path": "images/icons/close.svg"
   },
