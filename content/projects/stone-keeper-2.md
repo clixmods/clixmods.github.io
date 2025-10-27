@@ -134,7 +134,7 @@ fieldGroup = "galleries_group"
   url = "/images/projects/stone-keeper-2/stone-keeper2-1.png"
 
   [[galleries.images]]
-  url = "/images/projects/stone-keeper-2/stone-keeper2-2.png"
+  url = "/images/projects/stone-keeper-2/stone-keeper2-2.jpg"
 
   [[galleries.images]]
   url = "/images/projects/stone-keeper-2/stone-keeper2-3.png"
