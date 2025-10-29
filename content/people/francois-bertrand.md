@@ -7,10 +7,10 @@ avatar: /images/people/francois-bertrand.png
 position: Co-fondateur
 company: La Moutarde
 bio: Profil de Francois BERTRAND
-email: qsdqsdqsd
-linkedin: sdfsdf
-github: qsdqsd
-website: sqdqsdqsd
+email: 
+linkedin: 
+github: 
+website: 
 fmContentType: person-content-type
-discord: ogfodhj
+discord: 
 ---
