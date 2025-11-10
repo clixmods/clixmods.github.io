@@ -101,6 +101,36 @@ Three main FrontMatter content types:
 - Professional focus: Game development, Unity/C#, alternance work-study program
 - Error messages and debug output in French
 
+### **MANDATORY CODE DOCUMENTATION RULE**
+**⚠️ CRITICAL: ALL code comments and documentation MUST be in English - NO EXCEPTIONS ⚠️**
+
+This applies to:
+- **HTML/Hugo templates**: All `{{/* ... */}}` and `<!-- ... -->` comments
+- **SCSS/CSS files**: All `/* ... */` and `//` comments
+- **JavaScript files**: All `//` and `/* ... */` comments
+- **PowerShell/Bash scripts**: All `#` comments
+- **Markdown documentation files**: All technical documentation (except user-facing content)
+
+**Rationale**: 
+- English is the universal language of programming
+- Ensures code accessibility for international collaborators
+- Maintains consistency with industry standards
+- Facilitates code reviews and maintenance
+- Improves AI assistance accuracy
+
+**When adding ANY new line of code or modifying existing code:**
+1. ✅ Write ALL comments in English
+2. ✅ Document technical decisions in English
+3. ✅ Use English for variable names in comments
+4. ❌ NEVER use French in code comments
+5. ❌ NEVER use French in technical documentation
+
+**Exceptions (French is acceptable):**
+- User-facing content in `/content/` (blog posts, project descriptions)
+- UI text and labels in data files (`data/*.json`)
+- Error messages displayed to French users
+- Content metadata (frontmatter titles, descriptions)
+
 ### Content Writing Rules
 - **NEVER use emojis in article titles, subtitles, or project descriptions** - They look childish and scream "AI-generated"
 - **NEVER use emojis in blog post content** - This is a professional portfolio, not a social media post
