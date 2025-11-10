@@ -181,10 +181,10 @@
   },
   {
     "name": "AutoDesk Maya",
-    "category": "3d_modeling",
+    "category": "other",
     "description": "Modélisation de props, animation et création d'assets 3D",
     "experience": 2,
-    "iconPath": "images/technologies/AutoDesk-Maya.svg",
+    "iconPath": "images/technologies/Autodesk-Maya.svg",
     "color": "#00B4A5",
     "displayedInPortfolio": true
   }
