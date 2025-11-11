@@ -138,6 +138,7 @@ This applies to:
 - **NEVER use em dash "—" (tiret cadratin)** - Always use simple hyphen "-" instead
 - Professional, technical writing style - let the content speak for itself
 - Avoid overly enthusiastic or marketing-like language that signals AI generation
+- Blog posts (`/content/posts/`): absolutely no emojis anywhere (frontmatter, headings, paragraphs, lists, quotes, code fences). Remove any existing ones when editing legacy content.
 
 ### JavaScript Development Rules
 - **NEVER generate HTML strings in JavaScript** - This is strictly forbidden
