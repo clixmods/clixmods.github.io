@@ -22,10 +22,10 @@
     "status": "BUT 3 Student - Apprentice at Studio La Moutarde"
   },
   "availability": {
-    "status": "Under contract",
-    "message": "Currently in apprenticeship",
-    "available": false,
-    "nextAvailable": "September 2026"
+    "status": "job_seeking",
+    "message": "Available immediately",
+    "available": true,
+    "nextAvailable": "Immediately"
   },
   "details": {
     "formation": "BUT 3 IAMSI - IUT Montpellier-Sète",

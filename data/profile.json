@@ -23,7 +23,7 @@
       "status": "Disponible pour CDD/CDI"
     },
     "availability": {
-      "status": "En recherche d'emploi",
+      "status": "job_seeking",
       "message": "Disponible immédiatement",
       "available": true,
       "nextAvailable": "Immédiatement"
