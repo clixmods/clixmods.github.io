@@ -5,9 +5,9 @@ theme = 'portfolio.theme'
 buildDrafts = false
 buildFuture = false
 
-# Multilingual configuration - DISABLED (English support not implemented yet)
+# Multilingual configuration
 defaultContentLanguage = 'fr'
-# Keep French at root only
+# Keep French at root, English under /en/
 defaultContentLanguageInSubdir = false
 
 [caches]
@@ -20,11 +20,11 @@ defaultContentLanguageInSubdir = false
         languageCode = 'fr-fr'
         weight = 1
         title = "Portfolio - Clément 'Clix' GARCIA"
-    # [languages.en]
-    #   languageName = 'English'
-    #   languageCode = 'en-us'
-    #   weight = 2
-    #   title = "Portfolio - Clément 'Clix' GARCIA"
+    [languages.en]
+      languageName = 'English'
+      languageCode = 'en-us'
+      weight = 2
+      title = "Portfolio - Clément 'Clix' GARCIA"
     
 # Module mounts - Allow Hugo to process static images as resources
 [module]
