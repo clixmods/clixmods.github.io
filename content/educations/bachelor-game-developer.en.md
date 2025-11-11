@@ -56,7 +56,7 @@ color: "#8b5cf6"
 displayedInPortfolio: true
 fmContentType: education-content-type
 draft: false
-school_logo: /images/schools/logo-e-artsup.png
+school_logo: /images/schools/eartsup_logo.png
 years_detail:
   - year: 1
     status: validated
