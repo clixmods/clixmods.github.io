@@ -22,16 +22,16 @@ image = "/images/projects/nuketown/nuketown-zombies.jpg"
 specialties = [
   "Level Design",
   "Modding",
-  "Environnement Building",
+  "Environment Building",
   "Lighting",
-  "Développement Gameplay",
-  "Interface utilisateur",
-  "Optimisation"
+  "Gameplay Development",
+  "User Interface",
+  "Optimization"
 ]
 soft_skills = [
-  "Management Communauté",
-  "Gestion de Projet",
-  "Résolution Problèmes"
+  "Community Management",
+  "Project Management",
+  "Problem Solving"
 ]
 tools = [ "Fork", "Visual Studio Code", "Sublime Text", "Photoshop" ]
 awards = [ ]

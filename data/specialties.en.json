@@ -1,0 +1,222 @@
+[
+  {
+    "name": "Video Game Development",
+    "icon": "🎮",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 4,
+    "subtitle": "Unity & Unreal"
+  },
+  {
+    "name": "Game Design",
+    "icon": "🎲",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 4,
+    "subtitle": "Conception"
+  },
+  {
+    "name": "Level Design",
+    "icon": "🗺️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 3,
+    "subtitle": "Tools & maps"
+  },
+  {
+    "name": "Lighting",
+    "icon": "💡",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2,
+    "subtitle": "Lighting"
+  },
+  {
+    "name": "Environment Building",
+    "icon": "🏗️",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2,
+    "subtitle": "Environment construction"
+  },
+  {
+    "name": "Modding",
+    "icon": "🔧",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 4,
+    "subtitle": "Steam Workshop"
+  },
+  {
+    "name": "Call of Duty Modding",
+    "icon": "🔫",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 4,
+    "subtitle": "800k downloads"
+  },
+  {
+    "name": "Console Porting",
+    "icon": "🎮",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Nintendo Switch"
+  },
+  {
+    "name": "Platform Porting",
+    "icon": "🔄",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2,
+    "subtitle": "Multi-platform"
+  },
+  {
+    "name": "User Experience (UX)",
+    "icon": "👤",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2,
+    "subtitle": "UI Ergonomics"
+  },
+  {
+    "name": "Optimization",
+    "icon": "⚡",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2,
+    "subtitle": "CPU/GPU & memory"
+  },
+  {
+    "name": "Maintenance & Debugging",
+    "icon": "🐛",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2,
+    "subtitle": "Bug fixes"
+  },
+  {
+    "name": "Tools Development",
+    "icon": "⚙️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 3,
+    "subtitle": "Unity plugins & tools"
+  },
+  {
+    "name": "Gameplay Development",
+    "icon": "🕹️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 3,
+    "subtitle": "Game mechanics"
+  },
+  {
+    "name": "Shaders",
+    "icon": "✨",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2,
+    "subtitle": "Volumetric lighting"
+  },
+  {
+    "name": "Algorithms",
+    "icon": "🧮",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2,
+    "subtitle": "Data structures"
+  },
+  {
+    "name": "User Interface",
+    "icon": "🖥️",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2,
+    "subtitle": "UI Design"
+  },
+  {
+    "name": "Object-Oriented Programming",
+    "icon": "🎯",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 4,
+    "subtitle": "Design & architecture"
+  },
+  {
+    "name": "Version Control with Git",
+    "icon": "🌿",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 4,
+    "subtitle": "Git Flow"
+  },
+  {
+    "name": "Security & Optimization",
+    "icon": "🔒",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 3,
+    "subtitle": "Best practices"
+  },
+  {
+    "name": "Design Patterns & Refactoring",
+    "icon": "🏗️",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 3,
+    "subtitle": "Code architecture"
+  },
+  {
+    "name": "API Development",
+    "icon": "🔌",
+    "experience": 2,
+    "displayedInPortfolio": true,
+    "subtitle": "REST API"
+  },
+  {
+    "name": "Software Architecture",
+    "icon": "🏗️",
+    "experience": 3,
+    "displayedInPortfolio": true,
+    "subtitle": "Modular design"
+  },
+  {
+    "name": "Real-Time",
+    "icon": "⚡",
+    "experience": 2,
+    "displayedInPortfolio": false,
+    "subtitle": "Synchronization"
+  },
+  {
+    "name": "File Management",
+    "icon": "📁",
+    "experience": 3,
+    "displayedInPortfolio": false,
+    "subtitle": "Upload & processing"
+  },
+  {
+    "name": "Audio Integration",
+    "icon": "🎵",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 1,
+    "subtitle": "Sound effects"
+  },
+  {
+    "name": "Data Management",
+    "icon": "🗄️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Databases"
+  },
+  {
+    "name": "Application Development",
+    "icon": "💻",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2,
+    "subtitle": "Web applications"
+  }
+]

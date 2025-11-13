@@ -17,12 +17,12 @@ programming_languages = [ "C#" ]
 specialties = [
   "Level Design",
   "Lighting",
-  "Développement Gameplay",
+  "Gameplay Development",
   "Game Design",
-  "Environnement Building"
+  "Environment Building"
 ]
 tools = [ "GitHub", "Fork", "JetBrains", "Discord" ]
-soft_skills = [ "Communication", "Résolution Problèmes" ]
+soft_skills = [ "Communication", "Problem Solving" ]
 
 [[actions]]
 type = "download"

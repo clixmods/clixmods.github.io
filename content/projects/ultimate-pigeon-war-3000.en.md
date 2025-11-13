@@ -14,7 +14,7 @@ image = "/images/projects/pigeon-war/pigeon-war-background.png"
 status = "Completed"
 frameworks_engines = [ "Unity" ]
 programming_languages = [ "C#" ]
-specialties = [ "Développement Gameplay" ]
+specialties = [ "Gameplay Development" ]
 soft_skills = [ "Communication" ]
 tools = [ "GitHub", "JetBrains", "Discord" ]
 

@@ -24,9 +24,9 @@ logo = "/images/projects/blackjack-javafx/blackjack-logo.png"
 galleries = [ ]
 frameworks_engines = [ "JavaFX" ]
 programming_languages = [ "Java", "SQL" ]
-specialties = [ "Algorithmique", "Interface utilisateur" ]
+specialties = [ "Algorithms", "User Interface" ]
 tools = [ "GitLab", "Fork", "Photoshop", "JetBrains" ]
-soft_skills = [ "Communication", "Résolution Problèmes" ]
+soft_skills = [ "Communication", "Problem Solving" ]
 
 [[actions]]
 type = "github"

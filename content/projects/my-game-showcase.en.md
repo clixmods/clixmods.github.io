@@ -16,17 +16,17 @@ logo = "/images/projects/my-game-showcase/My Game Showcase.webp"
 frameworks_engines = [ "Blazor", "FastEndpoint", "SignalR", "Unity", ".NET", "TagLib#" ]
 programming_languages = [ "C#", "HTML", "CSS", "JavaScript" ]
 specialties = [
-  "Interface utilisateur",
-  "Design Pattern et refactoring",
-  "Développement Outils",
-  "Développement d'API",
-  "Architecture Logicielle",
-  "Temps Réel",
-  "Gestion de Fichiers",
-  "Portage Console",
-  "Optimisation"
+  "User Interface",
+  "Design Patterns & Refactoring",
+  "Tools Development",
+  "API Development",
+  "Software Architecture",
+  "Real-Time",
+  "File Management",
+  "Console Porting",
+  "Optimization"
 ]
-soft_skills = [ "Résolution Problèmes", "Communication", "Travail d'équipe" ]
+soft_skills = [ "Problem Solving", "Communication", "Teamwork" ]
 tools = [ "Azure", "Fork", "JetBrains", "ClickUp" ]
 status = "In Production"
 

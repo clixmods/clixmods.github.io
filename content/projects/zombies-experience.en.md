@@ -9,10 +9,10 @@ programming_languages = [ "LUA", "C++", "GSC" ]
 specialties = [
   "Modding",
   "Game Design",
-  "Expérience utilisateur (UX)",
-  "Développement Gameplay",
-  "Interface utilisateur",
-  "Optimisation"
+  "User Experience (UX)",
+  "Gameplay Development",
+  "User Interface",
+  "Optimization"
 ]
 category = "projects"
 sector = "mods"
@@ -21,9 +21,9 @@ fmContentType = "project-content-type"
 image = "/images/projects/zombies-experience/téléchargement.jpg"
 logo = "/images/projects/zombies-experience/ze-logo.png"
 soft_skills = [
-  "Management Communauté",
-  "Résolution Problèmes",
-  "Gestion de Projet",
+  "Community Management",
+  "Problem Solving",
+  "Project Management",
   "Communication"
 ]
 frameworks_engines = [ "Black Ops III engine" ]

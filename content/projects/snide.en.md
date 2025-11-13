@@ -18,14 +18,14 @@ specialties = [
   "Level Design",
   "Game Design",
   "Lighting",
-  "Développement Gameplay",
-  "Interface utilisateur"
+  "Gameplay Development",
+  "User Interface"
 ]
 soft_skills = [
-  "Gestion de Projet",
+  "Project Management",
   "Leadership",
   "Communication",
-  "Résolution Problèmes"
+  "Problem Solving"
 ]
 tools = [ "Fork", "Notion", "Discord", "GitHub", "JetBrains" ]
 

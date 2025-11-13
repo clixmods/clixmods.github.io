@@ -1,0 +1,68 @@
+[
+  {
+    "personId": "francois-bertrand",
+    "company": "La Moutarde",
+    "position": "Co-founder / Game Director",
+    "text": "Clément quickly established himself as a driving force in our team. His sense of initiative is particularly remarkable: he doesn't hesitate to go beyond the tasks assigned to him to suggest improvements and optimize our processes. In addition to being an excellent developer, Clément demonstrates attentive listening skills and great adaptability. His commitment and desire to progress make him a highly valuable collaborator, appreciated by both his colleagues and management."
+  },
+  {
+    "personId": "anthony-expert",
+    "company": "La Moutarde",
+    "position": "Co-founder / Art Director",
+    "text": "I had the chance to work with Clément during his work-study program within our team. He integrated quickly and showed great autonomy, real adaptability and excellent mastery of Unity. He often surprised me with the quality of his work to the point of making me forget he was still a work-study student. His absence was always felt when he was in class, proof of the positive impact he had on a daily basis. Always willing, curious and committed, he was able to provide concrete and effective solutions to the projects he worked on. His seriousness and motivation make him a trustworthy collaborator whom I highly recommend."
+  },
+  {
+    "personId": "mony-cazamea",
+    "company": "La Moutarde",
+    "position": "Artist",
+    "text": "I had the pleasure of working regularly alongside Clément at La Moutarde. My skills being in a different field, I couldn't judge his development abilities. But as a teammate, Clément is someone very pleasant to work with: serious, professional and always involved in his missions. He also knows how to bring a touch of good humor and wit to daily work. He is rigorous and curious, he doesn't shy away from criticism and improves every day. I would work with him again with pleasure if our paths cross!"
+  },
+  {
+    "personId": "antoine-chollet",
+    "company": "University of Montpellier",
+    "position": "Associate Professor in Management Sciences",
+    "text": "Clément was my student in Computer Science BUT at the University of Montpellier. After joining in the 2nd year, he was able to give himself the means to succeed. As a work-study student in the video game sector during his studies, Clément was able to show his determination and passion. Congratulations on your perseverance and looking forward to seeing your evolution!"
+  },
+  {
+    "personId": "gaetan-vergeot",
+    "company": "UGU",
+    "position": "Game Developer & Teacher",
+    "text": "From the beginning of his second year of studies where I was his Unity Development teacher, I could see that Clément was involved and had important reflexes when seeking to become a developer: good curiosity and research ability that helps him find his answers. Clément was also someone autonomous who tries things with each project without relying too much on his past experience."
+  },
+  {
+    "personId": "lucas-guibert",
+    "company": "e-artsup Montpellier",
+    "position": "Game Programmer / Technical Designer",
+    "text": "I had the opportunity to follow Clément's work throughout his second year of studies, as a programming instructor. I discovered a curious developer passionate about his work, who always had a slight edge on the topics studied. He brilliantly managed to alternate between gameplay development, rendering and tools according to the needs of projects and the team. Clément has all the chances on his side, and I'm convinced he will go far!"
+  },
+  {
+    "personId": "benoit-toupet",
+    "company": "e-artsup Montpellier",
+    "position": "Former Director",
+    "text": "I had the chance to count Clément Garcia among our e-artsup students when I was director. Conscientious, available, responsive, very pleasant, he proved to be indispensable within the teams in which he was often 'lead'."
+  },
+  {
+    "personId": "jesse-moody",
+    "company": "Call of Duty Franchise",
+    "position": "Hard Surface Specialist",
+    "text": "Feels like I worked on the original years ago. Nice work on the Farm map update!"
+  },
+  {
+    "personId": "mike-curran",
+    "company": "Treyarch",
+    "position": "Senior Character Artist",
+    "text": "Excellent work on the Nuketown Zombies remaster!"
+  },
+  {
+    "personId": "anita-messaoui",
+    "company": "IUT de Montpellier-Sète",
+    "position": "Associate Professor in Educational Sciences",
+    "text": "During the two years I had him in class, I was able to observe his evolution and his constant efforts to develop his skills, both academically and personally. Clément stands out for real motivation and concrete interest in communication and teamwork. He demonstrated an ability to actively engage in collective projects, particularly during the BUT 2 collective project."
+  },
+  {
+    "personId": "francis-garcia",
+    "company": "IUT Informatique Montpellier",
+    "position": "Computer Science Professor",
+    "text": "Clément GARCIA, [...] a very serious, very diligent and very assiduous student. The results, obtained since the beginning of his studies in BUT, have been above average in most teaching units. Particularly comfortable in computer science subjects and more specifically in systems, networks and security, of which I am responsible."
+  }
+]

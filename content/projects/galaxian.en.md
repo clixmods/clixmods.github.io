@@ -14,13 +14,13 @@ image = "/images/projects/galaxian/galaxian-background.png"
 status = "Completed"
 specialties = [
   "Game Design",
-  "Gestion de versions avec Git",
-  "Développement Gameplay"
+  "Version Control with Git",
+  "Gameplay Development"
 ]
 programming_languages = [ "C#" ]
 frameworks = [ "Unity" ]
 frameworks_engines = [ "Unity" ]
-soft_skills = [ "Résolution Problèmes", "Communication", "Gestion de Projet" ]
+soft_skills = [ "Problem Solving", "Communication", "Project Management" ]
 tools = [ "GitHub", "Fork", "JetBrains", "Trello", "SonyVegas" ]
 
 [[actions]]
