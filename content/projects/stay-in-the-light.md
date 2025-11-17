@@ -12,20 +12,20 @@ fmContentType = "project-content-type"
 image = "/images/projects/stay-in-the-light/stay-background.png"
 logo = "/images/projects/stay-in-the-light/stay-logo.png"
 status = "Terminé"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#", "HLSL" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp", "lang_hlsl" ]
 specialties = [
-  "Level Design",
-  "Intégration Audio",
-  "Lighting",
-  "Environnement Building",
-  "Développement Gameplay",
-  "Shaders",
-  "Interface utilisateur",
-  "Expérience utilisateur (UX)"
+  "spec_level_design",
+  "spec_integration_audio",
+  "spec_lighting",
+  "spec_environnement_building",
+  "spec_developpement_gameplay",
+  "spec_shaders",
+  "spec_interface_utilisateur",
+  "spec_experience_utilisateur_ux"
 ]
-soft_skills = [ "Communication", "Résolution Problèmes" ]
-tools = [ "GitHub", "Fork", "Notion", "JetBrains" ]
+soft_skills = [ "skill_communication", "skill_resolution_problemes" ]
+tools = [ "tool_github", "tool_fork", "tool_notion", "tool_jetbrains" ]
 
 [[actions]]
 type = "download"

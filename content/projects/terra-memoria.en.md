@@ -13,30 +13,34 @@ fmContentType = "project-content-type"
 status = "Completed"
 logo = "/images/projects/terra-memoria/terra-memoria-logo.png"
 image = "/images/projects/terra-memoria/terra-memoria-background.jpg"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
 specialties = [
-  "Console Porting",
-  "Platform Porting",
-  "User Experience (UX)",
-  "Optimization",
-  "Maintenance & Debugging",
-  "Gameplay Development",
-  "Tools Development"
+  "spec_portage_console",
+  "spec_experience_utilisateur_ux",
+  "spec_optimisation",
+  "spec_maintenance_and_debogage",
+  "spec_developpement_gameplay",
+  "spec_developpement_outils",
+  "spec_portage_plateforme"
 ]
-soft_skills = [ "Problem Solving", "Communication", "Teamwork" ]
+soft_skills = [
+  "skill_resolution_problemes",
+  "skill_communication",
+  "skill_travail_en_equipe"
+]
 tile_size = "1x1"
 technical_specs = [ ]
 tools = [
-  "ClickUp",
-  "JetBrains",
-  "Photoshop",
-  "Sublime Text",
-  "Azure",
-  "Fork",
-  "Visual Studio",
-  "Visual Studio Code",
-  "Discord"
+  "tool_clickup",
+  "tool_jetbrains",
+  "tool_photoshop",
+  "tool_sublime_text",
+  "tool_azure",
+  "tool_fork",
+  "tool_visual_studio",
+  "tool_visual_studio_code",
+  "tool_discord"
 ]
 
 [[actions]]
@@ -334,3 +338,4 @@ Participation in the end of production of the RPG and its post-release maintenan
 ## Results
 
 This project gave me invaluable experience in commercial video game development: from the end of production to post-release maintenance, through console porting and multi-platform integration. A total immersion in the professional processes of a development studio in collaboration with a publisher (Dear Villagers).
+

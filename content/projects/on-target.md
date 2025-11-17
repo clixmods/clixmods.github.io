@@ -21,10 +21,10 @@ fmContentType = "project-content-type"
 status = "Terminé"
 image = "/images/projects/on-target/ontarget-2.jpeg"
 logo = "/images/projects/on-target/ontarget-banner.png"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
-specialties = [ "Développement Outils" ]
-tools = [ "Fork", "JetBrains" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
+specialties = [ "spec_developpement_outils" ]
+tools = [ "tool_fork", "tool_jetbrains" ]
 notable_facts = [ ]
 
 [[actions]]

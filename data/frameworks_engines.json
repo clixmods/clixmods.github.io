@@ -77,6 +77,13 @@
     "displayedInPortfolio": false
   },
   {
+    "key": "fw_taglibsharp",
+    "experience": 1,
+    "iconPath": null,
+    "color": "#2D3E50",
+    "displayedInPortfolio": false
+  },
+  {
     "key": "fw_cassandra",
     "experience": 0.5,
     "iconPath": "/images/technologies/Apache-Cassandra.svg",

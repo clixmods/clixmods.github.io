@@ -13,19 +13,19 @@ image = "/images/projects/farm/farm-background.jpg"
 status = "Completed"
 youtube_galleries = [ ]
 specialties = [
-  "Level Design",
-  "Lighting",
-  "Environment Building",
-  "Modding"
+  "spec_level_design",
+  "spec_lighting",
+  "spec_environnement_building",
+  "spec_modding"
 ]
-frameworks_engines = [ "Black Ops III engine" ]
-programming_languages = [ "GSC" ]
-soft_skills = [ "Project Management" ]
+frameworks_engines = [ "fw_black_ops_iii_engine" ]
+programming_languages = [ "lang_gsc" ]
+soft_skills = [ "skill_gestion_de_projet" ]
 tools = [
-  "Visual Studio Code",
-  "Sublime Text",
-  "AutoDesk Maya",
-  "Radiant"
+  "tool_visual_studio_code",
+  "tool_sublime_text",
+  "tool_autodesk_maya",
+  "tool_radiant"
 ]
 
 [[actions]]
@@ -352,3 +352,4 @@ The map was well received by the community for its visual quality and attention 
 ## Acknowledgments
 
 Special thanks to Treyarch for creating the original, and to all the modders and artists whose tools and assets were essential in bringing this remaster to life.
+

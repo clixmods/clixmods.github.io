@@ -1,18 +1,19 @@
-+++
+﻿+++
 date = "2024-09-15T10:00:00+02:00"
 draft = true
 title = "Annuaire Symfony"
 subtitle = "Application de gestion de profils - IUT Montpellier"
 description = "Application web sécurisée avec système d'authentification et gestion des rôles utilisateurs"
 image = "/images/projects/symfony-directory.jpg"
-tags = [ "Symfony", "Twig", "Docker", "MySQL", "Security" ]
-frameworks_engines = [ "Symfony", "Docker" ]
-programming_languages = [ "PHP", "MySQL" ]
-specialties = [ "Twig" ]
+tags = [ "fw_symfony", "Twig", "Docker", "lang_mysql", "Security" ]
+frameworks_engines = [ "fw_symfony" ]
+programming_languages = [ "lang_php", "lang_mysql" ]
+specialties = [ "spec_twig_integration" ]
 category = "projects"
 sector = "appsweb-etude"
 featured = true
 fmContentType = "project-content-type"
+tools = [ "tool_docker" ]
 
 [widget_order]
 contributors = 10

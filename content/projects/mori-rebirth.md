@@ -12,14 +12,14 @@ fmContentType = "project-content-type"
 image = "/images/projects/mori-rebirth/mori-background.jpg"
 logo = "/images/projects/mori-rebirth/mori-logo.png"
 status = "Terminé"
-programming_languages = [ "GSC", "LUA" ]
-specialties = [ "Level Design", "Modding", "Environnement Building" ]
-frameworks_engines = [ "Black Ops III engine" ]
+programming_languages = [ "lang_gsc", "lang_lua" ]
+specialties = [ "spec_level_design", "spec_modding", "spec_environnement_building" ]
+frameworks_engines = [ "fw_black_ops_iii_engine" ]
 tools = [
-  "Sublime Text",
-  "Visual Studio Code",
-  "Radiant",
-  "AutoDesk Maya"
+  "tool_sublime_text",
+  "tool_visual_studio_code",
+  "tool_radiant",
+  "tool_autodesk_maya"
 ]
 
 [[actions]]

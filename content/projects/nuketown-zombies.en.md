@@ -11,8 +11,8 @@ tags = [
   "Remaster",
   "Zombies"
 ]
-programming_languages = [ "C++", "GSC", "LUA" ]
-frameworks_engines = [ "Black Ops III engine" ]
+programming_languages = [ "lang_cpp", "lang_gsc", "lang_lua" ]
+frameworks_engines = [ "fw_black_ops_iii_engine" ]
 category = "projects"
 sector = "mods"
 featured = true
@@ -20,20 +20,20 @@ status = "Completed"
 fmContentType = "project-content-type"
 image = "/images/projects/nuketown/nuketown-zombies.jpg"
 specialties = [
-  "Level Design",
-  "Modding",
-  "Environment Building",
-  "Lighting",
-  "Gameplay Development",
-  "User Interface",
-  "Optimization"
+  "spec_level_design",
+  "spec_modding",
+  "spec_environnement_building",
+  "spec_lighting",
+  "spec_developpement_gameplay",
+  "spec_interface_utilisateur",
+  "spec_optimisation"
 ]
 soft_skills = [
-  "Community Management",
-  "Project Management",
-  "Problem Solving"
+  "skill_management_communaute",
+  "skill_gestion_de_projet",
+  "skill_resolution_problemes"
 ]
-tools = [ "Fork", "Visual Studio Code", "Sublime Text", "Photoshop" ]
+tools = [ "tool_fork", "tool_visual_studio_code", "tool_sublime_text", "tool_photoshop" ]
 awards = [ ]
 
 [[technical_specs]]
@@ -653,3 +653,4 @@ Nuketown marked a turning point in my journey as a developer:
 - **Technical mastery**: Understanding of game engines and development tools
 - **Methodology**: Structured approach to video game development
 - **Professional vision**: Transformation of a passion into a career
+

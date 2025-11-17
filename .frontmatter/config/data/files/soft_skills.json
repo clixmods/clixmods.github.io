@@ -3,7 +3,7 @@
   "id": "soft_skills",
   "title": "Soft Skills Data",
   "file": "data/soft_skills.json",
-  "labelField": "name",
+  "labelField": "key",
   "schema": {
     "title": "Soft Skill",
     "type": "object",

@@ -10,8 +10,8 @@ sector = "test"
 featured = false
 fmContentType = "project-content-type"
 image = "/images/projects/test/test-layout.jpg"
-frameworks_engines = [ "Hugo" ]
-programming_languages = [ "CSS Grid", "JavaScript" ]
+frameworks_engines = [ "fw_hugo" ]
+programming_languages = [ "lang_css", "lang_javascript" ]
 youtube_galleries = [ ]
 
 [[actions]]

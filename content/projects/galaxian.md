@@ -13,15 +13,15 @@ logo = "/images/projects/galaxian/galaxian-logo.png"
 image = "/images/projects/galaxian/galaxian-background.png"
 status = "Terminé"
 specialties = [
-  "Game Design",
-  "Gestion de versions avec Git",
-  "Développement Gameplay"
+  "spec_game_design",
+  "spec_gestion_de_versions_avec_git",
+  "spec_developpement_gameplay"
 ]
-programming_languages = [ "C#" ]
-frameworks = [ "Unity" ]
-frameworks_engines = [ "Unity" ]
-soft_skills = [ "Résolution Problèmes", "Communication", "Gestion de Projet" ]
-tools = [ "GitHub", "Fork", "JetBrains", "Trello", "SonyVegas" ]
+programming_languages = [ "lang_csharp" ]
+frameworks = [ "fw_unity" ]
+frameworks_engines = [ "fw_unity" ]
+soft_skills = [ "skill_resolution_problemes", "skill_communication", "skill_gestion_de_projet" ]
+tools = [ "tool_github", "tool_fork", "tool_jetbrains", "tool_trello", "tool_sonyvegas" ]
 
 [[actions]]
 type = "download"

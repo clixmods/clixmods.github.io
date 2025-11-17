@@ -12,19 +12,19 @@ fmContentType = "project-content-type"
 logo = "/images/projects/sky-shock/skyshock-logo.png"
 image = "/images/projects/sky-shock/skyshock-2.jpg"
 status = "Completed"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
 specialties = [
-  "Game Design",
-  "Level Design",
-  "Gameplay Development",
-  "User Interface",
-  "Audio Integration",
-  "Lighting",
-  "Shaders"
+  "spec_game_design",
+  "spec_level_design",
+  "spec_developpement_gameplay",
+  "spec_interface_utilisateur",
+  "spec_integration_audio",
+  "spec_lighting",
+  "spec_shaders"
 ]
-soft_skills = [ "Project Management", "Communication", "Problem Solving" ]
-tools = [ "GitHub", "Fork", "JetBrains", "Discord" ]
+soft_skills = [ "skill_gestion_de_projet", "skill_communication", "skill_resolution_problemes" ]
+tools = [ "tool_github", "tool_fork", "tool_jetbrains", "tool_discord" ]
 
 [[actions]]
 type = "download"
@@ -176,3 +176,4 @@ ranking = 130
 event_type = "Ranking"
 suffix = "th"
 +++
+

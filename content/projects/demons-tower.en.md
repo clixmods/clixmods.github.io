@@ -11,16 +11,16 @@ featured = false
 fmContentType = "project-content-type"
 status = "Completed"
 image = "/images/projects/demons-tower/dt-bg.webp"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
 specialties = [
-  "Lighting",
-  "Gameplay Development",
-  "User Interface",
-  "User Experience (UX)"
+  "spec_lighting",
+  "spec_developpement_gameplay",
+  "spec_interface_utilisateur",
+  "spec_experience_utilisateur_ux"
 ]
-soft_skills = [ "Communication", "Problem Solving" ]
-tools = [ "GitHub", "Fork", "Visual Studio", "Discord" ]
+soft_skills = [ "skill_communication", "skill_resolution_problemes" ]
+tools = [ "tool_github", "tool_fork", "tool_visual_studio", "tool_discord" ]
 
 [[actions]]
 type = "download"

@@ -1,30 +1,30 @@
-+++
+﻿+++
 date = "2023-11-15T10:00:00+02:00"
 draft = false
 title = "Aspiro Shop"
 subtitle = "PHP/MVC E-commerce Website - IUT Montpellier"
 description = "Complete online sales platform with MVC architecture and advanced security"
-tags = [ "PHP", "MVC", "E-commerce", "Security", "PDO" ]
+tags = [ "lang_php", "MVC", "E-commerce", "Security", "PDO" ]
 category = "projects"
 sector = "appsweb-etude"
 featured = true
 fmContentType = "project-content-type"
-programming_languages = [ "PHP", "MySQL", "JavaScript", "HTML", "CSS" ]
+programming_languages = [ "lang_php", "lang_mysql", "lang_javascript", "lang_html", "lang_css" ]
 soft_skills = [
-  "Project Management",
-  "Communication",
-  "Problem Solving",
-  "Leadership"
+  "skill_gestion_de_projet",
+  "skill_communication",
+  "skill_resolution_problemes",
+  "skill_leadership"
 ]
 specialties = [
-  "Object-Oriented Programming",
-  "Software Architecture",
-  "Security & Optimization",
-  "Version Control with Git",
-  "Design Patterns & Refactoring",
-  "API Development"
+  "spec_programmation_orientee_objet",
+  "spec_architecture_logicielle",
+  "spec_securite_et_optimisation",
+  "spec_gestion_de_versions_avec_git",
+  "spec_design_pattern_et_refactoring",
+  "spec_developpement_dapi"
 ]
-tools = [ "GitLab", "JetBrains", "Fork" ]
+tools = [ "tool_gitlab", "tool_jetbrains", "tool_fork" ]
 image = "/images/projects/aspiro-shop/preview.jpeg"
 
 [widget_order]

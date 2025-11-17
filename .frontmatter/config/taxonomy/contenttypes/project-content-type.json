@@ -69,50 +69,50 @@
       "name": "programming_languages",
       "type": "dataFile",
       "dataFileId": "programming_languages_simple",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
+      "dataFileKey": "key",
+      "dataFileValue": "key",
       "multiple": true,
-      "description": "Sélectionnez les langages de programmation utilisés dans ce projet"
+      "description": "Sélectionnez les langages de programmation utilisés dans ce projet (les clés seront utilisées pour l'i18n)"
     },
     {
       "title": "Frameworks & Moteurs",
       "name": "frameworks_engines",
       "type": "dataFile",
       "dataFileId": "frameworks_engines_simple",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
+      "dataFileKey": "key",
+      "dataFileValue": "key",
       "multiple": true,
-      "description": "Sélectionnez les frameworks et moteurs utilisés"
+      "description": "Sélectionnez les frameworks et moteurs utilisés (les clés seront utilisées pour l'i18n)"
     },
     {
       "title": "Spécialités",
       "name": "specialties",
       "type": "dataFile",
       "dataFileId": "specialties",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
+      "dataFileKey": "key",
+      "dataFileValue": "key",
       "multiple": true,
-      "description": "Sélectionnez les spécialités impliquées dans ce projet"
+      "description": "Sélectionnez les spécialités impliquées dans ce projet (les clés seront utilisées pour l'i18n)"
     },
     {
       "title": "Soft Skills",
       "name": "soft_skills",
       "type": "dataFile",
       "dataFileId": "soft_skills",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
+      "dataFileKey": "key",
+      "dataFileValue": "key",
       "multiple": true,
-      "description": "Sélectionnez les soft skills nécessaires pour ce projet"
+      "description": "Sélectionnez les soft skills nécessaires pour ce projet (les clés seront utilisées pour l'i18n)"
     },
     {
       "title": "Outils",
       "name": "tools",
       "type": "dataFile",
       "dataFileId": "tools",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
+      "dataFileKey": "key",
+      "dataFileValue": "key",
       "multiple": true,
-      "description": "Sélectionnez les outils utilisés dans ce projet"
+      "description": "Sélectionnez les outils utilisés dans ce projet (les clés seront utilisées pour l'i18n)"
     },
     {
       "title": "Catégorie",

@@ -13,21 +13,21 @@ featuredInCV = true
 fmContentType = "project-content-type"
 image = "/images/projects/my-game-showcase/artbook.webp"
 logo = "/images/projects/my-game-showcase/My Game Showcase.webp"
-frameworks_engines = [ "Blazor", "FastEndpoint", "SignalR", "Unity", ".NET", "TagLib#" ]
-programming_languages = [ "C#", "HTML", "CSS", "JavaScript" ]
+frameworks_engines = [ "fw_blazor", "fw_fastendpoint", "fw_signalr", "fw_unity", "fw_net", "fw_taglibsharp" ]
+programming_languages = [ "lang_csharp", "lang_html", "lang_css", "lang_javascript" ]
 specialties = [
-  "User Interface",
-  "Design Patterns & Refactoring",
-  "Tools Development",
-  "API Development",
-  "Software Architecture",
-  "Real-Time",
-  "File Management",
-  "Console Porting",
-  "Optimization"
+  "spec_interface_utilisateur",
+  "spec_design_pattern_et_refactoring",
+  "spec_developpement_outils",
+  "spec_developpement_dapi",
+  "spec_architecture_logicielle",
+  "spec_temps_reel",
+  "spec_gestion_de_fichiers",
+  "spec_portage_console",
+  "spec_optimisation"
 ]
-soft_skills = [ "Problem Solving", "Communication", "Teamwork" ]
-tools = [ "Azure", "Fork", "JetBrains", "ClickUp" ]
+soft_skills = [ "skill_resolution_problemes", "skill_communication", "skill_travail_en_equipe" ]
+tools = [ "tool_azure", "tool_fork", "tool_jetbrains", "tool_clickup" ]
 status = "In Production"
 
 [[contributors]]
@@ -150,3 +150,4 @@ Long-running processes (conversion, PDF generation) require instant user feedbac
 ## Conclusion
 
 **My Game Showcase** allowed me to work at the product/technical crossroads: making a useful, reliable and fast tool for teams under pressure at the end of production.
+

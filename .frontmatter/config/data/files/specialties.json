@@ -3,7 +3,7 @@
   "id": "specialties",
   "title": "Specialties Data",
   "file": "data/specialties.json",
-  "labelField": "name",
+  "labelField": "key",
   "schema": {
     "title": "Specialty",
     "type": "object",

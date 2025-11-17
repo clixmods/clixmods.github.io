@@ -11,8 +11,8 @@ tags = [
   "Remaster",
   "Zombies"
 ]
-programming_languages = [ "C++", "GSC", "LUA" ]
-frameworks_engines = [ "Black Ops III engine" ]
+programming_languages = [ "lang_cpp", "lang_gsc", "lang_lua" ]
+frameworks_engines = [ "fw_black_ops_iii_engine" ]
 category = "projects"
 sector = "mods"
 featured = true
@@ -20,28 +20,20 @@ status = "Terminé"
 fmContentType = "project-content-type"
 image = "/images/projects/nuketown/nuketown-zombies.jpg"
 specialties = [
-  "Level Design",
-  "Modding",
-  "Environnement Building",
-  "Lighting",
-  "Développement Gameplay",
-  "Interface utilisateur",
-  "Optimisation"
+  "spec_level_design",
+  "spec_modding",
+  "spec_environnement_building",
+  "spec_lighting",
+  "spec_developpement_gameplay",
+  "spec_interface_utilisateur",
+  "spec_optimisation"
 ]
 soft_skills = [
-  "Management Communauté",
-  "Gestion de Projet",
-  "Résolution Problèmes"
+  "skill_management_communaute",
+  "skill_gestion_de_projet",
+  "skill_resolution_problemes"
 ]
-tools = [
-  "Fork",
-  "Visual Studio Code",
-  "Sublime Text",
-  "Photoshop",
-  "Radiant",
-  "AutoDesk Maya",
-  "GitHub"
-]
+tools = [ "tool_fork", "tool_visual_studio_code", "tool_sublime_text", "tool_photoshop" ]
 awards = [ ]
 
 [[technical_specs]]

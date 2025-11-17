@@ -8,10 +8,10 @@
       "name": "tool",
       "type": "dataFile",
       "dataFileId": "tools",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
+      "dataFileKey": "key",
+      "dataFileValue": "key",
       "multiple": false,
-      "description": "Sélectionnez un outil"
+      "description": "Sélectionnez un outil (la clé sera utilisée pour l'i18n)"
     },
     {
       "title": "Afficher dans la liste",

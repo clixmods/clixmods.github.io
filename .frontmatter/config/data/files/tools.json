@@ -3,7 +3,7 @@
   "id": "tools",
   "title": "Tools Data",
   "file": "data/tools.json",
-  "labelField": "name",
+  "labelField": "key",
   "schema": {
     "title": "Tool",
     "type": "object",

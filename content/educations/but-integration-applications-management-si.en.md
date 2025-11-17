@@ -17,97 +17,97 @@ years_detail:
     status: validated
     label: Validated
 programming_languages:
-  - language: Java
+  - language: lang_java
     displayInList: true
     displayInCV: true
-  - language: Python
+  - language: lang_python
     displayInList: true
     displayInCV: false
-  - language: JavaScript
+  - language: lang_javascript
     displayInList: false
     displayInCV: false
-  - language: PHP
-    displayInList: true
-    displayInCV: true
-  - language: SQL
+  - language: lang_php
     displayInList: true
     displayInCV: true
-  - language: C
+  - language: lang_sql
+    displayInList: true
+    displayInCV: true
+  - language: lang_c
     displayInList: false
     displayInCV: false
-  - language: HTML
+  - language: lang_html
     displayInList: false
     displayInCV: false
-  - language: CSS
+  - language: lang_css
     displayInList: false
     displayInCV: false
-  - language: MySQL
+  - language: lang_mysql
     displayInList: false
     displayInCV: false
-  - language: Oracle SQL
+  - language: lang_oracle_sql
     displayInList: false
     displayInCV: false
 frameworks_engines:
-  - framework: Symfony
+  - framework: fw_symfony
     displayInList: true
     displayInCV: true
-  - framework: Vue.js
+  - framework: fw_vue_js
     displayInList: true
     displayInCV: true
-  - framework: JavaFX
+  - framework: fw_javafx
     displayInList: false
     displayInCV: false
-  - framework: Cassandra
+  - framework: fw_cassandra
     displayInList: false
     displayInCV: false
-  - framework: MongoDB
+  - framework: fw_mongodb
     displayInList: false
     displayInCV: false
 specialties:
-  - specialty: Data Management
+  - specialty: spec_gestion_des_donnees
     displayInList: true
     displayInCV: true
-  - specialty: Application Development
+  - specialty: spec_developpement_dapplications
     displayInList: true
     displayInCV: true
-  - specialty: Optimization
+  - specialty: spec_optimisation
     displayInList: false
     displayInCV: false
-  - specialty: User Experience (UX)
+  - specialty: spec_experience_utilisateur_ux
     displayInList: false
     displayInCV: false
-  - specialty: Algorithms
+  - specialty: spec_algorithmique
     displayInList: false
     displayInCV: false
-  - specialty: Object-Oriented Programming
+  - specialty: spec_programmation_orientee_objet
     displayInList: false
     displayInCV: false
-  - specialty: Version Control with Git
+  - specialty: spec_gestion_de_versions_avec_git
     displayInList: false
     displayInCV: false
-  - specialty: Security and Optimization
+  - specialty: spec_securite_et_optimisation
     displayInList: false
     displayInCV: false
-  - specialty: API Development
+  - specialty: spec_developpement_dapi
     displayInList: false
     displayInCV: false
-  - specialty: Design Patterns and Refactoring
+  - specialty: spec_design_pattern_et_refactoring
     displayInList: false
     displayInCV: false
-  - specialty: Software Architecture
+  - specialty: spec_architecture_logicielle
     displayInList: false
     displayInCV: false
 soft_skills:
-  - skill: Communication
+  - skill: skill_communication
     displayInList: true
     displayInCV: true
-  - skill: Teamwork
+  - skill: skill_travail_en_equipe
     displayInList: true
     displayInCV: true
-  - skill: Project Management
+  - skill: skill_gestion_de_projet
     displayInList: true
     displayInCV: true
-  - skill: Problem Solving
+  - skill: skill_resolution_problemes
     displayInList: false
     displayInCV: false
 grade: In progress
@@ -127,19 +127,22 @@ testimonials:
   - anita-messaoui
   - francis-garcia
 tools:
-  - tool: Visual Studio
+  - tool: tool_visual_studio
     displayInList: false
     displayInCV: false
-  - tool: SonarQube
+  - tool: tool_sonarqube
     displayInList: false
     displayInCV: false
-  - tool: Trello
+  - tool: tool_trello
     displayInList: false
     displayInCV: false
-  - tool: JetBrains
+  - tool: tool_jetbrains
     displayInList: false
     displayInCV: false
-  - tool: GitLab
+  - tool: tool_gitlab
     displayInList: false
     displayInCV: false
 ---
+
+
+

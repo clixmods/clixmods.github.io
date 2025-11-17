@@ -12,20 +12,20 @@ fmContentType = "project-content-type"
 image = "/images/projects/stay-in-the-light/stay-background.png"
 logo = "/images/projects/stay-in-the-light/stay-logo.png"
 status = "Completed"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#", "HLSL" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp", "lang_hlsl" ]
 specialties = [
-  "Level Design",
-  "Audio Integration",
-  "Lighting",
-  "Environment Building",
-  "Gameplay Development",
-  "Shaders",
-  "User Interface",
-  "User Experience (UX)"
+  "spec_level_design",
+  "spec_integration_audio",
+  "spec_lighting",
+  "spec_environnement_building",
+  "spec_developpement_gameplay",
+  "spec_shaders",
+  "spec_interface_utilisateur",
+  "spec_experience_utilisateur_ux"
 ]
-soft_skills = [ "Communication", "Problem Solving" ]
-tools = [ "GitHub", "Fork", "Notion", "JetBrains" ]
+soft_skills = [ "skill_communication", "skill_resolution_problemes" ]
+tools = [ "tool_github", "tool_fork", "tool_notion", "tool_jetbrains" ]
 
 [[actions]]
 type = "download"
@@ -224,3 +224,4 @@ person = "evapilot03"
 role = "Gamer"
 fieldGroup = "testimonials_group"
 +++
+

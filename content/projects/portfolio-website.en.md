@@ -4,16 +4,16 @@ draft = true
 title = "Portfolio Website"
 subtitle = "Personal website with Hugo"
 description = "Modern portfolio site developed with Hugo and deployed with GitHub Pages"
-tags = [ "Hugo", "Static Site", "Portfolio", "GitHub Pages" ]
-frameworks_engines = [ "Hugo" ]
-programming_languages = [ "JavaScript", "HTML", "CSS" ]
+tags = [ "fw_hugo", "Static Site", "Portfolio", "GitHub Pages" ]
+frameworks_engines = [ "fw_hugo" ]
+programming_languages = [ "lang_javascript", "lang_html", "lang_css" ]
 specialties = [ ]
 category = "projects"
 sector = "appsweb-professionnel"
 featured = true
 fmContentType = "project-content-type"
 soft_skills = [ ]
-tools = [ "Copilot", "Visual Studio Code" ]
+tools = [ "tool_copilot", "tool_visual_studio_code" ]
 
 [widget_order]
 contributors = 10
@@ -106,3 +106,4 @@ This portfolio project allowed me to:
 - **Gain experience** in JAMstack and automated deployment
 
 The site is entirely open source and can serve as an example for other developers wishing to create their portfolio.
+

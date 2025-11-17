@@ -10,9 +10,9 @@ category = "projects"
 sector = "tools"
 featured = true
 fmContentType = "project-content-type"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
-specialties = [ "Editor Scripting" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
+specialties = [ "spec_developpement_outils" ]
 
 [widget_order]
 contributors = 10
@@ -82,3 +82,4 @@ These tools have enabled:
 ## Open Source
 
 Some of these tools are available as open source on GitHub, contributing to the Unity community and allowing other developers to benefit from these improvements.
+

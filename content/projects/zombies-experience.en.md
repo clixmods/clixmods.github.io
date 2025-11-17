@@ -5,14 +5,14 @@ title = "Zombies Experience"
 subtitle = "Advanced mod extending Call of Duty Black Ops 3"
 description = "Complete modification extending Call of Duty Black Ops 3 with new multiplayer features"
 tags = [ "Modding", "C++", "Discord Integration", "Multiplayer" ]
-programming_languages = [ "LUA", "C++", "GSC" ]
+programming_languages = [ "lang_lua", "lang_cpp", "lang_gsc" ]
 specialties = [
-  "Modding",
-  "Game Design",
-  "User Experience (UX)",
-  "Gameplay Development",
-  "User Interface",
-  "Optimization"
+  "spec_modding",
+  "spec_game_design",
+  "spec_experience_utilisateur_ux",
+  "spec_developpement_gameplay",
+  "spec_interface_utilisateur",
+  "spec_optimisation"
 ]
 category = "projects"
 sector = "mods"
@@ -21,13 +21,13 @@ fmContentType = "project-content-type"
 image = "/images/projects/zombies-experience/téléchargement.jpg"
 logo = "/images/projects/zombies-experience/ze-logo.png"
 soft_skills = [
-  "Community Management",
-  "Problem Solving",
-  "Project Management",
-  "Communication"
+  "skill_management_communaute",
+  "skill_resolution_problemes",
+  "skill_gestion_de_projet",
+  "skill_communication"
 ]
-frameworks_engines = [ "Black Ops III engine" ]
-tools = [ "Visual Studio", "Visual Studio Code", "Photoshop" ]
+frameworks_engines = [ "fw_black_ops_iii_engine" ]
+tools = [ "tool_visual_studio", "tool_visual_studio_code", "tool_photoshop" ]
 
 [[actions]]
 type = "steam"
@@ -425,3 +425,4 @@ Zombies Experience transformed the Black Ops 3 experience for thousands of playe
 
 ### Community Influence
 This project served as inspiration and technical foundation for other major mods in the Black Ops 3 community, some of which achieved even greater success. The engine modification and multiplayer extension techniques developed for Zombies Experience established new standards for advanced modding in the community.
+

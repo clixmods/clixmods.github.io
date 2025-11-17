@@ -9,8 +9,8 @@ category = "projects"
 sector = "appsweb-etude"
 featured = true
 fmContentType = "project-content-type"
-frameworks_engines = [ "Symfony", "Vue.js" ]
-programming_languages = [ "MySQL" ]
+frameworks_engines = [ "fw_symfony", "fw_vue_js" ]
+programming_languages = [ "lang_mysql" ]
 
 [widget_order]
 contributors = 10

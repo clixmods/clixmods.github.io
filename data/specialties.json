@@ -119,6 +119,13 @@
     "experience": 2
   },
   {
+    "key": "spec_twig_integration",
+    "icon": "🧩",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2
+  },
+  {
     "key": "spec_programmation_orientee_objet",
     "icon": "🎯",
     "iconPath": null,

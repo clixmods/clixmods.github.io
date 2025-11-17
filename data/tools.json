@@ -135,6 +135,15 @@
     "displayedInPortfolio": false
   },
   {
+    "key": "tool_docker",
+    "category": "devops",
+    "description": "Environnements isolés et reproductibles via conteneurs",
+    "experience": 2,
+    "iconPath": "images/technologies/Docker.svg",
+    "color": "#2496ED",
+    "displayedInPortfolio": true
+  },
+  {
     "key": "tool_visual_studio_code",
     "category": "ide",
     "description": "Éditeur de code léger et polyvalent",

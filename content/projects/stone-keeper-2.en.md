@@ -12,22 +12,22 @@ fmContentType = "project-content-type"
 logo = "/images/projects/stone-keeper-2/stone-keeper2-logo.png"
 status = "Completed"
 technical_specs = [ ]
-frameworks_engines = [ "Unity", ".NET" ]
-programming_languages = [ "C#" ]
-soft_skills = [ "Problem Solving", "Project Management" ]
+frameworks_engines = [ "fw_unity", "fw_net" ]
+programming_languages = [ "lang_csharp" ]
+soft_skills = [ "skill_resolution_problemes", "skill_gestion_de_projet" ]
 specialties = [
-  "Tools Development",
-  "User Interface",
-  "Design Pattern and Refactoring",
-  "Object-Oriented Programming",
-  "Game Design",
-  "User Experience (UX)",
-  "Maintenance & Debugging",
-  "Optimization",
-  "Software Architecture"
+  "spec_developpement_outils",
+  "spec_interface_utilisateur",
+  "spec_design_pattern_et_refactoring",
+  "spec_programmation_orientee_objet",
+  "spec_game_design",
+  "spec_experience_utilisateur_ux",
+  "spec_maintenance_and_debogage",
+  "spec_optimisation",
+  "spec_architecture_logicielle"
 ]
 image = "/images/projects/stone-keeper-2/stone-keeper2-2.jpg"
-tools = [ "JetBrains", "Trello", "Photoshop", "Fork", "GitHub" ]
+tools = [ "tool_jetbrains", "tool_trello", "tool_photoshop", "tool_fork", "tool_github" ]
 
 [[actions]]
 type = "download"

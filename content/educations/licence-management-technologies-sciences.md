@@ -7,20 +7,20 @@ end_date: 2025-06-30T00:00:00.000Z
 status: Obtenu
 description: Formation en management des technologies et sciences, développement d'applications et conduite de projet.
 soft_skills:
-  - skill: Management
+  - skill: skill_management_communaute
     displayInList: true
     displayInCV: true
-  - skill: Leadership
+  - skill: skill_leadership
     displayInList: true
     displayInCV: true
-  - skill: Communication
+  - skill: skill_communication
     displayInList: false
     displayInCV: false
-  - skill: Gestion de projet
+  - skill: skill_gestion_de_projet
     displayInList: false
     displayInCV: false
 specialties:
-  - specialty: Développement d'applications
+  - specialty: spec_developpement_dapplications
     displayInList: true
     displayInCV: true
 grade: Obtenu
@@ -30,4 +30,9 @@ displayedInPortfolio: true
 fmContentType: education-content-type
 draft: false
 school_logo: /images/schools/iae-logo.png
+ranking:
+  event_type: Classement
+  suffix: è
+widget_order:
+  contributors: 10
 ---

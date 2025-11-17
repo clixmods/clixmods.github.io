@@ -7,20 +7,20 @@ end_date: 2025-06-30T00:00:00.000Z
 status: Obtained
 description: Training in technology and science management, application development and project management.
 soft_skills:
-  - skill: Management
+  - skill: skill_management_communaute
     displayInList: true
     displayInCV: true
-  - skill: Leadership
+  - skill: skill_leadership
     displayInList: true
     displayInCV: true
-  - skill: Communication
+  - skill: skill_communication
     displayInList: false
     displayInCV: false
-  - skill: Project Management
+  - skill: skill_gestion_de_projet
     displayInList: false
     displayInCV: false
 specialties:
-  - specialty: Application Development
+  - specialty: spec_developpement_dapplications
     displayInList: true
     displayInCV: true
 grade: Obtained
@@ -31,3 +31,4 @@ fmContentType: education-content-type
 draft: false
 school_logo: /images/schools/iae-logo.png
 ---
+

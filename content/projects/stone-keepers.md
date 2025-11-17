@@ -13,29 +13,35 @@ fmContentType = "project-content-type"
 logo = "/images/projects/stone-keeper/stone-keeper-logo.png"
 status = "Terminé"
 image = "/images/projects/stone-keeper/stone-keeper-10 .jpg"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
 specialties = [
-  "Game Design",
-  "Level Design",
-  "Développement Outils",
-  "Développement Gameplay",
-  "Shaders",
-  "Architecture Logicielle",
-  "Optimisation",
-  "Programmation orientée objet",
-  "Interface utilisateur",
-  "Gestion de versions avec Git",
-  "Maintenance & Débogage"
+  "spec_game_design",
+  "spec_level_design",
+  "spec_developpement_outils",
+  "spec_developpement_gameplay",
+  "spec_shaders",
+  "spec_architecture_logicielle",
+  "spec_optimisation",
+  "spec_programmation_orientee_objet",
+  "spec_interface_utilisateur",
+  "spec_gestion_de_versions_avec_git",
+  "spec_maintenance_and_debogage"
 ]
 soft_skills = [
-  "Leadership",
-  "Gestion de Projet",
-  "Résolution Problèmes",
-  "Vision/Visualisation",
-  "Communication"
+  "skill_leadership",
+  "skill_gestion_de_projet",
+  "skill_resolution_problemes",
+  "skill_visionvisualisation",
+  "skill_communication"
 ]
-tools = [ "Fork", "JetBrains", "Trello", "Discord", "Photoshop" ]
+tools = [
+  "tool_fork",
+  "tool_jetbrains",
+  "tool_trello",
+  "tool_discord",
+  "tool_photoshop"
+]
 
 [[actions]]
 type = "download"

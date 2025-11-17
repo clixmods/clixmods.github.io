@@ -7,13 +7,13 @@ end_date: 2021-06-30T00:00:00.000Z
 status: Career Change
 description: 1st year of film studies before changing orientation to e-artsup.
 soft_skills:
-  - skill: Communication
+  - skill: skill_communication
     displayInList: true
     displayInCV: false
-  - skill: Creativity
+  - skill: skill_creativite
     displayInList: true
     displayInCV: false
-  - skill: Critical Analysis
+  - skill: skill_analyse_critique
     displayInList: false
     displayInCV: false
 grade: 1st year validated
@@ -27,4 +27,13 @@ years_detail:
   - status: validated
     label: Validated
     fieldGroup: years_detail_group
+tools:
+  - tool: tool_photoshop
+    displayInList: false
+    displayInCV: false
+  - tool: tool_davinci_resolve
+    displayInList: false
+    displayInCV: false
 ---
+
+

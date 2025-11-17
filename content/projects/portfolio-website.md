@@ -4,16 +4,16 @@ draft = true
 title = "Portfolio Website"
 subtitle = "Site web personnel avec Hugo"
 description = "Site portfolio moderne développé avec Hugo et déployé avec GitHub Pages"
-tags = [ "Hugo", "Static Site", "Portfolio", "GitHub Pages" ]
-frameworks_engines = [ "Hugo" ]
-programming_languages = [ "JavaScript", "HTML", "CSS" ]
+tags = [ "fw_hugo", "Static Site", "Portfolio", "GitHub Pages" ]
+frameworks_engines = [ "fw_hugo" ]
+programming_languages = [ "lang_javascript", "lang_html", "lang_css" ]
 specialties = [ ]
 category = "projects"
 sector = "appsweb-professionnel"
 featured = true
 fmContentType = "project-content-type"
 soft_skills = [ ]
-tools = [ "Copilot", "Visual Studio Code" ]
+tools = [ "tool_copilot", "tool_visual_studio_code" ]
 
 [widget_order]
 contributors = 10

@@ -1,10 +1,10 @@
-+++
+﻿+++
 date = "2022-07-01T08:00:00.000Z"
 draft = false
 title = "Assault of Order"
 subtitle = "First year end project - e-artsup"
 description = "First complete game project with UML and advanced C# development"
-tags = [ "Unity", "First Year", "UML", "Game Development" ]
+tags = [ "fw_unity", "First Year", "UML", "Game Development" ]
 category = "projects"
 sector = "games-personnel"
 featured = true
@@ -12,24 +12,24 @@ fmContentType = "project-content-type"
 status = "Completed"
 logo = "/images/projects/assault-of-order/assault-of-order-logo.png"
 image = "/images/projects/assault-of-order/clement-garcia-aoo-leveldesign-3.jpg"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
 specialties = [
-  "Tools Development",
-  "Lighting",
-  "Environment Building",
-  "Gameplay Development",
-  "Version Control with Git",
-  "Algorithms"
+  "spec_developpement_outils",
+  "spec_lighting",
+  "spec_environnement_building",
+  "spec_developpement_gameplay",
+  "spec_gestion_de_versions_avec_git",
+  "spec_algorithmique"
 ]
-soft_skills = [ "Problem Solving", "Communication" ]
+soft_skills = [ "skill_resolution_problemes", "skill_communication" ]
 tools = [
-  "Fork",
-  "Visual Studio",
-  "HacknPlan",
-  "SonyVegas",
-  "GitHub",
-  "Discord"
+  "tool_fork",
+  "tool_visual_studio",
+  "tool_hacknplan",
+  "tool_sonyvegas",
+  "tool_github",
+  "tool_discord"
 ]
 
 [[actions]]
@@ -208,3 +208,4 @@ I also contributed to setting up the game's visual environment and lighting.
 
 - Creation of environment building from the level design provided by the team
 - Work on the game's overall lighting (atmosphere, readability, contrast)
+

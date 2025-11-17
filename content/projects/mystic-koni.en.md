@@ -12,11 +12,11 @@ fmContentType = "project-content-type"
 logo = "/images/projects/mystic-koni/mystic_koni_logo.png"
 image = "/images/projects/mystic-koni/mystic-koni-2.png"
 status = "Completed"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
-specialties = [ "Game Design", "Level Design", "Gameplay Development" ]
-soft_skills = [ "Project Management", "Problem Solving", "Communication" ]
-tools = [ "GitHub", "Fork", "JetBrains", "Discord" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
+specialties = [ "spec_game_design", "spec_level_design", "spec_developpement_gameplay" ]
+soft_skills = [ "skill_gestion_de_projet", "skill_resolution_problemes", "skill_communication" ]
+tools = [ "tool_github", "tool_fork", "tool_jetbrains", "tool_discord" ]
 
 [[actions]]
 type = "download"

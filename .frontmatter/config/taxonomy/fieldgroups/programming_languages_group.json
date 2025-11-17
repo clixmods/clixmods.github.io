@@ -8,10 +8,10 @@
       "name": "language",
       "type": "dataFile",
       "dataFileId": "programming_languages_simple",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
+      "dataFileKey": "key",
+      "dataFileValue": "key",
       "multiple": false,
-      "description": "Sélectionnez un langage de programmation"
+      "description": "Sélectionnez un langage de programmation (la clé sera utilisée pour l'i18n)"
     },
     {
       "title": "Afficher dans la liste",

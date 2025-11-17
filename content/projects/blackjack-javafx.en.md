@@ -22,11 +22,11 @@ status = "Completed"
 image = "/images/projects/blackjack-javafx/blackjack-bg.jpg"
 logo = "/images/projects/blackjack-javafx/blackjack-logo.png"
 galleries = [ ]
-frameworks_engines = [ "JavaFX" ]
-programming_languages = [ "Java", "SQL" ]
-specialties = [ "Algorithms", "User Interface" ]
-tools = [ "GitLab", "Fork", "Photoshop", "JetBrains" ]
-soft_skills = [ "Communication", "Problem Solving" ]
+frameworks_engines = [ "fw_javafx" ]
+programming_languages = [ "lang_java", "lang_sql" ]
+specialties = [ "spec_algorithmique", "spec_interface_utilisateur" ]
+tools = [ "tool_gitlab", "tool_fork", "tool_photoshop", "tool_jetbrains" ]
+soft_skills = [ "skill_communication", "skill_resolution_problemes" ]
 
 [[actions]]
 type = "github"
@@ -206,3 +206,4 @@ This project allowed me to:
 - **Set up continuous integration** for code quality
 
 The project resulted in a **playable and complete prototype**, respecting all Blackjack rules, with an intuitive interface and advanced security and data persistence features.
+
