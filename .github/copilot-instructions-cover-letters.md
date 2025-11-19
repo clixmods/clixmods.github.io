@@ -1,4 +1,15 @@
 # Cover Letter Writing Instructions - Clément GARCIA
+The current date is **November 19, 2025**.
+- The Studio La Moutarde work-study program (alternance) is **finished**.
+- Any formulation implying that this alternance is ongoing ("actuellement en alternance", "en fin de contrat d'alternance", etc.) is **forbidden**.
+- When referring to this experience, always use a **completed-past** formulation (for example: "j'ai effectué deux années d'alternance en tant que développeur C# / Unity au sein du studio La Moutarde").
+- When there is any doubt between “en cours” vs “terminé”, you **must assume it is terminé**.
+Terminals:
+Terminal: powershell
+Terminal: powershell
+
+</context>
+# Cover Letter Writing Instructions - Clément GARCIA
 
 This instruction file is dedicated to writing professional cover letters (lettres de motivation) for job applications. Use this when helping to create, edit, or review cover letters.
 
@@ -22,7 +33,7 @@ This instruction file is dedicated to writing professional cover letters (lettre
 - **Position**: C# / Unity Developer
 - **Company**: Studio La Moutarde
 - **Period**: September 2023 - September 2025 (2 years)
-- **Type**: Work-study program (alternance)
+- **Type**: Work-study program (alternance) - completed
 - **Location**: Montpellier
 
 ### Technical Expertise
