@@ -1,19 +1,59 @@
 +++
-date = "2025-07-22T07:30:00+02:00"
-draft = true
-title = "Portfolio Website"
-subtitle = "Site web personnel avec Hugo"
-description = "Site portfolio moderne développé avec Hugo et déployé avec GitHub Pages"
-tags = [ "fw_hugo", "Static Site", "Portfolio", "GitHub Pages" ]
-frameworks_engines = [ "fw_hugo" ]
-programming_languages = [ "lang_javascript", "lang_html", "lang_css" ]
-specialties = [ ]
+date = "2025-12-20T19:40:14.840Z"
+draft = false
+title = "Portfolio Personnel"
+slug = "portfolio-website"
+subtitle = "Site web personnel développé avec Hugo"
+description = "Portfolio moderne avec thème personnalisé, design inspiré de macOS, architecture data-driven et CMS intégré"
+tags = [
+  "Hugo",
+  "Site Statique",
+  "Portfolio",
+  "GitHub Pages",
+  "FrontMatter CMS"
+]
 category = "projects"
 sector = "appsweb-professionnel"
 featured = true
+featuredInCV = false
 fmContentType = "project-content-type"
-soft_skills = [ ]
-tools = [ "tool_copilot", "tool_visual_studio_code" ]
+status = "Terminé"
+frameworks_engines = [ "fw_hugo" ]
+programming_languages = [ "lang_javascript", "lang_html", "lang_css" ]
+specialties = [
+  "spec_interface_utilisateur",
+  "spec_experience_utilisateur_ux",
+  "spec_architecture_logicielle",
+  "spec_design_pattern_et_refactoring",
+  "spec_optimisation",
+  "spec_gestion_des_donnees"
+]
+soft_skills = [ "skill_resolution_problemes", "skill_visionvisualisation" ]
+tools = [
+  "tool_copilot",
+  "tool_visual_studio_code",
+  "tool_github",
+  "tool_photoshop"
+]
+image = "/images/projects/portfolio-site/realistic_laptop_with_smartphone.png"
+
+[[actions]]
+type = "github"
+label = "Voir sur GitHub"
+url = "https://github.com/clixmods/portfolio"
+primary = false
+
+[[contributors]]
+person = "clement-garcia"
+roles = [ "Développeur", "Designer" ]
+fieldGroup = "contributors_group"
+
+[development_time]
+total = "3 mois"
+
+[ranking]
+event_type = ""
+suffix = ""
 
 [widget_order]
 contributors = 10
@@ -30,79 +70,36 @@ clients = 100
 grade = 110
 downloads = 120
 ranking = 130
-
-[ranking]
-event_type = "Classement"
-suffix = "è"
 +++
 
-# Portfolio Website
+# Portfolio Personnel
 
 ## Description du projet
 
-Développement de ce site portfolio personnel utilisant Hugo, un générateur de sites statiques moderne. Le projet démontre mes compétences en développement web front-end et en déploiement automatisé.
+> *"Un portfolio de développeur qui reflète ma vision : moderne, performant et orienté expérience utilisateur."*
+
+Ce **portfolio personnel** est un site web statique développé avec **Hugo**, présentant mes projets, compétences et parcours professionnel. Au-delà d'une simple vitrine, ce projet démontre mes capacités en développement front-end, architecture de données et design d'interface.
+
+Le site est **entièrement bilingue** (français/anglais) et utilise une **architecture data-driven** où la majeure partie du contenu est gérée via des fichiers JSON structurés, facilitant la maintenance et les évolutions.
 
 ## Architecture technique
 
-### Framework Hugo
-- **Générateur statique** : Performance optimale et sécurité renforcée
-- **Thème personnalisé** : Design unique adapté à mes besoins
-- **Système de templates** : Structure modulaire et maintenable
-- **Gestion de contenu** : Markdown pour une édition simple
+### Stack technologique
 
-### Design et UX
-- **Interface responsive** : Optimisée pour tous les appareils
-- **Design moderne** : Interface épurée et professionnelle
-- **Navigation intuitive** : Organisation claire par sections
-- **Performance** : Temps de chargement optimisés
+Le choix de Hugo comme générateur de sites statiques offre plusieurs avantages majeurs :
 
-## Fonctionnalités développées
+- **Performance optimale** : Temps de build extrêmement rapides et pages pré-générées
+- **Sécurité renforcée** : Aucune base de données ni backend exposé
+- **Déploiement simplifié** : Hébergement gratuit sur GitHub Pages
+- **Flexibilité totale** : Thème personnalisé développé de zéro
 
-### Section Portfolio
-- Présentation organisée des projets par secteur
-- Pages détaillées pour chaque projet
-- Filtrage par technologies
-- Liens vers les démonstrations
+### Architecture data-driven
 
-### Section Experience
-- Timeline interactive de mon parcours
-- Détails des missions et réalisations
-- Technologies utilisées par poste
+L'approche choisie sépare clairement les données du rendu :
 
-### Section Contact
-- Formulaire de contact fonctionnel
-- Intégrations réseaux sociaux
-- CV téléchargeable
+- **Fichiers JSON structurés** : Technologies, compétences, profil, configuration
+- **Contenu Markdown** : Articles, projets, expériences avec frontmatter TOML
+- **Templates Go** : Logique de rendu modulaire et réutilisable
+- **Système i18n** : Traductions centralisées pour le multilingue
 
-## Technologies et outils
-
-- **Hugo** : Générateur de site statique
-- **HTML5/CSS3** : Structure et styles modernes
-- **JavaScript** : Interactions dynamiques
-- **SCSS** : Préprocesseur CSS avancé
-- **GitHub Pages** : Hébergement et déploiement
-- **GitHub Actions** : CI/CD automatisé
-
-## Déploiement et DevOps
-
-### Pipeline automatisé
-- **Build automatique** : Déclenchement sur chaque commit
-- **Tests qualité** : Validation HTML et CSS
-- **Déploiement continu** : Publication automatique
-- **Monitoring** : Suivi des performances
-
-### Optimisations
-- **Minification** : CSS et JavaScript compressés
-- **Images optimisées** : Formats modernes et compression
-- **SEO** : Meta-données et structure sémantique
-- **Accessibilité** : Standards WCAG respectés
-
-## Résultats et métriques
-
-Ce projet portfolio a permis de :
-- **Présenter efficacement** mes compétences techniques
-- **Démontrer** mes capacités en développement web moderne
-- **Créer une vitrine professionnelle** accessible en ligne
-- **Acquérir de l'expérience** en JAMstack et déploiement automatisé
-
-Le site est entièrement open source et peut servir d'exemple pour d'autres développeurs souhaitant créer leur portfolio.
+Cette architecture permet de modifier le contenu sans toucher au code, et de faire évoluer le design sans impacter les données.
