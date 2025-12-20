@@ -1,0 +1,194 @@
+[
+  {
+    "id": "welcome",
+    "name": "Welcome!",
+    "description": "Visit the homepage for the first time",
+    "icon": "🏠",
+    "rarity": "common",
+    "requirement": "Visit the homepage",
+    "category": "exploration",
+    "points": 10,
+    "enabled": true,
+    "order": 1,
+    "condition_type": "page_visit",
+    "condition_data": {
+      "paths": ["/", "/portfolio/", "index", "/en/", "/en"]
+    }
+  },
+  {
+    "id": "portfolio_explorer",
+    "name": "Portfolio Explorer",
+    "description": "Explore the entire homepage",
+    "icon": "💼",
+    "rarity": "common",
+    "requirement": "Reach the bottom of the homepage",
+    "category": "exploration",
+    "points": 10,
+    "enabled": true,
+    "order": 2,
+    "condition_type": "scrolled_to_bottom",
+    "condition_data": {
+      "page": "home"
+    }
+  },
+  {
+    "id": "project_enthusiast",
+    "name": "Project Enthusiast",
+    "description": "Check out 3 different projects",
+    "icon": "🚀",
+    "rarity": "rare",
+    "requirement": "Visit 3 different projects",
+    "category": "engagement",
+    "points": 25,
+    "enabled": true,
+    "order": 3,
+    "condition_type": "visited_count",
+    "condition_data": {
+      "storage_key": "visitedProjects",
+      "min_count": 3
+    }
+  },
+  {
+    "id": "blog_reader",
+    "name": "Avid Reader",
+    "description": "Read a blog article",
+    "icon": "📚",
+    "rarity": "common",
+    "requirement": "Read a blog article",
+    "category": "content",
+    "points": 15,
+    "enabled": true,
+    "order": 4,
+    "condition_type": "page_visit",
+    "condition_data": {
+      "paths": ["/posts/"],
+      "exclude_paths": ["/posts/"]
+    }
+  },
+  {
+    "id": "night_owl",
+    "name": "Night Owl",
+    "description": "Enable dark mode",
+    "icon": "🌙",
+    "rarity": "common",
+    "requirement": "Enable dark mode",
+    "category": "interaction",
+    "points": 10,
+    "enabled": false,
+    "order": 5,
+    "condition_type": "theme_change",
+    "condition_data": {
+      "theme": "dark"
+    }
+  },
+  {
+    "id": "time_keeper",
+    "name": "Time Keeper",
+    "description": "Stay on the site for more than 5 minutes",
+    "icon": "⏰",
+    "rarity": "rare",
+    "requirement": "Stay 5+ minutes on the site",
+    "category": "engagement",
+    "points": 30,
+    "enabled": true,
+    "order": 6,
+    "condition_type": "time_spent",
+    "condition_data": {
+      "min_minutes": 5
+    }
+  },
+  {
+    "id": "cv_downloader",
+    "name": "Potential Recruiter",
+    "description": "Download the resume",
+    "icon": "📄",
+    "rarity": "rare",
+    "requirement": "Download the resume",
+    "category": "action",
+    "points": 25,
+    "enabled": true,
+    "order": 7,
+    "condition_type": "action_performed",
+    "condition_data": {
+      "action": "cvDownloaded"
+    }
+  },
+  {
+    "id": "social_networker",
+    "name": "Social Butterfly",
+    "description": "Click on 2 different social media links",
+    "icon": "🦋",
+    "rarity": "rare",
+    "requirement": "Visit 2 social networks",
+    "category": "social",
+    "points": 20,
+    "enabled": true,
+    "order": 8,
+    "condition_type": "visited_count",
+    "condition_data": {
+      "storage_key": "socialClicks",
+      "min_count": 2
+    }
+  },
+  {
+    "id": "technology_explorer",
+    "name": "Technology Explorer",
+    "description": "Open a technical skill modal",
+    "icon": "🔧",
+    "rarity": "common",
+    "requirement": "Open a skill modal",
+    "category": "interaction",
+    "points": 15,
+    "enabled": true,
+    "order": 9,
+    "condition_type": "skill_modal_opened",
+    "condition_data": {}
+  },
+  {
+    "id": "completionist",
+    "name": "Completionist",
+    "description": "Visit all sections of the site",
+    "icon": "🏆",
+    "rarity": "epic",
+    "requirement": "Visit all sections",
+    "category": "achievement",
+    "points": 50,
+    "enabled": true,
+    "order": 10,
+    "condition_type": "all_sections_visited",
+    "condition_data": {
+      "required_sections": ["home", "skills", "projects", "posts", "educations", "experiences"]
+    }
+  },
+  {
+    "id": "master_explorer",
+    "name": "Master Explorer",
+    "description": "Unlock all other trophies",
+    "icon": "👑",
+    "rarity": "legendary",
+    "requirement": "Unlock all trophies",
+    "category": "achievement",
+    "points": 100,
+    "enabled": true,
+    "order": 11,
+    "condition_type": "all_trophies_unlocked",
+    "condition_data": {}
+  },
+  {
+    "id": "speed_runner",
+    "name": "Speed Runner",
+    "description": "Visit 5 pages in less than 2 minutes",
+    "icon": "⚡",
+    "rarity": "rare",
+    "requirement": "Fast navigation",
+    "category": "speed",
+    "points": 30,
+    "enabled": true,
+    "order": 12,
+    "condition_type": "speed_navigation",
+    "condition_data": {
+      "min_pages": 5,
+      "max_minutes": 2
+    }
+  }
+]

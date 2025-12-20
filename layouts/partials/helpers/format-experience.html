@@ -1,13 +1,39 @@
 {{/* 
-  Helper to format experience from numeric value to French text
-  Usage: {{ partial "helpers/format-experience.html" .experience }}
+  Helper to format experience from numeric value to localized text
+  Usage: {{ partial "helpers/format-experience.html" (dict "experience" .experience "context" $) }}
+  Or simple usage (defaults to French): {{ partial "helpers/format-experience.html" .experience }}
   
-  Input: Numeric experience value (e.g., 2.5)
-  Output: Formatted French text (e.g., "2 ans et 6 mois")
+  Input: Numeric experience value (e.g., 2.5) or dict with experience and context
+  Output: Formatted localized text (e.g., "2 years and 6 months" or "2 ans et 6 mois")
 */}}
 
 {{- $experience := . -}}
+{{- $context := . -}}
+
+{{/* Handle both simple call (number) and dict call (with context) */}}
+{{- if reflect.IsMap . -}}
+  {{- $experience = .experience -}}
+  {{- $context = .context | default . -}}
+{{- end -}}
+
 {{- $experienceText := "" -}}
+
+{{/* Get localized strings - use i18n with fallback */}}
+{{- $yearSingular := "an" -}}
+{{- $yearsPlural := "ans" -}}
+{{- $monthSingular := "mois" -}}
+{{- $monthsPlural := "mois" -}}
+{{- $andConnector := "et" -}}
+
+{{- if reflect.IsMap $context -}}
+  {{- with $context -}}
+    {{- $yearSingular = i18n "year_singular" | default "an" -}}
+    {{- $yearsPlural = i18n "years_plural" | default "ans" -}}
+    {{- $monthSingular = i18n "month_singular" | default "mois" -}}
+    {{- $monthsPlural = i18n "months_plural" | default "mois" -}}
+    {{- $andConnector = i18n "and_connector" | default "et" -}}
+  {{- end -}}
+{{- end -}}
 
 {{- if $experience -}}
   {{- $exp := float $experience -}}
@@ -16,28 +42,28 @@
   
   {{- if eq $years 0 -}}
     {{- if eq $months 1 -}}
-      {{- $experienceText = "1 mois" -}}
+      {{- $experienceText = printf "1 %s" $monthSingular -}}
     {{- else -}}
-      {{- $experienceText = printf "%d mois" $months -}}
+      {{- $experienceText = printf "%d %s" $months $monthsPlural -}}
     {{- end -}}
   {{- else if eq $months 0 -}}
     {{- if eq $years 1 -}}
-      {{- $experienceText = "1 an" -}}
+      {{- $experienceText = printf "1 %s" $yearSingular -}}
     {{- else -}}
-      {{- $experienceText = printf "%d ans" $years -}}
+      {{- $experienceText = printf "%d %s" $years $yearsPlural -}}
     {{- end -}}
   {{- else -}}
     {{- if eq $years 1 -}}
       {{- if eq $months 1 -}}
-        {{- $experienceText = "1 an et 1 mois" -}}
+        {{- $experienceText = printf "1 %s %s 1 %s" $yearSingular $andConnector $monthSingular -}}
       {{- else -}}
-        {{- $experienceText = printf "1 an et %d mois" $months -}}
+        {{- $experienceText = printf "1 %s %s %d %s" $yearSingular $andConnector $months $monthsPlural -}}
       {{- end -}}
     {{- else -}}
       {{- if eq $months 1 -}}
-        {{- $experienceText = printf "%d ans et 1 mois" $years -}}
+        {{- $experienceText = printf "%d %s %s 1 %s" $years $yearsPlural $andConnector $monthSingular -}}
       {{- else -}}
-        {{- $experienceText = printf "%d ans et %d mois" $years $months -}}
+        {{- $experienceText = printf "%d %s %s %d %s" $years $yearsPlural $andConnector $months $monthsPlural -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
