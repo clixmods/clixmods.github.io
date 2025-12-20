@@ -27,7 +27,12 @@ soft_skills = [
   "Communication"
 ]
 frameworks_engines = [ "Black Ops III engine" ]
-tools = [ "Visual Studio", "Visual Studio Code", "Photoshop" ]
+tools = [
+  "Visual Studio",
+  "Visual Studio Code",
+  "Photoshop",
+  "AutoDesk Maya"
+]
 
 [[actions]]
 type = "steam"
@@ -184,7 +189,7 @@ fieldGroup = "youtube_galleries_group"
   [[youtube_galleries.videos]]
   video_id = "qaqE_0rR0hU"
   title = """
-\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
+\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
 8 Players on Nacht Der Untoten is a NIGHTMARE!"""
   fieldGroup = "youtube_videos_group"
 

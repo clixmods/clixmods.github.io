@@ -33,7 +33,15 @@ soft_skills = [
   "Gestion de Projet",
   "Résolution Problèmes"
 ]
-tools = [ "Fork", "Visual Studio Code", "Sublime Text", "Photoshop" ]
+tools = [
+  "Fork",
+  "Visual Studio Code",
+  "Sublime Text",
+  "Photoshop",
+  "Radiant",
+  "AutoDesk Maya",
+  "GitHub"
+]
 awards = [ ]
 
 [[technical_specs]]
@@ -186,7 +194,7 @@ fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "verk0"
-roles = [ "Mapping", "Contributeur" ]
+roles = [ "Contributeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
