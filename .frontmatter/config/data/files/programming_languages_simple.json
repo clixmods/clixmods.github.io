@@ -3,7 +3,7 @@
   "id": "programming_languages_simple",
   "title": "Programming Languages Data",
   "file": "data/programming_languages.json",
-  "labelField": "name",
+  "labelField": "key",
   "schema": {
     "title": "Programming Language",
     "type": "object",

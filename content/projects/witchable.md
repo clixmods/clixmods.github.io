@@ -11,17 +11,17 @@ featured = false
 fmContentType = "project-content-type"
 logo = "/images/projects/witchable/witchable-logo.png"
 image = "/images/projects/witchable/witchable-background.png"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
 specialties = [
-  "Game Design",
-  "Développement Gameplay",
-  "Interface utilisateur",
-  "Architecture Logicielle",
-  "Expérience utilisateur (UX)"
+  "spec_game_design",
+  "spec_developpement_gameplay",
+  "spec_interface_utilisateur",
+  "spec_architecture_logicielle",
+  "spec_experience_utilisateur_ux"
 ]
-soft_skills = [ "Communication", "Résolution Problèmes" ]
-tools = [ "GitHub", "Fork", "JetBrains", "Discord" ]
+soft_skills = [ "skill_communication", "skill_resolution_problemes" ]
+tools = [ "tool_github", "tool_fork", "tool_jetbrains", "tool_discord" ]
 
 [[actions]]
 type = "download"

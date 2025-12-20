@@ -7,37 +7,37 @@ end_date: 2023-06-30T00:00:00.000Z
 status: Obtenu
 description: Formation spécialisée en développement de jeux vidéo avec 13 projets réalisés sur Unity et Unreal Engine en équipe.
 programming_languages:
-  - language: C#
+  - language: lang_csharp
     displayInList: true
     displayInCV: true
-  - language: C++
+  - language: lang_cpp
     displayInList: true
     displayInCV: true
 frameworks_engines:
-  - framework: Unity
+  - framework: fw_unity
     displayInList: true
     displayInCV: true
-  - framework: Unreal Engine
+  - framework: fw_unreal_engine
     displayInList: true
     displayInCV: true
 specialties:
-  - specialty: Développement de jeux vidéo
+  - specialty: spec_developpement_de_jeux_video
     displayInList: true
     displayInCV: true
-  - specialty: Game Design
+  - specialty: spec_game_design
     displayInList: true
     displayInCV: true
 soft_skills:
-  - skill: Travail en équipe
+  - skill: skill_travail_en_equipe
     displayInList: true
     displayInCV: true
-  - skill: Créativité
+  - skill: skill_creativite
     displayInList: true
     displayInCV: false
-  - skill: Résolution Problèmes
+  - skill: skill_resolution_problemes
     displayInList: false
     displayInCV: false
-  - skill: Gestion de Projet
+  - skill: skill_gestion_de_projet
     displayInList: true
     displayInCV: true
 projects:
@@ -66,3 +66,4 @@ testimonials:
   - gaetan-vergeot
   - lucas-guibert
 ---
+

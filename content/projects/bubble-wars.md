@@ -22,16 +22,16 @@ status = "Terminé"
 image = "/images/projects/bubble-wars/bubble-wars-bg.png"
 logo = "/images/projects/bubble-wars/bubble-wars-logo.png"
 galleries = [ ]
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#", "HLSL" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp", "lang_hlsl" ]
 specialties = [
-  "Shaders",
-  "Développement Gameplay",
-  "Architecture Logicielle",
-  "Intégration Audio"
+  "spec_shaders",
+  "spec_developpement_gameplay",
+  "spec_architecture_logicielle",
+  "spec_integration_audio"
 ]
-tools = [ "JetBrains", "Fork" ]
-soft_skills = [ "Communication", "Résolution Problèmes" ]
+tools = [ "tool_jetbrains", "tool_fork" ]
+soft_skills = [ "skill_communication", "skill_resolution_problemes" ]
 
 [[actions]]
 type = "download"

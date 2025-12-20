@@ -3,7 +3,7 @@
   "id": "frameworks_engines_simple",
   "title": "Frameworks & Engines Data",
   "file": "data/frameworks_engines.json",
-  "labelField": "name",
+  "labelField": "key",
   "schema": {
     "title": "Framework",
     "type": "object",

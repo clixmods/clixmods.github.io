@@ -12,14 +12,14 @@ logo: ""
 tags: []
 programming_languages: ""
 frameworks_engines:
-  - Black Ops III engine
+  - fw_black_ops_iii_engine
 specialties:
-  - Environnement Building
+  - spec_environnement_building
 soft_skills:
-  - Travail en équipe
+  - skill_travail_en_equipe
 tools:
-  - Radiant
-  - AutoDesk Maya
+  - tool_radiant
+  - tool_autodesk_maya
 category: []
 sector: mods
 featured: true

@@ -75,6 +75,34 @@ Hugo's multilingual setup with:
 - Separate data files: `profile.json` (FR) + `profile.en.json` (EN)
 - Language-specific navigation in `config.json` vs `config.en.json`
 
+**⚠️ CRITICAL: i18n Translation Keys Consistency**
+- All translation keys MUST exist in BOTH `themes/portfolio.theme/i18n/fr.yaml` AND `themes/portfolio.theme/i18n/en.yaml`
+- When adding a new translation key in templates (e.g., `{{ i18n "new_key" }}`):
+  1. ✅ Add the key to `fr.yaml` with French translation
+  2. ✅ Add the SAME key to `en.yaml` with English translation
+  3. ✅ Verify both files have identical key names (only values differ)
+- Missing keys will cause Hugo to display the key name instead of translated text
+- Use descriptive snake_case names (e.g., `click_to_see_profile`, `view_profile_of`)
+- Always check both files before committing changes involving i18n
+
+**Translation by file name convention:**
+- Hugo uses the suffix `.en.md` for English content (e.g., `_index.en.md`, `article.en.md`)
+- French content uses no suffix (e.g., `_index.md`, `article.md`)
+- Both files must be in the same directory to be linked as translations
+- Example: `content/posts/article.md` (FR) + `content/posts/article.en.md` (EN)
+
+**⚠️ CRITICAL: Data Files Localization**
+- Data files follow the same naming convention: `data/{name}.json` (FR) + `data/{name}.en.json` (EN)
+- Hugo does NOT automatically load localized data files - use the utility partial
+- **ALWAYS use the `get-localized-data.html` partial to load data files in templates**
+- Usage: `{{ $profile := partial "get-localized-data.html" (dict "context" . "dataName" "profile") }}`
+- This ensures the correct language version is loaded automatically
+- Examples of localized data files:
+  - `data/profile.json` + `data/profile.en.json`
+  - `data/config.json` + `data/config.en.json`
+  - `data/icons.json` + `data/icons.en.json`
+- Never use `.Site.Data.{name}` directly in templates that need localization
+
 ## Critical Integration Points
 
 ### FrontMatter CMS Data Files
@@ -138,6 +166,7 @@ This applies to:
 - **NEVER use em dash "—" (tiret cadratin)** - Always use simple hyphen "-" instead
 - Professional, technical writing style - let the content speak for itself
 - Avoid overly enthusiastic or marketing-like language that signals AI generation
+- Blog posts (`/content/posts/`): absolutely no emojis anywhere (frontmatter, headings, paragraphs, lists, quotes, code fences). Remove any existing ones when editing legacy content.
 
 ### JavaScript Development Rules
 - **NEVER generate HTML strings in JavaScript** - This is strictly forbidden

@@ -1,6 +1,6 @@
 [
   {
-    "name": "GitLab",
+    "key": "tool_gitlab",
     "category": "version_control",
     "description": "Gestion de versions, CI/CD, collaboration en équipe",
     "experience": 3,
@@ -9,7 +9,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "GitHub",
+    "key": "tool_github",
     "category": "version_control",
     "description": "Gestion de versions, CI/CD, collaboration en équipe",
     "experience": 4,
@@ -18,7 +18,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "SonarQube",
+    "key": "tool_sonarqube",
     "category": "quality_tools",
     "description": "Analyse de code pour garantir qualité et sécurité",
     "experience": 2,
@@ -27,7 +27,7 @@
     "displayedInPortfolio": false
   },
   {
-    "name": "Azure",
+    "key": "tool_azure",
     "category": "cloud",
     "description": "Déploiement et gestion d'applications cloud",
     "experience": 2,
@@ -36,7 +36,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "Fork",
+    "key": "tool_fork",
     "category": "version_control",
     "description": "Collaboration et gestion des repositories par le biais d'une interface graphique",
     "experience": 3,
@@ -45,7 +45,7 @@
     "displayedInPortfolio": false
   },
   {
-    "name": "Visual Studio",
+    "key": "tool_visual_studio",
     "category": "ide",
     "description": "Environnement de développement intégré principal",
     "experience": 4,
@@ -54,7 +54,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "JetBrains",
+    "key": "tool_jetbrains",
     "category": "ide",
     "description": "Suite d'environnements de développement",
     "experience": 3,
@@ -63,7 +63,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "Trello",
+    "key": "tool_trello",
     "category": "project_management",
     "description": "Gestion de tâches et organisation de projets",
     "experience": 3,
@@ -72,7 +72,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "ClickUp",
+    "key": "tool_clickup",
     "category": "project_management",
     "description": "Plateforme de productivité et gestion de projets",
     "experience": 2,
@@ -81,7 +81,7 @@
     "displayedInPortfolio": false
   },
   {
-    "name": "Discord",
+    "key": "tool_discord",
     "category": "communication",
     "description": "Communication d'équipe et discussions techniques",
     "experience": 4,
@@ -90,7 +90,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "HacknPlan",
+    "key": "tool_hacknplan",
     "category": "project_management",
     "description": "Gestion de projets spécialisée pour le développement de jeux",
     "experience": 2,
@@ -99,7 +99,7 @@
     "displayedInPortfolio": false
   },
   {
-    "name": "Notion",
+    "key": "tool_notion",
     "category": "project_management",
     "description": "Espace de travail collaboratif et documentation",
     "experience": 3,
@@ -108,7 +108,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "Photoshop",
+    "key": "tool_photoshop",
     "category": "design",
     "description": "Retouche d'images et création graphique",
     "experience": 4,
@@ -117,7 +117,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "SonyVegas",
+    "key": "tool_sonyvegas",
     "category": "video_editing",
     "description": "Montage vidéo professionnel",
     "experience": 3,
@@ -126,7 +126,7 @@
     "displayedInPortfolio": false
   },
   {
-    "name": "Davinci Resolve",
+    "key": "tool_davinci_resolve",
     "category": "video_editing",
     "description": "Montage vidéo et étalonnage de couleurs",
     "experience": 2,
@@ -135,7 +135,16 @@
     "displayedInPortfolio": false
   },
   {
-    "name": "Visual Studio Code",
+    "key": "tool_docker",
+    "category": "devops",
+    "description": "Environnements isolés et reproductibles via conteneurs",
+    "experience": 2,
+    "iconPath": "images/technologies/Docker.svg",
+    "color": "#2496ED",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_visual_studio_code",
     "category": "ide",
     "description": "Éditeur de code léger et polyvalent",
     "experience": 5,
@@ -144,7 +153,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "Sublime Text",
+    "key": "tool_sublime_text",
     "category": "ide",
     "description": "Éditeur de texte avancé pour le développement",
     "experience": 3,
@@ -153,7 +162,7 @@
     "displayedInPortfolio": false
   },
   {
-    "name": "ChatGPT",
+    "key": "tool_chatgpt",
     "category": "ai_tools",
     "description": "Assistant IA pour le développement et la recherche",
     "experience": 2,
@@ -162,7 +171,7 @@
     "displayedInPortfolio": false
   },
   {
-    "name": "Copilot",
+    "key": "tool_copilot",
     "category": "ai_tools",
     "description": "Assistant de programmation IA intégré",
     "experience": 2,
@@ -171,7 +180,7 @@
     "displayedInPortfolio": false
   },
   {
-    "name": "Radiant",
+    "key": "tool_radiant",
     "category": "level_editor",
     "description": "Level editor pour Black Ops 3, création de cartes et environnements",
     "experience": 2,
@@ -180,7 +189,7 @@
     "displayedInPortfolio": true
   },
   {
-    "name": "AutoDesk Maya",
+    "key": "tool_autodesk_maya",
     "category": "other",
     "description": "Modélisation de props, animation et création d'assets 3D",
     "experience": 2,

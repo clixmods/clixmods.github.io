@@ -8,10 +8,10 @@
       "name": "framework",
       "type": "dataFile",
       "dataFileId": "frameworks_engines_simple",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
+      "dataFileKey": "key",
+      "dataFileValue": "key",
       "multiple": false,
-      "description": "Sélectionnez un framework ou moteur"
+      "description": "Sélectionnez un framework ou moteur (la clé sera utilisée pour l'i18n)"
     },
     {
       "title": "Afficher dans la liste",

@@ -12,22 +12,22 @@ fmContentType = "project-content-type"
 logo = "/images/projects/stone-keeper-2/stone-keeper2-logo.png"
 status = "Terminé"
 technical_specs = [ ]
-frameworks_engines = [ "Unity", ".NET" ]
-programming_languages = [ "C#" ]
-soft_skills = [ "Résolution Problèmes", "Gestion de Projet" ]
+frameworks_engines = [ "fw_unity", "fw_net" ]
+programming_languages = [ "lang_csharp" ]
+soft_skills = [ "skill_resolution_problemes", "skill_gestion_de_projet" ]
 specialties = [
-  "Développement Outils",
-  "Interface utilisateur",
-  "Design Pattern et refactoring",
-  "Programmation orientée objet",
-  "Game Design",
-  "Expérience utilisateur (UX)",
-  "Maintenance & Débogage",
-  "Optimisation",
-  "Architecture Logicielle"
+  "spec_developpement_outils",
+  "spec_interface_utilisateur",
+  "spec_design_pattern_et_refactoring",
+  "spec_programmation_orientee_objet",
+  "spec_game_design",
+  "spec_experience_utilisateur_ux",
+  "spec_maintenance_and_debogage",
+  "spec_optimisation",
+  "spec_architecture_logicielle"
 ]
 image = "/images/projects/stone-keeper-2/stone-keeper2-2.jpg"
-tools = [ "JetBrains", "Trello", "Photoshop", "Fork", "GitHub" ]
+tools = [ "tool_jetbrains", "tool_trello", "tool_photoshop", "tool_fork", "tool_github" ]
 
 [[actions]]
 type = "download"
@@ -211,4 +211,5 @@ Projet réalisé en distanciel dans le cadre d’un travail de groupe à E-artsu
 ## Organisation & collaboration
 - Participation à l’organisation globale : tâches, standardisation sur Discord, mise en place de process d’équipe
 - Communication régulière sur l’avancement technique, coordination avec les pôles artistiques et design
+
 

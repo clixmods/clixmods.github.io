@@ -8,10 +8,10 @@
       "name": "specialty",
       "type": "dataFile",
       "dataFileId": "specialties",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
+      "dataFileKey": "key",
+      "dataFileValue": "key",
       "multiple": false,
-      "description": "Sélectionnez une spécialité"
+      "description": "Sélectionnez une spécialité (la clé sera utilisée pour l'i18n)"
     },
     {
       "title": "Afficher dans la liste",

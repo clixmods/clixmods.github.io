@@ -15,7 +15,7 @@
         "Présentiel à Montpellier ou remote/distanciel",
         "Travail en équipe agile avec Git"
       ],
-      "skills": ["C#", "Unity", "Blazor", ".NET", "FastEndpoint", "Git", "Méthodes agiles", "SignalR", "HTML/CSS", "JavaScript"],
-      "technologies": ["C#", "Unity", "Blazor", ".NET", "FastEndpoint"]
+      "skills": ["lang_csharp", "fw_unity", "fw_blazor", "fw_net", "fw_fastendpoint", "tool_github", "fw_signalr", "lang_html", "lang_javascript"],
+      "technologies": ["lang_csharp", "fw_unity", "fw_blazor", "fw_net", "fw_fastendpoint"]
     }
   ]

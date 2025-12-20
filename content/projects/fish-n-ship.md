@@ -12,11 +12,11 @@ fmContentType = "project-content-type"
 status = "Terminé"
 image = "/images/projects/fishnship/background.png"
 testimonials = [ ]
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#", "HLSL" ]
-specialties = [ "Shaders" ]
-soft_skills = [ "Résolution Problèmes" ]
-tools = [ "Fork", "JetBrains" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp", "lang_hlsl" ]
+specialties = [ "spec_shaders" ]
+soft_skills = [ "skill_resolution_problemes" ]
+tools = [ "tool_fork", "tool_jetbrains" ]
 logo = "/images/projects/fishnship/logo.png"
 
 [[actions]]

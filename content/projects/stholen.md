@@ -12,17 +12,17 @@ fmContentType = "project-content-type"
 logo = "/images/projects/stholen/stholen-logo.png"
 image = "/images/projects/stholen/stholen-background.jpg"
 status = "Terminé"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
 specialties = [
-  "Level Design",
-  "Lighting",
-  "Développement Gameplay",
-  "Game Design",
-  "Environnement Building"
+  "spec_level_design",
+  "spec_lighting",
+  "spec_developpement_gameplay",
+  "spec_game_design",
+  "spec_environnement_building"
 ]
-tools = [ "GitHub", "Fork", "JetBrains", "Discord" ]
-soft_skills = [ "Communication", "Résolution Problèmes" ]
+tools = [ "tool_github", "tool_fork", "tool_jetbrains", "tool_discord" ]
+soft_skills = [ "skill_communication", "skill_resolution_problemes" ]
 
 [[actions]]
 type = "download"

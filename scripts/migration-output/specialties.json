@@ -1,0 +1,194 @@
+[
+  {
+    "key": "spec_developpement_de_jeux_video",
+    "icon": "🎮",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 4
+  },
+  {
+    "key": "spec_game_design",
+    "icon": "🎲",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 4
+  },
+  {
+    "key": "spec_level_design",
+    "icon": "🗺️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 3
+  },
+  {
+    "key": "spec_lighting",
+    "icon": "💡",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2
+  },
+  {
+    "key": "spec_environnement_building",
+    "icon": "🏗️",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2
+  },
+  {
+    "key": "spec_modding",
+    "icon": "🔧",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 4
+  },
+  {
+    "key": "spec_call_of_duty_modding",
+    "icon": "🔫",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 4
+  },
+  {
+    "key": "spec_portage_console",
+    "icon": "🎮",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2
+  },
+  {
+    "key": "spec_portage_plateforme",
+    "icon": "🔄",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2
+  },
+  {
+    "key": "spec_experience_utilisateur_ux",
+    "icon": "👤",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2
+  },
+  {
+    "key": "spec_optimisation",
+    "icon": "⚡",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2
+  },
+  {
+    "key": "spec_maintenance_and_debogage",
+    "icon": "🐛",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2
+  },
+  {
+    "key": "spec_developpement_outils",
+    "icon": "⚙️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 3
+  },
+  {
+    "key": "spec_developpement_gameplay",
+    "icon": "🕹️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 3
+  },
+  {
+    "key": "spec_shaders",
+    "icon": "✨",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2
+  },
+  {
+    "key": "spec_algorithmique",
+    "icon": "🧮",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2
+  },
+  {
+    "key": "spec_interface_utilisateur",
+    "icon": "🖥️",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 2
+  },
+  {
+    "key": "spec_programmation_orientee_objet",
+    "icon": "🎯",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 4
+  },
+  {
+    "key": "spec_gestion_de_versions_avec_git",
+    "icon": "🌿",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 4
+  },
+  {
+    "key": "spec_securite_et_optimisation",
+    "icon": "🔒",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 3
+  },
+  {
+    "key": "spec_design_pattern_et_refactoring",
+    "icon": "🏗️",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 3
+  },
+  {
+    "key": "spec_developpement_dapi",
+    "icon": "🔌",
+    "experience": 2,
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "spec_architecture_logicielle",
+    "icon": "🏗️",
+    "experience": 3,
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "spec_temps_reel",
+    "icon": "⚡",
+    "experience": 2,
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "spec_gestion_de_fichiers",
+    "icon": "📁",
+    "experience": 3,
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "spec_integration_audio",
+    "icon": "🎵",
+    "iconPath": null,
+    "displayedInPortfolio": false,
+    "experience": 1
+  },
+  {
+    "key": "spec_gestion_des_donnees",
+    "icon": "🗄️",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2
+  },
+  {
+    "key": "spec_developpement_dapplications",
+    "icon": "💻",
+    "iconPath": null,
+    "displayedInPortfolio": true,
+    "experience": 2
+  }
+]

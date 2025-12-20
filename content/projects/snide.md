@@ -12,22 +12,22 @@ fmContentType = "project-content-type"
 logo = "/images/projects/snide/snide-logo.jpg.png"
 image = "/images/projects/snide/snide-1.png"
 status = "Terminé"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
 specialties = [
-  "Level Design",
-  "Game Design",
-  "Lighting",
-  "Développement Gameplay",
-  "Interface utilisateur"
+  "spec_level_design",
+  "spec_game_design",
+  "spec_lighting",
+  "spec_developpement_gameplay",
+  "spec_interface_utilisateur"
 ]
 soft_skills = [
-  "Gestion de Projet",
-  "Leadership",
-  "Communication",
-  "Résolution Problèmes"
+  "skill_gestion_de_projet",
+  "skill_leadership",
+  "skill_communication",
+  "skill_resolution_problemes"
 ]
-tools = [ "Fork", "Notion", "Discord", "GitHub", "JetBrains" ]
+tools = [ "tool_fork", "tool_notion", "tool_discord", "tool_github", "tool_jetbrains" ]
 
 [[actions]]
 type = "download"

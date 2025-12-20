@@ -1,4 +1,4 @@
----
+﻿---
 title: Développeur C# / Unity
 company: Studio La Moutarde
 logo: /images/companies/la-moutarde.png
@@ -16,20 +16,20 @@ projects:
       project_ref: my-game-showcase
       fieldGroup: projects_group
 programming_languages:
-    - C#
-    - HTML
-    - CSS
+    - lang_csharp
+    - lang_html
+    - lang_css
 frameworks_engines:
-    - Unity
-    - Blazor
-    - FastEndpoint
-    - .NET
+    - fw_unity
+    - fw_blazor
+    - fw_fastendpoint
+    - fw_net
 specialties:
-    - Portage Console
-    - Développement Outils
+    - spec_portage_console
+    - spec_developpement_outils
 soft_skills:
-    - Gestion de Projet
-    - Communication
+    - skill_gestion_de_projet
+    - skill_communication
 fmContentType: experience-content-type
 date: 2023-01-01T00:00:00.000Z
 draft: false

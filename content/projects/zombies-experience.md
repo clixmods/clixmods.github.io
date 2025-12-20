@@ -5,14 +5,14 @@ title = "Zombies Experience"
 subtitle = "Mod avancé étendant Call of Duty Black Ops 3"
 description = "Modification complète étendant Call of Duty Black Ops 3 avec nouvelles fonctionnalités multijoueur"
 tags = [ "Modding", "C++", "Discord Integration", "Multiplayer" ]
-programming_languages = [ "LUA", "C++", "GSC" ]
+programming_languages = [ "lang_lua", "lang_cpp", "lang_gsc" ]
 specialties = [
-  "Modding",
-  "Game Design",
-  "Expérience utilisateur (UX)",
-  "Développement Gameplay",
-  "Interface utilisateur",
-  "Optimisation"
+  "spec_modding",
+  "spec_game_design",
+  "spec_experience_utilisateur_ux",
+  "spec_developpement_gameplay",
+  "spec_interface_utilisateur",
+  "spec_optimisation"
 ]
 category = "projects"
 sector = "mods"
@@ -21,18 +21,13 @@ fmContentType = "project-content-type"
 image = "/images/projects/zombies-experience/téléchargement.jpg"
 logo = "/images/projects/zombies-experience/ze-logo.png"
 soft_skills = [
-  "Management Communauté",
-  "Résolution Problèmes",
-  "Gestion de Projet",
-  "Communication"
+  "skill_management_communaute",
+  "skill_resolution_problemes",
+  "skill_gestion_de_projet",
+  "skill_communication"
 ]
-frameworks_engines = [ "Black Ops III engine" ]
-tools = [
-  "Visual Studio",
-  "Visual Studio Code",
-  "Photoshop",
-  "AutoDesk Maya"
-]
+frameworks_engines = [ "fw_black_ops_iii_engine" ]
+tools = [ "tool_visual_studio", "tool_visual_studio_code", "tool_photoshop" ]
 
 [[actions]]
 type = "steam"

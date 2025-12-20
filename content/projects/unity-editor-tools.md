@@ -10,9 +10,9 @@ category = "projects"
 sector = "tools"
 featured = true
 fmContentType = "project-content-type"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
-specialties = [ "Editor Scripting" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
+specialties = [ "spec_developpement_outils" ]
 
 [widget_order]
 contributors = 10

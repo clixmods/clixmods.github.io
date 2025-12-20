@@ -7,13 +7,13 @@ end_date: 2021-06-30T00:00:00.000Z
 status: Changement d'orientation
 description: 1ère année d'études cinématographiques avant changement d'orientation vers e-artsup.
 soft_skills:
-  - skill: Communication
+  - skill: skill_communication
     displayInList: true
     displayInCV: false
-  - skill: Créativité
+  - skill: skill_creativite
     displayInList: true
     displayInCV: false
-  - skill: Analyse critique
+  - skill: skill_analyse_critique
     displayInList: false
     displayInCV: false
 grade: 1ère année validée
@@ -28,10 +28,11 @@ years_detail:
     label: Validée
     fieldGroup: years_detail_group
 tools:
-  - tool: Photoshop
+  - tool: tool_photoshop
     displayInList: false
     displayInCV: false
-  - tool: Davinci Resolve
+  - tool: tool_davinci_resolve
     displayInList: false
     displayInCV: false
 ---
+

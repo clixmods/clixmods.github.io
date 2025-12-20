@@ -1,0 +1,93 @@
+[
+  {
+    "key": "fw_unity",
+    "iconPath": "/images/technologies/Unity.svg",
+    "color": "#000000",
+    "displayedInPortfolio": true,
+    "experience": 4
+  },
+  {
+    "key": "fw_blazor",
+    "iconPath": "/images/technologies/Blazor.png",
+    "color": "#512BD4",
+    "displayedInPortfolio": true,
+    "experience": 1
+  },
+  {
+    "key": "fw_fastendpoint",
+    "iconPath": "/images/technologies/fastendpoint.png",
+    "color": "#FF6B35",
+    "displayedInPortfolio": false,
+    "experience": 1
+  },
+  {
+    "key": "fw_signalr",
+    "iconPath": "/images/technologies/signalR_logo.png",
+    "color": "#512BD4",
+    "displayedInPortfolio": false,
+    "experience": 1
+  },
+  {
+    "key": "fw_net",
+    "iconPath": "/images/technologies/DotNET.svg",
+    "color": "#512BD4",
+    "displayedInPortfolio": true,
+    "experience": 2
+  },
+  {
+    "key": "fw_unreal_engine",
+    "iconPath": "/images/technologies/Unreal-Engine.svg",
+    "color": "#0E1128",
+    "displayedInPortfolio": true,
+    "experience": 2
+  },
+  {
+    "key": "fw_black_ops_iii_engine",
+    "iconPath": "/images/technologies/bo3.png",
+    "color": "#000000",
+    "displayedInPortfolio": true,
+    "experience": 6
+  },
+  {
+    "key": "fw_symfony",
+    "experience": 1,
+    "displayedInPortfolio": true,
+    "iconPath": "/images/technologies/Symfony.svg",
+    "color": "#000000"
+  },
+  {
+    "key": "fw_vue_js",
+    "experience": 1,
+    "displayedInPortfolio": true,
+    "iconPath": "/images/technologies/Vue.js.svg",
+    "color": "#4FC08D"
+  },
+  {
+    "key": "fw_hugo",
+    "experience": 1,
+    "iconPath": "/images/technologies/Hugo.svg",
+    "displayedInPortfolio": true,
+    "color": "#FF4088"
+  },
+  {
+    "key": "fw_javafx",
+    "experience": 2,
+    "iconPath": "/images/technologies/JavaFX_Logo.png",
+    "color": "#FF6B1A",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "fw_cassandra",
+    "experience": 0.5,
+    "iconPath": "/images/technologies/Apache-Cassandra.svg",
+    "color": "#1287B1",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "fw_mongodb",
+    "experience": 0.5,
+    "iconPath": "/images/technologies/MongoDB.svg",
+    "color": "#47A248",
+    "displayedInPortfolio": false
+  }
+]

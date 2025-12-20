@@ -1,0 +1,191 @@
+[
+  {
+    "key": "tool_gitlab",
+    "category": "version_control",
+    "description": "Gestion de versions, CI/CD, collaboration en équipe",
+    "experience": 3,
+    "iconPath": "images/technologies/GitLab.svg",
+    "color": "#FCA326",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_github",
+    "category": "version_control",
+    "description": "Gestion de versions, CI/CD, collaboration en équipe",
+    "experience": 4,
+    "iconPath": "images/technologies/GitHub.svg",
+    "color": "#181717",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_sonarqube",
+    "category": "quality_tools",
+    "description": "Analyse de code pour garantir qualité et sécurité",
+    "experience": 2,
+    "iconPath": "images/technologies/SonarQube.svg",
+    "color": "#4E9BCD",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_azure",
+    "category": "cloud",
+    "description": "Déploiement et gestion d'applications cloud",
+    "experience": 2,
+    "iconPath": "images/technologies/Azure.svg",
+    "color": "#0078D4",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_fork",
+    "category": "version_control",
+    "description": "Collaboration et gestion des repositories par le biais d'une interface graphique",
+    "experience": 3,
+    "iconPath": "images/technologies/Fork.svg",
+    "color": "#8B5CF6",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_visual_studio",
+    "category": "ide",
+    "description": "Environnement de développement intégré principal",
+    "experience": 4,
+    "iconPath": "images/technologies/Visual-Studio.svg",
+    "color": "#5C2D91",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_jetbrains",
+    "category": "ide",
+    "description": "Suite d'environnements de développement",
+    "experience": 3,
+    "iconPath": "images/technologies/JetBrains.svg",
+    "color": "#000000",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_trello",
+    "category": "project_management",
+    "description": "Gestion de tâches et organisation de projets",
+    "experience": 3,
+    "iconPath": "images/technologies/Trello.svg",
+    "color": "#0079BF",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_clickup",
+    "category": "project_management",
+    "description": "Plateforme de productivité et gestion de projets",
+    "experience": 2,
+    "iconPath": "images/technologies/clickup-icon.svg",
+    "color": "#7B68EE",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_discord",
+    "category": "communication",
+    "description": "Communication d'équipe et discussions techniques",
+    "experience": 4,
+    "iconPath": "images/technologies/discord-v2-svgrepo-com.svg",
+    "color": "#5865F2",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_hacknplan",
+    "category": "project_management",
+    "description": "Gestion de projets spécialisée pour le développement de jeux",
+    "experience": 2,
+    "iconPath": "images/technologies/HacknPlan.svg",
+    "color": "#FF6B35",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_notion",
+    "category": "project_management",
+    "description": "Espace de travail collaboratif et documentation",
+    "experience": 3,
+    "iconPath": "images/technologies/notion-icon.svg",
+    "color": "#000000",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_photoshop",
+    "category": "design",
+    "description": "Retouche d'images et création graphique",
+    "experience": 4,
+    "iconPath": "images/technologies/photoshop-icon.svg",
+    "color": "#31A8FF",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_sonyvegas",
+    "category": "video_editing",
+    "description": "Montage vidéo professionnel",
+    "experience": 3,
+    "iconPath": "images/technologies/Vegas_Pro_21_logo.svg",
+    "color": "#0066CC",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_davinci_resolve",
+    "category": "video_editing",
+    "description": "Montage vidéo et étalonnage de couleurs",
+    "experience": 2,
+    "iconPath": "images/technologies/DaVinci_Resolve_Studio.png",
+    "color": "#233A51",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_visual_studio_code",
+    "category": "ide",
+    "description": "Éditeur de code léger et polyvalent",
+    "experience": 5,
+    "iconPath": "images/technologies/VisualStudioCode.svg",
+    "color": "#007ACC",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_sublime_text",
+    "category": "ide",
+    "description": "Éditeur de texte avancé pour le développement",
+    "experience": 3,
+    "iconPath": "images/technologies/sublimetext-icon-svgrepo-com.svg",
+    "color": "#FF9800",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_chatgpt",
+    "category": "ai_tools",
+    "description": "Assistant IA pour le développement et la recherche",
+    "experience": 2,
+    "iconPath": "images/technologies/ChatGPT_logo.svg",
+    "color": "#10A37F",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_copilot",
+    "category": "ai_tools",
+    "description": "Assistant de programmation IA intégré",
+    "experience": 2,
+    "iconPath": "images/technologies/github-copilot-icon.svg",
+    "color": "#000000",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_radiant",
+    "category": "level_editor",
+    "description": "Level editor pour Black Ops 3, création de cartes et environnements",
+    "experience": 2,
+    "iconPath": "images/technologies/radiant logo.png",
+    "color": "#FF6B00",
+    "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_autodesk_maya",
+    "category": "other",
+    "description": "Modélisation de props, animation et création d'assets 3D",
+    "experience": 2,
+    "iconPath": "images/technologies/Autodesk-Maya.svg",
+    "color": "#00B4A5",
+    "displayedInPortfolio": true
+  }
+]

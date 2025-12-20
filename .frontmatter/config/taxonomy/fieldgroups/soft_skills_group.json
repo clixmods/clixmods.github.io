@@ -8,10 +8,10 @@
       "name": "skill",
       "type": "dataFile",
       "dataFileId": "soft_skills",
-      "dataFileKey": "name",
-      "dataFileValue": "name",
+      "dataFileKey": "key",
+      "dataFileValue": "key",
       "multiple": false,
-      "description": "Sélectionnez une soft skill"
+      "description": "Sélectionnez une soft skill (la clé sera utilisée pour l'i18n)"
     },
     {
       "title": "Afficher dans la liste",

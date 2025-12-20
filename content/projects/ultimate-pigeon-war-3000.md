@@ -12,11 +12,11 @@ fmContentType = "project-content-type"
 logo = "/images/projects/pigeon-war/pigeon-war-logo.png"
 image = "/images/projects/pigeon-war/pigeon-war-background.png"
 status = "Terminé"
-frameworks_engines = [ "Unity" ]
-programming_languages = [ "C#" ]
-specialties = [ "Développement Gameplay" ]
-soft_skills = [ "Communication" ]
-tools = [ "GitHub", "JetBrains", "Discord" ]
+frameworks_engines = [ "fw_unity" ]
+programming_languages = [ "lang_csharp" ]
+specialties = [ "spec_developpement_gameplay" ]
+soft_skills = [ "skill_communication" ]
+tools = [ "tool_github", "tool_jetbrains", "tool_discord" ]
 
 [[actions]]
 type = "download"
