@@ -48,8 +48,16 @@ projects:
   - stone-keepers
   - fish-n-ship
   - stone-keeper-2
-  - astral-defenders
-  - scrap-and-survive
+  - stholen
+  - stay-in-the-light
+  - demons-tower
+  - on-target
+  - snide
+  - sky-shock
+testimonials:
+  - benoit-toupet
+  - gaetan-vergeot
+  - lucas-guibert
 grade: Obtained
 icon: 🎮
 color: "#8b5cf6"

@@ -41,28 +41,28 @@
 {{- $duration := "" -}}
 {{- if eq $years 0 -}}
   {{- if eq $months 1 -}}
-    {{- $duration = "1 mois" -}}
+    {{- $duration = printf "1 %s" (i18n "month" | default "mois") -}}
   {{- else -}}
-    {{- $duration = printf "%d mois" $months -}}
+    {{- $duration = printf "%d %s" $months (i18n "months" | default "mois") -}}
   {{- end -}}
 {{- else if eq $months 0 -}}
   {{- if eq $years 1 -}}
-    {{- $duration = "1 an" -}}
+    {{- $duration = printf "1 %s" (i18n "year" | default "an") -}}
   {{- else -}}
-    {{- $duration = printf "%d ans" $years -}}
+    {{- $duration = printf "%d %s" $years (i18n "years" | default "ans") -}}
   {{- end -}}
 {{- else -}}
   {{- $yearText := "" -}}
   {{- if eq $years 1 -}}
-    {{- $yearText = "1 an" -}}
+    {{- $yearText = printf "1 %s" (i18n "year" | default "an") -}}
   {{- else -}}
-    {{- $yearText = printf "%d ans" $years -}}
+    {{- $yearText = printf "%d %s" $years (i18n "years" | default "ans") -}}
   {{- end -}}
   {{- $monthText := "" -}}
   {{- if eq $months 1 -}}
-    {{- $monthText = "1 mois" -}}
+    {{- $monthText = printf "1 %s" (i18n "month" | default "mois") -}}
   {{- else -}}
-    {{- $monthText = printf "%d mois" $months -}}
+    {{- $monthText = printf "%d %s" $months (i18n "months" | default "mois") -}}
   {{- end -}}
   {{- $duration = printf "%s %s" $yearText $monthText -}}
 {{- end -}}

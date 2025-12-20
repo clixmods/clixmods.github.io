@@ -18,22 +18,12 @@
 
 {{- $experienceText := "" -}}
 
-{{/* Get localized strings - use i18n with fallback */}}
-{{- $yearSingular := "an" -}}
-{{- $yearsPlural := "ans" -}}
-{{- $monthSingular := "mois" -}}
-{{- $monthsPlural := "mois" -}}
-{{- $andConnector := "et" -}}
-
-{{- if reflect.IsMap $context -}}
-  {{- with $context -}}
-    {{- $yearSingular = i18n "year_singular" | default "an" -}}
-    {{- $yearsPlural = i18n "years_plural" | default "ans" -}}
-    {{- $monthSingular = i18n "month_singular" | default "mois" -}}
-    {{- $monthsPlural = i18n "months_plural" | default "mois" -}}
-    {{- $andConnector = i18n "and_connector" | default "et" -}}
-  {{- end -}}
-{{- end -}}
+{{/* Always use i18n for localization - Hugo automatically uses current language context */}}
+{{- $yearSingular := i18n "year_singular" | default "an" -}}
+{{- $yearsPlural := i18n "years_plural" | default "ans" -}}
+{{- $monthSingular := i18n "month_singular" | default "mois" -}}
+{{- $monthsPlural := i18n "months_plural" | default "mois" -}}
+{{- $andConnector := i18n "and_connector" | default "et" -}}
 
 {{- if $experience -}}
   {{- $exp := float $experience -}}
