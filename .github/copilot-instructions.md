@@ -179,6 +179,40 @@ This applies to:
 - When you see HTML generation in JS, replace it with Hugo partials + minimal JS interactions
 - Always finish implementations completely - no TODO comments or placeholder code
 
+### JavaScript Utility Modules (CRITICAL)
+**⚠️ ALWAYS use shared utility modules directly - NEVER add fallback checks ⚠️**
+
+Utility modules in `/themes/portfolio.theme/assets/js/utils/` are **always loaded first** via `js.html`. They expose global objects that are guaranteed to be available:
+
+| Module | Global Object | Usage |
+|--------|---------------|-------|
+| `storage.js` | `window.Storage`, `window.SessionStorage` | `Storage.get()`, `Storage.set()` |
+| `keyboard-manager.js` | `window.KeyboardManager` | `KeyboardManager.onEscape()` |
+| `modal-utils.js` | `window.ModalUtils` | `ModalUtils.pauseTestimonials()`, `ModalUtils.isAnyModalOpen()` |
+| `animation.js` | `window.AnimationUtils` | `AnimationUtils.fadeEnter()`, `AnimationUtils.fadeExit()` |
+| `accessibility.js` | `window.AccessibilityUtils` | `AccessibilityUtils.prefersReducedMotion` |
+| `data-utils.js` | `window.DataUtils` | `DataUtils.cleanJsonValue()` |
+
+**CORRECT usage:**
+```javascript
+// Direct usage - utilities are always available
+KeyboardManager.onEscape(() => { ... }, { priority: 100 });
+ModalUtils.pauseTestimonials();
+Storage.get('key', defaultValue);
+```
+
+**WRONG usage (DO NOT DO THIS):**
+```javascript
+// NEVER add unnecessary fallback checks
+if (window.KeyboardManager) {
+    KeyboardManager.onEscape(...);
+} else {
+    document.addEventListener('keydown', ...); // WRONG - adds useless code
+}
+```
+
+Fallback code is **dead code** that will never execute and only adds maintenance burden.
+
 ### Data File Patterns
 - JSON files use consistent `name`, `icon`/`iconPath`, `color`, `displayedInPortfolio`, `experience` fields
 - Boolean flags like `featured`, `enabled` control UI visibility

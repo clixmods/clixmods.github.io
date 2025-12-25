@@ -1,0 +1,31 @@
+# Lettre de Motivation - Développeur Full Stack .NET / Angular
+## N2JSoft - Montagnat
+
+---
+
+Clément GARCIA
+07 67 83 46 09
+clement.g.developer@gmail.com
+linkedin.com/in/clixmods
+clixmods.github.io
+Montpellier
+
+À l'attention du service recrutement
+N2JSoft
+Montagnat
+
+Objet : Candidature au poste de Développeur Full Stack .NET / Angular - CDI
+
+Madame, Monsieur,
+
+Diplômé d'un BUT IAMSI à l'IUT de Montpellier-Sète et fort de deux années d'expérience en développement C# et .NET au sein du Studio La Moutarde, je me permets de vous adresser ma candidature pour le poste de Développeur Full Stack au sein de N2JSoft.
+
+Durant mon alternance, j'ai développé une application web complète en architecture moderne avec Blazor, FastEndpoint et .NET, incluant la gestion de base de données SQL Server. Ce projet m'a permis de maîtriser l'ensemble du cycle de développement, de l'analyse des besoins à la mise en production, en passant par la conception de l'architecture et la rédaction de documentation technique. J'ai également participé à la production du jeu Terra Memoria, où la rigueur et la fiabilité du code étaient essentielles pour garantir la qualité du produit final. Ces expériences m'ont formé aux bonnes pratiques de développement (tests unitaires, revues de code, méthodologies agiles) dans un environnement d'équipe exigeant.
+
+Je dispose d'une solide expertise en C# (4 ans) et .NET (2 ans), ainsi qu'une bonne maîtrise de SQL (2 ans). Si je n'ai pas encore d'expérience professionnelle avec Angular, mon parcours autodidacte et ma capacité d'apprentissage rapide - illustrés par ma progression du modding de jeux au développement professionnel - me permettront de monter en compétence rapidement sur ce framework. Je maîtrise les fondamentaux du développement front-end (HTML, CSS, JavaScript) et suis familier avec les architectures modernes de type SPA. Concernant le cloud (AWS), je n'ai pas encore d'expérience pratique mais je suis motivé pour développer cette compétence dans le cadre de ce poste.
+
+Mon profil correspond à votre recherche d'une personne pragmatique et rigoureuse, souhaitant s'investir dans la durée sur un projet pérenne. Ayant travaillé intégralement en distanciel durant mes deux années d'alternance au Studio La Moutarde, je suis habitué à ce mode de fonctionnement et maîtrise les pratiques de collaboration à distance. Le format full remote avec une semaine de présence trimestrielle me convient parfaitement et me permettrait de contribuer efficacement à vos objectifs de croissance. Disponible immédiatement, je serais ravi d'échanger avec vous sur ma candidature et de vous démontrer ma motivation à rejoindre vos équipes.
+
+Dans l'attente de votre retour, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
+
+Clément GARCIA

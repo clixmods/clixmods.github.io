@@ -10,6 +10,11 @@ defaultContentLanguage = 'fr'
 # Keep French at root, English under /en/
 defaultContentLanguageInSubdir = false
 
+# Build stats for PurgeCSS - writes hugo_stats.json with all used HTML elements
+[build]
+  [build.buildStats]
+    enable = true
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
@@ -28,6 +33,9 @@ defaultContentLanguageInSubdir = false
     
 # Module mounts - Allow Hugo to process static images as resources
 [module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.115.0"
   [[module.mounts]]
     source = "static/images"
     target = "assets/images"
@@ -37,6 +45,10 @@ defaultContentLanguageInSubdir = false
   [[module.mounts]]
     source = "assets"
     target = "assets"
+  # Watch hugo_stats.json for PurgeCSS hot reload
+  [[module.mounts]]
+    source = "hugo_stats.json"
+    target = "assets/watching/hugo_stats.json"
 
 # Optional: surface missing i18n keys during development
 # enableMissingTranslationPlaceholders = true

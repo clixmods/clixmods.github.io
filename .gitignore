@@ -32,3 +32,9 @@ go.work.sum
 # .vscode/
 public
 resources/_gen
+
+# Node.js
+node_modules/
+
+# Hugo stats (generated for PurgeCSS)
+hugo_stats.json
