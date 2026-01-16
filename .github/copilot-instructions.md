@@ -103,6 +103,30 @@ Hugo's multilingual setup with:
   - `data/icons.json` + `data/icons.en.json`
 - Never use `.Site.Data.{name}` directly in templates that need localization
 
+**⚠️ CRITICAL: Adding Technologies, Tools, Frameworks, etc.**
+When adding a new item to technology data files (`programming_languages.json`, `frameworks_engines.json`, `tools.json`, `specialties.json`, `soft_skills.json`):
+
+1. ✅ Add the entry to the JSON data file with a unique `key` field (e.g., `tool_google_play_console`)
+2. ✅ Add translations in `themes/portfolio.theme/i18n/fr.yaml`:
+   - Main name: `tool_google_play_console: "Google Play Console"`
+   - Description: `tool_google_play_console_desc: "Description en français"`
+   - Category (if new): `tool_category_deployment: "Déploiement"`
+3. ✅ Add the SAME translations in `themes/portfolio.theme/i18n/en.yaml`:
+   - Main name: `tool_google_play_console: "Google Play Console"`
+   - Description: `tool_google_play_console_desc: "Description in English"`
+   - Category (if new): `tool_category_deployment: "Deployment"`
+4. ✅ Verify the icon path exists in `/static/images/technologies/`
+5. ✅ Test both French and English versions of the site
+
+**Key naming convention:**
+- Programming languages: `lang_{name}` (e.g., `lang_csharp`)
+- Frameworks/Engines: `fw_{name}` (e.g., `fw_unity`)
+- Tools: `tool_{name}` (e.g., `tool_gitlab`)
+- Specialties: `spec_{name}` (e.g., `spec_optimisation`)
+- Soft skills: `skill_{name}` (e.g., `skill_analyse_critique`)
+
+Missing i18n keys will cause the raw key name to display instead of the translated text.
+
 ## Critical Integration Points
 
 ### FrontMatter CMS Data Files

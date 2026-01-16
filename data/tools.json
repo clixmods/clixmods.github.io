@@ -196,5 +196,14 @@
     "iconPath": "images/technologies/Autodesk-Maya.svg",
     "color": "#00B4A5",
     "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_google_play_console",
+    "category": "deployment",
+    "description": "Gestion des builds, tests et releases pour Android",
+    "experience": 1,
+    "iconPath": "images/technologies/Google-Play.svg",
+    "color": "#414141",
+    "displayedInPortfolio": true
   }
 ]
