@@ -1,8 +1,8 @@
 ---
 title: "Mon Parcours dans le Jeu Vidéo : Du Modding Amateur à Développeur Unity"
 subtitle: "De moddeur amateur à développeur Unity : un chemin atypique et formateur"
-date: 2025-08-12T12:00:00+02:00
-draft: true
+date: 2025-05-13T10:00:00.000Z
+draft: false
 category: parcours
 tags:
   - Parcours
@@ -16,6 +16,7 @@ technologies:
   - C#
 description: "De Call of Duty modding à Unity : retour sur un parcours hybride (autodidacte, école privée, école publique) et les leçons apprises pour travailler dans le jeu vidéo."
 fmContentType: default
+image: /images/projects/farm/farm-background.jpg
 ---
 
 # 🎮 Mon Parcours dans le Jeu Vidéo : Du Modding Amateur à Développeur Unity
@@ -27,7 +28,7 @@ Si aujourd’hui je peux travailler dans ce domaine qui me passionne, c’est gr
 ## 1. Les débuts : le modding sur Call of Duty
 
 Avant de toucher à Unity, j’ai commencé par le **modding sur Call of Duty: Black Ops 3**, et plus particulièrement pour son **mode zombie**.
-L’idée de base était simple : créer mes propres cartes et scénarios, juste pour le plaisir. J’ai toujours été fasciné par le concept de pouvoir évoluer dans un environnement familier, alors j’ai recréé mon appartement, mon quartier… et j’ai découvert à quel point c’était amusant de voir ces lieux transformés en terrains de survie.
+L’idée de base était simple : créer mes propres cartes et scénarios, juste pour le plaisir. J’ai toujours été fasciné par le concept de pouvoir évoluer dans un environnement familier, alors j’ai recréé mon appartement, mon quartier… et j’ai découvert à quel point c’était amusant de voir ces lieux transformés en terrains de survie apocaliptique.
 
 ### Comprendre le moteur de jeu
 
@@ -72,7 +73,7 @@ En parallèle, j’ai décidé de me lancer dans une **formation professionnelle
 
 Pendant deux ans, j’ai :
 
-- réalisé des projets collaboratifs (petits jeux pour Noël, projets de fin d’année)
+- réalisé des projets collaboratifs (projet d'étude, projets de fin d’année)
 - appris à travailler en équipe pluridisciplinaire
 - développé mes compétences en **C#** et en **Unity**
 - été major de promo sur mes deux années
@@ -85,11 +86,11 @@ Le plus dur ? Aucune solution proposée. Un simple « désolé », malgré mon i
 
 ## 5. Le rebond : l’école publique et une vision élargie
 
-C’est grâce à **La Moutarde** et à l’association **Push Start** que j’ai pu rebondir. Avec l’aide d’**Antoine Cholet**, j’ai intégré directement la **2ᵉ année d’un BUT Informatique** en école publique.
+C’est grâce à **La Moutarde** et à l’association **Push Start** que j’ai pu rebondir. Avec l’aide d’**Antoine Chollet**, j’ai intégré directement la **2ᵉ année d’un BUT Informatique** en école publique.
 
 ### Ce que ça m’a apporté
 
-- Une vision plus globale de l’informatique : architecture logicielle, organisation, sécurité, réseaux…
+- Une vision plus globale de l’informatique : architecture logicielle, organisation, sécurité, réseaux… mais également dans les systèmes d'informations.
 - Une approche plus structurée des projets
 - Des compétences utiles au jeu vidéo, mais aussi transférables à d’autres secteurs
 
@@ -109,7 +110,7 @@ Je peux aujourd’hui m’adapter à différents environnements, qu’il s’agi
 
 Avec le recul :
 
-- Les écoles privées peuvent être intéressantes pour le réseau et l’immersion, mais leurs promesses ne sont pas toujours tenues. Les changements soudains de politique peuvent briser des opportunités.
+- Les écoles privées peuvent être intéressantes pour le réseau (et encore...) et l’immersion, mais leurs promesses ne sont pas toujours tenues. Les changements soudains de politique peuvent briser des opportunités et des rêves.
 - Les écoles publiques offrent un cadre plus stable, des coûts réduits, et une qualité d’enseignement souvent sous-estimée.
 
 ## 🎯 Conclusion
