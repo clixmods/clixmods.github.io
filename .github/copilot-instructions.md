@@ -215,6 +215,127 @@ This applies to:
 - Layout inheritance: `baseof.html` → specific layouts → partials
 - Asset pipeline: Hugo processes SCSS/JS, outputs to `/public/css/` and `/public/js/`
 
+### Branding Editor Controls Architecture
+
+The branding editor (`/branding/`) uses a **modular template controls pattern** for managing template-specific size and style properties via CSS custom properties.
+
+**File Structure:**
+```
+/assets/js/branding/
+├── controls.js                    # Main orchestrator - registers and syncs all control modules
+├── controls-effects.js            # Grain, Waves, Particles effect controls (global)
+├── controls-resolution.js         # Resolution presets, custom size, zoom (global)
+├── controls-linkedin.js           # LinkedIn header template controls
+├── controls-service-card.js       # Service card template controls
+├── controls-portfolio-card.js     # Portfolio card template controls
+├── controls-skill-highlight.js    # Skill highlight template controls
+├── controls-project-showcase.js   # Project showcase template controls
+└── state.js                       # Default values for all template properties
+```
+
+**Adding Controls for a New Template:**
+
+1. **Create the control module** (`controls-{template-name}.js`):
+```javascript
+window.BrandingEditor.controls{TemplateName} = {
+    init: function() {
+        // Initialize sliders with default values from state
+        // Add input event listeners that update state and call updateStyles()
+    },
+    syncWithState: function() {
+        // Sync slider values with current state (for restore)
+    },
+    updateStyles: function(skipSave) {
+        // Apply CSS custom properties to template element
+        // Call window.BrandingEditor.saveState() if !skipSave
+    }
+};
+```
+
+2. **Add default values in `state.js`**:
+```javascript
+templates: {
+    'template-name': {
+        // Content properties
+        title: 'Default Title',
+        // Size properties (with sensible defaults)
+        titleSize: 2,          // rem
+        subtitleSize: 1,       // rem
+        avatarSize: 100,       // px
+        techIconSize: 40,      // px
+        contentPadding: 2      // rem
+    }
+}
+```
+
+3. **Register in `controls.js` init() and applyInitialState()**:
+```javascript
+// In init():
+if (window.BrandingEditor.controls{TemplateName}) {
+    window.BrandingEditor.controls{TemplateName}.init();
+}
+
+// In applyInitialState():
+if (window.BrandingEditor.controls{TemplateName}?.syncWithState) {
+    window.BrandingEditor.controls{TemplateName}.syncWithState();
+}
+if (window.BrandingEditor.controls{TemplateName}?.updateStyles) {
+    window.BrandingEditor.controls{TemplateName}.updateStyles(true);
+}
+```
+
+4. **Add sliders to params HTML partial** (`params-{template-name}.html`):
+```html
+{{/* Size controls section */}}
+<div class="field-group-separator">
+    <span>Tailles des elements</span>
+</div>
+
+<div class="field-group">
+    <label for="{template}-title-size">
+        Taille du titre
+        <span class="slider-value" id="{template}-title-size-display">2rem</span>
+    </label>
+    <input type="range" id="{template}-title-size" min="1" max="4" step="0.1" value="2">
+</div>
+```
+
+5. **Load the JS file in `layouts/branding/list.html`**:
+```go
+{{ $jsModules := slice 
+    ...
+    "js/branding/controls-{template-name}.js"
+    ...
+}}
+```
+
+**CSS Custom Properties Pattern:**
+
+Templates use CSS custom properties for dynamic styling. The JS module sets properties on the template element:
+
+```javascript
+template.style.setProperty('--{template}-title-size', `${data.titleSize || 2}rem`);
+```
+
+Then SCSS uses these properties with fallbacks:
+
+```scss
+.{template}-title {
+    font-size: var(--{template}-title-size, 2rem);
+}
+```
+
+**Naming Conventions:**
+- JS module: `controlsTemplateName` (camelCase, no hyphens)
+- HTML IDs: `{template}-{property}-size`, `{template}-{property}-display`
+- CSS custom properties: `--{template}-{property}` (kebab-case)
+- State properties: `templateName.propertyName` (camelCase)
+
+**Size Property Types:**
+- Text sizes: `rem` units (0.5 - 4 range, 0.1 step)
+- Icon/image sizes: `px` units (20 - 200 range, 2-5 step)
+- Padding/gaps: `rem` units (0.5 - 5 range, 0.25 step)
+
 ### Modal & Complex Component Architecture Pattern
 
 When building modals or complex UI components (like trophies modal, skill modal, etc.), follow this **modular SCSS architecture**:
