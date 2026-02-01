@@ -48,6 +48,6 @@ const purgecssPlugin = purgecss({
 
 export default {
   plugins: [
-    ...(process.env.HUGO_ENVIRONMENT === "production" ? [purgecssPlugin] : []),
+    purgecssPlugin,
   ],
 };
