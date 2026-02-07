@@ -16,6 +16,7 @@ This is a **French developer portfolio** built with Hugo static site generator, 
 - `data/frameworks_engines.json`: Frameworks with display preferences and experience
 - `data/config.json` + `data/config.en.json`: Navigation with French labels and emoji icons
 - `data/certifications.json`, `data/testimonials.json`, `data/trophies.json`: Portfolio content
+- `data/internships.json` + `data/internships.en.json`: Job search/availability information displayed in the "Recherche" tab
 
 ### Content Architecture
 Multiple content types organized in `/content/` with TOML frontmatter:
@@ -23,6 +24,49 @@ Multiple content types organized in `/content/` with TOML frontmatter:
 - **Blog posts** (`/content/posts/`): French technical content with technology tags
 - **People** (`/content/people/`): Professional network profiles and collaborators
 - **Experiences/Educations**: Professional and academic background
+
+**⚠️ Job Search / Availability Management**
+The job search information is managed through **data files only** (not markdown files):
+- **Location**: `data/internships.json` (FR) + `data/internships.en.json` (EN)
+- **Purpose**: Displays in the "Recherche" tab on the experiences page
+- **Structure**: JSON array with single object containing:
+  - `title`: Job search title (e.g., "Recherche d'emploi ou de mission")
+  - `company`: Company name (leave empty `""` if not yet determined)
+  - `period`: Year of availability (e.g., "2026")
+  - `duration`: Contract types (e.g., "CDD ou CDI ou Freelance")
+  - `type`: Employment type (e.g., "Emploi")
+  - `location`: Preferred location (e.g., "Montpellier (présentiel) ou remote")
+  - `status`: Must be `"seeking"` to display as active job search
+  - `description`: Brief description of what you're looking for
+  - `requirements`: Array of specific requirements/preferences
+  - `skills`: Array of skill keys (e.g., `["lang_csharp", "fw_unity"]`)
+  - `technologies`: Array of main technology keys
+
+**Example usage:**
+```json
+{
+  "title": "Recherche d'emploi ou de mission",
+  "company": "",
+  "period": "2026",
+  "duration": "CDD ou CDI ou Freelance",
+  "type": "Emploi",
+  "location": "Montpellier (présentiel) ou remote",
+  "status": "seeking",
+  "description": "Développeur C# spécialisé Unity recherchant un poste dans le jeu vidéo, les applications web ou le développement logiciel. Disponible également en freelance.",
+  "requirements": [
+    "Développement de jeux vidéo (Unity/C#)",
+    "Développement d'applications web (Blazor, .NET)"
+  ],
+  "skills": ["lang_csharp", "fw_unity", "fw_blazor"],
+  "technologies": ["lang_csharp", "fw_unity"]
+}
+```
+
+**To update job search information:**
+1. Edit `data/internships.json` for French version
+2. Edit `data/internships.en.json` for English version
+3. Both files must have identical structure with translated content
+4. Hugo will automatically display updated information in the "Recherche" tab
 
 ## Critical Development Patterns
 

@@ -1,13 +1,13 @@
  [
     {
-      "title": "Recherche d'emploi",
-      "company": "À définir",
-      "period": "2025",
-      "duration": "CDD ou CDI",
+      "title": "Recherche d'emploi ou de mission",
+      "company": "",
+      "period": "2026",
+      "duration": "CDD ou CDI ou Freelance",
       "type": "Emploi",
       "location": "Montpellier (présentiel) ou remote",
       "status": "seeking",
-      "description": "Développeur C# spécialisé Unity recherchant un poste dans le jeu vidéo, les applications web ou le développement logiciel.",
+      "description": "Développeur C# spécialisé Unity recherchant un poste dans le jeu vidéo, les applications web ou le développement logiciel. Disponible également en freelance.",
       "requirements": [
         "Développement de jeux vidéo (Unity/C#)",
         "Développement d'applications web (Blazor, .NET)",
