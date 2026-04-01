@@ -1,21 +1,21 @@
- [
-    {
-      "title": "Job Search",
-      "company": "To be determined",
-      "period": "2025",
-      "duration": "Fixed-term or permanent contract",
-      "type": "Employment",
-      "location": "Montpellier (on-site) or remote",
-      "status": "seeking",
-      "description": "C# Developer specialized in Unity seeking a position in video games, web applications, or software development.",
-      "requirements": [
-        "Video game development (Unity/C#)",
-        "Web application development (Blazor, .NET)",
-        "Application development (desktop, mobile, software)",
-        "On-site in Montpellier or remote work",
-        "Agile team work with Git"
-      ],
-      "skills": ["lang_csharp", "fw_unity", "fw_blazor", "fw_net", "fw_fastendpoint", "tool_github", "fw_signalr", "lang_html", "lang_javascript"],
-      "technologies": ["lang_csharp", "fw_unity", "fw_blazor", "fw_net", "fw_fastendpoint"]
-    }
-  ]
+[
+  {
+    "title": "Job or Mission Search",
+    "company": "",
+    "period": "2026",
+    "duration": "Permanent or Fixed-term or Freelance",
+    "type": "Employment",
+    "location": "Montpellier (on-site) or remote",
+    "status": "seeking",
+    "description": "C# Developer specialized in Unity seeking a position in video games, web applications, or software development. Also available for freelance work.",
+    "requirements": [
+      "Video game development (Unity/C#)",
+      "Web application development (Blazor, .NET)",
+      "Application development (desktop, mobile, software)",
+      "On-site in Montpellier or remote/telework",
+      "Agile team work with Git"
+    ],
+    "skills": ["C#", "Unity", "Blazor", ".NET", "FastEndpoint", "Git", "Agile methods", "SignalR", "HTML/CSS", "JavaScript"],
+    "technologies": ["C#", "Unity", "Blazor", ".NET", "FastEndpoint"]
+  }
+]

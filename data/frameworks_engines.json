@@ -96,5 +96,12 @@
     "iconPath": "/images/technologies/MongoDB.svg",
     "color": "#47A248",
     "displayedInPortfolio": false
+  },
+  {
+    "key": "fw_wordpress",
+    "experience": 1,
+    "iconPath": "/images/technologies/WordPress.svg",
+    "color": "#21759B",
+    "displayedInPortfolio": false
   }
 ]

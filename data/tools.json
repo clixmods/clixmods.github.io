@@ -205,5 +205,14 @@
     "iconPath": "images/technologies/Google-Play.svg",
     "color": "#414141",
     "displayedInPortfolio": true
+  },
+  {
+    "key": "tool_google_sheets",
+    "category": "data",
+    "description": "Pipeline de données, validation et gestion de contenu éducatif",
+    "experience": 1,
+    "iconPath": "images/technologies/Google-Sheets.svg",
+    "color": "#0F9D58",
+    "displayedInPortfolio": true
   }
 ]
