@@ -14,17 +14,21 @@ programming_languages = [ "lang_csharp" ]
 frameworks_engines = [ "fw_unity" ]
 specialties = [
   "spec_developpement_de_jeux_video",
+  "spec_developpement_gameplay",
   "spec_optimisation",
   "spec_maintenance_and_debogage",
-  "spec_securite_et_optimisation"
+  "spec_securite_et_optimisation",
+  "spec_gestion_des_donnees",
+  "spec_developpement_outils"
 ]
-soft_skills = [ "skill_resolution_problemes", "skill_analyse_critique" ]
+soft_skills = [ "skill_resolution_problemes", "skill_analyse_critique", "skill_travail_en_equipe" ]
 tools = [
   "tool_gitlab",
   "tool_jetbrains",
   "tool_trello",
   "tool_copilot",
-  "tool_google_play_console"
+  "tool_google_play_console",
+  "tool_google_sheets"
 ]
 logo = "/images/projects/ttc/logo-ttc.png"
 image = "/images/projects/ttc/ecol-interactif-cm1.jpg"
@@ -101,25 +105,38 @@ Une version spécialisée pour les enseignants permettant de :
 
 ## Mon implication en freelance
 
-En tant que développeur Unity freelance, j'ai été mandaté pour optimiser et moderniser l'architecture technique du jeu, avec un focus sur la performance, la maintenabilité et la robustesse du code.
+J'ai rejoint le projet en cours de production pour renforcer le développement sur des sujets gameplay, UI/UX, data et stabilisation. Mon travail s'est intégré de manière pragmatique dans une architecture Unity déjà en production.
 
-### Modernisation de l'architecture technique
+### Développement gameplay et fonctionnalités
 
-**Refonte du système de persistance** : Unification des mécanismes de sauvegarde pour garantir la cohérence des données utilisateur et éliminer les risques de désynchronisation. Mise en place d'un système moderne compatible avec les anciennes sauvegardes.
+Développement et évolution de fonctionnalités dans la base de code existante, avec une intégration pragmatique dans l'architecture en place :
+- Travail sur la **localisation FR/EN**, les **tutoriels**, le **mode Entraînement** et l'**économie du jeu**
+- Correction de **bugs bloquants** et amélioration de la **robustesse globale sur mobile**
+- Évolutions UI/UX pour améliorer l'expérience joueur
 
-**Optimisations de performance** : Amélioration de la fluidité du jeu sur mobile grâce à l'élimination des opérations coûteuses dans les boucles de rendu et à la mise en cache stratégique des références critiques.
+### Architecture technique et performance
 
-**Restructuration du code** : Découpage de composants monolithiques en services modulaires spécialisés pour améliorer la maintenabilité et faciliter les évolutions futures, tout en préservant l'intégrité du gameplay existant.
+Refonte partielle de l'architecture technique du jeu :
+- **Persistance unifiée** : unification des mécanismes de sauvegarde et migration vers JSON, avec compatibilité des anciennes données
+- **Refactoring ciblé** : découpage de composants monolithiques en services modulaires pour améliorer la maintenabilité
+- **Optimisations de performance** : élimination des opérations coûteuses dans les boucles de rendu et mise en cache stratégique des références critiques
 
-### Audit technique complet
+### Pipeline de données
 
-Avant d'intervenir sur le code, j'ai réalisé un audit technique approfondi du projet pour identifier les axes d'amélioration et prioriser les interventions.
+Mise en place et évolution du pipeline de données via Google Sheets :
+- **Validation des données** et parsing de nouveaux champs
+- Prise en charge des **filtres métier** pour le contenu éducatif
+- Intégration avec le système de cartes et de niveaux du jeu
 
-#### Plan d'action et résultats
+### Outils internes et qualité
 
-L'audit a permis d'établir un plan d'intervention structuré en trois phases :
-- **Stabilisation critique** : corrections des risques de sécurité et de crash
-- **Optimisations** : amélioration des performances et de la fluidité
-- **Refactoring** : restructuration architecturale pour la maintenabilité future
+Développement d'outils internes pour faciliter la validation, le debug et le suivi qualité :
+- Système de **report de bugs in-game**
+- Outils de **contrôle des données et des niveaux**
+- Amélioration des workflows de validation et de debug
 
-Cette approche méthodique a garanti des interventions mesurables et sans régression.
+### Déploiement Android
+
+Gestion des builds Android et du déploiement de versions de test :
+- Builds via **Google Play Console** avec suivi du versioning
+- Préparation du **release flow** et déploiement de versions de test

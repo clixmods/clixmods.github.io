@@ -14,17 +14,21 @@ programming_languages = [ "lang_csharp" ]
 frameworks_engines = [ "fw_unity" ]
 specialties = [
   "spec_developpement_de_jeux_video",
+  "spec_developpement_gameplay",
   "spec_optimisation",
   "spec_maintenance_and_debogage",
-  "spec_securite_et_optimisation"
+  "spec_securite_et_optimisation",
+  "spec_gestion_des_donnees",
+  "spec_developpement_outils"
 ]
-soft_skills = [ "skill_resolution_problemes", "skill_analyse_critique" ]
+soft_skills = [ "skill_resolution_problemes", "skill_analyse_critique", "skill_travail_en_equipe" ]
 tools = [
   "tool_gitlab",
   "tool_jetbrains",
   "tool_trello",
   "tool_copilot",
-  "tool_google_play_console"
+  "tool_google_play_console",
+  "tool_google_sheets"
 ]
 logo = "/images/projects/ttc/logo-ttc.png"
 image = "/images/projects/ttc/ecol-interactif-cm1.jpg"
@@ -101,26 +105,39 @@ A specialized version for teachers allowing to:
 
 ## My freelance involvement
 
-As a freelance Unity developer, I was commissioned to optimize and modernize the game's technical architecture, with a focus on performance, maintainability, and code robustness.
+I joined the project mid-production to strengthen development on gameplay, UI/UX, data, and stabilization topics. My work integrated pragmatically into an existing Unity architecture already in production.
 
-### Technical architecture modernization
+### Gameplay and feature development
 
-**Persistence system refactoring**: Unification of save mechanisms to ensure user data consistency and eliminate desynchronization risks. Implementation of a modern system compatible with legacy saves.
+Development and evolution of features within the existing codebase, with pragmatic integration into the established architecture:
+- Work on **FR/EN localization**, **tutorials**, **Training mode**, and the **game economy**
+- Fixing **blocking bugs** and improving overall **mobile robustness**
+- UI/UX improvements to enhance the player experience
 
-**Performance optimizations**: Improved mobile game fluidity through elimination of expensive operations in render loops and strategic caching of critical references.
+### Technical architecture and performance
 
-**Code restructuring**: Breaking down monolithic components into specialized modular services to improve maintainability and facilitate future evolutions, while preserving existing gameplay integrity.
+Partial refactoring of the game's technical architecture:
+- **Unified persistence**: unification of save mechanisms and migration to JSON, with backward compatibility for legacy data
+- **Targeted refactoring**: breaking down monolithic components into modular services to improve maintainability
+- **Performance optimizations**: elimination of expensive operations in render loops and strategic caching of critical references
 
-### Comprehensive technical audit
+### Data pipeline
 
-Before working on the code, I conducted an in-depth technical audit of the project to identify improvement areas and prioritize interventions.
+Setup and evolution of the data pipeline via Google Sheets:
+- **Data validation** and parsing of new fields
+- Support for **business filters** for educational content
+- Integration with the game's card and level system
 
-#### Action plan and results
+### Internal tools and quality
 
-The audit enabled the establishment of a structured intervention plan in three phases:
-- **Critical stabilization**: security and crash risk corrections
-- **Optimizations**: performance and fluidity improvements
-- **Refactoring**: architectural restructuring for future maintainability
+Development of internal tools to facilitate validation, debugging, and quality tracking:
+- **In-game bug reporting** system
+- **Data and level control** tools
+- Improved validation and debugging workflows
 
-This methodical approach ensured measurable interventions without regressions.
+### Android deployment
+
+Android build management and test version deployment:
+- Builds via **Google Play Console** with versioning tracking
+- **Release flow** preparation and test version deployment
 
