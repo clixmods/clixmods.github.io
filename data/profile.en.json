@@ -5,8 +5,8 @@
     "fullName": "Clément 'Clix' GARCIA",
     "greeting": "Hello!",
     "title": "Passionate software and video game developer with particular expertise in the following areas:",
-    "subtitle": "Eager to lead a team of developers and guide projects toward excellence.",
-    "bio": "Eager to lead a team of developers and guide projects toward excellence, I'm a versatile developer specialized in gameplay mechanics, visual design, and game production. Self-taught, I started by creating additional content for games, which gave me a deep understanding of development processes. Currently a 3rd-year student at IUT Montpellier-Sète in the IAMSI program (Application Integration and Information Systems Management), I'm refining my skills in project management and technical development. My ambition: to become a team lead capable of driving ambitious game productions to success."
+    "subtitle": "Looking for opportunities to contribute to ambitious projects and grow on the technical side.",
+    "bio": "Versatile developer specialized in gameplay mechanics, visual design, and game production. Self-taught, I started by creating additional content for games, which gave me a deep understanding of development processes. With a BUT degree in Application Integration and Information Systems Management from IUT Montpellier-Sète and a Bachelor in Game Development, I honed my skills in project management and technical development during a two-year apprenticeship at Studio La Moutarde. My goal: to keep growing technically and contribute to ambitious projects in game development and software engineering."
   },
   "media": {
     "profileImage": "/images/people/clement-garcia.jpg",
@@ -19,7 +19,7 @@
     "linkedin": "linkedin.com/in/clixmods",
     "github": "https://github.com/clixmods",
     "location": "Montpellier",
-    "status": "BUT 3 Student - Apprentice at Studio La Moutarde"
+    "status": "Available for permanent, fixed-term or freelance positions"
   },
   "availability": {
     "status": "job_seeking",
@@ -28,7 +28,7 @@
     "nextAvailable": "Immediately"
   },
   "details": {
-    "formation": "BUT 3 IAMSI - IUT Montpellier-Sète",
+    "formation": "BUT 3 IAMSI - IUT Montpellier-Sète (Graduated)",
     "speciality": "C#, Unity, Blazor, FastEndpoint development",
     "experience": "2+ years of professional development"
   }
