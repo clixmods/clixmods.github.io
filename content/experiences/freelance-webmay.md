@@ -2,8 +2,8 @@
 title: Développeur Gameplay Unity C#
 company: Webmay
 logo: /images/companies/webmay.png
-start_date: 2026-01-12T00:00:00.000Z
-end_date: 2026-03-31T23:00:00.000Z
+start_date: 2026-01-01T00:00:00.000Z
+end_date: 2026-04-29T23:00:00.000Z
 type: Mission Freelance
 location: Remote
 description: Développement gameplay, refactoring technique, pipeline de données et outils internes pour Time Trial Cards, un jeu éducatif mobile Unity
@@ -12,10 +12,14 @@ projects:
     - role_description: Développement gameplay, architecture technique, pipeline de données et outils internes pour ce jeu éducatif mobile
       project_ref: time-trial-cards
       fieldGroup: projects_group
+    - role_description: Mise en place de l'API REST Unity, de l'environnement Docker local et de l'automatisation du déploiement via Makefile
+      project_ref: time-trial-cards-web
+      fieldGroup: projects_group
 programming_languages:
     - lang_csharp
 frameworks_engines:
     - fw_unity
+    - fw_laravel
 specialties:
     - spec_developpement_de_jeux_video
     - spec_developpement_gameplay
@@ -23,11 +27,17 @@ specialties:
     - spec_maintenance_and_debogage
     - spec_gestion_des_donnees
     - spec_developpement_outils
+    - spec_experience_utilisateur_ux
+    - spec_interface_utilisateur
+    - spec_developpement_dapi
+    - spec_design_pattern_et_refactoring
+    - spec_developpement_dapplications
 soft_skills:
     - skill_resolution_problemes
     - skill_analyse_critique
     - skill_communication
     - skill_travail_en_equipe
+    - skill_gestion_de_projet
 tools:
     - tool_gitlab
     - tool_jetbrains
@@ -35,9 +45,14 @@ tools:
     - tool_copilot
     - tool_google_play_console
     - tool_google_sheets
+    - tool_fork
+    - tool_discord
+    - tool_docker
 fmContentType: experience-content-type
 date: 2025-11-01T00:00:00.000Z
 draft: false
+ranking:
+    event_type: Classement
 ---
 
 ## Description de la mission

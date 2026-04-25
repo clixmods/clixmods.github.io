@@ -33,9 +33,12 @@
       "Hugo": "fw_hugo",
       "JavaFX": "fw_javafx",
       "Cassandra": "fw_cassandra",
-      "MongoDB": "fw_mongodb"
+      "MongoDB": "fw_mongodb",
+      "Laravel": "fw_laravel"
     },
-    "en": {}
+    "en": {
+      "Laravel": "fw_laravel"
+    }
   },
   "specialties": {
     "fr": {

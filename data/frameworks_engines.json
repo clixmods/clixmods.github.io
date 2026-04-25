@@ -4,7 +4,7 @@
     "iconPath": "/images/technologies/Unity.svg",
     "color": "#000000",
     "displayedInPortfolio": true,
-    "experience": 4
+    "experience": 5
   },
   {
     "key": "fw_blazor",
@@ -103,5 +103,12 @@
     "iconPath": "/images/technologies/WordPress.svg",
     "color": "#21759B",
     "displayedInPortfolio": false
+  },
+  {
+    "key": "fw_laravel",
+    "iconPath": "/images/technologies/Laravel.svg",
+    "color": "#FF2D20",
+    "displayedInPortfolio": true,
+    "experience": 1
   }
 ]

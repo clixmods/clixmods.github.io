@@ -2,8 +2,8 @@
 title: Unity C# Gameplay Developer
 company: Webmay
 logo: /images/companies/webmay.png
-start_date: 2026-01-12T00:00:00.000Z
-end_date: 2026-03-31T23:00:00.000Z
+start_date: 2026-01-01T00:00:00.000Z
+end_date: 2026-04-29T23:00:00.000Z
 type: Freelance Mission
 location: Remote
 description: Gameplay development, technical refactoring, data pipeline and internal tools for Time Trial Cards, a Unity educational mobile game
@@ -12,10 +12,14 @@ projects:
     - role_description: Gameplay development, technical architecture, data pipeline and internal tools for this educational mobile game
       project_ref: time-trial-cards
       fieldGroup: projects_group
+    - role_description: Setup of the Unity REST API, local Docker environment, and deployment automation via Makefile
+      project_ref: time-trial-cards-web
+      fieldGroup: projects_group
 programming_languages:
     - lang_csharp
 frameworks_engines:
     - fw_unity
+    - fw_laravel
 specialties:
     - spec_developpement_de_jeux_video
     - spec_developpement_gameplay

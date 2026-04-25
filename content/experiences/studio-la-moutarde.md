@@ -24,9 +24,22 @@ frameworks_engines:
     - fw_blazor
     - fw_fastendpoint
     - fw_net
+    - fw_hugo
+    - fw_taglibsharp
 specialties:
     - spec_portage_console
     - spec_developpement_outils
+    - spec_developpement_de_jeux_video
+    - spec_portage_plateforme
+    - spec_maintenance_and_debogage
+    - spec_developpement_gameplay
+    - spec_experience_utilisateur_ux
+    - spec_optimisation
+    - spec_programmation_orientee_objet
+    - spec_gestion_de_versions_avec_git
+    - spec_developpement_dapi
+    - spec_design_pattern_et_refactoring
+    - spec_developpement_dapplications
 soft_skills:
     - skill_gestion_de_projet
     - skill_communication
