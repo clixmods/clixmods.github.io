@@ -1,6 +1,6 @@
 +++
 date = "2024-03-15T00:00:00+02:00"
-draft = true
+draft = false
 title = "BlackJack JavaFX"
 subtitle = "Jeu de cartes développé en Java avec interface JavaFX"
 description = "Projet académique de développement d'un jeu de Blackjack complet en Java avec interface graphique JavaFX. Intégration des règles complètes du jeu, gestion des scores, interface utilisateur interactive et système de sauvegarde sécurisé."
@@ -25,7 +25,12 @@ galleries = [ ]
 frameworks_engines = [ "fw_javafx" ]
 programming_languages = [ "lang_java", "lang_sql" ]
 specialties = [ "spec_algorithmique", "spec_interface_utilisateur" ]
-tools = [ "tool_gitlab", "tool_fork", "tool_photoshop", "tool_jetbrains" ]
+tools = [
+  "tool_gitlab",
+  "tool_fork",
+  "tool_photoshop",
+  "tool_jetbrains"
+]
 soft_skills = [ "skill_communication", "skill_resolution_problemes" ]
 
 [[actions]]

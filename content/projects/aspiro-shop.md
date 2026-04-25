@@ -9,7 +9,14 @@ category = "projects"
 sector = "appsweb-etude"
 featured = true
 fmContentType = "project-content-type"
-programming_languages = [ "lang_php", "lang_mysql", "lang_javascript", "lang_html", "lang_css" ]
+programming_languages = [
+  "lang_php",
+  "lang_mysql",
+  "lang_javascript",
+  "lang_html",
+  "lang_css",
+  "lang_oracle_sql"
+]
 soft_skills = [
   "skill_gestion_de_projet",
   "skill_communication",
