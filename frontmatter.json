@@ -54,6 +54,41 @@
           }
         }
       }
+    },
+    {
+      "id": "programming_languages_simple",
+      "title": "Langages de programmation",
+      "file": "data/programming_languages.json",
+      "fileType": "json",
+      "labelField": "key"
+    },
+    {
+      "id": "frameworks_engines_simple",
+      "title": "Frameworks & Moteurs",
+      "file": "data/frameworks_engines.json",
+      "fileType": "json",
+      "labelField": "key"
+    },
+    {
+      "id": "specialties",
+      "title": "Spécialités",
+      "file": "data/specialties.json",
+      "fileType": "json",
+      "labelField": "key"
+    },
+    {
+      "id": "soft_skills",
+      "title": "Soft Skills",
+      "file": "data/soft_skills.json",
+      "fileType": "json",
+      "labelField": "key"
+    },
+    {
+      "id": "tools",
+      "title": "Outils",
+      "file": "data/tools.json",
+      "fileType": "json",
+      "labelField": "key"
     }
   ],
   "frontMatter.taxonomy.contentTypes": [
@@ -342,8 +377,8 @@
           "name": "programming_languages",
           "type": "dataFile",
           "dataFileId": "programming_languages_simple",
-          "dataFileKey": "name",
-          "dataFileValue": "name",
+          "dataFileKey": "key",
+          "dataFileValue": "key",
           "multiple": true,
           "description": "Sélectionnez les langages de programmation utilisés dans cette expérience"
         },
@@ -352,8 +387,8 @@
           "name": "frameworks_engines",
           "type": "dataFile",
           "dataFileId": "frameworks_engines_simple",
-          "dataFileKey": "name",
-          "dataFileValue": "name",
+          "dataFileKey": "key",
+          "dataFileValue": "key",
           "multiple": true,
           "description": "Sélectionnez les frameworks et moteurs utilisés"
         },
@@ -362,18 +397,28 @@
           "name": "specialties",
           "type": "dataFile",
           "dataFileId": "specialties",
-          "dataFileKey": "name",
-          "dataFileValue": "name",
+          "dataFileKey": "key",
+          "dataFileValue": "key",
           "multiple": true,
           "description": "Sélectionnez les spécialités impliquées dans cette expérience"
+        },
+        {
+          "title": "Soft Skills",
+          "name": "soft_skills",
+          "type": "dataFile",
+          "dataFileId": "soft_skills",
+          "dataFileKey": "key",
+          "dataFileValue": "key",
+          "multiple": true,
+          "description": "Sélectionnez les soft skills impliqués dans cette expérience"
         },
         {
           "title": "Outils",
           "name": "tools",
           "type": "dataFile",
           "dataFileId": "tools",
-          "dataFileKey": "name",
-          "dataFileValue": "name",
+          "dataFileKey": "key",
+          "dataFileValue": "key",
           "multiple": true,
           "description": "Sélectionnez les outils utilisés dans cette expérience"
         },
