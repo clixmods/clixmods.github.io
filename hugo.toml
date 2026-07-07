@@ -20,11 +20,15 @@ defaultContentLanguageInSubdir = false
         languageCode = 'fr-fr'
         weight = 1
         title = "Portfolio - Clément 'Clix' GARCIA"
+        [languages.fr.params]
+          description = "Portfolio de Clément « Clix » GARCIA — développeur de jeux vidéo, applications web et mods. Projets Unity, C#, et créations techniques et artistiques."
     [languages.en]
       languageName = 'English'
       languageCode = 'en-us'
       weight = 2
       title = "Portfolio - Clément 'Clix' GARCIA"
+      [languages.en.params]
+        description = "Portfolio of Clément “Clix” GARCIA — video game, web app and mod developer. Unity and C# projects, plus technical and artistic work."
     
 # Image processing defaults (quality is passed explicitly by get-optimized-image.html)
 [imaging]

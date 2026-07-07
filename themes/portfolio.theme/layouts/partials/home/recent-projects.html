@@ -31,7 +31,7 @@
 
   {{- with $featured }}
   <div class="filter-bar filter-bar-compact" data-project-filter>
-    <div class="filter-mains" role="tablist">
+    <div class="filter-mains" role="group" aria-label="{{ i18n "filter_projects_label" }}">
       {{- range $i, $t := $tabs }}
       <button type="button" class="chip{{ if eq $i 0 }} active{{ end }}" data-main="{{ $t.key }}">
         {{ $t.label }}<span class="chip-count">{{ index $counts $t.key | default 0 }}</span>

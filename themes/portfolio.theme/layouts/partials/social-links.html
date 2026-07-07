@@ -5,7 +5,7 @@
   {{- if and .url (ne .url "#") }}
   <a class="social-link" href="{{ .url }}" title="{{ .title }}" aria-label="{{ .title }}"
      {{ if .external }}target="_blank" rel="noopener noreferrer"{{ end }}>
-    {{ .icon | safeHTML }}
+    {{ .icon | replaceRE "role=\"img\"" "aria-hidden=\"true\" focusable=\"false\"" | safeHTML }}
   </a>
   {{- end }}
   {{- end }}

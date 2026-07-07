@@ -54,7 +54,7 @@
     </div>
 
     <div class="filter-bar reveal" data-project-filter>
-      <div class="filter-mains" role="tablist">
+      <div class="filter-mains" role="group" aria-label="{{ i18n "filter_projects_label" }}">
         {{- range $mains }}
         {{- if or (eq .key "all") (gt (int (index $counts .key | default 0)) 0) }}
         <button type="button" class="chip{{ if eq .key "all" }} active{{ end }}" data-main="{{ .key }}">
