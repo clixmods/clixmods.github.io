@@ -3,7 +3,7 @@ date: 2026-03-28T00:00:00Z
 draft: false
 title: "Romain GARRO"
 id: "romain-garro"
-avatar: ""
+avatar: "/images/people/romain-garro.jpg"
 position: "Masseur sportif"
 company: "Vigor Sport"
 bio: "Praticien spécialisé en massage sportif et récupération musculaire"

@@ -64,5 +64,23 @@
     "company": "IUT Informatique Montpellier",
     "position": "Computer Science Professor",
     "text": "Clément GARCIA, [...] a very serious, very diligent and very assiduous student. The results, obtained since the beginning of his studies in BUT, have been above average in most teaching units. Particularly comfortable in computer science subjects and more specifically in systems, networks and security, of which I am responsible."
+  },
+  {
+    "personId": "agathe-roux",
+    "company": "e-artsup Montpellier",
+    "position": "Junior VFX Artist / Game Artist",
+    "text": "I had the opportunity to work on projects with Clément during our studies. Always punctual and extremely dedicated, he loves development and it really shows. He is very attentive to all disciplines and doesn't hesitate to adapt and find solutions to solve problems and save the team time. Clément is also a very curious person who researches everything related to development. I loved working with him and I'm sure he will go very far."
+  },
+  {
+    "personId": "theo-carouge",
+    "company": "Freelance",
+    "position": "Freelance Developer",
+    "text": "I had the chance to work with Clément on several projects during our years of study at E-Artsup, and simply put, he's one of the most committed collaborators I've ever worked with. Brilliant, curious and autonomous, he gives everything in everything he undertakes. He always delivers meticulous work, and takes the time to explain his approach down to the smallest details. His journey speaks for itself: a self-taught developer who started with modding on COD BO3, he managed to transform that passion into real technical expertise, contributing to console-released games like Terra Memoria. Beyond the technical side, he's truly someone that collaborating with is a pleasure, and I would not hesitate for a second to work with him again."
+  },
+  {
+    "personId": "romain-garro",
+    "company": "Vigor Sport",
+    "position": "Sports Preparation Intern",
+    "text": "I had the chance to work with Clément on my VIGOR SPORT website. Attentive, very creative and fast to execute. My website was developed exactly as I had envisioned. I highly recommend him to anyone looking for designs, websites, etc... Thank you again!"
   }
 ]

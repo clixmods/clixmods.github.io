@@ -64,5 +64,23 @@
     "company": "IUT Informatique Montpellier",
     "position": "Professeur Ensam Informatique",
     "text": "Clément GARCIA, [...] un élève très sérieux, très appliqué et très assidu. Les résultats, obtenus depuis le début de sa scolarité en BUT, ont été au-dessus de la moyenne dans la plupart des unités d’enseignement. Particulièrement à l’aise dans les matières informatiques et plus précisément en système, réseaux et sécurité, dont je suis responsable."
+  },
+  {
+    "personId": "agathe-roux",
+    "company": "e-artsup Montpellier",
+    "position": "Junior VFX Artist / Game Artist",
+    "text": "J’ai eu l’occasion de travailler sur des projets avec Clément pendant nos études. Toujours ponctuel et ultra investi, il adore le développement et ça se ressent. Il est très à l’écoute de tous les corps de métiers et n’hésite pas à s’adapter et à chercher des solutions pour résoudre les problèmes et faire gagner du temps à l’équipe. Clément est aussi une personne très curieuse, qui se renseigne beaucoup sur tout ce qui touche au dev de près ou de loin. J’ai adoré travailler avec lui et je suis sure qu’il ira très loin."
+  },
+  {
+    "personId": "theo-carouge",
+    "company": "Freelance",
+    "position": "Développeur freelance",
+    "text": "J’ai eu la chance de travailler avec Clément sur plusieurs projets durant nos années d’études à E-Artsup, et c’est simple, c’est l’un des collaborateurs les plus impliqués que j’aie côtoyés. Brillant, curieux et autonome, il se donne à fond dans tout ce qu’il entreprend. Il fournit toujours un travail soigné, et il prend le temps d’expliquer sa démarche jusque dans les moindres détails. Son parcours parle pour lui : autodidacte parti du modding sur COD BO3, il a su transformer cette passion en une vraie expertise technique, jusqu’à contribuer à des jeux sortis sur console comme Terra Memoria. Au-delà de l’aspect technique, c’est vraiment quelqu’un avec qui collaborer est un plaisir, et je n’hésiterais pas une seconde à retravailler avec lui si l’occasion se présentait à nouveau."
+  },
+  {
+    "personId": "romain-garro",
+    "company": "Vigor Sport",
+    "position": "Stagiaire préparateur physique",
+    "text": "J’ai eu la chance d’avoir pu travailler avec Clément, pour mon site internet VIGOR SPORT. À l’écoute, très créatif et rapide d’exécution. Mon site a pu être développé comme je l’avais souhaité. Je recommande vivement cette personne pour toute personne cherchant des designs, des sites internets, etc... Merci encore !"
   }
 ]
