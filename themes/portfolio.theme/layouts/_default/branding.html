@@ -23,7 +23,6 @@
   "mix"         (cond $isEN "Gradient mix" "Dégradé mixte")
   "image"       (cond $isEN "Photo / logo" "Photo / logo")
   "upload"      (cond $isEN "Upload image" "Importer une image")
-  "showphoto"   (cond $isEN "Show photo" "Afficher la photo")
   "background"  (cond $isEN "Background" "Fond")
   "blueprint"   (cond $isEN "Blueprint wireframe" "Filaire blueprint")
   "intensity"   (cond $isEN "Halo intensity" "Intensité des halos")
@@ -32,6 +31,19 @@
   "download"    (cond $isEN "Download PNG" "Télécharger le PNG")
   "downloadall" (cond $isEN "Export all formats" "Exporter tous les formats")
   "reset"       (cond $isEN "Reset" "Réinitialiser")
+  "template"    (cond $isEN "Template" "Modèle")
+  "tplsave"     (cond $isEN "Save" "Enregistrer")
+  "tplsaveas"   (cond $isEN "Save as…" "Enregistrer sous…")
+  "tpldelete"   (cond $isEN "Delete" "Supprimer")
+  "composition" (cond $isEN "Composition" "Composition")
+  "comphint"    (cond $isEN "Toggle blocks and reorder with ↑ ↓" "Active les blocs et réordonne avec ↑ ↓")
+  "skills"      (cond $isEN "Skills & frameworks" "Compétences & frameworks")
+  "stats"       (cond $isEN "Stats" "Statistiques")
+  "project"     (cond $isEN "Featured project" "Projet mis en avant")
+  "projectmode" (cond $isEN "Display mode" "Mode d'affichage")
+  "mode_background" (cond $isEN "Screenshot background" "Screenshot en fond")
+  "mode_card"   (cond $isEN "Project card" "Carte projet")
+  "mode_strip"  (cond $isEN "Logo strip" "Bande de logos")
 -}}
 
 {{/* Défauts pré-remplis depuis data/profile.json */}}
@@ -48,6 +60,67 @@
   "speciality" $profile.details.speciality
 -}}
 
+{{/* ── Données injectées (labels résolus côté serveur) ──────────── */}}
+{{- $skills := slice -}}
+{{- $srcGroups := slice
+     (dict "data" site.Data.programming_languages "group" "languages")
+     (dict "data" site.Data.frameworks_engines    "group" "frameworks")
+     (dict "data" site.Data.specialties           "group" "specialties")
+     (dict "data" site.Data.soft_skills           "group" "softskills")
+     (dict "data" site.Data.tools                 "group" "tools")
+-}}
+{{- range $g := $srcGroups -}}
+  {{- range $item := sort (where $g.data "displayedInPortfolio" true) "experience" "desc" -}}
+    {{- $ip := $item.iconPath -}}
+    {{- if $ip -}}{{- if not (hasPrefix $ip "/") -}}{{- $ip = printf "/%s" $ip -}}{{- end -}}{{- end -}}
+    {{- $label := i18n $item.key -}}
+    {{- if not $label -}}{{- $label = $item.key | replaceRE "^(lang_|fw_|spec_|skill_|tool_)" "" | humanize | title -}}{{- end -}}
+    {{- $skills = $skills | append (dict
+        "key" $item.key
+        "label" $label
+        "iconPath" $ip
+        "icon" (or $item.icon "")
+        "color" (or $item.color "")
+        "experience" (or $item.experience 0)
+        "group" $g.group) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $projects := slice -}}
+{{- $totalDl := 0 -}}
+{{- range $p := where site.RegularPages "Section" "projects" -}}
+  {{- $dl := 0 -}}
+  {{- with $p.Params.downloads -}}{{- $dl = int (.total | default 0) -}}{{- end -}}
+  {{- $totalDl = add $totalDl $dl -}}
+  {{- $projects = $projects | append (dict
+      "title" $p.Title
+      "logo" ($p.Params.logo | default "")
+      "image" ($p.Params.image | default "")
+      "downloads" $dl
+      "featured" ($p.Params.featured | default false)) -}}
+{{- end -}}
+{{- $projectCount := len (where site.RegularPages "Section" "projects") -}}
+{{- $enginesCount := len (where site.Data.frameworks_engines "displayedInPortfolio" true) -}}
+{{- $years := $profile.details.experience | replaceRE "[^0-9,.]" "" -}}
+
+{{- $data := dict
+     "skills" $skills
+     "projects" $projects
+     "stats" (dict
+        "totalDownloads" $totalDl
+        "projectCount" $projectCount
+        "yearsExperience" $years
+        "enginesCount" $enginesCount)
+     "availability" (dict
+        "message" $profile.availability.message
+        "available" $profile.availability.available)
+     "contacts" (dict
+        "linkedin" $profile.contact.linkedin
+        "github" $profile.contact.github
+        "discord" $profile.contact.discord
+        "location" $profile.contact.location)
+-}}
+
 <section class="section page-shell branding-page">
   <div class="container">
 
@@ -62,6 +135,16 @@
       <aside class="branding-controls" aria-label="Controls">
 
         <div class="bc-group">
+          <label class="bc-label" for="bg-template">{{ $t.template }}</label>
+          <select id="bg-template" class="bc-select"></select>
+          <div class="bc-tpl-actions">
+            <button type="button" id="bg-tpl-save" class="btn-ghost">{{ $t.tplsave }}</button>
+            <button type="button" id="bg-tpl-saveas" class="btn-ghost">{{ $t.tplsaveas }}</button>
+            <button type="button" id="bg-tpl-delete" class="bc-reset">{{ $t.tpldelete }}</button>
+          </div>
+        </div>
+
+        <div class="bc-group">
           <label class="bc-label" for="bg-format">{{ $t.format }}</label>
           <select id="bg-format" class="bc-select"></select>
         </div>
@@ -72,11 +155,38 @@
         </div>
 
         <div class="bc-group">
+          <span class="bc-label">{{ $t.composition }}</span>
+          <ul id="bg-modules" class="bc-modules"></ul>
+          <span class="bc-hint">{{ $t.comphint }}</span>
+        </div>
+
+        <div class="bc-group">
           <span class="bc-label">{{ $t.content }}</span>
           <input type="text" id="bg-title" class="bc-input" placeholder="{{ $t.title }}" autocomplete="off">
           <input type="text" id="bg-subtitle" class="bc-input" placeholder="{{ $t.subtitle }}" autocomplete="off">
           <input type="text" id="bg-role" class="bc-input" placeholder="{{ $t.role }}" autocomplete="off">
           <input type="text" id="bg-handle" class="bc-input" placeholder="{{ $t.handle }}" autocomplete="off">
+        </div>
+
+        <div class="bc-group">
+          <span class="bc-label">{{ $t.skills }} <span id="bg-skills-count" class="bc-count"></span></span>
+          <div id="bg-skills" class="bc-skills"></div>
+        </div>
+
+        <div class="bc-group">
+          <span class="bc-label">{{ $t.stats }}</span>
+          <div id="bg-stats" class="bc-stats"></div>
+        </div>
+
+        <div class="bc-group">
+          <label class="bc-label" for="bg-project">{{ $t.project }}</label>
+          <select id="bg-project" class="bc-select"></select>
+          <label class="bc-label" for="bg-project-mode">{{ $t.projectmode }}</label>
+          <select id="bg-project-mode" class="bc-select">
+            <option value="background">{{ $t.mode_background }}</option>
+            <option value="card">{{ $t.mode_card }}</option>
+            <option value="strip">{{ $t.mode_strip }}</option>
+          </select>
         </div>
 
         <div class="bc-group">
@@ -91,10 +201,6 @@
 
         <div class="bc-group">
           <span class="bc-label">{{ $t.image }}</span>
-          <label class="bc-toggle">
-            <input type="checkbox" id="bg-showphoto" checked>
-            <span>{{ $t.showphoto }}</span>
-          </label>
           <label class="bc-file btn-ghost">
             <input type="file" id="bg-photo" accept="image/*" hidden>
             <span>{{ $t.upload }}</span>
@@ -144,6 +250,7 @@
 <script>
   window.BRANDING_DEFAULTS = {{ $defaults | jsonify | safeJS }};
   window.BRANDING_LANG = {{ $lang | jsonify | safeJS }};
+  window.BRANDING_DATA = {{ $data | jsonify | safeJS }};
 </script>
 {{- $bjs := resources.Get "js/branding.js" | minify | fingerprint -}}
 <script src="{{ $bjs.RelPermalink }}" defer></script>

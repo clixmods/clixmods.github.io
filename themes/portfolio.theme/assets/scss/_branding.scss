@@ -170,6 +170,146 @@
     &:hover { color: var(--text-soft); }
   }
 
+  // ── Indice / compteur ─────────────────────────────────
+  .bc-hint {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+  }
+
+  .bc-count {
+    color: var(--cyan);
+    font-weight: 600;
+  }
+
+  // ── Templates ─────────────────────────────────────────
+  .bc-tpl-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    align-items: center;
+
+    .btn-ghost {
+      font-size: 0.8rem;
+      padding: 0.45rem 0.6rem;
+      justify-content: center;
+      cursor: pointer;
+      border: 1px solid var(--glass-border);
+    }
+
+    .bc-reset { grid-column: 1 / -1; }
+  }
+
+  // ── Composition (liste de modules) ────────────────────
+  .bc-modules {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .bc-module {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: var(--r-sm);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+  }
+
+  .bc-module-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.86rem;
+    color: var(--text-soft);
+    cursor: pointer;
+    flex: 1;
+
+    input { accent-color: var(--cold); width: 15px; height: 15px; }
+  }
+
+  .bc-module-nav { display: flex; gap: 0.2rem; }
+
+  .bc-arrow {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-soft);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:hover:not(:disabled) { background: rgba(120, 160, 255, 0.15); color: var(--text); }
+    &:disabled { opacity: 0.3; cursor: default; }
+  }
+
+  // ── Compétences (cases groupées, scrollable) ──────────
+  .bc-skills {
+    max-height: 220px;
+    overflow-y: auto;
+    padding-right: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+
+    &::-webkit-scrollbar { width: 6px; }
+    &::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 3px; }
+  }
+
+  .bc-skills-head {
+    font-family: var(--font-head);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin: 0.5rem 0 0.15rem;
+
+    &:first-child { margin-top: 0; }
+  }
+
+  .bc-skill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    cursor: pointer;
+    padding: 0.15rem 0.2rem;
+    border-radius: 5px;
+
+    &:hover { background: rgba(255, 255, 255, 0.03); }
+    input { accent-color: var(--cold); width: 15px; height: 15px; }
+  }
+
+  // ── Stats (case + valeur + label) ─────────────────────
+  .bc-stats { display: flex; flex-direction: column; gap: 0.45rem; }
+
+  .bc-stat {
+    display: grid;
+    grid-template-columns: auto 1fr 1.3fr;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .bc-stat-toggle input { accent-color: var(--cold); width: 15px; height: 15px; cursor: pointer; }
+
+  .bc-stat-val,
+  .bc-stat-label {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.82rem;
+  }
+
   // ── Zone d'aperçu ─────────────────────────────────────
   .branding-preview {
     display: flex;
