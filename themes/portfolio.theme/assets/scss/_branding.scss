@@ -1,0 +1,216 @@
+// ─────────────────────────────────────────────────────────
+// Page /branding/ — outil de génération de visuels
+// ─────────────────────────────────────────────────────────
+.branding-page {
+
+  .branding-intro {
+    max-width: 640px;
+    color: var(--text-soft);
+    margin-top: 0.6rem;
+    line-height: 1.6;
+  }
+
+  .branding-app {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: var(--gap);
+    align-items: start;
+    margin-top: 2rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // ── Panneau de contrôles ──────────────────────────────
+  .branding-controls {
+    @include glass(var(--r-lg));
+    @include glass-sheen;
+    padding: 1.4rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    position: sticky;
+    top: calc(var(--nav-h) + 16px);
+
+    @media (max-width: 900px) {
+      position: static;
+    }
+  }
+
+  .bc-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .bc-label {
+    font-family: var(--font-head);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .bc-input,
+  .bc-select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: var(--r-sm);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    transition: border-color 0.2s ease, background 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--glass-border-hi);
+      background: rgba(255, 255, 255, 0.07);
+    }
+  }
+
+  .bc-select {
+    appearance: none;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, var(--text-dim) 50%),
+      linear-gradient(135deg, var(--text-dim) 50%, transparent 50%);
+    background-position: right 1rem top 55%, right 0.72rem top 55%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 2rem;
+
+    optgroup { color: var(--text); background: var(--surface); }
+    option { color: var(--text); background: var(--surface); }
+  }
+
+  // ── Pastilles couleur d'accent ────────────────────────
+  .bc-swatches {
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .bc-swatch {
+    position: relative;
+    cursor: pointer;
+
+    input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+
+    span {
+      display: block;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      box-shadow: 0 0 0 1px var(--glass-border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    &.is-cold span { background: var(--grad-cold); }
+    &.is-warm span { background: var(--grad-warm); }
+    &.is-violet span { background: linear-gradient(135deg, var(--violet), var(--cyan)); }
+    &.is-mix span { background: var(--grad-mix); }
+
+    input:checked + span {
+      border-color: #fff;
+      box-shadow: 0 0 0 1px var(--glass-border-hi), 0 0 18px -4px rgba(120, 160, 255, 0.7);
+      transform: scale(1.08);
+    }
+  }
+
+  // ── Toggles / range / file ────────────────────────────
+  .bc-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    cursor: pointer;
+
+    input { accent-color: var(--cold); width: 16px; height: 16px; }
+  }
+
+  .bc-range {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+
+    input[type="range"] { width: 100%; accent-color: var(--cold); }
+  }
+
+  .bc-file {
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 0.55rem 0.9rem;
+  }
+
+  .bc-export {
+    gap: 0.7rem;
+
+    .btn-cold,
+    .btn-ghost { width: 100%; justify-content: center; cursor: pointer; border: none; }
+    .btn-ghost { border: 1px solid var(--glass-border); }
+  }
+
+  .bc-reset {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0.2rem;
+    align-self: center;
+
+    &:hover { color: var(--text-soft); }
+  }
+
+  // ── Zone d'aperçu ─────────────────────────────────────
+  .branding-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .bp-stage {
+    @include glass(var(--r-lg));
+    padding: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    // fond damier discret pour visualiser la transparence
+    background-image:
+      linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.02) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.02) 75%);
+    background-size: 22px 22px;
+    background-position: 0 0, 0 11px, 11px -11px, -11px 0;
+
+    canvas {
+      max-width: 100%;
+      max-height: 70vh;
+      height: auto;
+      border-radius: var(--r-sm);
+      box-shadow: var(--shadow-card);
+    }
+  }
+
+  .bp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    padding: 0 0.2rem;
+  }
+
+  .bp-status { color: var(--cyan); }
+}

@@ -1,0 +1,150 @@
+{{ define "main" }}
+{{- $page := .page -}}
+{{- $sd := .sd -}}
+{{- $lang := $page.Site.Language.Lang -}}
+{{- $profile := $sd.profile -}}
+
+{{/* Libellés bilingues (outil interne, pas d'i18n dédié) */}}
+{{- $isEN := eq $lang "en" -}}
+{{- $t := dict
+  "kicker"      (cond $isEN "Internal tool" "Outil interne")
+  "intro"       (cond $isEN "Generate branding assets for your social & freelance platforms, matching the site's art direction. Everything is rendered locally and exported as PNG." "Génère des visuels de branding pour tes plateformes sociales et freelance, aux couleurs du site. Tout est rendu localement et exporté en PNG.")
+  "format"      (cond $isEN "Format" "Format")
+  "preset"      (cond $isEN "Layout" "Disposition")
+  "content"     (cond $isEN "Content" "Contenu")
+  "title"       (cond $isEN "Title" "Titre")
+  "subtitle"    (cond $isEN "Subtitle" "Sous-titre")
+  "handle"      (cond $isEN "Handle" "Identifiant")
+  "role"        (cond $isEN "Role / tagline" "Rôle / accroche")
+  "accent"      (cond $isEN "Accent color" "Couleur d'accent")
+  "cold"        (cond $isEN "Cold blue" "Bleu froid")
+  "warm"        (cond $isEN "Warm red" "Rouge chaud")
+  "violet"      "Violet"
+  "mix"         (cond $isEN "Gradient mix" "Dégradé mixte")
+  "image"       (cond $isEN "Photo / logo" "Photo / logo")
+  "upload"      (cond $isEN "Upload image" "Importer une image")
+  "showphoto"   (cond $isEN "Show photo" "Afficher la photo")
+  "background"  (cond $isEN "Background" "Fond")
+  "blueprint"   (cond $isEN "Blueprint wireframe" "Filaire blueprint")
+  "intensity"   (cond $isEN "Halo intensity" "Intensité des halos")
+  "export"      (cond $isEN "Export" "Export")
+  "retina"      (cond $isEN "High resolution @2x" "Haute résolution @2x")
+  "download"    (cond $isEN "Download PNG" "Télécharger le PNG")
+  "downloadall" (cond $isEN "Export all formats" "Exporter tous les formats")
+  "reset"       (cond $isEN "Reset" "Réinitialiser")
+-}}
+
+{{/* Défauts pré-remplis depuis data/profile.json */}}
+{{- $defaults := dict
+  "fullName" $profile.personal.fullName
+  "firstName" $profile.personal.firstName
+  "title" $profile.personal.title
+  "subtitle" $profile.personal.subtitle
+  "discord" $profile.contact.discord
+  "linkedin" $profile.contact.linkedin
+  "github" $profile.contact.github
+  "location" $profile.contact.location
+  "photo" $profile.media.profileImage
+  "speciality" $profile.details.speciality
+-}}
+
+<section class="section page-shell branding-page">
+  <div class="container">
+
+    <div class="page-head reveal">
+      <span class="page-kicker">{{ $t.kicker }}</span>
+      <h1>{{ $page.Title }}</h1>
+      <p class="branding-intro">{{ $t.intro }}</p>
+    </div>
+
+    <div class="branding-app">
+      {{/* ── Panneau de contrôles ─────────────────────────── */}}
+      <aside class="branding-controls" aria-label="Controls">
+
+        <div class="bc-group">
+          <label class="bc-label" for="bg-format">{{ $t.format }}</label>
+          <select id="bg-format" class="bc-select"></select>
+        </div>
+
+        <div class="bc-group">
+          <label class="bc-label" for="bg-preset">{{ $t.preset }}</label>
+          <select id="bg-preset" class="bc-select"></select>
+        </div>
+
+        <div class="bc-group">
+          <span class="bc-label">{{ $t.content }}</span>
+          <input type="text" id="bg-title" class="bc-input" placeholder="{{ $t.title }}" autocomplete="off">
+          <input type="text" id="bg-subtitle" class="bc-input" placeholder="{{ $t.subtitle }}" autocomplete="off">
+          <input type="text" id="bg-role" class="bc-input" placeholder="{{ $t.role }}" autocomplete="off">
+          <input type="text" id="bg-handle" class="bc-input" placeholder="{{ $t.handle }}" autocomplete="off">
+        </div>
+
+        <div class="bc-group">
+          <span class="bc-label">{{ $t.accent }}</span>
+          <div class="bc-swatches" role="radiogroup" aria-label="{{ $t.accent }}">
+            <label class="bc-swatch is-cold"><input type="radio" name="accent" value="cold" checked><span title="{{ $t.cold }}"></span></label>
+            <label class="bc-swatch is-warm"><input type="radio" name="accent" value="warm"><span title="{{ $t.warm }}"></span></label>
+            <label class="bc-swatch is-violet"><input type="radio" name="accent" value="violet"><span title="{{ $t.violet }}"></span></label>
+            <label class="bc-swatch is-mix"><input type="radio" name="accent" value="mix"><span title="{{ $t.mix }}"></span></label>
+          </div>
+        </div>
+
+        <div class="bc-group">
+          <span class="bc-label">{{ $t.image }}</span>
+          <label class="bc-toggle">
+            <input type="checkbox" id="bg-showphoto" checked>
+            <span>{{ $t.showphoto }}</span>
+          </label>
+          <label class="bc-file btn-ghost">
+            <input type="file" id="bg-photo" accept="image/*" hidden>
+            <span>{{ $t.upload }}</span>
+          </label>
+        </div>
+
+        <div class="bc-group">
+          <span class="bc-label">{{ $t.background }}</span>
+          <label class="bc-toggle">
+            <input type="checkbox" id="bg-blueprint" checked>
+            <span>{{ $t.blueprint }}</span>
+          </label>
+          <label class="bc-range">
+            <span>{{ $t.intensity }}</span>
+            <input type="range" id="bg-intensity" min="0" max="100" value="100">
+          </label>
+        </div>
+
+        <div class="bc-group bc-export">
+          <span class="bc-label">{{ $t.export }}</span>
+          <label class="bc-toggle">
+            <input type="checkbox" id="bg-retina">
+            <span>{{ $t.retina }}</span>
+          </label>
+          <button type="button" id="bg-download" class="btn-cold">{{ $t.download }}</button>
+          <button type="button" id="bg-download-all" class="btn-ghost">{{ $t.downloadall }}</button>
+          <button type="button" id="bg-reset" class="bc-reset">{{ $t.reset }}</button>
+        </div>
+
+      </aside>
+
+      {{/* ── Aperçu ───────────────────────────────────────── */}}
+      <div class="branding-preview">
+        <div class="bp-stage">
+          <canvas id="bg-canvas" width="1500" height="500"></canvas>
+        </div>
+        <div class="bp-meta">
+          <span id="bg-dims" class="bp-dims"></span>
+          <span id="bg-status" class="bp-status" aria-live="polite"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  window.BRANDING_DEFAULTS = {{ $defaults | jsonify | safeJS }};
+  window.BRANDING_LANG = {{ $lang | jsonify | safeJS }};
+</script>
+{{- $bjs := resources.Get "js/branding.js" | minify | fingerprint -}}
+<script src="{{ $bjs.RelPermalink }}" defer></script>
+{{ end }}
