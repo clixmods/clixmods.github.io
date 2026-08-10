@@ -5,6 +5,7 @@ logo: /images/companies/webmay.png
 start_date: 2026-01-01T00:00:00.000Z
 end_date: 2026-07-29T23:00:00.000Z
 contract_type: Freelance Mission
+employment_type: freelance
 location: Remote
 description: Gameplay development, technical refactoring, data pipeline and internal tools for Time Trial Cards, a Unity educational mobile game
 projects_layout: horizontal

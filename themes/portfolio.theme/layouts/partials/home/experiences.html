@@ -3,7 +3,8 @@
        et la carte projet partagée — cf. experiences/list.html & single.html. */ -}}
 {{- $exp := site.GetPage "/experiences" -}}
 {{- with $exp -}}
-{{- $items := sort .Pages "Params.start_date" "desc" -}}
+{{- $items := partial "experiences-sorted.html" .Pages -}}
+{{- $etCounts := partial "experiences-counts.html" $items -}}
 {{- with $items }}
 <div class="home-exp">
   <div class="section-head">
@@ -11,11 +12,30 @@
     <a class="btn btn-ghost" href="{{ relLangURL "/experiences/" }}">{{ i18n "ui_view_all" }}</a>
   </div>
 
+  <div class="filter-bar filter-bar-compact" data-filter-bar="home-exp" data-filter-items="[data-exp]">
+    <div class="filter-mains" role="group" aria-label="{{ i18n "filter_experiences_label" }}"
+         data-facet-row="etype" data-facet-default="all">
+      <button type="button" class="chip active" data-facet="etype" data-value="all">
+        {{ i18n "cat_all" }}<span class="chip-count" data-facet-count>{{ len . }}</span>
+      </button>
+      {{- range slice "contract" "freelance" }}
+      {{- if gt (int (index $etCounts . | default 0)) 0 }}
+      <button type="button" class="chip" data-facet="etype" data-value="{{ . }}">
+        {{ i18n (printf "emp_%s" .) }}<span class="chip-count" data-facet-count>{{ index $etCounts . }}</span>
+      </button>
+      {{- end }}
+      {{- end }}
+    </div>
+  </div>
+
+  <div class="home-exp-list" data-filter-group="home-exp">
   {{- range . }}
     {{- $P := .Params -}}
     {{- $expUrl := .RelPermalink -}}
     {{- $endLabel := i18n "exp_now" }}{{ with $P.end_date }}{{ $endLabel = time.Format "Jan 2006" . }}{{ end }}
-    <article class="home-exp-item reveal">
+    {{/* Les cartes projet imbriquées portent data-project, jamais data-exp :
+         cette barre (data-filter-items="[data-exp]") ne les touche pas. */}}
+    <article class="home-exp-item reveal" data-exp data-facet-etype="{{ $P.employment_type }}">
       <div class="timeline-card">
         <div class="timeline-head">
           {{- with $P.logo }}
@@ -50,7 +70,8 @@
         {{- end }}
       </div>
     </article>
-    {{- end }}
+  {{- end }}
+  </div>
 </div>
 {{- end }}
 {{- end -}}

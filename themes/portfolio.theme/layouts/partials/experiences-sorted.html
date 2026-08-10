@@ -1,0 +1,26 @@
+{{- /*
+  Tri partagé des expériences (accueil + page « Expériences ») :
+    1. les contrats (employment_type = contract) d'abord, puis le freelance ;
+    2. dans chaque groupe : date de fin décroissante, mission en cours
+       (end_date absente) en tête ;
+    3. égalité départagée par date de début décroissante.
+  Une seule passe de tri sur une clé composite zéro-paddée : le timestamp
+  inversé trié en ascendant équivaut à une date décroissante, et une mission
+  en cours vaut 0 donc passe devant.
+  Contexte = une collection de Pages. Retourne une slice de Pages triée.
+*/ -}}
+{{- /* Rangs à partir de 1 : `default` considère 0 comme vide, un rang 0 serait
+       donc écrasé par la valeur de repli. */ -}}
+{{- $rank := dict "contract" 1 "freelance" 2 -}}
+{{- $rows := slice -}}
+{{- range . -}}
+  {{- $g := index $rank (.Params.employment_type | default "") | default 9 -}}
+  {{- $endInv := 0 -}}
+  {{- with .Params.end_date }}{{ $endInv = sub 9999999999 (int (time.AsTime .).Unix) }}{{ end -}}
+  {{- $startInv := 0 -}}
+  {{- with .Params.start_date }}{{ $startInv = sub 9999999999 (int (time.AsTime .).Unix) }}{{ end -}}
+  {{- $rows = $rows | append (dict "page" . "k" (printf "%d-%010d-%010d" $g $endInv $startInv)) -}}
+{{- end -}}
+{{- $out := slice -}}
+{{- range sort $rows "k" "asc" }}{{ $out = $out | append .page }}{{ end -}}
+{{- return $out -}}

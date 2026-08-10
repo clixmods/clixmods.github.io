@@ -5,6 +5,7 @@ logo: /images/companies/la-moutarde.png
 start_date: 2023-09-01T00:00:00.000Z
 end_date: 2025-09-01T00:00:00.000Z
 contract_type: Work-study contract
+employment_type: contract
 location: Montpellier, Occitanie, France
 description: C# development in work-study program with work on the final production of a video game and tool development
 projects_layout: horizontal

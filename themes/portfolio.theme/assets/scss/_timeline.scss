@@ -29,6 +29,11 @@
 }
 .timeline-item:last-child .timeline-rail::before { display: none; }
 
+.timeline-item.is-hidden { display: none; }
+// Le filtre peut masquer le dernier élément du DOM : le rail doit s'arrêter sur
+// le dernier élément réellement visible (classe posée par le JS de filtrage).
+.timeline-item.is-last-visible .timeline-rail::before { display: none; }
+
 .timeline-marker {
   position: relative;
   z-index: 1;

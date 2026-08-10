@@ -17,7 +17,10 @@
 {{- $display = first 4 $display -}}
 
 <a class="project-card reveal{{ with $class }} {{ . }}{{ end }}" href="{{ $p.RelPermalink }}"
-   data-project data-main="{{ $cat.main }}" data-sub="{{ $cat.sub }}" data-tech="{{ delimit $allTech " " }}">
+   data-project
+   data-facet-main="{{ $cat.main }}"
+   data-facet-scope="{{ $cat.scope }}"
+   data-facet-tech="{{ delimit $allTech " " }}">
   <div class="project-thumb">
     {{- with $p.Params.image }}
     {{- $img := partial "get-optimized-image.html" (dict "imagePath" . "width" 600 "quality" 85) }}

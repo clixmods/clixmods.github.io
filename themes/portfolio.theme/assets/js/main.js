@@ -50,128 +50,222 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  // ── Filtrage page Projets (catégorie principale + sous-catégorie) ──
-  var fbar = document.querySelector("[data-project-filter]");
-  if (fbar) {
-    var mains = fbar.querySelectorAll("[data-main]");
-    var subRows = fbar.querySelectorAll("[data-subs-for]");
-    // Scoper au conteneur du filtre : n'affecte que la mosaïque/grille voisine,
-    // pas les autres cartes projet de la page (ex. section Expériences en accueil).
-    var cards = (fbar.parentElement || document).querySelectorAll("[data-project]");
-    var curMain = "all";
-    var curSub = "all";
-    var selTech = [];
+  // ── Barres de filtres génériques (facettes) ───────────────
+  // Contrat de markup :
+  //   <div class="filter-bar" data-filter-bar="ID"
+  //        data-filter-items="[data-project]" [data-filter-hash="main"]>
+  //     <div data-facet-row="main" data-facet-default="all" [data-facet-mode="multi"]>
+  //       <button data-facet="main" data-value="app">…<span data-facet-count></span></button>
+  //   <div data-filter-group="ID"> … éléments filtrables … </div>
+  //   <p data-filter-empty="ID" hidden>…</p>
+  // Chaque élément filtrable porte data-facet-<nom>="v1 v2" ; la valeur
+  // réservée « all » signifie « pas de contrainte ». Les facettes simples sont
+  // indépendantes : changer d'onglet ne réinitialise pas le périmètre.
+  document.querySelectorAll("[data-filter-bar]").forEach(function (bar) {
+    var id = bar.getAttribute("data-filter-bar");
+    var itemSel = bar.getAttribute("data-filter-items") || "[data-project]";
+    var items = [];
+    document.querySelectorAll('[data-filter-group="' + id + '"]').forEach(function (g) {
+      items = items.concat(Array.prototype.slice.call(g.querySelectorAll(itemSel)));
+    });
+    var chips = Array.prototype.slice.call(bar.querySelectorAll("[data-facet][data-value]"));
+    if (!items.length || !chips.length) return;
 
-    var advToggleEl = fbar.querySelector("[data-adv-toggle]");
-    var advCountEl = fbar.querySelector("[data-adv-count]");
-    var resetBtn = fbar.querySelector("[data-filter-reset]");
+    var modes = {};    // facette -> "single" | "multi"
+    var defaults = {}; // facette -> valeur par défaut (string) ou [] (multi)
+    var state = {};
+    var initialized = false;
 
-    // Reflète l'état des filtres : badge de compte + toggle actif + bouton reset
-    var updateIndicators = function () {
-      if (advCountEl) {
-        if (selTech.length) {
-          advCountEl.textContent = selTech.length;
-          advCountEl.hidden = false;
-        } else {
-          advCountEl.hidden = true;
-        }
-      }
-      if (advToggleEl) advToggleEl.classList.toggle("active", selTech.length > 0);
-      var anyActive = curMain !== "all" || curSub !== "all" || selTech.length > 0;
-      if (resetBtn) resetBtn.hidden = !anyActive;
+    bar.querySelectorAll("[data-facet-row]").forEach(function (row) {
+      var f = row.getAttribute("data-facet-row");
+      var multi = row.getAttribute("data-facet-mode") === "multi";
+      modes[f] = multi ? "multi" : "single";
+      defaults[f] = multi ? [] : (row.getAttribute("data-facet-default") || "all");
+    });
+    // Filet de sécurité : facette déclarée seulement sur les puces
+    chips.forEach(function (c) {
+      var f = c.getAttribute("data-facet");
+      if (!(f in modes)) { modes[f] = "single"; defaults[f] = "all"; }
+    });
+    Object.keys(defaults).forEach(function (f) {
+      state[f] = modes[f] === "multi" ? defaults[f].slice() : defaults[f];
+    });
+
+    var emptyEl = document.querySelector('[data-filter-empty="' + id + '"]');
+    var advToggleEl = bar.querySelector("[data-adv-toggle]");
+    var advPanel = bar.querySelector("[data-adv-panel]");
+    var advCountEl = bar.querySelector("[data-adv-count]");
+    var resetBtn = bar.querySelector("[data-filter-reset]");
+    var hashFacet = bar.getAttribute("data-filter-hash");
+
+    var tokens = function (el, f) {
+      return (el.getAttribute("data-facet-" + f) || "").split(/\s+/).filter(Boolean);
+    };
+    var hasValue = function (el, f, v) {
+      return v === "all" || tokens(el, f).indexOf(v) > -1;
+    };
+    var isSelected = function (f, v) {
+      return modes[f] === "multi" ? state[f].indexOf(v) > -1 : state[f] === v;
     };
 
-    var applyFilter = function () {
-      cards.forEach(function (c) {
-        var m = c.getAttribute("data-main") || "";
-        var s = c.getAttribute("data-sub") || "";
-        var techs = (" " + (c.getAttribute("data-tech") || "") + " ");
-        var catOk = (curMain === "all" || m === curMain) && (curSub === "all" || s === curSub);
-        var techOk = selTech.every(function (t) { return techs.indexOf(" " + t + " ") > -1; });
-        c.classList.toggle("is-hidden", !(catOk && techOk));
+    // L'élément passe-t-il tous les filtres ? `skip` permet d'ignorer une
+    // facette — c'est la base des compteurs « facettés ».
+    var matches = function (el, skip) {
+      for (var f in state) {
+        if (f === skip) continue;
+        var sel = state[f];
+        if (modes[f] === "multi") {
+          var tk = tokens(el, f);
+          for (var i = 0; i < sel.length; i++) {
+            if (tk.indexOf(sel[i]) < 0) return false;
+          }
+        } else if (sel && sel !== "all" && !hasValue(el, f, sel)) {
+          return false;
+        }
+      }
+      return true;
+    };
+
+    // Compteurs dynamiques : chaque puce affiche le nombre de résultats qu'elle
+    // donnerait compte tenu des AUTRES facettes. Une puce à 0 est grisée et
+    // désactivée — sauf si elle est active, sinon on ne pourrait plus revenir.
+    var updateCounts = function () {
+      chips.forEach(function (chip) {
+        var f = chip.getAttribute("data-facet");
+        var v = chip.getAttribute("data-value");
+        // Facette multi (ET logique) : on conserve ses propres sélections.
+        var skip = modes[f] === "multi" ? null : f;
+        var n = 0;
+        items.forEach(function (el) {
+          if (matches(el, skip) && hasValue(el, f, v)) n++;
+        });
+        var out = chip.querySelector("[data-facet-count]");
+        if (out) out.textContent = n;
+        var dead = n === 0 && !isSelected(f, v);
+        chip.classList.toggle("is-empty", dead);
+        chip.disabled = dead;
       });
+    };
+
+    var updateIndicators = function () {
+      var nMulti = 0;
+      Object.keys(modes).forEach(function (f) {
+        if (modes[f] === "multi") nMulti += state[f].length;
+      });
+      if (advCountEl) {
+        advCountEl.textContent = nMulti;
+        advCountEl.hidden = nMulti === 0;
+      }
+      if (advToggleEl) advToggleEl.classList.toggle("active", nMulti > 0);
+      var dirty = Object.keys(state).some(function (f) {
+        return modes[f] === "multi" ? state[f].length > 0 : state[f] !== defaults[f];
+      });
+      if (resetBtn) resetBtn.hidden = !dirty;
+    };
+
+    // Le rail de la timeline doit s'arrêter sur le dernier élément VISIBLE.
+    var markLastVisible = function () {
+      var last = null;
+      items.forEach(function (el) {
+        el.classList.remove("is-last-visible");
+        if (!el.classList.contains("is-hidden")) last = el;
+      });
+      if (last) last.classList.add("is-last-visible");
+    };
+
+    var apply = function () {
+      var visible = 0;
+      items.forEach(function (el) {
+        var ok = matches(el, null);
+        el.classList.toggle("is-hidden", !ok);
+        if (!ok) return;
+        visible++;
+        // Un élément ré-affiché après coup n'a jamais croisé l'observer
+        // « reveal » : on le rend visible immédiatement. (Pas au 1er passage,
+        // pour préserver l'animation d'entrée.)
+        if (initialized && el.classList.contains("reveal")) el.classList.add("is-visible");
+      });
+      if (emptyEl) emptyEl.hidden = visible > 0;
+      markLastVisible();
+      chips.forEach(function (c) {
+        c.classList.toggle("active", isSelected(c.getAttribute("data-facet"), c.getAttribute("data-value")));
+      });
+      updateCounts();
       updateIndicators();
     };
 
-    var setSub = function (row, key) {
-      curSub = key;
-      row.querySelectorAll("[data-sub]").forEach(function (b) {
-        b.classList.toggle("active", b.getAttribute("data-sub") === key);
-      });
-      applyFilter();
+    var writeHash = function () {
+      if (!hashFacet || !history.replaceState) return;
+      var v = state[hashFacet];
+      history.replaceState(null, "",
+        (!v || v === defaults[hashFacet]) ? location.pathname + location.search : "#" + v);
     };
 
-    var setMain = function (key, keepHash) {
-      curMain = key;
-      curSub = "all";
-      mains.forEach(function (b) {
-        b.classList.toggle("active", b.getAttribute("data-main") === key);
-      });
-      subRows.forEach(function (row) {
-        var on = row.getAttribute("data-subs-for") === key;
-        row.hidden = !on;
-        row.querySelectorAll("[data-sub]").forEach(function (b) {
-          b.classList.toggle("active", b.getAttribute("data-sub") === "all");
-        });
-      });
-      applyFilter();
-      if (!keepHash && history.replaceState) {
-        history.replaceState(null, "", key === "all" ? location.pathname + location.search : "#" + key);
+    var setFacet = function (f, v) {
+      if (modes[f] === "multi") {
+        var i = state[f].indexOf(v);
+        if (i > -1) { state[f].splice(i, 1); } else { state[f].push(v); }
+      } else {
+        state[f] = v; // les autres facettes ne sont pas réinitialisées
       }
+      apply();
+      if (f === hashFacet) writeHash();
     };
 
-    mains.forEach(function (b) {
-      b.addEventListener("click", function () { setMain(b.getAttribute("data-main")); });
-    });
-    subRows.forEach(function (row) {
-      row.querySelectorAll("[data-sub]").forEach(function (b) {
-        b.addEventListener("click", function () { setSub(row, b.getAttribute("data-sub")); });
+    chips.forEach(function (c) {
+      c.addEventListener("click", function () {
+        setFacet(c.getAttribute("data-facet"), c.getAttribute("data-value"));
       });
     });
 
-    // Filtres avancés (techno) — panneau repliable
-    var advToggle = fbar.querySelector("[data-adv-toggle]");
-    var advPanel = fbar.querySelector("[data-adv-panel]");
-    if (advToggle && advPanel) {
-      advToggle.addEventListener("click", function () {
-        var open = advPanel.hasAttribute("hidden");
-        if (open) { advPanel.removeAttribute("hidden"); } else { advPanel.setAttribute("hidden", ""); }
-        advToggle.setAttribute("aria-expanded", open ? "true" : "false");
-        advToggle.classList.toggle("open", open);
-      });
-    }
-    fbar.querySelectorAll("[data-tech-key]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var key = b.getAttribute("data-tech-key");
-        var on = b.classList.toggle("active");
-        if (on) { selTech.push(key); }
-        else { selTech = selTech.filter(function (t) { return t !== key; }); }
-        applyFilter();
-      });
-    });
-
-    // Réinitialisation : catégorie, sous-catégorie et technos
     if (resetBtn) {
       resetBtn.addEventListener("click", function () {
-        selTech = [];
-        fbar.querySelectorAll("[data-tech-key].active").forEach(function (b) {
-          b.classList.remove("active");
+        Object.keys(defaults).forEach(function (f) {
+          state[f] = modes[f] === "multi" ? defaults[f].slice() : defaults[f];
         });
-        setMain("all"); // remet curMain/curSub à « all » puis applyFilter()
+        apply();
+        writeHash();
       });
     }
 
-    // Sélection par défaut : « all » si l'onglet existe (page Projets),
-    // sinon le premier onglet disponible (accueil « mis en avant »).
-    var mainKeys = [];
-    mains.forEach(function (b) { mainKeys.push(b.getAttribute("data-main")); });
-    var fallback = mainKeys.indexOf("all") > -1 ? "all" : (mainKeys[0] || "all");
+    // Filtres avancés (techno) — panneau repliable
+    if (advToggleEl && advPanel) {
+      advToggleEl.addEventListener("click", function () {
+        var open = advPanel.hasAttribute("hidden");
+        if (open) { advPanel.removeAttribute("hidden"); } else { advPanel.setAttribute("hidden", ""); }
+        advToggleEl.setAttribute("aria-expanded", open ? "true" : "false");
+        advToggleEl.classList.toggle("open", open);
+      });
+    }
 
-    // Pré-sélection via hash (#jv, #app, #mods, #tools)
-    var initial = (location.hash || "").replace("#", "");
-    var valid = mainKeys.indexOf(initial) > -1;
-    setMain(valid ? initial : fallback, true);
-  }
+    // Pré-sélection par hash — uniquement pour la barre qui la demande.
+    if (hashFacet) {
+      var want = (location.hash || "").replace("#", "");
+      var known = chips.some(function (c) {
+        return c.getAttribute("data-facet") === hashFacet && c.getAttribute("data-value") === want;
+      });
+      if (known) {
+        state[hashFacet] = want;
+        // Les liens profonds historiques (#mods, #tools) ne donnent aucun
+        // résultat sous le périmètre « Pro » par défaut : on relâche alors les
+        // autres facettes simples qui possèdent une option « all ».
+        var n = 0;
+        items.forEach(function (el) { if (matches(el, null)) n++; });
+        if (!n) {
+          Object.keys(state).forEach(function (f) {
+            if (f === hashFacet || modes[f] !== "single") return;
+            var hasAll = chips.some(function (c) {
+              return c.getAttribute("data-facet") === f && c.getAttribute("data-value") === "all";
+            });
+            if (hasAll) state[f] = "all";
+          });
+        }
+      }
+    }
+
+    apply();
+    initialized = true;
+  });
 
   // ── Carrousel témoignages (un à la fois, auto-défilement) ──
   // Supporte plusieurs carrousels sur une même page (accueil + formations).

@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{- $page := .page -}}
-{{- $items := sort $page.Pages "Params.start_date" "desc" -}}
+{{- $items := partial "experiences-sorted.html" $page.Pages -}}
+{{- $etCounts := partial "experiences-counts.html" $items -}}
 <section class="section page-shell">
   <div class="container">
     <div class="page-head reveal">
@@ -9,14 +10,30 @@
       {{- with $page.Description }}<p class="page-lead">{{ . }}</p>{{ end }}
     </div>
 
-    <div class="timeline">
+    <div class="filter-bar reveal" data-filter-bar="exp-list" data-filter-items="[data-exp]">
+      <div class="filter-mains" role="group" aria-label="{{ i18n "filter_experiences_label" }}"
+           data-facet-row="etype" data-facet-default="all">
+        <button type="button" class="chip active" data-facet="etype" data-value="all">
+          {{ i18n "cat_all" }}<span class="chip-count" data-facet-count>{{ len $items }}</span>
+        </button>
+        {{- range slice "contract" "freelance" }}
+        {{- if gt (int (index $etCounts . | default 0)) 0 }}
+        <button type="button" class="chip" data-facet="etype" data-value="{{ . }}">
+          {{ i18n (printf "emp_%s" .) }}<span class="chip-count" data-facet-count>{{ index $etCounts . }}</span>
+        </button>
+        {{- end }}
+        {{- end }}
+      </div>
+    </div>
+
+    <div class="timeline" data-filter-group="exp-list">
       {{- range $items }}
       {{- $P := .Params -}}
       {{- $endLabel := i18n "exp_now" }}{{ with $P.end_date }}{{ $endLabel = time.Format "Jan 2006" . }}{{ end }}
       {{- $tech := slice }}
       {{- range $P.programming_languages }}{{ $tech = $tech | append . }}{{ end }}
       {{- range $P.frameworks_engines }}{{ $tech = $tech | append . }}{{ end }}
-      <article class="timeline-item reveal">
+      <article class="timeline-item reveal" data-exp data-facet-etype="{{ $P.employment_type }}">
         <div class="timeline-rail"><span class="timeline-marker"></span></div>
         <div class="timeline-card">
           <div class="timeline-head">
@@ -44,6 +61,7 @@
       </article>
       {{- end }}
     </div>
+    <p class="filter-empty" data-filter-empty="exp-list" hidden>{{ i18n "filter_no_results" }}</p>
   </div>
 </section>
 {{ end }}

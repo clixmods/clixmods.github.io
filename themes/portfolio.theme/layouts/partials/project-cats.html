@@ -1,15 +1,17 @@
 {{- /*
-  Mappe un `sector` de projet vers sa catégorie principale + sous-catégorie.
-  Contexte = la chaîne sector. Retourne dict { main, sub } (chaînes vides si inconnu).
+  Mappe un `sector` de projet vers sa catégorie principale, sa sous-catégorie
+  (libellé du badge de carte) et son périmètre pro/perso (axe de filtre global,
+  orthogonal aux onglets : tout ce qui n'est pas une commande pro est « perso »).
+  Contexte = la chaîne sector. Retourne dict { main, sub, scope }.
 */ -}}
 {{- $sector := . -}}
 {{- $map := dict
-      "games-personnel"       (dict "main" "jv"    "sub" "perso")
-      "games-professionnel"   (dict "main" "jv"    "sub" "pro")
-      "games-gamejams"        (dict "main" "jv"    "sub" "gamejam")
-      "appsweb-professionnel" (dict "main" "app"   "sub" "pro")
-      "appsweb-etude"         (dict "main" "app"   "sub" "etude")
-      "mods"                  (dict "main" "mods"  "sub" "")
-      "tools"                 (dict "main" "tools" "sub" "")
+      "games-personnel"       (dict "main" "jv"    "sub" "perso"   "scope" "perso")
+      "games-professionnel"   (dict "main" "jv"    "sub" "pro"     "scope" "pro")
+      "games-gamejams"        (dict "main" "jv"    "sub" "gamejam" "scope" "perso")
+      "appsweb-professionnel" (dict "main" "app"   "sub" "pro"     "scope" "pro")
+      "appsweb-etude"         (dict "main" "app"   "sub" "etude"   "scope" "perso")
+      "mods"                  (dict "main" "mods"  "sub" ""        "scope" "perso")
+      "tools"                 (dict "main" "tools" "sub" ""        "scope" "perso")
 -}}
-{{- return (index $map $sector | default (dict "main" "" "sub" "")) -}}
+{{- return (index $map $sector | default (dict "main" "" "sub" "" "scope" "")) -}}

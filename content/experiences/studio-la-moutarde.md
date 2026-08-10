@@ -5,6 +5,7 @@ logo: /images/companies/la-moutarde.png
 start_date: 2023-09-01T00:00:00.000Z
 end_date: 2025-09-01T00:00:00.000Z
 contract_type: Contrat en alternance
+employment_type: contract
 location: Montpellier, Occitanie, France
 description: Développement C# en alternance avec travail sur la fin de production d'un jeu vidéo et développement d'outils
 projects_layout: horizontal

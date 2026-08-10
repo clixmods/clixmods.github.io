@@ -5,6 +5,7 @@ logo: ""
 start_date: 2026-03-21T00:00:00.000Z
 end_date: 2026-03-28T00:00:00.000Z
 contract_type: Mission Freelance
+employment_type: freelance
 location: Remote
 description: Création d'un site vitrine WordPress pour un praticien spécialisé en massage sportif, avec une interface soignée orientée conversion
 projects_layout: vertical

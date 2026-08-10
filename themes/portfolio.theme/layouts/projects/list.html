@@ -5,31 +5,32 @@
 {{- $projects := where $page.RegularPages "Params.sector" "!=" "test" -}}
 {{- $projects = $projects.ByDate.Reverse -}}
 
-{{/* Compteurs par principale ("jv") et par couple principale:sous ("jv:pro") */}}
+{{/* Compteurs par catégorie principale ("jv") et par périmètre ("scope:pro") */}}
 {{- $counts := dict "all" (len $projects) -}}
 {{- range $projects -}}
   {{- $c := partial "project-cats.html" (.Params.sector | default "") -}}
-  {{- $mk := $c.main -}}
-  {{- if $mk -}}
-    {{- $counts = merge $counts (dict $mk (add (int (index $counts $mk | default 0)) 1)) -}}
-    {{- if $c.sub -}}
-      {{- $sk := printf "%s:%s" $mk $c.sub -}}
-      {{- $counts = merge $counts (dict $sk (add (int (index $counts $sk | default 0)) 1)) -}}
-    {{- end -}}
+  {{- with $c.main -}}
+    {{- $counts = merge $counts (dict . (add (int (index $counts . | default 0)) 1)) -}}
+  {{- end -}}
+  {{- with $c.scope -}}
+    {{- $sk := printf "scope:%s" . -}}
+    {{- $counts = merge $counts (dict $sk (add (int (index $counts $sk | default 0)) 1)) -}}
   {{- end -}}
 {{- end -}}
 
-{{/* Définition des filtres */}}
+{{/* Onglets principaux — ordre : Tous, Apps & Web, Jeux vidéo, Mods, Outils */}}
 {{- $mains := slice
       (dict "key" "all"   "label" (i18n "cat_all"))
-      (dict "key" "jv"    "label" (i18n "cat_jv"))
       (dict "key" "app"   "label" (i18n "cat_app"))
+      (dict "key" "jv"    "label" (i18n "cat_jv"))
       (dict "key" "mods"  "label" (i18n "cat_mods"))
       (dict "key" "tools" "label" (i18n "cat_tools"))
 -}}
-{{- $subGroups := slice
-      (dict "main" "jv"  "subs" (slice "pro" "perso" "gamejam"))
-      (dict "main" "app" "subs" (slice "pro" "etude"))
+{{/* Axe pro/perso, orthogonal aux onglets — toujours visible, « Pro » par défaut */}}
+{{- $scopes := slice
+      (dict "key" "pro"   "label" (i18n "sub_pro"))
+      (dict "key" "perso" "label" (i18n "sub_perso"))
+      (dict "key" "all"   "label" (i18n "cat_all"))
 -}}
 
 {{/* Techs présentes dans les projets (pour les filtres avancés) */}}
@@ -53,27 +54,31 @@
       {{- with $page.Description }}<p class="page-lead">{{ . }}</p>{{ end }}
     </div>
 
-    <div class="filter-bar reveal" data-project-filter>
-      <div class="filter-mains" role="group" aria-label="{{ i18n "filter_projects_label" }}">
+    <div class="filter-bar reveal" data-filter-bar="projects"
+         data-filter-items="[data-project]" data-filter-hash="main">
+      <div class="filter-mains" role="group" aria-label="{{ i18n "filter_projects_label" }}"
+           data-facet-row="main" data-facet-default="all">
         {{- range $mains }}
         {{- if or (eq .key "all") (gt (int (index $counts .key | default 0)) 0) }}
-        <button type="button" class="chip{{ if eq .key "all" }} active{{ end }}" data-main="{{ .key }}">
-          {{ .label }}<span class="chip-count">{{ index $counts .key | default 0 }}</span>
+        <button type="button" class="chip{{ if eq .key "all" }} active{{ end }}"
+                data-facet="main" data-value="{{ .key }}">
+          {{ .label }}<span class="chip-count" data-facet-count>{{ index $counts .key | default 0 }}</span>
         </button>
         {{- end }}
         {{- end }}
       </div>
-      {{- range $subGroups }}
-      {{- $mk := .main }}
-      <div class="filter-subs" data-subs-for="{{ $mk }}" hidden>
-        <button type="button" class="subchip active" data-sub="all">{{ i18n "cat_all" }}</button>
-        {{- range .subs }}
-        {{- if gt (int (index $counts (printf "%s:%s" $mk .) | default 0)) 0 }}
-        <button type="button" class="subchip" data-sub="{{ . }}">{{ i18n (printf "sub_%s" .) }}</button>
+      <div class="filter-subs filter-scope" role="group" aria-label="{{ i18n "filter_scope_label" }}"
+           data-facet-row="scope" data-facet-default="pro">
+        {{- range $scopes }}
+        {{- $n := cond (eq .key "all") (len $projects) (int (index $counts (printf "scope:%s" .key) | default 0)) }}
+        {{- if or (eq .key "all") (gt $n 0) }}
+        <button type="button" class="subchip{{ if eq .key "pro" }} active{{ end }}"
+                data-facet="scope" data-value="{{ .key }}">
+          {{ .label }}<span class="chip-count" data-facet-count>{{ $n }}</span>
+        </button>
         {{- end }}
         {{- end }}
       </div>
-      {{- end }}
 
       {{/* Filtres avancés par techno (repliable) + réinitialisation */}}
       <div class="filter-actions">
@@ -91,10 +96,10 @@
         {{- with .keys }}
         <div class="filter-adv-group">
           <span class="filter-adv-label">{{ $glabel }}</span>
-          <div class="adv-chips">
+          <div class="adv-chips" data-facet-row="tech" data-facet-mode="multi">
             {{- range . }}
             {{- $t := partial "tech-resolve.html" . }}
-            <button type="button" class="techchip" data-tech-key="{{ . }}">
+            <button type="button" class="techchip" data-facet="tech" data-value="{{ . }}">
               {{- if $t.iconPath }}<img src="{{ $t.iconPath | relURL }}" alt="" width="14" height="14" loading="lazy">{{ else }}{{ with $t.icon }}<span>{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}
             </button>
             {{- end }}
@@ -105,11 +110,15 @@
       </div>
     </div>
 
-    <div class="projects-grid">
+    {{/* Pré-masquage serveur du hors-périmètre : le JS est différé, sans ça la
+         grille complète apparaîtrait un instant avant d'être filtrée. */}}
+    <div class="projects-grid" data-filter-group="projects">
       {{- range $projects }}
-      {{ partial "project-card.html" (dict "page" .) }}
+      {{- $c := partial "project-cats.html" (.Params.sector | default "") }}
+      {{ partial "project-card.html" (dict "page" . "class" (cond (eq $c.scope "pro") "" "is-hidden")) }}
       {{- end }}
     </div>
+    <p class="filter-empty" data-filter-empty="projects" hidden>{{ i18n "filter_no_results" }}</p>
   </div>
 </section>
 {{ end }}

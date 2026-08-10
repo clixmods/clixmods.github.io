@@ -7,8 +7,17 @@
 // remplit l'espace laissé libre par l'aside (technos) plus haute.
 .home-exp {
   margin-top: clamp(40px, 6vw, 72px);
-  .home-exp-item + .home-exp-item { margin-top: var(--gap); }
 }
+
+// Conteneur filtrable : flex + gap, pour que les éléments masqués
+// (`display: none`) ne laissent pas de marge résiduelle — contrairement à
+// l'ancien sélecteur adjacent `.home-exp-item + .home-exp-item`.
+.home-exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.home-exp-item.is-hidden { display: none; }
 
 .home-exp-projects {
   margin-top: 4px;

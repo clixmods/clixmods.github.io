@@ -30,17 +30,24 @@
   </div>
 
   {{- with $featured }}
-  <div class="filter-bar filter-bar-compact" data-project-filter>
-    <div class="filter-mains" role="group" aria-label="{{ i18n "filter_projects_label" }}">
-      {{- range $i, $t := $tabs }}
-      <button type="button" class="chip{{ if eq $i 0 }} active{{ end }}" data-main="{{ $t.key }}">
-        {{ $t.label }}<span class="chip-count">{{ index $counts $t.key | default 0 }}</span>
+  {{- with $tabs }}
+  {{/* Pas de data-filter-hash ici : un #app sur l'accueil ne doit pas détourner
+       cette barre, qui est réservée à la page Projets. */}}
+  <div class="filter-bar filter-bar-compact" data-filter-bar="home-projects"
+       data-filter-items="[data-project]">
+    <div class="filter-mains" role="group" aria-label="{{ i18n "filter_projects_label" }}"
+         data-facet-row="main" data-facet-default="{{ (index . 0).key }}">
+      {{- range $i, $t := . }}
+      <button type="button" class="chip{{ if eq $i 0 }} active{{ end }}"
+              data-facet="main" data-value="{{ $t.key }}">
+        {{ $t.label }}<span class="chip-count" data-facet-count>{{ index $counts $t.key | default 0 }}</span>
       </button>
       {{- end }}
     </div>
   </div>
+  {{- end }}
 
-  <div class="projects-mosaic">
+  <div class="projects-mosaic" data-filter-group="home-projects">
     {{- range . }}
     {{- $size := .Params.tile_size | default "1x1" -}}
     {{ partial "project-card.html" (dict "page" . "class" (cond (eq $size "2x1") "tile-2x1" "")) }}

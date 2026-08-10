@@ -5,6 +5,7 @@ logo: ""
 start_date: 2026-03-21T00:00:00.000Z
 end_date: 2026-03-28T00:00:00.000Z
 contract_type: Freelance Mission
+employment_type: freelance
 location: Remote
 description: Creation of a WordPress showcase website for a sports massage practitioner, with a clean interface focused on conversion
 projects_layout: vertical

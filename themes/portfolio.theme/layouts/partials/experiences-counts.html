@@ -1,0 +1,12 @@
+{{- /*
+  Compte les expériences par type d'emploi, pour les compteurs des puces de
+  filtre (accueil + page « Expériences »).
+  Contexte = une collection de Pages. Retourne dict { contract, freelance }.
+*/ -}}
+{{- $c := dict "contract" 0 "freelance" 0 -}}
+{{- range . -}}
+  {{- with .Params.employment_type -}}
+    {{- $c = merge $c (dict . (add (int (index $c . | default 0)) 1)) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $c -}}

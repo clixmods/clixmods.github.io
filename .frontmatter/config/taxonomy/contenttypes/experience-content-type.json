@@ -41,6 +41,17 @@
       "type": "string"
     },
     {
+      "title": "Type d'emploi (clé)",
+      "name": "employment_type",
+      "type": "choice",
+      "choices": [
+        "contract",
+        "freelance"
+      ],
+      "default": "contract",
+      "description": "Clé technique non traduite, utilisée pour le tri et les filtres (contrats affichés avant le freelance)"
+    },
+    {
       "title": "Localisation",
       "name": "location",
       "type": "string"

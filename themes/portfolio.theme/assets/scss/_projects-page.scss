@@ -26,6 +26,9 @@
 
 .filter-subs[hidden] { display: none; }
 
+// Axe pro/perso : rangée toujours visible, jamais masquée par le JS
+.filter-scope { padding-left: 4px; }
+
 // ── Filtres avancés (techno) ──────────────────────────────
 .filter-actions {
   display: flex;
@@ -176,6 +179,18 @@
 }
 .chip.active .chip-count { background: rgba(0, 0, 0, 0.22); }
 
+// Puce sans aucun résultat sous les filtres courants (compté en JS).
+// On grise plutôt qu'on ne masque : la barre d'onglets ne se réagence pas
+// à chaque changement de périmètre.
+.chip.is-empty,
+.subchip.is-empty,
+.techchip.is-empty {
+  opacity: 0.3;
+  filter: saturate(0.35);
+  pointer-events: none;
+  transform: none;
+}
+
 // Sous-catégories : même famille visuelle que les chips, juste un cran plus petites
 .subchip {
   display: inline-flex;
@@ -218,14 +233,16 @@
 
 .projects-grid .project-card.is-hidden { display: none; }
 
-// Message « aucun résultat » (optionnel, géré en JS)
-.projects-empty {
-  display: none;
+// Message « aucun résultat » — piloté par le JS de filtrage.
+// (L'ancien sélecteur `:empty` ne pouvait jamais s'appliquer : les cartes
+// restent dans le DOM, elles sont seulement masquées.)
+.filter-empty {
   color: var(--text-dim);
   padding: 32px 0;
   text-align: center;
+
+  &[hidden] { display: none; }
 }
-.projects-grid:empty + .projects-empty { display: block; }
 
 @media (max-width: 520px) {
   .projects-grid { grid-template-columns: 1fr; }
