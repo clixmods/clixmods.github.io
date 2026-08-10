@@ -7,7 +7,7 @@ description = "Cozy game - Absorb everything you can with your flying saucer, fr
 tags = [ "Unity", "Adventure", "Level Design", "Team Project" ]
 category = "projects"
 sector = "games-personnel"
-featured = true
+featured = false
 fmContentType = "project-content-type"
 logo = "/images/projects/stholen/stholen-logo.png"
 image = "/images/projects/stholen/stholen-background.jpg"
@@ -38,32 +38,32 @@ primary = false
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Developer", "Level Designer", "Game Designer"]
+roles = [ "Developer", "Level Designer", "Game Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jeremy-ferreira"
-roles = ["Developer"]
+roles = [ "Developer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "julia-boffin"
-roles = ["Artist"]
+roles = [ "Artist" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-courtois"
-roles = ["Artist"]
+roles = [ "Artist" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "manille-brun"
-roles = ["Artist"]
+roles = [ "Artist" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "loona-pelacuer"
-roles = ["Artist"]
+roles = [ "Artist" ]
 fieldGroup = "contributors_group"
 
 [[youtube_singles]]
@@ -141,4 +141,3 @@ start_date = "2025-10-29T23:00:00.000Z"
 end_date = "2025-12-19T23:00:00.000Z"
 total = "2 months"
 +++
-

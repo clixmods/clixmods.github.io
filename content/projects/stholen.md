@@ -7,7 +7,7 @@ description = "Jeu cozy - Absorbez tout ce que vous pouvez avec votre soucoupe v
 tags = [ "Unity", "Adventure", "Level Design", "Team Project" ]
 category = "projects"
 sector = "games-personnel"
-featured = true
+featured = false
 fmContentType = "project-content-type"
 logo = "/images/projects/stholen/stholen-logo.png"
 image = "/images/projects/stholen/stholen-background.jpg"
@@ -38,32 +38,32 @@ primary = false
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur", "Level Designer", "Game Designer"]
+roles = [ "Développeur", "Level Designer", "Game Designer" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "jeremy-ferreira"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "julia-boffin"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-courtois"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "manille-brun"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "loona-pelacuer"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[youtube_singles]]

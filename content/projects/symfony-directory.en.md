@@ -1,19 +1,54 @@
-﻿+++
-date = "2024-09-15T10:00:00+02:00"
-draft = true
++++
+date = "2024-10-20T10:00:00+02:00"
+draft = false
 title = "Symfony Directory"
-subtitle = "Profile Management Application - IUT Montpellier"
-description = "Secure web application with authentication system and user role management"
-image = "/images/projects/symfony-directory.jpg"
-tags = [ "fw_symfony", "Twig", "tool_docker", "lang_mysql", "Security" ]
-frameworks_engines = [ "fw_symfony" ]
-programming_languages = [ "lang_php", "lang_mysql" ]
-specialties = [ "spec_twig_integration" ]
+subtitle = "Profile Management Application - IUT Montpellier-Sète"
+description = "Directory web application built with Symfony 6.4: form-based authentication, roles and permissions, Twig forms, a JSON API and a fully containerised environment."
+tags = [
+  "Symfony",
+  "Twig",
+  "Doctrine",
+  "MySQL",
+  "Docker",
+  "Security",
+  "Academic"
+]
 category = "projects"
 sector = "appsweb-etude"
-featured = true
+status = "Completed"
+featured = false
 fmContentType = "project-content-type"
-tools = [ "tool_docker" ]
+frameworks_engines = [ "fw_symfony" ]
+programming_languages = [
+  "lang_php",
+  "lang_javascript",
+  "lang_mysql",
+  "lang_html",
+  "lang_css"
+]
+specialties = [
+  "spec_twig_integration",
+  "spec_developpement_dapi",
+  "spec_securite_et_optimisation",
+  "spec_programmation_orientee_objet",
+  "spec_architecture_logicielle",
+  "spec_gestion_des_donnees",
+  "spec_gestion_de_versions_avec_git"
+]
+soft_skills = [
+  "skill_travail_en_equipe",
+  "skill_communication",
+  "skill_gestion_de_projet",
+  "skill_resolution_problemes"
+]
+tools = [
+  "tool_docker",
+  "tool_gitlab",
+  "tool_github",
+  "tool_trello",
+  "tool_jetbrains"
+]
+image = "/images/projects/symfony-directory/annuaire-liste-profils.png"
 
 [widget_order]
 contributors = 10
@@ -34,113 +69,139 @@ ranking = 130
 [ranking]
 event_type = "Ranking"
 suffix = "th"
+
+[development_time]
+total = "2 months"
+start_date = "2024-09-01T00:00:00.000Z"
+end_date = "2024-10-31T00:00:00.000Z"
+
+[[actions]]
+type = "github"
+label = "View source code"
+url = "https://github.com/clixmods/iut-archive-annuaire"
+primary = true
+fieldGroup = "actions_group"
+
+[[galleries]]
+title = "Preview"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/symfony-directory/annuaire-liste-profils.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/symfony-directory/annuaire-inscription.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/symfony-directory/annuaire-connexion.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/symfony-directory/annuaire-profil.png"
+
+[[contributors]]
+person = "clement-garcia"
+roles = [ "Developer" ]
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "teo-moerel"
+roles = [ "Developer" ]
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "victor-vidaux"
+roles = [ "Developer" ]
+fieldGroup = "contributors_group"
 +++
 
-# Symfony Directory - Profile Management Application
+## Overview
 
-## Project Description
+An academic project from the fifth semester of the BUT degree, built by a team of three at IUT Montpellier-Sète. The goal: build a **profile directory** in Symfony — an application where users sign up, publish a profile card and decide whether it is publicly visible — an ideal playground for learning authentication, roles and data consistency.
 
-Development of a secure web application in Symfony as part of an academic project at IUT Montpellier-Sète. This application is designed to learn how to manage authentication systems, user roles and data consistency with a front interface developed in Twig.
+The application is a **classic Symfony monolith**: pages are rendered server-side with Twig, persistence goes through Doctrine and MySQL, and everything runs inside a reproducible Docker environment.
 
-## Application Development
+- **Two roles**: `ROLE_USER` browses the directory and manages their own profile, `ROLE_ADMIN` also sees hidden profiles and can delete any account
+- **Full profile lifecycle**: registration, login, viewing, editing, deletion
+- **Around two months of development**, from September to October 2024
 
-### Advanced Authentication System
-- **Complete implementation** of a roles and permissions system
-- **ROLE_USER and ROLE_ADMIN** with differentiated access controls
-- **Route security** according to authorization levels
-- **CSRF protection** and form validation
+## My role
 
-### User Management
-- **Registration forms** with server-side validation
-- **Secure profile editing** with access controls
-- **User deletion** with confirmation and logs
-- **User profile search and filtering**
+### The `User` entity and data consistency
 
-### User Interface
-- **Twig integration** for modular templates
-- **Clear and ergonomic interface** responsive
-- **Flash messages** for user feedback
-- **Contextual navigation** according to roles
+I took ownership of the domain model — a single entity, but one that carries most of the application's rules.
 
-## Infrastructure & Database
+- **`User` entity** implementing `UserInterface` and `PasswordAuthenticatedUserInterface`, with core information (login, email, profile code, visibility, dates) and optional complementary fields (phone number, country, address)
+- **Uniqueness constraints** in the database on login, email and profile code, backed by `#[UniqueEntity]` attributes so the user gets a clear message instead of an SQL error
+- **Validation assertions** placed directly on the entity: bounded lengths for login and profile code, email format checking
+- **`#[ORM\PreUpdate]` callback** updating the last-modified date — with one subtlety: if the only changed field is the last-connection date, the modification date is left alone, otherwise merely logging in would look like a profile edit
 
-### Development Environment
-- **Deployment via Docker** for an isolated and reproducible environment
-- **Multi-service configuration** (web, database, cache)
-- **Secure environment variables**
-- **Centralized logs** for debugging
+### Profile codes: generation and live uniqueness checking
 
-### MySQL Database
-- **Structured migrations** with Doctrine ORM
-- **Optimized entity relationships**
-- **Database-level constraints and validations**
-- **Indexing** for performance
+Every user owns a unique profile code, either chosen by them or generated by the application. It is the most interesting part of the project, because it cuts through the entire stack — from the database to the JavaScript.
 
-### Data Security
-- **Password hashing** with modern algorithms
-- **SQL injection protection** with Doctrine
-- **Incoming data validation**
-- **Automatic escaping** in views
+- **Server-side generation** in `UserManager`: an alphanumeric string of random length between 4 and 20 characters, regenerated as long as the drawn code is already taken
+- **Two dedicated JSON routes**, `checkProfileCode` and `generateProfileCode`, exposed to the browser through FOSJsRoutingBundle rather than hard-coding URLs in the JavaScript
+- **Live availability checking** while typing, with **debouncing** so a request isn't fired on every keystroke
+- **The current code is ignored when editing**, otherwise users would be told their own code is already taken
+
+### JSON API
+
+- **Two read endpoints**: fetch a profile by its login (`/api/profile/login/{login}`) or by its profile code (`/api/profile/profileCode/{profileCode}`)
+- **Explicit serialisation**: exposed fields are listed one by one in the controller, guaranteeing that no sensitive data — starting with the hashed password — can leak by accident
+- **Structured JSON `404`** response when the profile does not exist
+
+### Profile editing and tooling
+
+- **A separate edit form** from the registration form, with an optional password change: if no new password is entered, the existing hash is kept as is
+- **Phone number validation** by regular expression on the server side, surfaced back into the form as a field-level error
+- **`create:user` console command** to provision an account — administrators included — from the terminal, essential for seeding the database without going through the UI
+- **Custom error pages** (403, 404, 500) for the production environment
+
+## Architecture and security
+
+- **Service layer with interfaces**: `UserManager`, `FlashMessageHelper` and `UserFormHelper` are injected through their interface rather than their implementation, keeping controllers thin and putting dependency inversion into practice
+- **Form-based authentication** configured in `security.yaml`, with CSRF protection enabled, identification on the `login` field and POST-only logout
+- **Expression-based authorisation**: the `#[IsGranted]` attributes on the edit and delete routes only allow the action for the account owner or an administrator
+- **Password hashing** delegated to Symfony's `UserPasswordHasher` with the `auto` algorithm
+- **Authentication event subscriber** updating the last-connection date on successful login and pushing flash messages for login, failure and logout
+- **Maintenance mode**: a high-priority `kernel.request` listener redirects all traffic to a dedicated page, with the flag driven by a console command
+
+## Twig interface
+
+- **Split, factorised templates**: a shared `base.html.twig`, domain-specific views (profiles, users, utility pages) and reusable fragments included on both sides — the profile-code widget is shared between registration and editing
+- **Form fields factorised** in `UserFormHelper`, avoiding duplicated field definitions between registration and editing
+- **Flash messages** centralised in the layout, fed by a service that turns form validation errors into readable messages
+- **Conditional rendering based on login state and role**: navigation, edit and delete buttons only appear when the user is allowed to use them
+- **AssetMapper with importmap**, Stimulus and Turbo, with no front-end build step to install
+
+## Infrastructure
+
+- **Docker Compose** with two services: a custom-built Apache/PHP web server and a MySQL database persisted on a volume
+- **Local HTTPS** through a self-signed certificate, alongside plain HTTP
+- **Versioned Doctrine migrations** to rebuild an identical schema on any machine
+- **Step-by-step installation** documented in the README, from starting the containers to creating the database
 
 ## Teamwork
 
-### Project Organization
-- **Complete project setup** organization
-- **Trello creation and management** for task tracking
-- **Git repository configuration** with clear structure
-- **Technical and user documentation**
+- **Setting up the project organisation**: creating and running the Trello board, configuring the repository and its structure
+- **Explicit task split** — entity, API, editing and profile codes on my side, CSS integration and home page for Téo, profile deletion and visibility for Victor
+- **Version control on the IUT GitLab**, with the repository later mirrored to GitHub
+- **Regular check-ins and cross reviews**, particularly valuable around permissions, where one member's decision directly changes how everyone else's code behaves
 
-### Active Collaboration
-- **Clear task distribution** according to skills
-- **Progress tracking** with regular checkpoints
-- **Technical exchanges** to ensure consistency
-- **Code review** and cross-validation
+## Technologies
 
-### Team Coordination
-- **Synchronization meeting facilitation**
-- **Technical and organizational conflict management**
-- **Collective decisions** on architecture
-- **Collaborative final integration**
+- **Back-end**: Symfony 6.4, PHP 8.1+, Doctrine ORM 3, FOSJsRoutingBundle
+- **Front-end**: Twig, AssetMapper and importmap, Stimulus, Turbo, JavaScript, CSS
+- **Database**: MySQL, Doctrine migrations
+- **Infrastructure**: Docker Compose, Apache
 
-## Technologies and Frameworks
+## What I took away
 
-### Technical Stack
-- **Symfony 6**: Robust PHP framework
-- **Doctrine ORM**: Database management
-- **Twig**: Flexible template engine
-- **Bootstrap**: Responsive CSS framework
-- **Docker**: Complete containerization
-
-### Development Tools
-- **Composer**: PHP dependency manager
-- **Symfony CLI**: Development tools
-- **MySQL Workbench**: Database administration
-- **Git**: Versioning with Git Flow
-- **Trello**: Agile project management
-
-## Applied Best Practices
-
-### Symfony Architecture
-- **Respect for Symfony conventions**
-- **Strict MVC separation**
-- **Services and dependency injection**
-- **Centralized YAML configuration**
-
-### Web Security
-- **CSRF protection** on all forms
-- **User input validation**
-- **Secure session management**
-- **Configured security headers**
-
-## Skills Developed
-
-This project allowed me to acquire:
-- **Symfony mastery** and its ecosystem
-- **Robust authentication system design**
-- **Teamwork** on a technical project
-- **Web security best practices**
-- **Project management** with agile methodology
-
-## Results
-
-Complete application demonstrating a solid understanding of web security principles and modern PHP frameworks, with concrete experience in collaborative development.
+- **Constraints belong in the right place**: between assertions on the entity and assertions on the form, the rule that actually protects the data is the one living on the entity — the single most useful piece of feedback from the project's review
+- **A simple feature cuts through the whole stack**: the profile code took me from a database uniqueness constraint to a domain service, an exposed route and the JavaScript, right down to debouncing to make typing feel pleasant
+- **Permissions are designed before they are coded**: expressing them inline works, but grouping them into voters would have made the rules far more readable and testable — it is the first thing I would do differently

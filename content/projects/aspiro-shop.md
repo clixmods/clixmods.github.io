@@ -7,7 +7,7 @@ description = "Plateforme de vente en ligne complète avec architecture MVC et s
 tags = [ "lang_php", "MVC", "E-commerce", "Security", "PDO" ]
 category = "projects"
 sector = "appsweb-etude"
-featured = true
+featured = false
 fmContentType = "project-content-type"
 programming_languages = [
   "lang_php",

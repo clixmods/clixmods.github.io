@@ -7,9 +7,15 @@ description = "Complete online sales platform with MVC architecture and advanced
 tags = [ "lang_php", "MVC", "E-commerce", "Security", "PDO" ]
 category = "projects"
 sector = "appsweb-etude"
-featured = true
+featured = false
 fmContentType = "project-content-type"
-programming_languages = [ "lang_php", "lang_mysql", "lang_javascript", "lang_html", "lang_css" ]
+programming_languages = [
+  "lang_php",
+  "lang_mysql",
+  "lang_javascript",
+  "lang_html",
+  "lang_css"
+]
 soft_skills = [
   "skill_gestion_de_projet",
   "skill_communication",

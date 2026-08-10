@@ -7,7 +7,7 @@ description = "Premier projet de jeu complet avec UML et développement C# avanc
 tags = [ "fw_unity", "First Year", "UML", "Game Development" ]
 category = "projects"
 sector = "games-personnel"
-featured = true
+featured = false
 fmContentType = "project-content-type"
 status = "Terminé"
 logo = "/images/projects/assault-of-order/assault-of-order-logo.png"
@@ -46,42 +46,42 @@ primary = false
 
 [[contributors]]
 person = "clement-garcia"
-roles = ["Développeur", "Level Designer", "Lighting"]
+roles = [ "Développeur", "Level Designer", "Lighting" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "soundouss-khattabi"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "marion-abrial"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "ouzagua-nassim"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "shaim-somsanith"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "clement-courtois"
-roles = ["Artiste"]
+roles = [ "Artiste" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "aymeric-ducarme"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [[contributors]]
 person = "matthieu-osten"
-roles = ["Développeur"]
+roles = [ "Développeur" ]
 fieldGroup = "contributors_group"
 
 [development_time]
