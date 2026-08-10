@@ -1,6 +1,6 @@
 +++
 date = "2024-03-15T00:00:00+02:00"
-draft = false
+draft = true
 title = "BlackJack JavaFX"
 subtitle = "Jeu de cartes développé en Java avec interface JavaFX"
 description = "Projet académique de développement d'un jeu de Blackjack complet en Java avec interface graphique JavaFX. Intégration des règles complètes du jeu, gestion des scores, interface utilisateur interactive et système de sauvegarde sécurisé."

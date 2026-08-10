@@ -71,6 +71,13 @@
 // carte masquée par les onglets de filtre (accueil)
 .projects-mosaic .project-card.is-hidden { display: none; }
 
+// Section « projets mis en avant » en pleine largeur (après les témoignages) :
+// la mosaïque n'est plus contrainte par la colonne principale, on laisse donc
+// la grille se remplir d'elle-même au lieu de forcer 2 colonnes.
+.home-featured .projects-mosaic {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
 // barre d'onglets compacte au-dessus de la mosaïque « mis en avant »
 .filter-bar-compact {
   gap: 0;
