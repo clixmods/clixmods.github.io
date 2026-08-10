@@ -32,6 +32,14 @@
     "experience": 2
   },
   {
+    "key": "lang_typescript",
+    "icon": "🟦",
+    "iconPath": "/images/technologies/TypeScript.svg",
+    "color": "#3178C6",
+    "displayedInPortfolio": false,
+    "experience": 1
+  },
+  {
     "key": "lang_java",
     "icon": "☕",
     "iconPath": "/images/technologies/Java.svg",

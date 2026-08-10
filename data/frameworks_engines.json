@@ -110,5 +110,13 @@
     "color": "#FF2D20",
     "displayedInPortfolio": true,
     "experience": 1
+  },
+  {
+    "key": "fw_api_platform",
+    "icon": "🔌",
+    "iconPath": null,
+    "color": "#38A9B4",
+    "displayedInPortfolio": true,
+    "experience": 1
   }
 ]

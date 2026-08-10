@@ -110,6 +110,7 @@ ui_close: "Close"
 # ─────────────────────────────────────────────
 # Key labels (languages / frameworks / specialties / soft skills / tools)
 # ─────────────────────────────────────────────
+fw_api_platform: "API Platform"
 fw_black_ops_iii_engine: "Black Ops III engine"
 fw_blazor: "Blazor"
 fw_cassandra: "Cassandra"
@@ -142,6 +143,7 @@ lang_oracle_sql: "Oracle SQL"
 lang_php: "PHP"
 lang_python: "Python"
 lang_sql: "SQL"
+lang_typescript: "TypeScript"
 skill_analyse_critique: "Critical Analysis"
 skill_analyse_critique_subtitle: "Evaluation"
 skill_communication: "Communication"
