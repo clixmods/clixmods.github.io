@@ -1,9 +1,9 @@
 +++
 date = "2024-12-23T10:00:00+02:00"
 draft = false
-title = "Event Management Platform — Push Start"
+title = "Event Management Platform"
 subtitle = "Symfony/API Platform API & Vue.js front-end - IUT Montpellier-Sète"
-description = "Event management web application for the Push Start association: a JWT-secured REST API (Symfony 6.4 / API Platform 4) and a Vue 3 client, fully containerised."
+description = "Academic project: an event management web application with a JWT-secured REST API (Symfony 6.4 / API Platform 4) and a Vue 3 client, fully containerised."
 tags = [
   "Symfony",
   "API Platform",
@@ -118,7 +118,7 @@ fieldGroup = "contributors_group"
 
 ## Overview
 
-Fifth-semester academic project of the BUT degree, built as a team of three at IUT Montpellier-Sète. The goal: give **Push Start** — an association supporting video game creators and digital culture — a platform to organise its themed events: industry meetups, creative workshops and talks.
+Fifth-semester academic project of the BUT degree, built as a team of three at IUT Montpellier-Sète. The brief was fictional: design a platform allowing an organisation to run its themed events — industry meetups, creative workshops and talks. The application built for the exercise is named **Push Start**.
 
 The application is built on a **decoupled architecture**: a REST API developed with Symfony and API Platform on one side, a standalone Vue.js client on the other, communicating solely over HTTP and authenticated with JWT tokens.
 
