@@ -1,9 +1,9 @@
 +++
 date = "2024-12-23T10:00:00+02:00"
 draft = false
-title = "Plateforme de gestion d'événements — Push Start"
+title = "Plateforme de gestion d'événements"
 subtitle = "API Symfony/API Platform & front Vue.js - IUT Montpellier-Sète"
-description = "Application web de gestion d'événements pour l'association Push Start : API REST sécurisée par JWT (Symfony 6.4 / API Platform 4) et client Vue 3, le tout conteneurisé."
+description = "Projet d'étude : application web de gestion d'événements avec API REST sécurisée par JWT (Symfony 6.4 / API Platform 4) et client Vue 3, le tout conteneurisé."
 tags = [
   "Symfony",
   "API Platform",
@@ -118,7 +118,7 @@ fieldGroup = "contributors_group"
 
 ## Présentation
 
-Projet académique du semestre 5 du BUT, réalisé en trinôme à l'IUT Montpellier-Sète. L'objectif : doter **Push Start**, une association qui soutient les créateurs de jeux vidéo et les acteurs de la culture numérique, d'une plateforme pour organiser ses événements thématiques — rencontres professionnelles, ateliers créatifs, conférences.
+Projet académique du semestre 5 du BUT, réalisé en trinôme à l'IUT Montpellier-Sète. Le sujet, fictif, consistait à concevoir une plateforme permettant à une structure d'organiser ses événements thématiques : rencontres professionnelles, ateliers créatifs, conférences. L'application produite pour l'exercice porte le nom de **Push Start**.
 
 L'application repose sur une **architecture découplée** : une API REST développée avec Symfony et API Platform d'un côté, un client Vue.js autonome de l'autre, les deux communiquant uniquement par HTTP et authentifiés par jeton JWT.
 
