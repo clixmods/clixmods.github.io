@@ -30,6 +30,13 @@ soft_skills = [ "skill_resolution_problemes", "skill_communication", "skill_trav
 tools = [ "tool_azure", "tool_fork", "tool_jetbrains", "tool_clickup" ]
 status = "In Production"
 
+[[actions]]
+type = "website"
+label = "Visit website"
+url = "https://www.mygameshowcase.com/"
+primary = true
+fieldGroup = "actions_group"
+
 [[contributors]]
 person = "francois-bertrand"
 roles = ["Project Lead", "Developer"]
