@@ -118,5 +118,19 @@
     "color": "#38A9B4",
     "displayedInPortfolio": true,
     "experience": 1
+  },
+  {
+    "key": "fw_webgl",
+    "experience": 1,
+    "iconPath": "/images/technologies/OpenGL.svg",
+    "color": "#990000",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "fw_nodejs",
+    "experience": 1,
+    "iconPath": "/images/technologies/Node.js.svg",
+    "color": "#5FA04E",
+    "displayedInPortfolio": false
   }
 ]
