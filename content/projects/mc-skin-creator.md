@@ -4,7 +4,7 @@ draft = false
 title = "MC Skin Creator"
 slug = "mc-skin-creator"
 subtitle = "Créateur de skins Minecraft 100 % dans le navigateur"
-description = "Application web sans serveur ni dépendance : catalogue de 703 éléments superposables en calques, éditeur de pixels, moteur 3D WebGL et encodeur GIF écrits à la main"
+description = "Application web sans serveur ni dépendance : un catalogue d'éléments superposables en calques, un éditeur de pixels, un moteur 3D WebGL et un encodeur GIF écrits à la main"
 tags = [
   "JavaScript",
   "WebGL",
@@ -37,7 +37,7 @@ soft_skills = [
   "skill_creativite",
   "skill_visionvisualisation"
 ]
-tools = [ "tool_visual_studio_code", "tool_github", "tool_cloudflare_workers" ]
+tools = [ "tool_visual_studio_code", "tool_github", "tool_cloudflare_workers", "tool_claude" ]
 
 [[actions]]
 type = "website"
@@ -98,82 +98,8 @@ ranking = 130
 
 Le projet part d'un constat simple. Les éditeurs de skins existants demandent soit de peindre une texture 64×64 pixel par pixel, soit de choisir un skin tout fait sans pouvoir le modifier. Ici, un skin est une **pile de calques** : une peau, des cheveux, des yeux, un haut, un pantalon, des chaussures — chacun restant modifiable, déplaçable et recolorable après coup.
 
-C'est un **projet personnel**, développé seul, de la conception du produit jusqu'à la mise en ligne.
+Le catalogue couvre tout le personnage — peaux, cheveux, yeux, bouches, chapeaux, accessoires, hauts, vestes, pantalons, chaussures — et chaque élément est **recolorable zone par zone**, en conservant ses ombres et son grain. S'y ajoutent un **éditeur de pixels** sur la texture 64×64, un **aperçu 3D temps réel** avec poses et vue à la première personne, et des **exports** en PNG, en GIF animé, en planche de sprites ou en projet réutilisable.
 
-## Le parti pris technique : zéro dépendance
-
-Le site est du **HTML, CSS et JavaScript ES5 servis tels quels** : pas de framework, pas de bundler, pas de transpilation, pas de back-end, et **aucune dépendance externe** — ni CDN, ni police distante, ni appel réseau vers un tiers. Chaque fichier est une IIFE qui publie un global, et l'ordre des `<script>` de la page fait office de graphe de dépendances.
-
-Cette contrainte a une conséquence directe : **tout ce que le site fait, il a fallu l'écrire**. Le moteur 3D, l'encodeur GIF, le minifieur et la suite de tests sont tous du code du dépôt.
-
-**Impact** : une page qui se charge sans réseau tiers, qui reste lisible et débogable dix ans plus tard, et dont aucune faille ne peut arriver par une mise à jour de dépendance.
-
-## Mes contributions
-
-### Un pipeline de données unique, du PNG à la texture
-
-Tout le rendu converge vers **un seul tampon RGBA 64×64**, la texture du skin :
-
-- chaque élément du catalogue est un **PNG 64×64 transparent**, chargé une fois au démarrage et mis en cache ;
-- un calque le recopie, le **recolore**, puis lui applique ses réglages de teinte, saturation et luminosité ;
-- la composition des calques produit la texture finale, envoyée à la fois à la **texture WebGL** et au **canvas 2D zoomé** de l'éditeur.
-
-La recomposition passe par un **drapeau `dirty`** et n'a lieu **qu'une fois par frame**, ce qui permet de dessiner au pixel sans recomposer à chaque trait.
-
-### La carte des zones colorables
-
-Faire des éléments des images plutôt que du code posait un problème : on perd les **sélecteurs de couleur** (la gemme d'une couronne, la semelle d'une basket…).
-
-**Solution technique** :
-- chaque PNG est accompagné d'une **carte donnant, pour chaque pixel, la clé de couleur dont il dépend**, encodée en RLE et **omise quand elle est triviale** ;
-- le générateur la déduit tout seul, en rendant chaque élément **deux fois par clé** avec deux couleurs très différentes : tout pixel qui bouge dépend de cette clé ;
-- à la recoloration, chaque pixel reçoit l'**écart TSL** entre sa couleur par défaut et la couleur choisie.
-
-**Impact** : on repeint une partie d'un élément **en conservant ses ombres, ses dégradés et son grain** — là où un simple remplissage les aurait effacés.
-
-### Moteur 3D WebGL écrit à la main
-
-**Solution technique** :
-- **WebGL 1 sans librairie** : un VBO par couple partie/calque, 36 sommets, 12 appels de dessin ;
-- **deux passes** — la base, puis le calque externe dilaté, **trié de l'arrière vers l'avant** pour que l'opacité partielle reste correcte ;
-- **sélection par rendu hors écran** (le texel est encodé dans la couleur, rendu dans un FBO) : c'est ce qui permet de **peindre directement sur le modèle 3D** ;
-- un même chemin de rendu hors écran alimente **l'aperçu, l'export PNG, le GIF et la planche de sprites** — ce qu'on voit est exactement ce qu'on exporte ;
-- une **vue à la première personne** dont le cadrage a été **ajusté numériquement** sur une capture du jeu, par descente de coordonnées sur l'erreur quadratique, plutôt qu'estimé à l'œil.
-
-### Encodeur GIF animé, également écrit à la main
-
-**Solution technique** :
-- GIF89a complet : histogramme sur toutes les images, **quantification median-cut**, table de couleurs globale, **LZW conforme** ;
-- index 255 réservé au transparent et méthode d'élimination adaptée, pour éviter les traînées sur fond transparent ;
-- l'animation varie sur **exactement une période de la pose**, ce qui donne un bouclage sans raccord visible.
-
-**Impact** : export d'un GIF du personnage qui tourne, sans service externe ni upload.
-
-### Générateur d'assets et modèles de départ
-
-Les 703 éléments ne sont pas dessinés à la main : un **générateur Node** les produit à partir d'un **DSL de dessin** qui masque complètement les coordonnées UV — un preset décrit une face d'un pavé, pas un rectangle de texels.
-
-Les **modèles de départ** viennent, eux, du **découpage de textures de référence** en calques ordinaires du catalogue, sous deux invariants vérifiés à chaque build :
-- le découpage est **exhaustif et exclusif** — superposer les morceaux redonne la texture d'origine **au pixel près** ;
-- on ne rebouche un morceau **que là où un morceau plus haut le recouvre**, donc ce qui est inventé est caché par construction.
-
-Le rebouchage réfléchit le motif en miroir, reprend le voisin immédiat, et reconstruit au besoin **un corps de référence recalé face par face** — c'est ce qui fait que retirer un haut ne troue pas le torse. L'**ombre portée** par un vêtement, elle, lui est rendue et convertie en **noir semi-transparent dont l'opacité est mesurée aux moindres carrés**, sans quoi le vêtement traînerait le teint de son propriétaire d'origine sur toutes les carnations.
-
-### Qualité : tests, garde-fous et mise en ligne
-
-**Solution technique** :
-- une **suite de tests maison** (~130 tests, sans dépendance) rejouée **en Node dans un bac à sable `vm`** et **dans le navigateur**, où l'application entière est pilotée par son interface réelle dans une iframe ;
-- des invariants surveillés en continu : aucune zone UV ne se chevauche, les trois langues portent exactement les mêmes clés, chaque animation boucle sur sa période, la sérialisation ne perd aucune propriété de calque ;
-- un **minifieur écrit dans le dépôt** (−17 %), qui ne renomme rien et **relit chaque fichier produit** — comparaison des jetons puis recompilation — pour refuser de publier du code abîmé ;
-- une **empreinte de contenu dans les URL**, parce qu'un en-tête de cache ne répare pas un cache déjà constitué ;
-- une mise en ligne sur **Cloudflare Workers**, choisie sur un chiffre précis : le site réclame **~775 requêtes par visite froide**, et c'est ce nombre — pas les octets — qui écarte les offres concurrentes.
-
-### Internationalisation
-
-**Solution technique** : trois langues (français, anglais, espagnol) couvrant l'interface **et les 703 noms d'éléments**, avec repli systématique sur le français, choix mémorisé, forçage par URL et **recherche acceptant les trois langues à la fois**.
-
-## Conclusion
-
-**MC Skin Creator** est le projet où j'ai poussé le plus loin l'idée d'**écrire soi-même ce qu'on utilise** : rendu 3D, encodage GIF, génération d'assets, minification, tests. La contrainte « zéro dépendance » n'était pas une coquetterie — c'est elle qui a rendu chaque brique compréhensible, mesurable et remplaçable.
+Le site est disponible en **français, anglais et espagnol**, et c'est un **projet personnel**, mené seul de la conception jusqu'à la mise en ligne.
 
 *Projet non officiel. Non approuvé par, ni associé à Mojang ou Microsoft. « Minecraft » est une marque déposée de Mojang Synergies AB.*
