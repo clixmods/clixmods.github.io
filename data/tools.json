@@ -223,5 +223,14 @@
     "iconPath": "images/technologies/Cloudflare-Workers.svg",
     "color": "#F38020",
     "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_claude",
+    "category": "ai_tools",
+    "description": "Assistant IA pour le développement, la revue de code et la documentation",
+    "experience": 1,
+    "iconPath": "images/technologies/Claude.svg",
+    "color": "#D97757",
+    "displayedInPortfolio": false
   }
 ]
