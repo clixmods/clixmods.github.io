@@ -8,8 +8,7 @@
   margin-bottom: 28px;
 }
 
-.filter-mains,
-.filter-subs {
+.filter-mains {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
@@ -23,11 +22,6 @@
     &::-webkit-scrollbar { display: none; }
   }
 }
-
-.filter-subs[hidden] { display: none; }
-
-// Axe pro/perso : rangée toujours visible, jamais masquée par le JS
-.filter-scope { padding-left: 4px; }
 
 // ── Filtres avancés (techno) ──────────────────────────────
 .filter-actions {
@@ -183,7 +177,6 @@
 // On grise plutôt qu'on ne masque : la barre d'onglets ne se réagence pas
 // à chaque changement de périmètre.
 .chip.is-empty,
-.subchip.is-empty,
 .techchip.is-empty {
   opacity: 0.3;
   filter: saturate(0.35);
@@ -191,37 +184,36 @@
   transform: none;
 }
 
-// Sous-catégories : même famille visuelle que les chips, juste un cran plus petites
-.subchip {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--font-head);
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-soft);
-  padding: 7px 14px;
-  border-radius: var(--r-pill);
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(12px);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease,
-    transform 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover { color: #fff; border-color: var(--glass-border-hi); transform: translateY(-2px); }
-
-  &.active {
-    color: #fff;
-    background: var(--grad-cold);
-    border-color: transparent;
-    box-shadow: var(--glow-cold);
-  }
+// Regroupements Pro / Perso : les projets ne sont plus filtrés par périmètre,
+// ils sont empilés sous deux en-têtes. Une section sans résultat est masquée
+// par le JS de filtrage (classe `is-hidden`).
+.projects-groups {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 5vw, 52px);
 }
 
-// Rangée des sous-catégories : légèrement en retrait, sans trait de séparation dur
-.filter-subs {
-  padding-left: 4px;
+.projects-group.is-hidden { display: none; }
+
+.projects-group-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+
+  .proj-section-title { margin-bottom: 0; }
+}
+
+.projects-group-count {
+  font-family: var(--font-head);
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-dim);
+  padding: 5px 11px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
 }
 
 // Grille uniforme de cartes

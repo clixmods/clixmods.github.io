@@ -92,6 +92,11 @@
     });
 
     var emptyEl = document.querySelector('[data-filter-empty="' + id + '"]');
+    // Regroupements affichés en dur (ex. Pro / Perso) : leur en-tête doit
+    // disparaître quand aucun de leurs éléments ne passe les filtres.
+    var sections = Array.prototype.slice.call(
+      document.querySelectorAll('[data-filter-section="' + id + '"]')
+    );
     var advToggleEl = bar.querySelector("[data-adv-toggle]");
     var advPanel = bar.querySelector("[data-adv-panel]");
     var advCountEl = bar.querySelector("[data-adv-count]");
@@ -184,6 +189,15 @@
         // « reveal » : on le rend visible immédiatement. (Pas au 1er passage,
         // pour préserver l'animation d'entrée.)
         if (initialized && el.classList.contains("reveal")) el.classList.add("is-visible");
+      });
+      sections.forEach(function (sec) {
+        var n = 0;
+        sec.querySelectorAll(itemSel).forEach(function (el) {
+          if (!el.classList.contains("is-hidden")) n++;
+        });
+        sec.classList.toggle("is-hidden", n === 0);
+        var out = sec.querySelector("[data-section-count]");
+        if (out) out.textContent = n;
       });
       if (emptyEl) emptyEl.hidden = visible > 0;
       markLastVisible();

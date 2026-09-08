@@ -5,18 +5,31 @@
 {{- $projects := where $page.RegularPages "Params.sector" "!=" "test" -}}
 {{- $projects = $projects.ByDate.Reverse -}}
 
-{{/* Compteurs par catégorie principale ("jv") et par périmètre ("scope:pro") */}}
+{{/* Compteurs par catégorie principale ("jv", "app", …) */}}
 {{- $counts := dict "all" (len $projects) -}}
 {{- range $projects -}}
   {{- $c := partial "project-cats.html" (.Params.sector | default "") -}}
   {{- with $c.main -}}
     {{- $counts = merge $counts (dict . (add (int (index $counts . | default 0)) 1)) -}}
   {{- end -}}
-  {{- with $c.scope -}}
-    {{- $sk := printf "scope:%s" . -}}
-    {{- $counts = merge $counts (dict $sk (add (int (index $counts $sk | default 0)) 1)) -}}
+{{- end -}}
+
+{{/* Répartition pro / perso : les projets ne sont plus filtrés par périmètre,
+     ils sont regroupés sous deux titres — les pros d'abord. */}}
+{{- $proProjects := slice -}}
+{{- $persoProjects := slice -}}
+{{- range $projects -}}
+  {{- $c := partial "project-cats.html" (.Params.sector | default "") -}}
+  {{- if eq $c.scope "pro" -}}
+    {{- $proProjects = $proProjects | append . -}}
+  {{- else -}}
+    {{- $persoProjects = $persoProjects | append . -}}
   {{- end -}}
 {{- end -}}
+{{- $groups := slice
+      (dict "key" "pro"   "title" (i18n "proj_group_pro")   "pages" $proProjects)
+      (dict "key" "perso" "title" (i18n "proj_group_perso") "pages" $persoProjects)
+-}}
 
 {{/* Onglets principaux — ordre : Tous, Apps & Web, Jeux vidéo, Mods, Outils */}}
 {{- $mains := slice
@@ -25,12 +38,6 @@
       (dict "key" "jv"    "label" (i18n "cat_jv"))
       (dict "key" "mods"  "label" (i18n "cat_mods"))
       (dict "key" "tools" "label" (i18n "cat_tools"))
--}}
-{{/* Axe pro/perso, orthogonal aux onglets — toujours visible, « Pro » par défaut */}}
-{{- $scopes := slice
-      (dict "key" "pro"   "label" (i18n "sub_pro"))
-      (dict "key" "perso" "label" (i18n "sub_perso"))
-      (dict "key" "all"   "label" (i18n "cat_all"))
 -}}
 
 {{/* Techs présentes dans les projets (pour les filtres avancés) */}}
@@ -67,18 +74,6 @@
         {{- end }}
         {{- end }}
       </div>
-      <div class="filter-subs filter-scope" role="group" aria-label="{{ i18n "filter_scope_label" }}"
-           data-facet-row="scope" data-facet-default="pro">
-        {{- range $scopes }}
-        {{- $n := cond (eq .key "all") (len $projects) (int (index $counts (printf "scope:%s" .key) | default 0)) }}
-        {{- if or (eq .key "all") (gt $n 0) }}
-        <button type="button" class="subchip{{ if eq .key "pro" }} active{{ end }}"
-                data-facet="scope" data-value="{{ .key }}">
-          {{ .label }}<span class="chip-count" data-facet-count>{{ $n }}</span>
-        </button>
-        {{- end }}
-        {{- end }}
-      </div>
 
       {{/* Filtres avancés par techno (repliable) + réinitialisation */}}
       <div class="filter-actions">
@@ -110,12 +105,22 @@
       </div>
     </div>
 
-    {{/* Pré-masquage serveur du hors-périmètre : le JS est différé, sans ça la
-         grille complète apparaîtrait un instant avant d'être filtrée. */}}
-    <div class="projects-grid" data-filter-group="projects">
-      {{- range $projects }}
-      {{- $c := partial "project-cats.html" (.Params.sector | default "") }}
-      {{ partial "project-card.html" (dict "page" . "class" (cond (eq $c.scope "pro") "" "is-hidden")) }}
+    <div class="projects-groups">
+      {{- range $groups }}
+      {{- $gtitle := .title }}
+      {{- with .pages }}
+      <section class="projects-group" data-filter-section="projects">
+        <div class="projects-group-head reveal">
+          <h2 class="proj-section-title">{{ $gtitle }}</h2>
+          <span class="projects-group-count" data-section-count>{{ len . }}</span>
+        </div>
+        <div class="projects-grid" data-filter-group="projects">
+          {{- range . }}
+          {{ partial "project-card.html" (dict "page" .) }}
+          {{- end }}
+        </div>
+      </section>
+      {{- end }}
       {{- end }}
     </div>
     <p class="filter-empty" data-filter-empty="projects" hidden>{{ i18n "filter_no_results" }}</p>
