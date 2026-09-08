@@ -4,7 +4,7 @@ draft = false
 title = "MC Skin Creator"
 slug = "mc-skin-creator"
 subtitle = "Créateur de skins Minecraft 100 % dans le navigateur"
-description = "Application web sans serveur ni dépendance : catalogue de 703 éléments superposables en calques, éditeur de pixels, moteur 3D WebGL et encodeur GIF écrits à la main"
+description = "Application web sans serveur ni dépendance : un catalogue d'éléments superposables en calques, un éditeur de pixels, un moteur 3D WebGL et un encodeur GIF écrits à la main"
 tags = [
   "JavaScript",
   "WebGL",
@@ -98,7 +98,7 @@ ranking = 130
 
 Le projet part d'un constat simple. Les éditeurs de skins existants demandent soit de peindre une texture 64×64 pixel par pixel, soit de choisir un skin tout fait sans pouvoir le modifier. Ici, un skin est une **pile de calques** : une peau, des cheveux, des yeux, un haut, un pantalon, des chaussures — chacun restant modifiable, déplaçable et recolorable après coup.
 
-Le catalogue compte **703 éléments** répartis en catégories (peaux, cheveux, yeux, bouches, chapeaux, accessoires, hauts, vestes, pantalons, chaussures…), chacun **recolorable zone par zone** en conservant ses ombres et son grain. S'y ajoutent un **éditeur de pixels** sur la texture 64×64, un **aperçu 3D temps réel** avec poses et vue à la première personne, et des **exports** en PNG, en GIF animé, en planche de sprites ou en projet réutilisable.
+Le catalogue couvre tout le personnage — peaux, cheveux, yeux, bouches, chapeaux, accessoires, hauts, vestes, pantalons, chaussures — et chaque élément est **recolorable zone par zone**, en conservant ses ombres et son grain. S'y ajoutent un **éditeur de pixels** sur la texture 64×64, un **aperçu 3D temps réel** avec poses et vue à la première personne, et des **exports** en PNG, en GIF animé, en planche de sprites ou en projet réutilisable.
 
 Le site est disponible en **français, anglais et espagnol**, et c'est un **projet personnel**, mené seul de la conception jusqu'à la mise en ligne.
 

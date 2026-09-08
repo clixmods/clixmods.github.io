@@ -4,7 +4,7 @@ draft = false
 title = "MC Skin Creator"
 slug = "mc-skin-creator"
 subtitle = "Minecraft skin creator running 100% in the browser"
-description = "Web application with no server and no dependency: a catalogue of 703 stackable layer elements, a pixel editor, a WebGL 3D engine and a GIF encoder all written from scratch"
+description = "Web application with no server and no dependency: a catalogue of stackable layer elements, a pixel editor, a WebGL 3D engine and a GIF encoder all written from scratch"
 tags = [
   "JavaScript",
   "WebGL",
@@ -98,7 +98,7 @@ ranking = 130
 
 The project starts from a simple observation. Existing skin editors either ask you to paint a 64×64 texture pixel by pixel, or let you pick a ready-made skin you can no longer modify. Here, a skin is a **stack of layers**: skin tone, hair, eyes, top, trousers, shoes — each one still editable, reorderable and recolourable afterwards.
 
-The catalogue holds **703 elements** across categories (skin tones, hair, eyes, mouths, hats, accessories, tops, jackets, trousers, shoes…), each **recolourable zone by zone** while keeping its shadows and grain. On top of that: a **pixel editor** on the 64×64 texture, a **real-time 3D preview** with poses and a first-person view, and **exports** to PNG, animated GIF, sprite sheet or a reusable project file.
+The catalogue covers the whole character — skin tones, hair, eyes, mouths, hats, accessories, tops, jackets, trousers, shoes — and every element is **recolourable zone by zone**, keeping its shadows and grain. On top of that: a **pixel editor** on the 64×64 texture, a **real-time 3D preview** with poses and a first-person view, and **exports** to PNG, animated GIF, sprite sheet or a reusable project file.
 
 The site is available in **French, English and Spanish**, and it is a **personal project**, built solo from design through to deployment.
 
