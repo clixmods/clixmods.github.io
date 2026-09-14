@@ -1,0 +1,41 @@
+// ─────────────────────────────────────────────────────────
+// Allègement du rendu sur mobile / tactile
+// ─────────────────────────────────────────────────────────
+// Le thème empile jusqu'à ~70 éléments en `backdrop-filter` sur une même page
+// (30 cartes projet + leurs 30 badges sur /projects, 52 cartes sur /skills).
+// Comme le fond `.bp-bg` est en `position: fixed`, le backdrop de chaque couche
+// change à chaque frame de scroll : le navigateur doit re-flouter toutes les
+// couches à chaque frame, ce qui effondre le framerate sur un GPU de téléphone.
+//
+// Ici on neutralise le flou et on rend les surfaces de premier niveau opaques
+// pour compenser la perte de lisibilité. Les éléments internes (icônes,
+// pastilles, boutons posés SUR une carte) gardent leur fond translucide : ils
+// restent donc visibles par-dessus la surface devenue opaque.
+//
+// Ce fichier est importé en DERNIER dans main.scss : à spécificité égale, il
+// l'emporte sur les déclarations d'origine.
+
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  :root {
+    --glass-filter:          none;
+    --glass-filter-ui:       none;
+    --glass-filter-badge:    none;
+    --glass-filter-overlay:  none;
+    --glass-filter-lightbox: none;
+
+    // Surfaces opaques, calées sur --surface (#0d1222) en légèrement plus clair
+    // que --bg pour que les cartes se détachent du fond blueprint.
+    --glass-surface:    rgba(17, 23, 42, 0.88);
+    --glass-surface-hi: rgba(26, 34, 58, 0.93);
+  }
+
+  // Fonds codés en dur : on remonte l'opacité là où le flou assurait seul la
+  // séparation avec ce qui passe derrière.
+  .project-card .project-sector { background: rgba(13, 18, 34, 0.90); }
+  .proj-more .proj-more-menu    { background: rgba(13, 18, 34, 0.97); }
+  // Overlay de navigation plein écran : sans le flou, les 8 % de transparence
+  // laissaient lire le titre du hero en filigrane. On le rend franchement
+  // opaque — c'est aussi la couche la moins chère à composer.
+  .mobile-menu                  { background: var(--bg); }
+  .lightbox                     { background: rgba(4, 6, 12, 0.96); }
+}

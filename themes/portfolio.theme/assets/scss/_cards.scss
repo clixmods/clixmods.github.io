@@ -147,8 +147,8 @@
     background: rgba(13, 18, 34, 0.72);
     border-color: var(--glass-border-hi);
     color: #fff;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: var(--glass-filter-badge);
+    -webkit-backdrop-filter: var(--glass-filter-badge);
   }
 
   .project-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }

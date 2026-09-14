@@ -27,6 +27,23 @@
   --glass-border-hi: rgba(140, 170, 255, 0.30);
   --glass-blur:    18px;
 
+  // Surfaces de verre de PREMIER niveau : cartes, navbar, panneaux posés
+  // directement sur le fond blueprint. Volontairement distinctes de --glass-bg,
+  // qui reste réservé aux éléments empilés SUR une carte (icônes, pastilles,
+  // boutons internes). Sur mobile les surfaces deviennent opaques pendant que
+  // les éléments internes restent translucides : la hiérarchie est préservée.
+  --glass-surface:    var(--glass-bg);
+  --glass-surface-hi: var(--glass-bg-strong);
+
+  // Flou de verre. Passé à `none` sur mobile / tactile (cf. _mobile-perf.scss) :
+  // un backdrop-filter par carte au-dessus d'un fond fixe force le navigateur à
+  // re-flouter chaque couche à chaque frame de scroll.
+  --glass-filter:          blur(var(--glass-blur));
+  --glass-filter-ui:       blur(12px);
+  --glass-filter-badge:    blur(10px);
+  --glass-filter-overlay:  blur(20px);
+  --glass-filter-lightbox: blur(8px);
+
   // Rayons
   --r-sm: 12px;
   --r-md: 18px;

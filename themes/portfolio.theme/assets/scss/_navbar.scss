@@ -17,7 +17,7 @@
   padding: 9px 9px 9px 16px;
   height: var(--nav-h);
 
-  &.scrolled { background: var(--glass-bg-strong); border-color: var(--glass-border-hi); }
+  &.scrolled { background: var(--glass-surface-hi); border-color: var(--glass-border-hi); }
 }
 
 // Marque (avatar + nom)
@@ -114,7 +114,8 @@
   gap: 6px;
   padding: calc(var(--nav-h) + 36px) 24px 24px;
   background: rgba(8, 11, 22, 0.92);
-  backdrop-filter: blur(20px);
+  backdrop-filter: var(--glass-filter-overlay);
+  -webkit-backdrop-filter: var(--glass-filter-overlay);
 
   a {
     font-family: var(--font-head);

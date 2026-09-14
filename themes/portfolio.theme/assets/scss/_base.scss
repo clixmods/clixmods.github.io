@@ -131,10 +131,11 @@ ul { list-style: none; }
 }
 
 .btn-ghost {
-  background: var(--glass-bg);
+  background: var(--glass-surface);
   border-color: var(--glass-border);
   color: var(--text);
-  backdrop-filter: blur(10px);
+  backdrop-filter: var(--glass-filter-badge);
+  -webkit-backdrop-filter: var(--glass-filter-badge);
   &:hover { border-color: var(--glass-border-hi); background: var(--glass-bg-strong); }
 }
 
