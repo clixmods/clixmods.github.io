@@ -1,61 +1,43 @@
 +++
-date = "2024-03-15T00:00:00+02:00"
-draft = true
-title = "BlackJack JavaFX"
-subtitle = "Card game developed in Java with JavaFX interface"
-description = "Academic project developing a complete Blackjack game in Java with JavaFX graphical interface. Integration of complete game rules, score management, interactive user interface and secure save system."
+date = "2024-01-19T00:00:00+01:00"
+draft = false
+title = "Fortuna BlackJack"
+subtitle = "Blackjack game in Java and JavaFX - IUT Montpellier-Sète"
+description = "Second-year Computer Science BUT project: a desktop Blackjack game built as a team in Java and JavaFX, with player accounts, betting and a bilingual interface."
 tags = [
   "Academic",
-  "SAE",
+  "SAÉ",
+  "Java",
+  "JavaFX",
   "Card Game",
-  "OOP",
-  "User Interface",
-  "Algorithms",
-  "Teamwork",
-  "Continuous Integration"
+  "Teamwork"
 ]
 category = "projects"
 sector = "appsweb-etude"
+status = "Completed"
 featured = false
 fmContentType = "project-content-type"
-status = "Completed"
-image = "/images/projects/blackjack-javafx/blackjack-bg.jpg"
-logo = "/images/projects/blackjack-javafx/blackjack-logo.png"
-galleries = [ ]
 frameworks_engines = [ "fw_javafx" ]
-programming_languages = [ "lang_java", "lang_sql" ]
-specialties = [ "spec_algorithmique", "spec_interface_utilisateur" ]
-tools = [ "tool_gitlab", "tool_fork", "tool_photoshop", "tool_jetbrains" ]
-soft_skills = [ "skill_communication", "skill_resolution_problemes" ]
-
-[[actions]]
-type = "github"
-label = "View Source Code"
-url = "#"
-primary = true
-
-[development_time]
-total = "3 weeks"
-
-[[notable_facts]]
-value = "Complete Blackjack rules implementation"
-label = "Full game rules with Ace management (1 or 11)"
-fieldGroup = "notable_facts_group"
-
-[[notable_facts]]
-value = "Data encryption system"
-label = "Score protection with HMAC + SHA-256 encryption"
-fieldGroup = "notable_facts_group"
-
-[[notable_facts]]
-value = "Continuous integration"
-label = "GitHub Actions pipeline for automated testing"
-fieldGroup = "notable_facts_group"
-
-[[contributors]]
-name = "Development Team"
-role = "Pair Developer"
-fieldGroup = "contributors_group"
+programming_languages = [ "lang_java", "lang_sql", "lang_css" ]
+specialties = [
+  "spec_programmation_orientee_objet",
+  "spec_interface_utilisateur",
+  "spec_architecture_logicielle",
+  "spec_gestion_de_versions_avec_git"
+]
+soft_skills = [
+  "skill_travail_en_equipe",
+  "skill_communication",
+  "skill_gestion_de_projet"
+]
+tools = [
+  "tool_gitlab",
+  "tool_github",
+  "tool_jetbrains",
+  "tool_fork",
+  "tool_photoshop"
+]
+image = "/images/projects/blackjack-javafx/partie.png"
 
 [widget_order]
 contributors = 10
@@ -76,134 +58,106 @@ ranking = 130
 [ranking]
 event_type = "Ranking"
 suffix = "th"
+
+[development_time]
+total = "4 months"
+start_date = "2023-09-29T00:00:00.000Z"
+end_date = "2024-01-19T00:00:00.000Z"
+
+[[actions]]
+type = "github"
+label = "View source code"
+url = "https://github.com/clixmods/BlackJackJAVAFX"
+primary = true
+fieldGroup = "actions_group"
+
+[[actions]]
+type = "download"
+label = "Download the game"
+url = "https://github.com/clixmods/BlackJackJAVAFX/releases/tag/v1.0.0"
+primary = false
+fieldGroup = "actions_group"
+
+[[galleries]]
+title = "Preview"
+size = "size-medium"
+fieldGroup = "galleries_group"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/blackjack-javafx/accueil.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/blackjack-javafx/mise.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/blackjack-javafx/partie.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/blackjack-javafx/regles.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/blackjack-javafx/connexion.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/blackjack-javafx/inscription.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/blackjack-javafx/compte.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/blackjack-javafx/parametres.png"
+
+  [[galleries.images]]
+  fieldGroup = "gallery_group"
+  url = "/images/projects/blackjack-javafx/cgu.png"
+
+[[contributors]]
+person = "clement-garcia"
+roles = [ "Developer" ]
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "yanis-bendahmane"
+roles = [ "Developer" ]
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "elliot-barthelemy"
+roles = [ "Developer" ]
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "quentin-laborie"
+roles = [ "Developer" ]
+fieldGroup = "contributors_group"
+
+[[contributors]]
+person = "mateo-dias"
+roles = [ "Developer" ]
+fieldGroup = "contributors_group"
 +++
 
-## Project Context
+## Overview
 
-**BlackJack JavaFX** is an academic project completed in the second year as part of the SAE (Learning and Assessment Situation). The objective was to develop a complete Blackjack game in Java with a JavaFX graphical interface, focusing on:
+A **second-year Computer Science BUT project** at IUT Montpellier-Sète, built by a team of five as part of **SAÉ 3.01**, from September 2023 to January 2024. The brief was to develop a desktop application in Java: we chose to make a Blackjack game, **Fortuna BlackJack**.
 
-- **Object-oriented programming (OOP)** in Java
-- **User interface design (HCI)**
-- **Applied algorithms** for game logic
-- **Team project management**
+Players create an account, manage their balance, bet using chips, then face the dealer following the classic Blackjack rules. The interface is available in French and English, with background music and sound effects.
 
-## Main Features
+## Project revival
 
-### 🎮 Complete Game Logic
-- **Random card distribution** with deck management without replacement
-- **Automatic score calculation** with specific Ace rules
-- **Action management**: hit, stand, double down
-- **Automatic dealer decisions** according to official rules
+Originally delivered as a prototype, the project was later picked up again to make it presentable: a **redesigned interface**, cleaned-up code and setup guide, and a new **offline mode** that launches the game straight away, without a database, using a guest account.
 
-### 🖥️ Interactive User Interface
-- **Multiple screens**: home, betting, main game
-- **Dynamic display** of cards and scores in real-time
-- **Smooth animations** for card dealing
-- **Contextual messages** for win/loss
-- **Optimized user experience**
+## Technologies
 
-### 🔒 Security and Persistence
-- **SQLite database** to store high scores
-- **HMAC + SHA-256 encryption** of sensitive data
-- **Anti-cheat protection** with secure hashing
-
-## Technical Activities Performed
-
-### 🧮 Algorithm Development
-**Skills Mobilized:**
-- **CE 2.02** – List common algorithms and data structures
-- **CE 2.04** – Justify choices and validate results
-
-**Achievements:**
-- Fisher-Yates shuffle algorithm for random distribution
-- Dynamic score calculation system with Ace management
-- Automatic decision logic for the dealer
-- Data structure optimization for performance
-
-```java
-public void melanger() {
-    for (int i = 0; i < 52; i++) {
-        int randIndex = i + new Random().nextInt(52 - i);
-        Carte temp = paquet.get(i);
-        paquet.set(i, paquet.get(randIndex));
-        paquet.set(randIndex, temp);
-    }
-}
-```
-
-### 🎨 Interface Design
-**Skills Mobilized:**
-- **CE 1.04** – Ensure code quality and documentation
-- **CE 6.04** – Develop effective and collaborative communication
-
-**Achievements:**
-- MVC architecture to separate business logic and presentation
-- Responsive interface with event handling
-- Real-time synchronization between model and view
-- Continuous improvement of user experience
-
-### 🔧 DevOps and Security
-**Skills Mobilized:**
-- **AC 13.03** – Install and configure system and tools
-- **AC 33.01** – Create automated processing processes
-- **AC 21.02** – Implement computer security principles
-
-**Achievements:**
-- Maven configuration for dependency management
-- GitHub Actions pipeline for continuous integration
-- Secure encryption implementation for data
-- Collaborative versioning with Git
-
-```java
-public static String hash(String clearPassword) {
-    try {
-        // HMAC generation with SHA-256
-        Mac sha256Hmac = Mac.getInstance(ALGORITHM);
-        SecretKeySpec secretKey = new SecretKeySpec(PEPPER.getBytes(), ALGORITHM);
-        sha256Hmac.init(secretKey);
-        // ... Complete hashing process
-    } catch (NoSuchAlgorithmException | InvalidKeyException e) {
-        e.printStackTrace();
-        return null;
-    }
-}
-```
-
-## Technical Architecture
-
-### 🏗️ Project Structure
-- **MVC Model** for clear and maintainable architecture
-- **Separation of concerns** between business logic and interface
-- **Object-oriented programming** with encapsulation and inheritance
-- **Design patterns** applied for code robustness
-
-### 🛠️ Technologies Used
-- **Java** for business logic and algorithms
-- **JavaFX** for modern graphical interface
-- **SQLite** for data persistence
-- **Maven** for dependency management
-- **GitHub Actions** for continuous integration
-
-## Skills Developed
-
-| Domain | Critical Learning | Essential Component | Level |
-|--------|------------------|-------------------|-------|
-| **Algorithms** | AC 12.02 – Compare algorithms | CE 2.02 – Common data structures | Application |
-| **User Interface** | AC 11.01 – Implement designs | CE 1.04 – Code quality | Mastery |
-| **Development Tools** | AC 13.03 – Install and configure | CE 5.04 – Proactive approach | Application |
-| **Project Management** | AC 15.03 – Identify phases | CE 6.04 – Effective communication | Application |
-| **Security** | AC 21.02 – Security principles | CE 4.02 – Best practices | Application |
-| **Automation** | AC 33.01 – Automated processes | CE 5.04 – Proactive approach | Application |
-
-## Results and Learning
-
-This project allowed me to:
-- **Master OOP in Java** with solid architecture
-- **Develop modern user interfaces** with JavaFX
-- **Implement complex algorithms** for game logic
-- **Collaborate effectively** as a team with Git tools
-- **Apply computer security** in a real context
-- **Set up continuous integration** for code quality
-
-The project resulted in a **playable and complete prototype**, respecting all Blackjack rules, with an intuitive interface and advanced security and data persistence features.
-
+- **Language**: Java 17
+- **Interface**: JavaFX 20 (FXML)
+- **Database**: MariaDB via JDBC
+- **Build and tests**: Maven, JUnit 5

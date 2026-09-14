@@ -1,1 +1,54 @@
-{"projects":{"portfolio":{"static":{"images":{"projects":{"farm":{"farm-background.jpg":{"title":"","caption":"","alt":""}},"stholen":{"stholen-logo.png":{"title":"","caption":"","alt":""},"stholen-background.jpg":{"title":"","caption":"","alt":""}}}}}}},"users":{"clixd":{"documents":{"projets":{"portfolio":{"static":{"images":{"projects":{"mystic-koni":{"photo-groupe.jpg":{"title":"","caption":"","alt":""}}}}}}}}}}}
+{
+  "projects": {
+    "portfolio": {
+      "static": {
+        "images": {
+          "projects": {
+            "farm": {
+              "farm-background.jpg": {
+                "alt": "",
+                "caption": "",
+                "title": ""
+              }
+            },
+            "stholen": {
+              "stholen-background.jpg": {
+                "alt": "",
+                "caption": "",
+                "title": ""
+              },
+              "stholen-logo.png": {
+                "alt": "",
+                "caption": "",
+                "title": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "users": {
+    "clixd": {
+      "documents": {
+        "projets": {
+          "portfolio": {
+            "static": {
+              "images": {
+                "projects": {
+                  "mystic-koni": {
+                    "photo-groupe.jpg": {
+                      "alt": "",
+                      "caption": "",
+                      "title": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
