@@ -290,39 +290,57 @@
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var idx = 0;
     var timer = null;
-    var paused = false;
+    var paused = false;    // survol
+    var offscreen = false; // carrousel sorti du viewport
+    var buried = false;    // onglet en arrière-plan
     var expanded = false;
-    // Suivi du temps pour reprendre là où on s'était arrêté (pause au survol)
+    // Suivi du temps pour reprendre là où on s'était arrêté après une pause
     var curDur = 0;       // durée pleine de la slide courante
     var remaining = null; // temps restant avant la prochaine slide
     var startTime = 0;    // horodatage du (re)démarrage du minuteur courant
+
+    // Le minuteur ne doit tourner que quand le carrousel est réellement
+    // regardé : sinon on anime et repeint une barre que personne ne voit.
+    var halted = function () { return paused || offscreen || buried; };
 
     var durationOf = function (n) {
       return parseInt(slides[n].getAttribute("data-duration"), 10) || 6000;
     };
 
     // Anime la barre de progression sur `dur` ms.
-    // resume=true : repart de la largeur figée courante (ne remet pas à 0).
+    // On anime `transform: scaleX()` et non `width` : animer la largeur
+    // relayoute la page à CHAQUE frame, pendant toute la durée de la slide,
+    // en boucle tant que la page est ouverte.
+    // resume=true : repart de la position figée courante (ne remet pas à 0).
     var startBar = function (dur, resume) {
       if (!bar) return;
       if (!resume) {
         bar.style.transition = "none";
-        bar.style.width = "0%";
+        bar.style.transform = "scaleX(0)";
         void bar.offsetWidth; // reflow
       }
-      if (!paused && !reduce) {
-        bar.style.transition = "width " + dur + "ms linear";
-        bar.style.width = "100%";
+      if (!halted() && !reduce) {
+        bar.style.transition = "transform " + dur + "ms linear";
+        bar.style.transform = "scaleX(1)";
       }
+    };
+
+    // Fige la barre sur sa progression courante. Celle-ci est déduite du temps
+    // écoulé plutôt que lue via getComputedStyle : pas de layout synchrone.
+    var freezeBar = function () {
+      if (!bar) return;
+      var f = curDur > 0 ? 1 - remaining / curDur : 0;
+      bar.style.transition = "none";
+      bar.style.transform = "scaleX(" + (f < 0 ? 0 : f > 1 ? 1 : f) + ")";
     };
 
     var moreLabel = testi.getAttribute("data-more-label") || "Voir plus";
     var lessLabel = testi.getAttribute("data-less-label") || "Voir moins";
 
-    // resume=true : reprend le décompte restant (survol) sans le réinitialiser.
+    // resume=true : reprend le décompte restant sans le réinitialiser.
     var schedule = function (resume) {
       clearTimeout(timer);
-      if (paused || expanded || reduce || slides.length < 2) return;
+      if (halted() || expanded || reduce || slides.length < 2) return;
       if (!resume || remaining == null) {
         curDur = durationOf(idx);
         remaining = curDur;
@@ -330,6 +348,27 @@
       startTime = Date.now();
       startBar(remaining, resume);
       timer = setTimeout(function () { go(idx + 1); }, remaining);
+    };
+
+    // Gèle le décompte en mémorisant le temps restant.
+    var freeze = function () {
+      clearTimeout(timer);
+      if (remaining != null) {
+        remaining = remaining - (Date.now() - startTime);
+        if (remaining < 0) remaining = 0;
+      }
+      freezeBar();
+    };
+
+    // Bascule une cause de pause. On ne gèle/relance qu'au changement d'état
+    // global, sinon deux causes simultanées décompteraient deux fois.
+    var setHalt = function (which, on) {
+      var was = halted();
+      if (which === "hover") paused = on;
+      else if (which === "view") offscreen = on;
+      else buried = on;
+      if (halted() === was) return;
+      if (halted()) freeze(); else schedule(true);
     };
 
     // Affiche « Voir plus » seulement si la citation déborde (état clampé)
@@ -371,7 +410,7 @@
         btn.textContent = expanded ? lessLabel : moreLabel;
         if (expanded) {
           clearTimeout(timer);
-          if (bar) { bar.style.transition = "none"; bar.style.width = "0%"; }
+          if (bar) { bar.style.transition = "none"; bar.style.transform = "scaleX(0)"; }
         } else {
           remaining = null;
           schedule();
@@ -395,25 +434,32 @@
       if (nextBtn) nextBtn.hidden = true;
     }
 
-    window.addEventListener("resize", updateMore);
+    // `updateMore` lit scrollHeight/clientHeight, donc force un layout
+    // synchrone. Sur mobile, le repli de la barre d'URL émet des `resize` en
+    // rafale pendant le scroll : on les regroupe sur une seule frame.
+    var resizeQueued = false;
+    window.addEventListener("resize", function () {
+      if (resizeQueued) return;
+      resizeQueued = true;
+      requestAnimationFrame(function () {
+        resizeQueued = false;
+        updateMore();
+      });
+    }, { passive: true });
 
-    testi.addEventListener("mouseenter", function () {
-      paused = true;
-      clearTimeout(timer);
-      // Mémorise le temps déjà écoulé pour reprendre ensuite (pas de reset)
-      if (remaining != null) {
-        remaining = remaining - (Date.now() - startTime);
-        if (remaining < 0) remaining = 0;
-      }
-      if (bar) {
-        var w = window.getComputedStyle(bar).width;
-        bar.style.transition = "none";
-        bar.style.width = w;
-      }
-    });
-    testi.addEventListener("mouseleave", function () {
-      paused = false;
-      schedule(true); // reprend sur le temps restant
+    testi.addEventListener("mouseenter", function () { setHalt("hover", true); });
+    testi.addEventListener("mouseleave", function () { setHalt("hover", false); });
+
+    // Hors viewport ou onglet en arrière-plan : on arrête tout. Sans ça le
+    // carrousel anime et repeint en continu, même quand le visiteur est trois
+    // écrans plus bas ou a changé d'onglet.
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        setHalt("view", !entries[0].isIntersecting);
+      }, { threshold: 0 }).observe(testi);
+    }
+    document.addEventListener("visibilitychange", function () {
+      setHalt("tab", document.hidden);
     });
 
     updateMore();

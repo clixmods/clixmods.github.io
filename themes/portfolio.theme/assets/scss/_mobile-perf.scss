@@ -38,4 +38,21 @@
   // opaque — c'est aussi la couche la moins chère à composer.
   .mobile-menu                  { background: var(--bg); }
   .lightbox                     { background: rgba(4, 6, 12, 0.96); }
+
+  // ── Fond « blueprint » ──────────────────────────────────
+  // Le calque SVG décoratif est cadré pour un viewBox 1440x900 en « slice » :
+  // sur un écran étroit on n'en voit qu'une tranche centrale illisible. On
+  // évite d'en rastériser la trentaine de tracés — plus son masque — à 3x de
+  // densité, pour quelque chose que personne ne distingue.
+  .bp-overlay { display: none; }
+
+  // La grille superpose quatre dégradés : une trame large (120px) et une trame
+  // fine (24px). À cette densité la trame fine n'est que du bruit ; on ne garde
+  // que la large, soit deux couches de dégradé en moins sur toute la hauteur.
+  .bp-bg::after {
+    background-image:
+      linear-gradient(rgba(125, 155, 220, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(125, 155, 220, 0.07) 1px, transparent 1px);
+    background-size: 120px 120px;
+  }
 }
