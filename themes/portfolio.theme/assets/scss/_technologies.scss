@@ -69,24 +69,22 @@
 .tech-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  // Sans fond, l'espacement seul sépare les entrées : il faut plus d'air
+  // horizontal que vertical pour qu'elles ne se lisent pas comme une phrase.
+  gap: 9px 16px;
   margin-top: 14px;
 }
+// Libellés, pas boutons : ni fond, ni contour, ni effet au survol. La capsule
+// arrondie laissait croire qu'on pouvait cliquer dessus.
 .tech-pill {
   display: inline-flex;
   align-items: center;
   gap: 7px;
   font-size: 0.76rem;
   color: var(--text-soft);
-  padding: 6px 11px;
-  border-radius: var(--r-pill);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--glass-border);
-  transition: border-color 0.2s ease, transform 0.2s ease;
 
   img { width: 16px; height: 16px; object-fit: contain; }
   .tech-emoji { font-size: 0.95rem; }
-  &:hover { border-color: var(--glass-border-hi); transform: translateY(-2px); }
 }
 
 // Groupes de technologies (langages / frameworks / outils) séparés en blocs,
