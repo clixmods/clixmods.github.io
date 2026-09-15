@@ -232,5 +232,33 @@
     "iconPath": "images/technologies/Claude.svg",
     "color": "#D97757",
     "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_junit",
+    "category": "quality_tools",
+    "description": "Tests unitaires et d'intégration Java (Spring Boot Test)",
+    "experience": 1,
+    "iconPath": "images/technologies/JUnit.svg",
+    "color": "#25A162",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_playwright",
+    "category": "quality_tools",
+    "description": "Tests de bout en bout des parcours utilisateur dans le navigateur",
+    "experience": 1,
+    "icon": "🎭",
+    "iconPath": null,
+    "color": "#2EAD33",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_github_actions",
+    "category": "quality_tools",
+    "description": "Intégration continue : build, tests et vérifications automatisés",
+    "experience": 1,
+    "iconPath": "images/technologies/GitHub-Actions.svg",
+    "color": "#2088FF",
+    "displayedInPortfolio": false
   }
 ]

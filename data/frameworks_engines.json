@@ -132,5 +132,34 @@
     "iconPath": "/images/technologies/Node.js.svg",
     "color": "#5FA04E",
     "displayedInPortfolio": false
+  },
+  {
+    "key": "fw_spring_boot",
+    "experience": 1,
+    "iconPath": "/images/technologies/Spring.svg",
+    "color": "#6DB33F",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "fw_jpa",
+    "experience": 1,
+    "iconPath": "/images/technologies/Hibernate.svg",
+    "color": "#59666C",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "fw_flyway",
+    "experience": 1,
+    "icon": "🗃️",
+    "iconPath": null,
+    "color": "#CC0200",
+    "displayedInPortfolio": false
+  },
+  {
+    "key": "fw_angular",
+    "experience": 1,
+    "iconPath": "/images/technologies/Angular.svg",
+    "color": "#DD0031",
+    "displayedInPortfolio": false
   }
 ]
