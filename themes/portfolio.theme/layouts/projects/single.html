@@ -173,7 +173,7 @@
             <div class="proj-stack-label">{{ i18n "proj_languages" }}</div>
             <div class="proj-chips">
               {{- range . }}{{ $t := partial "tech-resolve.html" . }}
-              <span class="proj-chip">{{ if $t.iconPath }}<img class="proj-chip-ico" src="{{ $t.iconPath | relURL }}" alt="" width="16" height="16" loading="lazy">{{ else }}{{ with $t.icon }}<span class="proj-chip-ico">{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}</span>
+              <span class="proj-chip">{{ if $t.iconPath }}<img class="proj-chip-ico" src="{{ $t.iconSrc }}" alt="" width="16" height="16" loading="lazy">{{ else }}{{ with $t.icon }}<span class="proj-chip-ico">{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}</span>
               {{- end }}
             </div>
           </div>
@@ -183,7 +183,7 @@
             <div class="proj-stack-label">{{ i18n "proj_frameworks" }}</div>
             <div class="proj-chips">
               {{- range . }}{{ $t := partial "tech-resolve.html" . }}
-              <span class="proj-chip">{{ if $t.iconPath }}<img class="proj-chip-ico" src="{{ $t.iconPath | relURL }}" alt="" width="16" height="16" loading="lazy">{{ else }}{{ with $t.icon }}<span class="proj-chip-ico">{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}</span>
+              <span class="proj-chip">{{ if $t.iconPath }}<img class="proj-chip-ico" src="{{ $t.iconSrc }}" alt="" width="16" height="16" loading="lazy">{{ else }}{{ with $t.icon }}<span class="proj-chip-ico">{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}</span>
               {{- end }}
             </div>
           </div>
@@ -193,7 +193,7 @@
             <div class="proj-stack-label">{{ i18n "proj_tools" }}</div>
             <div class="proj-chips">
               {{- range . }}{{ $t := partial "tech-resolve.html" . }}
-              <span class="proj-chip">{{ if $t.iconPath }}<img class="proj-chip-ico" src="{{ $t.iconPath | relURL }}" alt="" width="16" height="16" loading="lazy">{{ else }}{{ with $t.icon }}<span class="proj-chip-ico">{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}</span>
+              <span class="proj-chip">{{ if $t.iconPath }}<img class="proj-chip-ico" src="{{ $t.iconSrc }}" alt="" width="16" height="16" loading="lazy">{{ else }}{{ with $t.icon }}<span class="proj-chip-ico">{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}</span>
               {{- end }}
             </div>
           </div>

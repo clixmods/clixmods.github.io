@@ -95,7 +95,7 @@
             {{- range . }}
             {{- $t := partial "tech-resolve.html" . }}
             <button type="button" class="techchip" data-facet="tech" data-value="{{ . }}">
-              {{- if $t.iconPath }}<img src="{{ $t.iconPath | relURL }}" alt="" width="14" height="14" loading="lazy">{{ else }}{{ with $t.icon }}<span>{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}
+              {{- if $t.iconPath }}<img src="{{ $t.iconSrc }}" alt="" width="14" height="14" loading="lazy">{{ else }}{{ with $t.icon }}<span>{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}
             </button>
             {{- end }}
           </div>
