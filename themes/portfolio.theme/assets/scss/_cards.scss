@@ -161,13 +161,18 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: auto; padding-top: 6px; }
 
-  // mini-chips technos (remplacent les tags libres)
+  // mini-libellés technos : on neutralise le fond arrondi hérité de .tag —
+  // ce sont des indications, pas des boutons (seule la carte est cliquable).
   .tag-tech {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
     img { width: 14px; height: 14px; object-fit: contain; }
     .tag-tech-emoji { font-size: 0.85em; }
   }
