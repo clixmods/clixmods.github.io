@@ -35,8 +35,13 @@
   {{- $ext := lower (path.Ext $clean) -}}
   {{- if in (slice ".svg" ".gif") $ext -}}
     {{- /* SVG : vectoriel, non redimensionnable. GIF : la conversion webp perd l'animation. */ -}}
-  {{- else if and (eq $ext ".webp") (eq $format "webp") -}}
-    {{- /* Déjà en webp — passthrough. */ -}}
+  {{- else if and (eq $ext ".webp") (eq $format "webp") (le $res.Width $width) -}}
+    {{- /* Déjà en webp et pas plus large que la cible : on sert le fichier tel
+           quel, mais on remonte ses dimensions pour que l'appelant émette bien
+           width/height. Un webp PLUS large tombe dans la branche suivante et
+           est redimensionné : sans ça, une source comme artbook.webp (1920px)
+           était servie en pleine résolution dans une vignette de 600px. */ -}}
+    {{- $ret = dict "src" $res.RelPermalink "width" $res.Width "height" $res.Height "isResource" true -}}
   {{- else if strings.HasPrefix $res.MediaType.Type "image" -}}
     {{- $w := int (math.Min $width $res.Width) -}}
     {{- $spec := printf "%dx %s q%d" $w $format $quality -}}

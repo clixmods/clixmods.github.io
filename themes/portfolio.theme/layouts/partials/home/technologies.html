@@ -14,7 +14,7 @@
       {{- range . }}
       {{- $t := partial "tech-resolve.html" .key -}}
       <span class="tech-pill">
-        {{- if $t.iconPath }}<img src="{{ $t.iconPath | relURL }}" alt="" loading="lazy">{{ else if $t.icon }}<span class="tech-emoji">{{ $t.icon }}</span>{{ end -}}
+        {{- if $t.iconPath }}<img src="{{ $t.iconSrc }}" alt="" width="16" height="16" loading="lazy">{{ else if $t.icon }}<span class="tech-emoji">{{ $t.icon }}</span>{{ end -}}
         {{ $t.label }}
       </span>
       {{- end }}

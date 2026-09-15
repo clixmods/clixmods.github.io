@@ -2,7 +2,7 @@
 {{- $t := . -}}
 <span class="tech-icon">
   {{- if $t.iconPath -}}
-    <img src="{{ $t.iconPath | relURL }}" alt="{{ $t.label }}" loading="lazy" width="22" height="22">
+    <img src="{{ $t.iconSrc }}" alt="{{ $t.label }}" loading="lazy" width="22" height="22">
   {{- else if $t.icon -}}
     <span class="tech-emoji">{{ $t.icon }}</span>
   {{- else -}}

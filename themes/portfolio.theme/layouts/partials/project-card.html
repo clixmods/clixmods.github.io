@@ -35,7 +35,7 @@
     <div class="project-tags">
       {{- range . }}
       {{- $t := partial "tech-resolve.html" . }}
-      <span class="tag tag-tech">{{ if $t.iconPath }}<img src="{{ $t.iconPath | relURL }}" alt="" width="14" height="14" loading="lazy">{{ else }}{{ with $t.icon }}<span class="tag-tech-emoji">{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}</span>
+      <span class="tag tag-tech">{{ if $t.iconPath }}<img src="{{ $t.iconSrc }}" alt="" width="14" height="14" loading="lazy">{{ else }}{{ with $t.icon }}<span class="tag-tech-emoji">{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}</span>
       {{- end }}
     </div>
     {{- end }}
