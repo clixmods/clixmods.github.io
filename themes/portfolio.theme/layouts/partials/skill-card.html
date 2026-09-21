@@ -14,7 +14,7 @@
   <span class="skill-card-body">
     <span class="skill-card-name">{{ $t.label }}</span>
     <span class="skill-card-meta">
-      {{- if $n }}<span class="skill-card-stat">{{ $n }}&nbsp;{{ i18n (cond (eq $n 1) "ui_project" "ui_projects") }}</span>{{ end -}}
+      {{- if $n }}<span class="skill-card-stat">{{ $n }}&nbsp;{{ i18n (cond (eq $n 1) "ui_skill_project" "ui_skill_projects") }}</span>{{ end -}}
       {{- if and $n $years }}<span class="skill-card-sep" aria-hidden="true">·</span>{{ end -}}
       {{- with $years }}<span class="skill-card-stat">{{ . }}</span>{{ end -}}
     </span>
@@ -29,7 +29,7 @@
     {{- if $n }}
     <div class="skill-stat">
       <span class="skill-stat-value">{{ $n }}</span>
-      <span class="skill-stat-label">{{ i18n (cond (eq $n 1) "ui_project" "ui_projects") }}</span>
+      <span class="skill-stat-label">{{ i18n (cond (eq $n 1) "ui_skill_project" "ui_skill_projects") }}</span>
     </div>
     {{- end }}
     {{- with $years }}
