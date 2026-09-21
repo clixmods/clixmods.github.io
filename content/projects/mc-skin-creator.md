@@ -4,7 +4,7 @@ draft = false
 title = "MC Skin Creator"
 slug = "mc-skin-creator"
 subtitle = "Éditeur de skins Minecraft en ligne : back-end Java / Spring Boot, front Angular"
-description = "Éditeur de skins Minecraft dans le navigateur : API REST et moteur de composition de textures en Java 21 / Spring Boot 4, front Angular 21 avec rendu 3D WebGL écrit à la main, livrés dans un seul jar exécutable"
+description = "Éditeur de skins Minecraft dans le navigateur : API REST et moteur de composition de textures en Java 21 / Spring Boot 4, front Angular 21 avec rendu 3D WebGL sur mesure, livrés dans un seul jar exécutable"
 tags = [
   "Java",
   "Spring Boot",
@@ -99,7 +99,7 @@ ranking = 130
 
 **Stack :** Java 21 · Spring Boot · JPA / Flyway · Angular · TypeScript · WebGL · JUnit · Playwright · GitHub Actions
 
-**MC Skin Creator** est un éditeur de skins Minecraft dans le navigateur, en ligne sur **[mcskincreator.app](https://mcskincreator.app/)**. On compose un personnage en empilant des calques (peau, yeux, cheveux, vêtements…) pris dans un catalogue de plus de 500 éléments, on les recolore, on dessine au pixel et on voit le résultat en 3D animée, avant de l'exporter en PNG, en GIF ou en planche de sprites. L'application associe un back-end **Java 21 / Spring Boot 4** et un front **Angular 21**, livrés ensemble dans un seul jar exécutable construit par Maven. Interface en français, anglais et espagnol ; projet personnel mené seul.
+**MC Skin Creator** est un éditeur de skins Minecraft dans le navigateur, en ligne sur **[mcskincreator.app](https://mcskincreator.app/)**. On compose un personnage en empilant des calques (peau, yeux, cheveux, vêtements…) pris dans un catalogue de plus de 500 éléments, on les recolore, on dessine au pixel et on voit le résultat en 3D animée, avant de l'exporter en PNG, en GIF ou en planche de sprites. L'application associe un back-end **Java 21 / Spring Boot 4** et un front **Angular 21**, livrés ensemble dans un seul jar exécutable construit par Maven. Interface en français, anglais et espagnol ; projet personnel, entièrement développé avec l'assistance de l'IA (Claude).
 
 ## Back-end — Java 21, Spring Boot 4
 
@@ -112,9 +112,9 @@ ranking = 130
 ## Front-end — Angular 21, TypeScript
 
 - **Éditeur complet** : bibliothèque par régions et catégories, pile de calques en glisser-déposer, inspecteur de couleurs, éditeur de pixels 2D, historique annuler / rétablir.
-- **Rendu 3D en WebGL écrit à la main**, sans bibliothèque 3D : dix animations reprises du jeu, vue à la première personne, peinture directement sur le modèle 3D (sélection du texel par rendu hors écran).
+- **Rendu 3D en WebGL sur mesure**, sans bibliothèque 3D : dix animations reprises du jeu, vue à la première personne, peinture directement sur le modèle 3D (sélection du texel par rendu hors écran).
 - **Architecture Angular** : composants autonomes, état géré par signaux, détection de changement sans zone.js, boucle d'animation hors d'Angular. Couche de stockage abstraite : le même front fonctionne sur l'API Java ou sur le localStorage.
-- **Exports et mobile** : encodeur GIF animé écrit à la main (quantification median-cut, compression LZW), interface adaptée au mobile (tiroirs, gestes tactiles, pincement à deux doigts dans l'éditeur de pixels).
+- **Exports et mobile** : encodeur GIF animé intégré au projet (quantification median-cut, compression LZW), interface adaptée au mobile (tiroirs, gestes tactiles, pincement à deux doigts dans l'éditeur de pixels).
 
 **Qualité :** tests JUnit (API, moteur, profils, validation), Vitest (moteur TypeScript, i18n, SEO) et 41 tests Playwright de bout en bout (brouillon conservé après rechargement, isolation de deux clients, import, export) ; tests de parité garantissant que les moteurs Java et TypeScript produisent exactement les mêmes octets ; pipeline GitHub Actions avec build Maven complet, tests Java et tests front.
 
