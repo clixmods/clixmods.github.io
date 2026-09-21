@@ -35,13 +35,12 @@
       "categories": {
         "type": "array",
         "title": "Catégories",
-        "description": "Sous-groupes utilisés sur la page Compétences : frontend, backend, gamedev",
+        "description": "Sous-groupes de la page Compétences : frontend ou backend. Sans catégorie, le langage apparaît dans « Autres ».",
         "items": {
           "type": "string",
           "enum": [
             "frontend",
-            "backend",
-            "gamedev"
+            "backend"
           ]
         }
       }

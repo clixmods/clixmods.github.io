@@ -7,7 +7,6 @@
     "displayedInPortfolio": true,
     "experience": 5,
     "categories": [
-      "gamedev",
       "backend"
     ]
   },
@@ -17,10 +16,7 @@
     "iconPath": "/images/technologies/Lua.svg",
     "color": "#000080",
     "displayedInPortfolio": true,
-    "experience": 3,
-    "categories": [
-      "gamedev"
-    ]
+    "experience": 3
   },
   {
     "key": "lang_sql",
@@ -83,10 +79,7 @@
     "iconPath": null,
     "color": "#FF6B6B",
     "displayedInPortfolio": false,
-    "experience": 0.5,
-    "categories": [
-      "gamedev"
-    ]
+    "experience": 0.5
   },
   {
     "key": "lang_cpp",
@@ -95,7 +88,7 @@
     "color": "#00599C",
     "displayedInPortfolio": true,
     "categories": [
-      "gamedev"
+      "backend"
     ]
   },
   {
@@ -103,10 +96,7 @@
     "experience": 4,
     "iconPath": "images/technologies/bo3.png",
     "color": "#FF6600",
-    "displayedInPortfolio": true,
-    "categories": [
-      "gamedev"
-    ]
+    "displayedInPortfolio": true
   },
   {
     "key": "lang_c",

@@ -113,7 +113,6 @@ ui_skill_no_project: "Not used in a published project yet"
 ui_skill_open_hint: "Click a skill to see the projects it was used on."
 ui_lang_frontend: "Front end"
 ui_lang_backend: "Back end"
-ui_lang_gamedev: "Games & real-time"
 ui_lang_other: "Other"
 
 ui_rights_reserved: "All rights reserved."

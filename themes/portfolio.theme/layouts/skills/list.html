@@ -39,10 +39,10 @@
   {{- $pick = merge $pick (dict $name (sort (sort $kept "usage" "desc") "experience" "desc")) -}}
 {{- end -}}
 
-{{/* ── Langages : sous-groupes front / back / jeu vidéo ─────────────── */}}
+{{/* ── Langages : sous-groupes front / back, le reste dans « Autres » ── */}}
 {{- $langs := index $pick "programming_languages" -}}
 {{- $langGroups := slice -}}
-{{- range $c := (slice "frontend" "backend" "gamedev") -}}
+{{- range $c := (slice "frontend" "backend") -}}
   {{- $sub := slice -}}
   {{- range $langs -}}
     {{- if in (.categories | default slice) $c -}}{{- $sub = $sub | append . -}}{{- end -}}

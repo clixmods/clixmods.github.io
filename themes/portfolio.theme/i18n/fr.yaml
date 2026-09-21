@@ -113,7 +113,6 @@ ui_skill_no_project: "Pas encore utilisée dans un projet publié"
 ui_skill_open_hint: "Cliquez sur une compétence pour voir les projets où elle a servi."
 ui_lang_frontend: "Front-end"
 ui_lang_backend: "Back-end"
-ui_lang_gamedev: "Jeu vidéo & temps réel"
 ui_lang_other: "Autres"
 
 ui_rights_reserved: "Tous droits réservés."
