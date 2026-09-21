@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────
 // Page Compétences — sections par catégorie + cartes de skill
-// (réutilise .proj-card, .proj-section-title, .tech-bar, .tech-icon)
+// (réutilise .proj-card, .proj-section-title, .tech-icon)
 // ─────────────────────────────────────────────────────────
 // Intro (corps Markdown du _index) — le H1 répète le titre → masqué
 .skills-intro {
@@ -9,6 +9,12 @@
   color: var(--text-dim);
   > h1:first-child { display: none; }
   p { margin: 0; }
+}
+
+.skills-hint {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  color: var(--text-faint);
 }
 
 .skills-sections {
@@ -38,17 +44,36 @@
   }
 }
 
+// Sous-groupes (langages : front-end / back-end / jeu vidéo)
+.skills-subgroup + .skills-subgroup { margin-top: 20px; }
+
+.skills-subtitle {
+  margin: 0 0 10px;
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 12px;
 }
 
 .skill-card {
   display: flex;
-  align-items: flex-start;
-  gap: 13px;
-  padding: 14px 16px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 12px 14px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
   border-radius: var(--r-md);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--glass-border);
@@ -59,45 +84,190 @@
     transform: translateY(-3px);
     background: rgba(255, 255, 255, 0.055);
   }
+  &:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 2px;
+  }
 
-  // icône (sortie par tech-icon.html → .tech-icon)
+  // icône nue : pas de pastille autour du logo
   .tech-icon {
     flex-shrink: 0;
-    width: 38px; height: 38px;
+    width: 26px; height: 26px;
     display: grid; place-items: center;
-    border-radius: var(--r-sm);
-    background: var(--glass-bg-strong);
-    border: 1px solid var(--glass-border);
-    img { width: 22px; height: 22px; object-fit: contain; }
+    img { width: 24px; height: 24px; object-fit: contain; }
     .tech-emoji { font-size: 1.15rem; }
     .tech-letter { width: 24px; height: 24px; border-radius: 7px; font-size: 0.72rem; }
   }
 
-  .skill-card-body { flex: 1; min-width: 0; }
+  .skill-card-body { flex: 1; min-width: 0; display: block; }
 
   .skill-card-name {
+    display: block;
     font-family: var(--font-head);
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     color: #fff;
   }
 
-  // description de la compétence (remplace l'ancienne jauge)
-  .skill-card-desc {
-    margin-top: 4px;
+  // deux chiffres clés : nombre de projets · ancienneté
+  .skill-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
     font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 0.8rem;
-    line-height: 1.4;
+    font-size: 0.76rem;
     color: var(--text-dim);
+  }
+  .skill-card-sep { color: var(--text-faint); }
+}
 
-    .highlight { color: var(--cyan); font-weight: 600; }
+// ── Modale de détail d'une compétence ────────────────────
+.skill-modal {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  padding: 5vw;
+  background: rgba(4, 6, 12, 0.82);
+  backdrop-filter: var(--glass-filter-lightbox);
+  -webkit-backdrop-filter: var(--glass-filter-lightbox);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  &[hidden] { display: none; }
+  &.open { opacity: 1; }
+}
+
+.skill-modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 22px 24px 24px;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-card);
+  &:focus-visible { outline: none; }
+}
+
+.skill-modal-close {
+  position: absolute; top: 14px; right: 14px;
+  width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 0.9rem; color: var(--text-dim);
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  &:hover { color: #fff; border-color: var(--glass-border-hi); }
+}
+
+.skill-modal-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 40px;
+
+  .tech-icon {
+    width: 32px; height: 32px;
+    display: grid; place-items: center;
+    img { width: 30px; height: 30px; object-fit: contain; }
+    .tech-emoji { font-size: 1.4rem; }
   }
 }
 
-// Variante sans description : on recentre l'icône avec le nom
-.skill-card.no-desc { align-items: center; }
+.skill-modal-title {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+.skill-modal-stats {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0 20px;
+}
+
+.skill-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: var(--r-sm);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--glass-border);
+
+  .skill-stat-value {
+    font-family: var(--font-head);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cyan);
+    line-height: 1.1;
+  }
+  .skill-stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+  }
+}
+
+.skill-modal-subtitle {
+  margin-bottom: 8px;
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.skill-modal-projects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--r-sm);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+    color: var(--text-soft);
+    font-size: 0.86rem;
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+
+    &:hover {
+      color: #fff;
+      border-color: var(--glass-border-hi);
+      background: rgba(255, 255, 255, 0.06);
+    }
+  }
+
+  .skill-proj-title { min-width: 0; }
+  .skill-proj-year {
+    flex-shrink: 0;
+    font-family: var(--font-head);
+    font-size: 0.74rem;
+    color: var(--text-faint);
+  }
+}
+
+.skill-modal-empty {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--text-dim);
+}
 
 @media (max-width: 480px) {
   .skills-grid { grid-template-columns: 1fr; }
+  .skill-modal { padding: 16px; }
 }

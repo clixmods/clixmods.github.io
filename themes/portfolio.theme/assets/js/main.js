@@ -543,4 +543,48 @@
       if (lbl) btn.textContent = lbl;
     });
   });
+
+  // ── Page Compétences : modale de détail ───────────────
+  var skillModal = document.querySelector("[data-skill-modal]");
+  if (skillModal) {
+    var skillContent = skillModal.querySelector("[data-skill-modal-content]");
+    var skillPanel = skillModal.querySelector(".skill-modal-panel");
+    var lastFocused = null;
+
+    var closeSkill = function () {
+      skillModal.hidden = true;
+      skillModal.classList.remove("open");
+      skillContent.textContent = "";
+      document.body.style.overflow = "";
+      if (lastFocused) lastFocused.focus();
+    };
+
+    var openSkill = function (btn) {
+      var key = btn.getAttribute("data-skill");
+      var tpl = document.querySelector('[data-skill-detail="' + key + '"]');
+      if (!tpl) return;
+      lastFocused = btn;
+      skillContent.textContent = "";
+      skillContent.appendChild(tpl.content.cloneNode(true));
+      skillModal.hidden = false;
+      // Laisse le navigateur appliquer `hidden = false` avant la transition
+      requestAnimationFrame(function () { skillModal.classList.add("open"); });
+      document.body.style.overflow = "hidden";
+      if (skillPanel) skillPanel.focus();
+    };
+
+    document.querySelectorAll("[data-skill]").forEach(function (btn) {
+      btn.addEventListener("click", function () { openSkill(btn); });
+    });
+
+    skillModal.addEventListener("click", function (e) {
+      if (e.target.closest(".skill-modal-panel") && !e.target.closest("[data-skill-close]")) return;
+      closeSkill();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (skillModal.hidden) return;
+      if (e.key === "Escape") closeSkill();
+    });
+  }
 })();

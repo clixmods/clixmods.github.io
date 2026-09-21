@@ -5,7 +5,11 @@
     "iconPath": "/images/technologies/CSharp.svg",
     "color": "#239120",
     "displayedInPortfolio": true,
-    "experience": 5
+    "experience": 5,
+    "categories": [
+      "gamedev",
+      "backend"
+    ]
   },
   {
     "key": "lang_lua",
@@ -13,7 +17,10 @@
     "iconPath": "/images/technologies/Lua.svg",
     "color": "#000080",
     "displayedInPortfolio": true,
-    "experience": 3
+    "experience": 3,
+    "categories": [
+      "gamedev"
+    ]
   },
   {
     "key": "lang_sql",
@@ -21,7 +28,10 @@
     "iconPath": "/images/technologies/Sql_data_base_with_logo.svg",
     "color": "#336791",
     "displayedInPortfolio": true,
-    "experience": 2
+    "experience": 2,
+    "categories": [
+      "backend"
+    ]
   },
   {
     "key": "lang_javascript",
@@ -29,7 +39,10 @@
     "iconPath": "/images/technologies/JavaScript.svg",
     "color": "#F7DF1E",
     "displayedInPortfolio": false,
-    "experience": 2
+    "experience": 2,
+    "categories": [
+      "frontend"
+    ]
   },
   {
     "key": "lang_typescript",
@@ -37,7 +50,10 @@
     "iconPath": "/images/technologies/TypeScript.svg",
     "color": "#3178C6",
     "displayedInPortfolio": false,
-    "experience": 1
+    "experience": 1,
+    "categories": [
+      "frontend"
+    ]
   },
   {
     "key": "lang_java",
@@ -45,7 +61,10 @@
     "iconPath": "/images/technologies/Java.svg",
     "color": "#007396",
     "displayedInPortfolio": true,
-    "experience": 2
+    "experience": 2,
+    "categories": [
+      "backend"
+    ]
   },
   {
     "key": "lang_php",
@@ -53,7 +72,10 @@
     "iconPath": "/images/technologies/PHP.svg",
     "color": "#777BB4",
     "displayedInPortfolio": true,
-    "experience": 2
+    "experience": 2,
+    "categories": [
+      "backend"
+    ]
   },
   {
     "key": "lang_hlsl",
@@ -61,56 +83,80 @@
     "iconPath": null,
     "color": "#FF6B6B",
     "displayedInPortfolio": false,
-    "experience": 0.5
+    "experience": 0.5,
+    "categories": [
+      "gamedev"
+    ]
   },
   {
     "key": "lang_cpp",
     "experience": 1,
     "iconPath": "images/technologies/CPlusPlus.svg",
     "color": "#00599C",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": true,
+    "categories": [
+      "gamedev"
+    ]
   },
   {
     "key": "lang_gsc",
     "experience": 4,
     "iconPath": "images/technologies/bo3.png",
     "color": "#FF6600",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": true,
+    "categories": [
+      "gamedev"
+    ]
   },
   {
     "key": "lang_c",
     "experience": 0.25,
     "iconPath": "images/technologies/C.svg",
     "color": "#A8B9CC",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "categories": [
+      "backend"
+    ]
   },
   {
     "key": "lang_html",
     "experience": 2,
     "iconPath": "images/technologies/HTML5.svg",
     "color": "#E34F26",
-    "displayedInPortfolio": true
+    "displayedInPortfolio": true,
+    "categories": [
+      "frontend"
+    ]
   },
   {
     "key": "lang_css",
     "experience": 2,
     "iconPath": "images/technologies/CSS3.svg",
     "color": "#1572B6",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "categories": [
+      "frontend"
+    ]
   },
   {
     "key": "lang_mysql",
     "experience": 1,
     "iconPath": "images/technologies/MySQL.svg",
     "color": "#4479A1",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "categories": [
+      "backend"
+    ]
   },
   {
     "key": "lang_oracle_sql",
     "experience": 0.5,
     "iconPath": "images/technologies/Oracle.svg",
     "color": "#F80000",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "categories": [
+      "backend"
+    ]
   },
   {
     "key": "lang_python",
@@ -118,6 +164,9 @@
     "iconPath": "/images/technologies/Python.svg",
     "color": "#3776AB",
     "displayedInPortfolio": true,
-    "experience": 1
+    "experience": 1,
+    "categories": [
+      "backend"
+    ]
   }
 ]

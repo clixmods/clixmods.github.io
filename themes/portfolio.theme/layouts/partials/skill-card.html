@@ -1,11 +1,59 @@
-{{- /* Carte de compétence. Contexte = dict { key, desc }. */ -}}
+{{- /*
+  Carte de compétence cliquable + son contenu de modale.
+  Contexte = dict { key, projects (slice de pages), experience }.
+  Le bouton affiche les deux chiffres clés (projets / ancienneté) ; le détail
+  (liste des projets) est stocké dans un <template> lu par main.js au clic.
+*/ -}}
 {{- $key := .key -}}
 {{- $t := partial "tech-resolve.html" $key -}}
-{{- $desc := .desc -}}
-<div class="skill-card{{ if not $desc }} no-desc{{ end }}">
+{{- $projects := .projects -}}
+{{- $n := len $projects -}}
+{{- $years := partial "duration-label.html" .experience -}}
+<button type="button" class="skill-card" data-skill="{{ $key }}" aria-haspopup="dialog">
   {{ partial "tech-icon.html" $t }}
-  <div class="skill-card-body">
-    <div class="skill-card-name">{{ $t.label }}</div>
-    {{- with $desc }}<div class="skill-card-desc">{{ . | safeHTML }}</div>{{ end }}
+  <span class="skill-card-body">
+    <span class="skill-card-name">{{ $t.label }}</span>
+    <span class="skill-card-meta">
+      {{- if $n }}<span class="skill-card-stat">{{ $n }}&nbsp;{{ i18n (cond (eq $n 1) "ui_project" "ui_projects") }}</span>{{ end -}}
+      {{- if and $n $years }}<span class="skill-card-sep" aria-hidden="true">·</span>{{ end -}}
+      {{- with $years }}<span class="skill-card-stat">{{ . }}</span>{{ end -}}
+    </span>
+  </span>
+</button>
+<template data-skill-detail="{{ $key }}">
+  <div class="skill-modal-head">
+    {{ partial "tech-icon.html" $t }}
+    <h2 class="skill-modal-title">{{ $t.label }}</h2>
   </div>
-</div>
+  <div class="skill-modal-stats">
+    {{- if $n }}
+    <div class="skill-stat">
+      <span class="skill-stat-value">{{ $n }}</span>
+      <span class="skill-stat-label">{{ i18n (cond (eq $n 1) "ui_project" "ui_projects") }}</span>
+    </div>
+    {{- end }}
+    {{- with $years }}
+    <div class="skill-stat">
+      <span class="skill-stat-value">{{ . }}</span>
+      <span class="skill-stat-label">{{ i18n "ui_of_experience" }}</span>
+    </div>
+    {{- end }}
+  </div>
+  {{- if $n }}
+  <div class="skill-modal-section">
+    <div class="skill-modal-subtitle">{{ i18n "ui_skill_used_in" }}</div>
+    <ul class="skill-modal-projects">
+      {{- range $projects }}
+      <li>
+        <a href="{{ .RelPermalink }}">
+          <span class="skill-proj-title">{{ .Title }}</span>
+          {{- with .Date }}<span class="skill-proj-year">{{ .Format "2006" }}</span>{{ end -}}
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+  {{- else }}
+  <p class="skill-modal-empty">{{ i18n "ui_skill_no_project" }}</p>
+  {{- end }}
+</template>

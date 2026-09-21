@@ -1,0 +1,17 @@
+{{- /*
+  Formate une durée d'expérience (nombre d'années, fractions autorisées)
+  en libellé traduit : « 5 ans », « 1 an », « 6 mois ». Chaîne vide si absent.
+  Contexte = le nombre.
+*/ -}}
+{{- $e := . -}}
+{{- $out := "" -}}
+{{- if $e -}}
+  {{- if lt $e 1.0 -}}
+    {{- $m := int (math.Round (mul $e 12)) -}}
+    {{- $out = printf "%d %s" $m (i18n (cond (eq $m 1) "ui_month" "ui_months")) -}}
+  {{- else -}}
+    {{- $y := int $e -}}
+    {{- $out = printf "%d %s" $y (i18n (cond (eq $y 1) "ui_year" "ui_years")) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

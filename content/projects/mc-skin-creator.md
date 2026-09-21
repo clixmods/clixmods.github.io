@@ -97,8 +97,6 @@ ranking = 130
 
 # MC Skin Creator
 
-**Stack :** Java 21 · Spring Boot · JPA / Flyway · Angular · TypeScript · WebGL · JUnit · Playwright · GitHub Actions
-
 **MC Skin Creator** est un éditeur de skins Minecraft dans le navigateur, en ligne sur **[mcskincreator.app](https://mcskincreator.app/)**. On compose un personnage en empilant des calques (peau, yeux, cheveux, vêtements…) pris dans un catalogue de plus de 500 éléments, on les recolore, on dessine au pixel et on voit le résultat en 3D animée, avant de l'exporter en PNG, en GIF ou en planche de sprites. L'application associe un back-end **Java 21 / Spring Boot 4** et un front **Angular 21**, livrés ensemble dans un seul jar exécutable construit par Maven. Interface en français, anglais et espagnol ; projet personnel, entièrement développé avec l'assistance de l'IA (Claude).
 
 ## Back-end — Java 21, Spring Boot 4

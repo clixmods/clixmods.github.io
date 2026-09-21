@@ -1,13 +1,70 @@
 {{ define "main" }}
 {{- $page := .page -}}
 
-{{/* Catégories de compétences (data/*.json filtrées displayedInPortfolio) */}}
+{{/* ── Index clé → projets qui l'utilisent ─────────────────────────────
+     Parcourt une seule fois les projets de la langue courante et range
+     chaque clé (lang_* / fw_* / spec_* / skill_* / tool_*) dans une map. */}}
+{{- $fields := slice "programming_languages" "frameworks_engines" "specialties" "soft_skills" "tools" -}}
+{{- $byKey := dict -}}
+{{- range $p := (where site.RegularPages "Section" "projects") -}}
+  {{- $keys := slice -}}
+  {{- range $f := $fields -}}
+    {{- with (index $p.Params $f) -}}{{- $keys = $keys | append . -}}{{- end -}}
+  {{- end -}}
+  {{- range $k := (uniq $keys) -}}
+    {{- $cur := index $byKey $k | default slice -}}
+    {{- $byKey = merge $byKey (dict $k ($cur | append $p)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* ── Sélection des compétences à afficher ────────────────────────────
+     Une compétence apparaît si elle est mise en avant (displayedInPortfolio)
+     OU si elle est réellement utilisée par au moins un projet : la page
+     compétences reflète ainsi le contenu du portfolio. */}}
+{{- $pick := dict -}}
+{{- $sources := dict
+      "programming_languages" site.Data.programming_languages
+      "frameworks_engines"    site.Data.frameworks_engines
+      "specialties"           site.Data.specialties
+      "soft_skills"           site.Data.soft_skills
+      "tools"                 site.Data.tools -}}
+{{- range $name, $items := $sources -}}
+  {{- $kept := slice -}}
+  {{- range $items -}}
+    {{- $used := index $byKey .key | default slice -}}
+    {{- if or .displayedInPortfolio $used -}}
+      {{- $kept = $kept | append (merge . (dict "projects" (sort $used "Date" "desc") "usage" (len $used))) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $pick = merge $pick (dict $name (sort (sort $kept "usage" "desc") "experience" "desc")) -}}
+{{- end -}}
+
+{{/* ── Langages : sous-groupes front / back / jeu vidéo ─────────────── */}}
+{{- $langs := index $pick "programming_languages" -}}
+{{- $langGroups := slice -}}
+{{- range $c := (slice "frontend" "backend" "gamedev") -}}
+  {{- $sub := slice -}}
+  {{- range $langs -}}
+    {{- if in (.categories | default slice) $c -}}{{- $sub = $sub | append . -}}{{- end -}}
+  {{- end -}}
+  {{- with $sub -}}
+    {{- $langGroups = $langGroups | append (dict "title" (i18n (printf "ui_lang_%s" $c)) "items" .) -}}
+  {{- end -}}
+{{- end -}}
+{{- $other := slice -}}
+{{- range $langs -}}
+  {{- if not (.categories | default slice) -}}{{- $other = $other | append . -}}{{- end -}}
+{{- end -}}
+{{- with $other -}}
+  {{- $langGroups = $langGroups | append (dict "title" (i18n "ui_lang_other") "items" .) -}}
+{{- end -}}
+
 {{- $cats := slice
-      (dict "title" (i18n "proj_languages")  "kind" "years" "items" (sort (where site.Data.programming_languages "displayedInPortfolio" true) "experience" "desc"))
-      (dict "title" (i18n "proj_frameworks")  "kind" "years" "items" (sort (where site.Data.frameworks_engines "displayedInPortfolio" true) "experience" "desc"))
-      (dict "title" (i18n "proj_specialties") "kind" "sub"   "items" (sort (where site.Data.specialties "displayedInPortfolio" true) "experience" "desc"))
-      (dict "title" (i18n "ui_tools")         "kind" "desc"  "items" (sort (where site.Data.tools "displayedInPortfolio" true) "experience" "desc"))
-      (dict "title" (i18n "proj_softskills")  "kind" "sub"   "items" (where site.Data.soft_skills "displayedInPortfolio" true))
+      (dict "title" (i18n "proj_languages")   "items" $langs                           "groups" $langGroups)
+      (dict "title" (i18n "proj_frameworks")  "items" (index $pick "frameworks_engines"))
+      (dict "title" (i18n "proj_specialties") "items" (index $pick "specialties"))
+      (dict "title" (i18n "ui_tools")         "items" (index $pick "tools"))
+      (dict "title" (i18n "proj_softskills")  "items" (index $pick "soft_skills"))
 -}}
 
 <section class="section page-shell">
@@ -16,43 +73,48 @@
       <span class="page-kicker">{{ i18n "ui_skills" }}</span>
       <h1>{{ $page.Title }}</h1>
       {{- with $page.Content }}<div class="skills-intro prose">{{ . }}</div>{{ end }}
+      <p class="skills-hint">{{ i18n "ui_skill_open_hint" }}</p>
     </div>
 
     <div class="skills-sections">
       {{- range $cats }}
-      {{- $title := .title }}{{ $kind := .kind }}
+      {{- $title := .title }}{{ $groups := .groups }}
       {{- with .items }}
       <section class="proj-card reveal">
         <div class="skills-section-head">
           <h2 class="proj-section-title">{{ $title }}</h2>
           <span class="skills-count">{{ len . }}</span>
         </div>
+        {{- if $groups }}
+        {{- range $groups }}
+        <div class="skills-subgroup">
+          <h3 class="skills-subtitle">{{ .title }}</h3>
+          <div class="skills-grid">
+            {{- range .items }}
+            {{ partial "skill-card.html" (dict "key" .key "projects" .projects "experience" .experience) }}
+            {{- end }}
+          </div>
+        </div>
+        {{- end }}
+        {{- else }}
         <div class="skills-grid">
           {{- range . }}
-          {{- $desc := "" -}}
-          {{- if eq $kind "years" -}}
-            {{- $e := .experience -}}
-            {{- if $e -}}
-              {{- if lt $e 1.0 -}}
-                {{- $m := int (math.Round (mul $e 12)) -}}
-                {{- $desc = printf "%d %s" $m (i18n (cond (eq $m 1) "ui_month" "ui_months")) -}}
-              {{- else -}}
-                {{- $y := int $e -}}
-                {{- $desc = printf "%d %s" $y (i18n (cond (eq $y 1) "ui_year" "ui_years")) -}}
-              {{- end -}}
-            {{- end -}}
-          {{- else if eq $kind "desc" -}}
-            {{- $desc = .description -}}
-          {{- else if eq $kind "sub" -}}
-            {{- $desc = i18n (printf "%s_subtitle" .key) -}}
-          {{- end -}}
-          {{ partial "skill-card.html" (dict "key" .key "desc" $desc) }}
+          {{ partial "skill-card.html" (dict "key" .key "projects" .projects "experience" .experience) }}
           {{- end }}
         </div>
+        {{- end }}
       </section>
       {{- end }}
       {{- end }}
     </div>
   </div>
 </section>
+
+{{/* Modale de détail d'une compétence (remplie au clic par main.js) */}}
+<div class="skill-modal" data-skill-modal hidden>
+  <div class="skill-modal-panel" role="dialog" aria-modal="true" tabindex="-1">
+    <button type="button" class="skill-modal-close" data-skill-close aria-label="{{ i18n "ui_close" }}">✕</button>
+    <div class="skill-modal-content" data-skill-modal-content></div>
+  </div>
+</div>
 {{ end }}

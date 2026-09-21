@@ -31,6 +31,19 @@
         "type": "boolean",
         "title": "Affiché dans la section portfolio",
         "description": "Ce langage de programmation est-il mis en avant dans le portfolio ?"
+      },
+      "categories": {
+        "type": "array",
+        "title": "Catégories",
+        "description": "Sous-groupes utilisés sur la page Compétences : frontend, backend, gamedev",
+        "items": {
+          "type": "string",
+          "enum": [
+            "frontend",
+            "backend",
+            "gamedev"
+          ]
+        }
       }
     },
     "required": [
