@@ -1,0 +1,3 @@
+# review stills and the intermediate soundtrack are regenerated on demand
+out/still-*.png
+out/*.wav
