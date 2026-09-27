@@ -287,6 +287,7 @@
     var slides = Array.prototype.slice.call(testi.querySelectorAll(".testi-slide"));
     var dots = Array.prototype.slice.call(testi.querySelectorAll(".testi-dot"));
     var bar = testi.querySelector(".testi-progress span");
+    var count = testi.querySelector("[data-count]");
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var idx = 0;
     var timer = null;
@@ -397,6 +398,7 @@
       collapseAll();
       slides[idx].classList.add("is-active");
       if (dots[idx]) dots[idx].classList.add("is-active");
+      if (count) count.textContent = idx + 1;
       remaining = null; // nouvelle slide → durée pleine
       updateMore();
       schedule();
@@ -433,6 +435,24 @@
       if (prevBtn) prevBtn.hidden = true;
       if (nextBtn) nextBtn.hidden = true;
     }
+
+    // Balayage horizontal (mobile) : gauche → suivant, droite → précédent.
+    // On ignore les gestes surtout verticaux pour ne pas gêner le scroll.
+    var touchX = null, touchY = null;
+    testi.addEventListener("touchstart", function (e) {
+      if (e.touches.length !== 1) { touchX = null; return; }
+      touchX = e.touches[0].clientX;
+      touchY = e.touches[0].clientY;
+    }, { passive: true });
+    testi.addEventListener("touchend", function (e) {
+      if (touchX == null || slides.length < 2) return;
+      var t = e.changedTouches[0];
+      var dx = t.clientX - touchX;
+      var dy = t.clientY - touchY;
+      touchX = null;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      go(dx < 0 ? idx + 1 : idx - 1);
+    }, { passive: true });
 
     // `updateMore` lit scrollHeight/clientHeight, donc force un layout
     // synchrone. Sur mobile, le repli de la barre d'URL émet des `resize` en

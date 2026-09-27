@@ -103,14 +103,22 @@
   gap: 14px;
 
   img {
+    flex-shrink: 0;
     width: 52px;
     height: 52px;
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid var(--glass-border-hi);
   }
+  // nom et rôle empilés : évite que le rôle se casse au milieu de la ligne du nom
+  > span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
   .testimonial-name { font-family: var(--font-head); font-weight: 600; font-size: 0.95rem; color: #fff; }
-  .testimonial-role { font-size: 0.8rem; color: var(--text-dim); }
+  .testimonial-role { font-size: 0.8rem; line-height: 1.4; color: var(--text-dim); }
 }
 
 // barre de progression (remplie par JS selon la durée)
@@ -200,6 +208,62 @@
 
   &:hover::before { background: rgba(255, 255, 255, 0.4); }
   &.is-active::before { width: 22px; border-radius: var(--r-pill); background: var(--grad-cold); }
+}
+
+// compteur « 1 / N » — masqué par défaut, remplace les pastilles sur mobile
+.testi-count {
+  display: none;
+  min-width: 64px;
+  text-align: center;
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+
+  [data-count] { color: #fff; }
+}
+
+// ── Mobile : trop de pastilles pour la largeur (débordement + flèches
+// rognées). On passe sur flèches + compteur, et on resserre le bloc.
+@media (max-width: 640px) {
+  .testi-carousel {
+    padding: 24px 20px 26px;
+  }
+
+  .testi-slide { gap: 14px; }
+
+  .testi-quote {
+    font-size: 0.98rem;
+    line-height: 1.55;
+
+    &::before { font-size: 2.4rem; }
+  }
+
+  .testi-slide:not(.expanded) .testi-quote {
+    -webkit-line-clamp: 6;
+    min-height: calc(1.55em * 6);
+  }
+
+  .testi-author {
+    gap: 12px;
+
+    img { width: 44px; height: 44px; }
+    .testimonial-name { font-size: 0.9rem; }
+    .testimonial-role { font-size: 0.76rem; }
+  }
+
+  .testi-controls {
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .testi-dots { display: none; }
+  .testi-count { display: block; }
+
+  .testi-nav { width: 42px; height: 42px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
