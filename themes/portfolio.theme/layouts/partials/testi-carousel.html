@@ -44,6 +44,8 @@
       <button type="button" class="testi-dot{{ if eq $i 0 }} is-active{{ end }}" data-i="{{ $i }}" aria-label="{{ i18n "ui_testimonials" }} {{ add $i 1 }}"></button>
       {{- end }}
     </div>
+    {{- /* Compteur compact « 1 / N » : remplace les pastilles sur mobile */}}
+    <span class="testi-count" aria-hidden="true"><span data-count>1</span> / {{ len . }}</span>
     <button type="button" class="testi-nav testi-next" data-next aria-label="{{ i18n "ui_next" }}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>

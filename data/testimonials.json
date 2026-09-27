@@ -1,5 +1,11 @@
 [
   {
+    "personId": "sylvain-ghysens",
+    "company": "Webmay",
+    "position": "Président / Créateur de Time Trial Cards",
+    "text": "J’ai eu l’occasion de travailler avec Clément sur le développement de Time Trial Cards, un jeu éducatif développé sous Unity. Clément a participé activement au développement du projet, à l’intégration de nouvelles fonctionnalités ainsi qu’à la résolution de différents problèmes techniques rencontrés au cours de la production. J’ai particulièrement apprécié son sérieux, sa capacité à comprendre les besoins, à trouver des solutions techniques et à faire évoluer le projet en fonction des retours. Clément est un développeur impliqué, autonome et fiable, avec qui il est agréable de travailler. Je le recommande pour des projets de développement, notamment dans le domaine du jeu vidéo sous Unity."
+  },
+  {
     "personId": "francois-bertrand",
     "company": "La Moutarde",
     "position": "Co-fondateur / Directeur de jeu",
