@@ -260,5 +260,14 @@
     "iconPath": "images/technologies/GitHub-Actions.svg",
     "color": "#2088FF",
     "displayedInPortfolio": false
+  },
+  {
+    "key": "tool_gradle",
+    "category": "devops",
+    "description": "Build multi-versions (Stonecutter) et génération des jars",
+    "experience": 1,
+    "iconPath": "images/technologies/Gradle.svg",
+    "color": "#02303A",
+    "displayedInPortfolio": false
   }
 ]

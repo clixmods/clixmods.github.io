@@ -161,5 +161,13 @@
     "iconPath": "/images/technologies/Angular.svg",
     "color": "#DD0031",
     "displayedInPortfolio": false
+  },
+  {
+    "key": "fw_fabric",
+    "experience": 1,
+    "icon": "🧵",
+    "iconPath": null,
+    "color": "#DBD0B4",
+    "displayedInPortfolio": false
   }
 ]
