@@ -98,11 +98,14 @@
     </div>
 
     {{- with index $pick "soft_skills" }}
-    <div class="skills-badges" aria-label="{{ i18n "ui_softskills_badges" }}">
+    <div class="skills-badges-block">
+    <div class="skills-badges-label">{{ i18n "proj_softskills" }}</div>
+    <div class="skills-badges">
       {{- range . }}
       {{- $t := partial "tech-resolve.html" .key }}
       <span class="skills-badge">{{ partial "tech-icon.html" $t }}<span>{{ $t.label }}</span></span>
       {{- end }}
+    </div>
     </div>
     {{- end }}
 
