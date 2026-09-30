@@ -120,6 +120,13 @@
     "category": "frontend"
   },
   {
+    "key": "spec_developpement_dapi",
+    "icon": "🔌",
+    "experience": 2,
+    "displayedInPortfolio": true,
+    "category": "backend"
+  },
+  {
     "key": "spec_securite_et_optimisation",
     "icon": "🔒",
     "iconPath": null,
@@ -134,13 +141,6 @@
     "displayedInPortfolio": true,
     "experience": 3,
     "category": "quality"
-  },
-  {
-    "key": "spec_developpement_dapi",
-    "icon": "🔌",
-    "experience": 2,
-    "displayedInPortfolio": true,
-    "category": "backend"
   },
   {
     "key": "spec_architecture_logicielle",

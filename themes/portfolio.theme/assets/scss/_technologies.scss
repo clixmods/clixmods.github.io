@@ -126,3 +126,29 @@
     background: var(--grad-cold);
   }
 }
+
+// Titre de la section « Spécialités » (les groupes qui suivent sont ses sous-titres)
+.tech-subtitle-main {
+  display: flex;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--glass-border);
+  color: var(--text);
+}
+
+.tech-more {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: var(--font-head);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--warm);
+
+  &:hover { text-decoration: underline; }
+}
+
+.tech-subtitle-main + .tech-group {
+  margin-top: 14px;
+  padding-top: 0;
+  border-top: 0;
+}

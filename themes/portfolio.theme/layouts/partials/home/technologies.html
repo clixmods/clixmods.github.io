@@ -1,12 +1,52 @@
+{{/* Bloc compétences de l'accueil : résumé.
+     Langages / frameworks : sélection courte (back-end en premier).
+     Spécialités : quelques-unes par groupe, les plus utilisées dans les projets.
+     Le détail complet vit sur la page Compétences. */}}
+{{- $featuredLangs := slice "lang_csharp" "lang_php" "lang_sql" "lang_javascript" "lang_typescript" "lang_java" "lang_python" -}}
+{{- $featuredFw := slice "fw_net" "fw_symfony" "fw_laravel" "fw_blazor" "fw_vue_js" "fw_spring_boot" -}}
+{{- $specGroups := slice
+      (dict "key" "backend"  "n" 3)
+      (dict "key" "frontend" "n" 2)
+      (dict "key" "quality"  "n" 1)
+      (dict "key" "tooling"  "n" 1)
+      (dict "key" "gamedev"  "n" 3) -}}
+
+{{/* Usage de chaque spécialité dans les projets de la langue courante */}}
+{{- $usage := dict -}}
+{{- range (where site.RegularPages "Section" "projects") -}}
+  {{- range (.Params.specialties | default slice) -}}
+    {{- $usage = merge $usage (dict . (add 1 (index $usage . | default 0))) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $langItems := slice -}}
+{{- range $featuredLangs -}}{{- $k := . -}}{{- range where site.Data.programming_languages "key" $k -}}{{- $langItems = $langItems | append . -}}{{- end -}}{{- end -}}
+{{- $fwItems := slice -}}
+{{- range $featuredFw -}}{{- $k := . -}}{{- range where site.Data.frameworks_engines "key" $k -}}{{- $fwItems = $fwItems | append . -}}{{- end -}}{{- end -}}
+
 {{- $groups := slice
-      (dict "label" (i18n "proj_languages")   "items" (sort (where site.Data.programming_languages "displayedInPortfolio" true) "experience" "desc"))
-      (dict "label" (i18n "proj_frameworks")   "items" (sort (where site.Data.frameworks_engines "displayedInPortfolio" true) "experience" "desc"))
-      (dict "label" (i18n "proj_specialties")  "items" (sort (where site.Data.specialties "displayedInPortfolio" true) "experience" "desc"))
-      (dict "label" (i18n "proj_softskills")   "items" (where site.Data.soft_skills "displayedInPortfolio" true))
--}}
+      (dict "label" (i18n "proj_languages")  "items" $langItems)
+      (dict "label" (i18n "proj_frameworks") "items" $fwItems) -}}
+{{- range $specGroups -}}
+  {{- $g := . -}}
+  {{- $inGroup := where site.Data.specialties "category" $g.key -}}
+  {{- $ranked := slice -}}
+  {{- range $inGroup -}}
+    {{- $ranked = $ranked | append (merge . (dict "usage" (index $usage .key | default 0))) -}}
+  {{- end -}}
+  {{- $top := first $g.n (sort $ranked "usage" "desc") -}}
+  {{- $groups = $groups | append (dict "label" (i18n (printf "ui_spec_grp_%s" $g.key)) "items" $top "spec" true) -}}
+{{- end -}}
+{{- $groups = $groups | append (dict "label" (i18n "proj_softskills") "items" (where site.Data.soft_skills "displayedInPortfolio" true)) -}}
+
 <div class="tech-card reveal">
+  {{- $specTitleDone := false -}}
   {{- range $groups }}
   {{- $label := .label }}
+  {{- if and .spec (not $specTitleDone) }}
+  {{- $specTitleDone = true }}
+  <div class="tech-subtitle tech-subtitle-main">{{ i18n "proj_specialties" }}</div>
+  {{- end }}
   {{- with .items }}
   <div class="tech-group">
     <div class="tech-subtitle">{{ $label }}</div>
@@ -21,5 +61,8 @@
     </div>
   </div>
   {{- end }}
+  {{- end }}
+  {{- with site.GetPage "/skills" }}
+  <a class="tech-more" href="{{ .RelPermalink }}">{{ i18n "ui_see_all_skills" }} →</a>
   {{- end }}
 </div>
