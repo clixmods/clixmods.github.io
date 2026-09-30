@@ -4,112 +4,128 @@
     "iconPath": "/images/technologies/Unity.svg",
     "color": "#000000",
     "displayedInPortfolio": true,
-    "experience": 5
+    "experience": 5,
+    "category": "game_engine"
   },
   {
     "key": "fw_blazor",
     "iconPath": "/images/technologies/Blazor.png",
     "color": "#512BD4",
     "displayedInPortfolio": true,
-    "experience": 1
+    "experience": 1,
+    "category": "frontend"
   },
   {
     "key": "fw_fastendpoint",
     "iconPath": "/images/technologies/fastendpoint.png",
     "color": "#FF6B35",
     "displayedInPortfolio": false,
-    "experience": 1
+    "experience": 1,
+    "category": "backend"
   },
   {
     "key": "fw_signalr",
     "iconPath": "/images/technologies/signalR_logo.png",
     "color": "#512BD4",
     "displayedInPortfolio": false,
-    "experience": 1
+    "experience": 1,
+    "category": "backend"
   },
   {
     "key": "fw_net",
     "iconPath": "/images/technologies/DotNET.svg",
     "color": "#512BD4",
     "displayedInPortfolio": true,
-    "experience": 2
+    "experience": 2,
+    "category": "backend"
   },
   {
     "key": "fw_unreal_engine",
     "iconPath": "/images/technologies/Unreal-Engine.svg",
     "color": "#0E1128",
     "displayedInPortfolio": true,
-    "experience": 2
+    "experience": 2,
+    "category": "game_engine"
   },
   {
     "key": "fw_black_ops_iii_engine",
     "iconPath": "/images/technologies/bo3.png",
     "color": "#000000",
     "displayedInPortfolio": true,
-    "experience": 6
+    "experience": 6,
+    "category": "game_engine"
   },
   {
     "key": "fw_symfony",
     "experience": 1,
     "displayedInPortfolio": true,
     "iconPath": "/images/technologies/Symfony.svg",
-    "color": "#000000"
+    "color": "#000000",
+    "category": "backend"
   },
   {
     "key": "fw_vue_js",
     "experience": 1,
     "displayedInPortfolio": true,
     "iconPath": "/images/technologies/Vue.js.svg",
-    "color": "#4FC08D"
+    "color": "#4FC08D",
+    "category": "frontend"
   },
   {
     "key": "fw_hugo",
     "experience": 1,
     "iconPath": "/images/technologies/Hugo.svg",
     "displayedInPortfolio": true,
-    "color": "#FF4088"
+    "color": "#FF4088",
+    "category": "cms"
   },
   {
     "key": "fw_javafx",
     "experience": 2,
     "iconPath": "/images/technologies/JavaFX_Logo.png",
     "color": "#FF6B1A",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "frontend"
   },
   {
     "key": "fw_taglibsharp",
     "experience": 1,
     "iconPath": null,
     "color": "#2D3E50",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "other"
   },
   {
     "key": "fw_cassandra",
     "experience": 0.5,
     "iconPath": "/images/technologies/Apache-Cassandra.svg",
     "color": "#1287B1",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "database"
   },
   {
     "key": "fw_mongodb",
     "experience": 0.5,
     "iconPath": "/images/technologies/MongoDB.svg",
     "color": "#47A248",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "database"
   },
   {
     "key": "fw_wordpress",
     "experience": 1,
     "iconPath": "/images/technologies/WordPress.svg",
     "color": "#21759B",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "cms"
   },
   {
     "key": "fw_laravel",
     "iconPath": "/images/technologies/Laravel.svg",
     "color": "#FF2D20",
     "displayedInPortfolio": true,
-    "experience": 1
+    "experience": 1,
+    "category": "backend"
   },
   {
     "key": "fw_api_platform",
@@ -117,35 +133,40 @@
     "iconPath": null,
     "color": "#38A9B4",
     "displayedInPortfolio": true,
-    "experience": 1
+    "experience": 1,
+    "category": "backend"
   },
   {
     "key": "fw_webgl",
     "experience": 1,
     "iconPath": "/images/technologies/OpenGL.svg",
     "color": "#990000",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "frontend"
   },
   {
     "key": "fw_nodejs",
     "experience": 1,
     "iconPath": "/images/technologies/Node.js.svg",
     "color": "#5FA04E",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "backend"
   },
   {
     "key": "fw_spring_boot",
     "experience": 1,
     "iconPath": "/images/technologies/Spring.svg",
     "color": "#6DB33F",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "backend"
   },
   {
     "key": "fw_jpa",
     "experience": 1,
     "iconPath": "/images/technologies/Hibernate.svg",
     "color": "#59666C",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "backend"
   },
   {
     "key": "fw_flyway",
@@ -153,14 +174,16 @@
     "icon": "🗃️",
     "iconPath": null,
     "color": "#CC0200",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "database"
   },
   {
     "key": "fw_angular",
     "experience": 1,
     "iconPath": "/images/technologies/Angular.svg",
     "color": "#DD0031",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "frontend"
   },
   {
     "key": "fw_fabric",
@@ -168,6 +191,7 @@
     "icon": "🧵",
     "iconPath": null,
     "color": "#DBD0B4",
-    "displayedInPortfolio": false
+    "displayedInPortfolio": false,
+    "category": "game_engine"
   }
 ]

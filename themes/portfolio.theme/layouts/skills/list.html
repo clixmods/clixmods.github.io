@@ -39,31 +39,47 @@
   {{- $pick = merge $pick (dict $name (sort (sort $kept "usage" "desc") "experience" "desc")) -}}
 {{- end -}}
 
-{{/* ── Langages : sous-groupes front / back, le reste dans « Autres » ── */}}
-{{- $langs := index $pick "programming_languages" -}}
-{{- $langGroups := slice -}}
-{{- range $c := (slice "frontend" "backend") -}}
-  {{- $sub := slice -}}
-  {{- range $langs -}}
-    {{- if in (.categories | default slice) $c -}}{{- $sub = $sub | append . -}}{{- end -}}
+{{/* ── Sous-groupes ────────────────────────────────────────────────────
+     Langages : front / back (champ `categories`). Frameworks & outils : champ
+     `category`. L'ordre des groupes est fixe ; ce qui n'a pas de groupe
+     connu tombe dans « Autres ». Un groupe vide n'est pas affiché. */}}
+{{- $groupOrders := dict
+      "lang" (slice "frontend" "backend")
+      "fw"   (slice "game_engine" "frontend" "backend" "database" "cms")
+      "tool" (slice "ci_cd" "version_control" "tests" "ide" "project_management" "cloud_devops" "creative" "ai_tools") -}}
+{{- $groupedSets := dict -}}
+{{- range $prefix, $order := $groupOrders -}}
+  {{- $src := "" -}}
+  {{- if eq $prefix "lang" }}{{ $src = "programming_languages" }}{{ else if eq $prefix "fw" }}{{ $src = "frameworks_engines" }}{{ else }}{{ $src = "tools" }}{{ end -}}
+  {{- $items := index $pick $src -}}
+  {{- $groups := slice -}}
+  {{- $placed := slice -}}
+  {{- range $c := $order -}}
+    {{- $sub := slice -}}
+    {{- range $items -}}
+      {{- $own := .categories | default (cond (isset . "category") (slice .category) slice) -}}
+      {{- if in $own $c -}}{{- $sub = $sub | append . -}}{{- $placed = $placed | append .key -}}{{- end -}}
+    {{- end -}}
+    {{- with $sub -}}
+      {{- $groups = $groups | append (dict "title" (i18n (printf "ui_%s_grp_%s" $prefix $c)) "items" .) -}}
+    {{- end -}}
   {{- end -}}
-  {{- with $sub -}}
-    {{- $langGroups = $langGroups | append (dict "title" (i18n (printf "ui_lang_%s" $c)) "items" .) -}}
+  {{- $other := slice -}}
+  {{- range $items -}}
+    {{- if not (in $placed .key) -}}{{- $other = $other | append . -}}{{- end -}}
   {{- end -}}
-{{- end -}}
-{{- $other := slice -}}
-{{- range $langs -}}
-  {{- if not (.categories | default slice) -}}{{- $other = $other | append . -}}{{- end -}}
-{{- end -}}
-{{- with $other -}}
-  {{- $langGroups = $langGroups | append (dict "title" (i18n "ui_lang_other") "items" .) -}}
+  {{- with $other -}}
+    {{- $groups = $groups | append (dict "title" (i18n "ui_lang_other") "items" .) -}}
+  {{- end -}}
+  {{- $groupedSets = merge $groupedSets (dict $prefix $groups) -}}
 {{- end -}}
 
+{{- $langs := index $pick "programming_languages" -}}
 {{- $cats := slice
-      (dict "title" (i18n "proj_languages")   "items" $langs                           "groups" $langGroups)
-      (dict "title" (i18n "proj_frameworks")  "items" (index $pick "frameworks_engines"))
+      (dict "title" (i18n "proj_languages")   "items" $langs                                 "groups" (index $groupedSets "lang"))
+      (dict "title" (i18n "proj_frameworks")  "items" (index $pick "frameworks_engines")     "groups" (index $groupedSets "fw"))
       (dict "title" (i18n "proj_specialties") "items" (index $pick "specialties"))
-      (dict "title" (i18n "ui_tools")         "items" (index $pick "tools"))
+      (dict "title" (i18n "ui_tools")         "items" (index $pick "tools")                  "groups" (index $groupedSets "tool"))
       (dict "title" (i18n "proj_softskills")  "items" (index $pick "soft_skills"))
 -}}
 
