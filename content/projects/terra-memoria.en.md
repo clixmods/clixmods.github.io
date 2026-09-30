@@ -13,7 +13,7 @@ fmContentType = "project-content-type"
 status = "Completed"
 logo = "/images/projects/terra-memoria/terra-memoria-logo.png"
 image = "/images/projects/terra-memoria/terra-memoria-background.jpg"
-frameworks_engines = [ "fw_unity" ]
+frameworks_engines = [ "fw_unity", "fw_net" ]
 programming_languages = [ "lang_csharp" ]
 specialties = [
   "spec_portage_console",
