@@ -13,7 +13,7 @@ fmContentType = "project-content-type"
 logo = "/images/projects/stone-keeper/stone-keeper-logo.png"
 status = "Terminé"
 image = "/images/projects/stone-keeper/stone-keeper-10 .jpg"
-frameworks_engines = [ "fw_unity" ]
+frameworks_engines = [ "fw_unity", "fw_net" ]
 programming_languages = [ "lang_csharp" ]
 specialties = [
   "spec_game_design",

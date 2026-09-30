@@ -11,7 +11,7 @@ featured = false
 fmContentType = "project-content-type"
 status = "En Cours"
 programming_languages = [ "lang_csharp" ]
-frameworks_engines = [ "fw_unity" ]
+frameworks_engines = [ "fw_unity", "fw_net" ]
 specialties = [
   "spec_developpement_de_jeux_video",
   "spec_developpement_gameplay",
