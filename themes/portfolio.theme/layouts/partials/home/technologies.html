@@ -4,12 +4,7 @@
      Le détail complet vit sur la page Compétences. */}}
 {{- $featuredLangs := slice "lang_csharp" "lang_php" "lang_sql" "lang_javascript" "lang_typescript" "lang_java" "lang_python" -}}
 {{- $featuredFw := slice "fw_net" "fw_symfony" "fw_laravel" "fw_blazor" "fw_vue_js" "fw_spring_boot" -}}
-{{- $specGroups := slice
-      (dict "key" "backend"  "n" 3)
-      (dict "key" "frontend" "n" 2)
-      (dict "key" "quality"  "n" 1)
-      (dict "key" "tooling"  "n" 1)
-      (dict "key" "gamedev"  "n" 3) -}}
+{{- $specCount := 7 -}}
 
 {{/* Usage de chaque spécialité dans les projets de la langue courante */}}
 {{- $usage := dict -}}
@@ -27,29 +22,19 @@
 {{- $groups := slice
       (dict "label" (i18n "proj_languages")  "items" $langItems)
       (dict "label" (i18n "proj_frameworks") "items" $fwItems) -}}
-{{- range $specGroups -}}
-  {{- $g := . -}}
-  {{- $inGroup := where site.Data.specialties "category" $g.key -}}
-  {{- $ranked := slice -}}
-  {{- range $inGroup -}}
-    {{- $ranked = $ranked | append (merge . (dict "usage" (index $usage .key | default 0))) -}}
-  {{- end -}}
-  {{- $top := first $g.n (sort $ranked "usage" "desc") -}}
-  {{- $groups = $groups | append (dict "label" (i18n (printf "ui_spec_grp_%s" $g.key)) "items" $top "spec" true) -}}
+{{/* Spécialités : les plus utilisées, hors jeu vidéo, en un seul nuage de mots-clés */}}
+{{- $specs := slice -}}
+{{- range where site.Data.specialties "category" "ne" "gamedev" -}}
+  {{- $specs = $specs | append (merge . (dict "usage" (index $usage .key | default 0))) -}}
 {{- end -}}
-{{- $groups = $groups | append (dict "label" (i18n "proj_softskills") "items" (where site.Data.soft_skills "displayedInPortfolio" true)) -}}
+{{- $groups = $groups | append (dict "label" (i18n "proj_specialties") "items" (first $specCount (sort $specs "usage" "desc"))) -}}
 
 <div class="tech-card reveal">
-  {{- $specTitleDone := false -}}
   {{- range $groups }}
-  {{- $label := .label }}{{ $isSpec := .spec }}
-  {{- if and .spec (not $specTitleDone) }}
-  {{- $specTitleDone = true }}
-  <div class="tech-subtitle tech-subtitle-main">{{ i18n "proj_specialties" }}</div>
-  {{- end }}
+  {{- $label := .label }}
   {{- with .items }}
-  <div class="tech-group{{ if $isSpec }} tech-group-sub{{ end }}">
-    <div class="tech-subtitle{{ if $isSpec }} tech-subtitle-sub{{ end }}">{{ $label }}</div>
+  <div class="tech-group">
+    <div class="tech-subtitle">{{ $label }}</div>
     <div class="tech-pills">
       {{- range . }}
       {{- $t := partial "tech-resolve.html" .key -}}
