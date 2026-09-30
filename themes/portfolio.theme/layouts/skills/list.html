@@ -97,11 +97,6 @@
       <p class="skills-hint">{{ i18n "ui_skill_open_hint" }}</p>
     </div>
 
-    <div class="skills-profiles" role="tablist" aria-label="{{ i18n "ui_profile_label" }}" data-skill-profiles>
-      <button type="button" role="tab" class="skills-profile" data-profile="fullstack" aria-selected="true">{{ i18n "ui_profile_fullstack" }}</button>
-      <button type="button" role="tab" class="skills-profile" data-profile="gamedev" aria-selected="false">{{ i18n "ui_profile_gamedev" }}</button>
-    </div>
-
     {{- with index $pick "soft_skills" }}
     <div class="skills-badges" aria-label="{{ i18n "ui_softskills_badges" }}">
       {{- range . }}
@@ -111,7 +106,7 @@
     </div>
     {{- end }}
 
-    <div class="skills-sections" data-skills-root data-profile="fullstack">
+    <div class="skills-sections">
       {{- range $cats }}
       {{- $title := .title }}{{ $groups := .groups }}
       {{- with .items }}
@@ -127,7 +122,7 @@
           <h3 class="skills-subtitle">{{ .title }}</h3>
           <div class="skills-grid">
             {{- range .items }}
-            {{ partial "skill-card.html" (dict "key" .key "projects" .projects "experience" .experience "profiles" .profiles) }}
+            {{ partial "skill-card.html" (dict "key" .key "projects" .projects "experience" .experience) }}
             {{- end }}
           </div>
         </div>
@@ -136,7 +131,7 @@
         {{- else }}
         <div class="skills-grid">
           {{- range . }}
-          {{ partial "skill-card.html" (dict "key" .key "projects" .projects "experience" .experience "profiles" .profiles) }}
+          {{ partial "skill-card.html" (dict "key" .key "projects" .projects "experience" .experience) }}
           {{- end }}
         </div>
         {{- end }}

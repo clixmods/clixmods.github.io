@@ -9,7 +9,7 @@
 {{- $projects := .projects -}}
 {{- $n := len $projects -}}
 {{- $years := partial "duration-label.html" .experience -}}
-<button type="button" class="skill-card" data-skill="{{ $key }}" data-profiles="{{ delimit (.profiles | default (slice "fullstack" "gamedev")) " " }}" aria-haspopup="dialog">
+<button type="button" class="skill-card" data-skill="{{ $key }}" aria-haspopup="dialog">
   {{ partial "tech-icon.html" $t }}
   <span class="skill-card-body">
     <span class="skill-card-name">{{ $t.label }}</span>

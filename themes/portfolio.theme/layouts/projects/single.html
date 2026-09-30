@@ -211,17 +211,6 @@
           </div>
         </div>
         {{- end }}
-
-        {{- with $P.soft_skills }}
-        <div class="proj-card reveal">
-          <h2 class="proj-section-title">{{ i18n "proj_softskills" }}</h2>
-          <div class="proj-chips">
-            {{- range . }}{{ $t := partial "tech-resolve.html" . }}
-            <span class="proj-chip">{{ with $t.icon }}<span class="proj-chip-ico">{{ . }}</span>{{ end }}{{ $t.label }}</span>
-            {{- end }}
-          </div>
-        </div>
-        {{- end }}
       </aside>
     </div>
   </div>

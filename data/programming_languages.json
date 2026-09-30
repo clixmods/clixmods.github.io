@@ -16,10 +16,7 @@
     "iconPath": "/images/technologies/Lua.svg",
     "color": "#000080",
     "displayedInPortfolio": true,
-    "experience": 3,
-    "profiles": [
-      "gamedev"
-    ]
+    "experience": 3
   },
   {
     "key": "lang_sql",
@@ -41,9 +38,6 @@
     "experience": 2,
     "categories": [
       "frontend"
-    ],
-    "profiles": [
-      "fullstack"
     ]
   },
   {
@@ -55,9 +49,6 @@
     "experience": 1,
     "categories": [
       "frontend"
-    ],
-    "profiles": [
-      "fullstack"
     ]
   },
   {
@@ -69,9 +60,6 @@
     "experience": 2,
     "categories": [
       "backend"
-    ],
-    "profiles": [
-      "fullstack"
     ]
   },
   {
@@ -83,9 +71,6 @@
     "experience": 2,
     "categories": [
       "backend"
-    ],
-    "profiles": [
-      "fullstack"
     ]
   },
   {
@@ -94,10 +79,7 @@
     "iconPath": null,
     "color": "#FF6B6B",
     "displayedInPortfolio": false,
-    "experience": 0.5,
-    "profiles": [
-      "gamedev"
-    ]
+    "experience": 0.5
   },
   {
     "key": "lang_cpp",
@@ -107,9 +89,6 @@
     "displayedInPortfolio": true,
     "categories": [
       "backend"
-    ],
-    "profiles": [
-      "gamedev"
     ]
   },
   {
@@ -117,10 +96,7 @@
     "experience": 4,
     "iconPath": "images/technologies/bo3.png",
     "color": "#FF6600",
-    "displayedInPortfolio": true,
-    "profiles": [
-      "gamedev"
-    ]
+    "displayedInPortfolio": true
   },
   {
     "key": "lang_c",
@@ -130,9 +106,6 @@
     "displayedInPortfolio": false,
     "categories": [
       "backend"
-    ],
-    "profiles": [
-      "gamedev"
     ]
   },
   {
@@ -143,9 +116,6 @@
     "displayedInPortfolio": true,
     "categories": [
       "frontend"
-    ],
-    "profiles": [
-      "fullstack"
     ]
   },
   {
@@ -156,9 +126,6 @@
     "displayedInPortfolio": false,
     "categories": [
       "frontend"
-    ],
-    "profiles": [
-      "fullstack"
     ]
   },
   {
@@ -169,9 +136,6 @@
     "displayedInPortfolio": false,
     "categories": [
       "backend"
-    ],
-    "profiles": [
-      "fullstack"
     ]
   },
   {
@@ -182,9 +146,6 @@
     "displayedInPortfolio": false,
     "categories": [
       "backend"
-    ],
-    "profiles": [
-      "fullstack"
     ]
   },
   {

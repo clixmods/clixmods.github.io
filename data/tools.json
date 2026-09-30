@@ -24,10 +24,7 @@
     "experience": 2,
     "iconPath": "images/technologies/SonarQube.svg",
     "color": "#4E9BCD",
-    "displayedInPortfolio": false,
-    "profiles": [
-      "fullstack"
-    ]
+    "displayedInPortfolio": false
   },
   {
     "key": "tool_azure",
@@ -36,10 +33,7 @@
     "experience": 2,
     "iconPath": "images/technologies/Azure.svg",
     "color": "#0078D4",
-    "displayedInPortfolio": true,
-    "profiles": [
-      "fullstack"
-    ]
+    "displayedInPortfolio": true
   },
   {
     "key": "tool_fork",
@@ -84,10 +78,7 @@
     "experience": 2,
     "iconPath": "images/technologies/clickup-icon.svg",
     "color": "#7B68EE",
-    "displayedInPortfolio": false,
-    "profiles": [
-      "fullstack"
-    ]
+    "displayedInPortfolio": false
   },
   {
     "key": "tool_discord",
@@ -105,10 +96,7 @@
     "experience": 2,
     "iconPath": "images/technologies/HacknPlan.svg",
     "color": "#FF6B35",
-    "displayedInPortfolio": false,
-    "profiles": [
-      "gamedev"
-    ]
+    "displayedInPortfolio": false
   },
   {
     "key": "tool_notion",
@@ -153,10 +141,7 @@
     "experience": 2,
     "iconPath": "images/technologies/Docker.svg",
     "color": "#2496ED",
-    "displayedInPortfolio": true,
-    "profiles": [
-      "fullstack"
-    ]
+    "displayedInPortfolio": true
   },
   {
     "key": "tool_visual_studio_code",
@@ -201,10 +186,7 @@
     "experience": 2,
     "iconPath": "images/technologies/radiant logo.png",
     "color": "#FF6B00",
-    "displayedInPortfolio": true,
-    "profiles": [
-      "gamedev"
-    ]
+    "displayedInPortfolio": true
   },
   {
     "key": "tool_autodesk_maya",
@@ -213,10 +195,7 @@
     "experience": 2,
     "iconPath": "images/technologies/Autodesk-Maya.svg",
     "color": "#00B4A5",
-    "displayedInPortfolio": true,
-    "profiles": [
-      "gamedev"
-    ]
+    "displayedInPortfolio": true
   },
   {
     "key": "tool_google_play_console",
@@ -243,10 +222,7 @@
     "experience": 1,
     "iconPath": "images/technologies/Cloudflare-Workers.svg",
     "color": "#F38020",
-    "displayedInPortfolio": false,
-    "profiles": [
-      "fullstack"
-    ]
+    "displayedInPortfolio": false
   },
   {
     "key": "tool_claude",
@@ -264,10 +240,7 @@
     "experience": 1,
     "iconPath": "images/technologies/JUnit.svg",
     "color": "#25A162",
-    "displayedInPortfolio": false,
-    "profiles": [
-      "fullstack"
-    ]
+    "displayedInPortfolio": false
   },
   {
     "key": "tool_playwright",
@@ -277,10 +250,7 @@
     "icon": "🎭",
     "iconPath": null,
     "color": "#2EAD33",
-    "displayedInPortfolio": false,
-    "profiles": [
-      "fullstack"
-    ]
+    "displayedInPortfolio": false
   },
   {
     "key": "tool_github_actions",
@@ -289,10 +259,7 @@
     "experience": 1,
     "iconPath": "images/technologies/GitHub-Actions.svg",
     "color": "#2088FF",
-    "displayedInPortfolio": false,
-    "profiles": [
-      "fullstack"
-    ]
+    "displayedInPortfolio": false
   },
   {
     "key": "tool_gradle",
@@ -301,9 +268,6 @@
     "experience": 1,
     "iconPath": "images/technologies/Gradle.svg",
     "color": "#02303A",
-    "displayedInPortfolio": false,
-    "profiles": [
-      "fullstack"
-    ]
+    "displayedInPortfolio": false
   }
 ]

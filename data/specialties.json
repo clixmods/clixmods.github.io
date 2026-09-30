@@ -5,9 +5,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 4,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -16,9 +13,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 3,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -27,9 +21,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 2,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -38,9 +29,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 2,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -49,9 +37,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 4,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -60,9 +45,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 4,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -71,9 +53,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 2,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -90,10 +69,7 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 2,
-    "category": "backend",
-    "profiles": [
-      "fullstack"
-    ]
+    "category": "backend"
   },
   {
     "key": "spec_maintenance_and_debogage",
@@ -117,9 +93,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 3,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -128,9 +101,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 2,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -155,9 +125,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 3,
-    "profiles": [
-      "fullstack"
-    ],
     "category": "backend"
   },
   {
@@ -173,9 +140,6 @@
     "icon": "🔌",
     "experience": 2,
     "displayedInPortfolio": true,
-    "profiles": [
-      "fullstack"
-    ],
     "category": "backend"
   },
   {
@@ -183,9 +147,6 @@
     "icon": "🏗️",
     "experience": 3,
     "displayedInPortfolio": true,
-    "profiles": [
-      "fullstack"
-    ],
     "category": "backend"
   },
   {
@@ -193,9 +154,6 @@
     "icon": "⚡",
     "experience": 2,
     "displayedInPortfolio": true,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -204,9 +162,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 1,
-    "profiles": [
-      "gamedev"
-    ],
     "category": "gamedev"
   },
   {
@@ -215,9 +170,6 @@
     "iconPath": null,
     "displayedInPortfolio": true,
     "experience": 2,
-    "profiles": [
-      "fullstack"
-    ],
     "category": "backend"
   }
 ]
