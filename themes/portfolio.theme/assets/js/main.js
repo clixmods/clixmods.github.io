@@ -565,6 +565,38 @@
   });
 
   // ── Page Compétences : modale de détail ───────────────
+  // Onglets de profil (Full Stack / Game Dev) : filtre les cartes par data-profiles
+  var skillsRoot = document.querySelector("[data-skills-root]");
+  if (skillsRoot) {
+    var profileTabs = document.querySelectorAll("[data-skill-profiles] [data-profile]");
+    var applyProfile = function (profile) {
+      skillsRoot.setAttribute("data-profile", profile);
+      profileTabs.forEach(function (tab) {
+        tab.setAttribute("aria-selected", tab.getAttribute("data-profile") === profile ? "true" : "false");
+      });
+      skillsRoot.querySelectorAll(".skill-card").forEach(function (card) {
+        var profiles = (card.getAttribute("data-profiles") || "").split(" ");
+        card.hidden = profiles.indexOf(profile) === -1;
+      });
+      skillsRoot.querySelectorAll(".skills-subgroup").forEach(function (g) {
+        g.hidden = !g.querySelector(".skill-card:not([hidden])");
+      });
+      skillsRoot.querySelectorAll("section.proj-card").forEach(function (s) {
+        var n = s.querySelectorAll(".skill-card:not([hidden])").length;
+        s.hidden = n === 0;
+        var count = s.querySelector(".skills-count");
+        if (count) count.textContent = n;
+      });
+    };
+    profileTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        applyProfile(tab.getAttribute("data-profile"));
+        history.replaceState(null, "", "#" + tab.getAttribute("data-profile"));
+      });
+    });
+    applyProfile(location.hash === "#gamedev" ? "gamedev" : "fullstack");
+  }
+
   var skillModal = document.querySelector("[data-skill-modal]");
   if (skillModal) {
     var skillContent = skillModal.querySelector("[data-skill-modal-content]");

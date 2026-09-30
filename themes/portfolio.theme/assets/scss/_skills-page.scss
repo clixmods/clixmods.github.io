@@ -45,7 +45,44 @@
 }
 
 // Sous-groupes (langages : front-end / back-end / jeu vidéo)
-.skills-subgroup + .skills-subgroup { margin-top: 20px; }
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+// Profil « Game Dev » : les moteurs de jeu passent en tête
+[data-profile="gamedev"] .skills-subgroup[data-group="game_engine"] { order: -1; }
+[hidden].skills-subgroup, .skills-sections [hidden] { display: none !important; }
+
+// Onglets de profil
+.skills-profiles {
+  display: inline-flex;
+  gap: 6px;
+  padding: 5px;
+  margin: 0 0 var(--gap);
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+}
+.skills-profile {
+  font-family: var(--font-head);
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: var(--r-pill);
+  border: 0;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover { color: var(--text); }
+  &[aria-selected="true"] {
+    color: #fff;
+    background: var(--warm);
+  }
+}
 
 .skills-subtitle {
   margin: 0 0 10px;

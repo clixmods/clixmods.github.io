@@ -31,6 +31,7 @@ specialties = [
 soft_skills = [ "skill_resolution_problemes", "skill_visionvisualisation" ]
 tools = [
   "tool_copilot",
+  "tool_claude",
   "tool_visual_studio_code",
   "tool_github",
   "tool_github_actions",

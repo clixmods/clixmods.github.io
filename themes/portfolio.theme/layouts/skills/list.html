@@ -64,7 +64,7 @@
       {{- if in $own $c -}}{{- $sub = $sub | append . -}}{{- $placed = $placed | append .key -}}{{- end -}}
     {{- end -}}
     {{- with $sub -}}
-      {{- $g := dict "title" (i18n (printf "ui_%s_grp_%s" $prefix $c)) "items" . -}}
+      {{- $g := dict "key" $c "title" (i18n (printf "ui_%s_grp_%s" $prefix $c)) "items" . -}}
       {{- if in $tail $c }}{{ $tailGroups = $tailGroups | append $g }}{{ else }}{{ $groups = $groups | append $g }}{{ end -}}
     {{- end -}}
   {{- end -}}
@@ -73,7 +73,7 @@
     {{- if not (in $placed .key) -}}{{- $other = $other | append . -}}{{- end -}}
   {{- end -}}
   {{- with $other -}}
-    {{- $groups = $groups | append (dict "title" (i18n "ui_lang_other") "items" .) -}}
+    {{- $groups = $groups | append (dict "key" "other" "title" (i18n "ui_lang_other") "items" .) -}}
   {{- end -}}
   {{- $groups = $groups | append $tailGroups -}}
   {{- $groupedSets = merge $groupedSets (dict $prefix $groups) -}}
@@ -97,7 +97,12 @@
       <p class="skills-hint">{{ i18n "ui_skill_open_hint" }}</p>
     </div>
 
-    <div class="skills-sections">
+    <div class="skills-profiles" role="tablist" aria-label="{{ i18n "ui_profile_label" }}" data-skill-profiles>
+      <button type="button" role="tab" class="skills-profile" data-profile="fullstack" aria-selected="true">{{ i18n "ui_profile_fullstack" }}</button>
+      <button type="button" role="tab" class="skills-profile" data-profile="gamedev" aria-selected="false">{{ i18n "ui_profile_gamedev" }}</button>
+    </div>
+
+    <div class="skills-sections" data-skills-root data-profile="fullstack">
       {{- range $cats }}
       {{- $title := .title }}{{ $groups := .groups }}
       {{- with .items }}
@@ -107,20 +112,22 @@
           <span class="skills-count">{{ len . }}</span>
         </div>
         {{- if $groups }}
+        <div class="skills-groups">
         {{- range $groups }}
-        <div class="skills-subgroup">
+        <div class="skills-subgroup" data-group="{{ .key }}">
           <h3 class="skills-subtitle">{{ .title }}</h3>
           <div class="skills-grid">
             {{- range .items }}
-            {{ partial "skill-card.html" (dict "key" .key "projects" .projects "experience" .experience) }}
+            {{ partial "skill-card.html" (dict "key" .key "projects" .projects "experience" .experience "profiles" .profiles) }}
             {{- end }}
           </div>
         </div>
         {{- end }}
+        </div>
         {{- else }}
         <div class="skills-grid">
           {{- range . }}
-          {{ partial "skill-card.html" (dict "key" .key "projects" .projects "experience" .experience) }}
+          {{ partial "skill-card.html" (dict "key" .key "projects" .projects "experience" .experience "profiles" .profiles) }}
           {{- end }}
         </div>
         {{- end }}
