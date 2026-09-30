@@ -56,10 +56,24 @@ url = "https://mcskincreator.app/"
 primary = true
 fieldGroup = "actions_group"
 
+[[actions]]
+type = "youtube"
+label = "Chaîne YouTube"
+url = "https://www.youtube.com/@MCSkinCreator-app"
+primary = false
+fieldGroup = "actions_group"
+
 [[contributors]]
 person = "clement-garcia"
 roles = [ "Développeur", "Designer" ]
 fieldGroup = "contributors_group"
+
+[[youtube_singles]]
+size = "size-medium"
+video_id = "aDN2LN72WtY"
+video_title = "New Minecraft outfit: Winter armor | MC Skin Creator #shorts"
+order = "1"
+fieldGroup = "youtube_singles_group"
 
 [[galleries]]
 title = "L'application"
@@ -288,6 +302,8 @@ ranking = 130
 
 **Un projet personnel, construit avec l'IA.** MC Skin Creator a été développé de bout en bout avec l'assistance de l'IA (Claude / Claude Code) : c'est à la fois un produit en ligne et une expérience grandeur nature sur ce qu'on peut aujourd'hui construire, tester, déployer et *promouvoir* seul avec un assistant. Toutes les captures de cette page ont été prises dans le site lui-même, avec les modèles et les décors du catalogue.
 
+{{< figure src="/images/projects/mc-skin-creator/editeur-sorciere-enfer.webp" alt="L'éditeur MC Skin Creator" caption="L'éditeur : bibliothèque à gauche, aperçu 3D au centre, calques et réglages à droite (modèle « Sorcière sanguine », fond Enfer)." >}}
+
 <!-- 🎬 À AJOUTER : vidéo de démonstration de l'éditeur (30 à 60 s : choisir un modèle, changer de fond, recolorer un calque, exporter). Format 16:9, à intégrer via le widget YouTube du projet (youtube_videos) ou un lien. -->
 
 ## Le produit en quelques chiffres
@@ -296,6 +312,18 @@ ranking = 130
 - **Un seul jar** qui embarque le back-end, le front et la logique de rendu ; **Docker** en option.
 - **Environ 300 ms** entre l'ouverture de la page et un éditeur prêt à l'emploi, grâce aux planches d'assets compressées.
 - **Tests à tous les étages** et **déploiement automatique** à chaque fusion (voir plus bas).
+
+{{< image-grid >}}
+
+{{< figure src="/images/projects/mc-skin-creator/modele-pirate-lagon.webp" alt="Pirate doré, fond Lagon" caption="Pirate doré, fond Lagon." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/modele-elfe-marais.webp" alt="Elfe de nuit, fond Marais" caption="Elfe de nuit, fond Marais." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/modele-chevalier-neige.webp" alt="Chevalier squelette, fond Neige" caption="Chevalier squelette, fond Neige." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/modele-mage-grotte.webp" alt="Mage cramoisi, fond Grotte" caption="Mage cramoisi, fond Grotte." >}}
+
+{{< /image-grid >}}
 
 ## Back-end — Java 21, Spring Boot 4
 
@@ -314,20 +342,59 @@ ranking = 130
 - **Architecture Angular** : composants autonomes, état géré par signaux, détection de changement sans zone.js, boucle d'animation hors d'Angular. Couche de stockage abstraite : le même front fonctionne sur l'API Java ou sur le localStorage.
 - **Exports et mobile** : encodeur GIF animé intégré au projet (quantification median-cut, compression LZW), interface adaptée au mobile (tiroirs, gestes tactiles, pincement à deux doigts dans l'éditeur de pixels).
 
+{{< image-grid >}}
+
+{{< figure src="/images/projects/mc-skin-creator/vue-3d-texture-mage.webp" alt="Vue 3D et texture" caption="Aperçu 3D et texture côte à côte : ce qu'on peint apparaît immédiatement sur le personnage." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/vue-premiere-personne.webp" alt="Vue première personne" caption="La vue à la première personne, ajustée numériquement sur une capture du jeu." >}}
+
+{{< /image-grid >}}
+
 ## Les outils que je me suis construits
 
 Un projet de cette taille demande de fabriquer beaucoup de choses en plus du produit : un logo, des visuels, des vidéos, un catalogue propre. Plutôt que de sortir du projet pour chacune, j'ai demandé à l'IA de construire **les outils dont j'avais besoin, dans le projet même**. Ils réutilisent le vrai catalogue et le vrai moteur de rendu : ce qu'ils produisent est donc toujours fidèle au produit.
 
-- **`/logo` — le logo est fabriqué par le site.** Une page compose une tête de skin avec des éléments du catalogue, en laisse la moitié en papier quadrillé, y pose un crayon en 3D et exporte le tout en PNG (256, 512 ou 1024 px). Projection perspective ou orthographique, grille tracée par le shader, rendu suréchantillonné pour des arêtes propres. Le logo que vous voyez sur le site n'a pas été dessiné dans un logiciel graphique : **il a été composé avec l'application elle-même**.
-- **`/banniere` — le marketing en un clic.** Une page génère les visuels de chaque réseau : bannière X (1500×500), panorama Instagram en trois posts, couverture TikTok, bannière YouTube (2560×1440) et photo de profil. Chaque format connaît sa **zone sûre** (ce que le réseau rogne) et un test vérifie qu'aucun élément essentiel n'en sort ; un personnage d'exemple s'habille couche par couche, et le décor n'est tiré que parmi les modèles qui n'exigent aucune attribution.
-- **`/video` — des vidéos d'annonce à la volée.** Dix secondes de motion design **en musique** autour d'un modèle ou d'une tenue, en 9:16, 1:1 ou 16:9, exportées en MP4 avec leurs légendes prêtes à copier pour chaque réseau. Tout est calculé dans le navigateur : cinq plans montés sur un tempo de 120 BPM, une musique **synthétisée** note par note (neuf styles, aucun fichier audio, donc aucun droit à payer), un encodeur MP4 et un encodeur AAC écrits pour l'occasion.
+### `/logo` — le logo est fabriqué par le site
+
+Une page compose une tête de skin avec des éléments du catalogue, en laisse la moitié en papier quadrillé, y pose un crayon en 3D et exporte le tout en PNG (256, 512 ou 1024 px). Projection perspective ou orthographique, grille tracée par le shader, rendu suréchantillonné pour des arêtes propres. Le logo que vous voyez sur le site n'a pas été dessiné dans un logiciel graphique : **il a été composé avec l'application elle-même**.
+
+{{< image-grid >}}
+
+{{< figure src="/images/projects/mc-skin-creator/outil-logo.webp" alt="La page /logo" caption="La page /logo : on choisit la peau, les cheveux, les yeux et la bouche dans le catalogue." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/logo-genere.webp" alt="Le logo exporté" caption="Le résultat exporté en PNG 1024 : c'est le logo du site." >}}
+
+{{< /image-grid >}}
+
+### `/banniere` — le marketing en un clic
+
+Une page génère les visuels de chaque réseau : bannière X (1500×500), panorama Instagram en trois posts, couverture TikTok, bannière YouTube (2560×1440) et photo de profil. Chaque format connaît sa **zone sûre** (ce que le réseau rogne) et un test vérifie qu'aucun élément essentiel n'en sort. Un personnage d'exemple s'habille couche par couche, et le décor n'est tiré que parmi les modèles qui n'exigent aucune attribution.
+
+{{< figure src="/images/projects/mc-skin-creator/marketing-x.webp" alt="Bannière X générée par le site" caption="Bannière X (1500×500), exportée telle quelle : le personnage s'habille couche par couche." >}}
+{{< figure src="/images/projects/mc-skin-creator/marketing-youtube.webp" alt="Bannière YouTube générée par le site" caption="Bannière YouTube (2560×1440), avec sa zone sûre centrale." >}}
+{{< image-grid >}}
+
+{{< figure src="/images/projects/mc-skin-creator/marketing-avatar.webp" alt="Photo de profil" caption="Photo de profil (1080×1080) : le crayon du logo sort du cercle que les réseaux découpent." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/marketing-instagram.webp" alt="Panorama Instagram" caption="Panorama Instagram en trois posts (3240×1440), coupé en tuiles." >}}
+
+{{< /image-grid >}}
+
+### `/video` — des vidéos d'annonce à la volée
+
+Dix secondes de motion design **en musique** autour d'un modèle ou d'une tenue, en 9:16, 1:1 ou 16:9, exportées en MP4 avec leurs légendes prêtes à copier pour chaque réseau. Tout est calculé dans le navigateur : cinq plans montés sur un tempo de 120 BPM, une musique **synthétisée** note par note (neuf styles, aucun fichier audio, donc aucun droit à payer), un encodeur MP4 et un encodeur AAC écrits pour l'occasion. Un exemple de résultat est visible dans la section Vidéos plus bas, publié sur la chaîne YouTube du projet.
+
+{{< figure src="/images/projects/mc-skin-creator/outil-video.webp" alt="La page /video" caption="La page /video : sujet, textes, fond et musique se règlent à droite, l'aperçu joue la vidéo elle-même." >}}
+
+<!-- 🎬 À AJOUTER : d'autres exemples de vidéos générées par /video (Shorts de la chaîne YouTube). Donne-moi les identifiants ou liens et je les ajoute dans youtube_singles. -->
+
+### Et aussi
+
 - **L'atelier de découpage des skins.** Les modèles de départ viennent de skins existants **découpés automatiquement en éléments du catalogue**, avec une vérification au pixel près que la pile de calques redonne la texture d'origine. Des outils dédiés repèrent les zones, proposent un brouillon de découpage, rendent des planches de contrôle sous quatre angles et essaient chaque vêtement sur d'autres peaux.
 - **La page `/doublons`.** Deux skins différents portent souvent le même œil de quatre texels : cet outil regroupe les éléments qui se ramènent l'un à l'autre par une simple recoloration, fait tourner chaque famille en 3D pour juger, et écrit la consigne de fusion.
 - **Une console d'administration** (Java / Angular) qui pilote ces outils depuis une interface, et un **lot d'import** avec fiche de licence pour chaque skin repéré.
 
-<!-- 🎬 À AJOUTER : exemple de vidéo générée par /video (le MP4 de 10 s exporté, format 9:16), à placer ici. -->
 <!-- 🖼️ À AJOUTER (facultatif) : capture de la console d'administration et de la page /doublons. -->
-<!-- 🖼️ À AJOUTER (facultatif) : un GIF de l'export de /logo ou de l'habillage du personnage sur la bannière X. -->
 
 ## Comment j'ai construit ce projet avec l'IA
 
