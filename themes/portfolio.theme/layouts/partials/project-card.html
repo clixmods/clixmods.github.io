@@ -39,5 +39,10 @@
       {{- end }}
     </div>
     {{- end }}
+    {{- with first 3 ($p.Params.specialties | default slice) }}
+    <div class="project-specs">
+      {{- range . }}<span class="tag tag-spec">{{ i18n . }}</span>{{ end }}
+    </div>
+    {{- end }}
   </div>
 </a>

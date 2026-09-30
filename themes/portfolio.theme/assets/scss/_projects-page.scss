@@ -241,3 +241,16 @@
 @media (max-width: 520px) {
   .projects-grid { grid-template-columns: 1fr; }
 }
+
+// Spécialités affichées sur les cartes projet : ce qui a été réalisé
+.project-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.tag-spec {
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  color: var(--text);
+}
