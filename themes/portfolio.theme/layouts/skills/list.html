@@ -44,9 +44,10 @@
      `category`. L'ordre des groupes est fixe ; ce qui n'a pas de groupe
      connu tombe dans « Autres ». Un groupe vide n'est pas affiché. */}}
 {{- $groupOrders := dict
-      "lang" (slice "frontend" "backend")
-      "fw"   (slice "game_engine" "frontend" "backend" "database" "cms")
+      "lang" (slice "backend" "frontend")
+      "fw"   (slice "backend" "frontend" "database" "cms" "game_engine")
       "tool" (slice "ci_cd" "version_control" "tests" "ide" "project_management" "cloud_devops" "creative" "ai_tools") -}}
+{{- $tails := dict "fw" (slice "game_engine") -}}
 {{- $groupedSets := dict -}}
 {{- range $prefix, $order := $groupOrders -}}
   {{- $src := "" -}}
@@ -54,6 +55,8 @@
   {{- $items := index $pick $src -}}
   {{- $groups := slice -}}
   {{- $placed := slice -}}
+  {{- $tail := index $tails $prefix | default slice -}}
+  {{- $tailGroups := slice -}}
   {{- range $c := $order -}}
     {{- $sub := slice -}}
     {{- range $items -}}
@@ -61,7 +64,8 @@
       {{- if in $own $c -}}{{- $sub = $sub | append . -}}{{- $placed = $placed | append .key -}}{{- end -}}
     {{- end -}}
     {{- with $sub -}}
-      {{- $groups = $groups | append (dict "title" (i18n (printf "ui_%s_grp_%s" $prefix $c)) "items" .) -}}
+      {{- $g := dict "title" (i18n (printf "ui_%s_grp_%s" $prefix $c)) "items" . -}}
+      {{- if in $tail $c }}{{ $tailGroups = $tailGroups | append $g }}{{ else }}{{ $groups = $groups | append $g }}{{ end -}}
     {{- end -}}
   {{- end -}}
   {{- $other := slice -}}
@@ -71,6 +75,7 @@
   {{- with $other -}}
     {{- $groups = $groups | append (dict "title" (i18n "ui_lang_other") "items" .) -}}
   {{- end -}}
+  {{- $groups = $groups | append $tailGroups -}}
   {{- $groupedSets = merge $groupedSets (dict $prefix $groups) -}}
 {{- end -}}
 
