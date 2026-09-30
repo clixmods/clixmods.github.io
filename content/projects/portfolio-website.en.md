@@ -28,7 +28,7 @@ specialties = [
   "spec_optimisation",
   "spec_gestion_des_donnees"
 ]
-soft_skills = [ "skill_resolution_problemes", "skill_visionvisualisation" ]
+soft_skills = [ "skill_resolution_problemes" ]
 tools = [
   "tool_copilot",
   "tool_claude",

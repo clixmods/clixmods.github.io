@@ -30,13 +30,10 @@ specialties = [
   "spec_twig_integration",
   "spec_developpement_dapi",
   "spec_securite_et_optimisation",
-  "spec_programmation_orientee_objet",
   "spec_architecture_logicielle",
-  "spec_gestion_des_donnees",
-  "spec_gestion_de_versions_avec_git"
+  "spec_gestion_des_donnees"
 ]
 soft_skills = [
-  "skill_travail_en_equipe",
   "skill_communication",
   "skill_gestion_de_projet",
   "skill_resolution_problemes"

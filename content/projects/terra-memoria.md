@@ -17,14 +17,13 @@ frameworks_engines = [ "fw_unity", "fw_net" ]
 programming_languages = [ "lang_csharp" ]
 specialties = [
   "spec_portage_console",
-  "spec_portage_plateforme",
   "spec_experience_utilisateur_ux",
   "spec_optimisation",
   "spec_maintenance_and_debogage",
   "spec_developpement_gameplay",
   "spec_developpement_outils"
 ]
-soft_skills = [ "skill_resolution_problemes", "skill_communication", "skill_travail_en_equipe" ]
+soft_skills = [ "skill_resolution_problemes", "skill_communication" ]
 tile_size = "1x1"
 technical_specs = [ ]
 tools = [

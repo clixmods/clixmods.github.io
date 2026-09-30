@@ -13,7 +13,6 @@ status = "In Progress"
 programming_languages = [ "lang_csharp" ]
 frameworks_engines = [ "fw_unity", "fw_net" ]
 specialties = [
-  "spec_developpement_de_jeux_video",
   "spec_developpement_gameplay",
   "spec_optimisation",
   "spec_maintenance_and_debogage",
@@ -21,7 +20,7 @@ specialties = [
   "spec_gestion_des_donnees",
   "spec_developpement_outils"
 ]
-soft_skills = [ "skill_resolution_problemes", "skill_analyse_critique", "skill_travail_en_equipe" ]
+soft_skills = [ "skill_resolution_problemes" ]
 tools = [
   "tool_gitlab",
   "tool_jetbrains",

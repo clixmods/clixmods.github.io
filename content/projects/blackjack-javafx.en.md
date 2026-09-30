@@ -20,13 +20,10 @@ fmContentType = "project-content-type"
 frameworks_engines = [ "fw_javafx" ]
 programming_languages = [ "lang_java", "lang_sql", "lang_css" ]
 specialties = [
-  "spec_programmation_orientee_objet",
   "spec_interface_utilisateur",
-  "spec_architecture_logicielle",
-  "spec_gestion_de_versions_avec_git"
+  "spec_architecture_logicielle"
 ]
 soft_skills = [
-  "skill_travail_en_equipe",
   "skill_communication",
   "skill_gestion_de_projet"
 ]

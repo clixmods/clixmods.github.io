@@ -21,13 +21,11 @@ specialties = [
   "spec_optimisation",
   "spec_maintenance_and_debogage",
   "spec_developpement_gameplay",
-  "spec_developpement_outils",
-  "spec_portage_plateforme"
+  "spec_developpement_outils"
 ]
 soft_skills = [
   "skill_resolution_problemes",
-  "skill_communication",
-  "skill_travail_en_equipe"
+  "skill_communication"
 ]
 tile_size = "1x1"
 technical_specs = [ ]

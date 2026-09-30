@@ -34,18 +34,14 @@ specialties = [
   "spec_architecture_logicielle",
   "spec_gestion_des_donnees",
   "spec_securite_et_optimisation",
-  "spec_algorithmique",
   "spec_optimisation",
-  "spec_developpement_dapplications",
   "spec_interface_utilisateur",
   "spec_experience_utilisateur_ux",
-  "spec_gestion_de_fichiers",
   "spec_design_pattern_et_refactoring"
 ]
 soft_skills = [
   "skill_resolution_problemes",
-  "skill_creativite",
-  "skill_visionvisualisation"
+  "skill_creativite"
 ]
 tools = [ "tool_junit", "tool_playwright", "tool_github_actions", "tool_github", "tool_visual_studio_code", "tool_claude" ]
 

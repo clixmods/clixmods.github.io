@@ -23,10 +23,8 @@ soft_skills = [
   "skill_leadership"
 ]
 specialties = [
-  "spec_programmation_orientee_objet",
   "spec_architecture_logicielle",
   "spec_securite_et_optimisation",
-  "spec_gestion_de_versions_avec_git",
   "spec_design_pattern_et_refactoring",
   "spec_developpement_dapi"
 ]

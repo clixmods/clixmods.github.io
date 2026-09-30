@@ -46,12 +46,13 @@
 {{- $groupOrders := dict
       "lang" (slice "backend" "frontend")
       "fw"   (slice "backend" "frontend" "database" "cms" "game_engine")
+      "spec" (slice "backend" "frontend" "quality" "tooling" "gamedev")
       "tool" (slice "ci_cd" "version_control" "tests" "ide" "project_management" "cloud_devops" "creative" "ai_tools") -}}
-{{- $tails := dict "fw" (slice "game_engine") -}}
+{{- $tails := dict "fw" (slice "game_engine") "spec" (slice "gamedev") -}}
 {{- $groupedSets := dict -}}
 {{- range $prefix, $order := $groupOrders -}}
   {{- $src := "" -}}
-  {{- if eq $prefix "lang" }}{{ $src = "programming_languages" }}{{ else if eq $prefix "fw" }}{{ $src = "frameworks_engines" }}{{ else }}{{ $src = "tools" }}{{ end -}}
+  {{- if eq $prefix "lang" }}{{ $src = "programming_languages" }}{{ else if eq $prefix "fw" }}{{ $src = "frameworks_engines" }}{{ else if eq $prefix "spec" }}{{ $src = "specialties" }}{{ else }}{{ $src = "tools" }}{{ end -}}
   {{- $items := index $pick $src -}}
   {{- $groups := slice -}}
   {{- $placed := slice -}}
@@ -83,9 +84,8 @@
 {{- $cats := slice
       (dict "title" (i18n "proj_languages")   "items" $langs                                 "groups" (index $groupedSets "lang"))
       (dict "title" (i18n "proj_frameworks")  "items" (index $pick "frameworks_engines")     "groups" (index $groupedSets "fw"))
-      (dict "title" (i18n "proj_specialties") "items" (index $pick "specialties"))
+      (dict "title" (i18n "proj_specialties") "items" (index $pick "specialties")               "groups" (index $groupedSets "spec"))
       (dict "title" (i18n "ui_tools")         "items" (index $pick "tools")                  "groups" (index $groupedSets "tool"))
-      (dict "title" (i18n "proj_softskills")  "items" (index $pick "soft_skills"))
 -}}
 
 <section class="section page-shell">
@@ -101,6 +101,15 @@
       <button type="button" role="tab" class="skills-profile" data-profile="fullstack" aria-selected="true">{{ i18n "ui_profile_fullstack" }}</button>
       <button type="button" role="tab" class="skills-profile" data-profile="gamedev" aria-selected="false">{{ i18n "ui_profile_gamedev" }}</button>
     </div>
+
+    {{- with index $pick "soft_skills" }}
+    <div class="skills-badges" aria-label="{{ i18n "ui_softskills_badges" }}">
+      {{- range . }}
+      {{- $t := partial "tech-resolve.html" .key }}
+      <span class="skills-badge">{{ partial "tech-icon.html" $t }}<span>{{ $t.label }}</span></span>
+      {{- end }}
+    </div>
+    {{- end }}
 
     <div class="skills-sections" data-skills-root data-profile="fullstack">
       {{- range $cats }}

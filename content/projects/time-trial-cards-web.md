@@ -21,8 +21,7 @@ programming_languages = [
 ]
 specialties = [
   "spec_developpement_dapi",
-  "spec_architecture_logicielle",
-  "spec_developpement_dapplications"
+  "spec_architecture_logicielle"
 ]
 tools = [ "tool_docker", "tool_gitlab", "tool_claude", "tool_google_sheets" ]
 

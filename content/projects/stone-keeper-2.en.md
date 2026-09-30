@@ -19,7 +19,6 @@ specialties = [
   "spec_developpement_outils",
   "spec_interface_utilisateur",
   "spec_design_pattern_et_refactoring",
-  "spec_programmation_orientee_objet",
   "spec_game_design",
   "spec_experience_utilisateur_ux",
   "spec_maintenance_and_debogage",

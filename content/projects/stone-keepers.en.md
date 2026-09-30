@@ -23,17 +23,14 @@ specialties = [
   "spec_shaders",
   "spec_architecture_logicielle",
   "spec_optimisation",
-  "spec_programmation_orientee_objet",
   "spec_interface_utilisateur",
-  "spec_gestion_de_versions_avec_git",
   "spec_maintenance_and_debogage"
 ]
 soft_skills = [
   "skill_leadership",
   "skill_gestion_de_projet",
   "skill_resolution_problemes",
-  "skill_communication",
-  "skill_visionvisualisation"
+  "skill_communication"
 ]
 tools = [
   "tool_fork",

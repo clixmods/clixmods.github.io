@@ -14,7 +14,6 @@ image = "/images/projects/galaxian/galaxian-background.png"
 status = "Terminé"
 specialties = [
   "spec_game_design",
-  "spec_gestion_de_versions_avec_git",
   "spec_developpement_gameplay"
 ]
 programming_languages = [ "lang_csharp" ]

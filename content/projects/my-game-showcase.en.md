@@ -22,11 +22,10 @@ specialties = [
   "spec_developpement_dapi",
   "spec_architecture_logicielle",
   "spec_temps_reel",
-  "spec_gestion_de_fichiers",
   "spec_portage_console",
   "spec_optimisation"
 ]
-soft_skills = [ "skill_resolution_problemes", "skill_communication", "skill_travail_en_equipe" ]
+soft_skills = [ "skill_resolution_problemes", "skill_communication" ]
 tools = [ "tool_azure", "tool_fork", "tool_jetbrains", "tool_clickup" ]
 status = "In Production"
 

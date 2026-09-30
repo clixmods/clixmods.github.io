@@ -16,8 +16,7 @@ programming_languages = [ "lang_html", "lang_css", "lang_php" ]
 frameworks_engines = [ "fw_wordpress" ]
 specialties = [
   "spec_experience_utilisateur_ux",
-  "spec_interface_utilisateur",
-  "spec_developpement_dapplications"
+  "spec_interface_utilisateur"
 ]
 soft_skills = [ "skill_communication", "skill_creativite" ]
 tools = [ "tool_visual_studio_code" ]

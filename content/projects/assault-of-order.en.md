@@ -18,9 +18,7 @@ specialties = [
   "spec_developpement_outils",
   "spec_lighting",
   "spec_environnement_building",
-  "spec_developpement_gameplay",
-  "spec_gestion_de_versions_avec_git",
-  "spec_algorithmique"
+  "spec_developpement_gameplay"
 ]
 soft_skills = [ "skill_resolution_problemes", "skill_communication" ]
 tools = [
