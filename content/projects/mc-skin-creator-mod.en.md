@@ -105,7 +105,7 @@ ranking = 130
 
 # MC Skin Creator (mod)
 
-The **MC Skin Creator** mod brings the skin editor of **[mcskincreator.app](https://mcskincreator.app/)** straight into Minecraft. A button on the title screen and the pause menu opens the editor: pick pieces (hair, faces, clothes, accessories…), stack them as layers, see the result on your character, then apply it to your Minecraft account in one click, no restart. Client-side Fabric mod for Minecraft 1.21.11 and 26.2; solo personal project, source-available.
+The **MC Skin Creator** mod brings the skin editor of **[mcskincreator.app](https://mcskincreator.app/)** straight into Minecraft. A button on the title screen and the pause menu opens the editor: pick pieces (hair, faces, clothes, accessories…), stack them as layers, see the result on your character, then apply it to your Minecraft account in one click, no restart. Client-side Fabric mod for Minecraft 1.21.11 and 26.2; personal project, source-available, built with AI and shipped through a full CI/CD pipeline. It is the in-game version of the [MC Skin Creator website](/en/projects/mc-skin-creator/).
 
 ## How it works
 
@@ -127,8 +127,26 @@ The **MC Skin Creator** mod brings the skin editor of **[mcskincreator.app](http
 - **Seeing your skin in the world.** The "In game" view draws the real character in the world, under the game's lighting and under a shader pack. The engine only draws the local player when they are the camera, so I built on the game's own third person, orbit included. The character's animation goes through a mixin on the render state, which changes one picture on this client, whereas animating the entity would have been game state sent to the server.
 - **Three mixins, no more.** One to wear the uploaded skin before Mojang propagates it, one to pose the character in the world, one to hide the HUD without hiding the first-person arm. Each is justified in the repository and checked in the bytecode of both versions, including descriptor remapping.
 
-## Quality and delivery
+## Quality, CI/CD and security
 
-JUnit 5 tests on the pure logic (layer stack and history, composition, project document, catalogue reader). GitHub Actions pipeline with one job per Minecraft version on every pull request, semantic versioning computed from conventional commits, and automatic publishing of the jars to GitHub and Modrinth.
+This project was built like a product shipped to real players, not a prototype: the whole delivery chain is automated.
+
+- **GitHub Actions, one job per game version.** Every pull request builds and tests the mod on 1.21.11 and 26.2 in parallel; a broken version does not hide the other, and each version's jar is available as an artifact to try before merging.
+- **Automatic versioning and publishing.** The version number is computed from conventional commits (new feature, fix, or no release at all when the change is purely internal). A merge to `main` creates the GitHub release with one jar per Minecraft version and uploads it to Modrinth; `develop` produces pre-releases.
+- **A strict branch flow.** Work happens on dedicated branches, never directly on `main`, and nothing is merged without human review, however green the CI.
+- **JUnit 5 tests** on the pure logic: layer stack and history, composition, project document, catalogue reading.
+- **Security.** The Minecraft session token is read only when clicking "Apply", by a single class, sent to a single Mojang endpoint, and never sent to the site's server, logged or written to disk. A `SECURITY.md` file points to where each claim can be checked in the code. On the build side, secrets stay in the repository secrets, the `mcsc-engine` library is pinned to an exact version and bundled in the jar, and publishing only happens with dedicated credentials.
+
+## A project built with AI
+
+The mod was developed with **Claude Code** as a coding assistant, and I stand by that: my role was to direct, frame and validate. In practice:
+
+- **I decide the architecture and constraints**: a single source tree for several game versions, the frozen API as the only contract with the site, a capped number of mixins, the composition engine shared with the site instead of copied. These choices are written down in the repository (`CLAUDE.md`, `DECISIONS.md`, `INTERFACE.md`), which gives the AI written rules to follow rather than verbal instructions.
+- **The AI implements, CI decides.** Work goes through branches and pull requests; it is the tests and the build on both Minecraft versions that validate, not trust in generated code. I review every change before merging.
+- **What I took from it**: writing precise specifications, breaking work down, verifying rather than assuming (for example checking in the bytecode that mixins are properly remapped), and staying in control of code I did not type line by line.
+
+## The link with the website
+
+The mod is the **Minecraft client of the [MC Skin Creator (website)](/en/projects/mc-skin-creator/) project**: the site provides the back-end (Java / Spring Boot API, piece catalogue, composition engine) and the Angular web editor; the mod is a second entry point, inside the game. The two projects are developed together and share the same data.
 
 *Unofficial project. Not approved by or associated with Mojang or Microsoft. "Minecraft" is a trademark of Mojang Studios.*
