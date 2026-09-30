@@ -33,6 +33,7 @@ tools = [
   "tool_copilot",
   "tool_visual_studio_code",
   "tool_github",
+  "tool_github_actions",
   "tool_photoshop"
 ]
 image = "/images/projects/portfolio-site/realistic_laptop_with_smartphone.png"

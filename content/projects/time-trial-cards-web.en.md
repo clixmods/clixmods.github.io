@@ -24,7 +24,7 @@ specialties = [
   "spec_architecture_logicielle",
   "spec_developpement_dapplications"
 ]
-tools = [ "tool_docker", "tool_github", "tool_claude", "tool_google_sheets" ]
+tools = [ "tool_docker", "tool_gitlab", "tool_claude", "tool_google_sheets" ]
 
 [[actions]]
 type = "website"
