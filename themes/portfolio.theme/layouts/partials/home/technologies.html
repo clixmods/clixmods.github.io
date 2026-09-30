@@ -42,14 +42,14 @@
 <div class="tech-card reveal">
   {{- $specTitleDone := false -}}
   {{- range $groups }}
-  {{- $label := .label }}
+  {{- $label := .label }}{{ $isSpec := .spec }}
   {{- if and .spec (not $specTitleDone) }}
   {{- $specTitleDone = true }}
   <div class="tech-subtitle tech-subtitle-main">{{ i18n "proj_specialties" }}</div>
   {{- end }}
   {{- with .items }}
-  <div class="tech-group">
-    <div class="tech-subtitle">{{ $label }}</div>
+  <div class="tech-group{{ if $isSpec }} tech-group-sub{{ end }}">
+    <div class="tech-subtitle{{ if $isSpec }} tech-subtitle-sub{{ end }}">{{ $label }}</div>
     <div class="tech-pills">
       {{- range . }}
       {{- $t := partial "tech-resolve.html" .key -}}
