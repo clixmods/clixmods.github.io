@@ -302,7 +302,7 @@ ranking = 130
 
 **A personal project, built with AI.** MC Skin Creator was developed end to end with the help of AI (Claude / Claude Code): it is both a live product and a real-life experiment in what one person with an assistant can now build, test, deploy and *promote*. Every screenshot on this page was taken inside the site itself, using the catalogue's own models and backgrounds.
 
-{{< figure src="/images/projects/mc-skin-creator/editeur-sorciere-enfer.webp" alt="The MC Skin Creator editor" caption="The editor: library on the left, 3D preview in the centre, layers and settings on the right ("Blood witch" model, nether background)." >}}
+{{< figure src="/images/projects/mc-skin-creator/editeur-sorciere-enfer.webp" alt="The MC Skin Creator editor" caption="The editor: library on the left, 3D preview in the centre, layers and settings on the right (“Blood witch” model, nether background)." >}}
 
 <!-- 🎬 TO ADD: demo video of the editor (30–60 s: pick a model, switch the background, recolour a layer, export). 16:9, to embed via the project's YouTube widget (youtube_videos) or as a link. -->
 
