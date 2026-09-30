@@ -27,6 +27,7 @@ tools = [
   "tool_jetbrains",
   "tool_trello",
   "tool_copilot",
+  "tool_claude",
   "tool_google_play_console",
   "tool_google_sheets"
 ]
