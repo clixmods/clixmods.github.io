@@ -56,10 +56,24 @@ url = "https://mcskincreator.app/"
 primary = true
 fieldGroup = "actions_group"
 
+[[actions]]
+type = "youtube"
+label = "YouTube channel"
+url = "https://www.youtube.com/@MCSkinCreator-app"
+primary = false
+fieldGroup = "actions_group"
+
 [[contributors]]
 person = "clement-garcia"
 roles = [ "Developer", "Designer" ]
 fieldGroup = "contributors_group"
+
+[[youtube_singles]]
+size = "size-medium"
+video_id = "aDN2LN72WtY"
+video_title = "New Minecraft outfit: Winter armor | MC Skin Creator #shorts"
+order = "1"
+fieldGroup = "youtube_singles_group"
 
 [[galleries]]
 title = "The application"
@@ -288,6 +302,8 @@ ranking = 130
 
 **A personal project, built with AI.** MC Skin Creator was developed end to end with the help of AI (Claude / Claude Code): it is both a live product and a real-life experiment in what one person with an assistant can now build, test, deploy and *promote*. Every screenshot on this page was taken inside the site itself, using the catalogue's own models and backgrounds.
 
+{{< figure src="/images/projects/mc-skin-creator/editeur-sorciere-enfer.webp" alt="The MC Skin Creator editor" caption="The editor: library on the left, 3D preview in the centre, layers and settings on the right ("Blood witch" model, nether background)." >}}
+
 <!-- 🎬 TO ADD: demo video of the editor (30–60 s: pick a model, switch the background, recolour a layer, export). 16:9, to embed via the project's YouTube widget (youtube_videos) or as a link. -->
 
 ## The product in a few numbers
@@ -296,6 +312,18 @@ ranking = 130
 - **A single jar** bundling the back end, the front end and the rendering logic; **Docker** optional.
 - **About 300 ms** from opening the page to a ready-to-use editor, thanks to compressed asset atlases.
 - **Tests at every level** and **automatic deployment** on every merge (see below).
+
+{{< image-grid >}}
+
+{{< figure src="/images/projects/mc-skin-creator/modele-pirate-lagon.webp" alt="Golden pirate, lagoon background" caption="Golden pirate, lagoon background." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/modele-elfe-marais.webp" alt="Night elf, swamp background" caption="Night elf, swamp background." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/modele-chevalier-neige.webp" alt="Skeleton knight, snow background" caption="Skeleton knight, snow background." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/modele-mage-grotte.webp" alt="Crimson mage, cave background" caption="Crimson mage, cave background." >}}
+
+{{< /image-grid >}}
 
 ## Back end — Java 21, Spring Boot 4
 
@@ -314,20 +342,59 @@ ranking = 130
 - **Angular architecture**: standalone components, signal-based state, zoneless change detection, animation loop running outside Angular. Abstracted storage layer: the same front end runs on the Java API or on localStorage.
 - **Exports and mobile**: in-project animated GIF encoder (median-cut quantisation, LZW compression), mobile-friendly interface (drawers, touch gestures, two-finger pinch in the pixel editor).
 
+{{< image-grid >}}
+
+{{< figure src="/images/projects/mc-skin-creator/vue-3d-texture-mage.webp" alt="3D view and texture" caption="3D preview and texture side by side: whatever you paint shows up on the character right away." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/vue-premiere-personne.webp" alt="First-person view" caption="The first-person view, fitted numerically against a capture of the game." >}}
+
+{{< /image-grid >}}
+
 ## The tools I built for myself
 
 A project this size needs a lot more than the product itself: a logo, visuals, videos, a clean catalogue. Instead of leaving the project for each of these, I asked the AI to build **the tools I needed, inside the project**. They reuse the real catalogue and the real rendering engine, so what they produce is always faithful to the product.
 
-- **`/logo` — the logo is made by the site.** A page composes a skin head from catalogue elements, leaves half of it as graph paper, adds a 3D pencil and exports the whole thing as a PNG (256, 512 or 1024 px). Perspective or orthographic projection, grid drawn by the shader, supersampled rendering for clean edges. The logo you see on the site was not drawn in a graphics program: **it was composed with the application itself**.
-- **`/banniere` — marketing in one click.** A page generates the visuals for every network: X banner (1500×500), three-post Instagram panorama, TikTok cover, YouTube banner (2560×1440) and profile picture. Each format knows its **safe area** (what the network crops) and a test checks that nothing essential falls outside it; an example character gets dressed layer by layer, and the scenery is drawn only from models that require no attribution.
-- **`/video` — announcement videos on the fly.** Ten seconds of motion design **set to music** around a model or an outfit, in 9:16, 1:1 or 16:9, exported as MP4 with ready-to-copy captions for each network. Everything is computed in the browser: five shots cut to a 120 BPM tempo, music **synthesised** note by note (nine styles, no audio file, so no rights to pay), and an MP4 muxer and AAC encoder written for the occasion.
+### `/logo` — the logo is made by the site
+
+A page composes a skin head from catalogue elements, leaves half of it as graph paper, adds a 3D pencil and exports the whole thing as a PNG (256, 512 or 1024 px). Perspective or orthographic projection, grid drawn by the shader, supersampled rendering for clean edges. The logo you see on the site was not drawn in a graphics program: **it was composed with the application itself**.
+
+{{< image-grid >}}
+
+{{< figure src="/images/projects/mc-skin-creator/outil-logo.webp" alt="The /logo page" caption="The /logo page: pick the skin, hair, eyes and mouth from the catalogue." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/logo-genere.webp" alt="The exported logo" caption="The result exported as a 1024 px PNG: this is the site's logo." >}}
+
+{{< /image-grid >}}
+
+### `/banniere` — marketing in one click
+
+A page generates the visuals for every network: X banner (1500×500), three-post Instagram panorama, TikTok cover, YouTube banner (2560×1440) and profile picture. Each format knows its **safe area** (what the network crops) and a test checks that nothing essential falls outside it. An example character gets dressed layer by layer, and the scenery is drawn only from models that require no attribution.
+
+{{< figure src="/images/projects/mc-skin-creator/marketing-x.webp" alt="X banner generated by the site" caption="X banner (1500×500), exported as-is: the character gets dressed layer by layer." >}}
+{{< figure src="/images/projects/mc-skin-creator/marketing-youtube.webp" alt="YouTube banner generated by the site" caption="YouTube banner (2560×1440), with its central safe area." >}}
+{{< image-grid >}}
+
+{{< figure src="/images/projects/mc-skin-creator/marketing-avatar.webp" alt="Profile picture" caption="Profile picture (1080×1080): the logo's pencil leaves the circle the networks crop." >}}
+
+{{< figure src="/images/projects/mc-skin-creator/marketing-instagram.webp" alt="Instagram panorama" caption="Three-post Instagram panorama (3240×1440), cut into tiles." >}}
+
+{{< /image-grid >}}
+
+### `/video` — announcement videos on the fly
+
+Ten seconds of motion design **set to music** around a model or an outfit, in 9:16, 1:1 or 16:9, exported as MP4 with ready-to-copy captions for each network. Everything is computed in the browser: five shots cut to a 120 BPM tempo, music **synthesised** note by note (nine styles, no audio file, so no rights to pay), and an MP4 muxer and AAC encoder written for the occasion. An example of the result is in the Videos section below, published on the project's YouTube channel.
+
+{{< figure src="/images/projects/mc-skin-creator/outil-video.webp" alt="The /video page" caption="The /video page: subject, texts, background and music are set on the right, the preview plays the video itself." >}}
+
+<!-- 🎬 TO ADD: more videos generated by /video (Shorts from the YouTube channel). Send me the IDs or links and I will add them to youtube_singles. -->
+
+### And also
+
 - **The skin-slicing workshop.** The starter models come from existing skins **automatically sliced into catalogue elements**, with a pixel-exact check that the layer stack gives back the original texture. Dedicated tools detect the regions, propose a slicing draft, render control sheets from four angles and try each garment on other skins.
 - **The `/doublons` page.** Two different skins often carry the same four-texel eye: this tool groups elements that reduce to one another by a simple recolour, spins each family in 3D for judging, and writes the merge instructions.
 - **An admin console** (Java / Angular) driving these tools from a UI, and an **import queue** with a licence record for every skin spotted.
 
-<!-- 🎬 TO ADD: an example video generated by /video (the exported 10 s MP4, 9:16), to place here. -->
 <!-- 🖼️ TO ADD (optional): screenshot of the admin console and of the /doublons page. -->
-<!-- 🖼️ TO ADD (optional): a GIF of the /logo export or of the character getting dressed on the X banner. -->
 
 ## How I built this project with AI
 
