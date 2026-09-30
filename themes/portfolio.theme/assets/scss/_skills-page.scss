@@ -54,33 +54,38 @@
 [data-profile="gamedev"] .skills-subgroup[data-group="game_engine"] { order: -1; }
 [hidden].skills-subgroup, .skills-sections [hidden] { display: none !important; }
 
-// Onglets de profil
+// Onglets de profil : gros boutons bien visibles, clairement cliquables
 .skills-profiles {
-  display: inline-flex;
-  gap: 6px;
-  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
   margin: 0 0 var(--gap);
-  border-radius: var(--r-pill);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(12px);
 }
 .skills-profile {
+  flex: 1 1 260px;
   font-family: var(--font-head);
-  font-size: 0.86rem;
-  font-weight: 600;
-  padding: 9px 20px;
-  border-radius: var(--r-pill);
-  border: 0;
-  background: transparent;
-  color: var(--text-dim);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  padding: 22px 28px;
+  border-radius: var(--r-lg, 18px);
+  border: 2px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
 
-  &:hover { color: var(--text); }
+  &:hover {
+    transform: translateY(-2px);
+    border-color: var(--warm);
+    background: rgba(244, 63, 94, 0.12);
+  }
+  &:focus-visible { outline: 3px solid var(--warm); outline-offset: 3px; }
   &[aria-selected="true"] {
     color: #fff;
     background: var(--warm);
+    border-color: var(--warm);
+    box-shadow: 0 8px 28px rgba(244, 63, 94, 0.45);
   }
 }
 
