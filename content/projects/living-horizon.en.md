@@ -8,6 +8,7 @@ description = "Client-side mod for Fabric, Quilt, NeoForge and Forge that keeps 
 tags = [
   "Java",
   "Fabric",
+  "Quilt",
   "NeoForge",
   "Forge",
   "Modding",
@@ -27,7 +28,7 @@ fmContentType = "project-content-type"
 status = "In progress"
 image = "/images/projects/living-horizon/icon.webp"
 programming_languages = [ "lang_java" ]
-frameworks_engines = [ "fw_fabric" ]
+frameworks_engines = [ "fw_fabric", "fw_quilt", "fw_neoforge", "fw_forge" ]
 specialties = [
   "spec_modding",
   "spec_shaders",
