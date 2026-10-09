@@ -193,5 +193,32 @@
     "color": "#DBD0B4",
     "displayedInPortfolio": false,
     "category": "game_engine"
+  },
+  {
+    "key": "fw_quilt",
+    "experience": 0.1,
+    "icon": "🪡",
+    "iconPath": null,
+    "color": "#9C5AF2",
+    "displayedInPortfolio": false,
+    "category": "game_engine"
+  },
+  {
+    "key": "fw_neoforge",
+    "experience": 0.1,
+    "icon": "🦊",
+    "iconPath": null,
+    "color": "#D7742F",
+    "displayedInPortfolio": false,
+    "category": "game_engine"
+  },
+  {
+    "key": "fw_forge",
+    "experience": 0.1,
+    "icon": "⚒️",
+    "iconPath": null,
+    "color": "#3E4B5E",
+    "displayedInPortfolio": false,
+    "category": "game_engine"
   }
 ]
