@@ -9,12 +9,16 @@
 {{- $langs := $p.Params.programming_languages -}}
 {{- $fws := $p.Params.frameworks_engines -}}
 {{- $tools := $p.Params.tools -}}
+{{- $allTech := slice -}}
+{{- with $langs }}{{ $allTech = $allTech | append . }}{{ end -}}
+{{- with $fws }}{{ $allTech = $allTech | append . }}{{ end -}}
+{{/* 4 chips au plus ; avec des frameworks, 3 langages au plus pour que le premier framework reste visible */}}
 {{- $display := slice -}}
-{{- with $langs }}{{ $display = $display | append . }}{{ end -}}
+{{- $maxLangs := 4 -}}{{- with $fws }}{{ $maxLangs = 3 }}{{ end -}}
+{{- with $langs }}{{ $display = $display | append (first $maxLangs .) }}{{ end -}}
 {{- with $fws }}{{ $display = $display | append . }}{{ end -}}
-{{- $allTech := $display -}}
-{{- with $tools }}{{ $allTech = $allTech | append . }}{{ end -}}
 {{- $display = first 4 $display -}}
+{{- with $tools }}{{ $allTech = $allTech | append . }}{{ end -}}
 
 <a class="project-card reveal{{ with $class }} {{ . }}{{ end }}" href="{{ $p.RelPermalink }}"
    data-project
