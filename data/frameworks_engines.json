@@ -189,9 +189,45 @@
     "key": "fw_fabric",
     "experience": 1,
     "icon": "🧵",
-    "iconPath": null,
+    "iconPath": "/images/technologies/Fabric.png",
     "color": "#DBD0B4",
-    "displayedInPortfolio": false,
+    "displayedInPortfolio": true,
+    "category": "game_engine"
+  },
+  {
+    "key": "fw_quilt",
+    "experience": 1,
+    "icon": "🧩",
+    "iconPath": "/images/technologies/Quilt.png",
+    "color": "#9722FF",
+    "displayedInPortfolio": true,
+    "category": "game_engine"
+  },
+  {
+    "key": "fw_neoforge",
+    "experience": 1,
+    "icon": "🦊",
+    "iconPath": "/images/technologies/NeoForge.png",
+    "color": "#D7742F",
+    "displayedInPortfolio": true,
+    "category": "game_engine"
+  },
+  {
+    "key": "fw_forge",
+    "experience": 1,
+    "icon": "⚒️",
+    "iconPath": "/images/technologies/Forge.png",
+    "color": "#1E2D44",
+    "displayedInPortfolio": true,
+    "category": "game_engine"
+  },
+  {
+    "key": "fw_stonecutter",
+    "experience": 1,
+    "icon": "🪚",
+    "iconPath": "/images/technologies/Stonecutter.png",
+    "color": "#8E8E8E",
+    "displayedInPortfolio": true,
     "category": "game_engine"
   }
 ]

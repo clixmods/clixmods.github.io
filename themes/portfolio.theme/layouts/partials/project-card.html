@@ -15,8 +15,9 @@
 {{- with $fws }}{{ $allTech = $allTech | append . }}{{ end -}}
 {{- with $tools }}{{ $allTech = $allTech | append . }}{{ end -}}
 {{- $sets := slice -}}
-{{- with $langs }}{{ $sets = $sets | append (dict "keys" (first 4 .)) }}{{ end -}}
-{{- with $fws }}{{ $sets = $sets | append (dict "keys" (first 4 .)) }}{{ end -}}
+{{- range slice $langs $fws }}{{ $keys := . }}{{ with $keys }}
+{{- range seq 0 4 (sub (len $keys) 1) }}{{ $sets = $sets | append (dict "keys" (first 4 (after . $keys))) }}{{ end -}}
+{{- end }}{{ end -}}
 
 <a class="project-card reveal{{ with $class }} {{ . }}{{ end }}" href="{{ $p.RelPermalink }}"
    data-project
