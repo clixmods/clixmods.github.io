@@ -191,7 +191,7 @@
     "icon": "🧵",
     "iconPath": "/images/technologies/Fabric.png",
     "color": "#DBD0B4",
-    "displayedInPortfolio": false,
+    "displayedInPortfolio": true,
     "category": "game_engine"
   },
   {
@@ -200,7 +200,7 @@
     "icon": "🧩",
     "iconPath": "/images/technologies/Quilt.png",
     "color": "#9722FF",
-    "displayedInPortfolio": false,
+    "displayedInPortfolio": true,
     "category": "game_engine"
   },
   {
@@ -209,7 +209,7 @@
     "icon": "🦊",
     "iconPath": "/images/technologies/NeoForge.png",
     "color": "#D7742F",
-    "displayedInPortfolio": false,
+    "displayedInPortfolio": true,
     "category": "game_engine"
   },
   {
@@ -218,7 +218,7 @@
     "icon": "⚒️",
     "iconPath": "/images/technologies/Forge.png",
     "color": "#1E2D44",
-    "displayedInPortfolio": false,
+    "displayedInPortfolio": true,
     "category": "game_engine"
   },
   {
@@ -227,7 +227,7 @@
     "icon": "🪚",
     "iconPath": "/images/technologies/Stonecutter.png",
     "color": "#8E8E8E",
-    "displayedInPortfolio": false,
+    "displayedInPortfolio": true,
     "category": "game_engine"
   }
 ]
