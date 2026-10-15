@@ -161,7 +161,27 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: auto; padding-top: 6px; }
+  .project-tags-wrap { display: grid; margin-top: auto; padding-top: 6px; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px 14px; grid-area: 1 / 1; }
+
+  // Langages puis frameworks : rangées superposées (hauteur de la plus haute),
+  // une seule visible à la fois, en fondu.
+  [data-tech-rotate] .project-tags {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+    transition: opacity 0.45s ease, transform 0.45s ease, visibility 0s linear 0.45s;
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition: opacity 0.45s ease, transform 0.45s ease, visibility 0s;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-tech-rotate] .project-tags,
+    [data-tech-rotate] .project-tags.is-active { transition: none; transform: none; }
+  }
 
   // mini-libellés technos : on neutralise le fond arrondi hérité de .tag —
   // ce sont des indications, pas des boutons (seule la carte est cliquable).
