@@ -281,6 +281,27 @@
     initialized = true;
   });
 
+  // ── Cartes projet : langages ⇄ frameworks ─────────────
+  // Un seul minuteur pour toutes les cartes ; une carte survolée garde sa rangée,
+  // rien ne tourne quand l'onglet est en arrière-plan.
+  var techRotators = document.querySelectorAll("[data-tech-rotate]");
+  if (techRotators.length) {
+    setInterval(function () {
+      if (document.hidden) return;
+      techRotators.forEach(function (wrap) {
+        if (wrap.closest(".project-card").matches(":hover")) return;
+        var sets = wrap.querySelectorAll(".project-tags");
+        var cur = 0;
+        sets.forEach(function (s, i) { if (s.classList.contains("is-active")) cur = i; });
+        var next = (cur + 1) % sets.length;
+        sets[cur].classList.remove("is-active");
+        sets[cur].setAttribute("aria-hidden", "true");
+        sets[next].classList.add("is-active");
+        sets[next].removeAttribute("aria-hidden");
+      });
+    }, 3500);
+  }
+
   // ── Carrousel témoignages (un à la fois, auto-défilement) ──
   // Supporte plusieurs carrousels sur une même page (accueil + formations).
   document.querySelectorAll("[data-testi]").forEach(function (testi) {

@@ -5,20 +5,18 @@
 {{- $mainLabel := "" -}}{{- with $cat.main }}{{ $mainLabel = i18n (printf "cat_%s" .) }}{{ end -}}
 {{- $subLabel := "" -}}{{- with $cat.sub }}{{ $subLabel = i18n (printf "sub_%s" .) }}{{ end -}}
 
-{{/* Technos : langages + frameworks (affichage) ; +outils (data-tech) */}}
+{{/* Technos : langages puis frameworks, 4 au plus par rangée ; avec les deux, les rangées
+     alternent (main.js, [data-tech-rotate]). +outils dans data-facet-tech pour les filtres. */}}
 {{- $langs := $p.Params.programming_languages -}}
 {{- $fws := $p.Params.frameworks_engines -}}
 {{- $tools := $p.Params.tools -}}
 {{- $allTech := slice -}}
 {{- with $langs }}{{ $allTech = $allTech | append . }}{{ end -}}
 {{- with $fws }}{{ $allTech = $allTech | append . }}{{ end -}}
-{{/* 4 chips au plus ; avec des frameworks, 3 langages au plus pour que le premier framework reste visible */}}
-{{- $display := slice -}}
-{{- $maxLangs := 4 -}}{{- with $fws }}{{ $maxLangs = 3 }}{{ end -}}
-{{- with $langs }}{{ $display = $display | append (first $maxLangs .) }}{{ end -}}
-{{- with $fws }}{{ $display = $display | append . }}{{ end -}}
-{{- $display = first 4 $display -}}
 {{- with $tools }}{{ $allTech = $allTech | append . }}{{ end -}}
+{{- $sets := slice -}}
+{{- with $langs }}{{ $sets = $sets | append (dict "keys" (first 4 .)) }}{{ end -}}
+{{- with $fws }}{{ $sets = $sets | append (dict "keys" (first 4 .)) }}{{ end -}}
 
 <a class="project-card reveal{{ with $class }} {{ . }}{{ end }}" href="{{ $p.RelPermalink }}"
    data-project
@@ -35,11 +33,15 @@
   <div class="project-body">
     <span class="project-title">{{ $p.Title }}</span>
     <span class="project-desc">{{ with $p.Params.subtitle }}{{ . }}{{ else }}{{ $p.Description }}{{ end }}</span>
-    {{- with $display }}
-    <div class="project-tags">
-      {{- range . }}
-      {{- $t := partial "tech-resolve.html" . }}
-      <span class="tag tag-tech">{{ if $t.iconPath }}<img src="{{ $t.iconSrc }}" alt="" width="14" height="14" loading="lazy">{{ else }}{{ with $t.icon }}<span class="tag-tech-emoji">{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}</span>
+    {{- with $sets }}
+    <div class="project-tags-wrap"{{ if gt (len .) 1 }} data-tech-rotate{{ end }}>
+      {{- range $i, $set := . }}
+      <div class="project-tags{{ if eq $i 0 }} is-active{{ end }}"{{ if gt $i 0 }} aria-hidden="true"{{ end }}>
+        {{- range $set.keys }}
+        {{- $t := partial "tech-resolve.html" . }}
+        <span class="tag tag-tech">{{ if $t.iconPath }}<img src="{{ $t.iconSrc }}" alt="" width="14" height="14" loading="lazy">{{ else }}{{ with $t.icon }}<span class="tag-tech-emoji">{{ . }}</span>{{ end }}{{ end }}{{ $t.label }}</span>
+        {{- end }}
+      </div>
       {{- end }}
     </div>
     {{- end }}
