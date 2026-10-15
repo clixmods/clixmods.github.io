@@ -3,11 +3,15 @@ date = "2026-09-29T10:00:00+02:00"
 draft = false
 title = "MC Skin Creator (mod)"
 slug = "mc-skin-creator-mod"
-subtitle = "Fabric mod: the skin editor, right inside Minecraft"
-description = "Client-side Fabric mod that brings the MC Skin Creator editor into Minecraft: piece catalogue, layers, in-game 3D preview and one-click skin upload to your account, for Minecraft 1.21.11 and 26.2 from a single source tree"
+subtitle = "Multi-loader Minecraft mod: the MC Skin Creator skin editor, right inside the game"
+description = "Minecraft mod for Fabric, Quilt, NeoForge and Forge, from 1.20 to 26.3 out of a single source tree built with Stonecutter: the MC Skin Creator editor in game, with piece catalogue, layers, 3D preview and one-click skin upload to your account"
 tags = [
   "Java",
   "Fabric",
+  "Quilt",
+  "NeoForge",
+  "Forge",
+  "Stonecutter",
   "Modding",
   "Minecraft",
   "Mixin",
@@ -23,7 +27,7 @@ fmContentType = "project-content-type"
 status = "In progress"
 image = "/images/projects/mc-skin-creator-mod/vue-en-jeu.webp"
 programming_languages = [ "lang_java" ]
-frameworks_engines = [ "fw_fabric" ]
+frameworks_engines = [ "fw_fabric", "fw_quilt", "fw_neoforge", "fw_forge", "fw_stonecutter" ]
 specialties = [
   "spec_modding",
   "spec_interface_utilisateur",
@@ -105,7 +109,7 @@ ranking = 130
 
 # MC Skin Creator (mod)
 
-The **MC Skin Creator** mod brings the skin editor of **[mcskincreator.app](https://mcskincreator.app/)** straight into Minecraft. A button on the title screen and the pause menu opens the editor: pick pieces (hair, faces, clothes, accessories…), stack them as layers, see the result on your character, then apply it to your Minecraft account in one click, no restart. Client-side Fabric mod for Minecraft 1.21.11 and 26.2; personal project, source-available, built with AI and shipped through a full CI/CD pipeline. It is the in-game version of the [MC Skin Creator website](/en/projects/mc-skin-creator/).
+The **MC Skin Creator** mod brings the skin editor of **[mcskincreator.app](https://mcskincreator.app/)** straight into Minecraft. A button on the title screen and the pause menu opens the editor: pick pieces (hair, faces, clothes, accessories…), stack them as layers, see the result on your character, then apply it to your Minecraft account in one click, no restart. A mod for **Fabric, Quilt, NeoForge and Forge**, from **Minecraft 1.20 to 26.3**, installed in the player's game with nothing to install on a server; personal project, source-available, built with AI and shipped through a full CI/CD pipeline. It is the in-game version of the [MC Skin Creator website](/en/projects/mc-skin-creator/).
 
 ## How it works
 
@@ -122,17 +126,17 @@ The **MC Skin Creator** mod brings the skin editor of **[mcskincreator.app](http
 
 ## Technical challenges on the Minecraft side
 
-- **One source tree, two generations of the game.** Stonecutter compiles the same sources for 1.21.11 (Java 21) and 26.2 (Java 25, official Mojang mappings): 26.x replaced immediate-mode GUI drawing with a render-state extraction pass. All drawing goes through one object (`Canvas`), the only UI file that knows a game version, and differences stay small versioned branches, never a runtime version check.
+- **One source tree, 14 game versions, 4 loaders.** **[Stonecutter](https://stonecutter.kikugie.dev/)**, a Gradle plugin for multi-version builds, compiles the same sources for every Minecraft version from 1.20 to 26.3 (Java 17, 21 then 25, official Mojang mappings) and for every loader: Fabric, Quilt, NeoForge and Forge. Differences between loaders are conditional comments (`//? if fabric {`, `//? if neoforge {`…), not copies of the code. On the game side, 26.x replaced immediate-mode GUI drawing with a render-state extraction pass. All drawing goes through one object (`Canvas`), the only UI file that knows a game version, and differences stay small versioned branches, never a runtime version check.
 - **A UI built from the game's own sprites.** The editor takes the website's layout but paints with Minecraft's buttons, slots and fonts: a resource pack that restyles the game restyles the editor too. Because the UI never touches the Minecraft client directly, it can be rendered to an image in tests, with the real font extracted from the jar, without launching the game.
 - **Seeing your skin in the world.** The "In game" view draws the real character in the world, under the game's lighting and under a shader pack. The engine only draws the local player when they are the camera, so I built on the game's own third person, orbit included. The character's animation goes through a mixin on the render state, which changes one picture on this client, whereas animating the entity would have been game state sent to the server.
-- **Three mixins, no more.** One to wear the uploaded skin before Mojang propagates it, one to pose the character in the world, one to hide the HUD without hiding the first-person arm. Each is justified in the repository and checked in the bytecode of both versions, including descriptor remapping.
+- **As few mixins as possible.** One to wear the uploaded skin before Mojang propagates it, one to pose the character in the world (split by game version), one to hide the HUD without hiding the first-person arm. Each is justified in the repository and checked in the bytecode, including descriptor remapping.
 
 ## Quality, CI/CD and security
 
 This project was built like a product shipped to real players, not a prototype: the whole delivery chain is automated.
 
-- **GitHub Actions, one job per game version.** Every pull request builds and tests the mod on 1.21.11 and 26.2 in parallel; a broken version does not hide the other, and each version's jar is available as an artifact to try before merging.
-- **Automatic versioning and publishing.** The version number is computed from conventional commits (new feature, fix, or no release at all when the change is purely internal). A merge to `main` creates the GitHub release with one jar per Minecraft version and uploads it to Modrinth; `develop` produces pre-releases.
+- **GitHub Actions, one job per target.** Every pull request builds and tests the mod for every Minecraft version × loader pair in parallel; a broken target does not hide the others, and each one's jar is available as an artifact to try before merging.
+- **Automatic versioning and publishing.** The version number is computed from conventional commits (new feature, fix, or no release at all when the change is purely internal). A merge to `main` creates the GitHub release with one jar per Minecraft version and per loader, and uploads it to Modrinth; `develop` produces pre-releases.
 - **A strict branch flow.** Work happens on dedicated branches, never directly on `main`, and nothing is merged without human review, however green the CI.
 - **JUnit 5 tests** on the pure logic: layer stack and history, composition, project document, catalogue reading.
 - **Security.** The Minecraft session token is read only when clicking "Apply", by a single class, sent to a single Mojang endpoint, and never sent to the site's server, logged or written to disk. A `SECURITY.md` file points to where each claim can be checked in the code. On the build side, secrets stay in the repository secrets, the `mcsc-engine` library is pinned to an exact version and bundled in the jar, and publishing only happens with dedicated credentials.
@@ -142,7 +146,7 @@ This project was built like a product shipped to real players, not a prototype: 
 The mod was developed with **Claude Code** as a coding assistant, and I stand by that: my role was to direct, frame and validate. In practice:
 
 - **I decide the architecture and constraints**: a single source tree for several game versions, the frozen API as the only contract with the site, a capped number of mixins, the composition engine shared with the site instead of copied. These choices are written down in the repository (`CLAUDE.md`, `DECISIONS.md`, `INTERFACE.md`), which gives the AI written rules to follow rather than verbal instructions.
-- **The AI implements, CI decides.** Work goes through branches and pull requests; it is the tests and the build on both Minecraft versions that validate, not trust in generated code. I review every change before merging.
+- **The AI implements, CI decides.** Work goes through branches and pull requests; it is the tests and the build on every Minecraft version and loader that validate, not trust in generated code. I review every change before merging.
 - **What I took from it**: writing precise specifications, breaking work down, verifying rather than assuming (for example checking in the bytecode that mixins are properly remapped), and staying in control of code I did not type line by line.
 
 ## The link with the website

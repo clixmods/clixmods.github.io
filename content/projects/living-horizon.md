@@ -3,14 +3,15 @@ date = "2026-10-13T10:00:00+02:00"
 draft = false
 title = "Living Horizon"
 slug = "living-horizon"
-subtitle = "Mod Minecraft côté client : la vie continue au-delà de la distance de rendu"
-description = "Mod Minecraft côté client qui fait vivre l'horizon : animaux, villageois, oiseaux et autres joueurs restent visibles bien au-delà de la distance de rendu, sur le terrain lointain de Voxy et Distant Horizons, pour Fabric, Quilt, NeoForge et Forge, de Minecraft 1.20 à 26.3 depuis un seul code source"
+subtitle = "Mod Minecraft multi-loader qui fait vivre l'horizon au-delà de la distance de rendu"
+description = "Mod Minecraft pour Fabric, Quilt, NeoForge et Forge, de 1.20 à 26.3 depuis un seul code source compilé avec Stonecutter : animaux, villageois, oiseaux et autres joueurs restent visibles bien au-delà de la distance de rendu, sur le terrain lointain de Voxy et Distant Horizons, avec un pack de données optionnel pour les serveurs"
 tags = [
   "Java",
   "Fabric",
   "NeoForge",
   "Forge",
   "Quilt",
+  "Stonecutter",
   "Modding",
   "Minecraft",
   "Rendu",
@@ -27,7 +28,7 @@ fmContentType = "project-content-type"
 status = "En cours"
 image = "/images/projects/living-horizon/avant-apres-shaders.webp"
 programming_languages = [ "lang_java" ]
-frameworks_engines = [ "fw_fabric" ]
+frameworks_engines = [ "fw_fabric", "fw_quilt", "fw_neoforge", "fw_forge", "fw_stonecutter" ]
 specialties = [
   "spec_modding",
   "spec_shaders",
@@ -130,7 +131,7 @@ ranking = 130
 
 **Living Horizon** donne vie au lointain. Dans Minecraft, le jeu arrête de dessiner les animaux et les joueurs à quelques chunks de distance ; les mods de terrain lointain comme **Voxy** et **Distant Horizons** prolongent le paysage jusqu'à l'horizon, mais ce paysage reste vide et immobile. Avec Living Horizon, les animaux broutent sur les collines lointaines, les villageois vivent autour des villages au loin, les oiseaux traversent le ciel et les autres joueurs continuent de marcher, avec leur skin, leur armure et leur monture, bien au-delà de la distance de rendu.
 
-Mod **côté client uniquement** : rien n'est envoyé au serveur, il fonctionne sur n'importe quel serveur. Il tourne sur **Fabric, Quilt, NeoForge et Forge**, de **Minecraft 1.20 à 26.3** (53 builds), depuis un seul code source. Il marche aussi sans mod de terrain lointain : on peut jouer avec une distance de rendu et de simulation minimales et garder un monde vivant, ce qui fait gagner des images par seconde. Projet personnel en source disponible, publié sur [CurseForge](https://www.curseforge.com/minecraft/mc-mods/living-horizon) et [Nexus Mods](https://www.nexusmods.com/minecraft/mods/1376), plus de 5 500 téléchargements dans sa première semaine. Il a son propre [site de présentation](/projects/living-horizon-website/).
+Le mod s'installe dans le jeu du joueur et fonctionne sur n'importe quel serveur, sans rien y installer ; côté serveur, un **pack de données optionnel** rend les positions exactes à toute distance. Il tourne sur **Fabric, Quilt, NeoForge et Forge**, de **Minecraft 1.20 à 26.3** (53 builds), depuis un seul code source compilé avec **Stonecutter**. Il marche aussi sans mod de terrain lointain : on peut jouer avec une distance de rendu et de simulation minimales et garder un monde vivant, ce qui fait gagner des images par seconde. Projet personnel en source disponible, publié sur [CurseForge](https://www.curseforge.com/minecraft/mc-mods/living-horizon) et [Nexus Mods](https://www.nexusmods.com/minecraft/mods/1376), plus de 5 500 téléchargements dans sa première semaine. Il a son propre [site de présentation](/projects/living-horizon-website/).
 
 {{< figure src="/images/projects/living-horizon/avant-apres-shaders.webp" alt="Avant / après Living Horizon" caption="À gauche sans le mod, à droite avec : même vue, mêmes réglages (distance de rendu 12, shader pack)." >}}
 
@@ -164,7 +165,7 @@ Mod **côté client uniquement** : rien n'est envoyé au serveur, il fonctionne 
 
 ## Un seul code source, 14 versions du jeu, 4 loaders
 
-Le mod est compilé par **Stonecutter** pour chaque version de Minecraft et chaque loader, avec les mappings officiels de Mojang : Java 17 jusqu'à 1.20.4, Java 21 à partir de 1.20.5, Java 25 sur 26.x. Avant 1.21.2, le jeu n'a pas d'états de rendu d'entité : le mod fournit des doublures du même nom. Avant 1.21.6, il n'a pas de cible de rendu redirigeable : les imposteurs sont cuits dans une cible propre au mod. Ce qui diffère entre loaders (événements, dossier de configuration) vit dans une seule couche `platform/`.
+Le mod est compilé avec **[Stonecutter](https://stonecutter.kikugie.dev/)**, un plugin Gradle de compilation multi-versions : le code est écrit une fois, des commentaires conditionnels (`//? if >=26.1 {`, `//? if neoforge {`…) choisissent les variantes, et chaque couple version de Minecraft × loader devient un projet Gradle à part, construit et testé par la CI. Le tout avec les mappings officiels de Mojang : Java 17 jusqu'à 1.20.4, Java 21 à partir de 1.20.5, Java 25 sur 26.x. Avant 1.21.2, le jeu n'a pas d'états de rendu d'entité : le mod fournit des doublures du même nom. Avant 1.21.6, il n'a pas de cible de rendu redirigeable : les imposteurs sont cuits dans une cible propre au mod. Ce qui diffère entre loaders (événements, dossier de configuration) vit dans une seule couche `platform/`.
 
 ## Qualité, CI/CD et tests en jeu
 

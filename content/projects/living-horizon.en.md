@@ -3,14 +3,15 @@ date = "2026-10-13T10:00:00+02:00"
 draft = false
 title = "Living Horizon"
 slug = "living-horizon"
-subtitle = "Client-side Minecraft mod: life goes on past the render distance"
-description = "Client-side Minecraft mod that brings the horizon to life: animals, villagers, birds and other players stay visible far past the render distance, on the far terrain of Voxy and Distant Horizons, for Fabric, Quilt, NeoForge and Forge, from Minecraft 1.20 to 26.3 out of a single source tree"
+subtitle = "Multi-loader Minecraft mod that brings the horizon to life past the render distance"
+description = "Minecraft mod for Fabric, Quilt, NeoForge and Forge, from 1.20 to 26.3 out of a single source tree built with Stonecutter: animals, villagers, birds and other players stay visible far past the render distance, on the far terrain of Voxy and Distant Horizons, with an optional data pack for servers"
 tags = [
   "Java",
   "Fabric",
   "NeoForge",
   "Forge",
   "Quilt",
+  "Stonecutter",
   "Modding",
   "Minecraft",
   "Rendering",
@@ -27,7 +28,7 @@ fmContentType = "project-content-type"
 status = "In progress"
 image = "/images/projects/living-horizon/avant-apres-shaders.webp"
 programming_languages = [ "lang_java" ]
-frameworks_engines = [ "fw_fabric" ]
+frameworks_engines = [ "fw_fabric", "fw_quilt", "fw_neoforge", "fw_forge", "fw_stonecutter" ]
 specialties = [
   "spec_modding",
   "spec_shaders",
@@ -130,7 +131,7 @@ ranking = 130
 
 **Living Horizon** gives life to the distance. Minecraft stops drawing animals and players a few chunks away; far-terrain mods such as **Voxy** and **Distant Horizons** stretch the landscape to the horizon, but that landscape stays empty and still. With Living Horizon, animals graze on the far hills, villagers live around far-off villages, birds cross the sky and other players keep walking, with their skin, armour and mount, far past the render distance.
 
-A **client-side only** mod: nothing is sent to the server, so it works on any server. It runs on **Fabric, Quilt, NeoForge and Forge**, from **Minecraft 1.20 to 26.3** (53 builds), out of a single source tree. It also works without a far-terrain mod: play with minimal render and simulation distance and keep a living world, which wins back frames per second. A personal, source-available project, published on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/living-horizon) and [Nexus Mods](https://www.nexusmods.com/minecraft/mods/1376), with over 5,500 downloads in its first week. It has its own [landing site](/en/projects/living-horizon-website/).
+The mod is installed in the player's game and works on any server, with nothing to install there; on the server side, an **optional data pack** makes positions exact at any distance. It runs on **Fabric, Quilt, NeoForge and Forge**, from **Minecraft 1.20 to 26.3** (53 builds), out of a single source tree built with **Stonecutter**. It also works without a far-terrain mod: play with minimal render and simulation distance and keep a living world, which wins back frames per second. A personal, source-available project, published on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/living-horizon) and [Nexus Mods](https://www.nexusmods.com/minecraft/mods/1376), with over 5,500 downloads in its first week. It has its own [landing site](/en/projects/living-horizon-website/).
 
 {{< figure src="/images/projects/living-horizon/avant-apres-shaders.webp" alt="Living Horizon before / after" caption="Left without the mod, right with it: same view, same settings (render distance 12, shader pack)." >}}
 
@@ -164,7 +165,7 @@ A **client-side only** mod: nothing is sent to the server, so it works on any se
 
 ## One source tree, 14 game versions, 4 loaders
 
-The mod is built by **Stonecutter** for each Minecraft version and loader, with Mojang's official mappings: Java 17 up to 1.20.4, Java 21 from 1.20.5, Java 25 on 26.x. Before 1.21.2 the game has no entity render states: the mod ships stand-ins with the same names. Before 1.21.6 it has no redirectable render target: impostors are baked into a target of the mod's own. What differs between loaders (events, config folder) lives in a single `platform/` layer.
+The mod is built with **[Stonecutter](https://stonecutter.kikugie.dev/)**, a Gradle plugin for multi-version builds: the code is written once, conditional comments (`//? if >=26.1 {`, `//? if neoforge {`…) pick the variants, and every Minecraft version × loader pair becomes a Gradle project of its own, built and tested by CI. All with Mojang's official mappings: Java 17 up to 1.20.4, Java 21 from 1.20.5, Java 25 on 26.x. Before 1.21.2 the game has no entity render states: the mod ships stand-ins with the same names. Before 1.21.6 it has no redirectable render target: impostors are baked into a target of the mod's own. What differs between loaders (events, config folder) lives in a single `platform/` layer.
 
 ## Quality, CI/CD and in-game testing
 
