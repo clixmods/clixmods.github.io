@@ -1,23 +1,14 @@
-// Point d'entrée SCSS — thème glassmorphism / blueprint
-// Ordre important : tokens + mixins d'abord, puis composants.
+// Thème « Cadre » — sobre et léger, façon Arc / Zen Browser.
+// Un cadre teinté par l'espace courant porte la barre latérale d'onglets ;
+// le contenu vit dans une feuille unique posée avec un léger retrait.
 @import "tokens";
-@import "glass";
 @import "base";
-@import "blueprint";
-@import "navbar";
-@import "hero";
-@import "cards";
-@import "technologies";
-@import "testimonials";
+@import "shell";
+@import "overlays";
+@import "components";
+@import "home";
 @import "pages";
-@import "projects-page";
-@import "project-single";
-@import "skills-page";
-@import "services";
+@import "project";
 @import "timeline";
-@import "home-experiences";
-@import "blog";
-@import "footer";
-
-// Doit rester en dernier : neutralise le flou sur mobile (spécificité égale).
-@import "mobile-perf";
+@import "skills";
+@import "testimonials";

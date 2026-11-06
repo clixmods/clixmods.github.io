@@ -1,6 +1,6 @@
 {{- $site := .Site -}}
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 {{- $title := .Title -}}
 {{- if .IsHome -}}{{ $title = $site.Title }}{{- else -}}{{ $title = printf "%s · %s" .Title $site.Title }}{{- end -}}
@@ -9,20 +9,43 @@
 {{- $desc := .Description | default $site.Params.description -}}
 {{- with $desc }}<meta name="description" content="{{ . }}">{{ end }}
 <link rel="canonical" href="{{ .Permalink }}">
+{{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{- end }}
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ $title }}">
 {{- with $desc }}<meta property="og:description" content="{{ . }}">{{ end }}
 <meta property="og:url" content="{{ .Permalink }}">
-<meta name="theme-color" content="#080b16">
+<meta name="theme-color" content="#dfe3f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16182a" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
 
-{{/* Polices : Space Grotesk (titres) + Inter (corps) */}}
+{{/* Thème « Cadre » : préférences du visiteur appliquées avant le rendu
+     (barre latérale repliée, teintes d'espaces personnalisées). */}}
+<script>
+(function () {
+  var h = document.documentElement;
+  try {
+    if (localStorage.getItem("cadre:compact") === "1") h.classList.add("is-compact");
+    var t = JSON.parse(localStorage.getItem("cadre:themes") || "{}");
+    Object.keys(t).forEach(function (s) {
+      var v = t[s] || {};
+      if (v.a) { h.style.setProperty("--th-" + s + "-a", v.a); h.style.setProperty("--thd-" + s + "-a", "color-mix(in oklab, " + v.a + " 24%, #121318)"); }
+      if (v.b) { h.style.setProperty("--th-" + s + "-b", v.b); h.style.setProperty("--thd-" + s + "-b", "color-mix(in oklab, " + v.b + " 24%, #121318)"); }
+      if (v.accent) { h.style.setProperty("--th-" + s + "-accent", v.accent); h.style.setProperty("--thd-" + s + "-accent", "color-mix(in oklab, " + v.accent + " 62%, #ffffff)"); }
+    });
+  } catch (e) {}
+})();
+</script>
+
+{{/* Police : Geist (texte) + Geist Mono (dates, durées) */}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-{{/* Compilation SCSS via Hugo Pipes (libsass intégré, pas de binaire externe) */}}
-{{- $opts := dict "outputStyle" "compressed" "enableSourceMap" false -}}
+{{/* Dart Sass (installé par la CI) : nécessaire pour color-mix(), max(), @each. */}}
+{{- $opts := dict "transpiler" "dartsass" "outputStyle" "compressed" "enableSourceMap" false "silenceDeprecations" (slice "import" "global-builtin") -}}
 {{- $css := resources.Get "scss/main.scss" | toCSS $opts | fingerprint -}}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 

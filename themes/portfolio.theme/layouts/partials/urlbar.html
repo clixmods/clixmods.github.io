@@ -1,0 +1,6 @@
+{{- /* Barre d'adresse : ouvre la recherche ⌘K. Contexte = la page. */ -}}
+<button type="button" class="urlbar" data-palette-open aria-label="{{ i18n "ui_search" }}">
+  {{ partial "icon.html" "search" }}
+  <span class="url-text">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://" (strings.TrimPrefix "http://" .Permalink)) }}</span>
+  <kbd class="url-kbd">⌘K</kbd>
+</button>

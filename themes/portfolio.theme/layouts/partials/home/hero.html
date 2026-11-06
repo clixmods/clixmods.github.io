@@ -4,53 +4,38 @@
 {{- $contact := $p.contact -}}
 {{- $avail := $p.availability -}}
 <section class="hero">
-  <div class="container">
-    <div class="hero-plate reveal">
-      <div class="hero-content">
-        {{- with $avail.message }}
-        <span class="hero-badge"><span class="dot"></span>{{ . }}</span>
-        {{- end }}
-
-        {{- with $personal.greeting }}
-        <p class="hero-greeting">{{ . }}</p>
-        {{- end }}
-
-        <h1 class="hero-title">
-          {{ i18n "ui_hero_lead" }} <span class="hero-accent">{{ i18n "ui_hero_highlight" }}</span>
-        </h1>
-
-        <p class="hero-sub">
-          {{- with $personal.subtitle }}{{ . }}{{ else }}{{ with $personal.bio }}{{ printf "%s." (index (split . ".") 0) }}{{ end }}{{ end -}}
-        </p>
-
-        <div class="hero-meta">
-          {{- with $p.details.experience }}
-          <span><span class="hero-meta-ico">⌁</span>{{ . }} {{ i18n "ui_of_experience" }}</span>
-          {{- end }}
-          {{- with $contact.location }}
-          <span><span class="hero-meta-ico">⌖</span>{{ i18n "ui_based_in" }} {{ . }}</span>
-          {{- end }}
-        </div>
-
-        <div class="hero-cta">
-          <a class="btn btn-cold" href="{{ relLangURL "/projects/" }}">
-            {{ i18n "ui_view_projects" }}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          {{- with $contact.email }}
-          <a class="btn btn-ghost" href="mailto:{{ . }}">{{ i18n "ui_contact_me" }}</a>
-          {{- end }}
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        {{- with $p.media.profileImage }}
-        {{- $img := partial "get-optimized-image.html" (dict "imagePath" . "width" 600 "quality" 90) }}
-        <div class="hero-photo">
-          <img src="{{ $img.src }}" alt="{{ $personal.fullName }}" width="{{ $img.width | default 600 }}" height="{{ $img.height | default 600 }}" fetchpriority="high">
-        </div>
-        {{- end }}
-      </div>
+  <div class="who">
+    {{- with $p.media.profileImage }}
+    {{- $img := partial "get-optimized-image.html" (dict "imagePath" . "width" 160 "quality" 88) }}
+    <img class="who-photo" src="{{ $img.src }}" alt="{{ $personal.fullName }}" width="48" height="48" fetchpriority="high">
+    {{- end }}
+    <div class="who-text">
+      <div class="who-name">{{ $personal.fullName }}</div>
+      <div class="who-role">{{ with $contact.location }}{{ . }}{{ end }}{{ with $p.details.speciality }} · {{ . }}{{ end }}</div>
     </div>
+    {{- with $avail.message }}<span class="status"><span class="status-dot"></span>{{ . }}</span>{{ end }}
   </div>
+
+  <h1 class="hero-title">
+    {{- with $personal.headline }}{{ . }} <em>{{ $personal.headlineAccent }}</em>{{ else }}{{ $personal.subtitle }}{{ end -}}
+  </h1>
+  {{- with $p.about.intro }}<p class="lede">{{ . }}</p>{{ end }}
+
+  <div class="actions">
+    {{- with site.GetPage "/services" }}
+    <a class="btn btn-cold" href="{{ .RelPermalink }}">{{ .Title }}{{ partial "icon.html" "arrow-forward" }}</a>
+    {{- end }}
+    {{- with $p.media.resumeFile }}
+    <a class="btn btn-ghost" href="{{ . | relURL }}" download>{{ partial "icon.html" "download" }}{{ i18n "ui_download_cv" }}</a>
+    {{- end }}
+    {{- with $contact.email }}
+    <a class="btn btn-ghost" href="mailto:{{ . }}" data-email="{{ . }}">{{ partial "icon.html" "mail" }}{{ i18n "ui_contact_me" }}</a>
+    {{- end }}
+  </div>
+
+  {{- with $p.about.highlights }}
+  <ul class="facts">
+    {{- range . }}<li>{{ .text }}</li>{{ end }}
+  </ul>
+  {{- end }}
 </section>

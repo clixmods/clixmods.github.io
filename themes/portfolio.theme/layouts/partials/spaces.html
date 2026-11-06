@@ -1,0 +1,80 @@
+{{- /*
+  Structure des espaces du thème « Cadre » pour la langue courante.
+  Appelé via partialCached (clé = langue) : calculé une fois par langue.
+  Retourne une slice d'espaces :
+    { id, icon, name, url, count, entries }
+  entries = onglets { kind:"tab", title, url, icon | thumb }
+          ou dossiers { kind:"folder", id, name, tabs }.
+*/ -}}
+{{- $lang := site.Language.Lang -}}
+
+{{/* ── Projets rangés par espace / dossier ── */}}
+{{- $projects := where (where site.RegularPages "Section" "projects") "Params.sector" "!=" "test" -}}
+{{- $bySpace := dict "jeux" dict "web" dict "mods" dict -}}
+{{- $counts := dict "jeux" 0 "web" 0 "mods" 0 -}}
+{{- range $proj := $projects.ByDate.Reverse -}}
+  {{- $pl := partial "project-place.html" $proj -}}
+  {{- with $pl.space -}}
+    {{- $id := . -}}
+    {{- $sp := index $bySpace $id -}}
+    {{- $cur := index $sp $pl.folder | default slice -}}
+    {{- $img := $proj.Params.image | default "" -}}
+    {{- $tab := dict "kind" "tab" "title" $proj.Title "url" $proj.RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" $img) $img) -}}
+    {{- $sp = merge $sp (dict $pl.folder ($cur | append $tab)) -}}
+    {{- $bySpace = merge $bySpace (dict $id $sp) -}}
+    {{- $counts = merge $counts (dict $id (add (index $counts $id) 1)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $folderOrder := dict
+      "jeux" (slice "pro" "perso" "gamejam" "tools")
+      "web"  (slice "pro" "perso" "etude")
+      "mods" (slice "minecraft" "bo3" "other") -}}
+{{- $spaceIcons := dict "jeux" "game-controller" "web" "globe" "mods" "extension-puzzle" -}}
+
+{{/* ── Espace Accueil ── */}}
+{{- $home := slice
+      (dict "kind" "tab" "title" (i18n "ui_home") "url" (relLangURL "/") "icon" "home") -}}
+{{- with site.GetPage "/projects" }}{{ $home = $home | append (dict "kind" "tab" "title" (i18n "tab_all_projects") "url" .RelPermalink "icon" "grid") }}{{ end -}}
+{{- with site.GetPage "/skills" }}{{ $home = $home | append (dict "kind" "tab" "title" (i18n "ui_skills") "url" .RelPermalink "icon" "code-slash") }}{{ end -}}
+{{- with site.GetPage "/services" }}{{ $home = $home | append (dict "kind" "tab" "title" (i18n "ui_services") "url" .RelPermalink "icon" "construct") }}{{ end -}}
+{{- with site.GetPage "/experiences" -}}
+  {{- $tabs := slice (dict "kind" "tab" "title" (i18n "tab_all_experiences") "url" .RelPermalink "icon" "briefcase") -}}
+  {{- range partial "experiences-sorted.html" .Pages -}}
+    {{- $tabs = $tabs | append (dict "kind" "tab" "title" (.Params.company | default .Title) "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" (.Params.logo | default "") "fit" true) (.Params.logo | default "") "fit")) -}}
+  {{- end -}}
+  {{- $home = $home | append (dict "kind" "folder" "id" "home-exp" "name" (i18n "ui_experiences") "tabs" $tabs) -}}
+{{- end -}}
+{{- with site.GetPage "/educations" -}}
+  {{- $tabs := slice (dict "kind" "tab" "title" (i18n "tab_all_educations") "url" .RelPermalink "icon" "school") -}}
+  {{- range sort .Pages "Params.start_date" "desc" -}}
+    {{- $tabs = $tabs | append (dict "kind" "tab" "title" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" (.Params.school_logo | default "") "fit" true) (.Params.school_logo | default "") "fit")) -}}
+  {{- end -}}
+  {{- $home = $home | append (dict "kind" "folder" "id" "home-edu" "name" (i18n "ui_educations") "tabs" $tabs) -}}
+{{- end -}}
+{{- with site.GetPage "/posts" -}}
+  {{- $tabs := slice (dict "kind" "tab" "title" (i18n "tab_all_posts") "url" .RelPermalink "icon" "newspaper") -}}
+  {{- range .Pages.ByDate.Reverse -}}
+    {{- $img := .Params.image | default "" -}}
+    {{- $tabs = $tabs | append (dict "kind" "tab" "title" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" $img) $img)) -}}
+  {{- end -}}
+  {{- $home = $home | append (dict "kind" "folder" "id" "home-blog" "name" (i18n "ui_blog") "tabs" $tabs) -}}
+{{- end -}}
+
+{{- $spaces := slice (dict "id" "home" "icon" "home" "name" (i18n "space_home") "url" (relLangURL "/") "count" 0 "entries" $home) -}}
+
+{{/* ── Espaces projets ── */}}
+{{- range slice "jeux" "web" "mods" -}}
+  {{- $id := . -}}
+  {{- $url := relLangURL "/projects/" -}}
+  {{- with site.GetPage (printf "/%s" $id) }}{{ $url = .RelPermalink }}{{ end -}}
+  {{- $entries := slice (dict "kind" "tab" "title" (i18n (printf "space_all_%s" $id)) "url" $url "icon" "grid") -}}
+  {{- $sp := index $bySpace $id -}}
+  {{- range $f := index $folderOrder $id -}}
+    {{- with index $sp $f -}}
+      {{- $entries = $entries | append (dict "kind" "folder" "id" (printf "%s-%s" $id $f) "folder" $f "name" (i18n (printf "folder_%s" $f)) "tabs" .) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $spaces = $spaces | append (dict "id" $id "icon" (index $spaceIcons $id) "name" (i18n (printf "space_%s" $id)) "url" $url "count" (index $counts $id) "entries" $entries) -}}
+{{- end -}}
+{{- return $spaces -}}

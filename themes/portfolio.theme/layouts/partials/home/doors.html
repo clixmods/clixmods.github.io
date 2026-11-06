@@ -1,0 +1,14 @@
+{{- /* Portes vers les trois espaces de créations (teinte de chaque espace). */ -}}
+{{- $spaces := .spaces -}}
+{{- $desc := dict "jeux" (i18n "home_space_jeux_desc") "web" (i18n "home_space_web_desc") "mods" (i18n "home_space_mods_desc") -}}
+<section class="sec">
+  <div class="sec-head"><h2>{{ i18n "home_spaces_title" }}</h2></div>
+  <div class="doors">
+    {{- range $spaces }}{{ if ne .id "home" }}
+    <a class="door" href="{{ .url }}" data-door="{{ .id }}">
+      <span class="door-top">{{ partial "icon.html" .icon }}<span class="door-count">{{ .count }}</span></span>
+      <span class="door-text"><b>{{ .name }}</b><small>{{ index $desc .id }}</small></span>
+    </a>
+    {{- end }}{{ end }}
+  </div>
+</section>
