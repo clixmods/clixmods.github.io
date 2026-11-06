@@ -1,0 +1,10 @@
+{{- /*
+  Icône Ionicons (version pleine, comme dans Zen Browser) rendue en SVG inline.
+  Fichiers : assets/icons/<nom>.svg (licence MIT, cf. LICENSE-ionicons.txt).
+  Contexte = nom (string) ou dict { name, class }.
+*/ -}}
+{{- $name := . -}}{{- $class := "ico" -}}
+{{- if reflect.IsMap . -}}{{- $name = .name -}}{{- with .class }}{{ $class = printf "ico %s" . }}{{ end -}}{{- end -}}
+{{- with resources.Get (printf "icons/%s.svg" $name) -}}
+{{- replace .Content "<svg " (printf `<svg class="%s" aria-hidden="true" focusable="false" fill="currentColor" ` $class) | safeHTML -}}
+{{- end -}}

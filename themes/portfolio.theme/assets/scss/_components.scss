@@ -1,0 +1,265 @@
+// ─────────────────────────────────────────────────────────
+// Composants partagés : cartes projet, grilles, filtres, puces techno
+// ─────────────────────────────────────────────────────────
+.is-hidden { display: none !important; }
+
+// ── Barres de filtres ────────────────────────────────────
+.filter-bar { display: flex; flex-direction: column; gap: 10px; }
+.filter-mains { display: flex; flex-wrap: wrap; gap: 6px; }
+.filter-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.filter-adv-toggle,
+.filter-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-3);
+  padding: 4px 2px;
+  svg { width: 13px; height: 13px; }
+  &:hover { color: var(--ink); }
+}
+.filter-adv-toggle {
+  .chev { font-size: 10px; transition: transform 0.15s ease; }
+  &.open .chev { transform: rotate(180deg); }
+  &.active { color: var(--accent); }
+}
+.adv-count {
+  min-width: 18px;
+  height: 18px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 11px;
+  font-weight: 600;
+}
+.filter-advanced {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--r);
+  background: var(--sheet-2);
+}
+.filter-adv-group { display: flex; flex-direction: column; gap: 6px; }
+.filter-adv-label { font-size: 12px; color: var(--ink-3); }
+.adv-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.techchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: var(--sheet);
+  font-size: 12.5px;
+  color: var(--ink-2);
+  img { width: 14px; height: 14px; object-fit: contain; }
+  &:hover { border-color: var(--line-2); color: var(--ink); }
+  &.active { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+  &.is-empty, &:disabled { opacity: 0.4; cursor: default; }
+}
+.filter-empty { font-size: 14px; color: var(--ink-3); padding: 20px 0; }
+
+// ── Grilles de projets ───────────────────────────────────
+.projects-grid,
+.projects-mosaic {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: 28px 22px;
+}
+.space-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+// ── Carte projet ─────────────────────────────────────────
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  color: var(--ink);
+
+  &.is-wide { grid-column: 1 / -1; }
+  &.is-wide .project-thumb { aspect-ratio: 21 / 9; }
+  &.is-wide .project-title { font-size: 17px; }
+}
+
+.project-thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  max-width: 100%;
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--sheet-2);
+  outline: 1px solid var(--line);
+  outline-offset: -1px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .project-sector {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1b1d26;
+    border: 0;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+}
+.project-card:hover .project-thumb img { transform: scale(1.025); }
+
+.project-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.project-title { font-size: 15.5px; font-weight: 600; letter-spacing: -0.01em; }
+.project-card:hover .project-title { color: var(--accent); }
+.project-desc {
+  font-size: 14px;
+  color: var(--ink-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.project-tags-wrap { display: grid; margin-top: 6px; }
+.project-tags {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s;
+  &.is-active { opacity: 1; visibility: visible; }
+}
+.tag-tech {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--ink-3);
+  img { width: 13px; height: 13px; object-fit: contain; }
+}
+.tag-tech-emoji { font-size: 12px; }
+
+// Groupes Pro / Perso de la page Projets
+.projects-groups { display: flex; flex-direction: column; gap: 44px; }
+.projects-group { display: flex; flex-direction: column; gap: 18px; }
+.projects-group-head { display: flex; align-items: baseline; gap: 10px; }
+.projects-group-count { font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+
+// ── Puces techno ─────────────────────────────────────────
+.proj-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.proj-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border-radius: var(--r-sm);
+  background: var(--sheet-2);
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.proj-chip-ico { width: 15px; height: 15px; object-fit: contain; font-size: 13px; line-height: 1; display: inline-grid; place-items: center; }
+
+.tech-icon {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--sheet-2);
+  img { width: 18px; height: 18px; object-fit: contain; }
+}
+.tech-emoji { font-size: 15px; line-height: 1; }
+.tech-letter {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+// Résumé compétences (accueil)
+.tech-card { display: flex; flex-direction: column; gap: 18px; }
+.tech-group { display: flex; flex-direction: column; gap: 8px; }
+.tech-subtitle { font-size: 12px; color: var(--ink-3); }
+.tech-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border-radius: var(--r-sm);
+  background: var(--sheet-2);
+  font-size: 13px;
+  color: var(--ink-2);
+  img { width: 15px; height: 15px; object-fit: contain; }
+}
+.tech-more {
+  align-self: flex-start;
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 13px;
+  color: var(--ink-3);
+  &:hover { background: none; color: var(--accent); }
+}
+
+// ── En-tête de page ──────────────────────────────────────
+.page-shell .container,
+.proj .container { display: flex; flex-direction: column; gap: 32px; }
+
+.page-head,
+.space-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  h1 { font-size: clamp(28px, 4.4vw, 40px); line-height: 1.1; letter-spacing: -0.03em; max-width: 24ch; }
+}
+.page-lead { font-size: 16.5px; color: var(--ink-2); max-width: 64ch; }
+
+// Liste générique
+.list-grid { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.list-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  h3 { font-size: 15px; grid-column: 1; }
+  p { grid-column: 1; font-size: 14px; color: var(--ink-2); }
+  time { grid-column: 2; grid-row: 1; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+  &:hover h3 { color: var(--accent); }
+}
+
+.prose-card { max-width: 72ch; }
+
+.proj-back {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 13px;
+  color: var(--ink-3);
+  &:hover { color: var(--accent); }
+}
+
+@media (max-width: 640px) {
+  .space-grid { grid-template-columns: minmax(0, 1fr); }
+  .project-card.is-wide .project-thumb { aspect-ratio: 16 / 10; }
+}
+
+// Technos des cartes : texte discret, pas de pastille
+.tag.tag-tech { padding: 0; border: 0; background: none; border-radius: 0; font-weight: 400; color: var(--ink-3); }
+
+// Le contenu de la page Compétences répète son titre en tête : on ne garde que le h1 de la page.
+.skills-intro > h1:first-child { display: none; }

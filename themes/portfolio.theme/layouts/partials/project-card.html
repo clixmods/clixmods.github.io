@@ -1,4 +1,5 @@
-{{- /* Carte projet réutilisable. Contexte = dict { page, class }. */ -}}
+{{- /* Carte projet réutilisable. Contexte = dict { page, class, folder }.
+       folder : dossier d'onglets de l'espace (filtres des pages d'espace). */ -}}
 {{- $p := .page -}}
 {{- $class := .class | default "" -}}
 {{- $cat := partial "project-cats.html" ($p.Params.sector | default "") -}}
@@ -19,14 +20,14 @@
 {{- range seq 0 4 (sub (len $keys) 1) }}{{ $sets = $sets | append (dict "keys" (first 4 (after . $keys))) }}{{ end -}}
 {{- end }}{{ end -}}
 
-<a class="project-card reveal{{ with $class }} {{ . }}{{ end }}" href="{{ $p.RelPermalink }}"
-   data-project
+<a class="project-card{{ with $class }} {{ . }}{{ end }}" href="{{ $p.RelPermalink }}"
+   data-project{{ with $.folder }} data-facet-folder="{{ . }}"{{ end }}
    data-facet-main="{{ $cat.main }}"
    data-facet-scope="{{ $cat.scope }}"
    data-facet-tech="{{ delimit $allTech " " }}">
   <div class="project-thumb">
     {{- with $p.Params.image }}
-    {{- $img := partial "get-optimized-image.html" (dict "imagePath" . "width" 600 "quality" 85) }}
+    {{- $img := partial "get-optimized-image.html" (dict "imagePath" . "width" (cond (in $class "is-wide") 1100 600) "quality" 85) }}
     <img src="{{ $img.src }}" alt="{{ $p.Title }}" loading="lazy"{{ with $img.width }} width="{{ . }}"{{ end }}{{ with $img.height }} height="{{ . }}"{{ end }}>
     {{- end }}
     {{- if $mainLabel }}<span class="tag project-sector">{{ $mainLabel }}{{ with $subLabel }} · {{ . }}{{ end }}</span>{{ end }}

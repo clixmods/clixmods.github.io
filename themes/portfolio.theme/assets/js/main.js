@@ -1,54 +1,509 @@
-// Thème portfolio — interactions légères (vanilla JS)
+// Thème portfolio « Cadre » — interactions (vanilla JS)
+// 1. Coque façon Arc / Zen : barre latérale, dossiers, espaces, onglets
+//    réorganisables, clic droit (thème d'espace), recherche ⌘K, langue.
+// 2. Fonctions des pages : filtres, cartes, témoignages, galerie, compétences.
 (function () {
   "use strict";
 
-  // ── Menu mobile ───────────────────────────────────────
-  var burger = document.querySelector("[data-burger]");
-  var menu = document.querySelector("[data-mobile-menu]");
-  if (burger && menu) {
-    burger.addEventListener("click", function () {
-      var open = menu.classList.toggle("open");
-      burger.classList.toggle("is-open", open);
-      burger.setAttribute("aria-expanded", open ? "true" : "false");
-      document.body.style.overflow = open ? "hidden" : "";
+  var d = document;
+  var html = d.documentElement;
+  var app = d.querySelector("[data-app]");
+  var side = d.querySelector("[data-side]");
+  var overlays = d.querySelector("[data-overlays]");
+  if (!app || !side || !overlays) return;
+
+  var lang = html.getAttribute("data-lang") || "fr";
+  var space = html.getAttribute("data-space") || "home";
+  var L = function (k) { return overlays.getAttribute("data-l-" + k) || ""; };
+  var mqMobile = window.matchMedia("(max-width: 860px)");
+
+  // ── Stockage (tolère un navigateur qui le refuse) ─────
+  var store = {
+    get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+    del: function (k) { try { localStorage.removeItem(k); } catch (e) {} },
+    json: function (k, fb) { try { return JSON.parse(localStorage.getItem(k) || "null") || fb; } catch (e) { return fb; } }
+  };
+
+  // ── Toast ─────────────────────────────────────────────
+  var toastEl = overlays.querySelector("[data-toast]");
+  var toastTimer;
+  var toast = function (msg) {
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.hidden = true; }, 2200);
+  };
+  var copy = function (text, msg) {
+    var done = function () { toast(msg); };
+    try {
+      navigator.clipboard.writeText(text).then(done, function () { toast(text); });
+    } catch (e) { toast(text); }
+  };
+
+  // ── Barre latérale repliée (desktop) / tiroir (mobile) ─
+  var scrim = d.querySelector("[data-scrim]");
+  var setDrawer = function (open) {
+    app.classList.toggle("is-drawer", open);
+    if (scrim) scrim.hidden = !open;
+    d.body.style.overflow = open ? "hidden" : "";
+  };
+  d.querySelectorAll("[data-sidebar-toggle]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var compact = html.classList.toggle("is-compact");
+      store.set("cadre:compact", compact ? "1" : "0");
     });
-    menu.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        menu.classList.remove("open");
-        burger.classList.remove("is-open");
-        document.body.style.overflow = "";
+  });
+  d.querySelectorAll("[data-drawer-open]").forEach(function (b) {
+    b.addEventListener("click", function () { setDrawer(true); });
+  });
+  if (scrim) scrim.addEventListener("click", function () { setDrawer(false); });
+
+  // ── Dossiers ──────────────────────────────────────────
+  var saveFolder = function (id, open) {
+    var all = store.json("cadre:folders", {});
+    all[id] = open;
+    store.set("cadre:folders", JSON.stringify(all));
+  };
+  var setFolder = function (f, open) {
+    f.setAttribute("data-open", open ? "true" : "false");
+    var btn = f.querySelector("[data-folder-toggle]");
+    if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    saveFolder(f.getAttribute("data-folder"), open);
+  };
+  side.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-folder-toggle]");
+    if (!btn) return;
+    var f = btn.closest("[data-folder]");
+    setFolder(f, f.getAttribute("data-open") !== "true");
+  });
+  // Les filtres d'une page d'espace ouvrent le dossier correspondant.
+  d.querySelectorAll("[data-folder-link]").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var f = side.querySelector('[data-folder="' + chip.getAttribute("data-folder-link") + '"]');
+      if (f && f.getAttribute("data-open") !== "true") setFolder(f, true);
+    });
+  });
+
+  // ── Onglet courant visible, défilement mémorisé ──────
+  var scroller = side.querySelector("[data-side-scroll]");
+  var current = side.querySelector('a.tab[aria-current="page"]');
+  if (current && scroller) {
+    var r = current.getBoundingClientRect();
+    var s = scroller.getBoundingClientRect();
+    if (r.top < s.top || r.bottom > s.bottom) current.scrollIntoView({ block: "nearest" });
+  }
+  window.addEventListener("pagehide", function () {
+    try { if (scroller) sessionStorage.setItem("cadre:scroll:" + space, String(scroller.scrollTop)); } catch (e) {}
+  });
+  // Dernière page vue dans cet espace : on y revient en rechangeant d'espace.
+  store.set("cadre:last:" + lang + ":" + space, location.pathname + location.search);
+
+  // ── Changer d'espace ──────────────────────────────────
+  d.querySelectorAll("[data-space-link]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      var id = a.getAttribute("data-space-link");
+      if (id === space) { e.preventDefault(); return; }
+      e.preventDefault();
+      // La barre latérale bascule tout de suite, la page suit.
+      html.setAttribute("data-space", id);
+      d.querySelectorAll("[data-space-link]").forEach(function (x) {
+        if (x.getAttribute("data-space-link") === id) x.setAttribute("aria-current", "true");
+        else x.removeAttribute("aria-current");
+      });
+      var last = store.get("cadre:last:" + lang + ":" + id);
+      location.href = last || a.getAttribute("href");
+    });
+  });
+
+  // ── Onglets réorganisables (glisser-déposer) ──────────
+  // Souris : on glisse dès 6 px de mouvement. Tactile : appui long (400 ms),
+  // puis glisser ; un appui long relâché sans bouger ouvre le menu.
+  var orderKey = function (box) { return "cadre:order:" + lang + ":" + box.getAttribute("data-sortable"); };
+  var saveOrder = function (box) {
+    var keys = Array.prototype.map.call(box.children, function (k) { return k.getAttribute("data-sort-key"); }).filter(Boolean);
+    store.set(orderKey(box), JSON.stringify(keys));
+  };
+  var drag = null;
+  var suppressClick = false;
+
+  var itemOf = function (el) {
+    var it = el.closest("[data-sort-key]");
+    return it && it.parentElement && it.parentElement.hasAttribute("data-sortable") ? it : null;
+  };
+  var startDrag = function () {
+    drag.active = true;
+    drag.item.classList.add("is-dragging");
+    html.classList.add("is-sorting");
+    if (drag.item.matches(".folder")) drag.item.querySelector(".folder-head").classList.add("is-dragging");
+  };
+  var moveDrag = function (y) {
+    var box = drag.item.parentElement;
+    var kids = Array.prototype.filter.call(box.children, function (k) { return k !== drag.item && k.hasAttribute("data-sort-key"); });
+    var before = null;
+    for (var i = 0; i < kids.length; i++) {
+      var r = (kids[i].matches(".folder") ? kids[i].querySelector(".folder-head") : kids[i]).getBoundingClientRect();
+      if (y < r.top + r.height / 2) { before = kids[i]; break; }
+    }
+    if (before !== drag.item.nextElementSibling) box.insertBefore(drag.item, before);
+  };
+  var endDrag = function (cancelled) {
+    if (!drag) return;
+    clearTimeout(drag.timer);
+    if (drag.active) {
+      drag.item.classList.remove("is-dragging");
+      var fh = drag.item.querySelector(".folder-head");
+      if (fh) fh.classList.remove("is-dragging");
+      html.classList.remove("is-sorting");
+      suppressClick = true;
+      setTimeout(function () { suppressClick = false; }, 0);
+      if (!cancelled && drag.moved) saveOrder(drag.item.parentElement);
+      else if (!cancelled && drag.touch) openMenu(drag.x, drag.y, drag.target);
+    }
+    drag = null;
+  };
+
+  side.addEventListener("pointerdown", function (e) {
+    if (e.button !== 0) return;
+    var item = itemOf(e.target);
+    if (!item || e.target.closest(".folder-inner") && item.matches(".folder")) return;
+    var touch = e.pointerType !== "mouse";
+    drag = { item: item, target: e.target, x: e.clientX, y: e.clientY, y0: e.clientY, active: false, moved: false, touch: touch, id: e.pointerId };
+    if (touch) {
+      drag.timer = setTimeout(function () {
+        if (!drag) return;
+        startDrag();
+        if (navigator.vibrate) { try { navigator.vibrate(8); } catch (err) {} }
+      }, 400);
+    }
+  });
+  window.addEventListener("pointermove", function (e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var dy = Math.abs(e.clientY - drag.y0);
+    if (!drag.active) {
+      // Tactile : bouger avant l'appui long = défiler, pas glisser.
+      if (drag.touch) { if (dy > 8 || Math.abs(e.clientX - drag.x) > 8) { clearTimeout(drag.timer); drag = null; } return; }
+      if (dy < 6) return;
+      startDrag();
+    }
+    drag.moved = true;
+    moveDrag(e.clientY);
+  });
+  window.addEventListener("pointerup", function (e) { if (drag && e.pointerId === drag.id) endDrag(false); });
+  window.addEventListener("pointercancel", function () { endDrag(true); });
+  // Pendant un glisser tactile, la page ne doit pas défiler.
+  side.addEventListener("touchmove", function (e) { if (drag && drag.active) e.preventDefault(); }, { passive: false });
+  side.addEventListener("click", function (e) {
+    if (suppressClick) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
+  side.addEventListener("dragstart", function (e) { if (e.target.closest(".tab")) e.preventDefault(); });
+
+  var resetOrder = function (spaceId) {
+    var panel = side.querySelector('[data-space-panel="' + spaceId + '"]');
+    if (!panel) return;
+    panel.querySelectorAll("[data-sortable]").forEach(function (box) {
+      store.del(orderKey(box));
+      var orig = [];
+      try { orig = JSON.parse(box.getAttribute("data-orig") || "[]"); } catch (e) {}
+      var kids = {};
+      Array.prototype.forEach.call(box.children, function (k) { if (k.dataset.sortKey) kids[k.dataset.sortKey] = k; });
+      orig.forEach(function (key) { if (kids[key]) box.appendChild(kids[key]); });
+    });
+  };
+
+  // ── Menu contextuel (clic droit / appui long) ─────────
+  var menu = overlays.querySelector("[data-ctx-menu]");
+  // Icônes Ionicons rendues par Hugo (gabarit dans overlays.html)
+  var ICON = {};
+  var icoTpl = overlays.querySelector("[data-icons]");
+  if (icoTpl) {
+    Array.prototype.forEach.call(icoTpl.content.querySelectorAll("[data-i]"), function (n) { ICON[n.getAttribute("data-i")] = n.innerHTML; });
+  }
+  var closeMenu = function () { if (menu) menu.hidden = true; };
+  var place = function (el, x, y) {
+    el.hidden = false;
+    var w = el.offsetWidth, h = el.offsetHeight;
+    var vw = window.innerWidth, vh = window.innerHeight;
+    el.style.left = Math.max(8, Math.min(x, vw - w - 8)) + "px";
+    el.style.top = Math.max(8, Math.min(y, vh - h - 8)) + "px";
+  };
+  var openMenu = function (x, y, target) {
+    if (!menu) return;
+    var items = [];
+    var tab = target && target.closest ? target.closest("a.tab") : null;
+    var mail = target && target.closest ? target.closest("[data-email]") : null;
+    var spBtn = target && target.closest ? target.closest("[data-space-link]") : null;
+    var themeSpace = spBtn ? spBtn.getAttribute("data-space-link") : html.getAttribute("data-space");
+    if (tab) {
+      items.push({ icon: ICON.open, label: L("new-tab"), run: function () { window.open(tab.href, "_blank", "noopener"); } });
+      items.push({ icon: ICON.link, label: L("copy-link"), run: function () { copy(tab.href, L("link-copied")); } });
+      items.push("sep");
+    }
+    if (mail) {
+      items.push({ icon: ICON.mail, label: L("copy-email"), run: function () { copy(mail.getAttribute("data-email"), L("email-copied")); } });
+      items.push("sep");
+    }
+    items.push({ icon: ICON.palette, label: L("theme"), run: function () { openTheme(themeSpace, x, y); } });
+    items.push({ icon: ICON.reset, label: L("reset-order"), run: function () { resetOrder(themeSpace); } });
+    menu.innerHTML = "";
+    items.forEach(function (it) {
+      if (it === "sep") { var s = d.createElement("div"); s.className = "pop-sep"; menu.appendChild(s); return; }
+      var b = d.createElement("button");
+      b.type = "button";
+      b.className = "pop-item";
+      b.setAttribute("role", "menuitem");
+      b.innerHTML = it.icon + "<span></span>";
+      b.querySelector("span").textContent = it.label;
+      b.addEventListener("click", function () { closeMenu(); it.run(); });
+      menu.appendChild(b);
+    });
+    var note = d.createElement("p");
+    note.className = "pop-note";
+    note.textContent = L("hint");
+    menu.appendChild(note);
+    place(menu, x, y);
+    var first = menu.querySelector("button");
+    if (first) first.focus({ preventScroll: true });
+  };
+  [side, d.querySelector(".m-switch")].forEach(function (zone) {
+    if (!zone) return;
+    zone.addEventListener("contextmenu", function (e) {
+      // Les champs et la recherche gardent le menu natif.
+      if (e.target.closest("input, textarea")) return;
+      e.preventDefault();
+      if (drag && drag.touch) return; // l'appui long tactile gère son propre menu
+      openMenu(e.clientX, e.clientY, e.target);
+    });
+  });
+
+  // ── Éditeur de thème d'espace ─────────────────────────
+  var themePop = overlays.querySelector("[data-theme-pop]");
+  var DEFAULTS = {
+    home: { a: "#cfd8f6", b: "#f3d3da", accent: "#3f5bd8" },
+    jeux: { a: "#e2d4f4", b: "#f6d6e2", accent: "#7a3fc4" },
+    web: { a: "#d3e6dc", b: "#ece8d2", accent: "#2f7d5b" },
+    mods: { a: "#f2e0c8", b: "#efd5cf", accent: "#b0552c" }
+  };
+  var PRESETS = [
+    { a: "#cfd8f6", b: "#f3d3da", accent: "#3f5bd8" },
+    { a: "#e2d4f4", b: "#f6d6e2", accent: "#7a3fc4" },
+    { a: "#d3e6dc", b: "#ece8d2", accent: "#2f7d5b" },
+    { a: "#f2e0c8", b: "#efd5cf", accent: "#b0552c" },
+    { a: "#cde7ef", b: "#d8e0f6", accent: "#1f6f8b" },
+    { a: "#f6d3cf", b: "#f3e3c4", accent: "#c0392b" },
+    { a: "#dff0c8", b: "#cfe9e1", accent: "#4b7d1f" },
+    { a: "#f4d6ea", b: "#dcd3f4", accent: "#b03a87" },
+    { a: "#e4e5ea", b: "#d7d9e0", accent: "#2b2f3a" },
+    { a: "#f7ebc3", b: "#f2d6c9", accent: "#a06a00" },
+    { a: "#d4dcf0", b: "#c9e6e6", accent: "#355c9e" },
+    { a: "#ece1d6", b: "#e2d9e9", accent: "#7a5537" }
+  ];
+  var applyTheme = function (id, v) {
+    var st = html.style;
+    ["a", "b", "accent"].forEach(function (k) {
+      var light = "--th-" + id + "-" + k, dark = "--thd-" + id + "-" + k;
+      if (v && v[k]) {
+        st.setProperty(light, v[k]);
+        st.setProperty(dark, k === "accent"
+          ? "color-mix(in oklab, " + v[k] + " 62%, #ffffff)"
+          : "color-mix(in oklab, " + v[k] + " 24%, #121318)");
+      } else { st.removeProperty(light); st.removeProperty(dark); }
+    });
+  };
+  var themeSpaceId = null;
+  var themeInputs = themePop ? {
+    a: themePop.querySelector("[data-theme-a]"),
+    b: themePop.querySelector("[data-theme-b]"),
+    accent: themePop.querySelector("[data-theme-accent]")
+  } : null;
+  var currentTheme = function (id) {
+    var all = store.json("cadre:themes", {});
+    var base = DEFAULTS[id] || DEFAULTS.home;
+    var v = all[id] || {};
+    return { a: v.a || base.a, b: v.b || base.b, accent: v.accent || base.accent };
+  };
+  var saveTheme = function (id, v) {
+    var all = store.json("cadre:themes", {});
+    if (v) all[id] = v; else delete all[id];
+    store.set("cadre:themes", JSON.stringify(all));
+    applyTheme(id, v);
+  };
+  var syncThemeUI = function () {
+    if (!themePop || !themeSpaceId) return;
+    var v = currentTheme(themeSpaceId);
+    Object.keys(themeInputs).forEach(function (k) { if (themeInputs[k]) themeInputs[k].value = v[k]; });
+    var prev = themePop.querySelector("[data-theme-preview]");
+    if (prev) {
+      prev.style.setProperty("--frame-a", "var(--sp-" + themeSpaceId + "-a)");
+      prev.style.setProperty("--frame-b", "var(--sp-" + themeSpaceId + "-b)");
+      prev.style.setProperty("--accent", "var(--sp-" + themeSpaceId + "-accent)");
+    }
+    themePop.querySelectorAll(".theme-preset").forEach(function (b, i) {
+      var p = PRESETS[i];
+      b.setAttribute("aria-pressed", p.a === v.a && p.b === v.b && p.accent === v.accent ? "true" : "false");
+    });
+  };
+  var openTheme = function (id, x, y) {
+    if (!themePop) return;
+    themeSpaceId = id;
+    var sp = d.querySelector('.side [data-space-link="' + id + '"]');
+    var ico = themePop.querySelector("[data-theme-ico]");
+    if (ico) ico.innerHTML = sp ? sp.innerHTML : "";
+    var name = themePop.querySelector("[data-theme-name]");
+    if (name) name.textContent = sp ? sp.getAttribute("title") : "";
+    themePop.style.setProperty("--accent", "var(--sp-" + id + "-accent)");
+    syncThemeUI();
+    place(themePop, x, y);
+  };
+  if (themePop) {
+    var presetBox = themePop.querySelector("[data-theme-presets]");
+    PRESETS.forEach(function (p, i) {
+      var b = d.createElement("button");
+      b.type = "button";
+      b.className = "theme-preset";
+      b.style.background = "linear-gradient(135deg, " + p.a + " 0 50%, " + p.b + " 50% 100%)";
+      b.style.boxShadow = "inset 0 0 0 5px transparent, inset 0 -6px 0 -1px " + p.accent;
+      b.setAttribute("aria-label", "Teinte " + (i + 1));
+      b.addEventListener("click", function () { saveTheme(themeSpaceId, { a: p.a, b: p.b, accent: p.accent }); syncThemeUI(); });
+      presetBox.appendChild(b);
+    });
+    Object.keys(themeInputs).forEach(function (k) {
+      var input = themeInputs[k];
+      if (!input) return;
+      input.addEventListener("input", function () {
+        var v = currentTheme(themeSpaceId);
+        v[k] = input.value;
+        saveTheme(themeSpaceId, v);
+        syncThemeUI();
       });
     });
+    themePop.querySelector("[data-theme-reset]").addEventListener("click", function () { saveTheme(themeSpaceId, null); syncThemeUI(); });
+    themePop.querySelector("[data-theme-close]").addEventListener("click", function () { themePop.hidden = true; });
   }
 
-  // ── Navbar : état « scrolled » ────────────────────────
-  var navbar = document.querySelector("[data-navbar]");
-  if (navbar) {
-    var onScroll = function () {
-      navbar.classList.toggle("scrolled", window.scrollY > 24);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+  // ── Langue ────────────────────────────────────────────
+  d.querySelectorAll("[data-lang-box]").forEach(function (box) {
+    var btn = box.querySelector("[data-lang-toggle]");
+    var pop = box.querySelector("[data-lang-pop]");
+    if (!btn || !pop) return;
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = pop.hidden;
+      d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
+      d.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+      pop.hidden = !open;
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) { var a = pop.querySelector("a"); if (a) a.focus({ preventScroll: true }); }
+    });
+  });
+
+  // Fermeture des menus au clic extérieur / Échap
+  d.addEventListener("pointerdown", function (e) {
+    if (menu && !menu.hidden && !menu.contains(e.target)) closeMenu();
+    if (themePop && !themePop.hidden && !themePop.contains(e.target) && !(menu && menu.contains(e.target))) themePop.hidden = true;
+    if (!e.target.closest("[data-lang-box]")) {
+      d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
+      d.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+    }
+  });
+
+  // ── Recherche ⌘K ──────────────────────────────────────
+  var pal = overlays.querySelector("[data-palette]");
+  var palInput = pal && pal.querySelector("input");
+  var palList = pal && pal.querySelector(".palette-list");
+  var palEmpty = pal && pal.querySelector("[data-palette-empty]");
+  var index = null, shown = [], sel = 0;
+  var norm = function (s) { return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); };
+  var buildIndex = function () {
+    var seen = {};
+    index = [];
+    side.querySelectorAll("[data-space-panel]").forEach(function (panel) {
+      var spName = panel.getAttribute("aria-label");
+      panel.querySelectorAll("a.tab").forEach(function (a) {
+        if (seen[a.href]) return;
+        seen[a.href] = true;
+        var folder = a.closest("[data-folder]");
+        var kind = spName + (folder ? " · " + folder.querySelector(".folder-head .tab-title").textContent : "");
+        var title = a.querySelector(".tab-title").textContent;
+        index.push({ title: title, kind: kind, href: a.href, ico: a.querySelector(".tab-ico").innerHTML, key: norm(title + " " + kind) });
+      });
+    });
+  };
+  var renderPal = function () {
+    var words = norm(palInput.value.trim()).split(/\s+/).filter(Boolean);
+    shown = index.filter(function (it) { return words.every(function (w) { return it.key.indexOf(w) > -1; }); }).slice(0, 60);
+    if (sel >= shown.length) sel = Math.max(shown.length - 1, 0);
+    palList.innerHTML = "";
+    shown.forEach(function (it, i) {
+      var li = d.createElement("li");
+      li.className = "palette-item";
+      li.id = "pal-" + i;
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", i === sel ? "true" : "false");
+      li.innerHTML = '<span class="tab-ico">' + it.ico + '</span><span class="tab-title"></span><span class="palette-kind"></span>';
+      li.querySelector(".tab-title").textContent = it.title;
+      li.querySelector(".palette-kind").textContent = it.kind;
+      li.addEventListener("click", function () { location.href = it.href; });
+      li.addEventListener("mousemove", function () { if (sel !== i) { sel = i; markPal(); } });
+      palList.appendChild(li);
+    });
+    palEmpty.hidden = shown.length > 0;
+    palInput.setAttribute("aria-activedescendant", shown.length ? "pal-" + sel : "");
+  };
+  var markPal = function () {
+    palList.querySelectorAll(".palette-item").forEach(function (li, i) { li.setAttribute("aria-selected", i === sel ? "true" : "false"); });
+    var cur = palList.children[sel];
+    if (cur) cur.scrollIntoView({ block: "nearest" });
+    palInput.setAttribute("aria-activedescendant", shown.length ? "pal-" + sel : "");
+  };
+  var lastFocus = null;
+  var openPal = function () {
+    if (!pal) return;
+    if (!index) buildIndex();
+    lastFocus = d.activeElement;
+    setDrawer(false);
+    pal.hidden = false;
+    palInput.value = "";
+    sel = 0;
+    renderPal();
+    palInput.focus();
+  };
+  var closePal = function () {
+    if (!pal || pal.hidden) return;
+    pal.hidden = true;
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  };
+  if (pal) {
+    d.querySelectorAll("[data-palette-open]").forEach(function (b) { b.addEventListener("click", openPal); });
+    palInput.addEventListener("input", function () { sel = 0; renderPal(); });
+    palInput.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown") { e.preventDefault(); sel = Math.min(sel + 1, shown.length - 1); markPal(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); sel = Math.max(sel - 1, 0); markPal(); }
+      else if (e.key === "Enter" && shown[sel]) { e.preventDefault(); location.href = shown[sel].href; }
+    });
+    pal.addEventListener("click", function (e) { if (e.target === pal) closePal(); });
   }
 
-  // ── Reveal au scroll ──────────────────────────────────
-  var reveals = document.querySelectorAll(".reveal");
-  if (reveals.length && "IntersectionObserver" in window) {
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
-    );
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("is-visible"); });
-  }
+  d.addEventListener("keydown", function (e) {
+    if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      if (pal && pal.hidden) openPal(); else closePal();
+      return;
+    }
+    if (e.key === "Escape") {
+      closePal();
+      closeMenu();
+      if (themePop) themePop.hidden = true;
+      setDrawer(false);
+      d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
+    }
+  });
+})();
+
+(function () {
+  "use strict";
 
   // ── Barres de filtres génériques (facettes) ───────────────
   // Contrat de markup :

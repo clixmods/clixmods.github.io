@@ -1,0 +1,22 @@
+{{- /*
+  Place d'un projet dans le thème « Cadre » : son espace (jeux / web / mods)
+  et son dossier d'onglets dans cet espace.
+  - Jeux et Web : dossier = sous-catégorie du secteur (pro, perso, gamejam, etude).
+  - Outils (unity-editor-tools…) : rangés dans Jeux, dossier « tools ».
+  - Mods : dossier déduit du moteur (Black Ops III ou loaders Minecraft).
+  Contexte = la page projet. Retourne dict { space, folder } (chaînes vides si hors espace).
+*/ -}}
+{{- $p := . -}}
+{{- $cat := partial "project-cats.html" ($p.Params.sector | default "") -}}
+{{- $space := "" -}}{{- $folder := "" -}}
+{{- if eq $cat.main "jv" -}}{{- $space = "jeux" -}}{{- $folder = $cat.sub -}}
+{{- else if eq $cat.main "tools" -}}{{- $space = "jeux" -}}{{- $folder = "tools" -}}
+{{- else if eq $cat.main "app" -}}{{- $space = "web" -}}{{- $folder = $cat.sub -}}
+{{- else if eq $cat.main "mods" -}}
+  {{- $space = "mods" -}}
+  {{- $fws := $p.Params.frameworks_engines | default slice -}}
+  {{- if in $fws "fw_black_ops_iii_engine" -}}{{- $folder = "bo3" -}}
+  {{- else if or (in $fws "fw_fabric") (in $fws "fw_forge") (in $fws "fw_neoforge") (in $fws "fw_quilt") -}}{{- $folder = "minecraft" -}}
+  {{- else -}}{{- $folder = "other" -}}{{- end -}}
+{{- end -}}
+{{- return dict "space" $space "folder" $folder -}}

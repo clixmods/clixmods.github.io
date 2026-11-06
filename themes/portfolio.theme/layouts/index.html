@@ -1,28 +1,14 @@
 {{ define "main" }}
-{{/* Contexte = dict { page, sd } fourni par baseof */}}
-{{ partial "home/hero.html" . }}
-
-{{ partial "home/shortcut-cards.html" . }}
-
-<section class="section">
-  <div class="container">
-    <div class="home-grid">
-      <div class="home-main">
-        {{ partial "home/experiences.html" . }}
-      </div>
-      <aside class="home-aside">
-        {{ partial "home/about.html" . }}
-        {{ partial "home/technologies.html" . }}
-      </aside>
-    </div>
-  </div>
-</section>
-
-{{ partial "home/testimonials.html" . }}
-
-<section class="section home-featured">
-  <div class="container">
-    {{ partial "home/recent-projects.html" . }}
-  </div>
-</section>
+{{/* Contexte = dict { page, sd, space, spaces } fourni par baseof */}}
+<div class="page page-home">
+  {{ partial "home/hero.html" . }}
+  {{ partial "home/doors.html" . }}
+  {{ partial "home/recent-projects.html" . }}
+  {{ partial "home/parcours.html" . }}
+  <section class="sec">
+    <div class="sec-head"><h2>{{ i18n "home_skills" }}</h2></div>
+    {{ partial "home/technologies.html" . }}
+  </section>
+  {{ partial "home/testimonials.html" . }}
+</div>
 {{ end }}

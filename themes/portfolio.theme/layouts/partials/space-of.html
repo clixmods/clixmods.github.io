@@ -1,0 +1,8 @@
+{{- /* Espace actif d'une page : home, jeux, web ou mods. Contexte = la page. */ -}}
+{{- $s := "home" -}}
+{{- if eq .Type "space" -}}{{- $s = .Params.space | default "home" -}}
+{{- else if and (eq .Section "projects") .IsPage -}}
+  {{- $pl := partial "project-place.html" . -}}
+  {{- with $pl.space }}{{ $s = . }}{{ end -}}
+{{- end -}}
+{{- return $s -}}

@@ -1,0 +1,9 @@
+{{- /* Un onglet de la barre latérale. Contexte = dict { title, url, icon, thumb }. */ -}}
+<a class="tab" href="{{ .url }}" data-sort-key="{{ .url }}" title="{{ .title }}">
+  <span class="tab-ico">
+    {{- if .thumb }}<img src="{{ .thumb }}" alt="" width="16" height="16" loading="lazy" decoding="async">
+    {{- else if .icon }}{{ partial "icon.html" .icon }}
+    {{- else }}<span class="tab-letter">{{ substr .title 0 1 | upper }}</span>{{ end -}}
+  </span>
+  <span class="tab-title">{{ .title }}</span>
+</a>

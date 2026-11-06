@@ -1,0 +1,58 @@
+{{- /* Recherche ⌘K, menu contextuel, éditeur de thème d'espace, toast.
+       Les libellés sont passés au JS via data-* (traduits par Hugo). */ -}}
+<div class="overlays" data-overlays
+     data-l-theme="{{ i18n "ctx_theme" }}"
+     data-l-reset-order="{{ i18n "ctx_reset_order" }}"
+     data-l-new-tab="{{ i18n "ctx_new_tab" }}"
+     data-l-copy-link="{{ i18n "ctx_copy_link" }}"
+     data-l-link-copied="{{ i18n "ctx_link_copied" }}"
+     data-l-email-copied="{{ i18n "ui_email_copied" }}"
+     data-l-copy-email="{{ i18n "ui_copy_email" }}"
+     data-l-hint="{{ i18n "ctx_reorder_hint" }}"
+     data-l-hide="{{ i18n "ui_hide_sidebar" }}"
+     data-l-show="{{ i18n "ui_show_sidebar" }}">
+
+  <div class="palette-bg" data-palette hidden>
+    <div class="palette" role="dialog" aria-modal="true" aria-label="{{ i18n "ui_search" }}">
+      <div class="palette-field">
+        {{ partial "icon.html" "search" }}
+        <input id="palette-input" type="text" placeholder="{{ i18n "ui_search" }}" autocomplete="off" spellcheck="false" aria-label="{{ i18n "ui_search" }}" aria-controls="palette-list">
+        <kbd>Esc</kbd>
+      </div>
+      <ul id="palette-list" class="palette-list" role="listbox"></ul>
+      <p class="palette-empty" data-palette-empty hidden>{{ i18n "ui_search_empty" }}</p>
+    </div>
+  </div>
+
+  <div class="pop ctx-menu" data-ctx-menu role="menu" hidden></div>
+
+  <div class="pop theme-pop" data-theme-pop role="dialog" aria-label="{{ i18n "theme_title" }}" hidden>
+    <div class="theme-pop-head">
+      <span class="theme-pop-ico" data-theme-ico></span>
+      <b>{{ i18n "theme_title" }}</b>
+      <span class="theme-pop-name" data-theme-name></span>
+    </div>
+    <div class="theme-preview" data-theme-preview></div>
+    <div class="theme-label">{{ i18n "theme_presets" }}</div>
+    <div class="theme-presets" data-theme-presets></div>
+    <div class="theme-fields">
+      <label><span>{{ i18n "theme_color_a" }}</span><input type="color" id="theme-a" data-theme-a></label>
+      <label><span>{{ i18n "theme_color_b" }}</span><input type="color" id="theme-b" data-theme-b></label>
+      <label><span>{{ i18n "theme_accent" }}</span><input type="color" id="theme-accent" data-theme-accent></label>
+    </div>
+    <div class="theme-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-theme-reset>{{ i18n "theme_reset" }}</button>
+      <button type="button" class="btn btn-cold btn-sm" data-theme-close>{{ i18n "theme_done" }}</button>
+    </div>
+  </div>
+
+  <div class="toast" data-toast role="status" hidden></div>
+
+  <template data-icons>
+    <span data-i="open">{{ partial "icon.html" "open" }}</span>
+    <span data-i="link">{{ partial "icon.html" "link" }}</span>
+    <span data-i="palette">{{ partial "icon.html" "color-palette" }}</span>
+    <span data-i="reset">{{ partial "icon.html" "refresh" }}</span>
+    <span data-i="mail">{{ partial "icon.html" "copy" }}</span>
+  </template>
+</div>
