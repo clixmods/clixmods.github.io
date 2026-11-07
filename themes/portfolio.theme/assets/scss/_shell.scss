@@ -501,7 +501,14 @@ html.is-sorting, html.is-sorting * { cursor: grabbing !important; }
 html[data-kind="frame"] .wide-toggle { display: none; }
 html[data-wide="true"] {
   .sheet-body { max-width: none; }
-  .sheet-body .container { max-width: none; }
+  // Toutes les colonnes de lecture s'ouvrent aussi (articles, textes des
+  // projets, introductions), sinon la page ne change pas de largeur.
+  .sheet-body .container,
+  .sheet-body .article,
+  .sheet-body .prose,
+  .sheet-body .lede,
+  .sheet-body .page-lead,
+  .sheet-body .svc-intro { max-width: none; }
 }
 
 // Fond d'ambiance d'une page (image du projet floutée), sous le contenu
