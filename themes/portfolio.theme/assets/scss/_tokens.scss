@@ -25,10 +25,10 @@ $spaces: (
   --ink-3: #82879a;
   --line: rgba(27, 29, 38, 0.08);
   --line-2: rgba(27, 29, 38, 0.14);
-  --tab-hover: rgba(255, 255, 255, 0.42);
-  --tab-active: rgba(255, 255, 255, 0.8);
-  --frame-ink: #262935;
-  --frame-ink-2: rgba(38, 41, 53, 0.6);
+  --tab-hover-base: rgba(255, 255, 255, 0.42);
+  --tab-active-base: rgba(255, 255, 255, 0.8);
+  --frame-ink-base: #262935;
+  --frame-ink-2-base: rgba(38, 41, 53, 0.6);
   --frame-line: rgba(38, 41, 53, 0.14);
   --ok: #1f9d63;
   --shadow: 0 1px 2px rgba(20, 22, 35, 0.06), 0 8px 28px -12px rgba(20, 22, 35, 0.18);
@@ -51,10 +51,10 @@ $spaces: (
   --ink-3: #7a7f90;
   --line: rgba(255, 255, 255, 0.07);
   --line-2: rgba(255, 255, 255, 0.13);
-  --tab-hover: rgba(255, 255, 255, 0.06);
-  --tab-active: rgba(255, 255, 255, 0.11);
-  --frame-ink: #e6e8f0;
-  --frame-ink-2: rgba(230, 232, 240, 0.55);
+  --tab-hover-base: rgba(255, 255, 255, 0.06);
+  --tab-active-base: rgba(255, 255, 255, 0.11);
+  --frame-ink-base: #e6e8f0;
+  --frame-ink-2-base: rgba(230, 232, 240, 0.55);
   --frame-line: rgba(230, 232, 240, 0.12);
   --ok: #43c98a;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 30px -12px rgba(0, 0, 0, 0.6);
@@ -101,16 +101,49 @@ html { transition: --frame-a 0.45s ease, --frame-b 0.45s ease, --accent 0.45s ea
 html:has(.theme-pop:not([hidden])) { transition: none; }
 
 // Réglages d'espace du visiteur (éditeur de thème, comme Arc / Zen) :
-// --th-<id>-int = intensité de la couleur du cadre (0 = neutre, 1 = pleine),
-// --th-<id>-grain = grain posé sur le cadre (0 à 1).
+// --th-<id>-int   = intensité de la couleur du cadre, de 0 (neutre) à 2 :
+//                   au-delà de 1, la couleur devient plus saturée et plus
+//                   profonde (chroma OKLCH multipliée) ;
+// --th-<id>-grain = grain posé sur le cadre (0 à 1) ;
+// --th-<id>-fi(2) = encre du cadre (texte de la barre) quand le visiteur a
+//                   choisi un fond foncé : posée par main.js.
 :root { --neutral: #eceef3; }
 @media (prefers-color-scheme: dark) { :root { --neutral: #141519; } }
 
 @each $id, $c in $spaces {
   html[data-space="#{$id}"] {
-    --frame-a: color-mix(in oklab, var(--sp-#{$id}-a) calc(var(--th-#{$id}-int, 1) * 100%), var(--neutral));
-    --frame-b: color-mix(in oklab, var(--sp-#{$id}-b) calc(var(--th-#{$id}-int, 1) * 100%), var(--neutral));
+    --frame-a: color-mix(in oklab, var(--sp-#{$id}-a) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral));
+    --frame-b: color-mix(in oklab, var(--sp-#{$id}-b) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral));
     --accent: var(--sp-#{$id}-accent);
     --grain: var(--th-#{$id}-grain, 0);
+    --frame-ink: var(--th-#{$id}-fi, var(--frame-ink-base));
+    --frame-ink-2: var(--th-#{$id}-fi2, var(--frame-ink-2-base));
+    // Texte clair (fond foncé) : survol et onglet actif translucides, sinon
+    // blanc sur blanc.
+    --tab-hover: var(--th-#{$id}-th, var(--tab-hover-base));
+    --tab-active: var(--th-#{$id}-ta, var(--tab-active-base));
+  }
+}
+// Intensité au-delà de 1 : saturation (chroma) renforcée, couleur plus
+// profonde en clair, plus lumineuse en sombre. Navigateurs récents seulement
+// (syntaxe de couleur relative) ; ailleurs, l'intensité plafonne à 1.
+@supports (color: oklch(from red l c h)) {
+  @each $id, $c in $spaces {
+    html[data-space="#{$id}"] {
+      --frame-a: oklch(from color-mix(in oklab, var(--sp-#{$id}-a) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral))
+        calc(l - max(0, var(--th-#{$id}-int, 1) - 1) * 0.16) calc(c * max(1, var(--th-#{$id}-int, 1) * 1.6 - 0.6)) h);
+      --frame-b: oklch(from color-mix(in oklab, var(--sp-#{$id}-b) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral))
+        calc(l - max(0, var(--th-#{$id}-int, 1) - 1) * 0.16) calc(c * max(1, var(--th-#{$id}-int, 1) * 1.6 - 0.6)) h);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    @each $id, $c in $spaces {
+      html[data-space="#{$id}"] {
+        --frame-a: oklch(from color-mix(in oklab, var(--sp-#{$id}-a) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral))
+          calc(l + max(0, var(--th-#{$id}-int, 1) - 1) * 0.12) calc(c * max(1, var(--th-#{$id}-int, 1) * 2 - 1)) h);
+        --frame-b: oklch(from color-mix(in oklab, var(--sp-#{$id}-b) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral))
+          calc(l + max(0, var(--th-#{$id}-int, 1) - 1) * 0.12) calc(c * max(1, var(--th-#{$id}-int, 1) * 2 - 1)) h);
+      }
+    }
   }
 }

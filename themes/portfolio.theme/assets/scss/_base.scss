@@ -32,7 +32,16 @@ body {
   font-size: 15px;
   line-height: 1.55;
   color: var(--ink);
-  background: linear-gradient(135deg, var(--frame-a) 0%, var(--frame-b) 100%) fixed;
+  // Dégradé façon Arc : plusieurs taches de couleur qui se fondent (coin
+  // haut-gauche = couleur 1, bas-droite = couleur 2, une touche d'accent en
+  // haut à droite), plutôt qu'un simple fondu linéaire.
+  background:
+    radial-gradient(90% 75% at 0% 0%, var(--frame-a) 0%, transparent 70%),
+    radial-gradient(85% 80% at 100% 100%, var(--frame-b) 0%, transparent 72%),
+    radial-gradient(70% 60% at 100% 0%, color-mix(in oklab, var(--accent) 30%, var(--frame-b)) 0%, transparent 75%),
+    radial-gradient(60% 60% at 0% 100%, color-mix(in oklab, var(--frame-b) 60%, var(--frame-a)) 0%, transparent 80%),
+    linear-gradient(135deg, var(--frame-a) 0%, var(--frame-b) 100%);
+  background-attachment: fixed;
   background-color: var(--frame-a);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;

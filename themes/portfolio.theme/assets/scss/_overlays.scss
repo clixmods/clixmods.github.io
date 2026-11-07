@@ -150,7 +150,7 @@
     &:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   }
   // Intensité : du neutre à la couleur du cadre
-  &.is-intensity input { --track: linear-gradient(to right, var(--neutral), var(--th-preview-a, var(--accent))); }
+  &.is-intensity input { --track: linear-gradient(to right, var(--neutral), var(--th-preview-a, var(--accent)) 50%, var(--accent)); }
   // Grain : de lisse à granuleux
   &.is-grain input {
     --track:

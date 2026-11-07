@@ -1,0 +1,7 @@
+{{- /* Fond d'ambiance : l'image de la page (projet, article), floutée et
+       estompée, habille la feuille. À couper avec `ambient = false` (pages au
+       style personnalisé). Contexte = la page. */ -}}
+{{- if ne .Params.ambient false }}{{ with .Params.image }}
+{{- $bg := partial "get-optimized-image.html" (dict "imagePath" . "width" 640 "quality" 60) }}
+<div class="page-ambient" aria-hidden="true"><img src="{{ $bg.src }}" alt="" decoding="async"></div>
+{{- end }}{{ end -}}

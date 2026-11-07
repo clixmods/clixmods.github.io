@@ -28,7 +28,7 @@
     {{- with $proj.Params.actions -}}
       {{- $base := $proj.File.ContentBaseName -}}
       {{- $inner := where (where site.RegularPages "Section" "tabs") "Params.project" $base -}}
-      {{- $sub := slice (dict "kind" "tab" "title" ($proj.Params.wiki_tab | default (i18n "tab_wiki")) "url" $proj.RelPermalink "icon" "book") -}}
+      {{- $sub := slice (dict "kind" "tab" "title" ($proj.Params.wiki_tab | default (i18n "tab_project")) "url" $proj.RelPermalink "icon" "book") -}}
       {{- /* Exception voulue : wiki d'un autre projet lié, trouvable ici aussi
              ([[linked_wikis]] ref = fichier du projet, tab = nom de l'onglet).
              Ex. le site de Living Horizon (espace Web) dans le dossier du mod. */ -}}
@@ -71,18 +71,21 @@
   {{- range $exp := partial "parcours-sorted.html" .Pages -}}
     {{- $logo := $exp.Params.logo | default "" -}}
     {{- $logoThumb := partialCached "tab-thumb.html" (dict "path" $logo "fit" true) $logo "fit" -}}
-    {{- $t := dict "kind" "tab" "title" ($exp.Params.company | default $exp.Title) "url" $exp.RelPermalink "thumb" $logoThumb -}}
+    {{- /* Nom affiché : « Entreprise — Poste » (le poste seul ne dit pas où). */ -}}
+    {{- $label := $exp.Title -}}
+    {{- with $exp.Params.company }}{{ $label = printf "%s — %s" . $exp.Title }}{{ end -}}
+    {{- $t := dict "kind" "tab" "title" $label "url" $exp.RelPermalink "thumb" $logoThumb -}}
     {{- /* Expérience avec des projets associés (projects[].project_ref) :
-           un dossier — Wiki (la page du poste) puis les projets. */ -}}
+           un dossier — Description du poste, puis les projets. */ -}}
     {{- with $exp.Params.projects -}}
-      {{- $sub := slice (dict "kind" "tab" "title" (i18n "tab_wiki") "url" $exp.RelPermalink "icon" "book") -}}
+      {{- $sub := slice (dict "kind" "tab" "title" (i18n "tab_job") "url" $exp.RelPermalink "icon" "document-text") -}}
       {{- range . -}}
         {{- with site.GetPage (printf "/projects/%s" .project_ref) -}}
           {{- $img := .Params.image | default "" -}}
           {{- $sub = $sub | append (dict "kind" "tab" "title" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" $img) $img)) -}}
         {{- end -}}
       {{- end -}}
-      {{- $t = dict "kind" "folder" "id" (printf "exp-%s" $exp.File.ContentBaseName) "name" ($exp.Params.company | default $exp.Title) "tabs" $sub "thumb" $logoThumb "closed" true -}}
+      {{- $t = dict "kind" "folder" "id" (printf "exp-%s" $exp.File.ContentBaseName) "name" $label "tabs" $sub "thumb" $logoThumb "closed" true -}}
     {{- end -}}
     {{- $tabs = $tabs | append $t -}}
   {{- end -}}

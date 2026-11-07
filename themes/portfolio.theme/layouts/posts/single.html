@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{- $page := .page -}}
 {{- $P := $page.Params -}}
+{{ partial "page-ambient.html" $page }}
 <section class="section">
   <div class="container">
     <article class="article">

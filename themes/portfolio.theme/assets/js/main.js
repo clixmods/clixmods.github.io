@@ -388,7 +388,12 @@
           : "color-mix(in oklab, " + v[k] + " 24%, #121318)");
       } else { st.removeProperty(light); st.removeProperty(dark); }
     });
-    // Intensité de la couleur du cadre et grain (0 à 1)
+    var INK = { fi: "#f6f7fb", fi2: "rgba(246, 247, 251, 0.66)", th: "rgba(255, 255, 255, 0.16)", ta: "rgba(255, 255, 255, 0.26)" };
+    Object.keys(INK).forEach(function (k) {
+      if (v && v.ink === "light") st.setProperty("--th-" + id + "-" + k, INK[k]);
+      else st.removeProperty("--th-" + id + "-" + k);
+    });
+    // Intensité de la couleur du cadre (0 à 2) et grain (0 à 1)
     var fx = { intensity: "int", grain: "grain" };
     Object.keys(fx).forEach(function (k) {
       var name = "--th-" + id + "-" + fx[k];
@@ -428,11 +433,11 @@
     var t = 1 - p.y;
     return k === "accent"
       ? hslToHex(p.x * 360, 30 + 52 * t, 30 + 22 * p.y)
-      : hslToHex(p.x * 360, 25 + 60 * t, 93 - 16 * t);
+      : hslToHex(p.x * 360, 25 + 67 * t, 93 - 33 * t);
   };
   var posOf = function (k, hex) {
     var c = hexToHsl(hex);
-    var t = k === "accent" ? (c.s - 30) / 52 : (c.s - 25) / 60;
+    var t = k === "accent" ? (c.s - 30) / 52 : (c.s - 25) / 67;
     return { x: c.h / 360, y: 1 - clamp(t, 0, 1) };
   };
 
@@ -462,8 +467,24 @@
     colors.grain = cur.grain;
     return colors;
   };
+  // Fond du cadre trop foncé (couleurs vives, intensité forte) : texte clair.
+  // Clarté OKLab approchée par la racine cubique de la luminance, corrigée
+  // comme dans _tokens.scss (mélange au neutre sous 1, assombri au-delà).
+  var lightness = function (hex) {
+    var n = parseInt(String(hex).slice(1), 16) || 0;
+    var lin = function (c) { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+    var y = 0.2126 * lin(n >> 16 & 255) + 0.7152 * lin(n >> 8 & 255) + 0.0722 * lin(n & 255);
+    return Math.cbrt(y);
+  };
+  var inkFor = function (v) {
+    var i = typeof v.intensity === "number" ? v.intensity : 1;
+    var l = (lightness(v.a) + lightness(v.b)) / 2;
+    l = l * Math.min(i, 1) + 0.95 * (1 - Math.min(i, 1)) - Math.max(0, i - 1) * 0.16;
+    return l < 0.66 ? "light" : "dark";
+  };
   var saveTheme = function (id, v) {
     var all = store.json("cadre:themes", {});
+    if (v) v.ink = inkFor(v);
     if (v) all[id] = v; else delete all[id];
     store.set("cadre:themes", JSON.stringify(all));
     applyTheme(id, v);
@@ -495,7 +516,7 @@
     themePop.style.setProperty("--th-preview-a", v.a);
     var prev = themePop.querySelector("[data-theme-preview]");
     if (prev) {
-      var mixed = function (k) { return "color-mix(in oklab, var(--sp-" + themeSpaceId + "-" + k + ") calc(var(--th-" + themeSpaceId + "-int, 1) * 100%), var(--neutral))"; };
+      var mixed = function (k) { return "color-mix(in oklab, var(--sp-" + themeSpaceId + "-" + k + ") calc(min(var(--th-" + themeSpaceId + "-int, 1), 1) * 100%), var(--neutral))"; };
       prev.style.setProperty("--frame-a", mixed("a"));
       prev.style.setProperty("--frame-b", mixed("b"));
       prev.style.setProperty("--accent", "var(--sp-" + themeSpaceId + "-accent)");
@@ -606,7 +627,7 @@
       if (!input) return;
       input.addEventListener("input", function () {
         var v = currentTheme(themeSpaceId);
-        v[k] = clamp(parseInt(input.value, 10) / 100, 0, 1);
+        v[k] = clamp(parseInt(input.value, 10) / 100, 0, k === "intensity" ? 2 : 1);
         saveTheme(themeSpaceId, v);
       });
     });
@@ -955,25 +976,22 @@
     navigate(location.href, false, typeof st.y === "number" ? st.y : 0, st.space || null);
   });
 
-  // ── Pleine largeur (comme Notion), par page ───────────
-  // Défaut : front matter `full_width` (attribut data-wide posé par Hugo) ;
-  // le choix du visiteur pour la page est mémorisé dans cadre:wide.
+  // ── Pleine largeur (comme Notion) ─────────────────────
+  // Le choix du visiteur vaut pour toutes les pages (cadre:wide = "1" / "0") ;
+  // sans choix, c'est le front matter `full_width` de la page (data-wide).
   var wideBtn = d.querySelector("[data-wide-toggle]");
   var syncWide = function () {
     if (wideBtn) wideBtn.setAttribute("aria-pressed", html.getAttribute("data-wide") === "true" ? "true" : "false");
   };
   var applyWide = function (fallback) {
-    var wm = store.json("cadre:wide", {});
-    var k = location.pathname;
-    html.setAttribute("data-wide", k in wm ? (wm[k] ? "true" : "false") : fallback);
+    var wv = store.get("cadre:wide");
+    html.setAttribute("data-wide", wv === "1" ? "true" : wv === "0" ? "false" : fallback);
     syncWide();
   };
   syncWide();
   if (wideBtn) wideBtn.addEventListener("click", function () {
     var on = html.getAttribute("data-wide") !== "true";
-    var wm = store.json("cadre:wide", {});
-    wm[location.pathname] = on;
-    store.set("cadre:wide", JSON.stringify(wm));
+    store.set("cadre:wide", on ? "1" : "0");
     var flip = function () { html.setAttribute("data-wide", on ? "true" : "false"); syncWide(); };
     // La feuille s'élargit en douceur (transition de vue) quand c'est possible.
     if (d.startViewTransition && !reduceMotion.matches && !d.hidden) d.startViewTransition(flip);
@@ -1519,6 +1537,11 @@
   // ── Lightbox galerie projet (avec navigation) ─────────
   var lb = document.querySelector("[data-lightbox-overlay]");
   if (lb) {
+    // Sortie de la feuille (sinon la barre du haut, collante, passe
+    // par-dessus) ; posée sur la zone de la feuille, la barre latérale reste
+    // visible. Retirée au changement de page.
+    document.body.appendChild(lb);
+    cleanups.push(function () { lb.remove(); });
     var lbImg = lb.querySelector("img");
     var lbPrev = lb.querySelector("[data-lightbox-prev]");
     var lbNext = lb.querySelector("[data-lightbox-next]");
