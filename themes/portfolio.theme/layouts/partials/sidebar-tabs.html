@@ -7,34 +7,17 @@
 */ -}}
 <div class="side-scroll" data-side-scroll>
   {{- range . }}
-  {{- $sp := . }}
   <section class="space-panel" data-space-panel="{{ .id }}" aria-label="{{ .name }}">
     <div class="space-head">
       <span class="space-head-ico">{{ partial "icon.html" .icon }}</span>
       <span class="space-head-name">{{ .name }}</span>
-      {{- with .count }}<span class="space-head-count">{{ i18n "ui_n_projects" . }}</span>{{ end }}
     </div>
     <nav class="tabs" data-sortable="{{ .id }}" aria-label="{{ i18n "ui_tabs" }} · {{ .name }}">
       {{- range .entries }}
       {{- if eq .kind "tab" }}
       {{ partial "tab-link.html" . }}
       {{- else }}
-      <div class="folder" data-folder="{{ .id }}" data-folder-key="{{ .folder | default .id }}" data-sort-key="folder:{{ .id }}" data-count="{{ len .tabs }}">
-        <button type="button" class="folder-head" data-folder-toggle aria-expanded="false" title="{{ .name }}">
-          {{ partial "icon.html" (dict "name" "chevron-forward" "class" "folder-chev") }}
-          {{ partial "icon.html" (dict "name" "folder" "class" "folder-ico is-closed") }}
-          {{ partial "icon.html" (dict "name" "folder-open" "class" "folder-ico is-open") }}
-          <span class="tab-title">{{ .name }}</span>
-          <span class="folder-count">{{ len .tabs }}</span>
-        </button>
-        <div class="folder-body">
-          <div class="folder-inner" data-sortable="{{ .id }}">
-            {{- range .tabs }}
-            {{ partial "tab-link.html" . }}
-            {{- end }}
-          </div>
-        </div>
-      </div>
+      {{ partial "side-folder.html" . }}
       {{- end }}
       {{- end }}
     </nav>
@@ -43,9 +26,9 @@
 </div>
 
 <div class="side-foot">
-  <nav class="switch" aria-label="{{ i18n "ui_spaces" }}">
+  <nav class="switch" data-sortable="spaces" data-sort-axis="x" aria-label="{{ i18n "ui_spaces" }}">
     {{- range . }}
-    <a class="sp" href="{{ .url }}" data-space-link="{{ .id }}" title="{{ .name }}" aria-label="{{ .name }}">{{ partial "icon.html" .icon }}</a>
+    <a class="sp" href="{{ .url }}" data-space-link="{{ .id }}" data-sort-key="space:{{ .id }}" title="{{ .name }}" aria-label="{{ .name }}">{{ partial "icon.html" .icon }}</a>
     {{- end }}
   </nav>
 </div>

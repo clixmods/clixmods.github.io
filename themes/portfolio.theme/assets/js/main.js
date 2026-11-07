@@ -66,11 +66,11 @@
     all[id] = open;
     store.set("cadre:folders", JSON.stringify(all));
   };
-  var setFolder = function (f, open) {
+  var setFolder = function (f, open, keep) {
     f.setAttribute("data-open", open ? "true" : "false");
     var btn = f.querySelector("[data-folder-toggle]");
     if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
-    saveFolder(f.getAttribute("data-folder"), open);
+    if (!keep) saveFolder(f.getAttribute("data-folder"), open);
   };
   side.addEventListener("click", function (e) {
     var btn = e.target.closest("[data-folder-toggle]");
@@ -79,52 +79,77 @@
     setFolder(f, f.getAttribute("data-open") !== "true");
   });
   // Les filtres d'une page d'espace ouvrent le dossier correspondant.
-  d.querySelectorAll("[data-folder-link]").forEach(function (chip) {
-    chip.addEventListener("click", function () {
-      var f = side.querySelector('[data-folder="' + chip.getAttribute("data-folder-link") + '"]');
-      if (f && f.getAttribute("data-open") !== "true") setFolder(f, true);
-    });
+  d.addEventListener("click", function (e) {
+    var chip = e.target.closest("[data-folder-link]");
+    if (!chip) return;
+    var f = side.querySelector('[data-folder="' + chip.getAttribute("data-folder-link") + '"]');
+    if (f && f.getAttribute("data-open") !== "true") setFolder(f, true);
   });
 
-  // ── Onglet courant visible, défilement mémorisé ──────
+  // ── Onglet courant, espace affiché, défilement mémorisé ─
   var scroller = side.querySelector("[data-side-scroll]");
-  var current = side.querySelector('a.tab[aria-current="page"]');
-  if (current && scroller) {
-    var r = current.getBoundingClientRect();
+  var markCurrent = function () {
+    side.querySelectorAll('a.tab[aria-current]').forEach(function (a) { a.removeAttribute("aria-current"); });
+    var cur = null;
+    side.querySelectorAll('[data-space-panel="' + space + '"] a.tab').forEach(function (a) {
+      if (!cur && a.pathname === location.pathname) cur = a;
+    });
+    if (cur) {
+      cur.setAttribute("aria-current", "page");
+      // Le dossier (et ses parents) qui contient la page s'ouvre.
+      for (var f = cur.parentElement.closest("[data-folder]"); f; f = f.parentElement.closest("[data-folder]")) {
+        if (f.getAttribute("data-open") !== "true") setFolder(f, true, true);
+      }
+    }
+    d.querySelectorAll("[data-space-link]").forEach(function (x) {
+      if (x.getAttribute("data-space-link") === space) x.setAttribute("aria-current", "true");
+      else x.removeAttribute("aria-current");
+    });
+    return cur;
+  };
+  var revealCurrent = function () {
+    var cur = side.querySelector('a.tab[aria-current="page"]');
+    if (!cur || !scroller) return;
+    var r = cur.getBoundingClientRect();
     var s = scroller.getBoundingClientRect();
-    if (r.top < s.top || r.bottom > s.bottom) current.scrollIntoView({ block: "nearest" });
-  }
+    if (r.top < s.top || r.bottom > s.bottom) cur.scrollIntoView({ block: "nearest" });
+  };
+  revealCurrent();
   window.addEventListener("pagehide", function () {
     try { if (scroller) sessionStorage.setItem("cadre:scroll:" + space, String(scroller.scrollTop)); } catch (e) {}
   });
   // Dernière page vue dans cet espace : on y revient en rechangeant d'espace.
-  store.set("cadre:last:" + lang + ":" + space, location.pathname + location.search);
+  var rememberPage = function () { store.set("cadre:last:" + lang + ":" + space, location.pathname + location.search); };
+  rememberPage();
 
   // ── Changer d'espace ──────────────────────────────────
-  d.querySelectorAll("[data-space-link]").forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
-      var id = a.getAttribute("data-space-link");
-      if (id === space) { e.preventDefault(); return; }
-      e.preventDefault();
-      // La barre latérale bascule tout de suite, la page suit.
-      html.setAttribute("data-space", id);
-      d.querySelectorAll("[data-space-link]").forEach(function (x) {
-        if (x.getAttribute("data-space-link") === id) x.setAttribute("aria-current", "true");
-        else x.removeAttribute("aria-current");
-      });
-      var last = store.get("cadre:last:" + lang + ":" + id);
-      location.href = last || a.getAttribute("href");
-    });
+  d.addEventListener("click", function (e) {
+    var a = e.target.closest("[data-space-link]");
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    var id = a.getAttribute("data-space-link");
+    if (id === space) return;
+    // La barre latérale bascule tout de suite, la page suit.
+    space = id;
+    html.setAttribute("data-space", id);
+    markCurrent();
+    if (!side.contains(a)) setDrawer(false);
+    navigate(store.get("cadre:last:" + lang + ":" + id) || a.getAttribute("href"), true);
   });
 
   // ── Onglets réorganisables (glisser-déposer) ──────────
   // Souris : on glisse dès 6 px de mouvement. Tactile : appui long (400 ms),
   // puis glisser ; un appui long relâché sans bouger ouvre le menu.
   var orderKey = function (box) { return "cadre:order:" + lang + ":" + box.getAttribute("data-sortable"); };
+  // Les espaces existent en double (barre latérale + barre mobile) : même ordre.
+  var mirrorSpaces = function (keys) {
+    var m = d.querySelector("[data-space-order]");
+    if (m) keys.forEach(function (k) { var el = m.querySelector('[data-sort-key="' + k + '"]'); if (el) m.appendChild(el); });
+  };
   var saveOrder = function (box) {
     var keys = Array.prototype.map.call(box.children, function (k) { return k.getAttribute("data-sort-key"); }).filter(Boolean);
     store.set(orderKey(box), JSON.stringify(keys));
+    if (box.getAttribute("data-sortable") === "spaces") mirrorSpaces(keys);
   };
   var drag = null;
   var suppressClick = false;
@@ -139,13 +164,14 @@
     html.classList.add("is-sorting");
     if (drag.item.matches(".folder")) drag.item.querySelector(".folder-head").classList.add("is-dragging");
   };
-  var moveDrag = function (y) {
+  // Les onglets se rangent à la verticale, les espaces (data-sort-axis="x") à l'horizontale.
+  var moveDrag = function (x, y) {
     var box = drag.item.parentElement;
     var kids = Array.prototype.filter.call(box.children, function (k) { return k !== drag.item && k.hasAttribute("data-sort-key"); });
     var before = null;
     for (var i = 0; i < kids.length; i++) {
       var r = (kids[i].matches(".folder") ? kids[i].querySelector(".folder-head") : kids[i]).getBoundingClientRect();
-      if (y < r.top + r.height / 2) { before = kids[i]; break; }
+      if (drag.axisX ? x < r.left + r.width / 2 : y < r.top + r.height / 2) { before = kids[i]; break; }
     }
     if (before !== drag.item.nextElementSibling) box.insertBefore(drag.item, before);
   };
@@ -168,9 +194,13 @@
   side.addEventListener("pointerdown", function (e) {
     if (e.button !== 0) return;
     var item = itemOf(e.target);
-    if (!item || e.target.closest(".folder-inner") && item.matches(".folder")) return;
+    if (!item) return;
+    // Appui dans le contenu d'un dossier, hors d'un onglet : on ne déplace pas le dossier.
+    var inner = e.target.closest(".folder-inner");
+    if (inner && item.matches(".folder") && item.contains(inner)) return;
     var touch = e.pointerType !== "mouse";
-    drag = { item: item, target: e.target, x: e.clientX, y: e.clientY, y0: e.clientY, active: false, moved: false, touch: touch, id: e.pointerId };
+    var axisX = item.parentElement.getAttribute("data-sort-axis") === "x";
+    drag = { item: item, target: e.target, x: e.clientX, y: e.clientY, y0: e.clientY, active: false, moved: false, touch: touch, id: e.pointerId, axisX: axisX };
     if (touch) {
       drag.timer = setTimeout(function () {
         if (!drag) return;
@@ -182,14 +212,15 @@
   window.addEventListener("pointermove", function (e) {
     if (!drag || e.pointerId !== drag.id) return;
     var dy = Math.abs(e.clientY - drag.y0);
+    var dx = Math.abs(e.clientX - drag.x);
     if (!drag.active) {
       // Tactile : bouger avant l'appui long = défiler, pas glisser.
-      if (drag.touch) { if (dy > 8 || Math.abs(e.clientX - drag.x) > 8) { clearTimeout(drag.timer); drag = null; } return; }
-      if (dy < 6) return;
+      if (drag.touch) { if (dy > 8 || dx > 8) { clearTimeout(drag.timer); drag = null; } return; }
+      if ((drag.axisX ? dx : dy) < 6) return;
       startDrag();
     }
     drag.moved = true;
-    moveDrag(e.clientY);
+    moveDrag(e.clientX, e.clientY);
   });
   window.addEventListener("pointerup", function (e) { if (drag && e.pointerId === drag.id) endDrag(false); });
   window.addEventListener("pointercancel", function () { endDrag(true); });
@@ -198,19 +229,26 @@
   side.addEventListener("click", function (e) {
     if (suppressClick) { e.preventDefault(); e.stopPropagation(); }
   }, true);
-  side.addEventListener("dragstart", function (e) { if (e.target.closest(".tab")) e.preventDefault(); });
+  side.addEventListener("dragstart", function (e) { if (e.target.closest(".tab, .sp")) e.preventDefault(); });
 
+  var resetBox = function (box) {
+    store.del(orderKey(box));
+    var orig = [];
+    try { orig = JSON.parse(box.getAttribute("data-orig") || "[]"); } catch (e) {}
+    var kids = {};
+    Array.prototype.forEach.call(box.children, function (k) { if (k.dataset.sortKey) kids[k.dataset.sortKey] = k; });
+    orig.forEach(function (key) { if (kids[key]) box.appendChild(kids[key]); });
+    if (box.getAttribute("data-sortable") === "spaces") mirrorSpaces(orig);
+  };
+  // spaceId = "spaces" : rétablit l'ordre des espaces eux-mêmes.
   var resetOrder = function (spaceId) {
+    if (spaceId === "spaces") {
+      var sw = side.querySelector('[data-sortable="spaces"]');
+      if (sw) resetBox(sw);
+      return;
+    }
     var panel = side.querySelector('[data-space-panel="' + spaceId + '"]');
-    if (!panel) return;
-    panel.querySelectorAll("[data-sortable]").forEach(function (box) {
-      store.del(orderKey(box));
-      var orig = [];
-      try { orig = JSON.parse(box.getAttribute("data-orig") || "[]"); } catch (e) {}
-      var kids = {};
-      Array.prototype.forEach.call(box.children, function (k) { if (k.dataset.sortKey) kids[k.dataset.sortKey] = k; });
-      orig.forEach(function (key) { if (kids[key]) box.appendChild(kids[key]); });
-    });
+    if (panel) panel.querySelectorAll("[data-sortable]").forEach(resetBox);
   };
 
   // ── Menu contextuel (clic droit / appui long) ─────────
@@ -246,7 +284,7 @@
       items.push("sep");
     }
     items.push({ icon: ICON.palette, label: L("theme"), run: function () { openTheme(themeSpace, x, y); } });
-    items.push({ icon: ICON.reset, label: L("reset-order"), run: function () { resetOrder(themeSpace); } });
+    items.push({ icon: ICON.reset, label: L("reset-order"), run: function () { resetOrder(spBtn ? "spaces" : themeSpace); } });
     menu.innerHTML = "";
     items.forEach(function (it) {
       if (it === "sep") { var s = d.createElement("div"); s.className = "pop-sep"; menu.appendChild(s); return; }
@@ -383,20 +421,18 @@
     themePop.querySelector("[data-theme-close]").addEventListener("click", function () { themePop.hidden = true; });
   }
 
-  // ── Langue ────────────────────────────────────────────
-  d.querySelectorAll("[data-lang-box]").forEach(function (box) {
-    var btn = box.querySelector("[data-lang-toggle]");
-    var pop = box.querySelector("[data-lang-pop]");
-    if (!btn || !pop) return;
-    btn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var open = pop.hidden;
-      d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
-      d.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
-      pop.hidden = !open;
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      if (open) { var a = pop.querySelector("a"); if (a) a.focus({ preventScroll: true }); }
-    });
+  // ── Langue (bouton dans la barre d'adresse, remplacée à chaque page) ─
+  d.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-lang-toggle]");
+    if (!btn) return;
+    var pop = btn.parentElement.querySelector("[data-lang-pop]");
+    if (!pop) return;
+    var open = pop.hidden;
+    d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
+    d.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+    pop.hidden = !open;
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open) { var a = pop.querySelector("a"); if (a) a.focus({ preventScroll: true }); }
   });
 
   // Fermeture des menus au clic extérieur / Échap
@@ -445,7 +481,7 @@
       li.innerHTML = '<span class="tab-ico">' + it.ico + '</span><span class="tab-title"></span><span class="palette-kind"></span>';
       li.querySelector(".tab-title").textContent = it.title;
       li.querySelector(".palette-kind").textContent = it.kind;
-      li.addEventListener("click", function () { location.href = it.href; });
+      li.addEventListener("click", function () { closePal(); navigate(it.href, true); });
       li.addEventListener("mousemove", function () { if (sel !== i) { sel = i; markPal(); } });
       palList.appendChild(li);
     });
@@ -476,12 +512,12 @@
     if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
   };
   if (pal) {
-    d.querySelectorAll("[data-palette-open]").forEach(function (b) { b.addEventListener("click", openPal); });
+    d.addEventListener("click", function (e) { if (e.target.closest("[data-palette-open]")) openPal(); });
     palInput.addEventListener("input", function () { sel = 0; renderPal(); });
     palInput.addEventListener("keydown", function (e) {
       if (e.key === "ArrowDown") { e.preventDefault(); sel = Math.min(sel + 1, shown.length - 1); markPal(); }
       else if (e.key === "ArrowUp") { e.preventDefault(); sel = Math.max(sel - 1, 0); markPal(); }
-      else if (e.key === "Enter" && shown[sel]) { e.preventDefault(); location.href = shown[sel].href; }
+      else if (e.key === "Enter" && shown[sel]) { e.preventDefault(); var go = shown[sel].href; closePal(); navigate(go, true); }
     });
     pal.addEventListener("click", function (e) { if (e.target === pal) closePal(); });
   }
@@ -500,10 +536,197 @@
       d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
     }
   });
+
+  // ── Largeur de la barre latérale (poignée sur son bord droit) ─
+  // Glisser pour ajuster, double-clic pour revenir à la largeur d'origine.
+  var grip = side.querySelector("[data-side-resize]");
+  if (grip) {
+    var MIN_W = 200, MAX_W = 480;
+    var rs = null;
+    grip.addEventListener("pointerdown", function (e) {
+      if (e.button !== 0 || mqMobile.matches) return;
+      e.preventDefault();
+      rs = { x: e.clientX, w: side.getBoundingClientRect().width, id: e.pointerId };
+      try { grip.setPointerCapture(e.pointerId); } catch (err) {}
+      html.classList.add("is-resizing");
+    });
+    grip.addEventListener("pointermove", function (e) {
+      if (!rs || e.pointerId !== rs.id) return;
+      var w = Math.round(Math.max(MIN_W, Math.min(MAX_W, rs.w + e.clientX - rs.x)));
+      html.style.setProperty("--side-w", w + "px");
+      rs.last = w;
+    });
+    var endResize = function () {
+      if (!rs) return;
+      if (rs.last) store.set("cadre:width", String(rs.last));
+      rs = null;
+      html.classList.remove("is-resizing");
+    };
+    grip.addEventListener("pointerup", endResize);
+    grip.addEventListener("pointercancel", endResize);
+    grip.addEventListener("dblclick", function () {
+      html.style.removeProperty("--side-w");
+      store.del("cadre:width");
+    });
+  }
+
+  // ── Navigation sans rechargement ──────────────────────
+  // Comme dans un vrai navigateur, seule la page (la feuille) change : la
+  // barre latérale garde son état (défilement, dossiers, survol). La page
+  // suivante est récupérée en fetch, son <main>, son fil d'Ariane et sa barre
+  // d'adresse remplacent ceux en place, puis les fonctions de page repartent.
+  // Tout ce qui n'est pas une page HTML du site, dans la même langue, part en
+  // navigation classique.
+  var pages = {}, pageKeys = [];
+  var keyOf = function (url) { return url.split("#")[0]; };
+  var fetchPage = function (url) {
+    var k = keyOf(url);
+    if (!pages[k]) {
+      pages[k] = fetch(k, { credentials: "same-origin" }).then(function (r) {
+        if (!r.ok || (r.headers.get("content-type") || "").indexOf("text/html") < 0) throw new Error("not-a-page");
+        return r.text();
+      });
+      pages[k].catch(function () { delete pages[k]; });
+      pageKeys.push(k);
+      if (pageKeys.length > 24) delete pages[pageKeys.shift()];
+    }
+    return pages[k];
+  };
+  var softLink = function (a) {
+    if (!a || !a.href || a.hasAttribute("download") || a.hasAttribute("data-lightbox")) return false;
+    if (a.target && a.target !== "_self") return false;
+    if (a.origin !== location.origin || !/^https?:$/.test(a.protocol)) return false;
+    if (a.hasAttribute("hreflang") && a.getAttribute("hreflang") !== lang) return false;
+    if (/\.[a-z0-9]{2,5}$/i.test(a.pathname) && !/\.html?$/i.test(a.pathname)) return false;
+    if (a.closest("[data-no-soft]")) return false;
+    return true;
+  };
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var navSeq = 0;
+  var loadTimer;
+  var saveScroll = function () {
+    try { history.replaceState({ cadre: 1, y: window.scrollY }, ""); } catch (e) {}
+  };
+  var swapNode = function (sel, doc, all) {
+    var olds = d.querySelectorAll(sel), news = doc.querySelectorAll(sel);
+    for (var i = 0; i < olds.length && i < news.length; i++) {
+      olds[i].replaceWith(d.adoptNode(news[i]));
+      if (!all) break;
+    }
+  };
+  var syncHead = function (doc) {
+    d.title = doc.title;
+    ['meta[name="description"]', 'link[rel="canonical"]', 'meta[property="og:title"]', 'meta[property="og:description"]', 'meta[property="og:url"]'].forEach(function (sel) {
+      var o = d.head.querySelector(sel), n = doc.head.querySelector(sel);
+      if (o && n) o.replaceWith(d.adoptNode(n));
+      else if (o) o.remove();
+      else if (n) d.head.appendChild(d.adoptNode(n));
+    });
+    d.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (l) { l.remove(); });
+    doc.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (l) { d.head.appendChild(d.adoptNode(l)); });
+  };
+  var currentPath = location.pathname + location.search;
+
+  var navigate = function (url, push, restoreY) {
+    var seq = ++navSeq;
+    if (push) saveScroll();
+    clearTimeout(loadTimer);
+    loadTimer = setTimeout(function () { html.classList.add("is-loading"); }, 120);
+    var done = function () { clearTimeout(loadTimer); html.classList.remove("is-loading"); };
+    fetchPage(url).then(function (text) {
+      if (seq !== navSeq) return;
+      var doc = new DOMParser().parseFromString(text, "text/html");
+      var nh = doc.documentElement;
+      var main = doc.getElementById("main");
+      if (!main || !doc.querySelector("[data-app]") || nh.getAttribute("data-lang") !== lang) { location.href = url; return; }
+      var swap = function () {
+        if (push) { try { history.pushState({ cadre: 1, y: 0 }, "", url); } catch (e) { location.href = url; return; } }
+        currentPath = location.pathname + location.search;
+        if (window.CadrePage) window.CadrePage.destroy();
+        syncHead(doc);
+        space = nh.getAttribute("data-space") || "home";
+        html.setAttribute("data-space", space);
+        html.setAttribute("data-kind", nh.getAttribute("data-kind") || "page");
+        if (nh.lang) html.lang = nh.lang;
+        swapNode("#main", doc);
+        swapNode(".crumb", doc);
+        swapNode("[data-urlrow]", doc, true);
+        markCurrent();
+        revealCurrent();
+        rememberPage();
+        closeMenu();
+        setDrawer(false);
+        var target = location.hash ? d.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+        if (restoreY != null) window.scrollTo(0, restoreY);
+        else if (target) target.scrollIntoView();
+        else window.scrollTo(0, 0);
+        if (window.CadrePage) window.CadrePage.init();
+        var m = d.getElementById("main");
+        if (m) { m.setAttribute("tabindex", "-1"); m.focus({ preventScroll: true }); }
+      };
+      if (d.startViewTransition && !reduceMotion.matches) {
+        var vt = d.startViewTransition(swap);
+        vt.finished.then(done, done);
+      } else { swap(); done(); }
+    }).catch(function () { if (seq === navSeq) location.href = url; });
+  };
+
+  // Une fois qu'on navigue nous-mêmes, le navigateur ne doit plus restaurer
+  // le défilement de son côté (on le fait à partir de history.state).
+  try {
+    if (!history.state) history.replaceState({ cadre: 1, y: window.scrollY }, "");
+    history.scrollRestoration = "manual";
+  } catch (e) {}
+  window.addEventListener("popstate", function (e) {
+    // Simple changement d'ancre (#…) sur la même page : rien à recharger.
+    if (location.pathname + location.search === currentPath) return;
+    navigate(location.href, false, e.state && typeof e.state.y === "number" ? e.state.y : 0);
+  });
+  d.addEventListener("click", function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest("a");
+    if (!softLink(a)) return;
+    // Ancre dans la page courante : le navigateur s'en charge.
+    if (a.pathname + a.search === location.pathname + location.search && a.hash) return;
+    e.preventDefault();
+    if (a.href === location.href) { window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+    navigate(a.href, true);
+  });
+  // Préchargement au survol (et au toucher) : la page suivante est souvent
+  // déjà là au moment du clic.
+  var hoverTimer, hoverLink;
+  d.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a");
+    if (a === hoverLink) return;
+    hoverLink = a;
+    clearTimeout(hoverTimer);
+    if (!softLink(a) || keyOf(a.href) === keyOf(location.href)) return;
+    hoverTimer = setTimeout(function () { fetchPage(a.href).catch(function () {}); }, 70);
+  });
+  d.addEventListener("touchstart", function (e) {
+    var a = e.target.closest && e.target.closest("a");
+    if (softLink(a) && keyOf(a.href) !== keyOf(location.href)) fetchPage(a.href).catch(function () {});
+  }, { passive: true });
 })();
 
+// Les fonctions des pages sont relancées à chaque changement de page (la
+// coque ne se recharge pas) : window.CadrePage.init() / destroy(). Les
+// écouteurs posés sur document/window passent par sig() pour être retirés,
+// les minuteurs et observateurs s'enregistrent dans cleanups.
 (function () {
   "use strict";
+  var ctl = null;
+  var cleanups = [];
+  var sig = function (o) { var r = o || {}; if (ctl) r.signal = ctl.signal; return r; };
+  var destroy = function () {
+    if (ctl) ctl.abort();
+    ctl = null;
+    cleanups.splice(0).forEach(function (f) { try { f(); } catch (e) {} });
+    document.body.style.overflow = "";
+  };
+  var init = function () {
+  destroy();
+  ctl = typeof AbortController === "function" ? new AbortController() : null;
 
   // ── Barres de filtres génériques (facettes) ───────────────
   // Contrat de markup :
@@ -741,7 +964,7 @@
   // rien ne tourne quand l'onglet est en arrière-plan.
   var techRotators = document.querySelectorAll("[data-tech-rotate]");
   if (techRotators.length) {
-    setInterval(function () {
+    var rotTimer = setInterval(function () {
       if (document.hidden) return;
       techRotators.forEach(function (wrap) {
         if (wrap.closest(".project-card").matches(":hover")) return;
@@ -755,6 +978,7 @@
         sets[next].removeAttribute("aria-hidden");
       });
     }, 3500);
+    cleanups.push(function () { clearInterval(rotTimer); });
   }
 
   // ── Carrousel témoignages (un à la fois, auto-défilement) ──
@@ -941,7 +1165,7 @@
         resizeQueued = false;
         updateMore();
       });
-    }, { passive: true });
+    }, sig({ passive: true }));
 
     testi.addEventListener("mouseenter", function () { setHalt("hover", true); });
     testi.addEventListener("mouseleave", function () { setHalt("hover", false); });
@@ -950,13 +1174,16 @@
     // carrousel anime et repeint en continu, même quand le visiteur est trois
     // écrans plus bas ou a changé d'onglet.
     if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (entries) {
+      var io = new IntersectionObserver(function (entries) {
         setHalt("view", !entries[0].isIntersecting);
-      }, { threshold: 0 }).observe(testi);
+      }, { threshold: 0 });
+      io.observe(testi);
+      cleanups.push(function () { io.disconnect(); });
     }
     document.addEventListener("visibilitychange", function () {
       setHalt("tab", document.hidden);
-    });
+    }, sig());
+    cleanups.push(function () { clearTimeout(timer); });
 
     updateMore();
     schedule();
@@ -1026,7 +1253,7 @@
       if (e.key === "Escape") closeLb();
       else if (e.key === "ArrowLeft") go(-1);
       else if (e.key === "ArrowRight") go(1);
-    });
+    }, sig());
   }
 
   // ── Galeries : bouton « voir plus » ───────────────────
@@ -1081,6 +1308,10 @@
     document.addEventListener("keydown", function (e) {
       if (skillModal.hidden) return;
       if (e.key === "Escape") closeSkill();
-    });
+    }, sig());
   }
+  };
+
+  window.CadrePage = { init: init, destroy: destroy };
+  init();
 })();

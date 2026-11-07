@@ -1,7 +1,13 @@
 {{- /* Espace actif d'une page : home, jeux, web ou mods. Contexte = la page. */ -}}
 {{- $s := "home" -}}
+{{- $proj := "" -}}
 {{- if eq .Type "space" -}}{{- $s = .Params.space | default "home" -}}
-{{- else if and (eq .Section "projects") .IsPage -}}
+{{- else if and (eq .Section "projects") .IsPage -}}{{- $proj = . -}}
+{{- else if eq .Type "browser-tab" -}}
+  {{- /* Onglet d'un projet : même espace que le projet. */ -}}
+  {{- with .Params.project }}{{ $proj = site.GetPage (printf "/projects/%s" .) }}{{ end -}}
+{{- end -}}
+{{- with $proj -}}
   {{- $pl := partial "project-place.html" . -}}
   {{- with $pl.space }}{{ $s = . }}{{ end -}}
 {{- end -}}

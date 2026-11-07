@@ -1,0 +1,22 @@
+{{- /* Un dossier de la barre latérale ; peut contenir d'autres dossiers
+       (rendu récursif). Contexte = dict { id, folder, name, tabs }. */ -}}
+<div class="folder" data-folder="{{ .id }}" data-folder-key="{{ .folder | default .id }}" data-sort-key="folder:{{ .id }}" data-count="{{ len .tabs }}">
+  <button type="button" class="folder-head" data-folder-toggle aria-expanded="false" title="{{ .name }}">
+    <span class="tab-ico">
+      {{- partial "icon.html" (dict "name" "folder-outline" "class" "folder-ico is-closed") -}}
+      {{- partial "icon.html" (dict "name" "folder-open-outline" "class" "folder-ico is-open") -}}
+    </span>
+    <span class="tab-title">{{ .name }}</span>
+  </button>
+  <div class="folder-body">
+    <div class="folder-inner" data-sortable="{{ .id }}">
+      {{- range .tabs }}
+      {{- if eq .kind "folder" }}
+      {{ partial "side-folder.html" . }}
+      {{- else }}
+      {{ partial "tab-link.html" . }}
+      {{- end }}
+      {{- end }}
+    </div>
+  </div>
+</div>
