@@ -28,7 +28,16 @@
     {{- with $proj.Params.actions -}}
       {{- $base := $proj.File.ContentBaseName -}}
       {{- $inner := where (where site.RegularPages "Section" "tabs") "Params.project" $base -}}
-      {{- $sub := slice (dict "kind" "tab" "title" (i18n "tab_wiki") "url" $proj.RelPermalink "icon" "book") -}}
+      {{- $sub := slice (dict "kind" "tab" "title" ($proj.Params.wiki_tab | default (i18n "tab_wiki")) "url" $proj.RelPermalink "icon" "book") -}}
+      {{- /* Exception voulue : wiki d'un autre projet lié, trouvable ici aussi
+             ([[linked_wikis]] ref = fichier du projet, tab = nom de l'onglet).
+             Ex. le site de Living Horizon (espace Web) dans le dossier du mod. */ -}}
+      {{- range $proj.Params.linked_wikis -}}
+        {{- $lw := . -}}
+        {{- with site.GetPage (printf "/projects/%s" $lw.ref) -}}
+          {{- $sub = $sub | append (dict "kind" "tab" "title" ($lw.tab | default .Title) "url" .RelPermalink "icon" "book") -}}
+        {{- end -}}
+      {{- end -}}
       {{- range . -}}
         {{- $fav := partial "favicon-of.html" .url -}}
         {{- $t := dict "kind" "tab" "title" (.tab | default .label) "url" .url "external" true "thumb" $fav.thumb "icon" $fav.icon -}}

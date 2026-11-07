@@ -119,8 +119,37 @@
     try { if (scroller) sessionStorage.setItem("cadre:scroll:" + space, String(scroller.scrollTop)); } catch (e) {}
   });
   // Dernière page vue dans cet espace : on y revient en rechangeant d'espace.
-  var rememberPage = function () { store.set("cadre:last:" + lang + ":" + space, location.pathname + location.search); };
+  // Seulement une page qui a un onglet dans cet espace.
+  var rememberPage = function () {
+    if (!side.querySelector('[data-space-panel="' + space + '"] a.tab[aria-current="page"]')) return;
+    store.set("cadre:last:" + lang + ":" + space, location.pathname + location.search);
+  };
   rememberPage();
+
+  // ── Glissement entre espaces (comme Arc) ──────────────
+  // L'ancien panneau d'onglets part d'un côté, le nouveau arrive de l'autre,
+  // selon la position des espaces dans le sélecteur ; les teintes du cadre
+  // se fondent (propriétés CSS animées, cf. _tokens.scss).
+  var spaceIndex = function (id) {
+    var ids = Array.prototype.map.call(side.querySelectorAll(".switch [data-space-link]"), function (x) { return x.getAttribute("data-space-link"); });
+    return ids.indexOf(id);
+  };
+  var slideSpaces = function (from, to) {
+    if (from === to || reduceMotion.matches) return;
+    var oldP = side.querySelector('[data-space-panel="' + from + '"]');
+    var newP = side.querySelector('[data-space-panel="' + to + '"]');
+    if (!oldP || !newP || !newP.animate) return;
+    var dir = spaceIndex(to) > spaceIndex(from) ? 1 : -1;
+    var y = scroller ? scroller.scrollTop : 0;
+    // L'ancien panneau reste affiché, posé par-dessus, le temps de partir.
+    oldP.classList.add("is-leaving");
+    oldP.style.top = -y + "px";
+    if (scroller) scroller.scrollTop = 0;
+    var ease = "cubic-bezier(0.32, 0.72, 0, 1)";
+    oldP.animate([{ transform: "none", opacity: 1 }, { transform: "translateX(" + (-dir * 55) + "%)", opacity: 0 }], { duration: 300, easing: ease })
+      .finished.then(function () { oldP.classList.remove("is-leaving"); oldP.style.top = ""; }, function () {});
+    newP.animate([{ transform: "translateX(" + (dir * 55) + "%)", opacity: 0 }, { transform: "none", opacity: 1 }], { duration: 340, easing: ease });
+  };
 
   // ── Changer d'espace ──────────────────────────────────
   d.addEventListener("click", function (e) {
@@ -129,12 +158,14 @@
     e.preventDefault();
     var id = a.getAttribute("data-space-link");
     if (id === space) return;
-    // La barre latérale bascule tout de suite, la page suit.
+    // La barre latérale bascule tout de suite (en glissant), la page suit.
+    var from = space;
     space = id;
     html.setAttribute("data-space", id);
     markCurrent();
+    slideSpaces(from, id);
     if (!side.contains(a)) setDrawer(false);
-    navigate(store.get("cadre:last:" + lang + ":" + id) || a.getAttribute("href"), true);
+    navigate(store.get("cadre:last:" + lang + ":" + id) || a.getAttribute("href"), true, null, id);
   });
 
   // ── Onglets réorganisables (glisser-déposer) ──────────
@@ -765,7 +796,7 @@
   var navSeq = 0;
   var loadTimer;
   var saveScroll = function () {
-    try { history.replaceState({ cadre: 1, y: window.scrollY }, ""); } catch (e) {}
+    try { history.replaceState({ cadre: 1, y: window.scrollY, space: entrySpace }, ""); } catch (e) {}
   };
   var swapNode = function (sel, doc, all) {
     var olds = d.querySelectorAll(sel), news = doc.querySelectorAll(sel);
@@ -786,8 +817,32 @@
     doc.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (l) { d.head.appendChild(d.adoptNode(l)); });
   };
   var currentPath = location.pathname + location.search;
+  // Espace de la page affichée (celui de son entrée d'historique) : le
+  // sélecteur d'espaces change `space` avant que la page suivante n'arrive.
+  var entrySpace = space;
 
-  var navigate = function (url, push, restoreY) {
+  // Espace « épinglé » : un onglet ouvert depuis la barre latérale reste dans
+  // l'espace où il est rangé, même si la page appartient à un autre espace
+  // (ex. le wiki du site Living Horizon ouvert depuis le dossier du mod).
+  // Mémorisé par page dans sessionStorage pour le rechargement (head.html).
+  var savePin = function (natural) {
+    try {
+      if (space !== natural) sessionStorage.setItem("cadre:pin", JSON.stringify({ p: location.pathname + location.search, s: space }));
+      else sessionStorage.removeItem("cadre:pin");
+    } catch (e) {}
+  };
+  // Fil d'Ariane d'une page épinglée : l'espace affiché est celui où l'on est.
+  var syncCrumbSpace = function (natural) {
+    if (space === natural) return;
+    var sp = side.querySelector('.switch [data-space-link="' + space + '"]');
+    var links = d.querySelectorAll(".crumb > a");
+    if (!sp || links.length < 2 || links[1].classList.contains("crumb-ext")) return;
+    links[1].textContent = sp.getAttribute("title");
+    links[1].setAttribute("href", sp.getAttribute("href"));
+  };
+  // Rechargement d'une page épinglée (head.html a déjà changé data-space).
+  if (html.hasAttribute("data-natural")) { markCurrent(); syncCrumbSpace(html.getAttribute("data-natural")); }
+  var navigate = function (url, push, restoreY, pin) {
     var seq = ++navSeq;
     if (push) saveScroll();
     clearTimeout(loadTimer);
@@ -799,17 +854,25 @@
       var nh = doc.documentElement;
       var main = doc.getElementById("main");
       if (!main || !doc.querySelector("[data-app]") || nh.getAttribute("data-lang") !== lang) { location.href = url; return; }
+      var natural = nh.getAttribute("data-space") || "home";
+      var next = pin || natural;
       var swap = function () {
-        if (push) { try { history.pushState({ cadre: 1, y: 0 }, "", url); } catch (e) { location.href = url; return; } }
+        if (push) { try { history.pushState({ cadre: 1, y: 0, space: next }, "", url); } catch (e) { location.href = url; return; } }
         currentPath = location.pathname + location.search;
         if (window.CadrePage) window.CadrePage.destroy();
         syncHead(doc);
-        space = nh.getAttribute("data-space") || "home";
+        var from = space;
+        space = next;
+        entrySpace = next;
         html.setAttribute("data-space", space);
+        slideSpaces(from, space);
+        savePin(natural);
+        html.removeAttribute("data-natural");
         html.setAttribute("data-kind", nh.getAttribute("data-kind") || "page");
         if (nh.lang) html.lang = nh.lang;
         swapNode("#main", doc);
         swapNode(".crumb", doc);
+        syncCrumbSpace(natural);
         swapNode("[data-urlrow]", doc, true);
         markCurrent();
         revealCurrent();
@@ -824,7 +887,8 @@
         var m = d.getElementById("main");
         if (m) { m.setAttribute("tabindex", "-1"); m.focus({ preventScroll: true }); }
       };
-      if (d.startViewTransition && !reduceMotion.matches) {
+      // Onglet en arrière-plan : pas de rendu, la transition attendrait.
+      if (d.startViewTransition && !reduceMotion.matches && !d.hidden) {
         var vt = d.startViewTransition(swap);
         vt.finished.then(done, done);
       } else { swap(); done(); }
@@ -834,13 +898,14 @@
   // Une fois qu'on navigue nous-mêmes, le navigateur ne doit plus restaurer
   // le défilement de son côté (on le fait à partir de history.state).
   try {
-    if (!history.state) history.replaceState({ cadre: 1, y: window.scrollY }, "");
+    if (!history.state) history.replaceState({ cadre: 1, y: window.scrollY, space: space }, "");
     history.scrollRestoration = "manual";
   } catch (e) {}
   window.addEventListener("popstate", function (e) {
     // Simple changement d'ancre (#…) sur la même page : rien à recharger.
     if (location.pathname + location.search === currentPath) return;
-    navigate(location.href, false, e.state && typeof e.state.y === "number" ? e.state.y : 0);
+    var st = e.state || {};
+    navigate(location.href, false, typeof st.y === "number" ? st.y : 0, st.space || null);
   });
   d.addEventListener("click", function (e) {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -850,7 +915,9 @@
     if (a.pathname + a.search === location.pathname + location.search && a.hash) return;
     e.preventDefault();
     if (a.href === location.href) { window.scrollTo({ top: 0, behavior: "smooth" }); return; }
-    navigate(a.href, true);
+    // Onglet de la barre latérale : on reste dans son espace.
+    var panel = a.closest("[data-space-panel]");
+    navigate(a.href, true, null, panel ? panel.getAttribute("data-space-panel") : null);
   });
   // Préchargement au survol (et au toucher) : la page suivante est souvent
   // déjà là au moment du clic.
@@ -1049,7 +1116,8 @@
     var writeHash = function () {
       if (!hashFacet || !history.replaceState) return;
       var v = state[hashFacet];
-      history.replaceState(null, "",
+      // On garde l'état (défilement, espace) posé par la navigation.
+      history.replaceState(history.state, "",
         (!v || v === defaults[hashFacet]) ? location.pathname + location.search : "#" + v);
     };
 
