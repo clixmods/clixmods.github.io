@@ -1,0 +1,17 @@
+{
+  "_comment": "Anciennes versions du portfolio, reconstruites à partir de leur commit et publiées sous /archives/<id>/ (scripts/build-archives.mjs). drop = dossiers de pages retirés de l'archive pour l'alléger (pages générées en masse).",
+  "archives": [
+    {
+      "id": "v1",
+      "label": "Thème v1 (juillet 2025 - avril 2026)",
+      "ref": "aa6b7951ea62cd290df6f8eaaa94c42e05b4ead0",
+      "drop": ["people", "tags", "categories", "en", "demo", "data", "landing"]
+    },
+    {
+      "id": "v2",
+      "label": "Thème Glassmorphism / Blueprint (juin - octobre 2026)",
+      "ref": "45b0c9924352fc64b2d7a431f83f203f85a56cb6",
+      "drop": ["people", "tags", "categories", "demo", "landing", "en/people", "en/tags", "en/categories"]
+    }
+  ]
+}

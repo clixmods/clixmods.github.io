@@ -3,6 +3,8 @@
        d'une vraie barre d'URL. Sur un onglet qui affiche un autre site,
        c'est l'adresse de ce site. Contexte = la page. */ -}}
 {{- $url := .Params.link | default .Params.frame | default .Permalink -}}
+{{- /* Lien vers une page du site lui-même (archive d'un ancien thème) : adresse complète. */ -}}
+{{- if hasPrefix $url "/" }}{{ $url = absURL $url }}{{ end -}}
 <div class="urlbar" data-urlbar>
   <button type="button" class="urlbar-field" data-palette-open aria-label="{{ i18n "ui_search" }}" title="{{ i18n "ui_search" }}">
     <span class="url-text">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://" (strings.TrimPrefix "http://" $url)) }}</span>

@@ -89,6 +89,16 @@ jobs:
             --minify \
             --environment production \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+      - name: Build archived themes
+        # Anciennes versions du portfolio (scripts/archives.json), publiées sous
+        # /archives/<id>/ ; leurs images identiques au site actuel ne sont pas
+        # dupliquées. Nécessite l'historique complet (fetch-depth: 0).
+        run: |
+          node scripts/build-archives.mjs \
+            --out public/archives \
+            --compare public \
+            --base "${{ steps.pages.outputs.base_url }}/" \
+            --cache-dir "${{ runner.temp }}/hugo_cache"
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v4
