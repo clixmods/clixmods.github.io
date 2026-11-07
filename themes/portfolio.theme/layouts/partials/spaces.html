@@ -19,7 +19,18 @@
     {{- $sp := index $bySpace $id -}}
     {{- $cur := index $sp $pl.folder | default slice -}}
     {{- $img := $proj.Params.image | default "" -}}
-    {{- $tab := dict "kind" "tab" "title" $proj.Title "url" $proj.RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" $img) $img) -}}
+    {{- $thumb := partialCached "tab-thumb.html" (dict "path" $img) $img -}}
+    {{- $tab := dict "kind" "tab" "title" $proj.Title "url" $proj.RelPermalink "thumb" $thumb -}}
+    {{- /* Projet avec ses propres onglets (content/tabs/, project = ce fichier) :
+           il devient un dossier — Wiki (la page du projet) puis ses sites. */ -}}
+    {{- with (where (where site.RegularPages "Type" "browser-tab") "Params.project" $proj.File.ContentBaseName).ByWeight -}}
+      {{- $sub := slice (dict "kind" "tab" "title" (i18n "tab_wiki") "url" $proj.RelPermalink "icon" "book") -}}
+      {{- range . -}}
+        {{- $ico := .Params.icon | default "" -}}
+        {{- $sub = $sub | append (dict "kind" "tab" "title" .LinkTitle "url" .RelPermalink "icon" .Params.ionicon "thumb" (partialCached "tab-thumb.html" (dict "path" $ico "fit" true) $ico "fit")) -}}
+      {{- end -}}
+      {{- $tab = dict "kind" "folder" "id" (printf "p-%s" $proj.File.ContentBaseName) "name" $proj.Title "tabs" $sub -}}
+    {{- end -}}
     {{- $sp = merge $sp (dict $pl.folder ($cur | append $tab)) -}}
     {{- $bySpace = merge $bySpace (dict $id $sp) -}}
     {{- $counts = merge $counts (dict $id (add (index $counts $id) 1)) -}}

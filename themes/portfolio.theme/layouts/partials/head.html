@@ -28,6 +28,8 @@
   var h = document.documentElement;
   try {
     if (localStorage.getItem("cadre:compact") === "1") h.classList.add("is-compact");
+    var w = parseInt(localStorage.getItem("cadre:width"), 10);
+    if (w >= 200 && w <= 480) h.style.setProperty("--side-w", w + "px");
     var t = JSON.parse(localStorage.getItem("cadre:themes") || "{}");
     Object.keys(t).forEach(function (s) {
       var v = t[s] || {};

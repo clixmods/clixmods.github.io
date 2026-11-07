@@ -1,6 +1,12 @@
-{{- /* Barre d'adresse : ouvre la recherche ⌘K. Contexte = la page. */ -}}
-<button type="button" class="urlbar" data-palette-open aria-label="{{ i18n "ui_search" }}">
-  {{ partial "icon.html" "search" }}
-  <span class="url-text">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://" (strings.TrimPrefix "http://" .Permalink)) }}</span>
-  <kbd class="url-kbd">⌘K</kbd>
-</button>
+{{- /* Barre d'adresse : le champ ouvre la recherche ⌘K, le bouton de langue
+       (FR / EN) est intégré à droite, comme les icônes d'une vraie barre
+       d'URL. Contexte = la page. */ -}}
+<div class="urlbar" data-urlbar>
+  <button type="button" class="urlbar-field" data-palette-open aria-label="{{ i18n "ui_search" }}" title="{{ i18n "ui_search" }} (⌘K)">
+    {{ partial "icon.html" "search" }}
+    {{- /* Onglet qui affiche un autre site : la barre montre l'adresse de ce site. */}}
+    <span class="url-text">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://" (strings.TrimPrefix "http://" (.Params.frame | default .Permalink))) }}</span>
+    <kbd class="url-kbd">⌘K</kbd>
+  </button>
+  {{ partial "lang-switch.html" . }}
+</div>

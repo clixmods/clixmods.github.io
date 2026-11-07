@@ -20,28 +20,28 @@
     </a>
   </div>
 
-  <div class="urlrow">
+  <div class="urlrow" data-urlrow>
     {{ partial "urlbar.html" $page }}
-    {{ partial "lang-switch.html" $page }}
   </div>
 
   <div class="favs" aria-label="{{ i18n "ui_pinned" }}">
     {{- with $contact.github }}
-    <a class="fav" href="{{ . }}" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">{{ partial "icon.html" "logo-github" }}</a>
+    <a class="fav fav-github" href="{{ . }}" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">{{ partial "icon.html" "logo-github" }}</a>
     {{- end }}
     {{- with $contact.linkedin }}
     {{- $li := . }}{{ if not (hasPrefix $li "http") }}{{ $li = printf "https://%s" $li }}{{ end }}
-    <a class="fav" href="{{ $li }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">{{ partial "icon.html" "logo-linkedin" }}</a>
+    <a class="fav fav-linkedin" href="{{ $li }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">{{ partial "icon.html" "logo-linkedin" }}</a>
     {{- end }}
     {{- with $p.media.resumeFile }}
-    <a class="fav" href="{{ . | relURL }}" download title="{{ i18n "ui_download_cv" }}" aria-label="{{ i18n "ui_download_cv" }}">{{ partial "icon.html" "document-text" }}</a>
+    <a class="fav fav-cv" href="{{ . | relURL }}" download title="{{ i18n "ui_download_cv" }}" aria-label="{{ i18n "ui_download_cv" }}">{{ partial "icon.html" "document-text" }}</a>
     {{- end }}
     {{- with $contact.email }}
-    <a class="fav" href="mailto:{{ . }}" data-email="{{ . }}" title="{{ . }}" aria-label="{{ i18n "ui_contact_me" }}">{{ partial "icon.html" "mail" }}</a>
+    <a class="fav fav-mail" href="mailto:{{ . }}" data-email="{{ . }}" title="{{ . }}" aria-label="{{ i18n "ui_contact_me" }}">{{ partial "icon.html" "mail" }}</a>
     {{- end }}
   </div>
 
   {{ partialCached "sidebar-tabs.html" .spaces site.Language.Lang }}
+  <div class="side-resize" data-side-resize aria-hidden="true" title="{{ i18n "ui_resize_sidebar" }}"></div>
 </aside>
 {{- /* Appliqué avant le premier rendu : espace affiché, onglet courant, ordre
        des onglets et dossiers ouverts (mémorisés par visiteur). */}}
