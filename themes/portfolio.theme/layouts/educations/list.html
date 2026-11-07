@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{- $page := .page -}}
-{{- $items := sort $page.Pages "Params.start_date" "desc" -}}
+{{- $items := partial "parcours-sorted.html" $page.Pages -}}
 <section class="section page-shell">
   <div class="container">
     <div class="page-head reveal">

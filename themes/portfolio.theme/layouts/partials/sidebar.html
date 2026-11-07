@@ -38,6 +38,9 @@
     {{- with $contact.email }}
     <a class="fav fav-mail" href="mailto:{{ . }}" data-email="{{ . }}" title="{{ . }}" aria-label="{{ i18n "ui_contact_me" }}">{{ partial "icon.html" "mail" }}</a>
     {{- end }}
+    {{- with $contact.discord }}
+    <button type="button" class="fav fav-discord" data-discord="{{ . }}" title="Discord" aria-label="Discord : {{ . }}" aria-haspopup="dialog">{{ partial "icon.html" "logo-discord" }}</button>
+    {{- end }}
   </div>
 
   {{ partialCached "sidebar-tabs.html" .spaces site.Language.Lang }}
