@@ -11,13 +11,15 @@
     à part entière (rendu récursif) ;
   - un onglet par lien : page générée si le site s'affiche dans la feuille
     (content/tabs/_content.gotmpl), sinon lien externe.
+  Ce dossier complet n'est visible qu'avec <html data-links="full"> ; par
+  défaut, le projet reste un onglet simple (les liens sont sur sa fiche).
 */ -}}
 {{- $proj := . -}}
 {{- $base := $proj.File.ContentBaseName -}}
 {{- $img := $proj.Params.image | default "" -}}
 {{- $thumb := partialCached "tab-thumb.html" (dict "path" $img) $img -}}
 {{- $children := (where (where site.RegularPages "Section" "projects") "Params.parent" $base).ByDate -}}
-{{- $out := dict "kind" "tab" "title" $proj.Title "url" $proj.RelPermalink "thumb" $thumb -}}
+{{- $out := dict "kind" "tab" "title" $proj.LinkTitle "full" $proj.Title "url" $proj.RelPermalink "thumb" $thumb -}}
 {{- if or $proj.Params.actions $proj.Params.linked_wikis $children -}}
   {{- $sub := slice (dict "kind" "tab" "title" ($proj.Params.wiki_tab | default (i18n "tab_project")) "url" $proj.RelPermalink "icon" "book") -}}
   {{- range $proj.Params.linked_wikis -}}
@@ -36,6 +38,19 @@
     {{- range first 1 (where $inner "Params.link" .url) }}{{ $t = merge $t (dict "url" .RelPermalink "external" false) }}{{ end -}}
     {{- $sub = $sub | append $t -}}
   {{- end -}}
-  {{- $out = dict "kind" "folder" "id" (printf "p-%s" $base) "name" $proj.Title "tabs" $sub "thumb" $thumb "closed" true -}}
+  {{- /* Mode simplifié (par défaut) : le dossier s'affiche comme un onglet
+         simple (alt). « also » : pages qui allument cet onglet (onglets
+         intégrés du projet, sous-projets). */ -}}
+  {{- $also := slice -}}
+  {{- range $inner }}{{ $also = $also | append .RelPermalink }}{{ end -}}
+  {{- range $children }}{{ $also = $also | append .RelPermalink }}{{ end -}}
+  {{- /* Exception : un projet à sous-projets (le portfolio et ses thèmes), ses
+         sous-projets, ou sidebar_folder = true, restent des dossiers complets
+         (les anciens thèmes se consultent sans quitter le site). */ -}}
+  {{- $alt := dict -}}
+  {{- if not (or $children $proj.Params.parent $proj.Params.sidebar_folder) -}}
+    {{- $alt = merge $out (dict "also" (delimit $also " ")) -}}
+  {{- end -}}
+  {{- $out = dict "kind" "folder" "id" (printf "p-%s" $base) "name" $proj.LinkTitle "full" $proj.Title "tabs" $sub "thumb" $thumb "closed" true "alt" $alt -}}
 {{- end -}}
 {{- return $out -}}

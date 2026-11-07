@@ -134,6 +134,7 @@ ui_show_less: "Show less"
 ui_prev: "Previous"
 ui_next: "Next"
 ui_close: "Close"
+ui_more_links: "More links"
 
 # ─────────────────────────────────────────────
 # Key labels (languages / frameworks / specialties / soft skills / tools)

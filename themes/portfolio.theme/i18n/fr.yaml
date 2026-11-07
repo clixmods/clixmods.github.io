@@ -134,6 +134,7 @@ ui_show_less: "Voir moins"
 ui_prev: "Précédent"
 ui_next: "Suivant"
 ui_close: "Fermer"
+ui_more_links: "Plus de liens"
 
 # ─────────────────────────────────────────────
 # Libellés des clés (langages / frameworks / spécialités / soft skills / outils)

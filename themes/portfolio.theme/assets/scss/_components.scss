@@ -79,9 +79,6 @@
   min-width: 0;
   color: var(--ink);
 
-  &.is-wide { grid-column: 1 / -1; }
-  &.is-wide .project-thumb { aspect-ratio: 21 / 9; }
-  &.is-wide .project-title { font-size: 17px; }
 }
 
 .project-thumb {
@@ -260,7 +257,6 @@
 
 @media (max-width: 640px) {
   .space-grid { grid-template-columns: minmax(0, 1fr); }
-  .project-card.is-wide .project-thumb { aspect-ratio: 16 / 10; }
 }
 
 // Technos des cartes : texte discret, pas de pastille

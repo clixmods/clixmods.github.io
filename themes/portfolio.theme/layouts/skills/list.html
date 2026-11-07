@@ -147,9 +147,13 @@
 
 {{/* Modale de détail d'une compétence (remplie au clic par main.js) */}}
 <div class="skill-modal" data-skill-modal hidden>
-  <div class="skill-modal-panel" role="dialog" aria-modal="true" tabindex="-1">
+  <div class="skill-modal-panel" role="dialog" aria-modal="true" aria-labelledby="skill-modal-title" tabindex="-1">
     <button type="button" class="skill-modal-close" data-skill-close aria-label="{{ i18n "ui_close" }}">✕</button>
     <div class="skill-modal-content" data-skill-modal-content></div>
   </div>
 </div>
+{{/* Cartes projets, une fois chacune, clonées dans la modale par main.js */}}
+{{- range where site.RegularPages "Section" "projects" }}
+<template data-proj-card="{{ .File.ContentBaseName }}">{{ partial "project-card.html" (dict "page" . "badge" "main") }}</template>
+{{- end }}
 {{ end }}

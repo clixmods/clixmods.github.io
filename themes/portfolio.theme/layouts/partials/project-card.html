@@ -27,7 +27,7 @@
    data-facet-tech="{{ delimit $allTech " " }}">
   <div class="project-thumb">
     {{- with $p.Params.image }}
-    {{- $img := partial "get-optimized-image.html" (dict "imagePath" . "width" (cond (in $class "is-wide") 1100 600) "quality" 85) }}
+    {{- $img := partial "get-optimized-image.html" (dict "imagePath" . "width" 600 "quality" 85) }}
     <img src="{{ $img.src }}" alt="{{ $p.Title }}" loading="lazy"{{ with $img.width }} width="{{ . }}"{{ end }}{{ with $img.height }} height="{{ . }}"{{ end }}>
     {{- end }}
     {{- /* badge = "main" (page Projets : les sections disent déjà pro/perso),

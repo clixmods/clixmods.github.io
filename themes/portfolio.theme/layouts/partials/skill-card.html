@@ -23,7 +23,7 @@
 <template data-skill-detail="{{ $key }}">
   <div class="skill-modal-head">
     {{ partial "tech-icon.html" $t }}
-    <h2 class="skill-modal-title">{{ $t.label }}</h2>
+    <h2 class="skill-modal-title" id="skill-modal-title">{{ $t.label }}</h2>
   </div>
   <div class="skill-modal-stats">
     {{- if $n }}
@@ -42,16 +42,10 @@
   {{- if $n }}
   <div class="skill-modal-section">
     <div class="skill-modal-subtitle">{{ i18n "ui_skill_used_in" }}</div>
-    <ul class="skill-modal-projects">
-      {{- range $projects }}
-      <li>
-        <a href="{{ .RelPermalink }}">
-          <span class="skill-proj-title">{{ .Title }}</span>
-          {{- with .Date }}<span class="skill-proj-year">{{ .Format "2006" }}</span>{{ end -}}
-        </a>
-      </li>
-      {{- end }}
-    </ul>
+    {{- /* Cartes projets clonées par main.js depuis le pool de la page
+           ([data-proj-card], skills/list.html) : une seule copie par projet. */}}
+    {{- $ids := slice }}{{ range $projects }}{{ $ids = $ids | append .File.ContentBaseName }}{{ end }}
+    <div class="skill-modal-projects" data-proj-list="{{ delimit $ids " " }}"></div>
   </div>
   {{- else }}
   <p class="skill-modal-empty">{{ i18n "ui_skill_no_project" }}</p>
