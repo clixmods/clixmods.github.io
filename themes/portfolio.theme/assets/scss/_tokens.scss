@@ -90,6 +90,16 @@ $spaces: (
   :root { @include dark-tokens; }
 }
 
+// Teintes du cadre déclarées comme couleurs : en changeant d'espace, elles
+// se fondent de l'une à l'autre (comme Arc) au lieu de basculer d'un coup.
+@property --frame-a { syntax: "<color>"; inherits: true; initial-value: #cfd8f6; }
+@property --frame-b { syntax: "<color>"; inherits: true; initial-value: #f3d3da; }
+@property --accent { syntax: "<color>"; inherits: true; initial-value: #3f5bd8; }
+html { transition: --frame-a 0.45s ease, --frame-b 0.45s ease, --accent 0.45s ease; }
+@media (prefers-reduced-motion: reduce) { html { transition: none; } }
+// Éditeur de thème ouvert : l'aperçu doit suivre la pastille sans délai.
+html:has(.theme-pop:not([hidden])) { transition: none; }
+
 @each $id, $c in $spaces {
   html[data-space="#{$id}"] {
     --frame-a: var(--sp-#{$id}-a);

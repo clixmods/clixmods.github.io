@@ -101,20 +101,22 @@
   mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent);
 }
 
-// Petits boutons dans la barre (copier l'adresse)
+// Petits boutons dans la barre (copier l'adresse) : tuile arrondie
+// toujours visible, icône de chaîne en diagonale.
 .url-btn {
   position: relative;
   width: 26px;
-  height: 26px;
+  height: 24px;
   flex: none;
   display: grid;
   place-items: center;
-  border-radius: 6px;
-  color: var(--frame-ink-2);
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--frame-ink) 9%, transparent);
+  color: var(--frame-ink);
   transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
-  .ico { width: 14px; height: 14px; grid-area: 1 / 1; transition: opacity 0.15s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .ico { width: 13px; height: 13px; grid-area: 1 / 1; transition: opacity 0.15s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
   .is-done { opacity: 0; transform: scale(0.5); }
-  &:hover { background: var(--tab-hover); color: var(--frame-ink); }
+  &:hover { background: color-mix(in srgb, var(--frame-ink) 16%, transparent); }
   &:active { transform: scale(0.92); }
   &.is-copied {
     color: var(--ok);
@@ -196,10 +198,19 @@
   padding-inline: 2px;
   scrollbar-width: thin;
   scrollbar-color: var(--frame-line) transparent;
+  position: relative;
 }
 
 // Un seul espace visible : celui de la page (attribut data-space sur <html>)
 .space-panel { display: none; flex-direction: column; gap: 4px; }
+// Panneau qui part pendant un changement d'espace (posé par-dessus, cf. main.js)
+.space-panel.is-leaving {
+  display: flex;
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  pointer-events: none;
+}
 @each $id in (home, jeux, web, mods) {
   html[data-space="#{$id}"] [data-space-panel="#{$id}"] { display: flex; }
 }

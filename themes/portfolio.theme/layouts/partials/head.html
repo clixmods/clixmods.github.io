@@ -27,6 +27,14 @@
 (function () {
   var h = document.documentElement;
   try {
+    // Page ouverte depuis un onglet rangé dans un autre espace : on y reste.
+    try {
+      var pin = JSON.parse(sessionStorage.getItem("cadre:pin") || "null");
+      if (pin && pin.p === location.pathname + location.search && pin.s) {
+        h.setAttribute("data-natural", h.getAttribute("data-space"));
+        h.setAttribute("data-space", pin.s);
+      }
+    } catch (e) {}
     if (localStorage.getItem("cadre:compact") === "1") h.classList.add("is-compact");
     var w = parseInt(localStorage.getItem("cadre:width"), 10);
     if (w >= 200 && w <= 480) h.style.setProperty("--side-w", w + "px");
