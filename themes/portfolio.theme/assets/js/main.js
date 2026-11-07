@@ -666,22 +666,36 @@
     setTimeout(function () { b.classList.remove("is-copied"); }, 1400);
   });
 
-  // ── Essentiel Discord : fenêtre avec le pseudo à copier ─
-  var discordPop = overlays.querySelector("[data-discord-pop]");
-  var closeDiscord = function () { if (discordPop) discordPop.hidden = true; };
+  // ── Essentiels Discord / téléphone : fenêtre avec la valeur à copier ─
+  // Le bouton cliqué fournit tout : data-reveal (type), -value, -text,
+  // -copy-label, -copied (message), -href (lien « Appeler », téléphone).
+  var discordPop = overlays.querySelector("[data-reveal-pop]");
+  var revealFrom = null;
+  var closeDiscord = function () { if (discordPop) discordPop.hidden = true; revealFrom = null; };
   if (discordPop) {
+    var rv = function (sel) { return discordPop.querySelector(sel); };
     d.addEventListener("click", function (e) {
-      var b = e.target.closest("[data-discord]");
+      var b = e.target.closest("[data-reveal]");
       if (!b) return;
-      if (!discordPop.hidden) { closeDiscord(); return; }
-      discordPop.querySelector("[data-discord-id]").textContent = b.getAttribute("data-discord");
+      if (!discordPop.hidden && revealFrom === b) { closeDiscord(); return; }
+      revealFrom = b;
+      var ga = function (k) { return b.getAttribute("data-reveal-" + k) || ""; };
+      discordPop.setAttribute("data-kind", b.getAttribute("data-reveal"));
+      discordPop.setAttribute("aria-label", b.getAttribute("title") || "");
+      rv("[data-reveal-ico]").innerHTML = (b.querySelector("svg") || {}).outerHTML || "";
+      rv("[data-reveal-text]").textContent = ga("text");
+      rv("[data-reveal-value]").textContent = ga("value");
+      rv("[data-reveal-copy-label]").textContent = ga("copy-label");
+      var call = rv("[data-reveal-call]");
+      call.hidden = !ga("href");
+      if (ga("href")) call.setAttribute("href", ga("href"));
       var r = b.getBoundingClientRect();
       place(discordPop, r.left, r.bottom + 8);
-      var btn = discordPop.querySelector("[data-discord-copy]");
-      if (btn) btn.focus({ preventScroll: true });
+      rv("[data-reveal-copy]").focus({ preventScroll: true });
     });
-    discordPop.querySelector("[data-discord-copy]").addEventListener("click", function () {
-      copy(discordPop.querySelector("[data-discord-id]").textContent, L("id-copied"));
+    rv("[data-reveal-copy]").addEventListener("click", function () {
+      var msg = revealFrom ? revealFrom.getAttribute("data-reveal-copied") : "";
+      copy(rv("[data-reveal-value]").textContent, msg || L("id-copied"));
       closeDiscord();
     });
   }
@@ -690,7 +704,7 @@
   d.addEventListener("pointerdown", function (e) {
     if (menu && !menu.hidden && !menu.contains(e.target)) closeMenu();
     if (themePop && !themePop.hidden && !themePop.contains(e.target) && !(menu && menu.contains(e.target))) themePop.hidden = true;
-    if (discordPop && !discordPop.hidden && !discordPop.contains(e.target) && !e.target.closest("[data-discord]")) closeDiscord();
+    if (discordPop && !discordPop.hidden && !discordPop.contains(e.target) && !e.target.closest("[data-reveal]")) closeDiscord();
     if (!e.target.closest("[data-lang-box]")) {
       d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
       d.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
@@ -862,8 +876,14 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   var navSeq = 0;
   var loadTimer;
+  // Défilement de la page : dans la feuille sur ordinateur (overflow auto,
+  // cf. _shell.scss), sinon la fenêtre (mobile).
+  var sheetEl = d.querySelector(".sheet");
+  var pageScroller = function () { return sheetEl && getComputedStyle(sheetEl).overflowY === "auto" ? sheetEl : null; };
+  var getY = function () { var s = pageScroller(); return s ? s.scrollTop : window.scrollY; };
+  var setY = function (y, smooth) { (pageScroller() || window).scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" }); };
   var saveScroll = function () {
-    try { history.replaceState({ cadre: 1, y: window.scrollY, space: entrySpace }, ""); } catch (e) {}
+    try { history.replaceState({ cadre: 1, y: getY(), space: entrySpace }, ""); } catch (e) {}
   };
   var swapNode = function (sel, doc, all) {
     var olds = d.querySelectorAll(sel), news = doc.querySelectorAll(sel);
@@ -948,9 +968,9 @@
         closeMenu();
         setDrawer(false);
         var target = location.hash ? d.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
-        if (restoreY != null) window.scrollTo(0, restoreY);
+        if (restoreY != null) setY(restoreY);
         else if (target) target.scrollIntoView();
-        else window.scrollTo(0, 0);
+        else setY(0);
         if (window.CadrePage) window.CadrePage.init();
         var m = d.getElementById("main");
         if (m) { m.setAttribute("tabindex", "-1"); m.focus({ preventScroll: true }); }
@@ -966,7 +986,7 @@
   // Une fois qu'on navigue nous-mêmes, le navigateur ne doit plus restaurer
   // le défilement de son côté (on le fait à partir de history.state).
   try {
-    if (!history.state) history.replaceState({ cadre: 1, y: window.scrollY, space: space }, "");
+    if (!history.state) history.replaceState({ cadre: 1, y: getY(), space: space }, "");
     history.scrollRestoration = "manual";
   } catch (e) {}
   window.addEventListener("popstate", function (e) {
@@ -992,10 +1012,9 @@
   if (wideBtn) wideBtn.addEventListener("click", function () {
     var on = html.getAttribute("data-wide") !== "true";
     store.set("cadre:wide", on ? "1" : "0");
-    var flip = function () { html.setAttribute("data-wide", on ? "true" : "false"); syncWide(); };
-    // La feuille s'élargit en douceur (transition de vue) quand c'est possible.
-    if (d.startViewTransition && !reduceMotion.matches && !d.hidden) d.startViewTransition(flip);
-    else flip();
+    // La largeur glisse en transition CSS (cf. _shell.scss), on la voit s'agrandir.
+    html.setAttribute("data-wide", on ? "true" : "false");
+    syncWide();
   });
 
   // ── Précédent / suivant / actualiser (haut de la barre latérale) ─
@@ -1022,7 +1041,7 @@
     var fr = d.querySelector("#main iframe.frame");
     if (fr) { fr.src = fr.src; return; }
     delete pages[keyOf(location.href)];
-    navigate(location.href, false, window.scrollY, entrySpace);
+    navigate(location.href, false, getY(), entrySpace);
   });
   d.addEventListener("click", function (e) {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -1031,7 +1050,7 @@
     // Ancre dans la page courante : le navigateur s'en charge.
     if (a.pathname + a.search === location.pathname + location.search && a.hash) return;
     e.preventDefault();
-    if (a.href === location.href) { window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+    if (a.href === location.href) { setY(0, true); return; }
     // Onglet de la barre latérale : on reste dans son espace.
     var panel = a.closest("[data-space-panel]");
     navigate(a.href, true, null, panel ? panel.getAttribute("data-space-panel") : null);
@@ -1225,6 +1244,13 @@
       markLastVisible();
       chips.forEach(function (c) {
         c.classList.toggle("active", isSelected(c.getAttribute("data-facet"), c.getAttribute("data-value")));
+      });
+      // Valeur choisie posée sur la grille (data-active-<facette>) : le CSS
+      // masque alors le badge de catégorie des cartes, devenu redondant.
+      document.querySelectorAll('[data-filter-group="' + id + '"]').forEach(function (g) {
+        Object.keys(state).forEach(function (f) {
+          if (modes[f] === "single") g.setAttribute("data-active-" + f, state[f] || "all");
+        });
       });
       updateCounts();
       updateIndicators();

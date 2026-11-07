@@ -67,12 +67,17 @@
     </div>
   </div>
 
-  {{- /* Essentiel Discord : pas de lien public, on montre le pseudo à copier. */}}
-  <div class="pop discord-pop" data-discord-pop role="dialog" aria-label="Discord" hidden>
-    <span class="discord-pop-ico">{{ partial "icon.html" "logo-discord" }}</span>
-    <p>{{ i18n "ui_discord_text" }}</p>
-    <code class="discord-pop-id" data-discord-id></code>
-    <button type="button" class="btn btn-cold btn-sm" data-discord-copy>{{ partial "icon.html" "copy-outline" }}{{ i18n "ui_copy_id" }}</button>
+  {{- /* Essentiels Discord et téléphone : une petite fenêtre montre la valeur
+         à copier (pseudo, numéro), et « Appeler » pour le téléphone. Contenu
+         fourni par le bouton cliqué (data-reveal-*). */}}
+  <div class="pop reveal-pop" data-reveal-pop role="dialog" hidden>
+    <span class="reveal-pop-ico" data-reveal-ico></span>
+    <p data-reveal-text></p>
+    <code class="reveal-pop-value" data-reveal-value></code>
+    <div class="reveal-pop-actions">
+      <button type="button" class="btn btn-cold btn-sm" data-reveal-copy>{{ partial "icon.html" "copy-outline" }}<span data-reveal-copy-label></span></button>
+      <a class="btn btn-ghost btn-sm" data-reveal-call hidden>{{ partial "icon.html" "call" }}<span>{{ i18n "ui_call" }}</span></a>
+    </div>
   </div>
 
   <div class="toast" data-toast role="status" hidden></div>

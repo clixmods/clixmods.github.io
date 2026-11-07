@@ -71,9 +71,9 @@
   {{- range $exp := partial "parcours-sorted.html" .Pages -}}
     {{- $logo := $exp.Params.logo | default "" -}}
     {{- $logoThumb := partialCached "tab-thumb.html" (dict "path" $logo "fit" true) $logo "fit" -}}
-    {{- /* Nom affiché : « Entreprise — Poste » (le poste seul ne dit pas où). */ -}}
+    {{- /* Nom affiché : « Entreprise · Poste » (le poste seul ne dit pas où). */ -}}
     {{- $label := $exp.Title -}}
-    {{- with $exp.Params.company }}{{ $label = printf "%s — %s" . $exp.Title }}{{ end -}}
+    {{- with $exp.Params.company }}{{ $label = printf "%s · %s" . $exp.Title }}{{ end -}}
     {{- $t := dict "kind" "tab" "title" $label "url" $exp.RelPermalink "thumb" $logoThumb -}}
     {{- /* Expérience avec des projets associés (projects[].project_ref) :
            un dossier — Description du poste, puis les projets. */ -}}

@@ -183,10 +183,12 @@
 .fav-cv { --brand: var(--accent); }
 .fav-mail { --brand: #d93025; }
 .fav-discord { --brand: #5865f2; }
+.fav-phone { --brand: #1f9d63; }
 @media (prefers-color-scheme: dark) {
   .fav-linkedin { --brand: #5aa7f0; }
   .fav-mail { --brand: #f28b82; }
   .fav-discord { --brand: #8c96ff; }
+  .fav-phone { --brand: #43c98a; }
 }
 
 // Zone défilante des onglets
@@ -451,6 +453,25 @@ html.is-sorting, html.is-sorting * { cursor: grabbing !important; }
   view-transition-name: sheet;
 }
 
+// Ordinateur : la page défile DANS la feuille (comme une fenêtre d'Arc) ;
+// le cadre et les bords arrondis restent visibles en haut comme en bas, et
+// la barre du chemin reste dans la feuille. Sur mobile, défilement normal.
+@media (min-width: 861px) {
+  html, body { height: 100%; overflow: hidden; }
+  .app { height: 100vh; height: 100dvh; min-height: 0; }
+  .sheet-wrap { height: 100vh; height: 100dvh; }
+  .sheet {
+    height: 100%;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-padding-top: 56px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-2) transparent;
+  }
+}
+
 .sheet-bar {
   position: sticky;
   top: 0;
@@ -499,16 +520,28 @@ html.is-sorting, html.is-sorting * { cursor: grabbing !important; }
   &[aria-pressed="true"] { color: var(--ink); .is-on { display: block; } .is-off { display: none; } }
 }
 html[data-kind="frame"] .wide-toggle { display: none; }
+// Toutes les colonnes de lecture s'ouvrent aussi (articles, textes des
+// projets, introductions), sinon la page ne change pas de largeur. La largeur
+// passe de sa valeur de lecture à 100 % en transition : on voit la page
+// s'élargir (valeurs numériques des deux côtés, pas de « none »).
+.sheet-body,
+.sheet-body .container,
+.sheet-body .article,
+.sheet-body .prose,
+.sheet-body .lede,
+.sheet-body .page-lead,
+.sheet-body .svc-intro { transition: max-width 0.5s cubic-bezier(0.32, 0.72, 0, 1); }
 html[data-wide="true"] {
-  .sheet-body { max-width: none; }
-  // Toutes les colonnes de lecture s'ouvrent aussi (articles, textes des
-  // projets, introductions), sinon la page ne change pas de largeur.
+  .sheet-body,
   .sheet-body .container,
   .sheet-body .article,
   .sheet-body .prose,
   .sheet-body .lede,
   .sheet-body .page-lead,
-  .sheet-body .svc-intro { max-width: none; }
+  .sheet-body .svc-intro { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sheet-body, .sheet-body * { transition: none !important; }
 }
 
 // Fond d'ambiance d'une page (image du projet floutée), sous le contenu

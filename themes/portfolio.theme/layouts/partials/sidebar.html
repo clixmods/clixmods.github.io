@@ -45,7 +45,10 @@
     <a class="fav fav-mail" href="mailto:{{ . }}" data-email="{{ . }}" title="{{ . }}" aria-label="{{ i18n "ui_contact_me" }}">{{ partial "icon.html" "mail" }}</a>
     {{- end }}
     {{- with $contact.discord }}
-    <button type="button" class="fav fav-discord" data-discord="{{ . }}" title="Discord" aria-label="Discord : {{ . }}" aria-haspopup="dialog">{{ partial "icon.html" "logo-discord" }}</button>
+    <button type="button" class="fav fav-discord" data-reveal="discord" data-reveal-value="{{ . }}" data-reveal-text="{{ i18n "ui_discord_text" }}" data-reveal-copy-label="{{ i18n "ui_copy_id" }}" data-reveal-copied="{{ i18n "ui_id_copied" }}" title="Discord" aria-label="Discord : {{ . }}" aria-haspopup="dialog">{{ partial "icon.html" "logo-discord" }}</button>
+    {{- end }}
+    {{- with $contact.phone }}
+    <button type="button" class="fav fav-phone" data-reveal="phone" data-reveal-value="{{ . }}" data-reveal-href="tel:{{ replace . " " "" }}" data-reveal-text="{{ i18n "ui_phone_text" }}" data-reveal-copy-label="{{ i18n "ui_copy_phone" }}" data-reveal-copied="{{ i18n "ui_phone_copied" }}" title="{{ i18n "ui_phone" }}" aria-label="{{ i18n "ui_phone" }} : {{ . }}" aria-haspopup="dialog">{{ partial "icon.html" "call" }}</button>
     {{- end }}
   </div>
 
