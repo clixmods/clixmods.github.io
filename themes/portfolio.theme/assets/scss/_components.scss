@@ -100,6 +100,11 @@
     object-fit: cover;
     transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
+  // Une catégorie ou un dossier est choisi : le badge redirait la même chose.
+  [data-active-main]:not([data-active-main="all"]) &,
+  [data-active-folder]:not([data-active-folder="all"]) & {
+    .project-sector { display: none; }
+  }
   .project-sector {
     position: absolute;
     top: 10px;

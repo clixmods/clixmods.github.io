@@ -30,7 +30,13 @@
     {{- $img := partial "get-optimized-image.html" (dict "imagePath" . "width" (cond (in $class "is-wide") 1100 600) "quality" 85) }}
     <img src="{{ $img.src }}" alt="{{ $p.Title }}" loading="lazy"{{ with $img.width }} width="{{ . }}"{{ end }}{{ with $img.height }} height="{{ . }}"{{ end }}>
     {{- end }}
-    {{- if $mainLabel }}<span class="tag project-sector">{{ $mainLabel }}{{ with $subLabel }} · {{ . }}{{ end }}</span>{{ end }}
+    {{- /* badge = "main" (page Projets : les sections disent déjà pro/perso),
+           "sub" (page d'espace : la catégorie est l'espace), sinon les deux.
+           Masqué en CSS quand un filtre est choisi (data-active-* posé par main.js). */}}
+    {{- $show := $.badge | default "both" -}}
+    {{- $badge := $mainLabel -}}
+    {{- if eq $show "sub" }}{{ $badge = $subLabel }}{{ else if and (eq $show "both") $subLabel }}{{ $badge = printf "%s · %s" $mainLabel $subLabel }}{{ end -}}
+    {{- with $badge }}<span class="tag project-sector">{{ . }}</span>{{ end }}
   </div>
   <div class="project-body">
     <span class="project-title">{{ $p.Title }}</span>
