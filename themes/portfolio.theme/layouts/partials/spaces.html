@@ -62,7 +62,7 @@
 
 {{/* ── Espace Accueil ── */}}
 {{- $home := slice
-      (dict "kind" "tab" "title" (i18n "ui_home") "url" (relLangURL "/") "icon" "home") -}}
+      (dict "kind" "tab" "title" (i18n "tab_intro") "url" (relLangURL "/") "icon" "sunny") -}}
 {{- with site.GetPage "/projects" }}{{ $home = $home | append (dict "kind" "tab" "title" (i18n "tab_all_projects") "url" .RelPermalink "icon" "grid") }}{{ end -}}
 {{- with site.GetPage "/skills" }}{{ $home = $home | append (dict "kind" "tab" "title" (i18n "ui_skills") "url" .RelPermalink "icon" "code-slash") }}{{ end -}}
 {{- with site.GetPage "/services" }}{{ $home = $home | append (dict "kind" "tab" "title" (i18n "ui_services") "url" .RelPermalink "icon" "construct") }}{{ end -}}

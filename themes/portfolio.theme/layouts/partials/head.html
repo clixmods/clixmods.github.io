@@ -36,6 +36,9 @@
       }
     } catch (e) {}
     if (localStorage.getItem("cadre:compact") === "1") h.classList.add("is-compact");
+    // Pleine largeur choisie par le visiteur pour cette page
+    var wm = JSON.parse(localStorage.getItem("cadre:wide") || "{}");
+    if (location.pathname in wm) h.setAttribute("data-wide", wm[location.pathname] ? "true" : "false");
     var w = parseInt(localStorage.getItem("cadre:width"), 10);
     if (w >= 200 && w <= 480) h.style.setProperty("--side-w", w + "px");
     var t = JSON.parse(localStorage.getItem("cadre:themes") || "{}");
@@ -44,6 +47,8 @@
       if (v.a) { h.style.setProperty("--th-" + s + "-a", v.a); h.style.setProperty("--thd-" + s + "-a", "color-mix(in oklab, " + v.a + " 24%, #121318)"); }
       if (v.b) { h.style.setProperty("--th-" + s + "-b", v.b); h.style.setProperty("--thd-" + s + "-b", "color-mix(in oklab, " + v.b + " 24%, #121318)"); }
       if (v.accent) { h.style.setProperty("--th-" + s + "-accent", v.accent); h.style.setProperty("--thd-" + s + "-accent", "color-mix(in oklab, " + v.accent + " 62%, #ffffff)"); }
+      if (typeof v.intensity === "number") h.style.setProperty("--th-" + s + "-int", String(v.intensity));
+      if (typeof v.grain === "number") h.style.setProperty("--th-" + s + "-grain", String(v.grain));
     });
   } catch (e) {}
 })();

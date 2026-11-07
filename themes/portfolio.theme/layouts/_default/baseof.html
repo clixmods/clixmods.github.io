@@ -4,7 +4,7 @@
 {{- $spaces := partialCached "spaces.html" . site.Language.Lang -}}
 {{- $ctx := dict "page" . "sd" $sd "space" $space "spaces" $spaces -}}
 {{- $spaceName := "" -}}{{- range $spaces }}{{ if eq .id $space }}{{ $spaceName = .name }}{{ end }}{{ end -}}
-<html lang="{{ .Site.Language.LanguageCode | default .Site.Language.Lang }}" data-space="{{ $space }}" data-lang="{{ .Site.Language.Lang }}" data-kind="{{ if .Params.frame }}frame{{ else }}page{{ end }}">
+<html lang="{{ .Site.Language.LanguageCode | default .Site.Language.Lang }}" data-space="{{ $space }}" data-lang="{{ .Site.Language.Lang }}" data-kind="{{ if .Params.frame }}frame{{ else }}page{{ end }}" data-wide="{{ if .Params.full_width }}true{{ else }}false{{ end }}">
 <head>
   {{ partial "head.html" . }}
 </head>
@@ -58,6 +58,12 @@
             <span class="crumb-sep">/</span><b>{{ if .IsHome }}{{ i18n "space_home" }}{{ else }}{{ .Title }}{{ end }}</b>
           </div>
           {{- end }}
+          {{- /* Pleine largeur (comme Notion) : par page, mémorisé par visiteur ;
+                 `full_width = true` dans le front matter l'active d'office. */}}
+          <button type="button" class="icon-btn wide-toggle" data-wide-toggle aria-pressed="false" title="{{ i18n "ui_full_width" }}" aria-label="{{ i18n "ui_full_width" }}">
+            {{- partial "icon.html" (dict "name" "expand-outline" "class" "is-off") -}}
+            {{- partial "icon.html" (dict "name" "contract-outline" "class" "is-on") -}}
+          </button>
         </div>
 
         <main class="sheet-body" id="main">

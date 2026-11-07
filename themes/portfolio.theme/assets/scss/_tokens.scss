@@ -100,10 +100,17 @@ html { transition: --frame-a 0.45s ease, --frame-b 0.45s ease, --accent 0.45s ea
 // Éditeur de thème ouvert : l'aperçu doit suivre la pastille sans délai.
 html:has(.theme-pop:not([hidden])) { transition: none; }
 
+// Réglages d'espace du visiteur (éditeur de thème, comme Arc / Zen) :
+// --th-<id>-int = intensité de la couleur du cadre (0 = neutre, 1 = pleine),
+// --th-<id>-grain = grain posé sur le cadre (0 à 1).
+:root { --neutral: #eceef3; }
+@media (prefers-color-scheme: dark) { :root { --neutral: #141519; } }
+
 @each $id, $c in $spaces {
   html[data-space="#{$id}"] {
-    --frame-a: var(--sp-#{$id}-a);
-    --frame-b: var(--sp-#{$id}-b);
+    --frame-a: color-mix(in oklab, var(--sp-#{$id}-a) calc(var(--th-#{$id}-int, 1) * 100%), var(--neutral));
+    --frame-b: color-mix(in oklab, var(--sp-#{$id}-b) calc(var(--th-#{$id}-int, 1) * 100%), var(--neutral));
     --accent: var(--sp-#{$id}-accent);
+    --grain: var(--th-#{$id}-grain, 0);
   }
 }

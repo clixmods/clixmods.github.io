@@ -28,12 +28,20 @@
   // ── Toast ─────────────────────────────────────────────
   var toastEl = overlays.querySelector("[data-toast]");
   var toastTimer;
+  // Notification en haut à droite (comme Arc) : icône + message.
   var toast = function (msg) {
     if (!toastEl) return;
-    toastEl.textContent = msg;
+    toastEl.innerHTML = '<span class="toast-ico">' + (ICON.ok || "") + "</span><span></span>";
+    toastEl.lastChild.textContent = msg;
+    toastEl.classList.remove("is-out");
+    toastEl.hidden = true;
+    void toastEl.offsetWidth; // relance l'animation d'entrée
     toastEl.hidden = false;
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toastEl.hidden = true; }, 2200);
+    toastTimer = setTimeout(function () {
+      toastEl.classList.add("is-out");
+      toastTimer = setTimeout(function () { toastEl.hidden = true; toastEl.classList.remove("is-out"); }, 200);
+    }, 2600);
   };
   var copy = function (text, msg) {
     var done = function () { toast(msg); };
@@ -380,6 +388,13 @@
           : "color-mix(in oklab, " + v[k] + " 24%, #121318)");
       } else { st.removeProperty(light); st.removeProperty(dark); }
     });
+    // Intensité de la couleur du cadre et grain (0 à 1)
+    var fx = { intensity: "int", grain: "grain" };
+    Object.keys(fx).forEach(function (k) {
+      var name = "--th-" + id + "-" + fx[k];
+      if (v && typeof v[k] === "number") st.setProperty(name, String(v[k]));
+      else st.removeProperty(name);
+    });
   };
   var themeSpaceId = null;
   var KEYS = ["a", "b", "accent"];
@@ -426,11 +441,26 @@
   if (pad) KEYS.forEach(function (k) { handles[k] = pad.querySelector('[data-handle="' + k + '"]'); });
   var pos = {};
   var linked = false;
+  var fxInputs = themePop ? {
+    intensity: themePop.querySelector("[data-theme-intensity]"),
+    grain: themePop.querySelector("[data-theme-grain]")
+  } : {};
   var currentTheme = function (id) {
     var all = store.json("cadre:themes", {});
     var base = DEFAULTS[id] || DEFAULTS.home;
     var v = all[id] || {};
-    return { a: v.a || base.a, b: v.b || base.b, accent: v.accent || base.accent };
+    return {
+      a: v.a || base.a, b: v.b || base.b, accent: v.accent || base.accent,
+      intensity: typeof v.intensity === "number" ? v.intensity : 1,
+      grain: typeof v.grain === "number" ? v.grain : 0
+    };
+  };
+  // Nouvelles couleurs en gardant l'intensité et le grain choisis.
+  var withFx = function (id, colors) {
+    var cur = currentTheme(id);
+    colors.intensity = cur.intensity;
+    colors.grain = cur.grain;
+    return colors;
   };
   var saveTheme = function (id, v) {
     var all = store.json("cadre:themes", {});
@@ -460,11 +490,16 @@
     var v = currentTheme(themeSpaceId);
     KEYS.forEach(function (k) { pos[k] = posOf(k, v[k]); });
     paintHandles(v);
+    if (fxInputs.intensity) fxInputs.intensity.value = Math.round(v.intensity * 100);
+    if (fxInputs.grain) fxInputs.grain.value = Math.round(v.grain * 100);
+    themePop.style.setProperty("--th-preview-a", v.a);
     var prev = themePop.querySelector("[data-theme-preview]");
     if (prev) {
-      prev.style.setProperty("--frame-a", "var(--sp-" + themeSpaceId + "-a)");
-      prev.style.setProperty("--frame-b", "var(--sp-" + themeSpaceId + "-b)");
+      var mixed = function (k) { return "color-mix(in oklab, var(--sp-" + themeSpaceId + "-" + k + ") calc(var(--th-" + themeSpaceId + "-int, 1) * 100%), var(--neutral))"; };
+      prev.style.setProperty("--frame-a", mixed("a"));
+      prev.style.setProperty("--frame-b", mixed("b"));
       prev.style.setProperty("--accent", "var(--sp-" + themeSpaceId + "-accent)");
+      prev.style.setProperty("--grain", "var(--th-" + themeSpaceId + "-grain, 0)");
     }
     markPresets(v);
   };
@@ -474,6 +509,7 @@
     frameReq = null;
     var v = {};
     KEYS.forEach(function (k) { v[k] = colorAt(k, pos[k]); });
+    v = withFx(themeSpaceId, v);
     saveTheme(themeSpaceId, v);
     paintHandles(v);
     markPresets(v);
@@ -516,7 +552,7 @@
       b.style.setProperty("--pb", p.b);
       b.style.setProperty("--pc", p.accent);
       b.setAttribute("aria-label", (presetBox.getAttribute("aria-label") || "") + " " + (i + 1));
-      b.addEventListener("click", function () { saveTheme(themeSpaceId, { a: p.a, b: p.b, accent: p.accent }); syncThemeUI(); });
+      b.addEventListener("click", function () { saveTheme(themeSpaceId, withFx(themeSpaceId, { a: p.a, b: p.b, accent: p.accent })); syncThemeUI(); });
       presetBox.appendChild(b);
     });
     if (pad) {
@@ -564,6 +600,16 @@
         moveHandle(k, pos[k].x + mv[0], pos[k].y + mv[1]);
       });
     }
+    // Intensité de la couleur et grain : enregistrés tels quels (0 à 1).
+    Object.keys(fxInputs).forEach(function (k) {
+      var input = fxInputs[k];
+      if (!input) return;
+      input.addEventListener("input", function () {
+        var v = currentTheme(themeSpaceId);
+        v[k] = clamp(parseInt(input.value, 10) / 100, 0, 1);
+        saveTheme(themeSpaceId, v);
+      });
+    });
     var linkBtn = themePop.querySelector("[data-theme-link]");
     if (linkBtn) linkBtn.addEventListener("click", function () {
       linked = !linked;
@@ -869,6 +915,7 @@
         savePin(natural);
         html.removeAttribute("data-natural");
         html.setAttribute("data-kind", nh.getAttribute("data-kind") || "page");
+        applyWide(nh.getAttribute("data-wide") || "false");
         if (nh.lang) html.lang = nh.lang;
         swapNode("#main", doc);
         swapNode(".crumb", doc);
@@ -906,6 +953,58 @@
     if (location.pathname + location.search === currentPath) return;
     var st = e.state || {};
     navigate(location.href, false, typeof st.y === "number" ? st.y : 0, st.space || null);
+  });
+
+  // ── Pleine largeur (comme Notion), par page ───────────
+  // Défaut : front matter `full_width` (attribut data-wide posé par Hugo) ;
+  // le choix du visiteur pour la page est mémorisé dans cadre:wide.
+  var wideBtn = d.querySelector("[data-wide-toggle]");
+  var syncWide = function () {
+    if (wideBtn) wideBtn.setAttribute("aria-pressed", html.getAttribute("data-wide") === "true" ? "true" : "false");
+  };
+  var applyWide = function (fallback) {
+    var wm = store.json("cadre:wide", {});
+    var k = location.pathname;
+    html.setAttribute("data-wide", k in wm ? (wm[k] ? "true" : "false") : fallback);
+    syncWide();
+  };
+  syncWide();
+  if (wideBtn) wideBtn.addEventListener("click", function () {
+    var on = html.getAttribute("data-wide") !== "true";
+    var wm = store.json("cadre:wide", {});
+    wm[location.pathname] = on;
+    store.set("cadre:wide", JSON.stringify(wm));
+    var flip = function () { html.setAttribute("data-wide", on ? "true" : "false"); syncWide(); };
+    // La feuille s'élargit en douceur (transition de vue) quand c'est possible.
+    if (d.startViewTransition && !reduceMotion.matches && !d.hidden) d.startViewTransition(flip);
+    else flip();
+  });
+
+  // ── Précédent / suivant / actualiser (haut de la barre latérale) ─
+  // Actualiser recharge la page affichée sans recharger la barre : le site
+  // intégré (iframe) ou le contenu, refait sans cache, au même défilement.
+  var syncNavBtns = function () {
+    var nav = window.navigation;
+    if (!nav || typeof nav.canGoBack !== "boolean") return; // API Navigation (Chromium)
+    var b = side.querySelector('[data-nav="back"]'), f = side.querySelector('[data-nav="forward"]');
+    if (b) b.disabled = !nav.canGoBack;
+    if (f) f.disabled = !nav.canGoForward;
+  };
+  syncNavBtns();
+  if (window.navigation && window.navigation.addEventListener) window.navigation.addEventListener("currententrychange", syncNavBtns);
+  side.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-nav]");
+    if (!b || b.disabled) return;
+    var k = b.getAttribute("data-nav");
+    if (k === "back") { history.back(); return; }
+    if (k === "forward") { history.forward(); return; }
+    b.classList.remove("is-spinning");
+    void b.offsetWidth;
+    b.classList.add("is-spinning");
+    var fr = d.querySelector("#main iframe.frame");
+    if (fr) { fr.src = fr.src; return; }
+    delete pages[keyOf(location.href)];
+    navigate(location.href, false, window.scrollY, entrySpace);
   });
   d.addEventListener("click", function (e) {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
