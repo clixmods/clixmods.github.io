@@ -266,14 +266,59 @@
 
 .tab-title { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-// Dossiers (comme Zen) : dossier au trait, contenu simplement indenté
+// Lien vers un site qui refuse l'affichage intégré : s'ouvre ailleurs
+.tab-ext {
+  width: 13px;
+  height: 13px;
+  flex: none;
+  color: var(--frame-ink-2);
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.15s ease;
+}
+.tab.is-external:hover .tab-ext { opacity: 1; transform: translate(1px, -1px); }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+// Dossiers (comme Zen) : grand dossier plein qui porte une petite icône
+// (image du projet ou pictogramme), contenu simplement indenté.
 .folder { display: flex; flex-direction: column; }
-.folder-ico { width: 17px; height: 17px; }
+.folder-head { gap: 8px; padding-left: 8px; }
+.folder-glyph {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex: none;
+  color: var(--frame-ink);
+}
+.folder-ico { position: absolute; inset: 0; width: 20px; height: 20px; opacity: 0.88; }
 .folder-ico.is-open { display: none; }
 .folder[data-open="true"] {
   > .folder-head .folder-ico.is-open { display: block; }
   > .folder-head .folder-ico.is-closed { display: none; }
 }
+.folder-badge {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  // Pictogramme « découpé » dans le dossier : couleur du cadre
+  color: var(--frame-a);
+}
+img.folder-badge {
+  width: 11px;
+  height: 11px;
+  border-radius: 2.5px;
+  object-fit: cover;
+}
+.folder[data-open="true"] > .folder-head .folder-badge { top: 64%; }
 
 .folder-body {
   display: grid;

@@ -1,9 +1,12 @@
-{{- /* Un onglet de la barre latérale. Contexte = dict { title, url, icon, thumb }. */ -}}
-<a class="tab" href="{{ .url }}" data-sort-key="{{ .url }}" title="{{ .title }}">
+{{- /* Un onglet de la barre latérale. Contexte = dict { title, url, icon, thumb, external }.
+       external : lien vers un site qui refuse l'affichage intégré ; il s'ouvre
+       dans un nouvel onglet et porte l'icône « lien externe ». */ -}}
+<a class="tab{{ if .external }} is-external{{ end }}" href="{{ .url }}" data-sort-key="{{ .url }}" title="{{ .title }}"{{ if .external }} target="_blank" rel="noopener noreferrer"{{ end }}>
   <span class="tab-ico">
     {{- if .thumb }}<img src="{{ .thumb }}" alt="" width="16" height="16" loading="lazy" decoding="async">
     {{- else if .icon }}{{ partial "icon.html" .icon }}
     {{- else }}<span class="tab-letter">{{ substr .title 0 1 | upper }}</span>{{ end -}}
   </span>
   <span class="tab-title">{{ .title }}</span>
+  {{- if .external }}{{ partial "icon.html" (dict "name" "open-outline" "class" "tab-ext") }}<span class="visually-hidden"> ({{ i18n "frame_open" }})</span>{{ end }}
 </a>

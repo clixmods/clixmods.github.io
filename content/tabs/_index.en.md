@@ -5,5 +5,5 @@ description = "Tabs embedded in projects (sites shown inside the sheet). Technic
   render = "never"
   list = "never"
 [cascade]
-  type = "browser-tab"
+  type = "tabs"
 +++

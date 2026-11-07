@@ -5,7 +5,7 @@
   <button type="button" class="urlbar-field" data-palette-open aria-label="{{ i18n "ui_search" }}" title="{{ i18n "ui_search" }} (⌘K)">
     {{ partial "icon.html" "search" }}
     {{- /* Onglet qui affiche un autre site : la barre montre l'adresse de ce site. */}}
-    <span class="url-text">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://" (strings.TrimPrefix "http://" (.Params.frame | default .Permalink))) }}</span>
+    <span class="url-text">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://" (strings.TrimPrefix "http://" (.Params.link | default .Params.frame | default .Permalink))) }}</span>
     <kbd class="url-kbd">⌘K</kbd>
   </button>
   {{ partial "lang-switch.html" . }}

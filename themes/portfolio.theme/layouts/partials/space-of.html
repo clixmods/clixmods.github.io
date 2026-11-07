@@ -3,7 +3,7 @@
 {{- $proj := "" -}}
 {{- if eq .Type "space" -}}{{- $s = .Params.space | default "home" -}}
 {{- else if and (eq .Section "projects") .IsPage -}}{{- $proj = . -}}
-{{- else if eq .Type "browser-tab" -}}
+{{- else if eq .Type "tabs" -}}
   {{- /* Onglet d'un projet : même espace que le projet. */ -}}
   {{- with .Params.project }}{{ $proj = site.GetPage (printf "/projects/%s" .) }}{{ end -}}
 {{- end -}}

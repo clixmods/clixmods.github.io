@@ -1,0 +1,74 @@
+{{- /*
+  Onglets de projet générés depuis les liens ([[actions]]) des projets.
+
+  Pour chaque lien qu'on peut afficher dans la feuille (iframe), une page
+  /tabs/<projet>/<onglet>/ est créée (gabarit layouts/tabs/single.html) ;
+  la barre latérale (partials/spaces.html) la retrouve par params.link. Les
+  autres liens deviennent des onglets externes (ouverture dans un nouvel
+  onglet).
+
+  Affichable dans la feuille :
+  - les vidéos YouTube (via youtube-nocookie.com/embed) ;
+  - les sites listés dans $embeddable (testés le 7 nov. 2026 : ils
+    n'interdisent pas l'iframe) ;
+  - tout lien avec `embed = true` ; `embed = false` force l'onglet externe.
+  Refusent l'iframe (X-Frame-Options / frame-ancestors) : GitHub, itch.io,
+  Steam, Xbox, PlayStation, Epic, CurseForge, Nexus Mods, Modrinth,
+  mcskincreator.app, la page de chaîne YouTube.
+
+  Champ optionnel d'un lien : `tab` = nom court de l'onglet (sinon `label`).
+*/ -}}
+{{- .EnableAllLanguages -}}
+{{- $lang := .Site.Language.Lang -}}
+{{- $embeddable := slice
+      "mc-skin-creator.github.io"
+      "www.mygameshowcase.com"
+      "edtech.timetrialcards.com"
+      "www.timetrialcards.com"
+      "vigor-sport.fr"
+      "www.nintendo.com" -}}
+{{- $yt := slice "youtu.be" "youtube.com" "www.youtube.com" "m.youtube.com" -}}
+
+{{- range os.ReadDir "content/projects" -}}
+  {{- $name := .Name -}}
+  {{- $parts := split $name "." -}}
+  {{- /* x.md = langue par défaut (fr), x.en.md = anglais */ -}}
+  {{- $fileLang := cond (eq (len $parts) 3) (index $parts 1) "fr" -}}
+  {{- if and (not .IsDir) (strings.HasSuffix $name ".md") (not (strings.HasPrefix $name "_")) (eq $fileLang $lang) -}}
+    {{- $raw := os.ReadFile (printf "content/projects/%s" $name) -}}
+    {{- $chunks := split $raw "+++" -}}
+    {{- if ge (len $chunks) 3 -}}
+      {{- $fm := transform.Unmarshal (index $chunks 1) -}}
+      {{- if and (ne $fm.draft true) $fm.actions -}}
+        {{- $base := index $parts 0 -}}
+        {{- $used := dict -}}
+        {{- range $a := $fm.actions -}}
+          {{- $u := $a.url | default "" -}}
+          {{- $p := urls.Parse $u -}}
+          {{- $frame := "" -}}
+          {{- if in $yt $p.Host -}}
+            {{- $id := "" -}}
+            {{- if eq $p.Host "youtu.be" }}{{ $id = strings.Trim $p.Path "/" }}{{ else if eq $p.Path "/watch" }}{{ $id = $p.Query.Get "v" }}{{ end -}}
+            {{- with $id }}{{ $frame = printf "https://www.youtube-nocookie.com/embed/%s" . }}{{ end -}}
+          {{- else if in $embeddable $p.Host -}}
+            {{- $frame = $u -}}
+          {{- end -}}
+          {{- if eq $a.embed true }}{{ $frame = $u }}{{ end -}}
+          {{- if eq $a.embed false }}{{ $frame = "" }}{{ end -}}
+          {{- with $frame -}}
+            {{- $tab := $a.tab | default $a.label | default $p.Host -}}
+            {{- /* Adresse sans accents : « Voir présentation » → voir-presentation */ -}}
+            {{- $slug := lower $tab | replaceRE "[éèêë]" "e" | replaceRE "[àâä]" "a" | replaceRE "[îï]" "i" | replaceRE "[ôö]" "o" | replaceRE "[ùûü]" "u" | replaceRE "ç" "c" | urlize | replaceRE "[^a-z0-9-]" "" -}}
+            {{- if index $used $slug }}{{ $slug = printf "%s-%d" $slug (len $used) }}{{ end -}}
+            {{- $used = merge $used (dict $slug true) -}}
+            {{- $.AddPage (dict
+                  "kind" "page"
+                  "path" (printf "%s/%s" $base $slug)
+                  "title" (printf "%s · %s" $fm.title $tab)
+                  "params" (dict "project" $base "frame" . "link" $u "tab" $tab "linktype" $a.type)) -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

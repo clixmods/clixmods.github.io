@@ -5,5 +5,5 @@ description = "Onglets intégrés aux projets (sites affichés dans la feuille).
   render = "never"
   list = "never"
 [cascade]
-  type = "browser-tab"
+  type = "tabs"
 +++
