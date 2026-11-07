@@ -27,10 +27,23 @@
 .side-top {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
   padding: 0 2px;
   min-height: 28px;
 }
+
+// Précédent / suivant / actualiser, à droite du nom
+.nav-btns {
+  display: flex;
+  gap: 1px;
+  margin-left: auto;
+  flex: none;
+  .icon-btn { width: 24px; height: 26px; }
+  .ico { width: 15px; height: 15px; }
+  .icon-btn:disabled { opacity: 0.32; pointer-events: none; }
+  .is-spinning .ico { animation: nav-spin 0.6s cubic-bezier(0.3, 0.7, 0.2, 1); }
+}
+@keyframes nav-spin { to { transform: rotate(360deg); } }
 
 .side-brand {
   display: inline-flex;
@@ -40,7 +53,7 @@
   font-size: 13px;
   font-weight: 500;
   color: var(--frame-ink);
-  padding: 3px 8px 3px 4px;
+  padding: 3px 4px 3px 4px;
   border-radius: var(--r-sm);
   &:hover { background: var(--tab-hover); }
   img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; }
@@ -141,42 +154,30 @@
 }
 .lang-pop { right: -4px; top: calc(100% + 9px); min-width: 160px; }
 
-// Liens épinglés (les « Essentials » de Zen) : tuiles qui se soulèvent au
-// survol, l'icône rebondit et prend la couleur de la marque, un reflet passe.
+// Liens épinglés (les « Essentials » de Zen / Arc) : au survol, le contour
+// prend la couleur du logo et un léger dégradé de cette couleur teinte la
+// tuile, comme les onglets épinglés d'Arc. Pas d'autre mouvement.
 .favs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; } // 4 par ligne maximum, comme Zen
 .fav {
   --brand: var(--frame-ink);
-  position: relative;
   height: 46px;
   display: grid;
   place-items: center;
-  overflow: hidden;
   border-radius: var(--r);
   background: var(--tab-hover);
   color: var(--frame-ink);
-  transition: background 0.2s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  box-shadow: inset 0 0 0 1px transparent;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.12s ease;
 
-  .ico {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.35) 50%, transparent 65%);
-    transform: translateX(-120%);
-    pointer-events: none;
-  }
+  .ico { width: 18px; height: 18px; transition: color 0.25s ease; }
   &:hover {
-    background: var(--tab-active);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.35);
-    .ico { transform: scale(1.14); color: var(--brand); }
-    &::after { transform: translateX(120%); transition: transform 0.6s ease; }
+    background:
+      linear-gradient(150deg, color-mix(in srgb, var(--brand) 24%, transparent), color-mix(in srgb, var(--brand) 6%, transparent) 70%),
+      var(--tab-active);
+    box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--brand) 70%, transparent);
+    .ico { color: var(--brand); }
   }
-  &:active { transform: translateY(0) scale(0.95); transition-duration: 0.08s; }
+  &:active { transform: scale(0.97); }
 }
 .fav-linkedin { --brand: #0a66c2; }
 .fav-cv { --brand: var(--accent); }
@@ -185,7 +186,7 @@
 @media (prefers-color-scheme: dark) {
   .fav-linkedin { --brand: #5aa7f0; }
   .fav-mail { --brand: #f28b82; }
-  .fav::after { background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.12) 50%, transparent 65%); }
+  .fav-discord { --brand: #8c96ff; }
 }
 
 // Zone défilante des onglets
@@ -487,6 +488,20 @@ html.is-sorting, html.is-sorting * { cursor: grabbing !important; }
   max-width: calc(var(--content) + 2 * var(--gutter));
   margin-inline: auto;
   padding: clamp(26px, 5vw, 56px) var(--gutter) 56px;
+}
+
+// Pleine largeur (bouton en haut à droite de la feuille, comme Notion)
+.wide-toggle {
+  margin-left: auto;
+  flex: none;
+  .ico { width: 15px; height: 15px; }
+  .is-on { display: none; }
+  &[aria-pressed="true"] { color: var(--ink); .is-on { display: block; } .is-off { display: none; } }
+}
+html[data-kind="frame"] .wide-toggle { display: none; }
+html[data-wide="true"] {
+  .sheet-body { max-width: none; }
+  .sheet-body .container { max-width: none; }
 }
 
 // Fond d'ambiance d'une page (image du projet floutée), sous le contenu

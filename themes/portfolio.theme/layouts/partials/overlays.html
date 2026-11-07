@@ -47,6 +47,17 @@
       <span class="theme-legend"><i data-dot="accent"></i>{{ i18n "theme_accent" }}</span>
       <button type="button" class="theme-link" data-theme-link aria-pressed="false" title="{{ i18n "theme_link" }}" aria-label="{{ i18n "theme_link" }}">{{ partial "icon.html" "link" }}</button>
     </div>
+    {{- /* Comme Arc / Zen : intensité de la couleur et grain du cadre. */}}
+    <div class="theme-sliders">
+      <label class="theme-slider is-intensity">
+        <span>{{ i18n "theme_intensity" }}</span>
+        <input type="range" min="0" max="100" step="1" data-theme-intensity aria-label="{{ i18n "theme_intensity" }}">
+      </label>
+      <label class="theme-slider is-grain">
+        <span>{{ i18n "theme_grain" }}</span>
+        <input type="range" min="0" max="100" step="1" data-theme-grain aria-label="{{ i18n "theme_grain" }}">
+      </label>
+    </div>
     <div class="theme-preview" data-theme-preview></div>
     <div class="theme-presets" data-theme-presets aria-label="{{ i18n "theme_presets" }}"></div>
     <p class="theme-hint">{{ i18n "theme_hint" }}</p>
@@ -72,5 +83,6 @@
     <span data-i="palette">{{ partial "icon.html" "color-palette" }}</span>
     <span data-i="reset">{{ partial "icon.html" "refresh" }}</span>
     <span data-i="mail">{{ partial "icon.html" "copy" }}</span>
+    <span data-i="ok">{{ partial "icon.html" "checkmark-circle" }}</span>
   </template>
 </div>

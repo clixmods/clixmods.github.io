@@ -18,6 +18,12 @@
       {{- end }}
       <span>{{ $p.personal.firstName }} {{ $p.personal.lastName | lower | title }}</span>
     </a>
+    {{- /* Précédent / suivant / actualiser, comme dans la barre de Zen. */}}
+    <div class="nav-btns">
+      <button type="button" class="icon-btn" data-nav="back" title="{{ i18n "ui_nav_back" }}" aria-label="{{ i18n "ui_nav_back" }}">{{ partial "icon.html" "arrow-back" }}</button>
+      <button type="button" class="icon-btn" data-nav="forward" title="{{ i18n "ui_nav_forward" }}" aria-label="{{ i18n "ui_nav_forward" }}">{{ partial "icon.html" "arrow-forward" }}</button>
+      <button type="button" class="icon-btn" data-nav="reload" title="{{ i18n "ui_nav_reload" }}" aria-label="{{ i18n "ui_nav_reload" }}">{{ partial "icon.html" "refresh" }}</button>
+    </div>
   </div>
 
   <div class="urlrow" data-urlrow>
