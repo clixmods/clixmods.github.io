@@ -28,7 +28,7 @@ fmContentType = "project-content-type"
 status = "In progress"
 image = "/images/projects/living-horizon/avant-apres-shaders.webp"
 # Onglets du dossier dans la barre latérale
-wiki_tab = "Mod wiki"
+wiki_tab = "Mod overview"
 programming_languages = [ "lang_java" ]
 frameworks_engines = [ "fw_fabric", "fw_quilt", "fw_neoforge", "fw_forge", "fw_stonecutter" ]
 specialties = [
@@ -46,7 +46,7 @@ tools = [ "tool_gradle", "tool_junit", "tool_github_actions", "tool_github", "to
 
 [[linked_wikis]]
 ref = "living-horizon-website"
-tab = "Site wiki"
+tab = "Site overview"
 
 [[actions]]
 type = "website"

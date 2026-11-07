@@ -21,12 +21,7 @@
 {{- $gExt := `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>` -}}
 {{- $gMore := `<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>` -}}
 
-{{/* Fond d'ambiance : l'image du projet, floutée et estompée, habille la
-     feuille. À couper avec `ambient = false` (pages au style personnalisé). */}}
-{{- if ne $P.ambient false }}{{ with $P.image }}
-{{- $bg := partial "get-optimized-image.html" (dict "imagePath" . "width" 640 "quality" 60) }}
-<div class="page-ambient" aria-hidden="true"><img src="{{ $bg.src }}" alt="" decoding="async"></div>
-{{- end }}{{ end }}
+{{ partial "page-ambient.html" $page }}
 
 <section class="section proj">
   <div class="container">
@@ -149,9 +144,21 @@
             {{- with $person }}{{ $name = .Title }}{{ with .Params.avatar }}{{ $avatar = . }}{{ end }}
             {{- else }}{{ $name = .name | default ($pid | humanize | title) }}{{ end -}}
             {{- $roles := .roles }}{{ if and (not $roles) .role }}{{ $roles = slice .role }}{{ end -}}
+            {{- /* Pas de photo : initiales dans une pastille neutre (plus sobre
+                   que l'ancienne image par défaut). */ -}}
+            {{- $hasImg := false -}}
+            {{- if ne $avatar $default -}}
+              {{- if hasPrefix $avatar "http" }}{{ $hasImg = true }}{{ else }}{{ with resources.Get (strings.TrimPrefix "/" $avatar) }}{{ $hasImg = true }}{{ end }}{{ end -}}
+            {{- end -}}
+            {{- $initials := "" -}}
+            {{- range first 2 (split (trim $name " ") " ") }}{{ $initials = printf "%s%s" $initials (substr . 0 1 | upper) }}{{ end -}}
             <div class="contributor{{ if $isMe }} is-me{{ end }}">
+              {{- if $hasImg }}
               {{- $img := partial "get-optimized-image.html" (dict "imagePath" $avatar "width" 120 "quality" 85) }}
-              <img class="contributor-avatar" src="{{ $img.src }}" alt="{{ $name }}" loading="lazy"{{ with $img.width }} width="{{ . }}"{{ end }}{{ with $img.height }} height="{{ . }}"{{ end }} onerror="this.onerror=null;this.src='{{ $default | relURL }}'">
+              <img class="contributor-avatar" src="{{ $img.src }}" alt="{{ $name }}" loading="lazy"{{ with $img.width }} width="{{ . }}"{{ end }}{{ with $img.height }} height="{{ . }}"{{ end }}>
+              {{- else }}
+              <span class="contributor-avatar is-initials" aria-hidden="true">{{ $initials | default "?" }}</span>
+              {{- end }}
               <div>
                 <div class="contributor-name">{{ $name }}{{ if $isMe }}<span class="contributor-me">{{ i18n "proj_you" }}</span>{{ end }}</div>
                 <div class="contributor-roles">{{ with $roles }}{{ delimit . ", " }}{{ end }}</div>
