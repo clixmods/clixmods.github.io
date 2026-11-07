@@ -1,0 +1,31 @@
+{{- /*
+  Onglet de projet qui affiche un autre site dans la feuille (iframe), comme
+  si on avait ouvert ce site dans le navigateur. Pages générées par
+  content/tabs/_content.gotmpl depuis les [[actions]] des projets
+  (params : project, frame = adresse affichée, link = lien d'origine, tab).
+  Derrière l'iframe, une page de secours propose d'ouvrir le site dans un
+  nouvel onglet : elle reste visible si le site refuse finalement l'iframe.
+*/ -}}
+{{ define "main" }}
+{{- $page := .page -}}
+{{- $P := $page.Params -}}
+{{- $link := $P.link | default $P.frame -}}
+{{- $host := strings.TrimPrefix "www." (urls.Parse $link).Host -}}
+{{- $fav := partial "favicon-of.html" $link -}}
+<div class="frame-page">
+  <div class="frame-fallback">
+    <span class="frame-fallback-ico">
+      {{- with $fav.thumb }}<img src="{{ . }}" alt="" width="32" height="32">
+      {{- else }}{{ partial "icon.html" $fav.icon }}{{ end -}}
+    </span>
+    <b class="frame-fallback-host">{{ $host }}</b>
+    <p>{{ i18n "frame_blocked" }}</p>
+    <a class="btn btn-cold" href="{{ $link }}" target="_blank" rel="noopener noreferrer">{{ i18n "frame_open" }} {{ partial "icon.html" "open-outline" }}</a>
+  </div>
+  <iframe class="frame" src="{{ $P.frame }}" title="{{ $page.Title }}"
+          referrerpolicy="strict-origin-when-cross-origin"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-downloads allow-presentation"
+          allow="fullscreen; clipboard-write; autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen></iframe>
+</div>
+{{ end }}

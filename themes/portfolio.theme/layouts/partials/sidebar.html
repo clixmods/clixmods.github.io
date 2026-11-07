@@ -62,13 +62,15 @@
   var space = h.getAttribute("data-space");
   var cur = null;
   d.querySelectorAll('[data-space-panel="' + space + '"] a.tab').forEach(function (a) {
-    if (!cur && a.pathname === location.pathname) cur = a;
+    if (!cur && a.origin === location.origin && a.pathname === location.pathname) cur = a;
   });
   if (cur) cur.setAttribute("aria-current", "page");
   var saved = json("cadre:folders") || {};
   d.querySelectorAll("[data-folder]").forEach(function (f) {
     var id = f.getAttribute("data-folder");
-    var open = id in saved ? saved[id] : parseInt(f.getAttribute("data-count"), 10) <= 6;
+    // Par défaut : ouvert s'il est court, sauf dossier de projet (fermé).
+    var def = f.getAttribute("data-default");
+    var open = id in saved ? saved[id] : def ? def === "open" : parseInt(f.getAttribute("data-count"), 10) <= 6;
     if (cur && f.contains(cur)) open = true;
     f.setAttribute("data-open", open ? "true" : "false");
     f.querySelector("[data-folder-toggle]").setAttribute("aria-expanded", open ? "true" : "false");

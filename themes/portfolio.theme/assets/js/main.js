@@ -92,7 +92,7 @@
     side.querySelectorAll('a.tab[aria-current]').forEach(function (a) { a.removeAttribute("aria-current"); });
     var cur = null;
     side.querySelectorAll('[data-space-panel="' + space + '"] a.tab').forEach(function (a) {
-      if (!cur && a.pathname === location.pathname) cur = a;
+      if (!cur && a.origin === location.origin && a.pathname === location.pathname) cur = a;
     });
     if (cur) {
       cur.setAttribute("aria-current", "page");
@@ -463,7 +463,7 @@
         var folder = a.closest("[data-folder]");
         var kind = spName + (folder ? " · " + folder.querySelector(".folder-head .tab-title").textContent : "");
         var title = a.querySelector(".tab-title").textContent;
-        index.push({ title: title, kind: kind, href: a.href, ico: a.querySelector(".tab-ico").innerHTML, key: norm(title + " " + kind) });
+        index.push({ title: title, kind: kind, href: a.href, ext: a.target === "_blank", ico: a.querySelector(".tab-ico").innerHTML, key: norm(title + " " + kind) });
       });
     });
   };
@@ -481,7 +481,7 @@
       li.innerHTML = '<span class="tab-ico">' + it.ico + '</span><span class="tab-title"></span><span class="palette-kind"></span>';
       li.querySelector(".tab-title").textContent = it.title;
       li.querySelector(".palette-kind").textContent = it.kind;
-      li.addEventListener("click", function () { closePal(); navigate(it.href, true); });
+      li.addEventListener("click", function () { closePal(); openItem(it); });
       li.addEventListener("mousemove", function () { if (sel !== i) { sel = i; markPal(); } });
       palList.appendChild(li);
     });
@@ -493,6 +493,11 @@
     var cur = palList.children[sel];
     if (cur) cur.scrollIntoView({ block: "nearest" });
     palInput.setAttribute("aria-activedescendant", shown.length ? "pal-" + sel : "");
+  };
+  // Un résultat externe (site qui refuse l'intégration) s'ouvre à part.
+  var openItem = function (it) {
+    if (it.ext) window.open(it.href, "_blank", "noopener");
+    else navigate(it.href, true);
   };
   var lastFocus = null;
   var openPal = function () {
@@ -517,7 +522,7 @@
     palInput.addEventListener("keydown", function (e) {
       if (e.key === "ArrowDown") { e.preventDefault(); sel = Math.min(sel + 1, shown.length - 1); markPal(); }
       else if (e.key === "ArrowUp") { e.preventDefault(); sel = Math.max(sel - 1, 0); markPal(); }
-      else if (e.key === "Enter" && shown[sel]) { e.preventDefault(); var go = shown[sel].href; closePal(); navigate(go, true); }
+      else if (e.key === "Enter" && shown[sel]) { e.preventDefault(); var go = shown[sel]; closePal(); openItem(go); }
     });
     pal.addEventListener("click", function (e) { if (e.target === pal) closePal(); });
   }

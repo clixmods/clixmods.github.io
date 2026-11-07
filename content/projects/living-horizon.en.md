@@ -45,6 +45,7 @@ tools = [ "tool_gradle", "tool_junit", "tool_github_actions", "tool_github", "to
 [[actions]]
 type = "website"
 label = "Visit the mod's website"
+tab = "Official site"
 url = "https://mc-skin-creator.github.io/living-horizon-website/"
 primary = true
 fieldGroup = "actions_group"
@@ -52,6 +53,7 @@ fieldGroup = "actions_group"
 [[actions]]
 type = "website"
 label = "Download on CurseForge"
+tab = "CurseForge"
 url = "https://www.curseforge.com/minecraft/mc-mods/living-horizon"
 primary = false
 fieldGroup = "actions_group"
@@ -66,6 +68,7 @@ fieldGroup = "actions_group"
 [[actions]]
 type = "github"
 label = "View on GitHub"
+tab = "GitHub"
 url = "https://github.com/MC-Skin-Creator/living-horizon"
 primary = false
 fieldGroup = "actions_group"

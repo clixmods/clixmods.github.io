@@ -21,15 +21,21 @@
     {{- $img := $proj.Params.image | default "" -}}
     {{- $thumb := partialCached "tab-thumb.html" (dict "path" $img) $img -}}
     {{- $tab := dict "kind" "tab" "title" $proj.Title "url" $proj.RelPermalink "thumb" $thumb -}}
-    {{- /* Projet avec ses propres onglets (content/tabs/, project = ce fichier) :
-           il devient un dossier — Wiki (la page du projet) puis ses sites. */ -}}
-    {{- with (where (where site.RegularPages "Type" "browser-tab") "Params.project" $proj.File.ContentBaseName).ByWeight -}}
+    {{- /* Projet avec des liens ([[actions]]) : il devient un dossier, fermé
+           par défaut, avec l'icône du projet — Wiki (la page du projet) puis un
+           onglet par lien. Un lien affichable dans la feuille ouvre sa page
+           générée (content/tabs/_content.gotmpl) ; les autres sont externes. */ -}}
+    {{- with $proj.Params.actions -}}
+      {{- $base := $proj.File.ContentBaseName -}}
+      {{- $inner := where (where site.RegularPages "Section" "tabs") "Params.project" $base -}}
       {{- $sub := slice (dict "kind" "tab" "title" (i18n "tab_wiki") "url" $proj.RelPermalink "icon" "book") -}}
       {{- range . -}}
-        {{- $ico := .Params.icon | default "" -}}
-        {{- $sub = $sub | append (dict "kind" "tab" "title" .LinkTitle "url" .RelPermalink "icon" .Params.ionicon "thumb" (partialCached "tab-thumb.html" (dict "path" $ico "fit" true) $ico "fit")) -}}
+        {{- $fav := partial "favicon-of.html" .url -}}
+        {{- $t := dict "kind" "tab" "title" (.tab | default .label) "url" .url "external" true "thumb" $fav.thumb "icon" $fav.icon -}}
+        {{- range first 1 (where $inner "Params.link" .url) }}{{ $t = merge $t (dict "url" .RelPermalink "external" false) }}{{ end -}}
+        {{- $sub = $sub | append $t -}}
       {{- end -}}
-      {{- $tab = dict "kind" "folder" "id" (printf "p-%s" $proj.File.ContentBaseName) "name" $proj.Title "tabs" $sub -}}
+      {{- $tab = dict "kind" "folder" "id" (printf "p-%s" $base) "name" $proj.Title "tabs" $sub "thumb" $thumb "closed" true -}}
     {{- end -}}
     {{- $sp = merge $sp (dict $pl.folder ($cur | append $tab)) -}}
     {{- $bySpace = merge $bySpace (dict $id $sp) -}}
@@ -41,6 +47,8 @@
       "jeux" (slice "pro" "perso" "gamejam" "tools")
       "web"  (slice "pro" "perso" "etude")
       "mods" (slice "minecraft" "bo3" "other") -}}
+{{- /* Icône dessinée dans le dossier (comme Zen) */ -}}
+{{- $folderBadges := dict "pro" "briefcase" "perso" "person" "gamejam" "trophy" "etude" "school" "tools" "construct" "minecraft" "cube" "bo3" "skull" "other" "extension-puzzle" -}}
 {{- $spaceIcons := dict "jeux" "game-controller" "web" "globe" "mods" "extension-puzzle" -}}
 
 {{/* ── Espace Accueil ── */}}
@@ -54,14 +62,14 @@
   {{- range partial "experiences-sorted.html" .Pages -}}
     {{- $tabs = $tabs | append (dict "kind" "tab" "title" (.Params.company | default .Title) "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" (.Params.logo | default "") "fit" true) (.Params.logo | default "") "fit")) -}}
   {{- end -}}
-  {{- $home = $home | append (dict "kind" "folder" "id" "home-exp" "name" (i18n "ui_experiences") "tabs" $tabs) -}}
+  {{- $home = $home | append (dict "kind" "folder" "id" "home-exp" "name" (i18n "ui_experiences") "tabs" $tabs "badge" "briefcase") -}}
 {{- end -}}
 {{- with site.GetPage "/educations" -}}
   {{- $tabs := slice (dict "kind" "tab" "title" (i18n "tab_all_educations") "url" .RelPermalink "icon" "school") -}}
   {{- range sort .Pages "Params.start_date" "desc" -}}
     {{- $tabs = $tabs | append (dict "kind" "tab" "title" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" (.Params.school_logo | default "") "fit" true) (.Params.school_logo | default "") "fit")) -}}
   {{- end -}}
-  {{- $home = $home | append (dict "kind" "folder" "id" "home-edu" "name" (i18n "ui_educations") "tabs" $tabs) -}}
+  {{- $home = $home | append (dict "kind" "folder" "id" "home-edu" "name" (i18n "ui_educations") "tabs" $tabs "badge" "school") -}}
 {{- end -}}
 {{- with site.GetPage "/posts" -}}
   {{- $tabs := slice (dict "kind" "tab" "title" (i18n "tab_all_posts") "url" .RelPermalink "icon" "newspaper") -}}
@@ -69,7 +77,7 @@
     {{- $img := .Params.image | default "" -}}
     {{- $tabs = $tabs | append (dict "kind" "tab" "title" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" $img) $img)) -}}
   {{- end -}}
-  {{- $home = $home | append (dict "kind" "folder" "id" "home-blog" "name" (i18n "ui_blog") "tabs" $tabs) -}}
+  {{- $home = $home | append (dict "kind" "folder" "id" "home-blog" "name" (i18n "ui_blog") "tabs" $tabs "badge" "newspaper") -}}
 {{- end -}}
 
 {{- $spaces := slice (dict "id" "home" "icon" "home" "name" (i18n "space_home") "url" (relLangURL "/") "count" 0 "entries" $home) -}}
@@ -83,7 +91,7 @@
   {{- $sp := index $bySpace $id -}}
   {{- range $f := index $folderOrder $id -}}
     {{- with index $sp $f -}}
-      {{- $entries = $entries | append (dict "kind" "folder" "id" (printf "%s-%s" $id $f) "folder" $f "name" (i18n (printf "folder_%s" $f)) "tabs" .) -}}
+      {{- $entries = $entries | append (dict "kind" "folder" "id" (printf "%s-%s" $id $f) "folder" $f "name" (i18n (printf "folder_%s" $f)) "tabs" . "badge" (index $folderBadges $f)) -}}
     {{- end -}}
   {{- end -}}
   {{- $spaces = $spaces | append (dict "id" $id "icon" (index $spaceIcons $id) "name" (i18n (printf "space_%s" $id)) "url" $url "count" (index $counts $id) "entries" $entries) -}}
