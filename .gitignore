@@ -32,3 +32,6 @@ go.work.sum
 # .vscode/
 public
 resources/_gen
+
+# Archives des anciens thèmes générées pour l aperçu local (scripts/build-archives.mjs)
+static/archives

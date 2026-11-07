@@ -45,7 +45,7 @@
           </button>
           {{- with .Params.link | default .Params.frame }}
           {{- /* Onglet qui affiche un autre site : le fil montre ce site. */}}
-          {{- $u := urls.Parse . }}
+          {{- $u := urls.Parse (cond (hasPrefix . "/") (absURL .) .) }}
           <div class="crumb">
             <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $u.Host }}</a>
             {{- with strings.Trim $u.Path "/" }}<span class="crumb-sep">/</span><b>{{ . }}</b>{{ end }}

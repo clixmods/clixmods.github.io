@@ -4,7 +4,7 @@ draft = false
 title = "Portfolio Personnel"
 slug = "portfolio-website"
 subtitle = "Site web personnel développé avec Hugo"
-description = "Portfolio moderne avec thème personnalisé, design inspiré de macOS, architecture data-driven et CMS intégré"
+description = "Portfolio moderne avec thème personnalisé (trois versions successives), architecture data-driven et CMS intégré"
 tags = [
   "Hugo",
   "Site Statique",
@@ -13,7 +13,7 @@ tags = [
   "FrontMatter CMS"
 ]
 category = "projects"
-sector = "appsweb-professionnel"
+sector = "appsweb-personnel"
 featured = true
 featuredInCV = false
 fmContentType = "project-content-type"
@@ -105,3 +105,11 @@ L'approche choisie sépare clairement les données du rendu :
 - **Système i18n** : Traductions centralisées pour le multilingue
 
 Cette architecture permet de modifier le contenu sans toucher au code, et de faire évoluer le design sans impacter les données.
+
+## Les versions du thème
+
+Le design du site a changé trois fois. Chaque version a sa fiche, et les deux premières restent consultables telles qu'elles étaient :
+
+- [Portfolio Thème #1](/projects/portfolio-theme-v1/) (juillet 2025 à avril 2026)
+- [Portfolio Thème #2](/projects/portfolio-theme-v2/) (juin à octobre 2026)
+- [Portfolio Thème #3](/projects/portfolio-theme-v3/) (depuis novembre 2026, le thème actuel)
