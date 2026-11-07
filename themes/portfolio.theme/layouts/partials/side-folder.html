@@ -3,8 +3,9 @@
        (image du projet / logo, ou pictogramme au trait), le nom, puis un
        chevron qui pivote à l'ouverture.
        Contexte = dict { id, folder, name, tabs, thumb, badge, closed }. */ -}}
-<div class="folder" data-folder="{{ .id }}" data-folder-key="{{ .folder | default .id }}" data-sort-key="folder:{{ .id }}" data-count="{{ len .tabs }}"{{ if .closed }} data-default="closed"{{ end }}>
-  <button type="button" class="folder-head" data-folder-toggle aria-expanded="false" title="{{ .name }}">
+<div class="folder" data-folder="{{ .id }}" data-folder-key="{{ .folder | default .id }}" data-sort-key="folder:{{ .id }}" data-count="{{ len .tabs }}"{{ if .closed }} data-default="closed"{{ end }}{{ if .alt }} data-project-folder{{ end }}>
+  {{- with .alt }}{{ partial "tab-link.html" (merge . (dict "alt" true)) }}{{ end }}
+  <button type="button" class="folder-head" data-folder-toggle aria-expanded="false" title="{{ .full | default .name }}">
     <span class="tab-ico">
       {{- with .thumb }}<img src="{{ . }}" alt="" width="16" height="16" loading="lazy" decoding="async">
       {{- else }}{{ partial "icon.html" (.badge | default "folder-outline") }}{{ end -}}

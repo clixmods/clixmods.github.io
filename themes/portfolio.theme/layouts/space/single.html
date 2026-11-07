@@ -41,7 +41,7 @@
 
   <div class="projects-grid space-grid" data-filter-group="space-{{ $id }}">
     {{- range $i, $p := $list }}
-    {{ partial "project-card.html" (dict "page" $p "class" (cond (eq $i 0) "is-wide" "") "folder" (partial "project-place.html" $p).folder "badge" "sub") }}
+    {{ partial "project-card.html" (dict "page" $p "folder" (partial "project-place.html" $p).folder "badge" "sub") }}
     {{- end }}
   </div>
   <p class="filter-empty" data-filter-empty="space-{{ $id }}" hidden>{{ i18n "filter_no_results" }}</p>

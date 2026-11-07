@@ -75,6 +75,15 @@
   </div>
 
   {{ partial "overlays.html" $ctx }}
+  {{- /* Choix du mode des projets dans la barre (serveur local seulement) :
+         simplifié (par défaut, en ligne) ou complet (dossiers, gardé de côté). */}}
+  {{- if hugo.IsDevelopment }}
+  <div class="links-lab" role="group" aria-label="Projets dans la barre">
+    <span class="links-lab-name">Projets dans la barre</span>
+    <button type="button" data-links-mode="simple">Simplifié</button>
+    <button type="button" data-links-mode="full">Complet</button>
+  </div>
+  {{- end }}
 
   {{- $js := resources.Get "js/main.js" | minify | fingerprint -}}
   <script src="{{ $js.RelPermalink }}" defer></script>

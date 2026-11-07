@@ -46,8 +46,8 @@
     {{- $logo := $exp.Params.logo | default "" -}}
     {{- $logoThumb := partialCached "tab-thumb.html" (dict "path" $logo "fit" true) $logo "fit" -}}
     {{- /* Nom affiché : « Entreprise · Poste » (le poste seul ne dit pas où). */ -}}
-    {{- $label := $exp.Title -}}
-    {{- with $exp.Params.company }}{{ $label = printf "%s · %s" . $exp.Title }}{{ end -}}
+    {{- $label := $exp.LinkTitle -}}
+    {{- with $exp.Params.company }}{{ $label = printf "%s · %s" . $exp.LinkTitle }}{{ end -}}
     {{- $t := dict "kind" "tab" "title" $label "url" $exp.RelPermalink "thumb" $logoThumb -}}
     {{- /* Expérience avec des projets associés (projects[].project_ref) :
            un dossier — Description du poste, puis les projets. */ -}}
@@ -56,7 +56,7 @@
       {{- range . -}}
         {{- with site.GetPage (printf "/projects/%s" .project_ref) -}}
           {{- $img := .Params.image | default "" -}}
-          {{- $sub = $sub | append (dict "kind" "tab" "title" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" $img) $img)) -}}
+          {{- $sub = $sub | append (dict "kind" "tab" "title" .LinkTitle "full" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" $img) $img)) -}}
         {{- end -}}
       {{- end -}}
       {{- $t = dict "kind" "folder" "id" (printf "exp-%s" $exp.File.ContentBaseName) "name" $label "tabs" $sub "thumb" $logoThumb "closed" true -}}
@@ -68,7 +68,7 @@
 {{- with site.GetPage "/educations" -}}
   {{- $tabs := slice (dict "kind" "tab" "title" (i18n "tab_all_educations") "url" .RelPermalink "icon" "school") -}}
   {{- range partial "parcours-sorted.html" .Pages -}}
-    {{- $tabs = $tabs | append (dict "kind" "tab" "title" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" (.Params.school_logo | default "") "fit" true) (.Params.school_logo | default "") "fit")) -}}
+    {{- $tabs = $tabs | append (dict "kind" "tab" "title" .LinkTitle "full" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" (.Params.school_logo | default "") "fit" true) (.Params.school_logo | default "") "fit")) -}}
   {{- end -}}
   {{- $home = $home | append (dict "kind" "folder" "id" "home-edu" "name" (i18n "ui_educations") "tabs" $tabs "badge" "school-outline") -}}
 {{- end -}}
@@ -76,7 +76,7 @@
   {{- $tabs := slice (dict "kind" "tab" "title" (i18n "tab_all_posts") "url" .RelPermalink "icon" "newspaper") -}}
   {{- range .Pages.ByDate.Reverse -}}
     {{- $img := .Params.image | default "" -}}
-    {{- $tabs = $tabs | append (dict "kind" "tab" "title" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" $img) $img)) -}}
+    {{- $tabs = $tabs | append (dict "kind" "tab" "title" .LinkTitle "full" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" $img) $img)) -}}
   {{- end -}}
   {{- $home = $home | append (dict "kind" "folder" "id" "home-blog" "name" (i18n "ui_blog") "tabs" $tabs "badge" "newspaper-outline") -}}
 {{- end -}}

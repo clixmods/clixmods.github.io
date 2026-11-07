@@ -99,8 +99,18 @@
   var markCurrent = function () {
     side.querySelectorAll('a.tab[aria-current]').forEach(function (a) { a.removeAttribute("aria-current"); });
     var cur = null;
+    // Un onglet masqué par le mode des projets (data-links) ne compte pas.
+    var full = html.getAttribute("data-links") === "full";
+    var shown = function (a) {
+      if (a.classList.contains("tab-alt")) return !full;
+      return full || !a.closest(".folder[data-project-folder] > .folder-body");
+    };
     side.querySelectorAll('[data-space-panel="' + space + '"] a.tab').forEach(function (a) {
-      if (!cur && a.origin === location.origin && a.pathname === location.pathname) cur = a;
+      if (!cur && a.origin === location.origin && a.pathname === location.pathname && shown(a)) cur = a;
+    });
+    // Mode simplifié : un onglet intégré ou un sous-projet allume l'onglet du projet.
+    if (!cur) side.querySelectorAll('[data-space-panel="' + space + '"] a.tab[data-also]').forEach(function (a) {
+      if (!cur && shown(a) && a.getAttribute("data-also").split(" ").indexOf(location.pathname) > -1) cur = a;
     });
     if (cur) {
       cur.setAttribute("aria-current", "page");
@@ -133,6 +143,25 @@
     store.set("cadre:last:" + lang + ":" + space, location.pathname + location.search);
   };
   rememberPage();
+
+  // ── Mode des projets dans la barre (sélecteur : serveur local seulement) ─
+  var lab = d.querySelector(".links-lab");
+  if (lab) {
+    var showMode = function () {
+      var m = html.getAttribute("data-links") || "simple";
+      lab.querySelectorAll("[data-links-mode]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-links-mode") === m ? "true" : "false"); });
+    };
+    lab.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-links-mode]");
+      if (!b) return;
+      var m = b.getAttribute("data-links-mode");
+      if (m === "full") html.setAttribute("data-links", "full"); else html.removeAttribute("data-links");
+      store.set("cadre:links", m);
+      showMode();
+      markCurrent();
+    });
+    showMode();
+  }
 
   // ── Glissement entre espaces (comme Arc) ──────────────
   // L'ancien panneau d'onglets part d'un côté, le nouveau arrive de l'autre,
@@ -209,7 +238,10 @@
     var kids = Array.prototype.filter.call(box.children, function (k) { return k !== drag.item && k.hasAttribute("data-sort-key"); });
     var before = null;
     for (var i = 0; i < kids.length; i++) {
-      var r = (kids[i].matches(".folder") ? kids[i].querySelector(".folder-head") : kids[i]).getBoundingClientRect();
+      var hd = kids[i].matches(".folder") ? kids[i].querySelector(":scope > .folder-head") : kids[i];
+      if (!hd.offsetHeight) hd = kids[i];
+      var r = hd.getBoundingClientRect();
+      if (!r.height) continue;
       if (drag.axisX ? x < r.left + r.width / 2 : y < r.top + r.height / 2) { before = kids[i]; break; }
     }
     if (before !== drag.item.nextElementSibling) box.insertBefore(drag.item, before);
@@ -1650,6 +1682,19 @@
     var skillPanel = skillModal.querySelector(".skill-modal-panel");
     var lastFocused = null;
 
+    // Sur ordinateur, la modale recouvre la feuille seulement (pas la barre).
+    var placeSkill = function () {
+      var sh = document.querySelector(".sheet");
+      var st = skillModal.style;
+      if (!sh || !window.matchMedia("(min-width: 861px)").matches) { st.top = st.left = st.width = st.height = ""; st.inset = ""; return; }
+      // Sous la barre de la feuille (fil d'Ariane), qui reste visible.
+      var r = sh.getBoundingClientRect();
+      var bar = sh.querySelector(".sheet-bar");
+      var top = bar ? Math.max(r.top, bar.getBoundingClientRect().bottom) : r.top;
+      st.inset = "auto";
+      st.top = top + "px"; st.left = r.left + "px";
+      st.width = r.width + "px"; st.height = (r.bottom - top) + "px";
+    };
     var closeSkill = function () {
       skillModal.hidden = true;
       skillModal.classList.remove("open");
@@ -1657,6 +1702,8 @@
       document.body.style.overflow = "";
       if (lastFocused) lastFocused.focus();
     };
+    cleanups.push(function () { document.body.style.overflow = ""; });
+    window.addEventListener("resize", function () { if (!skillModal.hidden) placeSkill(); }, sig());
 
     var openSkill = function (btn) {
       var key = btn.getAttribute("data-skill");
@@ -1665,6 +1712,12 @@
       lastFocused = btn;
       skillContent.textContent = "";
       skillContent.appendChild(tpl.content.cloneNode(true));
+      var list = skillContent.querySelector("[data-proj-list]");
+      if (list) list.getAttribute("data-proj-list").split(" ").forEach(function (id) {
+        var c = id && document.querySelector('template[data-proj-card="' + id + '"]');
+        if (c) list.appendChild(c.content.cloneNode(true));
+      });
+      placeSkill();
       skillModal.hidden = false;
       // Laisse le navigateur appliquer `hidden = false` avant la transition
       requestAnimationFrame(function () { skillModal.classList.add("open"); });

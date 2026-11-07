@@ -36,6 +36,8 @@
       }
     } catch (e) {}
     if (localStorage.getItem("cadre:compact") === "1") h.classList.add("is-compact");
+    // Projets dans la barre : mode complet (dossiers) gardé de côté, sinon simplifié.
+    if (localStorage.getItem("cadre:links") === "full") h.setAttribute("data-links", "full");
     // Pleine largeur choisie par le visiteur : vaut pour toutes les pages
     var wv = localStorage.getItem("cadre:wide");
     if (wv === "1" || wv === "0") h.setAttribute("data-wide", wv === "1" ? "true" : "false");

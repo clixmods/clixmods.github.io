@@ -1,7 +1,9 @@
 {{- /* Un onglet de la barre latérale. Contexte = dict { title, url, icon, thumb, external }.
        external : lien vers un site qui refuse l'affichage intégré ; il s'ouvre
-       dans un nouvel onglet et porte l'icône « lien externe ». */ -}}
-<a class="tab{{ if .external }} is-external{{ end }}" href="{{ .url }}" data-sort-key="{{ .url }}" title="{{ .title }}"{{ if .external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+       dans un nouvel onglet et porte l'icône « lien externe ».
+       alt : onglet simple d'un dossier projet (mode par défaut), sans clé de
+       tri (c'est le dossier qui se range) ; also = autres pages qui l'allument. */ -}}
+<a class="tab{{ if .external }} is-external{{ end }}{{ if .alt }} tab-alt{{ end }}" href="{{ .url }}"{{ if not .alt }} data-sort-key="{{ .url }}"{{ end }}{{ with .also }} data-also="{{ . }}"{{ end }} title="{{ .full | default .title }}"{{ if .external }} target="_blank" rel="noopener noreferrer"{{ end }}>
   <span class="tab-ico">
     {{- if .thumb }}<img src="{{ .thumb }}" alt="" width="16" height="16" loading="lazy" decoding="async">
     {{- else if .icon }}{{ partial "icon.html" .icon }}

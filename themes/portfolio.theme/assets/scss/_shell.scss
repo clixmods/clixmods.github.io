@@ -776,3 +776,50 @@ html[data-kind="frame"] {
   ::view-transition-new(*) { animation: none !important; }
 }
 
+
+// ── Projets dans la barre ─────────────────────────────────────────────────
+// Par défaut (mode simplifié), un projet est un onglet simple (.tab-alt) : ses
+// liens sont sur sa fiche. <html data-links="full"> rend le dossier complet
+// (fiche, liens, sous-projets), gardé de côté.
+.folder[data-project-folder] {
+  > .folder-head,
+  > .folder-body { display: none; }
+}
+[data-links="full"] .folder[data-project-folder] {
+  > .tab-alt { display: none; }
+  > .folder-head { display: flex; }
+  > .folder-body { display: grid; }
+}
+
+// Sélecteur de comparaison (serveur local seulement)
+.links-lab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border-radius: 999px;
+  background: var(--sheet, #fff);
+  color: var(--ink, #111);
+  border: 1px solid color-mix(in oklab, currentColor 14%, transparent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  font-size: 12.5px;
+  .links-lab-name { padding: 0 8px 0 10px; opacity: 0.65; font-weight: 500; }
+  button {
+    appearance: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 7px 12px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover { background: color-mix(in oklab, currentColor 8%, transparent); }
+    &[aria-pressed="true"] { background: var(--ink); color: var(--sheet); }
+  }
+}
+@media (max-width: 860px) { .links-lab { right: 10px; left: 10px; bottom: 10px; justify-content: center; flex-wrap: wrap; border-radius: 16px; } }
