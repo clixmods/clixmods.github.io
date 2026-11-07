@@ -1,0 +1,37 @@
+{{- /* Parcours compact : expériences puis formations, une ligne par entrée. */ -}}
+{{- $rows := slice -}}
+{{- with site.GetPage "/experiences" -}}
+  {{- range partial "parcours-sorted.html" .Pages -}}
+    {{- $end := i18n "exp_now" }}{{ with .Params.end_date }}{{ $end = time.Format "Jan 2006" . }}{{ end -}}
+    {{- $rows = $rows | append (dict "page" . "logo" .Params.logo "org" .Params.company "kind" .Params.contract_type "start" .Params.start_date "end" $end) -}}
+  {{- end -}}
+{{- end -}}
+{{- with site.GetPage "/educations" -}}
+  {{- range partial "parcours-sorted.html" .Pages -}}
+    {{- $end := i18n "exp_now" }}{{ with .Params.end_date }}{{ $end = time.Format "2006" . }}{{ end -}}
+    {{- $rows = $rows | append (dict "page" . "logo" .Params.school_logo "org" .Params.institution "kind" (.Params.status | default .Params.grade) "start" .Params.start_date "end" $end "edu" true) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $rows }}
+<section class="sec">
+  <div class="sec-head">
+    <h2>{{ i18n "home_parcours" }}</h2>
+    {{- with site.GetPage "/experiences" }}<a class="more" href="{{ .RelPermalink }}">{{ i18n "ui_view_all" }}{{ partial "icon.html" "chevron-forward" }}</a>{{ end }}
+  </div>
+  <div class="rows">
+    {{- range $row := . }}
+    <a class="row" href="{{ .page.RelPermalink }}">
+      <span class="row-logo">
+        {{- with .logo }}{{ $img := partial "get-optimized-image.html" (dict "imagePath" . "width" 96 "quality" 85) }}<img src="{{ $img.src }}" alt="" loading="lazy" width="36" height="36">
+        {{- else }}{{ substr .org 0 2 }}{{ end -}}
+      </span>
+      <span class="row-main">
+        <span class="row-title">{{ .page.Title }}</span>
+        <span class="row-sub">{{ .org }}{{ with .kind }} · {{ . }}{{ end }}</span>
+      </span>
+      <span class="row-date mono">{{ with .start }}{{ time.Format (cond (eq $row.edu true) "2006" "Jan 2006") . }}{{ end }} → {{ .end }}</span>
+    </a>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

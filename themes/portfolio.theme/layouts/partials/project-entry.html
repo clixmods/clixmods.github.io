@@ -1,0 +1,56 @@
+{{- /*
+  Entrée d'un projet dans la barre latérale : un onglet, ou un dossier quand
+  le projet a des liens ([[actions]]), des wikis liés ou des sous-projets.
+  Contexte = la page du projet. Retourne un dict « tab » ou « folder »
+  (format de partials/spaces.html, rendu par side-folder.html / tab-link.html).
+
+  Dossier, fermé par défaut, avec l'image du projet :
+  - « Fiche du projet » (la page du projet, renommable avec wiki_tab) ;
+  - les wikis liés ([[linked_wikis]] ref / tab), exception voulue ;
+  - les sous-projets (projets dont `parent` = ce fichier), chacun en entrée
+    à part entière (rendu récursif) ;
+  - un onglet par lien : page générée si le site s'affiche dans la feuille
+    (content/tabs/_content.gotmpl), sinon lien externe.
+  Ce dossier complet n'est visible qu'avec <html data-links="full"> ; par
+  défaut, le projet reste un onglet simple (les liens sont sur sa fiche).
+*/ -}}
+{{- $proj := . -}}
+{{- $base := $proj.File.ContentBaseName -}}
+{{- $img := $proj.Params.image | default "" -}}
+{{- $thumb := partialCached "tab-thumb.html" (dict "path" $img) $img -}}
+{{- $children := (where (where site.RegularPages "Section" "projects") "Params.parent" $base).ByDate -}}
+{{- $out := dict "kind" "tab" "title" $proj.LinkTitle "full" $proj.Title "url" $proj.RelPermalink "thumb" $thumb -}}
+{{- if or $proj.Params.actions $proj.Params.linked_wikis $children -}}
+  {{- $sub := slice (dict "kind" "tab" "title" ($proj.Params.wiki_tab | default (i18n "tab_project")) "url" $proj.RelPermalink "icon" "book") -}}
+  {{- range $proj.Params.linked_wikis -}}
+    {{- $lw := . -}}
+    {{- with site.GetPage (printf "/projects/%s" $lw.ref) -}}
+      {{- $sub = $sub | append (dict "kind" "tab" "title" ($lw.tab | default .Title) "url" .RelPermalink "icon" "book") -}}
+    {{- end -}}
+  {{- end -}}
+  {{- range $children -}}
+    {{- $sub = $sub | append (partial "project-entry.html" .) -}}
+  {{- end -}}
+  {{- $inner := where (where site.RegularPages "Section" "tabs") "Params.project" $base -}}
+  {{- range $proj.Params.actions -}}
+    {{- $fav := partial "favicon-of.html" .url -}}
+    {{- $t := dict "kind" "tab" "title" (.tab | default .label) "url" .url "external" true "thumb" $fav.thumb "icon" $fav.icon -}}
+    {{- range first 1 (where $inner "Params.link" .url) }}{{ $t = merge $t (dict "url" .RelPermalink "external" false) }}{{ end -}}
+    {{- $sub = $sub | append $t -}}
+  {{- end -}}
+  {{- /* Mode simplifié (par défaut) : le dossier s'affiche comme un onglet
+         simple (alt). « also » : pages qui allument cet onglet (onglets
+         intégrés du projet, sous-projets). */ -}}
+  {{- $also := slice -}}
+  {{- range $inner }}{{ $also = $also | append .RelPermalink }}{{ end -}}
+  {{- range $children }}{{ $also = $also | append .RelPermalink }}{{ end -}}
+  {{- /* Exception : un projet à sous-projets (le portfolio et ses thèmes), ses
+         sous-projets, ou sidebar_folder = true, restent des dossiers complets
+         (les anciens thèmes se consultent sans quitter le site). */ -}}
+  {{- $alt := dict -}}
+  {{- if not (or $children $proj.Params.parent $proj.Params.sidebar_folder) -}}
+    {{- $alt = merge $out (dict "also" (delimit $also " ")) -}}
+  {{- end -}}
+  {{- $out = dict "kind" "folder" "id" (printf "p-%s" $base) "name" $proj.LinkTitle "full" $proj.Title "tabs" $sub "thumb" $thumb "closed" true "alt" $alt -}}
+{{- end -}}
+{{- return $out -}}

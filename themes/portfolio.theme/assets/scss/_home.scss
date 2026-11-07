@@ -1,0 +1,138 @@
+// ─────────────────────────────────────────────────────────
+// Accueil : présentation, portes vers les espaces, parcours
+// ─────────────────────────────────────────────────────────
+.hero { display: flex; flex-direction: column; gap: 20px; }
+
+.who { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.who-photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.who-text { min-width: 0; }
+.who-name { font-weight: 600; font-size: 15px; }
+.who-role { font-size: 13px; color: var(--ink-3); }
+
+.status {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--sheet-2);
+  font-size: 12.5px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.status-dot,
+.hero-badge .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 22%, transparent);
+}
+
+.hero-title {
+  font-size: clamp(30px, 5.2vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  max-width: 20ch;
+  em { font-style: normal; color: var(--accent); }
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+
+  li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 14px;
+    color: var(--ink-2);
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 6px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+  }
+}
+
+// Portes : la teinte de chaque espace, ses projets en compteur
+.doors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.door {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 16px;
+  border-radius: var(--r);
+  color: var(--ink);
+  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.2s ease;
+  min-width: 0;
+  &:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+}
+@each $id in (jeux, web, mods) {
+  .door[data-door="#{$id}"] {
+    background: linear-gradient(135deg, var(--sp-#{$id}-a), var(--sp-#{$id}-b));
+    .ico { color: var(--sp-#{$id}-accent); }
+  }
+}
+.door-top { display: flex; align-items: center; justify-content: space-between; .ico { width: 20px; height: 20px; } }
+.door-count { font-family: var(--mono); font-size: 12px; color: var(--ink-2); }
+.door-text { display: flex; flex-direction: column; gap: 2px; }
+.door-text b { font-size: 16px; font-weight: 600; }
+.door-text small { font-size: 13px; color: var(--ink-2); }
+
+// Parcours : une ligne par expérience / formation
+.rows { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.row {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 6px;
+  margin-inline: -6px;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  transition: background 0.15s ease;
+  &:hover { background: var(--sheet-2); }
+  &:hover .row-title { color: var(--accent); }
+}
+.row-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--sheet-2);
+  outline: 1px solid var(--line);
+  outline-offset: -1px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  text-transform: uppercase;
+  img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+}
+.row-main { display: flex; flex-direction: column; min-width: 0; }
+.row-title { font-weight: 500; font-size: 14.5px; }
+.row-sub { font-size: 13px; color: var(--ink-3); }
+.row-date { font-size: 12px; color: var(--ink-3); white-space: nowrap; text-align: right; }
+
+@media (max-width: 700px) {
+  .doors { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .door { flex-direction: row-reverse; justify-content: space-between; align-items: center; gap: 14px; }
+  .door-top { gap: 10px; flex-direction: row-reverse; }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .status { margin-left: 0; }
+  .row { grid-template-columns: 36px minmax(0, 1fr); }
+  .row-date { grid-column: 2; text-align: left; }
+}

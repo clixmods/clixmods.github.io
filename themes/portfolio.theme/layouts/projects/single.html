@@ -19,7 +19,10 @@
 {{- $gPlay := `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>` -}}
 {{- $gCart := `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>` -}}
 {{- $gExt := `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>` -}}
+{{- $gView := `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>` -}}
 {{- $gMore := `<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>` -}}
+
+{{ partial "page-ambient.html" $page }}
 
 <section class="section proj">
   <div class="container">
@@ -38,21 +41,32 @@
         {{- else }}<h1 class="proj-hero-title">{{ $page.Title }}</h1>{{ end }}
         {{- with $P.subtitle }}<p class="proj-hero-sub">{{ . }}</p>{{ end }}
         {{- with $P.actions }}
-        {{- $primary := first 2 . }}{{ $extra := after 2 . }}
+        {{- /* Un lien qui s'affiche dans la feuille (content/tabs/_content.gotmpl)
+               mène à sa page intégrée ; les autres s'ouvrent dans un nouvel onglet.
+               Panier pour les boutiques seulement. */}}
+        {{- $inner := where (where site.RegularPages "Section" "tabs") "Params.project" $page.File.ContentBaseName }}
+        {{- $stores := slice "steam" "switch" "xbox" "playstation" "epic" }}
+        {{- $links := slice }}
+        {{- range . }}
+        {{- $l := dict "type" .type "label" .label "url" .url "primary" .primary "ext" true }}
+        {{- range first 1 (where $inner "Params.link" .url) }}{{ $l = merge $l (dict "url" .RelPermalink "ext" false) }}{{ end }}
+        {{- $links = $links | append $l }}
+        {{- end }}
+        {{- $primary := first 2 $links }}{{ $extra := after 2 $links }}
         <div class="proj-actions">
           {{- range $primary }}
-          {{- $g := $gExt }}{{ if eq .type "youtube" }}{{ $g = $gPlay }}{{ else if .primary }}{{ $g = $gCart }}{{ end }}
-          <a class="proj-action{{ if .primary }} is-primary{{ end }}" data-type="{{ .type }}" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+          {{- $g := $gExt }}{{ if eq .type "youtube" }}{{ $g = $gPlay }}{{ else if in $stores .type }}{{ $g = $gCart }}{{ else if not .ext }}{{ $g = $gView }}{{ end }}
+          <a class="proj-action{{ if .primary }} is-primary{{ end }}" data-type="{{ .type }}" href="{{ .url }}"{{ if .ext }} target="_blank" rel="noopener noreferrer"{{ end }}>
             <span class="proj-action-glyph">{{ $g | safeHTML }}</span>{{ .label }}
           </a>
           {{- end }}
           {{- with $extra }}
           <details class="proj-more">
-            <summary class="proj-action" aria-label="Plus de liens"><span class="proj-action-glyph">{{ $gMore | safeHTML }}</span></summary>
+            <summary class="proj-action" aria-label="{{ i18n "ui_more_links" }}"><span class="proj-action-glyph">{{ $gMore | safeHTML }}</span></summary>
             <div class="proj-more-menu">
               {{- range . }}
-              <a class="proj-more-item" data-type="{{ .type }}" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
-                <span class="proj-action-glyph">{{ $gExt | safeHTML }}</span>{{ .label }}
+              <a class="proj-more-item" data-type="{{ .type }}" href="{{ .url }}"{{ if .ext }} target="_blank" rel="noopener noreferrer"{{ end }}>
+                <span class="proj-action-glyph">{{ (cond .ext $gExt (cond (eq .type "youtube") $gPlay $gView)) | safeHTML }}</span>{{ .label }}
               </a>
               {{- end }}
             </div>
@@ -142,9 +156,21 @@
             {{- with $person }}{{ $name = .Title }}{{ with .Params.avatar }}{{ $avatar = . }}{{ end }}
             {{- else }}{{ $name = .name | default ($pid | humanize | title) }}{{ end -}}
             {{- $roles := .roles }}{{ if and (not $roles) .role }}{{ $roles = slice .role }}{{ end -}}
+            {{- /* Pas de photo : initiales dans une pastille neutre (plus sobre
+                   que l'ancienne image par défaut). */ -}}
+            {{- $hasImg := false -}}
+            {{- if ne $avatar $default -}}
+              {{- if hasPrefix $avatar "http" }}{{ $hasImg = true }}{{ else }}{{ with resources.Get (strings.TrimPrefix "/" $avatar) }}{{ $hasImg = true }}{{ end }}{{ end -}}
+            {{- end -}}
+            {{- $initials := "" -}}
+            {{- range first 2 (split (trim $name " ") " ") }}{{ $initials = printf "%s%s" $initials (substr . 0 1 | upper) }}{{ end -}}
             <div class="contributor{{ if $isMe }} is-me{{ end }}">
+              {{- if $hasImg }}
               {{- $img := partial "get-optimized-image.html" (dict "imagePath" $avatar "width" 120 "quality" 85) }}
-              <img class="contributor-avatar" src="{{ $img.src }}" alt="{{ $name }}" loading="lazy"{{ with $img.width }} width="{{ . }}"{{ end }}{{ with $img.height }} height="{{ . }}"{{ end }} onerror="this.onerror=null;this.src='{{ $default | relURL }}'">
+              <img class="contributor-avatar" src="{{ $img.src }}" alt="{{ $name }}" loading="lazy"{{ with $img.width }} width="{{ . }}"{{ end }}{{ with $img.height }} height="{{ . }}"{{ end }}>
+              {{- else }}
+              <span class="contributor-avatar is-initials" aria-hidden="true">{{ $initials | default "?" }}</span>
+              {{- end }}
               <div>
                 <div class="contributor-name">{{ $name }}{{ if $isMe }}<span class="contributor-me">{{ i18n "proj_you" }}</span>{{ end }}</div>
                 <div class="contributor-roles">{{ with $roles }}{{ delimit . ", " }}{{ end }}</div>

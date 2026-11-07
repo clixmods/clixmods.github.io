@@ -1,54 +1,1127 @@
-// Thème portfolio — interactions légères (vanilla JS)
+// Thème portfolio « Cadre » — interactions (vanilla JS)
+// 1. Coque façon Arc / Zen : barre latérale, dossiers, espaces, onglets
+//    réorganisables, clic droit (thème d'espace), recherche ⌘K, langue.
+// 2. Fonctions des pages : filtres, cartes, témoignages, galerie, compétences.
 (function () {
   "use strict";
 
-  // ── Menu mobile ───────────────────────────────────────
-  var burger = document.querySelector("[data-burger]");
-  var menu = document.querySelector("[data-mobile-menu]");
-  if (burger && menu) {
-    burger.addEventListener("click", function () {
-      var open = menu.classList.toggle("open");
-      burger.classList.toggle("is-open", open);
-      burger.setAttribute("aria-expanded", open ? "true" : "false");
-      document.body.style.overflow = open ? "hidden" : "";
+  var d = document;
+  var html = d.documentElement;
+  var app = d.querySelector("[data-app]");
+  var side = d.querySelector("[data-side]");
+  var overlays = d.querySelector("[data-overlays]");
+  if (!app || !side || !overlays) return;
+
+  var lang = html.getAttribute("data-lang") || "fr";
+  var space = html.getAttribute("data-space") || "home";
+  var L = function (k) { return overlays.getAttribute("data-l-" + k) || ""; };
+  var mqMobile = window.matchMedia("(max-width: 860px)");
+
+  // ── Stockage (tolère un navigateur qui le refuse) ─────
+  var store = {
+    get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+    del: function (k) { try { localStorage.removeItem(k); } catch (e) {} },
+    json: function (k, fb) { try { return JSON.parse(localStorage.getItem(k) || "null") || fb; } catch (e) { return fb; } }
+  };
+
+  // ── Toast ─────────────────────────────────────────────
+  var toastEl = overlays.querySelector("[data-toast]");
+  var toastTimer;
+  // Notification en haut à droite (comme Arc) : icône + message.
+  var toast = function (msg) {
+    if (!toastEl) return;
+    toastEl.innerHTML = '<span class="toast-ico">' + (ICON.ok || "") + "</span><span></span>";
+    toastEl.lastChild.textContent = msg;
+    toastEl.classList.remove("is-out");
+    toastEl.hidden = true;
+    void toastEl.offsetWidth; // relance l'animation d'entrée
+    toastEl.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      toastEl.classList.add("is-out");
+      toastTimer = setTimeout(function () { toastEl.hidden = true; toastEl.classList.remove("is-out"); }, 200);
+    }, 2600);
+  };
+  var copy = function (text, msg) {
+    var done = function () { toast(msg); };
+    try {
+      navigator.clipboard.writeText(text).then(done, function () { toast(text); });
+    } catch (e) { toast(text); }
+  };
+
+  // ── Barre latérale repliée (desktop) / tiroir (mobile) ─
+  var scrim = d.querySelector("[data-scrim]");
+  var setDrawer = function (open) {
+    app.classList.toggle("is-drawer", open);
+    if (scrim) scrim.hidden = !open;
+    d.body.style.overflow = open ? "hidden" : "";
+  };
+  d.querySelectorAll("[data-sidebar-toggle]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var compact = html.classList.toggle("is-compact");
+      store.set("cadre:compact", compact ? "1" : "0");
     });
-    menu.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        menu.classList.remove("open");
-        burger.classList.remove("is-open");
-        document.body.style.overflow = "";
+  });
+  d.querySelectorAll("[data-drawer-open]").forEach(function (b) {
+    b.addEventListener("click", function () { setDrawer(true); });
+  });
+  if (scrim) scrim.addEventListener("click", function () { setDrawer(false); });
+
+  // ── Dossiers ──────────────────────────────────────────
+  var saveFolder = function (id, open) {
+    var all = store.json("cadre:folders", {});
+    all[id] = open;
+    store.set("cadre:folders", JSON.stringify(all));
+  };
+  var setFolder = function (f, open, keep) {
+    f.setAttribute("data-open", open ? "true" : "false");
+    var btn = f.querySelector("[data-folder-toggle]");
+    if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (!keep) saveFolder(f.getAttribute("data-folder"), open);
+  };
+  side.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-folder-toggle]");
+    if (!btn) return;
+    var f = btn.closest("[data-folder]");
+    setFolder(f, f.getAttribute("data-open") !== "true");
+  });
+  // Les filtres d'une page d'espace ouvrent le dossier correspondant.
+  d.addEventListener("click", function (e) {
+    var chip = e.target.closest("[data-folder-link]");
+    if (!chip) return;
+    var f = side.querySelector('[data-folder="' + chip.getAttribute("data-folder-link") + '"]');
+    if (f && f.getAttribute("data-open") !== "true") setFolder(f, true);
+  });
+
+  // ── Onglet courant, espace affiché, défilement mémorisé ─
+  var scroller = side.querySelector("[data-side-scroll]");
+  var markCurrent = function () {
+    side.querySelectorAll('a.tab[aria-current]').forEach(function (a) { a.removeAttribute("aria-current"); });
+    var cur = null;
+    // Un onglet masqué par le mode des projets (data-links) ne compte pas.
+    var full = html.getAttribute("data-links") === "full";
+    var shown = function (a) {
+      if (a.classList.contains("tab-alt")) return !full;
+      return full || !a.closest(".folder[data-project-folder] > .folder-body");
+    };
+    side.querySelectorAll('[data-space-panel="' + space + '"] a.tab').forEach(function (a) {
+      if (!cur && a.origin === location.origin && a.pathname === location.pathname && shown(a)) cur = a;
+    });
+    // Mode simplifié : un onglet intégré ou un sous-projet allume l'onglet du projet.
+    if (!cur) side.querySelectorAll('[data-space-panel="' + space + '"] a.tab[data-also]').forEach(function (a) {
+      if (!cur && shown(a) && a.getAttribute("data-also").split(" ").indexOf(location.pathname) > -1) cur = a;
+    });
+    if (cur) {
+      cur.setAttribute("aria-current", "page");
+      // Le dossier (et ses parents) qui contient la page s'ouvre.
+      for (var f = cur.parentElement.closest("[data-folder]"); f; f = f.parentElement.closest("[data-folder]")) {
+        if (f.getAttribute("data-open") !== "true") setFolder(f, true, true);
+      }
+    }
+    d.querySelectorAll("[data-space-link]").forEach(function (x) {
+      if (x.getAttribute("data-space-link") === space) x.setAttribute("aria-current", "true");
+      else x.removeAttribute("aria-current");
+    });
+    return cur;
+  };
+  var revealCurrent = function () {
+    var cur = side.querySelector('a.tab[aria-current="page"]');
+    if (!cur || !scroller) return;
+    var r = cur.getBoundingClientRect();
+    var s = scroller.getBoundingClientRect();
+    if (r.top < s.top || r.bottom > s.bottom) cur.scrollIntoView({ block: "nearest" });
+  };
+  revealCurrent();
+  window.addEventListener("pagehide", function () {
+    try { if (scroller) sessionStorage.setItem("cadre:scroll:" + space, String(scroller.scrollTop)); } catch (e) {}
+  });
+  // Dernière page vue dans cet espace : on y revient en rechangeant d'espace.
+  // Seulement une page qui a un onglet dans cet espace.
+  var rememberPage = function () {
+    if (!side.querySelector('[data-space-panel="' + space + '"] a.tab[aria-current="page"]')) return;
+    store.set("cadre:last:" + lang + ":" + space, location.pathname + location.search);
+  };
+  rememberPage();
+
+  // ── Mode des projets dans la barre (sélecteur : serveur local seulement) ─
+  var lab = d.querySelector(".links-lab");
+  if (lab) {
+    var showMode = function () {
+      var m = html.getAttribute("data-links") || "simple";
+      lab.querySelectorAll("[data-links-mode]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-links-mode") === m ? "true" : "false"); });
+    };
+    lab.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-links-mode]");
+      if (!b) return;
+      var m = b.getAttribute("data-links-mode");
+      if (m === "full") html.setAttribute("data-links", "full"); else html.removeAttribute("data-links");
+      store.set("cadre:links", m);
+      showMode();
+      markCurrent();
+    });
+    showMode();
+  }
+
+  // ── Glissement entre espaces (comme Arc) ──────────────
+  // L'ancien panneau d'onglets part d'un côté, le nouveau arrive de l'autre,
+  // selon la position des espaces dans le sélecteur ; les teintes du cadre
+  // se fondent (propriétés CSS animées, cf. _tokens.scss).
+  var spaceIndex = function (id) {
+    var ids = Array.prototype.map.call(side.querySelectorAll(".switch [data-space-link]"), function (x) { return x.getAttribute("data-space-link"); });
+    return ids.indexOf(id);
+  };
+  var slideSpaces = function (from, to) {
+    if (from === to || reduceMotion.matches) return;
+    var oldP = side.querySelector('[data-space-panel="' + from + '"]');
+    var newP = side.querySelector('[data-space-panel="' + to + '"]');
+    if (!oldP || !newP || !newP.animate) return;
+    var dir = spaceIndex(to) > spaceIndex(from) ? 1 : -1;
+    var y = scroller ? scroller.scrollTop : 0;
+    // L'ancien panneau reste affiché, posé par-dessus, le temps de partir.
+    oldP.classList.add("is-leaving");
+    oldP.style.top = -y + "px";
+    if (scroller) scroller.scrollTop = 0;
+    var ease = "cubic-bezier(0.32, 0.72, 0, 1)";
+    oldP.animate([{ transform: "none", opacity: 1 }, { transform: "translateX(" + (-dir * 55) + "%)", opacity: 0 }], { duration: 300, easing: ease })
+      .finished.then(function () { oldP.classList.remove("is-leaving"); oldP.style.top = ""; }, function () {});
+    newP.animate([{ transform: "translateX(" + (dir * 55) + "%)", opacity: 0 }, { transform: "none", opacity: 1 }], { duration: 340, easing: ease });
+  };
+
+  // ── Changer d'espace ──────────────────────────────────
+  d.addEventListener("click", function (e) {
+    var a = e.target.closest("[data-space-link]");
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    var id = a.getAttribute("data-space-link");
+    if (id === space) return;
+    // La barre latérale bascule tout de suite (en glissant), la page suit.
+    var from = space;
+    space = id;
+    html.setAttribute("data-space", id);
+    markCurrent();
+    slideSpaces(from, id);
+    if (!side.contains(a)) setDrawer(false);
+    navigate(store.get("cadre:last:" + lang + ":" + id) || a.getAttribute("href"), true, null, id);
+  });
+
+  // ── Onglets réorganisables (glisser-déposer) ──────────
+  // Souris : on glisse dès 6 px de mouvement. Tactile : appui long (400 ms),
+  // puis glisser ; un appui long relâché sans bouger ouvre le menu.
+  var orderKey = function (box) { return "cadre:order:" + lang + ":" + box.getAttribute("data-sortable"); };
+  // Les espaces existent en double (barre latérale + barre mobile) : même ordre.
+  var mirrorSpaces = function (keys) {
+    var m = d.querySelector("[data-space-order]");
+    if (m) keys.forEach(function (k) { var el = m.querySelector('[data-sort-key="' + k + '"]'); if (el) m.appendChild(el); });
+  };
+  var saveOrder = function (box) {
+    var keys = Array.prototype.map.call(box.children, function (k) { return k.getAttribute("data-sort-key"); }).filter(Boolean);
+    store.set(orderKey(box), JSON.stringify(keys));
+    if (box.getAttribute("data-sortable") === "spaces") mirrorSpaces(keys);
+  };
+  var drag = null;
+  var suppressClick = false;
+
+  var itemOf = function (el) {
+    var it = el.closest("[data-sort-key]");
+    return it && it.parentElement && it.parentElement.hasAttribute("data-sortable") ? it : null;
+  };
+  var startDrag = function () {
+    drag.active = true;
+    drag.item.classList.add("is-dragging");
+    html.classList.add("is-sorting");
+    if (drag.item.matches(".folder")) drag.item.querySelector(".folder-head").classList.add("is-dragging");
+  };
+  // Les onglets se rangent à la verticale, les espaces (data-sort-axis="x") à l'horizontale.
+  var moveDrag = function (x, y) {
+    var box = drag.item.parentElement;
+    var kids = Array.prototype.filter.call(box.children, function (k) { return k !== drag.item && k.hasAttribute("data-sort-key"); });
+    var before = null;
+    for (var i = 0; i < kids.length; i++) {
+      var hd = kids[i].matches(".folder") ? kids[i].querySelector(":scope > .folder-head") : kids[i];
+      if (!hd.offsetHeight) hd = kids[i];
+      var r = hd.getBoundingClientRect();
+      if (!r.height) continue;
+      if (drag.axisX ? x < r.left + r.width / 2 : y < r.top + r.height / 2) { before = kids[i]; break; }
+    }
+    if (before !== drag.item.nextElementSibling) box.insertBefore(drag.item, before);
+  };
+  var endDrag = function (cancelled) {
+    if (!drag) return;
+    clearTimeout(drag.timer);
+    if (drag.active) {
+      drag.item.classList.remove("is-dragging");
+      var fh = drag.item.querySelector(".folder-head");
+      if (fh) fh.classList.remove("is-dragging");
+      html.classList.remove("is-sorting");
+      suppressClick = true;
+      setTimeout(function () { suppressClick = false; }, 0);
+      if (!cancelled && drag.moved) saveOrder(drag.item.parentElement);
+      else if (!cancelled && drag.touch) openMenu(drag.x, drag.y, drag.target);
+    }
+    drag = null;
+  };
+
+  side.addEventListener("pointerdown", function (e) {
+    if (e.button !== 0) return;
+    var item = itemOf(e.target);
+    if (!item) return;
+    // Appui dans le contenu d'un dossier, hors d'un onglet : on ne déplace pas le dossier.
+    var inner = e.target.closest(".folder-inner");
+    if (inner && item.matches(".folder") && item.contains(inner)) return;
+    var touch = e.pointerType !== "mouse";
+    var axisX = item.parentElement.getAttribute("data-sort-axis") === "x";
+    drag = { item: item, target: e.target, x: e.clientX, y: e.clientY, y0: e.clientY, active: false, moved: false, touch: touch, id: e.pointerId, axisX: axisX };
+    if (touch) {
+      drag.timer = setTimeout(function () {
+        if (!drag) return;
+        startDrag();
+        if (navigator.vibrate) { try { navigator.vibrate(8); } catch (err) {} }
+      }, 400);
+    }
+  });
+  window.addEventListener("pointermove", function (e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var dy = Math.abs(e.clientY - drag.y0);
+    var dx = Math.abs(e.clientX - drag.x);
+    if (!drag.active) {
+      // Tactile : bouger avant l'appui long = défiler, pas glisser.
+      if (drag.touch) { if (dy > 8 || dx > 8) { clearTimeout(drag.timer); drag = null; } return; }
+      if ((drag.axisX ? dx : dy) < 6) return;
+      startDrag();
+    }
+    drag.moved = true;
+    moveDrag(e.clientX, e.clientY);
+  });
+  window.addEventListener("pointerup", function (e) { if (drag && e.pointerId === drag.id) endDrag(false); });
+  window.addEventListener("pointercancel", function () { endDrag(true); });
+  // Pendant un glisser tactile, la page ne doit pas défiler.
+  side.addEventListener("touchmove", function (e) { if (drag && drag.active) e.preventDefault(); }, { passive: false });
+  side.addEventListener("click", function (e) {
+    if (suppressClick) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
+  side.addEventListener("dragstart", function (e) { if (e.target.closest(".tab, .sp")) e.preventDefault(); });
+
+  var resetBox = function (box) {
+    store.del(orderKey(box));
+    var orig = [];
+    try { orig = JSON.parse(box.getAttribute("data-orig") || "[]"); } catch (e) {}
+    var kids = {};
+    Array.prototype.forEach.call(box.children, function (k) { if (k.dataset.sortKey) kids[k.dataset.sortKey] = k; });
+    orig.forEach(function (key) { if (kids[key]) box.appendChild(kids[key]); });
+    if (box.getAttribute("data-sortable") === "spaces") mirrorSpaces(orig);
+  };
+  // spaceId = "spaces" : rétablit l'ordre des espaces eux-mêmes.
+  var resetOrder = function (spaceId) {
+    if (spaceId === "spaces") {
+      var sw = side.querySelector('[data-sortable="spaces"]');
+      if (sw) resetBox(sw);
+      return;
+    }
+    var panel = side.querySelector('[data-space-panel="' + spaceId + '"]');
+    if (panel) panel.querySelectorAll("[data-sortable]").forEach(resetBox);
+  };
+
+  // ── Menu contextuel (clic droit / appui long) ─────────
+  var menu = overlays.querySelector("[data-ctx-menu]");
+  // Icônes Ionicons rendues par Hugo (gabarit dans overlays.html)
+  var ICON = {};
+  var icoTpl = overlays.querySelector("[data-icons]");
+  if (icoTpl) {
+    Array.prototype.forEach.call(icoTpl.content.querySelectorAll("[data-i]"), function (n) { ICON[n.getAttribute("data-i")] = n.innerHTML; });
+  }
+  var closeMenu = function () { if (menu) menu.hidden = true; };
+  var place = function (el, x, y) {
+    el.hidden = false;
+    var w = el.offsetWidth, h = el.offsetHeight;
+    var vw = window.innerWidth, vh = window.innerHeight;
+    el.style.left = Math.max(8, Math.min(x, vw - w - 8)) + "px";
+    el.style.top = Math.max(8, Math.min(y, vh - h - 8)) + "px";
+  };
+  var openMenu = function (x, y, target) {
+    if (!menu) return;
+    var items = [];
+    var tab = target && target.closest ? target.closest("a.tab") : null;
+    var mail = target && target.closest ? target.closest("[data-email]") : null;
+    var spBtn = target && target.closest ? target.closest("[data-space-link]") : null;
+    var themeSpace = spBtn ? spBtn.getAttribute("data-space-link") : html.getAttribute("data-space");
+    if (tab) {
+      items.push({ icon: ICON.open, label: L("new-tab"), run: function () { window.open(tab.href, "_blank", "noopener"); } });
+      items.push({ icon: ICON.link, label: L("copy-link"), run: function () { copy(tab.href, L("link-copied")); } });
+      items.push("sep");
+    }
+    if (mail) {
+      items.push({ icon: ICON.mail, label: L("copy-email"), run: function () { copy(mail.getAttribute("data-email"), L("email-copied")); } });
+      items.push("sep");
+    }
+    items.push({ icon: ICON.palette, label: L("theme"), run: function () { openTheme(themeSpace, x, y); } });
+    items.push({ icon: ICON.reset, label: L("reset-order"), run: function () { resetOrder(spBtn ? "spaces" : themeSpace); } });
+    menu.innerHTML = "";
+    items.forEach(function (it) {
+      if (it === "sep") { var s = d.createElement("div"); s.className = "pop-sep"; menu.appendChild(s); return; }
+      var b = d.createElement("button");
+      b.type = "button";
+      b.className = "pop-item";
+      b.setAttribute("role", "menuitem");
+      b.innerHTML = it.icon + "<span></span>";
+      b.querySelector("span").textContent = it.label;
+      b.addEventListener("click", function () { closeMenu(); it.run(); });
+      menu.appendChild(b);
+    });
+    var note = d.createElement("p");
+    note.className = "pop-note";
+    note.textContent = L("hint");
+    menu.appendChild(note);
+    place(menu, x, y);
+    var first = menu.querySelector("button");
+    if (first) first.focus({ preventScroll: true });
+  };
+  [side, d.querySelector(".m-switch")].forEach(function (zone) {
+    if (!zone) return;
+    zone.addEventListener("contextmenu", function (e) {
+      // Les champs et la recherche gardent le menu natif.
+      if (e.target.closest("input, textarea")) return;
+      e.preventDefault();
+      if (drag && drag.touch) return; // l'appui long tactile gère son propre menu
+      openMenu(e.clientX, e.clientY, e.target);
+    });
+  });
+
+  // ── Éditeur de thème d'espace ─────────────────────────
+  var themePop = overlays.querySelector("[data-theme-pop]");
+  var DEFAULTS = {
+    home: { a: "#cfd8f6", b: "#f3d3da", accent: "#3f5bd8" },
+    jeux: { a: "#e2d4f4", b: "#f6d6e2", accent: "#7a3fc4" },
+    web: { a: "#d3e6dc", b: "#ece8d2", accent: "#2f7d5b" },
+    mods: { a: "#f2e0c8", b: "#efd5cf", accent: "#b0552c" }
+  };
+  var PRESETS = [
+    { a: "#cfd8f6", b: "#f3d3da", accent: "#3f5bd8" },
+    { a: "#e2d4f4", b: "#f6d6e2", accent: "#7a3fc4" },
+    { a: "#d3e6dc", b: "#ece8d2", accent: "#2f7d5b" },
+    { a: "#f2e0c8", b: "#efd5cf", accent: "#b0552c" },
+    { a: "#cde7ef", b: "#d8e0f6", accent: "#1f6f8b" },
+    { a: "#f6d3cf", b: "#f3e3c4", accent: "#c0392b" },
+    { a: "#dff0c8", b: "#cfe9e1", accent: "#4b7d1f" },
+    { a: "#f4d6ea", b: "#dcd3f4", accent: "#b03a87" },
+    { a: "#e4e5ea", b: "#d7d9e0", accent: "#2b2f3a" },
+    { a: "#f7ebc3", b: "#f2d6c9", accent: "#a06a00" },
+    { a: "#d4dcf0", b: "#c9e6e6", accent: "#355c9e" },
+    { a: "#ece1d6", b: "#e2d9e9", accent: "#7a5537" }
+  ];
+  var applyTheme = function (id, v) {
+    var st = html.style;
+    ["a", "b", "accent"].forEach(function (k) {
+      var light = "--th-" + id + "-" + k, dark = "--thd-" + id + "-" + k;
+      if (v && v[k]) {
+        st.setProperty(light, v[k]);
+        st.setProperty(dark, k === "accent"
+          ? "color-mix(in oklab, " + v[k] + " 62%, #ffffff)"
+          : "color-mix(in oklab, " + v[k] + " 24%, #121318)");
+      } else { st.removeProperty(light); st.removeProperty(dark); }
+    });
+    var INK = { fi: "#f6f7fb", fi2: "rgba(246, 247, 251, 0.66)", th: "rgba(255, 255, 255, 0.16)", ta: "rgba(255, 255, 255, 0.26)" };
+    Object.keys(INK).forEach(function (k) {
+      if (v && v.ink === "light") st.setProperty("--th-" + id + "-" + k, INK[k]);
+      else st.removeProperty("--th-" + id + "-" + k);
+    });
+    // Intensité de la couleur du cadre (0 à 2) et grain (0 à 1)
+    var fx = { intensity: "int", grain: "grain" };
+    Object.keys(fx).forEach(function (k) {
+      var name = "--th-" + id + "-" + fx[k];
+      if (v && typeof v[k] === "number") st.setProperty(name, String(v[k]));
+      else st.removeProperty(name);
+    });
+  };
+  var themeSpaceId = null;
+  var KEYS = ["a", "b", "accent"];
+  // Couleur ⇄ position dans la zone de l'éditeur (comme Arc) :
+  // x = teinte (0 → 360°), y = intensité (0 = vif en haut, 1 = pâle en bas).
+  // Les couleurs du cadre restent claires ; l'accent reste lisible.
+  var clamp = function (n, lo, hi) { return Math.max(lo, Math.min(hi, n)); };
+  var hslToHex = function (h, s, l) {
+    s /= 100; l /= 100;
+    var k = function (n) { return (n + h / 30) % 12; };
+    var a = s * Math.min(l, 1 - l);
+    var f = function (n) {
+      var c = l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+      return ("0" + Math.round(c * 255).toString(16)).slice(-2);
+    };
+    return "#" + f(0) + f(8) + f(4);
+  };
+  var hexToHsl = function (hex) {
+    var n = parseInt(String(hex).slice(1), 16) || 0;
+    var r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255;
+    var mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, h = 0, s = 0;
+    if (mx !== mn) {
+      var df = mx - mn;
+      s = l > 0.5 ? df / (2 - mx - mn) : df / (mx + mn);
+      h = mx === r ? (g - b) / df + (g < b ? 6 : 0) : mx === g ? (b - r) / df + 2 : (r - g) / df + 4;
+      h *= 60;
+    }
+    return { h: h, s: s * 100, l: l * 100 };
+  };
+  var colorAt = function (k, p) {
+    var t = 1 - p.y;
+    return k === "accent"
+      ? hslToHex(p.x * 360, 30 + 52 * t, 30 + 22 * p.y)
+      : hslToHex(p.x * 360, 25 + 67 * t, 93 - 33 * t);
+  };
+  var posOf = function (k, hex) {
+    var c = hexToHsl(hex);
+    var t = k === "accent" ? (c.s - 30) / 52 : (c.s - 25) / 67;
+    return { x: c.h / 360, y: 1 - clamp(t, 0, 1) };
+  };
+
+  var pad = themePop ? themePop.querySelector("[data-theme-pad]") : null;
+  var handles = {};
+  if (pad) KEYS.forEach(function (k) { handles[k] = pad.querySelector('[data-handle="' + k + '"]'); });
+  var pos = {};
+  var linked = false;
+  var fxInputs = themePop ? {
+    intensity: themePop.querySelector("[data-theme-intensity]"),
+    grain: themePop.querySelector("[data-theme-grain]")
+  } : {};
+  var currentTheme = function (id) {
+    var all = store.json("cadre:themes", {});
+    var base = DEFAULTS[id] || DEFAULTS.home;
+    var v = all[id] || {};
+    return {
+      a: v.a || base.a, b: v.b || base.b, accent: v.accent || base.accent,
+      intensity: typeof v.intensity === "number" ? v.intensity : 1,
+      grain: typeof v.grain === "number" ? v.grain : 0
+    };
+  };
+  // Nouvelles couleurs en gardant l'intensité et le grain choisis.
+  var withFx = function (id, colors) {
+    var cur = currentTheme(id);
+    colors.intensity = cur.intensity;
+    colors.grain = cur.grain;
+    return colors;
+  };
+  // Fond du cadre trop foncé (couleurs vives, intensité forte) : texte clair.
+  // Clarté OKLab approchée par la racine cubique de la luminance, corrigée
+  // comme dans _tokens.scss (mélange au neutre sous 1, assombri au-delà).
+  var lightness = function (hex) {
+    var n = parseInt(String(hex).slice(1), 16) || 0;
+    var lin = function (c) { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+    var y = 0.2126 * lin(n >> 16 & 255) + 0.7152 * lin(n >> 8 & 255) + 0.0722 * lin(n & 255);
+    return Math.cbrt(y);
+  };
+  var inkFor = function (v) {
+    var i = typeof v.intensity === "number" ? v.intensity : 1;
+    var l = (lightness(v.a) + lightness(v.b)) / 2;
+    l = l * Math.min(i, 1) + 0.95 * (1 - Math.min(i, 1)) - Math.max(0, i - 1) * 0.16;
+    return l < 0.66 ? "light" : "dark";
+  };
+  var saveTheme = function (id, v) {
+    var all = store.json("cadre:themes", {});
+    if (v) v.ink = inkFor(v);
+    if (v) all[id] = v; else delete all[id];
+    store.set("cadre:themes", JSON.stringify(all));
+    applyTheme(id, v);
+  };
+  var paintHandles = function (v) {
+    KEYS.forEach(function (k) {
+      var h = handles[k], p = pos[k];
+      if (!h || !p) return;
+      h.style.left = (p.x * 100) + "%";
+      h.style.top = (p.y * 100) + "%";
+      h.style.setProperty("--c", v[k]);
+      var dot = themePop.querySelector('[data-dot="' + k + '"]');
+      if (dot) dot.style.background = v[k];
+    });
+  };
+  var markPresets = function (v) {
+    themePop.querySelectorAll(".theme-preset").forEach(function (b, i) {
+      var p = PRESETS[i];
+      b.setAttribute("aria-pressed", p.a === v.a && p.b === v.b && p.accent === v.accent ? "true" : "false");
+    });
+  };
+  var syncThemeUI = function () {
+    if (!themePop || !themeSpaceId) return;
+    var v = currentTheme(themeSpaceId);
+    KEYS.forEach(function (k) { pos[k] = posOf(k, v[k]); });
+    paintHandles(v);
+    if (fxInputs.intensity) fxInputs.intensity.value = Math.round(v.intensity * 100);
+    if (fxInputs.grain) fxInputs.grain.value = Math.round(v.grain * 100);
+    themePop.style.setProperty("--th-preview-a", v.a);
+    var prev = themePop.querySelector("[data-theme-preview]");
+    if (prev) {
+      var mixed = function (k) { return "color-mix(in oklab, var(--sp-" + themeSpaceId + "-" + k + ") calc(min(var(--th-" + themeSpaceId + "-int, 1), 1) * 100%), var(--neutral))"; };
+      prev.style.setProperty("--frame-a", mixed("a"));
+      prev.style.setProperty("--frame-b", mixed("b"));
+      prev.style.setProperty("--accent", "var(--sp-" + themeSpaceId + "-accent)");
+      prev.style.setProperty("--grain", "var(--th-" + themeSpaceId + "-grain, 0)");
+    }
+    markPresets(v);
+  };
+  // Déplacement d'une pastille : couleurs recalculées, enregistrées une fois par image.
+  var frameReq = null;
+  var commitPos = function () {
+    frameReq = null;
+    var v = {};
+    KEYS.forEach(function (k) { v[k] = colorAt(k, pos[k]); });
+    v = withFx(themeSpaceId, v);
+    saveTheme(themeSpaceId, v);
+    paintHandles(v);
+    markPresets(v);
+  };
+  var moveHandle = function (k, x, y) {
+    x = clamp(x, 0, 1); y = clamp(y, 0, 1);
+    if (linked) {
+      // Couleurs liées : les autres pastilles suivent, à même écart.
+      var dx = x - pos[k].x, dy = y - pos[k].y;
+      KEYS.forEach(function (j) {
+        if (j !== k) pos[j] = { x: ((pos[j].x + dx) % 1 + 1) % 1, y: clamp(pos[j].y + dy, 0, 1) };
+      });
+    }
+    pos[k] = { x: x, y: y };
+    KEYS.forEach(function (j) {
+      var h = handles[j];
+      if (h) { h.style.left = (pos[j].x * 100) + "%"; h.style.top = (pos[j].y * 100) + "%"; h.style.setProperty("--c", colorAt(j, pos[j])); }
+    });
+    if (!frameReq) frameReq = requestAnimationFrame(commitPos);
+  };
+  var openTheme = function (id, x, y) {
+    if (!themePop) return;
+    themeSpaceId = id;
+    var sp = d.querySelector('.side [data-space-link="' + id + '"]');
+    var ico = themePop.querySelector("[data-theme-ico]");
+    if (ico) ico.innerHTML = sp ? sp.innerHTML : "";
+    var name = themePop.querySelector("[data-theme-name]");
+    if (name) name.textContent = sp ? sp.getAttribute("title") : "";
+    themePop.style.setProperty("--accent", "var(--sp-" + id + "-accent)");
+    syncThemeUI();
+    place(themePop, x, y);
+  };
+  if (themePop) {
+    var presetBox = themePop.querySelector("[data-theme-presets]");
+    PRESETS.forEach(function (p, i) {
+      var b = d.createElement("button");
+      b.type = "button";
+      b.className = "theme-preset";
+      b.style.setProperty("--pa", p.a);
+      b.style.setProperty("--pb", p.b);
+      b.style.setProperty("--pc", p.accent);
+      b.setAttribute("aria-label", (presetBox.getAttribute("aria-label") || "") + " " + (i + 1));
+      b.addEventListener("click", function () { saveTheme(themeSpaceId, withFx(themeSpaceId, { a: p.a, b: p.b, accent: p.accent })); syncThemeUI(); });
+      presetBox.appendChild(b);
+    });
+    if (pad) {
+      var padDrag = null;
+      pad.addEventListener("pointerdown", function (e) {
+        if (e.button !== 0) return;
+        e.preventDefault();
+        var r = pad.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        var h = e.target.closest("[data-handle]");
+        var k = h ? h.getAttribute("data-handle") : null;
+        if (!k) {
+          // Clic dans la zone : la pastille la plus proche y saute.
+          var best = Infinity;
+          KEYS.forEach(function (j) {
+            var dd = Math.pow((pos[j].x - x) * r.width, 2) + Math.pow((pos[j].y - y) * r.height, 2);
+            if (dd < best) { best = dd; k = j; }
+          });
+          moveHandle(k, x, y);
+        }
+        padDrag = { k: k, r: r, id: e.pointerId };
+        handles[k].classList.add("is-active");
+        handles[k].focus({ preventScroll: true });
+        try { pad.setPointerCapture(e.pointerId); } catch (err) {}
+      });
+      pad.addEventListener("pointermove", function (e) {
+        if (!padDrag || e.pointerId !== padDrag.id) return;
+        moveHandle(padDrag.k, (e.clientX - padDrag.r.left) / padDrag.r.width, (e.clientY - padDrag.r.top) / padDrag.r.height);
+      });
+      var stopPad = function () {
+        if (!padDrag) return;
+        handles[padDrag.k].classList.remove("is-active");
+        padDrag = null;
+      };
+      pad.addEventListener("pointerup", stopPad);
+      pad.addEventListener("pointercancel", stopPad);
+      // Clavier : flèches sur une pastille (Maj = pas plus grand).
+      pad.addEventListener("keydown", function (e) {
+        var h = e.target.closest("[data-handle]");
+        if (!h) return;
+        var k = h.getAttribute("data-handle"), s = e.shiftKey ? 0.08 : 0.02;
+        var mv = { ArrowLeft: [-s, 0], ArrowRight: [s, 0], ArrowUp: [0, -s], ArrowDown: [0, s] }[e.key];
+        if (!mv) return;
+        e.preventDefault();
+        moveHandle(k, pos[k].x + mv[0], pos[k].y + mv[1]);
+      });
+    }
+    // Intensité de la couleur et grain : enregistrés tels quels (0 à 1).
+    Object.keys(fxInputs).forEach(function (k) {
+      var input = fxInputs[k];
+      if (!input) return;
+      input.addEventListener("input", function () {
+        var v = currentTheme(themeSpaceId);
+        v[k] = clamp(parseInt(input.value, 10) / 100, 0, k === "intensity" ? 2 : 1);
+        saveTheme(themeSpaceId, v);
       });
     });
+    var linkBtn = themePop.querySelector("[data-theme-link]");
+    if (linkBtn) linkBtn.addEventListener("click", function () {
+      linked = !linked;
+      linkBtn.setAttribute("aria-pressed", linked ? "true" : "false");
+    });
+    themePop.querySelector("[data-theme-reset]").addEventListener("click", function () { saveTheme(themeSpaceId, null); syncThemeUI(); });
+    themePop.querySelector("[data-theme-close]").addEventListener("click", function () { themePop.hidden = true; });
   }
 
-  // ── Navbar : état « scrolled » ────────────────────────
-  var navbar = document.querySelector("[data-navbar]");
-  if (navbar) {
-    var onScroll = function () {
-      navbar.classList.toggle("scrolled", window.scrollY > 24);
+  // ── Langue (bouton dans la barre d'adresse, remplacée à chaque page) ─
+  d.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-lang-toggle]");
+    if (!btn) return;
+    var pop = btn.parentElement.querySelector("[data-lang-pop]");
+    if (!pop) return;
+    var open = pop.hidden;
+    d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
+    d.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+    pop.hidden = !open;
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open) { var a = pop.querySelector("a"); if (a) a.focus({ preventScroll: true }); }
+  });
+
+  // ── Copier l'adresse (bouton de la barre d'URL) ───────
+  d.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-copy-url]");
+    if (!b) return;
+    var u = b.getAttribute("data-copy-url");
+    // Page du site : l'adresse réelle, avec un éventuel filtre (#pro…).
+    if (u.charAt(0) === "/" || u.indexOf(location.origin) === 0) u = location.href;
+    copy(u, L("url-copied"));
+    b.classList.add("is-copied");
+    setTimeout(function () { b.classList.remove("is-copied"); }, 1400);
+  });
+
+  // ── Essentiels Discord / téléphone : fenêtre avec la valeur à copier ─
+  // Le bouton cliqué fournit tout : data-reveal (type), -value, -text,
+  // -copy-label, -copied (message), -href (lien « Appeler », téléphone).
+  var discordPop = overlays.querySelector("[data-reveal-pop]");
+  var revealFrom = null;
+  var closeDiscord = function () { if (discordPop) discordPop.hidden = true; revealFrom = null; };
+  if (discordPop) {
+    var rv = function (sel) { return discordPop.querySelector(sel); };
+    d.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-reveal]");
+      if (!b) return;
+      if (!discordPop.hidden && revealFrom === b) { closeDiscord(); return; }
+      revealFrom = b;
+      var ga = function (k) { return b.getAttribute("data-reveal-" + k) || ""; };
+      discordPop.setAttribute("data-kind", b.getAttribute("data-reveal"));
+      discordPop.setAttribute("aria-label", b.getAttribute("title") || "");
+      rv("[data-reveal-ico]").innerHTML = (b.querySelector("svg") || {}).outerHTML || "";
+      rv("[data-reveal-text]").textContent = ga("text");
+      rv("[data-reveal-value]").textContent = ga("value");
+      rv("[data-reveal-copy-label]").textContent = ga("copy-label");
+      var call = rv("[data-reveal-call]");
+      call.hidden = !ga("href");
+      if (ga("href")) call.setAttribute("href", ga("href"));
+      var r = b.getBoundingClientRect();
+      place(discordPop, r.left, r.bottom + 8);
+      rv("[data-reveal-copy]").focus({ preventScroll: true });
+    });
+    rv("[data-reveal-copy]").addEventListener("click", function () {
+      var msg = revealFrom ? revealFrom.getAttribute("data-reveal-copied") : "";
+      copy(rv("[data-reveal-value]").textContent, msg || L("id-copied"));
+      closeDiscord();
+    });
+  }
+
+  // Fermeture des menus au clic extérieur / Échap
+  d.addEventListener("pointerdown", function (e) {
+    if (menu && !menu.hidden && !menu.contains(e.target)) closeMenu();
+    if (themePop && !themePop.hidden && !themePop.contains(e.target) && !(menu && menu.contains(e.target))) themePop.hidden = true;
+    if (discordPop && !discordPop.hidden && !discordPop.contains(e.target) && !e.target.closest("[data-reveal]")) closeDiscord();
+    if (!e.target.closest("[data-lang-box]")) {
+      d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
+      d.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+    }
+  });
+
+  // ── Recherche ⌘K ──────────────────────────────────────
+  var pal = overlays.querySelector("[data-palette]");
+  var palInput = pal && pal.querySelector("input");
+  var palList = pal && pal.querySelector(".palette-list");
+  var palEmpty = pal && pal.querySelector("[data-palette-empty]");
+  var index = null, shown = [], sel = 0;
+  var norm = function (s) { return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); };
+  var buildIndex = function () {
+    var seen = {};
+    index = [];
+    side.querySelectorAll("[data-space-panel]").forEach(function (panel) {
+      var spName = panel.getAttribute("aria-label");
+      panel.querySelectorAll("a.tab").forEach(function (a) {
+        if (seen[a.href]) return;
+        seen[a.href] = true;
+        var folder = a.closest("[data-folder]");
+        var kind = spName + (folder ? " · " + folder.querySelector(".folder-head .tab-title").textContent : "");
+        var title = a.querySelector(".tab-title").textContent;
+        index.push({ title: title, kind: kind, href: a.href, ext: a.target === "_blank", ico: a.querySelector(".tab-ico").innerHTML, key: norm(title + " " + kind) });
+      });
+    });
+  };
+  var renderPal = function () {
+    var words = norm(palInput.value.trim()).split(/\s+/).filter(Boolean);
+    shown = index.filter(function (it) { return words.every(function (w) { return it.key.indexOf(w) > -1; }); }).slice(0, 60);
+    if (sel >= shown.length) sel = Math.max(shown.length - 1, 0);
+    palList.innerHTML = "";
+    shown.forEach(function (it, i) {
+      var li = d.createElement("li");
+      li.className = "palette-item";
+      li.id = "pal-" + i;
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", i === sel ? "true" : "false");
+      li.innerHTML = '<span class="tab-ico">' + it.ico + '</span><span class="tab-title"></span><span class="palette-kind"></span>';
+      li.querySelector(".tab-title").textContent = it.title;
+      li.querySelector(".palette-kind").textContent = it.kind;
+      li.addEventListener("click", function () { closePal(); openItem(it); });
+      li.addEventListener("mousemove", function () { if (sel !== i) { sel = i; markPal(); } });
+      palList.appendChild(li);
+    });
+    palEmpty.hidden = shown.length > 0;
+    palInput.setAttribute("aria-activedescendant", shown.length ? "pal-" + sel : "");
+  };
+  var markPal = function () {
+    palList.querySelectorAll(".palette-item").forEach(function (li, i) { li.setAttribute("aria-selected", i === sel ? "true" : "false"); });
+    var cur = palList.children[sel];
+    if (cur) cur.scrollIntoView({ block: "nearest" });
+    palInput.setAttribute("aria-activedescendant", shown.length ? "pal-" + sel : "");
+  };
+  // Un résultat externe (site qui refuse l'intégration) s'ouvre à part.
+  var openItem = function (it) {
+    if (it.ext) window.open(it.href, "_blank", "noopener");
+    else navigate(it.href, true);
+  };
+  var lastFocus = null;
+  var openPal = function () {
+    if (!pal) return;
+    if (!index) buildIndex();
+    lastFocus = d.activeElement;
+    setDrawer(false);
+    pal.hidden = false;
+    palInput.value = "";
+    sel = 0;
+    renderPal();
+    palInput.focus();
+  };
+  var closePal = function () {
+    if (!pal || pal.hidden) return;
+    pal.hidden = true;
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  };
+  if (pal) {
+    d.addEventListener("click", function (e) { if (e.target.closest("[data-palette-open]")) openPal(); });
+    palInput.addEventListener("input", function () { sel = 0; renderPal(); });
+    palInput.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown") { e.preventDefault(); sel = Math.min(sel + 1, shown.length - 1); markPal(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); sel = Math.max(sel - 1, 0); markPal(); }
+      else if (e.key === "Enter" && shown[sel]) { e.preventDefault(); var go = shown[sel]; closePal(); openItem(go); }
+    });
+    pal.addEventListener("click", function (e) { if (e.target === pal) closePal(); });
+  }
+
+  d.addEventListener("keydown", function (e) {
+    if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      if (pal && pal.hidden) openPal(); else closePal();
+      return;
+    }
+    if (e.key === "Escape") {
+      closePal();
+      closeMenu();
+      closeDiscord();
+      if (themePop) themePop.hidden = true;
+      setDrawer(false);
+      d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
+    }
+  });
+
+  // ── Largeur de la barre latérale (poignée sur son bord droit) ─
+  // Glisser pour ajuster, double-clic pour revenir à la largeur d'origine.
+  var grip = side.querySelector("[data-side-resize]");
+  if (grip) {
+    var MIN_W = 200, MAX_W = 480;
+    var rs = null;
+    grip.addEventListener("pointerdown", function (e) {
+      if (e.button !== 0 || mqMobile.matches) return;
+      e.preventDefault();
+      rs = { x: e.clientX, w: side.getBoundingClientRect().width, id: e.pointerId };
+      try { grip.setPointerCapture(e.pointerId); } catch (err) {}
+      html.classList.add("is-resizing");
+    });
+    grip.addEventListener("pointermove", function (e) {
+      if (!rs || e.pointerId !== rs.id) return;
+      var w = Math.round(Math.max(MIN_W, Math.min(MAX_W, rs.w + e.clientX - rs.x)));
+      html.style.setProperty("--side-w", w + "px");
+      rs.last = w;
+    });
+    var endResize = function () {
+      if (!rs) return;
+      if (rs.last) store.set("cadre:width", String(rs.last));
+      rs = null;
+      html.classList.remove("is-resizing");
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    grip.addEventListener("pointerup", endResize);
+    grip.addEventListener("pointercancel", endResize);
+    grip.addEventListener("dblclick", function () {
+      html.style.removeProperty("--side-w");
+      store.del("cadre:width");
+    });
   }
 
-  // ── Reveal au scroll ──────────────────────────────────
-  var reveals = document.querySelectorAll(".reveal");
-  if (reveals.length && "IntersectionObserver" in window) {
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
-    );
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("is-visible"); });
-  }
+  // ── Navigation sans rechargement ──────────────────────
+  // Comme dans un vrai navigateur, seule la page (la feuille) change : la
+  // barre latérale garde son état (défilement, dossiers, survol). La page
+  // suivante est récupérée en fetch, son <main>, son fil d'Ariane et sa barre
+  // d'adresse remplacent ceux en place, puis les fonctions de page repartent.
+  // Tout ce qui n'est pas une page HTML du site, dans la même langue, part en
+  // navigation classique.
+  var pages = {}, pageKeys = [];
+  var keyOf = function (url) { return url.split("#")[0]; };
+  var fetchPage = function (url) {
+    var k = keyOf(url);
+    if (!pages[k]) {
+      pages[k] = fetch(k, { credentials: "same-origin" }).then(function (r) {
+        if (!r.ok || (r.headers.get("content-type") || "").indexOf("text/html") < 0) throw new Error("not-a-page");
+        return r.text();
+      });
+      pages[k].catch(function () { delete pages[k]; });
+      pageKeys.push(k);
+      if (pageKeys.length > 24) delete pages[pageKeys.shift()];
+    }
+    return pages[k];
+  };
+  var softLink = function (a) {
+    if (!a || !a.href || a.hasAttribute("download") || a.hasAttribute("data-lightbox")) return false;
+    if (a.target && a.target !== "_self") return false;
+    if (a.origin !== location.origin || !/^https?:$/.test(a.protocol)) return false;
+    if (a.hasAttribute("hreflang") && a.getAttribute("hreflang") !== lang) return false;
+    if (/\.[a-z0-9]{2,5}$/i.test(a.pathname) && !/\.html?$/i.test(a.pathname)) return false;
+    if (a.closest("[data-no-soft]")) return false;
+    return true;
+  };
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var navSeq = 0;
+  var loadTimer;
+  // Défilement de la page : dans la feuille sur ordinateur (overflow auto,
+  // cf. _shell.scss), sinon la fenêtre (mobile).
+  var sheetEl = d.querySelector(".sheet");
+  var pageScroller = function () { return sheetEl && getComputedStyle(sheetEl).overflowY === "auto" ? sheetEl : null; };
+  var getY = function () { var s = pageScroller(); return s ? s.scrollTop : window.scrollY; };
+  var setY = function (y, smooth) { (pageScroller() || window).scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" }); };
+  var saveScroll = function () {
+    try { history.replaceState({ cadre: 1, y: getY(), space: entrySpace }, ""); } catch (e) {}
+  };
+  var swapNode = function (sel, doc, all) {
+    var olds = d.querySelectorAll(sel), news = doc.querySelectorAll(sel);
+    for (var i = 0; i < olds.length && i < news.length; i++) {
+      olds[i].replaceWith(d.adoptNode(news[i]));
+      if (!all) break;
+    }
+  };
+  var syncHead = function (doc) {
+    d.title = doc.title;
+    ['meta[name="description"]', 'link[rel="canonical"]', 'meta[property="og:title"]', 'meta[property="og:description"]', 'meta[property="og:url"]'].forEach(function (sel) {
+      var o = d.head.querySelector(sel), n = doc.head.querySelector(sel);
+      if (o && n) o.replaceWith(d.adoptNode(n));
+      else if (o) o.remove();
+      else if (n) d.head.appendChild(d.adoptNode(n));
+    });
+    d.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (l) { l.remove(); });
+    doc.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (l) { d.head.appendChild(d.adoptNode(l)); });
+  };
+  var currentPath = location.pathname + location.search;
+  // Espace de la page affichée (celui de son entrée d'historique) : le
+  // sélecteur d'espaces change `space` avant que la page suivante n'arrive.
+  var entrySpace = space;
+
+  // Espace « épinglé » : un onglet ouvert depuis la barre latérale reste dans
+  // l'espace où il est rangé, même si la page appartient à un autre espace
+  // (ex. le wiki du site Living Horizon ouvert depuis le dossier du mod).
+  // Mémorisé par page dans sessionStorage pour le rechargement (head.html).
+  var savePin = function (natural) {
+    try {
+      if (space !== natural) sessionStorage.setItem("cadre:pin", JSON.stringify({ p: location.pathname + location.search, s: space }));
+      else sessionStorage.removeItem("cadre:pin");
+    } catch (e) {}
+  };
+  // Fil d'Ariane d'une page épinglée : l'espace affiché est celui où l'on est.
+  var syncCrumbSpace = function (natural) {
+    if (space === natural) return;
+    var sp = side.querySelector('.switch [data-space-link="' + space + '"]');
+    var links = d.querySelectorAll(".crumb > a");
+    if (!sp || links.length < 2 || links[1].classList.contains("crumb-ext")) return;
+    links[1].textContent = sp.getAttribute("title");
+    links[1].setAttribute("href", sp.getAttribute("href"));
+  };
+  // Rechargement d'une page épinglée (head.html a déjà changé data-space).
+  if (html.hasAttribute("data-natural")) { markCurrent(); syncCrumbSpace(html.getAttribute("data-natural")); }
+  var navigate = function (url, push, restoreY, pin) {
+    var seq = ++navSeq;
+    if (push) saveScroll();
+    clearTimeout(loadTimer);
+    loadTimer = setTimeout(function () { html.classList.add("is-loading"); }, 120);
+    var done = function () { clearTimeout(loadTimer); html.classList.remove("is-loading"); };
+    fetchPage(url).then(function (text) {
+      if (seq !== navSeq) return;
+      var doc = new DOMParser().parseFromString(text, "text/html");
+      var nh = doc.documentElement;
+      var main = doc.getElementById("main");
+      if (!main || !doc.querySelector("[data-app]") || nh.getAttribute("data-lang") !== lang) { location.href = url; return; }
+      var natural = nh.getAttribute("data-space") || "home";
+      var next = pin || natural;
+      var swap = function () {
+        if (push) { try { history.pushState({ cadre: 1, y: 0, space: next }, "", url); } catch (e) { location.href = url; return; } }
+        currentPath = location.pathname + location.search;
+        if (window.CadrePage) window.CadrePage.destroy();
+        syncHead(doc);
+        var from = space;
+        space = next;
+        entrySpace = next;
+        html.setAttribute("data-space", space);
+        slideSpaces(from, space);
+        savePin(natural);
+        html.removeAttribute("data-natural");
+        html.setAttribute("data-kind", nh.getAttribute("data-kind") || "page");
+        applyWide(nh.getAttribute("data-wide") || "false");
+        if (nh.lang) html.lang = nh.lang;
+        swapNode("#main", doc);
+        swapNode(".crumb", doc);
+        syncCrumbSpace(natural);
+        swapNode("[data-urlrow]", doc, true);
+        markCurrent();
+        revealCurrent();
+        rememberPage();
+        closeMenu();
+        setDrawer(false);
+        var target = location.hash ? d.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+        if (restoreY != null) setY(restoreY);
+        else if (target) target.scrollIntoView();
+        else setY(0);
+        if (window.CadrePage) window.CadrePage.init();
+        var m = d.getElementById("main");
+        if (m) { m.setAttribute("tabindex", "-1"); m.focus({ preventScroll: true }); }
+      };
+      // Onglet en arrière-plan : pas de rendu, la transition attendrait.
+      if (d.startViewTransition && !reduceMotion.matches && !d.hidden) {
+        var vt = d.startViewTransition(swap);
+        vt.finished.then(done, done);
+      } else { swap(); done(); }
+    }).catch(function () { if (seq === navSeq) location.href = url; });
+  };
+
+  // Une fois qu'on navigue nous-mêmes, le navigateur ne doit plus restaurer
+  // le défilement de son côté (on le fait à partir de history.state).
+  try {
+    if (!history.state) history.replaceState({ cadre: 1, y: getY(), space: space }, "");
+    history.scrollRestoration = "manual";
+  } catch (e) {}
+  window.addEventListener("popstate", function (e) {
+    // Simple changement d'ancre (#…) sur la même page : rien à recharger.
+    if (location.pathname + location.search === currentPath) return;
+    var st = e.state || {};
+    navigate(location.href, false, typeof st.y === "number" ? st.y : 0, st.space || null);
+  });
+
+  // ── Pleine largeur (comme Notion) ─────────────────────
+  // Le choix du visiteur vaut pour toutes les pages (cadre:wide = "1" / "0") ;
+  // sans choix, c'est le front matter `full_width` de la page (data-wide).
+  var wideBtn = d.querySelector("[data-wide-toggle]");
+  var syncWide = function () {
+    if (wideBtn) wideBtn.setAttribute("aria-pressed", html.getAttribute("data-wide") === "true" ? "true" : "false");
+  };
+  var applyWide = function (fallback) {
+    var wv = store.get("cadre:wide");
+    html.setAttribute("data-wide", wv === "1" ? "true" : wv === "0" ? "false" : fallback);
+    syncWide();
+  };
+  syncWide();
+  if (wideBtn) wideBtn.addEventListener("click", function () {
+    var on = html.getAttribute("data-wide") !== "true";
+    store.set("cadre:wide", on ? "1" : "0");
+    // La largeur glisse en transition CSS (cf. _shell.scss), on la voit s'agrandir.
+    html.setAttribute("data-wide", on ? "true" : "false");
+    syncWide();
+  });
+
+  // ── Précédent / suivant / actualiser (haut de la barre latérale) ─
+  // Actualiser recharge la page affichée sans recharger la barre : le site
+  // intégré (iframe) ou le contenu, refait sans cache, au même défilement.
+  var syncNavBtns = function () {
+    var nav = window.navigation;
+    if (!nav || typeof nav.canGoBack !== "boolean") return; // API Navigation (Chromium)
+    var b = side.querySelector('[data-nav="back"]'), f = side.querySelector('[data-nav="forward"]');
+    if (b) b.disabled = !nav.canGoBack;
+    if (f) f.disabled = !nav.canGoForward;
+  };
+  syncNavBtns();
+  if (window.navigation && window.navigation.addEventListener) window.navigation.addEventListener("currententrychange", syncNavBtns);
+  side.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-nav]");
+    if (!b || b.disabled) return;
+    var k = b.getAttribute("data-nav");
+    if (k === "back") { history.back(); return; }
+    if (k === "forward") { history.forward(); return; }
+    b.classList.remove("is-spinning");
+    void b.offsetWidth;
+    b.classList.add("is-spinning");
+    var fr = d.querySelector("#main iframe.frame");
+    if (fr) { fr.src = fr.src; return; }
+    delete pages[keyOf(location.href)];
+    navigate(location.href, false, getY(), entrySpace);
+  });
+  d.addEventListener("click", function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest("a");
+    if (!softLink(a)) return;
+    // Ancre dans la page courante : le navigateur s'en charge.
+    if (a.pathname + a.search === location.pathname + location.search && a.hash) return;
+    e.preventDefault();
+    if (a.href === location.href) { setY(0, true); return; }
+    // Onglet de la barre latérale : on reste dans son espace.
+    var panel = a.closest("[data-space-panel]");
+    navigate(a.href, true, null, panel ? panel.getAttribute("data-space-panel") : null);
+  });
+  // Préchargement au survol (et au toucher) : la page suivante est souvent
+  // déjà là au moment du clic.
+  var hoverTimer, hoverLink;
+  d.addEventListener("mouseover", function (e) {
+    var a = e.target.closest && e.target.closest("a");
+    if (a === hoverLink) return;
+    hoverLink = a;
+    clearTimeout(hoverTimer);
+    if (!softLink(a) || keyOf(a.href) === keyOf(location.href)) return;
+    hoverTimer = setTimeout(function () { fetchPage(a.href).catch(function () {}); }, 70);
+  });
+  d.addEventListener("touchstart", function (e) {
+    var a = e.target.closest && e.target.closest("a");
+    if (softLink(a) && keyOf(a.href) !== keyOf(location.href)) fetchPage(a.href).catch(function () {});
+  }, { passive: true });
+})();
+
+// Les fonctions des pages sont relancées à chaque changement de page (la
+// coque ne se recharge pas) : window.CadrePage.init() / destroy(). Les
+// écouteurs posés sur document/window passent par sig() pour être retirés,
+// les minuteurs et observateurs s'enregistrent dans cleanups.
+(function () {
+  "use strict";
+  var ctl = null;
+  var cleanups = [];
+  var sig = function (o) { var r = o || {}; if (ctl) r.signal = ctl.signal; return r; };
+  var destroy = function () {
+    if (ctl) ctl.abort();
+    ctl = null;
+    cleanups.splice(0).forEach(function (f) { try { f(); } catch (e) {} });
+    document.body.style.overflow = "";
+  };
+  var init = function () {
+  destroy();
+  ctl = typeof AbortController === "function" ? new AbortController() : null;
 
   // ── Barres de filtres génériques (facettes) ───────────────
   // Contrat de markup :
@@ -204,6 +1277,13 @@
       chips.forEach(function (c) {
         c.classList.toggle("active", isSelected(c.getAttribute("data-facet"), c.getAttribute("data-value")));
       });
+      // Valeur choisie posée sur la grille (data-active-<facette>) : le CSS
+      // masque alors le badge de catégorie des cartes, devenu redondant.
+      document.querySelectorAll('[data-filter-group="' + id + '"]').forEach(function (g) {
+        Object.keys(state).forEach(function (f) {
+          if (modes[f] === "single") g.setAttribute("data-active-" + f, state[f] || "all");
+        });
+      });
       updateCounts();
       updateIndicators();
     };
@@ -211,7 +1291,8 @@
     var writeHash = function () {
       if (!hashFacet || !history.replaceState) return;
       var v = state[hashFacet];
-      history.replaceState(null, "",
+      // On garde l'état (défilement, espace) posé par la navigation.
+      history.replaceState(history.state, "",
         (!v || v === defaults[hashFacet]) ? location.pathname + location.search : "#" + v);
     };
 
@@ -286,7 +1367,7 @@
   // rien ne tourne quand l'onglet est en arrière-plan.
   var techRotators = document.querySelectorAll("[data-tech-rotate]");
   if (techRotators.length) {
-    setInterval(function () {
+    var rotTimer = setInterval(function () {
       if (document.hidden) return;
       techRotators.forEach(function (wrap) {
         if (wrap.closest(".project-card").matches(":hover")) return;
@@ -300,6 +1381,7 @@
         sets[next].removeAttribute("aria-hidden");
       });
     }, 3500);
+    cleanups.push(function () { clearInterval(rotTimer); });
   }
 
   // ── Carrousel témoignages (un à la fois, auto-défilement) ──
@@ -486,7 +1568,7 @@
         resizeQueued = false;
         updateMore();
       });
-    }, { passive: true });
+    }, sig({ passive: true }));
 
     testi.addEventListener("mouseenter", function () { setHalt("hover", true); });
     testi.addEventListener("mouseleave", function () { setHalt("hover", false); });
@@ -495,13 +1577,16 @@
     // carrousel anime et repeint en continu, même quand le visiteur est trois
     // écrans plus bas ou a changé d'onglet.
     if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (entries) {
+      var io = new IntersectionObserver(function (entries) {
         setHalt("view", !entries[0].isIntersecting);
-      }, { threshold: 0 }).observe(testi);
+      }, { threshold: 0 });
+      io.observe(testi);
+      cleanups.push(function () { io.disconnect(); });
     }
     document.addEventListener("visibilitychange", function () {
       setHalt("tab", document.hidden);
-    });
+    }, sig());
+    cleanups.push(function () { clearTimeout(timer); });
 
     updateMore();
     schedule();
@@ -510,6 +1595,11 @@
   // ── Lightbox galerie projet (avec navigation) ─────────
   var lb = document.querySelector("[data-lightbox-overlay]");
   if (lb) {
+    // Sortie de la feuille (sinon la barre du haut, collante, passe
+    // par-dessus) ; posée sur la zone de la feuille, la barre latérale reste
+    // visible. Retirée au changement de page.
+    document.body.appendChild(lb);
+    cleanups.push(function () { lb.remove(); });
     var lbImg = lb.querySelector("img");
     var lbPrev = lb.querySelector("[data-lightbox-prev]");
     var lbNext = lb.querySelector("[data-lightbox-next]");
@@ -571,7 +1661,7 @@
       if (e.key === "Escape") closeLb();
       else if (e.key === "ArrowLeft") go(-1);
       else if (e.key === "ArrowRight") go(1);
-    });
+    }, sig());
   }
 
   // ── Galeries : bouton « voir plus » ───────────────────
@@ -592,6 +1682,19 @@
     var skillPanel = skillModal.querySelector(".skill-modal-panel");
     var lastFocused = null;
 
+    // Sur ordinateur, la modale recouvre la feuille seulement (pas la barre).
+    var placeSkill = function () {
+      var sh = document.querySelector(".sheet");
+      var st = skillModal.style;
+      if (!sh || !window.matchMedia("(min-width: 861px)").matches) { st.top = st.left = st.width = st.height = ""; st.inset = ""; return; }
+      // Sous la barre de la feuille (fil d'Ariane), qui reste visible.
+      var r = sh.getBoundingClientRect();
+      var bar = sh.querySelector(".sheet-bar");
+      var top = bar ? Math.max(r.top, bar.getBoundingClientRect().bottom) : r.top;
+      st.inset = "auto";
+      st.top = top + "px"; st.left = r.left + "px";
+      st.width = r.width + "px"; st.height = (r.bottom - top) + "px";
+    };
     var closeSkill = function () {
       skillModal.hidden = true;
       skillModal.classList.remove("open");
@@ -599,6 +1702,8 @@
       document.body.style.overflow = "";
       if (lastFocused) lastFocused.focus();
     };
+    cleanups.push(function () { document.body.style.overflow = ""; });
+    window.addEventListener("resize", function () { if (!skillModal.hidden) placeSkill(); }, sig());
 
     var openSkill = function (btn) {
       var key = btn.getAttribute("data-skill");
@@ -607,6 +1712,12 @@
       lastFocused = btn;
       skillContent.textContent = "";
       skillContent.appendChild(tpl.content.cloneNode(true));
+      var list = skillContent.querySelector("[data-proj-list]");
+      if (list) list.getAttribute("data-proj-list").split(" ").forEach(function (id) {
+        var c = id && document.querySelector('template[data-proj-card="' + id + '"]');
+        if (c) list.appendChild(c.content.cloneNode(true));
+      });
+      placeSkill();
       skillModal.hidden = false;
       // Laisse le navigateur appliquer `hidden = false` avant la transition
       requestAnimationFrame(function () { skillModal.classList.add("open"); });
@@ -626,6 +1737,10 @@
     document.addEventListener("keydown", function (e) {
       if (skillModal.hidden) return;
       if (e.key === "Escape") closeSkill();
-    });
+    }, sig());
   }
+  };
+
+  window.CadrePage = { init: init, destroy: destroy };
+  init();
 })();

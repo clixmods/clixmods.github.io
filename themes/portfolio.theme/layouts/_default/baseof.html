@@ -1,21 +1,89 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.LanguageCode | default .Site.Language.Lang }}">
+{{- $sd := partial "site-data.html" . -}}
+{{- $space := partial "space-of.html" . -}}
+{{- $spaces := partialCached "spaces.html" . site.Language.Lang -}}
+{{- $ctx := dict "page" . "sd" $sd "space" $space "spaces" $spaces -}}
+{{- $spaceName := "" -}}{{- range $spaces }}{{ if eq .id $space }}{{ $spaceName = .name }}{{ end }}{{ end -}}
+<html lang="{{ .Site.Language.LanguageCode | default .Site.Language.Lang }}" data-space="{{ $space }}" data-lang="{{ .Site.Language.Lang }}" data-kind="{{ if .Params.frame }}frame{{ else }}page{{ end }}" data-wide="{{ if .Params.full_width }}true{{ else }}false{{ end }}">
 <head>
   {{ partial "head.html" . }}
 </head>
 <body>
-  {{ partial "blueprint-bg.html" . }}
+  <div class="app" data-app>
+    <div class="side-hotzone" aria-hidden="true"></div>
+    {{ partial "sidebar.html" $ctx }}
+    <div class="scrim" data-scrim hidden></div>
 
-  {{- $sd := partial "site-data.html" . -}}
-  {{- $ctx := dict "page" . "sd" $sd -}}
+    <div class="sheet-wrap">
+      {{/* Mobile : barre d'adresse + langue, puis les espaces */}}
+      <div class="m-bar">
+        <button type="button" class="icon-btn" data-drawer-open aria-label="{{ i18n "ui_open_tabs" }}" aria-controls="side">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg>
+        </button>
+        <div class="urlrow" data-urlrow>{{ partial "urlbar.html" . }}</div>
+      </div>
+      <nav class="m-switch" data-space-order aria-label="{{ i18n "ui_spaces" }}">
+        {{- range $spaces }}
+        <a class="sp" href="{{ .url }}" data-space-link="{{ .id }}" data-sort-key="space:{{ .id }}"{{ if eq .id $space }} aria-current="true"{{ end }}>{{ partial "icon.html" .icon }}<span>{{ .name }}</span></a>
+        {{- end }}
+      </nav>
+      {{- /* Même ordre d'espaces que la barre latérale (choisi par le visiteur). */}}
+      <script>
+      (function () {
+        try {
+          var box = document.querySelector("[data-space-order]");
+          var o = JSON.parse(localStorage.getItem("cadre:order:" + document.documentElement.getAttribute("data-lang") + ":spaces") || "null");
+          if (box && o) o.forEach(function (k) { var el = box.querySelector('[data-sort-key="' + k + '"]'); if (el) box.appendChild(el); });
+        } catch (e) {}
+      })();
+      </script>
 
-  {{ partial "navbar.html" $ctx }}
+      <div class="sheet">
+        <div class="sheet-bar">
+          <button type="button" class="icon-btn show-side" data-sidebar-toggle aria-label="{{ i18n "ui_show_sidebar" }}" title="{{ i18n "ui_show_sidebar" }}">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg>
+          </button>
+          {{- with .Params.link | default .Params.frame }}
+          {{- /* Onglet qui affiche un autre site : le fil montre ce site. */}}
+          {{- $u := urls.Parse (cond (hasPrefix . "/") (absURL .) .) }}
+          <div class="crumb">
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $u.Host }}</a>
+            {{- with strings.Trim $u.Path "/" }}<span class="crumb-sep">/</span><b>{{ . }}</b>{{ end }}
+            <a class="icon-btn crumb-ext" href="{{ . }}" target="_blank" rel="noopener noreferrer" title="{{ i18n "frame_open" }}" aria-label="{{ i18n "frame_open" }}">{{ partial "icon.html" "open-outline" }}</a>
+          </div>
+          {{- else }}
+          <div class="crumb">
+            <a href="{{ relLangURL "/" }}">{{ strings.TrimSuffix "/" (strings.TrimPrefix "http://" (strings.TrimPrefix "https://" site.Home.Permalink)) }}</a>
+            {{- if and (not .IsHome) (ne $space "home") (ne .Type "space") }}<span class="crumb-sep">/</span><a href="{{ range $spaces }}{{ if eq .id $space }}{{ .url }}{{ end }}{{ end }}">{{ $spaceName }}</a>{{ end }}
+            <span class="crumb-sep">/</span><b>{{ if .IsHome }}{{ i18n "space_home" }}{{ else }}{{ .Title }}{{ end }}</b>
+          </div>
+          {{- end }}
+          {{- /* Pleine largeur (comme Notion) : par page, mémorisé par visiteur ;
+                 `full_width = true` dans le front matter l'active d'office. */}}
+          <button type="button" class="icon-btn wide-toggle" data-wide-toggle aria-pressed="false" title="{{ i18n "ui_full_width" }}" aria-label="{{ i18n "ui_full_width" }}">
+            {{- partial "icon.html" (dict "name" "expand-outline" "class" "is-off") -}}
+            {{- partial "icon.html" (dict "name" "contract-outline" "class" "is-on") -}}
+          </button>
+        </div>
 
-  <main>
-    {{ block "main" $ctx }}{{ end }}
-  </main>
+        <main class="sheet-body" id="main">
+          {{ block "main" $ctx }}{{ end }}
+        </main>
 
-  {{ partial "footer.html" $ctx }}
+      </div>
+    </div>
+  </div>
+
+  {{ partial "overlays.html" $ctx }}
+  {{- /* Choix du mode des projets dans la barre (serveur local seulement) :
+         simplifié (par défaut, en ligne) ou complet (dossiers, gardé de côté). */}}
+  {{- if hugo.IsDevelopment }}
+  <div class="links-lab" role="group" aria-label="Projets dans la barre">
+    <span class="links-lab-name">Projets dans la barre</span>
+    <button type="button" data-links-mode="simple">Simplifié</button>
+    <button type="button" data-links-mode="full">Complet</button>
+  </div>
+  {{- end }}
 
   {{- $js := resources.Get "js/main.js" | minify | fingerprint -}}
   <script src="{{ $js.RelPermalink }}" defer></script>

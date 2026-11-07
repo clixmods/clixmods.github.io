@@ -1,144 +1,87 @@
 // ─────────────────────────────────────────────────────────
-// Timeline (expériences / formations) — DA glassmorphism
+// Expériences et formations (listes + en-têtes)
 // ─────────────────────────────────────────────────────────
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-}
+.timeline { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 
 .timeline-item {
-  position: relative;
   display: grid;
-  grid-template-columns: 18px 1fr;
-  gap: 22px;
+  grid-template-columns: 14px minmax(0, 1fr);
+  gap: 18px;
 }
-
-// Rail + ligne verticale
-.timeline-rail { position: relative; display: flex; justify-content: center; }
+.timeline-rail { position: relative; }
 .timeline-rail::before {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 4px;
-  bottom: calc(-1 * var(--gap) - 4px);
-  transform: translateX(-50%);
-  width: 2px;
-  background: linear-gradient(180deg, var(--cold), var(--violet) 60%, var(--warm));
-  opacity: 0.35;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line-2);
 }
-.timeline-item:last-child .timeline-rail::before { display: none; }
-
-.timeline-item.is-hidden { display: none; }
-// Le filtre peut masquer le dernier élément du DOM : le rail doit s'arrêter sur
-// le dernier élément réellement visible (classe posée par le JS de filtrage).
-.timeline-item.is-last-visible .timeline-rail::before { display: none; }
-
+.timeline-item:first-child .timeline-rail::before { top: 30px; }
+.timeline-item.is-last-visible .timeline-rail::before,
+.timeline-item:last-child .timeline-rail::before { bottom: calc(100% - 30px); }
 .timeline-marker {
-  position: relative;
-  z-index: 1;
-  margin-top: 22px;
-  width: 16px;
-  height: 16px;
+  position: absolute;
+  left: 2px;
+  top: 26px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: var(--bg);
-  border: 2px solid var(--cyan);
-  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12), var(--glow-cold);
+  background: var(--sheet);
+  border: 2px solid var(--accent);
 }
 
 .timeline-card {
-  @include glass(var(--r-lg));
-  @include glass-sheen;
-  @include hover-lift;
-  padding: clamp(18px, 2.4vw, 26px);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
 }
 
-.timeline-head {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
+.timeline-head { display: flex; align-items: flex-start; gap: 14px; }
 .timeline-logo {
-  flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--r-md);
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border-radius: 10px;
   object-fit: contain;
-  padding: 7px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--glass-border);
+  background: #fff;
+  outline: 1px solid var(--line);
+  outline-offset: -1px;
 }
-.timeline-headings { flex: 1; min-width: 0; }
-.timeline-title {
-  font-family: var(--font-head);
-  font-weight: 600;
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-  color: #fff;
-}
-.timeline-org {
-  font-size: 0.9rem;
-  color: var(--cyan);
-  font-weight: 500;
-  margin-top: 2px;
-}
-.timeline-sub {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 12px;
-  margin-top: 8px;
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  span { display: inline-flex; align-items: center; gap: 6px; }
-}
-
+.timeline-headings { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.timeline-title { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+h1.timeline-title { font-size: clamp(26px, 4vw, 36px); letter-spacing: -0.03em; line-height: 1.1; }
+.timeline-org { font-size: 14px; color: var(--ink-2); }
+.timeline-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; font-size: 13px; color: var(--ink-3); margin-top: 2px; }
 .timeline-badge {
-  align-self: flex-start;
-  flex-shrink: 0;
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 5px 12px;
+  flex: none;
+  font-size: 12px;
+  padding: 3px 9px;
   border-radius: var(--r-pill);
-  color: var(--text-soft);
-  background: var(--glass-bg-strong);
-  border: 1px solid var(--glass-border);
-  &.is-done { color: #6ff0b6; background: rgba(16, 185, 129, 0.10); border-color: rgba(16, 185, 129, 0.30); }
+  background: var(--accent-soft);
+  color: var(--accent);
+  white-space: nowrap;
+  &.is-done { background: color-mix(in srgb, var(--ok) 12%, transparent); color: var(--ok); }
 }
-
-.timeline-desc { font-size: 0.9rem; color: var(--text-soft); }
-
+.timeline-desc { font-size: 14.5px; color: var(--ink-2); max-width: 70ch; }
 .timeline-foot {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 12px;
-  margin-top: 2px;
+  .btn { height: 32px; font-size: 13px; }
 }
 
-// En-tête des pages détail (expérience / formation)
-.exp-hero {
-  margin-bottom: var(--gap);
-  .timeline-title { font-size: clamp(1.6rem, 3.2vw, 2.3rem); }
-  .timeline-logo { width: 68px; height: 68px; }
-}
+// En-tête des pages expérience / formation
+.exp-hero { gap: 14px; padding-bottom: 8px; }
+.exp-hero .timeline-logo { width: 56px; height: 56px; border-radius: 12px; }
 
-@media (max-width: 768px) {
-  // L'en-tête passe en multi-lignes tôt pour que le titre ne soit jamais
-  // comprimé entre le logo et le badge sur grands téléphones / petites tablettes.
-  .timeline-head { flex-wrap: wrap; }
-  .timeline-badge { order: 3; margin-top: 4px; }
-  .timeline-headings { flex-basis: calc(100% - 72px); }
-}
-
-@media (max-width: 600px) {
-  // Le rail est masqué : la carte doit occuper une unique colonne pleine largeur.
-  // (Avec `0 1fr`, la carte se replaçait dans la colonne 0 → largeur nulle, tout s'écrasait.)
-  .timeline-item { grid-template-columns: minmax(0, 1fr); gap: 0; }
+@media (max-width: 640px) {
+  .timeline-item { grid-template-columns: minmax(0, 1fr); }
   .timeline-rail { display: none; }
-  .timeline-logo { width: 44px; height: 44px; }
-  .timeline-headings { flex-basis: calc(100% - 60px); }
+  .timeline-head { flex-wrap: wrap; }
 }

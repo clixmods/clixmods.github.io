@@ -27,6 +27,8 @@ featuredInCV = false
 fmContentType = "project-content-type"
 status = "En cours"
 image = "/images/projects/living-horizon/avant-apres-shaders.webp"
+# Onglets du dossier dans la barre latérale
+wiki_tab = "Fiche du mod"
 programming_languages = [ "lang_java" ]
 frameworks_engines = [ "fw_fabric", "fw_quilt", "fw_neoforge", "fw_forge", "fw_stonecutter" ]
 specialties = [
@@ -42,9 +44,14 @@ soft_skills = [
 ]
 tools = [ "tool_gradle", "tool_junit", "tool_github_actions", "tool_github", "tool_claude" ]
 
+[[linked_wikis]]
+ref = "living-horizon-website"
+tab = "Fiche du site"
+
 [[actions]]
 type = "website"
 label = "Voir le site du mod"
+tab = "Site officiel"
 url = "https://mc-skin-creator.github.io/living-horizon-website/"
 primary = true
 fieldGroup = "actions_group"
@@ -52,6 +59,7 @@ fieldGroup = "actions_group"
 [[actions]]
 type = "website"
 label = "Télécharger sur CurseForge"
+tab = "CurseForge"
 url = "https://www.curseforge.com/minecraft/mc-mods/living-horizon"
 primary = false
 fieldGroup = "actions_group"
@@ -66,6 +74,7 @@ fieldGroup = "actions_group"
 [[actions]]
 type = "github"
 label = "Voir sur GitHub"
+tab = "GitHub"
 url = "https://github.com/MC-Skin-Creator/living-horizon"
 primary = false
 fieldGroup = "actions_group"

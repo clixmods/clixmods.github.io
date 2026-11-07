@@ -1,57 +1,14 @@
-{{- /* Projets mis en avant (featured), filtrables par catégorie via onglets. */ -}}
+{{- /* Projets mis en avant (featured), du plus récent au plus ancien. */ -}}
 {{- $featured := where (where site.RegularPages "Section" "projects") "Params.featured" true -}}
-{{- $featured = $featured.ByDate.Reverse -}}
-
-{{- /* Compteurs par catégorie principale (app / jv / mods / tools) */ -}}
-{{- $counts := dict "all" (len $featured) -}}
-{{- range $featured -}}
-  {{- $c := partial "project-cats.html" (.Params.sector | default "") -}}
-  {{- with $c.main -}}
-    {{- $counts = merge $counts (dict . (add (int (index $counts . | default 0)) 1)) -}}
-  {{- end -}}
-{{- end -}}
-
-{{- /* Onglets : catégories réellement présentes, ordre fixe (pas de « tous »).
-       Le premier onglet (Apps & web) est actif par défaut. */ -}}
-{{- $order := slice "app" "jv" "mods" "tools" -}}
-{{- $tabs := slice -}}
-{{- range $order }}
-  {{- if gt (int (index $counts . | default 0)) 0 }}
-    {{- $tabs = $tabs | append (dict "key" . "label" (i18n (printf "cat_%s" .))) }}
-  {{- end }}
+{{- $featured = first 6 $featured.ByDate.Reverse -}}
+{{- with $featured }}
+<section class="sec">
+  <div class="sec-head">
+    <h2>{{ i18n "home_featured" }}</h2>
+    {{- with site.GetPage "/projects" }}<a class="more" href="{{ .RelPermalink }}">{{ i18n "ui_view_all_projects" }}{{ partial "icon.html" "chevron-forward" }}</a>{{ end }}
+  </div>
+  <div class="projects-grid">
+    {{- range . }}{{ partial "project-card.html" (dict "page" .) }}{{ end }}
+  </div>
+</section>
 {{- end }}
-
-<div class="projects-col">
-  <div class="section-head">
-    <div>
-      <span class="section-eyebrow">{{ i18n "ui_featured_projects" }}</span>
-    </div>
-    <a class="btn btn-ghost" href="{{ relLangURL "/projects/" }}">{{ i18n "ui_view_all_projects" }}</a>
-  </div>
-
-  {{- with $featured }}
-  {{- with $tabs }}
-  {{/* Pas de data-filter-hash ici : un #app sur l'accueil ne doit pas détourner
-       cette barre, qui est réservée à la page Projets. */}}
-  <div class="filter-bar filter-bar-compact" data-filter-bar="home-projects"
-       data-filter-items="[data-project]">
-    <div class="filter-mains" role="group" aria-label="{{ i18n "filter_projects_label" }}"
-         data-facet-row="main" data-facet-default="{{ (index . 0).key }}">
-      {{- range $i, $t := . }}
-      <button type="button" class="chip{{ if eq $i 0 }} active{{ end }}"
-              data-facet="main" data-value="{{ $t.key }}">
-        {{ $t.label }}<span class="chip-count" data-facet-count>{{ index $counts $t.key | default 0 }}</span>
-      </button>
-      {{- end }}
-    </div>
-  </div>
-  {{- end }}
-
-  <div class="projects-mosaic" data-filter-group="home-projects">
-    {{- range . }}
-    {{- $size := .Params.tile_size | default "1x1" -}}
-    {{ partial "project-card.html" (dict "page" . "class" (cond (eq $size "2x1") "tile-2x1" "")) }}
-    {{- end }}
-  </div>
-  {{- end }}
-</div>

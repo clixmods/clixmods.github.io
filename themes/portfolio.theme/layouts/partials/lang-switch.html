@@ -1,0 +1,26 @@
+{{- /*
+  Bouton de langue placé à côté de la barre d'adresse : affiche la langue
+  courante (FR) et propose l'autre au clic (page traduite si elle existe,
+  sinon l'accueil de cette langue). Contexte = la page.
+*/ -}}
+{{- $page := . -}}
+{{- $others := slice -}}
+{{- range site.Home.AllTranslations -}}
+  {{- if ne .Language.Lang $page.Language.Lang -}}
+    {{- $target := . -}}
+    {{- $lang := .Language.Lang -}}
+    {{- range $page.Translations }}{{ if eq .Language.Lang $lang }}{{ $target = . }}{{ end }}{{ end -}}
+    {{- $others = $others | append (dict "lang" $lang "name" .Language.LanguageName "url" $target.RelPermalink) -}}
+  {{- end -}}
+{{- end -}}
+<div class="lang" data-lang-box>
+  <button type="button" class="lang-btn" data-lang-toggle aria-haspopup="true" aria-expanded="false"
+          aria-label="{{ i18n "ui_language" }} : {{ $page.Language.LanguageName }}">{{ upper $page.Language.Lang }}</button>
+  {{- with $others }}
+  <div class="pop lang-pop" data-lang-pop hidden>
+    {{- range . }}
+    <a class="pop-item" href="{{ .url }}" hreflang="{{ .lang }}" lang="{{ .lang }}"><b>{{ upper .lang }}</b><span>{{ .name }}</span></a>
+    {{- end }}
+  </div>
+  {{- end }}
+</div>

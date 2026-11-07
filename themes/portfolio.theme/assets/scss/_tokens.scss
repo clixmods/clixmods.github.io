@@ -1,73 +1,149 @@
 // ─────────────────────────────────────────────────────────
-// Design tokens — glassmorphism / blueprint
+// Jetons de design — thème « Cadre »
+// Chaque espace a sa teinte de cadre (deux couleurs) et son accent.
+// Les variables --th-* / --thd-* sont posées par le visiteur
+// (clic droit › Modifier le thème de l'espace) et priment sur les défauts.
 // ─────────────────────────────────────────────────────────
+$spaces: (
+  home: (a: #cfd8f6, b: #f3d3da, accent: #3f5bd8, da: #1b2036, db: #2a1a22, daccent: #8ea2ff),
+  jeux: (a: #e2d4f4, b: #f6d6e2, accent: #7a3fc4, da: #251b35, db: #2e1925, daccent: #c4a2ff),
+  web:  (a: #d3e6dc, b: #ece8d2, accent: #2f7d5b, da: #16261f, db: #22241a, daccent: #6fcf9f),
+  mods: (a: #f2e0c8, b: #efd5cf, accent: #b0552c, da: #2b2116, db: #2b1b19, daccent: #f0a07a),
+);
+
+@mixin light-tokens {
+  @each $id, $c in $spaces {
+    --sp-#{$id}-a: var(--th-#{$id}-a, #{map-get($c, a)});
+    --sp-#{$id}-b: var(--th-#{$id}-b, #{map-get($c, b)});
+    --sp-#{$id}-accent: var(--th-#{$id}-accent, #{map-get($c, accent)});
+  }
+  --sheet: #ffffff;
+  --sheet-2: #f5f6f9;
+  --sheet-3: #eceef3;
+  --ink: #1b1d26;
+  --ink-2: #555a6c;
+  --ink-3: #82879a;
+  --line: rgba(27, 29, 38, 0.08);
+  --line-2: rgba(27, 29, 38, 0.14);
+  --tab-hover-base: rgba(255, 255, 255, 0.42);
+  --tab-active-base: rgba(255, 255, 255, 0.8);
+  --frame-ink-base: #262935;
+  --frame-ink-2-base: rgba(38, 41, 53, 0.6);
+  --frame-line: rgba(38, 41, 53, 0.14);
+  --ok: #1f9d63;
+  --shadow: 0 1px 2px rgba(20, 22, 35, 0.06), 0 8px 28px -12px rgba(20, 22, 35, 0.18);
+  --shadow-pop: 0 24px 60px -18px rgba(20, 22, 35, 0.35), 0 0 0 1px rgba(27, 29, 38, 0.08);
+  --scrim: rgba(15, 17, 26, 0.24);
+  --on-accent: #ffffff;
+}
+
+@mixin dark-tokens {
+  @each $id, $c in $spaces {
+    --sp-#{$id}-a: var(--thd-#{$id}-a, #{map-get($c, da)});
+    --sp-#{$id}-b: var(--thd-#{$id}-b, #{map-get($c, db)});
+    --sp-#{$id}-accent: var(--thd-#{$id}-accent, #{map-get($c, daccent)});
+  }
+  --sheet: #17181e;
+  --sheet-2: #1e2027;
+  --sheet-3: #262830;
+  --ink: #eceef4;
+  --ink-2: #a9aebf;
+  --ink-3: #7a7f90;
+  --line: rgba(255, 255, 255, 0.07);
+  --line-2: rgba(255, 255, 255, 0.13);
+  --tab-hover-base: rgba(255, 255, 255, 0.06);
+  --tab-active-base: rgba(255, 255, 255, 0.11);
+  --frame-ink-base: #e6e8f0;
+  --frame-ink-2-base: rgba(230, 232, 240, 0.55);
+  --frame-line: rgba(230, 232, 240, 0.12);
+  --ok: #43c98a;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+  --shadow-pop: 0 24px 60px -18px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --scrim: rgba(0, 0, 0, 0.45);
+  --on-accent: #14151b;
+  color-scheme: dark;
+}
+
 :root {
-  // Fonds bleu-nuit
-  --bg:        #080b16;
-  --bg-2:      #05070f;
-  --surface:   #0d1222;
+  @include light-tokens;
+  --frame-a: var(--sp-home-a);
+  --frame-b: var(--sp-home-b);
+  --accent: var(--sp-home-accent);
+  --accent-soft: color-mix(in srgb, var(--accent) 11%, transparent);
+  --accent-line: color-mix(in srgb, var(--accent) 30%, transparent);
 
-  // Couleur froide (gauche) → chaude (droite)
-  --cold:      #3b82f6; // bleu électrique
-  --cyan:      #38bdf8;
-  --violet:    #8b5cf6; // secondaire
-  --warm:      #f43f5e; // rouge
-  --orange:    #fb7185;
+  --font: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  // Texte
-  --text:      #e8edf5; // blanc cassé
-  --text-soft: #b6c0d4;
-  --text-dim:  #8a96ad; // gris bleuté
-  --text-faint:#5b6680;
-
-  // Verre
-  --glass-bg:      rgba(255, 255, 255, 0.045);
-  --glass-bg-strong: rgba(255, 255, 255, 0.07);
-  --glass-border:  rgba(255, 255, 255, 0.10);
-  --glass-border-hi: rgba(140, 170, 255, 0.30);
-  --glass-blur:    18px;
-
-  // Surfaces de verre de PREMIER niveau : cartes, navbar, panneaux posés
-  // directement sur le fond blueprint. Volontairement distinctes de --glass-bg,
-  // qui reste réservé aux éléments empilés SUR une carte (icônes, pastilles,
-  // boutons internes). Sur mobile les surfaces deviennent opaques pendant que
-  // les éléments internes restent translucides : la hiérarchie est préservée.
-  --glass-surface:    var(--glass-bg);
-  --glass-surface-hi: var(--glass-bg-strong);
-
-  // Flou de verre. Passé à `none` sur mobile / tactile (cf. _mobile-perf.scss) :
-  // un backdrop-filter par carte au-dessus d'un fond fixe force le navigateur à
-  // re-flouter chaque couche à chaque frame de scroll.
-  --glass-filter:          blur(var(--glass-blur));
-  --glass-filter-ui:       blur(12px);
-  --glass-filter-badge:    blur(10px);
-  --glass-filter-overlay:  blur(20px);
-  --glass-filter-lightbox: blur(8px);
-
-  // Rayons
-  --r-sm: 12px;
-  --r-md: 18px;
-  --r-lg: 26px;
-  --r-xl: 34px;
+  --r-sheet: 14px;
+  --r: 10px;
+  --r-sm: 7px;
   --r-pill: 999px;
 
-  // Ombres
-  --shadow-soft: 0 18px 50px -20px rgba(0, 0, 0, 0.7);
-  --shadow-card: 0 24px 60px -28px rgba(0, 0, 0, 0.8);
-  --glow-cold: 0 0 40px -8px rgba(59, 130, 246, 0.55);
-  --glow-warm: 0 0 40px -8px rgba(244, 63, 94, 0.55);
+  --side-w: 260px;
+  --gutter: clamp(18px, 4.5vw, 48px);
+  --content: 960px;
+  color-scheme: light;
+}
 
-  // Dégradés
-  --grad-cold: linear-gradient(135deg, var(--cold), var(--cyan));
-  --grad-warm: linear-gradient(135deg, var(--warm), var(--orange));
-  --grad-mix:  linear-gradient(120deg, var(--cyan), var(--violet) 55%, var(--warm));
+@media (prefers-color-scheme: dark) {
+  :root { @include dark-tokens; }
+}
 
-  // Layout
-  --container: 1200px;
-  --gap: 24px;
-  --nav-h: 72px;
+// Teintes du cadre déclarées comme couleurs : en changeant d'espace, elles
+// se fondent de l'une à l'autre (comme Arc) au lieu de basculer d'un coup.
+@property --frame-a { syntax: "<color>"; inherits: true; initial-value: #cfd8f6; }
+@property --frame-b { syntax: "<color>"; inherits: true; initial-value: #f3d3da; }
+@property --accent { syntax: "<color>"; inherits: true; initial-value: #3f5bd8; }
+html { transition: --frame-a 0.45s ease, --frame-b 0.45s ease, --accent 0.45s ease; }
+@media (prefers-reduced-motion: reduce) { html { transition: none; } }
+// Éditeur de thème ouvert : l'aperçu doit suivre la pastille sans délai.
+html:has(.theme-pop:not([hidden])) { transition: none; }
 
-  // Typo
-  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+// Réglages d'espace du visiteur (éditeur de thème, comme Arc / Zen) :
+// --th-<id>-int   = intensité de la couleur du cadre, de 0 (neutre) à 2 :
+//                   au-delà de 1, la couleur devient plus saturée et plus
+//                   profonde (chroma OKLCH multipliée) ;
+// --th-<id>-grain = grain posé sur le cadre (0 à 1) ;
+// --th-<id>-fi(2) = encre du cadre (texte de la barre) quand le visiteur a
+//                   choisi un fond foncé : posée par main.js.
+:root { --neutral: #eceef3; }
+@media (prefers-color-scheme: dark) { :root { --neutral: #141519; } }
+
+@each $id, $c in $spaces {
+  html[data-space="#{$id}"] {
+    --frame-a: color-mix(in oklab, var(--sp-#{$id}-a) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral));
+    --frame-b: color-mix(in oklab, var(--sp-#{$id}-b) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral));
+    --accent: var(--sp-#{$id}-accent);
+    --grain: var(--th-#{$id}-grain, 0);
+    --frame-ink: var(--th-#{$id}-fi, var(--frame-ink-base));
+    --frame-ink-2: var(--th-#{$id}-fi2, var(--frame-ink-2-base));
+    // Texte clair (fond foncé) : survol et onglet actif translucides, sinon
+    // blanc sur blanc.
+    --tab-hover: var(--th-#{$id}-th, var(--tab-hover-base));
+    --tab-active: var(--th-#{$id}-ta, var(--tab-active-base));
+  }
+}
+// Intensité au-delà de 1 : saturation (chroma) renforcée, couleur plus
+// profonde en clair, plus lumineuse en sombre. Navigateurs récents seulement
+// (syntaxe de couleur relative) ; ailleurs, l'intensité plafonne à 1.
+@supports (color: oklch(from red l c h)) {
+  @each $id, $c in $spaces {
+    html[data-space="#{$id}"] {
+      --frame-a: oklch(from color-mix(in oklab, var(--sp-#{$id}-a) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral))
+        calc(l - max(0, var(--th-#{$id}-int, 1) - 1) * 0.16) calc(c * max(1, var(--th-#{$id}-int, 1) * 1.6 - 0.6)) h);
+      --frame-b: oklch(from color-mix(in oklab, var(--sp-#{$id}-b) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral))
+        calc(l - max(0, var(--th-#{$id}-int, 1) - 1) * 0.16) calc(c * max(1, var(--th-#{$id}-int, 1) * 1.6 - 0.6)) h);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    @each $id, $c in $spaces {
+      html[data-space="#{$id}"] {
+        --frame-a: oklch(from color-mix(in oklab, var(--sp-#{$id}-a) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral))
+          calc(l + max(0, var(--th-#{$id}-int, 1) - 1) * 0.12) calc(c * max(1, var(--th-#{$id}-int, 1) * 2 - 1)) h);
+        --frame-b: oklch(from color-mix(in oklab, var(--sp-#{$id}-b) calc(min(var(--th-#{$id}-int, 1), 1) * 100%), var(--neutral))
+          calc(l + max(0, var(--th-#{$id}-int, 1) - 1) * 0.12) calc(c * max(1, var(--th-#{$id}-int, 1) * 2 - 1)) h);
+      }
+    }
+  }
 }

@@ -116,7 +116,7 @@
         </div>
         <div class="projects-grid" data-filter-group="projects">
           {{- range . }}
-          {{ partial "project-card.html" (dict "page" .) }}
+          {{ partial "project-card.html" (dict "page" . "badge" "main") }}
           {{- end }}
         </div>
       </section>

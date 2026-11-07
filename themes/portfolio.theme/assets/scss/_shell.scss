@@ -1,0 +1,825 @@
+// ─────────────────────────────────────────────────────────
+// Coque : cadre, barre latérale (onglets, dossiers, espaces), feuille
+// ─────────────────────────────────────────────────────────
+.app {
+  display: grid;
+  grid-template-columns: var(--side-w) minmax(0, 1fr);
+  min-height: 100vh;
+  padding-right: max(10px, env(safe-area-inset-right, 0px));
+  padding-left: env(safe-area-inset-left, 0px);
+}
+
+// ── Barre latérale ───────────────────────────────────────
+.side {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 8px 12px max(10px, env(safe-area-inset-left, 0px));
+  color: var(--frame-ink);
+  min-width: 0;
+  view-transition-name: side;
+}
+
+.side-top {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 2px;
+  min-height: 28px;
+}
+
+// Précédent / suivant / actualiser, à droite du nom
+.nav-btns {
+  display: flex;
+  gap: 1px;
+  margin-left: auto;
+  flex: none;
+  .icon-btn { width: 24px; height: 26px; }
+  .ico { width: 15px; height: 15px; }
+  .icon-btn:disabled { opacity: 0.32; pointer-events: none; }
+  .is-spinning .ico { animation: nav-spin 0.6s cubic-bezier(0.3, 0.7, 0.2, 1); }
+}
+@keyframes nav-spin { to { transform: rotate(360deg); } }
+
+.side-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--frame-ink);
+  padding: 3px 4px 3px 4px;
+  border-radius: var(--r-sm);
+  &:hover { background: var(--tab-hover); }
+  img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; }
+  span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+
+.icon-btn {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-sm);
+  color: var(--frame-ink-2);
+  &:hover { background: var(--tab-hover); color: var(--frame-ink); }
+}
+
+// Barre d'adresse : champ (ouvre ⌘K) + bouton de langue intégré à droite
+.urlrow { display: flex; align-items: center; }
+
+.urlbar {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding-right: 4px;
+  border-radius: var(--r);
+  background: var(--tab-hover);
+  color: var(--frame-ink-2);
+  transition: background 0.15s ease;
+
+  &:hover, &:focus-within { background: var(--tab-active); }
+}
+.urlbar-field {
+  flex: 1;
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px 0 12px;
+  border-radius: var(--r) 0 0 var(--r);
+  color: inherit;
+  font-size: 13px;
+  text-align: left;
+
+  .urlbar:hover & { color: var(--frame-ink); }
+}
+// Adresse trop longue : elle s'estompe en fondu au lieu de « … »
+.url-text {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent);
+}
+
+// Petits boutons dans la barre (copier l'adresse) : tuile arrondie
+// toujours visible, icône de chaîne en diagonale.
+.url-btn {
+  position: relative;
+  width: 26px;
+  height: 24px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--frame-ink) 9%, transparent);
+  color: var(--frame-ink);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  .ico { width: 13px; height: 13px; grid-area: 1 / 1; transition: opacity 0.15s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .is-done { opacity: 0; transform: scale(0.5); }
+  &:hover { background: color-mix(in srgb, var(--frame-ink) 16%, transparent); }
+  &:active { transform: scale(0.92); }
+  &.is-copied {
+    color: var(--ok);
+    .is-idle { opacity: 0; transform: scale(0.5); }
+    .is-done { opacity: 1; transform: none; }
+  }
+}
+
+.lang { position: relative; flex: none; }
+.lang-btn {
+  height: 26px;
+  min-width: 30px;
+  padding: 0 7px;
+  border-radius: 6px;
+  color: var(--frame-ink);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: background 0.15s ease, transform 0.15s ease;
+  &:hover, &[aria-expanded="true"] { background: var(--tab-hover); }
+  &:active { transform: scale(0.94); }
+}
+.lang-pop { right: -4px; top: calc(100% + 9px); min-width: 160px; }
+
+// Liens épinglés (les « Essentials » de Zen / Arc) : au survol, le contour
+// prend la couleur du logo et un léger dégradé de cette couleur teinte la
+// tuile, comme les onglets épinglés d'Arc. Pas d'autre mouvement.
+.favs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; } // 4 par ligne maximum, comme Zen
+.fav {
+  --brand: var(--frame-ink);
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r);
+  background: var(--tab-hover);
+  color: var(--frame-ink);
+  box-shadow: inset 0 0 0 1px transparent;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.12s ease;
+
+  .ico { width: 18px; height: 18px; transition: color 0.25s ease; }
+  &:hover {
+    background:
+      linear-gradient(150deg, color-mix(in srgb, var(--brand) 24%, transparent), color-mix(in srgb, var(--brand) 6%, transparent) 70%),
+      var(--tab-active);
+    box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--brand) 70%, transparent);
+    .ico { color: var(--brand); }
+  }
+  &:active { transform: scale(0.97); }
+}
+.fav-linkedin { --brand: #0a66c2; }
+.fav-cv { --brand: var(--accent); }
+.fav-mail { --brand: #d93025; }
+.fav-discord { --brand: #5865f2; }
+.fav-phone { --brand: #1f9d63; }
+@media (prefers-color-scheme: dark) {
+  .fav-linkedin { --brand: #5aa7f0; }
+  .fav-mail { --brand: #f28b82; }
+  .fav-discord { --brand: #8c96ff; }
+  .fav-phone { --brand: #43c98a; }
+}
+
+// Zone défilante des onglets
+.side-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-inline: -2px;
+  padding-inline: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--frame-line) transparent;
+  position: relative;
+}
+
+// Un seul espace visible : celui de la page (attribut data-space sur <html>)
+.space-panel { display: none; flex-direction: column; gap: 4px; }
+// Panneau qui part pendant un changement d'espace (posé par-dessus, cf. main.js)
+.space-panel.is-leaving {
+  display: flex;
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  pointer-events: none;
+}
+@each $id in (home, jeux, web, mods) {
+  html[data-space="#{$id}"] [data-space-panel="#{$id}"] { display: flex; }
+}
+
+// Indicateur d'espace (comme Zen : icône + nom, discret, au-dessus des onglets)
+.space-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 32px;
+  padding: 0 10px;
+  margin-bottom: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--frame-ink-2);
+}
+.space-head-ico {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  .ico { width: 15px; height: 15px; }
+}
+.space-head-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+// Onglets : mêmes mesures que Zen (rangée de 36 px, favicon 16 px)
+.tabs { display: flex; flex-direction: column; gap: 3px; }
+
+.tab,
+.folder-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 36px;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--frame-ink);
+  text-align: left;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  transition: background 0.12s ease, transform 0.12s ease;
+
+  &:hover { background: var(--tab-hover); }
+  &:active { transform: scale(0.985); }
+}
+
+.tab[aria-current="page"] {
+  background: var(--tab-active);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+}
+
+.tab-ico {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  color: var(--frame-ink);
+
+  img {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    object-fit: cover;
+  }
+  .ico { width: 16px; height: 16px; }
+}
+
+.tab-letter {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  display: grid;
+  place-items: center;
+  font-size: 9px;
+  font-weight: 700;
+  background: var(--tab-active);
+  color: var(--frame-ink);
+}
+
+.tab-title { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+// Lien vers un site qui refuse l'affichage intégré : s'ouvre ailleurs
+.tab-ext {
+  width: 13px;
+  height: 13px;
+  flex: none;
+  color: var(--frame-ink-2);
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.15s ease;
+}
+.tab.is-external:hover .tab-ext { opacity: 1; transform: translate(1px, -1px); }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+// Dossiers (comme Dia) : icône de la taille d'un favicon, nom en
+// semi-gras, chevron collé au nom qui pivote à l'ouverture.
+.folder { display: flex; flex-direction: column; }
+.folder-head {
+  font-weight: 600;
+  .tab-title { flex: 0 1 auto; }
+  .tab-ico .ico { width: 15px; height: 15px; }
+  // Un dossier se déroule, il ne « s'enfonce » pas comme un onglet.
+  &:active { transform: none; }
+}
+.folder-chev {
+  width: 11px;
+  height: 11px;
+  flex: none;
+  margin-left: -4px;
+  color: var(--frame-ink);
+  opacity: 0.75;
+  transition: transform 0.2s cubic-bezier(0.3, 0.7, 0.2, 1), opacity 0.15s ease;
+}
+.folder-head:hover .folder-chev { opacity: 1; }
+.folder[data-open="true"] > .folder-head .folder-chev { transform: rotate(90deg); }
+
+.folder-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+.folder[data-open="true"] > .folder-body { grid-template-rows: 1fr; }
+.folder-inner {
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 3px;
+  margin-left: 16px;
+  visibility: hidden;
+  transition: visibility 0.22s;
+}
+.folder[data-open="true"] > .folder-body > .folder-inner { visibility: visible; }
+
+// Poignée de largeur, sur le bord droit de la barre latérale
+.side-resize {
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  right: -3px;
+  width: 10px;
+  z-index: 3;
+  cursor: col-resize;
+  touch-action: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 36px;
+    border-radius: 3px;
+    background: var(--frame-ink);
+    opacity: 0;
+    transform: translate(-50%, -50%) scaleY(0.6);
+    transition: opacity 0.15s ease, transform 0.2s ease, height 0.2s ease;
+  }
+  &:hover::after { opacity: 0.25; transform: translate(-50%, -50%); }
+}
+html.is-resizing {
+  &, * { cursor: col-resize !important; user-select: none !important; }
+  .side-resize::after { opacity: 0.45; height: 64px; transform: translate(-50%, -50%); }
+}
+
+// Chargement d'une page : fin liseré qui avance sous le fil d'Ariane
+.sheet-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  opacity: 0;
+}
+html.is-loading .sheet-bar::after { opacity: 1; animation: load-bar 2.4s cubic-bezier(0.1, 0.6, 0.2, 1) forwards; }
+@keyframes load-bar { from { transform: scaleX(0.05); } to { transform: scaleX(0.85); } }
+.sheet-body:focus { outline: none; }
+
+// Glisser-déposer
+.is-dragging {
+  background: var(--tab-active) !important;
+  box-shadow: var(--shadow) !important;
+  opacity: 0.92;
+  z-index: 2;
+  cursor: grabbing;
+}
+html.is-sorting, html.is-sorting * { cursor: grabbing !important; }
+
+// Sélecteur d'espaces (icônes Ionicons monochromes, comme Zen) :
+// l'espace courant est simplement plus net, les autres en retrait.
+.side-foot { display: flex; align-items: center; padding: 2px; }
+.switch { display: flex; gap: 4px; margin-inline: auto; }
+.sp {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--frame-ink);
+  opacity: 0.45;
+  transition: background 0.15s ease, opacity 0.15s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  .ico { width: 16px; height: 16px; }
+  &:hover { background: var(--tab-hover); opacity: 0.85; }
+  &:active { transform: scale(0.9); }
+  &[aria-current="true"] { opacity: 1; }
+}
+.switch .sp.is-dragging { opacity: 1; transform: scale(1.08); }
+
+// ── Feuille ──────────────────────────────────────────────
+.sheet-wrap { min-width: 0; padding-block: 10px; }
+
+.sheet {
+  position: relative;
+  min-height: calc(100vh - 20px);
+  display: flex;
+  flex-direction: column;
+  background: var(--sheet);
+  border-radius: var(--r-sheet);
+  box-shadow: var(--shadow);
+  overflow: clip;
+  view-transition-name: sheet;
+}
+
+// Ordinateur : la page défile DANS la feuille (comme une fenêtre d'Arc) ;
+// le cadre et les bords arrondis restent visibles en haut comme en bas, et
+// la barre du chemin reste dans la feuille. Sur mobile, défilement normal.
+@media (min-width: 861px) {
+  html, body { height: 100%; overflow: hidden; }
+  .app { height: 100vh; height: 100dvh; min-height: 0; }
+  .sheet-wrap { height: 100vh; height: 100dvh; }
+  .sheet {
+    height: 100%;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-padding-top: 56px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-2) transparent;
+  }
+}
+
+.sheet-bar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 14px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--sheet) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  font-size: 13px;
+  color: var(--ink-3);
+
+  .icon-btn { color: var(--ink-3); &:hover { background: var(--sheet-2); color: var(--ink); } }
+}
+.show-side { display: none; }
+
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  white-space: nowrap;
+  a:hover { color: var(--ink); }
+  b { color: var(--ink); font-weight: 500; overflow: hidden; text-overflow: ellipsis; }
+}
+.crumb-sep { color: var(--line-2); }
+
+.sheet-body {
+  flex: 1;
+  width: 100%;
+  max-width: calc(var(--content) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding: clamp(26px, 5vw, 56px) var(--gutter) 56px;
+}
+
+// Pleine largeur (bouton en haut à droite de la feuille, comme Notion)
+.wide-toggle {
+  margin-left: auto;
+  flex: none;
+  .ico { width: 15px; height: 15px; }
+  .is-on { display: none; }
+  &[aria-pressed="true"] { color: var(--ink); .is-on { display: block; } .is-off { display: none; } }
+}
+html[data-kind="frame"] .wide-toggle { display: none; }
+// Toutes les colonnes de lecture s'ouvrent aussi (articles, textes des
+// projets, introductions), sinon la page ne change pas de largeur. La largeur
+// passe de sa valeur de lecture à 100 % en transition : on voit la page
+// s'élargir (valeurs numériques des deux côtés, pas de « none »).
+.sheet-body,
+.sheet-body .container,
+.sheet-body .article,
+.sheet-body .prose,
+.sheet-body .lede,
+.sheet-body .page-lead,
+.sheet-body .svc-intro { transition: max-width 0.5s cubic-bezier(0.32, 0.72, 0, 1); }
+html[data-wide="true"] {
+  .sheet-body,
+  .sheet-body .container,
+  .sheet-body .article,
+  .sheet-body .prose,
+  .sheet-body .lede,
+  .sheet-body .page-lead,
+  .sheet-body .svc-intro { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sheet-body, .sheet-body * { transition: none !important; }
+}
+
+// Fond d'ambiance d'une page (image du projet floutée), sous le contenu
+// et sous la barre du haut, qui s'estompe vers le bas de la feuille.
+.page-ambient {
+  position: absolute;
+  inset: 0 0 auto;
+  height: min(1100px, 140vh);
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 25%, transparent);
+  mask-image: linear-gradient(to bottom, #000 25%, transparent);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(56px) saturate(1.4);
+    transform: scale(1.25);
+    opacity: 0.5;
+  }
+  ~ * { position: relative; }
+}
+@media (prefers-color-scheme: dark) {
+  .page-ambient img { opacity: 0.62; filter: blur(56px) saturate(1.35) brightness(0.85); }
+}
+
+// ── Onglet qui affiche un autre site (iframe pleine feuille) ─
+html[data-kind="frame"] {
+  .sheet { height: calc(100vh - 20px); height: calc(100dvh - 20px); min-height: 0; }
+  .sheet-body { display: flex; max-width: none; padding: 0; }
+  .footer { display: none; }
+}
+.frame-page { position: relative; flex: 1; display: flex; min-height: 0; }
+.frame {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: transparent;
+}
+// Visible si le site refuse l'intégration (le cadre reste alors vide)
+.frame-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+  color: var(--ink-2);
+
+  p { max-width: 38ch; font-size: 14px; }
+  .btn { margin-top: 6px; }
+  .btn .ico { width: 14px; height: 14px; }
+}
+.frame-fallback-ico {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--sheet-2);
+  color: var(--ink);
+  img { width: 32px; height: 32px; border-radius: 6px; }
+  .ico { width: 28px; height: 28px; }
+}
+.frame-fallback-host { font-size: 17px; color: var(--ink); font-weight: 600; }
+.crumb-ext { margin-left: auto; .ico { width: 14px; height: 14px; } }
+.crumb { flex: 1; }
+
+// Pages : une colonne de sections espacées
+.page { display: flex; flex-direction: column; gap: 56px; }
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  width: 100%;
+  max-width: calc(var(--content) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding: 18px var(--gutter) 22px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-3);
+  a:hover { color: var(--ink); }
+
+  .social-links { display: flex; gap: 4px; margin-left: auto; }
+  .social-link {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: var(--r-sm);
+    color: var(--ink-3);
+    &:hover { background: var(--sheet-2); color: var(--ink); }
+    svg { width: 15px; height: 15px; fill: currentColor; }
+  }
+}
+
+// ── Barre latérale repliée (mode compact de Zen) ─────────
+// Elle se ressort au survol du bord gauche, par-dessus la feuille.
+.side-hotzone { display: none; }
+
+@media (min-width: 861px) {
+  html.is-compact {
+    .app { grid-template-columns: minmax(0, 1fr); padding-left: max(10px, env(safe-area-inset-left, 0px)); }
+    .side {
+      position: fixed;
+      inset: 8px auto 8px 8px;
+      height: auto;
+      width: var(--side-w);
+      z-index: 30;
+      border-radius: var(--r-sheet);
+      background: linear-gradient(160deg, var(--frame-a), var(--frame-b));
+      background-color: var(--frame-a);
+      box-shadow: var(--shadow-pop);
+      transform: translateX(calc(-100% - 16px));
+      transition: transform 0.24s cubic-bezier(0.3, 0.7, 0.2, 1);
+    }
+    .side-hotzone {
+      display: block;
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 12px;
+      z-index: 29;
+    }
+    .side-hotzone:hover + .side,
+    .side:hover,
+    .side:focus-within { transform: none; }
+    .show-side { display: grid; }
+  }
+}
+
+// ── Mobile : la barre latérale devient un tiroir ─────────
+.m-bar, .m-switch { display: none; }
+.scrim { position: fixed; inset: 0; z-index: 25; background: var(--scrim); }
+
+@media (max-width: 860px) {
+  .app {
+    grid-template-columns: minmax(0, 1fr);
+    padding-left: max(8px, env(safe-area-inset-left, 0px));
+    padding-right: max(8px, env(safe-area-inset-right, 0px));
+  }
+  .side {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 30;
+    width: min(300px, 86vw);
+    height: 100%;
+    padding-top: max(12px, env(safe-area-inset-top, 0px));
+    padding-bottom: max(12px, env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(160deg, var(--frame-a), var(--frame-b));
+    background-color: var(--frame-a);
+    box-shadow: 20px 0 60px -30px rgba(0, 0, 0, 0.4);
+    transform: translateX(-102%);
+    transition: transform 0.25s cubic-bezier(0.3, 0.7, 0.2, 1);
+    view-transition-name: none;
+  }
+  .app.is-drawer .side { transform: none; }
+  .side-toggle, .side-resize { display: none; }
+
+  .m-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: max(8px, env(safe-area-inset-top, 0px)) 0 0;
+    color: var(--frame-ink);
+    .icon-btn { width: 36px; height: 36px; color: var(--frame-ink); }
+    .urlrow { flex: 1; min-width: 0; }
+    .urlbar { background: var(--tab-active); color: var(--frame-ink); }
+  }
+  .m-switch {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2px;
+    margin-top: 8px;
+    padding: 3px;
+    border-radius: 12px;
+    background: var(--tab-hover);
+
+    .sp {
+      width: auto;
+      height: 34px;
+      opacity: 0.6;
+      &[aria-current="true"] { opacity: 1; background: var(--tab-active); }
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 500;
+      .ico { width: 15px; height: 15px; }
+      span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    }
+  }
+  .sheet-wrap { padding-block: 8px; }
+  .sheet { min-height: 0; view-transition-name: sheet; }
+  // Site intégré : la feuille occupe la hauteur restante sous les barres mobiles.
+  html[data-kind="frame"] .sheet { height: calc(100dvh - 118px - env(safe-area-inset-top, 0px)); }
+  .sheet-bar { display: none; }
+  .sheet-body { padding-top: 28px; }
+  .page { gap: 48px; }
+}
+
+@media (max-width: 420px) {
+  .m-switch .sp span { display: none; }
+}
+
+// ── Changement de page : transition de la feuille ────────
+@view-transition { navigation: auto; }
+
+// Seul le contenu de la page glisse ; la feuille et la barre latérale
+// restent en place, comme la fenêtre d'un navigateur.
+.sheet-body { view-transition-name: page; }
+::view-transition-old(page) { animation: sheet-out 0.14s ease-in both; }
+::view-transition-new(page) { animation: sheet-in 0.28s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+::view-transition-old(sheet),
+::view-transition-new(sheet),
+::view-transition-old(side),
+::view-transition-new(side) { animation-duration: 0.14s; }
+
+@keyframes sheet-out { to { opacity: 0; transform: translateY(-4px); } }
+@keyframes sheet-in { from { opacity: 0; transform: translateY(8px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation: none !important; }
+}
+
+
+// ── Projets dans la barre ─────────────────────────────────────────────────
+// Par défaut (mode simplifié), un projet est un onglet simple (.tab-alt) : ses
+// liens sont sur sa fiche. <html data-links="full"> rend le dossier complet
+// (fiche, liens, sous-projets), gardé de côté.
+.folder[data-project-folder] {
+  > .folder-head,
+  > .folder-body { display: none; }
+}
+[data-links="full"] .folder[data-project-folder] {
+  > .tab-alt { display: none; }
+  > .folder-head { display: flex; }
+  > .folder-body { display: grid; }
+}
+
+// Sélecteur de comparaison (serveur local seulement)
+.links-lab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border-radius: 999px;
+  background: var(--sheet, #fff);
+  color: var(--ink, #111);
+  border: 1px solid color-mix(in oklab, currentColor 14%, transparent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  font-size: 12.5px;
+  .links-lab-name { padding: 0 8px 0 10px; opacity: 0.65; font-weight: 500; }
+  button {
+    appearance: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 7px 12px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover { background: color-mix(in oklab, currentColor 8%, transparent); }
+    &[aria-pressed="true"] { background: var(--ink); color: var(--sheet); }
+  }
+}
+@media (max-width: 860px) { .links-lab { right: 10px; left: 10px; bottom: 10px; justify-content: center; flex-wrap: wrap; border-radius: 16px; } }

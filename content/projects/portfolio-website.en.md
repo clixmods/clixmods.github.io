@@ -4,7 +4,7 @@ draft = false
 title = "Personal Portfolio"
 slug = "portfolio-website"
 subtitle = "Personal website built with Hugo"
-description = "Modern portfolio with custom theme, macOS-inspired design, data-driven architecture and integrated CMS"
+description = "Modern portfolio with a custom theme (three successive versions), data-driven architecture and integrated CMS"
 tags = [
   "Hugo",
   "Static Site",
@@ -13,7 +13,7 @@ tags = [
   "FrontMatter CMS"
 ]
 category = "projects"
-sector = "appsweb-professionnel"
+sector = "appsweb-personnel"
 featured = true
 featuredInCV = false
 fmContentType = "project-content-type"
@@ -107,3 +107,11 @@ The chosen approach clearly separates data from rendering:
 This architecture allows content modification without touching code, and design evolution without impacting data.
 
 
+
+## Theme versions
+
+The site design has changed three times. Each version has its own page, and the first two can still be viewed as they were:
+
+- [Portfolio Theme #1](/en/projects/portfolio-theme-v1/) (July 2025 to April 2026)
+- [Portfolio Theme #2](/en/projects/portfolio-theme-v2/) (June to October 2026)
+- [Portfolio Theme #3](/en/projects/portfolio-theme-v3/) (since November 2026, the current theme)
