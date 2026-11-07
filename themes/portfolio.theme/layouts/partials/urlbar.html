@@ -1,12 +1,15 @@
-{{- /* Barre d'adresse : le champ ouvre la recherche ⌘K, le bouton de langue
-       (FR / EN) est intégré à droite, comme les icônes d'une vraie barre
-       d'URL. Contexte = la page. */ -}}
+{{- /* Barre d'adresse : le champ ouvre la recherche (Ctrl/⌘ K) ; à droite,
+       copier l'adresse et le bouton de langue (FR / EN), comme les icônes
+       d'une vraie barre d'URL. Sur un onglet qui affiche un autre site,
+       c'est l'adresse de ce site. Contexte = la page. */ -}}
+{{- $url := .Params.link | default .Params.frame | default .Permalink -}}
 <div class="urlbar" data-urlbar>
-  <button type="button" class="urlbar-field" data-palette-open aria-label="{{ i18n "ui_search" }}" title="{{ i18n "ui_search" }} (⌘K)">
-    {{ partial "icon.html" "search" }}
-    {{- /* Onglet qui affiche un autre site : la barre montre l'adresse de ce site. */}}
-    <span class="url-text">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://" (strings.TrimPrefix "http://" (.Params.link | default .Params.frame | default .Permalink))) }}</span>
-    <kbd class="url-kbd">⌘K</kbd>
+  <button type="button" class="urlbar-field" data-palette-open aria-label="{{ i18n "ui_search" }}" title="{{ i18n "ui_search" }}">
+    <span class="url-text">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://" (strings.TrimPrefix "http://" $url)) }}</span>
+  </button>
+  <button type="button" class="url-btn url-copy" data-copy-url="{{ $url }}" title="{{ i18n "ui_copy_url" }}" aria-label="{{ i18n "ui_copy_url" }}">
+    {{- partial "icon.html" (dict "name" "copy-outline" "class" "is-idle") -}}
+    {{- partial "icon.html" (dict "name" "checkmark" "class" "is-done") -}}
   </button>
   {{ partial "lang-switch.html" . }}
 </div>

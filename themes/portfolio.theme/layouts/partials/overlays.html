@@ -7,6 +7,8 @@
      data-l-copy-link="{{ i18n "ctx_copy_link" }}"
      data-l-link-copied="{{ i18n "ctx_link_copied" }}"
      data-l-email-copied="{{ i18n "ui_email_copied" }}"
+     data-l-url-copied="{{ i18n "ui_url_copied" }}"
+     data-l-id-copied="{{ i18n "ui_id_copied" }}"
      data-l-copy-email="{{ i18n "ui_copy_email" }}"
      data-l-hint="{{ i18n "ctx_reorder_hint" }}"
      data-l-hide="{{ i18n "ui_hide_sidebar" }}"
@@ -32,18 +34,34 @@
       <b>{{ i18n "theme_title" }}</b>
       <span class="theme-pop-name" data-theme-name></span>
     </div>
-    <div class="theme-preview" data-theme-preview></div>
-    <div class="theme-label">{{ i18n "theme_presets" }}</div>
-    <div class="theme-presets" data-theme-presets></div>
-    <div class="theme-fields">
-      <label><span>{{ i18n "theme_color_a" }}</span><input type="color" id="theme-a" data-theme-a></label>
-      <label><span>{{ i18n "theme_color_b" }}</span><input type="color" id="theme-b" data-theme-b></label>
-      <label><span>{{ i18n "theme_accent" }}</span><input type="color" id="theme-accent" data-theme-accent></label>
+    {{- /* Comme Arc : une zone de couleur (teinte → horizontale, intensité →
+           verticale) et une pastille par couleur, à faire glisser. */}}
+    <div class="theme-pad" data-theme-pad>
+      <span class="theme-handle" data-handle="a" role="slider" tabindex="0" aria-label="{{ i18n "theme_color_a" }}"></span>
+      <span class="theme-handle" data-handle="b" role="slider" tabindex="0" aria-label="{{ i18n "theme_color_b" }}"></span>
+      <span class="theme-handle is-accent" data-handle="accent" role="slider" tabindex="0" aria-label="{{ i18n "theme_accent" }}"></span>
     </div>
+    <div class="theme-tools">
+      <span class="theme-legend"><i data-dot="a"></i>{{ i18n "theme_color_a" }}</span>
+      <span class="theme-legend"><i data-dot="b"></i>{{ i18n "theme_color_b" }}</span>
+      <span class="theme-legend"><i data-dot="accent"></i>{{ i18n "theme_accent" }}</span>
+      <button type="button" class="theme-link" data-theme-link aria-pressed="false" title="{{ i18n "theme_link" }}" aria-label="{{ i18n "theme_link" }}">{{ partial "icon.html" "link" }}</button>
+    </div>
+    <div class="theme-preview" data-theme-preview></div>
+    <div class="theme-presets" data-theme-presets aria-label="{{ i18n "theme_presets" }}"></div>
+    <p class="theme-hint">{{ i18n "theme_hint" }}</p>
     <div class="theme-actions">
       <button type="button" class="btn btn-ghost btn-sm" data-theme-reset>{{ i18n "theme_reset" }}</button>
       <button type="button" class="btn btn-cold btn-sm" data-theme-close>{{ i18n "theme_done" }}</button>
     </div>
+  </div>
+
+  {{- /* Essentiel Discord : pas de lien public, on montre le pseudo à copier. */}}
+  <div class="pop discord-pop" data-discord-pop role="dialog" aria-label="Discord" hidden>
+    <span class="discord-pop-ico">{{ partial "icon.html" "logo-discord" }}</span>
+    <p>{{ i18n "ui_discord_text" }}</p>
+    <code class="discord-pop-id" data-discord-id></code>
+    <button type="button" class="btn btn-cold btn-sm" data-discord-copy>{{ partial "icon.html" "copy-outline" }}{{ i18n "ui_copy_id" }}</button>
   </div>
 
   <div class="toast" data-toast role="status" hidden></div>

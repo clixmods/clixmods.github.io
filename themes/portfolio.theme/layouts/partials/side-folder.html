@@ -1,16 +1,16 @@
 {{- /* Un dossier de la barre latérale ; peut contenir d'autres dossiers
-       (rendu récursif). Comme dans Zen, l'icône du dossier porte une petite
-       icône : l'image du projet (thumb) ou un pictogramme (badge).
+       (rendu récursif). Comme dans Dia : une icône de la taille d'un favicon
+       (image du projet / logo, ou pictogramme au trait), le nom, puis un
+       chevron qui pivote à l'ouverture.
        Contexte = dict { id, folder, name, tabs, thumb, badge, closed }. */ -}}
 <div class="folder" data-folder="{{ .id }}" data-folder-key="{{ .folder | default .id }}" data-sort-key="folder:{{ .id }}" data-count="{{ len .tabs }}"{{ if .closed }} data-default="closed"{{ end }}>
   <button type="button" class="folder-head" data-folder-toggle aria-expanded="false" title="{{ .name }}">
-    <span class="folder-glyph{{ if or .thumb .badge }} has-badge{{ end }}">
-      {{- partial "icon.html" (dict "name" "folder" "class" "folder-ico is-closed") -}}
-      {{- partial "icon.html" (dict "name" "folder-open" "class" "folder-ico is-open") -}}
-      {{- with .thumb }}<img class="folder-badge" src="{{ . }}" alt="" width="12" height="12" loading="lazy" decoding="async">
-      {{- else }}{{ with .badge }}{{ partial "icon.html" (dict "name" . "class" "folder-badge") }}{{ end }}{{ end -}}
+    <span class="tab-ico">
+      {{- with .thumb }}<img src="{{ . }}" alt="" width="16" height="16" loading="lazy" decoding="async">
+      {{- else }}{{ partial "icon.html" (.badge | default "folder-outline") }}{{ end -}}
     </span>
     <span class="tab-title">{{ .name }}</span>
+    {{- partial "icon.html" (dict "name" "chevron-forward" "class" "folder-chev") -}}
   </button>
   <div class="folder-body">
     <div class="folder-inner" data-sortable="{{ .id }}">

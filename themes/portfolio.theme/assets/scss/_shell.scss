@@ -83,25 +83,44 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0 6px 0 11px;
+  padding: 0 4px 0 12px;
   border-radius: var(--r) 0 0 var(--r);
   color: inherit;
   font-size: 13px;
   text-align: left;
 
-  .ico { width: 14px; height: 14px; flex: none; }
   .urlbar:hover & { color: var(--frame-ink); }
 }
-.url-text { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.url-kbd {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  padding: 1px 5px;
-  border-radius: 4px;
-  border: 1px solid var(--frame-line);
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  .urlbar:hover &, .urlbar-field:focus-visible & { opacity: 1; }
+// Adresse trop longue : elle s'estompe en fondu au lieu de « … »
+.url-text {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent);
+}
+
+// Petits boutons dans la barre (copier l'adresse)
+.url-btn {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  color: var(--frame-ink-2);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  .ico { width: 14px; height: 14px; grid-area: 1 / 1; transition: opacity 0.15s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .is-done { opacity: 0; transform: scale(0.5); }
+  &:hover { background: var(--tab-hover); color: var(--frame-ink); }
+  &:active { transform: scale(0.92); }
+  &.is-copied {
+    color: var(--ok);
+    .is-idle { opacity: 0; transform: scale(0.5); }
+    .is-done { opacity: 1; transform: none; }
+  }
 }
 
 .lang { position: relative; flex: none; }
@@ -122,7 +141,7 @@
 
 // Liens épinglés (les « Essentials » de Zen) : tuiles qui se soulèvent au
 // survol, l'icône rebondit et prend la couleur de la marque, un reflet passe.
-.favs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.favs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; } // 4 par ligne maximum, comme Zen
 .fav {
   --brand: var(--frame-ink);
   position: relative;
@@ -160,6 +179,7 @@
 .fav-linkedin { --brand: #0a66c2; }
 .fav-cv { --brand: var(--accent); }
 .fav-mail { --brand: #d93025; }
+.fav-discord { --brand: #5865f2; }
 @media (prefers-color-scheme: dark) {
   .fav-linkedin { --brand: #5aa7f0; }
   .fav-mail { --brand: #f28b82; }
@@ -285,40 +305,27 @@
   white-space: nowrap;
 }
 
-// Dossiers (comme Zen) : grand dossier plein qui porte une petite icône
-// (image du projet ou pictogramme), contenu simplement indenté.
+// Dossiers (comme Dia) : icône de la taille d'un favicon, nom en
+// semi-gras, chevron collé au nom qui pivote à l'ouverture.
 .folder { display: flex; flex-direction: column; }
-.folder-head { gap: 8px; padding-left: 8px; }
-.folder-glyph {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  flex: none;
-  color: var(--frame-ink);
+.folder-head {
+  font-weight: 600;
+  .tab-title { flex: 0 1 auto; }
+  .tab-ico .ico { width: 15px; height: 15px; }
+  // Un dossier se déroule, il ne « s'enfonce » pas comme un onglet.
+  &:active { transform: none; }
 }
-.folder-ico { position: absolute; inset: 0; width: 20px; height: 20px; opacity: 0.88; }
-.folder-ico.is-open { display: none; }
-.folder[data-open="true"] {
-  > .folder-head .folder-ico.is-open { display: block; }
-  > .folder-head .folder-ico.is-closed { display: none; }
-}
-.folder-badge {
-  position: absolute;
-  left: 50%;
-  top: 60%;
-  width: 10px;
-  height: 10px;
-  transform: translate(-50%, -50%);
-  // Pictogramme « découpé » dans le dossier : couleur du cadre
-  color: var(--frame-a);
-}
-img.folder-badge {
+.folder-chev {
   width: 11px;
   height: 11px;
-  border-radius: 2.5px;
-  object-fit: cover;
+  flex: none;
+  margin-left: -4px;
+  color: var(--frame-ink);
+  opacity: 0.75;
+  transition: transform 0.2s cubic-bezier(0.3, 0.7, 0.2, 1), opacity 0.15s ease;
 }
-.folder[data-open="true"] > .folder-head .folder-badge { top: 64%; }
+.folder-head:hover .folder-chev { opacity: 1; }
+.folder[data-open="true"] > .folder-head .folder-chev { transform: rotate(90deg); }
 
 .folder-body {
   display: grid;
@@ -703,5 +710,3 @@ html[data-kind="frame"] {
   ::view-transition-new(*) { animation: none !important; }
 }
 
-// Raccourci clavier inutile sur écran tactile
-@media (pointer: coarse) { .url-kbd { display: none; } }

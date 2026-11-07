@@ -54,8 +54,64 @@
 }
 .theme-pop-ico { color: var(--accent); .ico { width: 15px; height: 15px; } }
 .theme-pop-name { margin-left: auto; font-size: 12.5px; color: var(--ink-3); }
+
+// Zone de couleur (comme Arc) : teinte à l'horizontale, intensité à la
+// verticale, trame de points, une pastille par couleur.
+.theme-pad {
+  position: relative;
+  height: 172px;
+  border-radius: 14px;
+  cursor: crosshair;
+  touch-action: none;
+  user-select: none;
+  background:
+    radial-gradient(circle, rgba(0, 0, 0, 0.16) 0.9px, transparent 1.3px) 0 0 / 13px 13px,
+    linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.92) 100%),
+    linear-gradient(to right,
+      hsl(0 82% 72%), hsl(40 85% 70%), hsl(80 70% 68%), hsl(140 60% 66%),
+      hsl(190 70% 68%), hsl(230 80% 74%), hsl(280 70% 74%), hsl(325 78% 72%), hsl(360 82% 72%));
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+.theme-handle {
+  --c: #fff;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--c);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease;
+  &:hover { transform: translate(-50%, -50%) scale(1.08); }
+  &.is-active { cursor: grabbing; transform: translate(-50%, -50%) scale(1.18); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32); z-index: 2; }
+  &:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  // L'accent : plus petit, cerclé, pour le distinguer des couleurs du cadre
+  &.is-accent { width: 18px; height: 18px; border-width: 2px; box-shadow: 0 0 0 2px var(--c), 0 2px 8px rgba(0, 0, 0, 0.3); }
+}
+.theme-tools { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--ink-2); }
+.theme-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  i { width: 10px; height: 10px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12); }
+}
+.theme-link {
+  margin-left: auto;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--ink-3);
+  .ico { width: 15px; height: 15px; }
+  &:hover { background: var(--sheet-2); color: var(--ink); }
+  &[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+}
+.theme-hint { font-size: 11.5px; color: var(--ink-3); line-height: 1.4; }
 .theme-preview {
-  height: 54px;
+  height: 44px;
   border-radius: var(--r);
   background: linear-gradient(135deg, var(--frame-a), var(--frame-b));
   outline: 1px solid var(--line);
@@ -81,32 +137,63 @@
     box-shadow: 0 12px 0 -1px var(--tab-active);
   }
 }
-.theme-label { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); }
+// Teintes prêtes : pastille dégradée avec un point d'accent
 .theme-presets { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
 .theme-preset {
+  position: relative;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 2px solid var(--sheet);
-  outline: 1px solid var(--line-2);
+  background: linear-gradient(135deg, var(--pa), var(--pb));
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  &[aria-pressed="true"] { outline: 2px solid var(--ink); }
-}
-.theme-fields {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  label { display: flex; flex-direction: column; gap: 5px; font-size: 12px; color: var(--ink-2); }
-  input[type="color"] {
-    width: 100%;
-    height: 32px;
-    padding: 2px;
-    border-radius: var(--r-sm);
-    border: 1px solid var(--line-2);
-    background: var(--sheet);
-    cursor: pointer;
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+  &::after {
+    content: "";
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    background: var(--pc);
+    box-shadow: 0 0 0 1.5px var(--sheet);
   }
+  &:hover { transform: scale(1.1); }
+  &[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--sheet), 0 0 0 4px var(--ink); }
 }
 .theme-actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+// Essentiel Discord : fenêtre avec le pseudo
+.discord-pop {
+  position: fixed;
+  width: 240px;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  text-align: center;
+  p { font-size: 13px; color: var(--ink-2); }
+  .btn { margin-top: 4px; gap: 6px; .ico { width: 14px; height: 14px; } }
+}
+.discord-pop-ico {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #5865f2;
+  color: #fff;
+  .ico { width: 22px; height: 22px; }
+}
+.discord-pop-id {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--sheet-2);
+  color: var(--ink);
+  user-select: all;
+}
 
 // Recherche ⌘K
 .palette-bg {

@@ -351,11 +351,50 @@
     });
   };
   var themeSpaceId = null;
-  var themeInputs = themePop ? {
-    a: themePop.querySelector("[data-theme-a]"),
-    b: themePop.querySelector("[data-theme-b]"),
-    accent: themePop.querySelector("[data-theme-accent]")
-  } : null;
+  var KEYS = ["a", "b", "accent"];
+  // Couleur ⇄ position dans la zone de l'éditeur (comme Arc) :
+  // x = teinte (0 → 360°), y = intensité (0 = vif en haut, 1 = pâle en bas).
+  // Les couleurs du cadre restent claires ; l'accent reste lisible.
+  var clamp = function (n, lo, hi) { return Math.max(lo, Math.min(hi, n)); };
+  var hslToHex = function (h, s, l) {
+    s /= 100; l /= 100;
+    var k = function (n) { return (n + h / 30) % 12; };
+    var a = s * Math.min(l, 1 - l);
+    var f = function (n) {
+      var c = l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+      return ("0" + Math.round(c * 255).toString(16)).slice(-2);
+    };
+    return "#" + f(0) + f(8) + f(4);
+  };
+  var hexToHsl = function (hex) {
+    var n = parseInt(String(hex).slice(1), 16) || 0;
+    var r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255;
+    var mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, h = 0, s = 0;
+    if (mx !== mn) {
+      var df = mx - mn;
+      s = l > 0.5 ? df / (2 - mx - mn) : df / (mx + mn);
+      h = mx === r ? (g - b) / df + (g < b ? 6 : 0) : mx === g ? (b - r) / df + 2 : (r - g) / df + 4;
+      h *= 60;
+    }
+    return { h: h, s: s * 100, l: l * 100 };
+  };
+  var colorAt = function (k, p) {
+    var t = 1 - p.y;
+    return k === "accent"
+      ? hslToHex(p.x * 360, 30 + 52 * t, 30 + 22 * p.y)
+      : hslToHex(p.x * 360, 25 + 60 * t, 93 - 16 * t);
+  };
+  var posOf = function (k, hex) {
+    var c = hexToHsl(hex);
+    var t = k === "accent" ? (c.s - 30) / 52 : (c.s - 25) / 60;
+    return { x: c.h / 360, y: 1 - clamp(t, 0, 1) };
+  };
+
+  var pad = themePop ? themePop.querySelector("[data-theme-pad]") : null;
+  var handles = {};
+  if (pad) KEYS.forEach(function (k) { handles[k] = pad.querySelector('[data-handle="' + k + '"]'); });
+  var pos = {};
+  var linked = false;
   var currentTheme = function (id) {
     var all = store.json("cadre:themes", {});
     var base = DEFAULTS[id] || DEFAULTS.home;
@@ -368,20 +407,61 @@
     store.set("cadre:themes", JSON.stringify(all));
     applyTheme(id, v);
   };
+  var paintHandles = function (v) {
+    KEYS.forEach(function (k) {
+      var h = handles[k], p = pos[k];
+      if (!h || !p) return;
+      h.style.left = (p.x * 100) + "%";
+      h.style.top = (p.y * 100) + "%";
+      h.style.setProperty("--c", v[k]);
+      var dot = themePop.querySelector('[data-dot="' + k + '"]');
+      if (dot) dot.style.background = v[k];
+    });
+  };
+  var markPresets = function (v) {
+    themePop.querySelectorAll(".theme-preset").forEach(function (b, i) {
+      var p = PRESETS[i];
+      b.setAttribute("aria-pressed", p.a === v.a && p.b === v.b && p.accent === v.accent ? "true" : "false");
+    });
+  };
   var syncThemeUI = function () {
     if (!themePop || !themeSpaceId) return;
     var v = currentTheme(themeSpaceId);
-    Object.keys(themeInputs).forEach(function (k) { if (themeInputs[k]) themeInputs[k].value = v[k]; });
+    KEYS.forEach(function (k) { pos[k] = posOf(k, v[k]); });
+    paintHandles(v);
     var prev = themePop.querySelector("[data-theme-preview]");
     if (prev) {
       prev.style.setProperty("--frame-a", "var(--sp-" + themeSpaceId + "-a)");
       prev.style.setProperty("--frame-b", "var(--sp-" + themeSpaceId + "-b)");
       prev.style.setProperty("--accent", "var(--sp-" + themeSpaceId + "-accent)");
     }
-    themePop.querySelectorAll(".theme-preset").forEach(function (b, i) {
-      var p = PRESETS[i];
-      b.setAttribute("aria-pressed", p.a === v.a && p.b === v.b && p.accent === v.accent ? "true" : "false");
+    markPresets(v);
+  };
+  // Déplacement d'une pastille : couleurs recalculées, enregistrées une fois par image.
+  var frameReq = null;
+  var commitPos = function () {
+    frameReq = null;
+    var v = {};
+    KEYS.forEach(function (k) { v[k] = colorAt(k, pos[k]); });
+    saveTheme(themeSpaceId, v);
+    paintHandles(v);
+    markPresets(v);
+  };
+  var moveHandle = function (k, x, y) {
+    x = clamp(x, 0, 1); y = clamp(y, 0, 1);
+    if (linked) {
+      // Couleurs liées : les autres pastilles suivent, à même écart.
+      var dx = x - pos[k].x, dy = y - pos[k].y;
+      KEYS.forEach(function (j) {
+        if (j !== k) pos[j] = { x: ((pos[j].x + dx) % 1 + 1) % 1, y: clamp(pos[j].y + dy, 0, 1) };
+      });
+    }
+    pos[k] = { x: x, y: y };
+    KEYS.forEach(function (j) {
+      var h = handles[j];
+      if (h) { h.style.left = (pos[j].x * 100) + "%"; h.style.top = (pos[j].y * 100) + "%"; h.style.setProperty("--c", colorAt(j, pos[j])); }
     });
+    if (!frameReq) frameReq = requestAnimationFrame(commitPos);
   };
   var openTheme = function (id, x, y) {
     if (!themePop) return;
@@ -401,21 +481,62 @@
       var b = d.createElement("button");
       b.type = "button";
       b.className = "theme-preset";
-      b.style.background = "linear-gradient(135deg, " + p.a + " 0 50%, " + p.b + " 50% 100%)";
-      b.style.boxShadow = "inset 0 0 0 5px transparent, inset 0 -6px 0 -1px " + p.accent;
-      b.setAttribute("aria-label", "Teinte " + (i + 1));
+      b.style.setProperty("--pa", p.a);
+      b.style.setProperty("--pb", p.b);
+      b.style.setProperty("--pc", p.accent);
+      b.setAttribute("aria-label", (presetBox.getAttribute("aria-label") || "") + " " + (i + 1));
       b.addEventListener("click", function () { saveTheme(themeSpaceId, { a: p.a, b: p.b, accent: p.accent }); syncThemeUI(); });
       presetBox.appendChild(b);
     });
-    Object.keys(themeInputs).forEach(function (k) {
-      var input = themeInputs[k];
-      if (!input) return;
-      input.addEventListener("input", function () {
-        var v = currentTheme(themeSpaceId);
-        v[k] = input.value;
-        saveTheme(themeSpaceId, v);
-        syncThemeUI();
+    if (pad) {
+      var padDrag = null;
+      pad.addEventListener("pointerdown", function (e) {
+        if (e.button !== 0) return;
+        e.preventDefault();
+        var r = pad.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        var h = e.target.closest("[data-handle]");
+        var k = h ? h.getAttribute("data-handle") : null;
+        if (!k) {
+          // Clic dans la zone : la pastille la plus proche y saute.
+          var best = Infinity;
+          KEYS.forEach(function (j) {
+            var dd = Math.pow((pos[j].x - x) * r.width, 2) + Math.pow((pos[j].y - y) * r.height, 2);
+            if (dd < best) { best = dd; k = j; }
+          });
+          moveHandle(k, x, y);
+        }
+        padDrag = { k: k, r: r, id: e.pointerId };
+        handles[k].classList.add("is-active");
+        handles[k].focus({ preventScroll: true });
+        try { pad.setPointerCapture(e.pointerId); } catch (err) {}
       });
+      pad.addEventListener("pointermove", function (e) {
+        if (!padDrag || e.pointerId !== padDrag.id) return;
+        moveHandle(padDrag.k, (e.clientX - padDrag.r.left) / padDrag.r.width, (e.clientY - padDrag.r.top) / padDrag.r.height);
+      });
+      var stopPad = function () {
+        if (!padDrag) return;
+        handles[padDrag.k].classList.remove("is-active");
+        padDrag = null;
+      };
+      pad.addEventListener("pointerup", stopPad);
+      pad.addEventListener("pointercancel", stopPad);
+      // Clavier : flèches sur une pastille (Maj = pas plus grand).
+      pad.addEventListener("keydown", function (e) {
+        var h = e.target.closest("[data-handle]");
+        if (!h) return;
+        var k = h.getAttribute("data-handle"), s = e.shiftKey ? 0.08 : 0.02;
+        var mv = { ArrowLeft: [-s, 0], ArrowRight: [s, 0], ArrowUp: [0, -s], ArrowDown: [0, s] }[e.key];
+        if (!mv) return;
+        e.preventDefault();
+        moveHandle(k, pos[k].x + mv[0], pos[k].y + mv[1]);
+      });
+    }
+    var linkBtn = themePop.querySelector("[data-theme-link]");
+    if (linkBtn) linkBtn.addEventListener("click", function () {
+      linked = !linked;
+      linkBtn.setAttribute("aria-pressed", linked ? "true" : "false");
     });
     themePop.querySelector("[data-theme-reset]").addEventListener("click", function () { saveTheme(themeSpaceId, null); syncThemeUI(); });
     themePop.querySelector("[data-theme-close]").addEventListener("click", function () { themePop.hidden = true; });
@@ -435,10 +556,43 @@
     if (open) { var a = pop.querySelector("a"); if (a) a.focus({ preventScroll: true }); }
   });
 
+  // ── Copier l'adresse (bouton de la barre d'URL) ───────
+  d.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-copy-url]");
+    if (!b) return;
+    var u = b.getAttribute("data-copy-url");
+    // Page du site : l'adresse réelle, avec un éventuel filtre (#pro…).
+    if (u.charAt(0) === "/" || u.indexOf(location.origin) === 0) u = location.href;
+    copy(u, L("url-copied"));
+    b.classList.add("is-copied");
+    setTimeout(function () { b.classList.remove("is-copied"); }, 1400);
+  });
+
+  // ── Essentiel Discord : fenêtre avec le pseudo à copier ─
+  var discordPop = overlays.querySelector("[data-discord-pop]");
+  var closeDiscord = function () { if (discordPop) discordPop.hidden = true; };
+  if (discordPop) {
+    d.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-discord]");
+      if (!b) return;
+      if (!discordPop.hidden) { closeDiscord(); return; }
+      discordPop.querySelector("[data-discord-id]").textContent = b.getAttribute("data-discord");
+      var r = b.getBoundingClientRect();
+      place(discordPop, r.left, r.bottom + 8);
+      var btn = discordPop.querySelector("[data-discord-copy]");
+      if (btn) btn.focus({ preventScroll: true });
+    });
+    discordPop.querySelector("[data-discord-copy]").addEventListener("click", function () {
+      copy(discordPop.querySelector("[data-discord-id]").textContent, L("id-copied"));
+      closeDiscord();
+    });
+  }
+
   // Fermeture des menus au clic extérieur / Échap
   d.addEventListener("pointerdown", function (e) {
     if (menu && !menu.hidden && !menu.contains(e.target)) closeMenu();
     if (themePop && !themePop.hidden && !themePop.contains(e.target) && !(menu && menu.contains(e.target))) themePop.hidden = true;
+    if (discordPop && !discordPop.hidden && !discordPop.contains(e.target) && !e.target.closest("[data-discord]")) closeDiscord();
     if (!e.target.closest("[data-lang-box]")) {
       d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });
       d.querySelectorAll("[data-lang-toggle]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
@@ -536,6 +690,7 @@
     if (e.key === "Escape") {
       closePal();
       closeMenu();
+      closeDiscord();
       if (themePop) themePop.hidden = true;
       setDrawer(false);
       d.querySelectorAll("[data-lang-pop]").forEach(function (p) { p.hidden = true; });

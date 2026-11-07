@@ -1,0 +1,20 @@
+{{- /*
+  Tri commun du parcours (barre latérale, accueil, pages Expériences et
+  Formations) :
+  la plus récente d'abord selon la DATE DE FIN, formation en cours
+  (end_date absente) en tête, égalité départagée par date de début.
+  Expériences comme formations : la mission la plus récente d'abord, même
+  si c'est du freelance (pas de groupe « contrats d'abord »).
+  Contexte = une collection de Pages. Retourne une slice de Pages triée.
+*/ -}}
+{{- $rows := slice -}}
+{{- range . -}}
+  {{- $endInv := 0 -}}
+  {{- with .Params.end_date }}{{ $endInv = sub 9999999999 (int (time.AsTime .).Unix) }}{{ end -}}
+  {{- $startInv := 0 -}}
+  {{- with .Params.start_date }}{{ $startInv = sub 9999999999 (int (time.AsTime .).Unix) }}{{ end -}}
+  {{- $rows = $rows | append (dict "page" . "k" (printf "%010d-%010d" $endInv $startInv)) -}}
+{{- end -}}
+{{- $out := slice -}}
+{{- range sort $rows "k" "asc" }}{{ $out = $out | append .page }}{{ end -}}
+{{- return $out -}}
