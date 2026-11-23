@@ -31,6 +31,14 @@
 </div>
 
 <div class="side-foot">
+  {{- /* Bulle de découverte des espaces (main.js l'affiche jusqu'à ce que le
+         visiteur la ferme ou change d'espace ; cadre:tip-spaces). */}}
+  <div class="space-tip" data-space-tip role="status" hidden>
+    <div class="space-tip-badge">{{ i18n "tip_new" }}</div>
+    <p class="space-tip-title">{{ i18n "home_spaces_title" }}</p>
+    <p class="space-tip-text">{{ i18n "tip_spaces_text" }}</p>
+    <button type="button" class="space-tip-close" data-space-tip-close>{{ i18n "ui_got_it" }}</button>
+  </div>
   <nav class="switch" data-sortable="spaces" data-sort-axis="x" aria-label="{{ i18n "ui_spaces" }}">
     {{- range . }}
     <a class="sp" href="{{ .url }}" data-space-link="{{ .id }}" data-sort-key="space:{{ .id }}" title="{{ .name }}" aria-label="{{ .name }}">{{ partial "icon.html" .icon }}</a>

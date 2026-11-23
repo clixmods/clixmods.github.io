@@ -439,8 +439,74 @@ html.is-sorting, html.is-sorting * { cursor: grabbing !important; }
 
 // Sélecteur d'espaces (icônes Ionicons monochromes, comme Zen) :
 // l'espace courant est simplement plus net, les autres en retrait.
+// Bulle de découverte des espaces, au-dessus du sélecteur, et boutons en surbrillance.
+.space-tip {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: calc(100% + 12px);
+  z-index: 6;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--sheet);
+  color: var(--ink);
+  box-shadow: var(--shadow-pop);
+  border: 1px solid var(--line);
+  animation: space-tip-in 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+  &[hidden] { display: none; }
+  // Flèche vers les boutons
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 10px;
+    height: 10px;
+    background: var(--sheet);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    transform: translateX(-50%) rotate(45deg);
+  }
+}
+@keyframes space-tip-in { from { opacity: 0; transform: translateY(8px) scale(0.97); } }
+.space-tip-badge {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+}
+.space-tip-title { font-size: 13.5px; font-weight: 600; }
+.space-tip-text { margin-top: 3px; font-size: 12.5px; line-height: 1.45; color: var(--ink-2); }
+.space-tip-close {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--sheet);
+  font-size: 12.5px;
+  font-weight: 500;
+  &:hover { opacity: 0.88; }
+}
+.switch.is-hinting .sp {
+  opacity: 1;
+  background: color-mix(in oklab, var(--frame-ink) 12%, transparent);
+  animation: sp-hint 1.8s ease-in-out infinite;
+}
+@keyframes sp-hint {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--frame-ink) 30%, transparent); }
+  50% { box-shadow: 0 0 0 4px color-mix(in oklab, var(--frame-ink) 0%, transparent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .space-tip, .switch.is-hinting .sp { animation: none; }
+}
+
 // Délimitation entre les onglets (qui défilent) et le sélecteur d'espaces.
 .side-foot {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 10px 2px 2px;
@@ -817,35 +883,3 @@ html[data-kind="frame"] {
   > .folder-body { display: grid; }
 }
 
-// Sélecteur de comparaison (serveur local seulement)
-.links-lab {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 90;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 5px;
-  border-radius: 999px;
-  background: var(--sheet, #fff);
-  color: var(--ink, #111);
-  border: 1px solid color-mix(in oklab, currentColor 14%, transparent);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-  font-size: 12.5px;
-  .links-lab-name { padding: 0 8px 0 10px; opacity: 0.65; font-weight: 500; }
-  button {
-    appearance: none;
-    border: 0;
-    border-radius: 999px;
-    padding: 7px 12px;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    font-weight: 500;
-    cursor: pointer;
-    &:hover { background: color-mix(in oklab, currentColor 8%, transparent); }
-    &[aria-pressed="true"] { background: var(--ink); color: var(--sheet); }
-  }
-}
-@media (max-width: 860px) { .links-lab { right: 10px; left: 10px; bottom: 10px; justify-content: center; flex-wrap: wrap; border-radius: 16px; } }

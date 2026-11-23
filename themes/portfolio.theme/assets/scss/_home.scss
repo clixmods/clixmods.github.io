@@ -66,31 +66,6 @@
   }
 }
 
-// Portes : la teinte de chaque espace, ses projets en compteur
-.doors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.door {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  padding: 16px;
-  border-radius: var(--r);
-  color: var(--ink);
-  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.2s ease;
-  min-width: 0;
-  &:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-}
-@each $id in (jeux, web, mods) {
-  .door[data-door="#{$id}"] {
-    background: linear-gradient(135deg, var(--sp-#{$id}-a), var(--sp-#{$id}-b));
-    .ico { color: var(--sp-#{$id}-accent); }
-  }
-}
-.door-top { display: flex; align-items: center; justify-content: space-between; .ico { width: 20px; height: 20px; } }
-.door-count { font-family: var(--mono); font-size: 12px; color: var(--ink-2); }
-.door-text { display: flex; flex-direction: column; gap: 2px; }
-.door-text b { font-size: 16px; font-weight: 600; }
-.door-text small { font-size: 13px; color: var(--ink-2); }
-
 // Parcours : une ligne par expérience / formation
 .rows { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .row {
@@ -128,9 +103,6 @@
 .row-date { font-size: 12px; color: var(--ink-3); white-space: nowrap; text-align: right; }
 
 @media (max-width: 700px) {
-  .doors { grid-template-columns: minmax(0, 1fr); gap: 8px; }
-  .door { flex-direction: row-reverse; justify-content: space-between; align-items: center; gap: 14px; }
-  .door-top { gap: 10px; flex-direction: row-reverse; }
   .facts { grid-template-columns: minmax(0, 1fr); }
   .status { margin-left: 0; }
   .row { grid-template-columns: 36px minmax(0, 1fr); }

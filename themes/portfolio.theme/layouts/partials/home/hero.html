@@ -2,7 +2,6 @@
 {{- $p := $sd.profile -}}
 {{- $personal := $p.personal -}}
 {{- $contact := $p.contact -}}
-{{- $avail := $p.availability -}}
 <section class="hero">
   <div class="who">
     {{- with $p.media.profileImage }}
@@ -13,7 +12,6 @@
       <div class="who-name">{{ $personal.fullName }}</div>
       <div class="who-role">{{ with $contact.location }}{{ . }}{{ end }}{{ with $p.details.speciality }} · {{ . }}{{ end }}</div>
     </div>
-    {{- with $avail.message }}<span class="status"><span class="status-dot"></span>{{ . }}</span>{{ end }}
   </div>
 
   <h1 class="hero-title">

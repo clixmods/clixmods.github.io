@@ -2,13 +2,13 @@
 {{/* Contexte = dict { page, sd, space, spaces } fourni par baseof */}}
 <div class="page page-home">
   {{ partial "home/hero.html" . }}
-  {{ partial "home/doors.html" . }}
+  {{ partial "home/testimonials.html" . }}
   {{ partial "home/recent-projects.html" . }}
-  {{ partial "home/parcours.html" . }}
+  {{ partial "home/parcours.html" (dict "section" "experiences") }}
+  {{ partial "home/parcours.html" (dict "section" "educations") }}
   <section class="sec">
     <div class="sec-head"><h2>{{ i18n "home_skills" }}</h2></div>
     {{ partial "home/technologies.html" . }}
   </section>
-  {{ partial "home/testimonials.html" . }}
 </div>
 {{ end }}

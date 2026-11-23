@@ -158,23 +158,21 @@
   };
   rememberPage();
 
-  // ── Mode des projets dans la barre (sélecteur : serveur local seulement) ─
-  var lab = d.querySelector(".links-lab");
-  if (lab) {
-    var showMode = function () {
-      var m = html.getAttribute("data-links") || "simple";
-      lab.querySelectorAll("[data-links-mode]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-links-mode") === m ? "true" : "false"); });
+  // ── Bulle de découverte des espaces (jusqu'à ce qu'on la ferme) ─
+  var tip = side.querySelector("[data-space-tip]");
+  if (tip && store.get("cadre:tip-spaces") !== "1" && window.matchMedia("(min-width: 861px)").matches) {
+    var sw = side.querySelector(".switch");
+    var closeTip = function () {
+      tip.hidden = true;
+      if (sw) sw.classList.remove("is-hinting");
+      store.set("cadre:tip-spaces", "1");
     };
-    lab.addEventListener("click", function (e) {
-      var b = e.target.closest("[data-links-mode]");
-      if (!b) return;
-      var m = b.getAttribute("data-links-mode");
-      if (m === "full") html.setAttribute("data-links", "full"); else html.removeAttribute("data-links");
-      store.set("cadre:links", m);
-      showMode();
-      markCurrent();
-    });
-    showMode();
+    setTimeout(function () {
+      tip.hidden = false;
+      if (sw) sw.classList.add("is-hinting");
+    }, 700);
+    tip.querySelector("[data-space-tip-close]").addEventListener("click", closeTip);
+    if (sw) sw.addEventListener("click", function (e) { if (e.target.closest("[data-space-link]")) closeTip(); });
   }
 
   // ── Glissement entre espaces (comme Arc) ──────────────
