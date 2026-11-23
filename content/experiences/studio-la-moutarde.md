@@ -46,6 +46,10 @@ soft_skills:
     - skill_communication
 fmContentType: experience-content-type
 draft: false
+testimonials:
+  - francois-bertrand
+  - anthony-expert
+  - mony-cazamea
 ---
 
 ## Description du poste

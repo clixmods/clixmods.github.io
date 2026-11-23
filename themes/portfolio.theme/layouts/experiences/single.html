@@ -26,6 +26,8 @@
 
     <div class="proj-layout">
       <div class="proj-main">
+        {{- with $P.testimonials }}{{ partial "page-testimonials.html" (dict "ids" . "sd" $.sd) }}{{ end }}
+
         {{- with $page.Content }}<article class="proj-card reveal"><div class="prose">{{ . }}</div></article>{{ end }}
 
         {{- with $P.projects }}

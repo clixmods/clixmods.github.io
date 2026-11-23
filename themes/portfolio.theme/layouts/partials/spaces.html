@@ -55,8 +55,7 @@
       {{- $sub := slice (dict "kind" "tab" "title" (i18n "tab_job") "url" $exp.RelPermalink "icon" "document-text") -}}
       {{- range . -}}
         {{- with site.GetPage (printf "/projects/%s" .project_ref) -}}
-          {{- $img := .Params.image | default "" -}}
-          {{- $sub = $sub | append (dict "kind" "tab" "title" .LinkTitle "full" .Title "url" .RelPermalink "thumb" (partialCached "tab-thumb.html" (dict "path" $img) $img)) -}}
+          {{- $sub = $sub | append (dict "kind" "tab" "title" .LinkTitle "full" .Title "url" .RelPermalink "thumb" (partial "project-thumb.html" .)) -}}
         {{- end -}}
       {{- end -}}
       {{- $t = dict "kind" "folder" "id" (printf "exp-%s" $exp.File.ContentBaseName) "name" $label "tabs" $sub "thumb" $logoThumb "closed" true -}}

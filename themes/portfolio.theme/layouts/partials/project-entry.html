@@ -16,8 +16,7 @@
 */ -}}
 {{- $proj := . -}}
 {{- $base := $proj.File.ContentBaseName -}}
-{{- $img := $proj.Params.image | default "" -}}
-{{- $thumb := partialCached "tab-thumb.html" (dict "path" $img) $img -}}
+{{- $thumb := partial "project-thumb.html" $proj -}}
 {{- $children := (where (where site.RegularPages "Section" "projects") "Params.parent" $base).ByDate -}}
 {{- $out := dict "kind" "tab" "title" $proj.LinkTitle "full" $proj.Title "url" $proj.RelPermalink "thumb" $thumb -}}
 {{- if or $proj.Params.actions $proj.Params.linked_wikis $children -}}

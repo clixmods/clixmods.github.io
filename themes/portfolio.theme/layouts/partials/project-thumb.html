@@ -1,0 +1,25 @@
+{{- /*
+  Icône d'onglet d'un projet. Contexte = la page du projet.
+  1. tab_icon si défini (image choisie pour l'onglet) ;
+  2. sinon le logo, s'il est à peu près carré (ratio <= 1,8) : un logo-titre
+     très large devient illisible à 16 px ;
+  3. sinon l'image du projet, recadrée au centre.
+  Retourne l'URL de la miniature, ou "".
+*/ -}}
+{{- $out := "" -}}
+{{- with .Params.tab_icon -}}{{- $out = partialCached "tab-thumb.html" (dict "path" . "fit" true) . "fit" -}}{{- end -}}
+{{- if not $out -}}
+  {{- with .Params.logo -}}
+    {{- $clean := strings.TrimPrefix "images/" (strings.TrimPrefix "/" .) -}}
+    {{- with resources.Get (printf "images/%s" $clean) -}}
+      {{- $ok := true -}}
+      {{- if not (eq (lower (path.Ext $clean)) ".svg") }}{{ $ok = le (div (float .Width) .Height) 1.8 }}{{ end -}}
+      {{- if $ok }}{{ $out = partialCached "tab-thumb.html" (dict "path" $clean "fit" true) $clean "fit" }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $out -}}
+  {{- $img := .Params.image | default "" -}}
+  {{- $out = partialCached "tab-thumb.html" (dict "path" $img) $img -}}
+{{- end -}}
+{{- return $out -}}

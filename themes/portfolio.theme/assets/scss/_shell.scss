@@ -202,6 +202,12 @@
   scrollbar-width: thin;
   scrollbar-color: var(--frame-line) transparent;
   position: relative;
+  --fade-up: 0px;
+  --fade-down: 0px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--fade-up), #000 calc(100% - var(--fade-down)), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 var(--fade-up), #000 calc(100% - var(--fade-down)), transparent 100%);
+  &.can-up { --fade-up: 18px; }
+  &.can-down { --fade-down: 18px; }
 }
 
 // Un seul espace visible : celui de la page (attribut data-space sur <html>)
@@ -215,17 +221,30 @@
   pointer-events: none;
 }
 @each $id in (home, jeux, web, mods) {
-  html[data-space="#{$id}"] [data-space-panel="#{$id}"] { display: flex; }
+  html[data-space="#{$id}"] [data-space-panel="#{$id}"],
+  html[data-space="#{$id}"] [data-space-head="#{$id}"] { display: flex; }
 }
 
-// Indicateur d'espace (comme Zen : icône + nom, discret, au-dessus des onglets)
-.space-head {
+// Indicateur d'espace (comme Zen : icône + nom, discret, au-dessus des onglets).
+// Hors de .side-scroll : il reste en place quand les onglets défilent.
+.space-heads {
+  position: relative;
+  flex: none;
+  margin-bottom: -10px; // rapproche les onglets (le gap de .side vaut 12 px)
+  overflow: hidden;
+}
+.space-head.is-leaving {
   display: flex;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.space-head {
+  display: none;
   align-items: center;
   gap: 10px;
   min-height: 32px;
   padding: 0 10px;
-  margin-bottom: 2px;
   font-size: 13px;
   font-weight: 500;
   color: var(--frame-ink-2);
@@ -420,7 +439,14 @@ html.is-sorting, html.is-sorting * { cursor: grabbing !important; }
 
 // Sélecteur d'espaces (icônes Ionicons monochromes, comme Zen) :
 // l'espace courant est simplement plus net, les autres en retrait.
-.side-foot { display: flex; align-items: center; padding: 2px; }
+// Délimitation entre les onglets (qui défilent) et le sélecteur d'espaces.
+.side-foot {
+  display: flex;
+  align-items: center;
+  padding: 10px 2px 2px;
+  margin-top: -4px;
+  border-top: 1px solid color-mix(in oklab, var(--frame-ink) 18%, transparent);
+}
 .switch { display: flex; gap: 4px; margin-inline: auto; }
 .sp {
   width: 32px;

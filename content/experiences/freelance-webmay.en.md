@@ -42,6 +42,8 @@ tools:
     - tool_google_sheets
 fmContentType: experience-content-type
 draft: false
+testimonials:
+  - sylvain-ghysens
 ---
 
 ## Mission Description

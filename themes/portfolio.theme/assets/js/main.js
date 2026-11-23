@@ -96,6 +96,20 @@
 
   // ── Onglet courant, espace affiché, défilement mémorisé ─
   var scroller = side.querySelector("[data-side-scroll]");
+  // Fondu en haut / en bas de la liste quand il reste des onglets à faire défiler.
+  if (scroller) {
+    var edges = function () {
+      scroller.classList.toggle("can-up", scroller.scrollTop > 2);
+      scroller.classList.toggle("can-down", scroller.scrollTop + scroller.clientHeight < scroller.scrollHeight - 2);
+    };
+    scroller.addEventListener("scroll", edges, { passive: true });
+    if (window.ResizeObserver) {
+      var ro = new ResizeObserver(edges);
+      ro.observe(scroller);
+      scroller.querySelectorAll("[data-space-panel]").forEach(function (p) { ro.observe(p); });
+    }
+    edges();
+  }
   var markCurrent = function () {
     side.querySelectorAll('a.tab[aria-current]').forEach(function (a) { a.removeAttribute("aria-current"); });
     var cur = null;
@@ -186,6 +200,15 @@
     oldP.animate([{ transform: "none", opacity: 1 }, { transform: "translateX(" + (-dir * 55) + "%)", opacity: 0 }], { duration: 300, easing: ease })
       .finished.then(function () { oldP.classList.remove("is-leaving"); oldP.style.top = ""; }, function () {});
     newP.animate([{ transform: "translateX(" + (dir * 55) + "%)", opacity: 0 }, { transform: "none", opacity: 1 }], { duration: 340, easing: ease });
+    // Le nom de l'espace (au-dessus, fixe) glisse avec ses onglets.
+    var oldH = side.querySelector('[data-space-head="' + from + '"]');
+    var newH = side.querySelector('[data-space-head="' + to + '"]');
+    if (oldH && newH) {
+      oldH.classList.add("is-leaving");
+      oldH.animate([{ transform: "none", opacity: 1 }, { transform: "translateX(" + (-dir * 55) + "%)", opacity: 0 }], { duration: 300, easing: ease })
+        .finished.then(function () { oldH.classList.remove("is-leaving"); }, function () {});
+      newH.animate([{ transform: "translateX(" + (dir * 55) + "%)", opacity: 0 }, { transform: "none", opacity: 1 }], { duration: 340, easing: ease });
+    }
   };
 
   // ── Changer d'espace ──────────────────────────────────
