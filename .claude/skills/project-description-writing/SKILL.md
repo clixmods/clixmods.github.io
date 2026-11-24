@@ -74,6 +74,10 @@ Il n'a pas besoin d'encombrer le sous-titre ni la description.
 - **Calme et factuel.** Pas de points d'exclamation, pas de superlatifs creux
   (« incroyable », « révolutionnaire », « ultra-performant »). Un chiffre vrai convainc
   mieux qu'un adjectif.
+- **Pas d'étiquette vide.** « commercial », « professionnel », « personnel », « complet »,
+  « avancé » ne disent pas ce qu'est le projet. « Jeu de rôle commercial du studio La
+  Moutarde » ne dit rien ; « Jeu de rôle où six amis enquêtent sur la pénurie de cristaux
+  magiques » dit de quoi parle le jeu. Le cadre (studio, école) va après le tiret.
 - **Voix par endroit.** `subtitle` et `description` : tournure impersonnelle ou nominale.
   Le corps : « je » pour ce que j'ai fait, « nous / l'équipe » pour un projet d'équipe,
   « vous » pour s'adresser au joueur d'un jeu (« vous incarnez… »). En anglais : « I »,
