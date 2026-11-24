@@ -55,8 +55,10 @@ Il n'a pas besoin d'encombrer le sous-titre ni la description.
 
 - **Dire littéralement ce que ça fait.** Pas de métaphore ni de formule d'accroche :
   « Mod Minecraft qui fait vivre l'horizon » est joli mais ne dit rien à qui ne connaît
-  pas le projet. « Mod Minecraft qui affiche un nombre illimité de mobs, quelle que soit
-  la distance » se comprend tout de suite. Test : quelqu'un qui lit seulement cette
+  pas le projet. « Mod Minecraft qui brise la limite de distance d'affichage des
+  créatures et des joueurs » ou « Mod Minecraft qui affiche un nombre illimité de mobs,
+  quelle que soit la distance » se comprennent tout de suite : on nomme la limite du
+  jeu et ce que le projet y change. Test : quelqu'un qui lit seulement cette
   ligne peut-il expliquer à un ami ce que fait le projet ?
 - **Le résultat d'abord.** Ce que le projet permet, montre ou fait vivre, avant comment
   il est construit. « Un éditeur pour créer son skin Minecraft pièce par pièce », pas
@@ -88,8 +90,8 @@ Une ligne de **3 à 14 mots** qui dit *ce que c'est et ce que ça fait*, littér
 <nature du projet> qui/pour <ce qu'il fait, concrètement> – <cadre, si utile>
 ```
 
-- Bon : « Mod Minecraft qui affiche un nombre illimité de mobs, quelle que soit la
-  distance », « Mod Minecraft pour créer et changer son skin sans quitter le jeu »,
+- Bon : « Mod Minecraft qui brise la limite de distance d'affichage des créatures et
+  des joueurs », « Mod Minecraft pour créer et changer son skin sans quitter le jeu »,
   « Jeu où l'on aspire tout avec une soucoupe volante »,
   « Jeu de Blackjack sur ordinateur – IUT Montpellier-Sète »,
   « Carte zombie pour Call of Duty: Black Ops 3 »
@@ -186,7 +188,7 @@ Brouillons réels du site et ce qu'ils deviennent :
 
 | Champ | Avant | Après |
 |---|---|---|
-| Living Horizon, `subtitle` | Mod Minecraft multi-loader qui fait vivre l'horizon au-delà de la distance de rendu | Mod Minecraft qui affiche un nombre illimité de mobs, quelle que soit la distance |
+| Living Horizon, `subtitle` | Mod Minecraft multi-loader qui fait vivre l'horizon au-delà de la distance de rendu | Mod Minecraft qui brise la limite de distance d'affichage des créatures et des joueurs |
 | Living Horizon, `description` | Mod Minecraft pour Fabric, Quilt, NeoForge et Forge, de 1.20 à 26.3 depuis un seul code source compilé avec Stonecutter : animaux, villageois, oiseaux et autres joueurs restent visibles bien au-delà de la distance de rendu… | Mod Minecraft qui affiche les animaux, les villageois, les oiseaux et les autres joueurs à n'importe quelle distance, bien au-delà de la limite où le jeu les fait disparaître. Plus de 5 500 téléchargements la première semaine. |
 | MC Skin Creator, `description` | Éditeur de skins Minecraft dans le navigateur : API REST et moteur de composition de textures en Java 21 / Spring Boot 4, front Angular 21 avec rendu 3D WebGL sur mesure, livrés dans un seul jar exécutable | Éditeur en ligne pour créer son skin Minecraft pièce par pièce, avec un aperçu 3D du personnage en temps réel. (Java, Spring Boot, Angular.) |
 | Plateforme d'événements, `subtitle` | API Symfony/API Platform & front Vue.js - IUT Montpellier-Sète | Application de gestion d'événements – IUT Montpellier-Sète |
@@ -197,7 +199,7 @@ Brouillons réels du site et ce qu'ils deviennent :
 Les mêmes, en anglais :
 
 ```
-subtitle    = "Minecraft mod that shows an unlimited number of mobs, at any distance"
+subtitle    = "Minecraft mod that breaks the game's display distance limit for mobs and players"
 description = "Minecraft mod that shows animals, villagers, birds and other players at any
                distance, far beyond the point where the game normally makes them disappear.
                Over 5,500 downloads in its first week."
