@@ -3,7 +3,7 @@ date = "2026-10-13T10:00:00+02:00"
 draft = false
 title = "Living Horizon"
 slug = "living-horizon"
-subtitle = "Mod Minecraft qui brise la limite de distance d'affichage des créatures et des joueurs"
+subtitle = "Mod Minecraft qui débloque la limite de distance d'affichage des créatures et des joueurs, quelle que soit la distance"
 description = "Mod Minecraft qui affiche les animaux, les villageois, les oiseaux et les autres joueurs à n'importe quelle distance, bien au-delà de la limite où le jeu les fait disparaître. Plus de 5 500 téléchargements la première semaine."
 tags = [
   "Java",

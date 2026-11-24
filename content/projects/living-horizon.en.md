@@ -3,7 +3,7 @@ date = "2026-10-13T10:00:00+02:00"
 draft = false
 title = "Living Horizon"
 slug = "living-horizon"
-subtitle = "Minecraft mod that breaks the game's display distance limit for mobs and players"
+subtitle = "Minecraft mod that unlocks the display distance limit for mobs and players, whatever the distance"
 description = "Minecraft mod that shows animals, villagers, birds and other players at any distance, far beyond the point where the game normally makes them disappear. Over 5,500 downloads in its first week."
 tags = [
   "Java",
