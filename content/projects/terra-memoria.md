@@ -2,7 +2,7 @@
 date = "2024-03-27T09:00:00.000Z"
 draft = false
 title = "Terra Memoria"
-subtitle = "RPG isométrique sorti sur PC et consoles (PlayStation 5, Xbox Series, Nintendo Switch)"
+subtitle = "RPG au tour par tour en pixel art, sorti sur PC et consoles (PlayStation 5, Xbox Series, Nintendo Switch)"
 description = "Participation à la fin de production et au suivi après sortie de Terra Memoria, un jeu de rôle sorti en 2024 sur PC, Switch, Xbox et PlayStation 5."
 tags = [ "JRPG", "Commercial", "Nintendo Switch", "Multi-plateformes" ]
 category = "projects"

@@ -40,6 +40,10 @@ Il n'a pas besoin d'encombrer le sous-titre ni la description.
    perso, client, game jam), son état (`status`), les chiffres. Sources : le corps
    actuel, les liens `[[actions]]`, le dépôt si l'utilisateur l'a, l'utilisateur sinon.
    Ne jamais inventer un chiffre, un public ou une fonctionnalité.
+   Pour un jeu ou un produit public (genre, style, plateformes, date de sortie),
+   vérifier aussi sur le web, y compris une formulation donnée par l'utilisateur ; si
+   une source contredit ou ne confirme pas un mot, le signaler et proposer une
+   formulation vérifiable plutôt que de la changer en silence.
 3. Écrire le français et l'anglais ensemble, avec les mêmes faits (*Voix*, *Modèles*,
    *Règles*).
 4. Ne toucher qu'au texte : `title`, `subtitle`, `description` et le corps. Les clés
@@ -76,9 +80,9 @@ Il n'a pas besoin d'encombrer le sous-titre ni la description.
   mieux qu'un adjectif.
 - **Pas d'étiquette vide.** « commercial », « professionnel », « personnel », « complet »,
   « avancé » ne disent pas ce qu'est le projet. « Jeu de rôle commercial du studio La
-  Moutarde » ne dit rien ; « RPG isométrique sorti sur PC et consoles (PlayStation 5,
-  Xbox Series, Nintendo Switch) » dit quel genre de jeu c'est et où y jouer. Le genre,
-  la vue et les plateformes sont des faits concrets ; un cadre (studio, école) va
+  Moutarde » ne dit rien ; « RPG au tour par tour en pixel art, sorti sur PC et consoles
+  (PlayStation 5, Xbox Series, Nintendo Switch) » dit quel genre de jeu c'est et où y
+  jouer. Le genre, le style et les plateformes sont des faits concrets ; un cadre (studio, école) va
   après le tiret.
 - **Voix par endroit.** `subtitle` et `description` : tournure impersonnelle ou nominale.
   Le corps : « je » pour ce que j'ai fait, « nous / l'équipe » pour un projet d'équipe,
