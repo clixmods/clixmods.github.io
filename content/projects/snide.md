@@ -2,8 +2,8 @@
 date = "2022-04-08T07:00:00.000Z"
 draft = false
 title = "Snide"
-subtitle = "Jeu expérimental qui teste des façons de jouer inhabituelles"
-description = "Petit jeu expérimental créé en trois semaines pour essayer des façons de jouer qui sortent de l'ordinaire. (Unity.)"
+subtitle = "Jeu de réflexion et de plateformes à la première personne, dans un labo qui teste des jeux « générés par IA »"
+description = "Jeu de réflexion et de plateformes à la première personne, plein d'humour : vous traversez les salles de test d'un laboratoire de robots, présentées comme des jeux vidéo créés par une IA. Réalisé en trois semaines. (Unity.)"
 tags = [ "Unity", "Game Design", "Experimental", "Innovation" ]
 category = "projects"
 sector = "games-personnel"
