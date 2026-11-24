@@ -3,8 +3,8 @@ date = "2026-09-29T10:00:00+02:00"
 draft = false
 title = "MC Skin Creator (mod)"
 slug = "mc-skin-creator-mod"
-subtitle = "Multi-loader Minecraft mod: the MC Skin Creator skin editor, right inside the game"
-description = "Minecraft mod for Fabric, Quilt, NeoForge and Forge, from 1.20 to 26.3 out of a single source tree built with Stonecutter: the MC Skin Creator editor in game, with piece catalogue, layers, 3D preview and one-click skin upload to your account"
+subtitle = "Minecraft mod that lets you create and apply your skin without leaving the game"
+description = "Minecraft mod that opens the MC Skin Creator editor in the game: build your character's look piece by piece and apply it to your account in one click, without leaving Minecraft."
 tags = [
   "Java",
   "Fabric",

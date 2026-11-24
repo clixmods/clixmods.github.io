@@ -2,8 +2,8 @@
 date = "2022-12-20T09:00:00.000Z"
 draft = false
 title = "Stholen"
-subtitle = "Jeu cozy"
-description = "Jeu cozy - Absorbez tout ce que vous pouvez avec votre soucoupe volante, allant d'une simple carotte à des habitations"
+subtitle = "Jeu où l'on aspire tout avec une soucoupe volante, d'une carotte aux maisons"
+description = "Jeu calme et sans pression où vous pilotez une soucoupe volante qui aspire tout sur son passage, d'une simple carotte jusqu'aux maisons. Projet d'équipe. (Unity.)"
 tags = [ "Unity", "Adventure", "Level Design", "Team Project" ]
 category = "projects"
 sector = "games-personnel"

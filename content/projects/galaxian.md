@@ -2,8 +2,8 @@
 date = "2022-02-18T09:00:00.000Z"
 draft = false
 title = "Galaxian"
-subtitle = "Remake du classique arcade - e-artsup"
-description = "Recréation du jeu d'arcade classique avec mécaniques modernes et game design soigné"
+subtitle = "Nouvelle version du jeu d'arcade Galaxian, où l'on abat des vaisseaux ennemis"
+description = "Remake de Galaxian, le jeu d'arcade où l'on abat des vagues de vaisseaux ennemis, avec des mécaniques modernisées. Réalisé en un mois. (Unity.)"
 tags = [ "Unity", "Arcade", "Classic Game", "Game Design" ]
 category = "projects"
 sector = "games-personnel"

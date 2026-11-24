@@ -2,8 +2,8 @@
 date = "2026-01-16T22:43:13.501Z"
 draft = false
 title = "Time Trial Cards"
-subtitle = "Educational timeline card game"
-description = "Time Trial Cards is an educational game where players sort major historical events on a timeline."
+subtitle = "Educational game where you place historical events on a timeline"
+description = "An educational game where you place major events, inventions and figures from history in the right spot on a timeline, rewarding both speed and accuracy."
 tags = [ "Mobile Game", "Game Design", "Freelance" ]
 category = "projects"
 sector = "games-professionnel"

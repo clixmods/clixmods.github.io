@@ -2,8 +2,8 @@
 date = "2018-06-15T10:00:00+02:00"
 draft = false
 title = "Farm"
-subtitle = "Remasterisation de carte - Black Ops 3"
-description = "Recréation fidèle et améliorée de Farm de Black Ops 2 sur Call Of Duty: Black Ops 3"
+subtitle = "Carte Black Ops 3 qui recrée la carte zombie Farm de Black Ops 2"
+description = "La carte Farm du mode Zombies de Black Ops 2 (survie en équipe contre des vagues de zombies), recréée et améliorée sur Black Ops 3. Plus de 170 000 téléchargements."
 tags = [ "Level Building", "Lighting", "Remaster", "Environment" ]
 category = "projects"
 sector = "mods"

@@ -3,8 +3,8 @@ date = "2026-10-13T10:00:00+02:00"
 draft = false
 title = "Living Horizon"
 slug = "living-horizon"
-subtitle = "Mod Minecraft multi-loader qui fait vivre l'horizon au-delà de la distance de rendu"
-description = "Mod Minecraft pour Fabric, Quilt, NeoForge et Forge, de 1.20 à 26.3 depuis un seul code source compilé avec Stonecutter : animaux, villageois, oiseaux et autres joueurs restent visibles bien au-delà de la distance de rendu, sur le terrain lointain de Voxy et Distant Horizons, avec un pack de données optionnel pour les serveurs"
+subtitle = "Mod Minecraft qui débloque la limite de distance d'affichage des créatures et des joueurs, quelle que soit la distance"
+description = "Mod Minecraft qui affiche les animaux, les villageois, les oiseaux et les autres joueurs à n'importe quelle distance, bien au-delà de la limite où le jeu les fait disparaître. Plus de 5 500 téléchargements la première semaine."
 tags = [
   "Java",
   "Fabric",

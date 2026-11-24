@@ -2,8 +2,8 @@
 date = "2020-07-29T08:00:00.000Z"
 draft = false
 title = "Nuketown Zombies"
-subtitle = "Map Remaster - Black Ops 3"
-description = "Faithful and enhanced recreation of Nuketown Zombies from Black Ops 2 on Call Of Duty: Black Ops 3"
+subtitle = "Black Ops 3 map that recreates Nuketown Zombies, playable by up to 8 players"
+description = "Black Ops 2's Nuketown Zombies map rebuilt in Black Ops 3, with games of up to 8 players and computer-controlled teammates. Over 600,000 downloads."
 tags = [
   "Game Design",
   "Game Development",

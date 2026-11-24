@@ -2,8 +2,8 @@
 date = "2023-11-15T10:00:00+02:00"
 draft = false
 title = "Aspiro Shop"
-subtitle = "PHP/MVC E-commerce Website - IUT Montpellier"
-description = "Complete online sales platform with MVC architecture and advanced security"
+subtitle = "Online shop that handles accounts, basket and orders – IUT Montpellier-Sète"
+description = "Team study project: an online shop with customer accounts, a basket kept from one visit to the next and order tracking. (PHP.)"
 tags = [ "lang_php", "MVC", "E-commerce", "Security", "PDO" ]
 category = "projects"
 sector = "appsweb-etude"

@@ -3,8 +3,8 @@ date = "2026-10-15T10:00:00+02:00"
 draft = false
 title = "Living Horizon (website)"
 slug = "living-horizon-website"
-subtitle = "Landing site of the Living Horizon mod: Angular, static, fed by the project's APIs"
-description = "One-page site for the Living Horizon Minecraft mod: serverless Angular 22, data pulled live from GitHub, CurseForge and Modrinth, a before / after slider and animated pixel-art illustrations on canvas, generated from the game's own models"
+subtitle = "Website that presents the Living Horizon mod and gives you the right file to download"
+description = "The one-page website of the Living Horizon mod: it shows the mod before / after, keeps its information up to date on its own and gives you the right file to download. (Angular.)"
 tags = [
   "Angular",
   "TypeScript",

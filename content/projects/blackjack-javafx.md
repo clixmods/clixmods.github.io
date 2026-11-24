@@ -2,8 +2,8 @@
 date = "2024-01-19T00:00:00+01:00"
 draft = false
 title = "Fortuna BlackJack"
-subtitle = "Jeu de Blackjack en Java et JavaFX - IUT Montpellier-Sète"
-description = "Projet de deuxième année de BUT Informatique : un jeu de Blackjack de bureau développé en équipe en Java et JavaFX, avec comptes joueurs, mises et interface bilingue."
+subtitle = "Jeu de Blackjack sur ordinateur, avec comptes joueurs et mises – IUT Montpellier-Sète"
+description = "Projet de deuxième année réalisé à cinq : un jeu de Blackjack sur ordinateur, avec comptes joueurs, mises en jetons et interface en français et en anglais. (Java.)"
 tags = [
   "Académique",
   "SAÉ",

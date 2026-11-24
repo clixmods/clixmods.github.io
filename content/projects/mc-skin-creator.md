@@ -3,8 +3,8 @@ date = "2026-09-07T10:00:00+02:00"
 draft = false
 title = "MC Skin Creator"
 slug = "mc-skin-creator"
-subtitle = "Éditeur de skins Minecraft en ligne : back-end Java / Spring Boot, front Angular"
-description = "Éditeur de skins Minecraft dans le navigateur : API REST et moteur de composition de textures en Java 21 / Spring Boot 4, front Angular 21 avec rendu 3D WebGL sur mesure, livrés dans un seul jar exécutable"
+subtitle = "Site qui permet de créer son skin Minecraft pièce par pièce, avec un aperçu 3D"
+description = "Éditeur en ligne pour créer l'apparence de son personnage Minecraft pièce par pièce, parmi plus de 500 éléments, avec un aperçu 3D en temps réel. (Java, Spring Boot, Angular.)"
 tags = [
   "Java",
   "Spring Boot",

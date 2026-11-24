@@ -2,8 +2,8 @@
 date = "2023-01-28T22:00:00.000Z"
 draft = false
 title = "Mystic Koni"
-subtitle = "Puzzle game"
-description = "Puzzle game where you play as a fairy living in a dying sacred tree and must solve puzzles to save it"
+subtitle = "Puzzle game where a fairy tries to save her sacred tree – game jam"
+description = "Made in two days at a game jam (a game built against the clock): you play a fairy solving puzzles to save the dying sacred tree she lives in."
 tags = [ "Puzzle", "Fairy tale", "Itch.io", "Adventure", "Poetic" ]
 category = "projects"
 sector = "games-gamejams"

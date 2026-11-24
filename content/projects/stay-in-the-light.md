@@ -2,8 +2,8 @@
 date = "2023-03-09T00:00:00+02:00"
 draft = false
 title = "Stay In The Light"
-subtitle = "Jeu d'horreur dans un hôpital abandonné"
-description = "Jeu d'horreur à la première personne dans un hôpital abandonné où vous devez gérer votre lampe qui surchauffe tout en évitant ce qui rôde dans le noir"
+subtitle = "Jeu d'horreur où l'on explore un hôpital abandonné avec une lampe qui surchauffe"
+description = "Jeu d'horreur vu à la première personne : vous explorez un hôpital abandonné avec une lampe qui surchauffe, en évitant ce qui rôde dans le noir. (Unity.)"
 tags = [ "Horror", "Survival", "Unity", "Itch.io", "Hospital" ]
 category = "projects"
 sector = "games-personnel"

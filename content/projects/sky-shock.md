@@ -2,8 +2,8 @@
 date = "2022-06-01T00:00:00+02:00"
 draft = false
 title = "Sky Shock"
-subtitle = "Shoot'em up arcade"
-description = "Shoot'em up arcade, défiez les vagues d'ennemis dans un univers rétro et coloré !"
+subtitle = "Jeu de tir arcade où l'on affronte des vagues d'ennemis"
+description = "Jeu de tir dans l'esprit des bornes d'arcade : vous affrontez des vagues d'ennemis dans un univers rétro et coloré. Réalisé en 10 jours, publié sur itch.io. (Unity.)"
 tags = [ "Arcade", "Shoot'em up", "Unity", "Itch.io", "Retro" ]
 category = "projects"
 sector = "games-gamejams"

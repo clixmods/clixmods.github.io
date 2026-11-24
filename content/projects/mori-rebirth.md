@@ -2,8 +2,8 @@
 date = "2022-03-18T09:00:00.000Z"
 draft = false
 title = "Mori Rebirth"
-subtitle = "Carte pour le mode zombie de Black Ops 3"
-description = "Carte zombie personnalisée pour le mode zombie de Call Of Duty: Black Ops 3"
+subtitle = "Carte zombie pour Black Ops 3, téléchargée plus de 150 000 fois"
+description = "Une carte créée pour le mode Zombies de Black Ops 3, où l'on survit en équipe à des vagues de zombies. Plus de 150 000 téléchargements sur Steam."
 tags = [ "Modding", "Game Systems", "C++", "Innovation" ]
 category = "projects"
 sector = "mods"

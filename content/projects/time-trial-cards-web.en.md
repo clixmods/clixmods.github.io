@@ -2,8 +2,8 @@
 date = "2026-04-25T09:00:00.000Z"
 draft = false
 title = "Time Trial Cards - Web Platform"
-subtitle = "Teacher dashboard for educational card game sessions"
-description = "A Laravel 12 web platform that enables teachers to create and manage interactive educational sessions based on chronological card sequences, with class management, student result tracking, and a REST API consumed by the companion Time Trial Cards Unity application."
+subtitle = "Website that lets teachers run the game in class and track the results"
+description = "A website where teachers prepare and launch games of the educational game Time Trial Cards with their classes, then review their students' results. (Laravel.)"
 tags = [ "PHP", "Laravel", "Docker", "REST API", "Freelance" ]
 category = "projects"
 sector = "appsweb-professionnel"

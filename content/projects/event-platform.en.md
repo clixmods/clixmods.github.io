@@ -2,8 +2,8 @@
 date = "2024-12-23T10:00:00+02:00"
 draft = false
 title = "Event Management Platform"
-subtitle = "Symfony/API Platform API & Vue.js front-end - IUT Montpellier-Sète"
-description = "Academic project: an event management web application with a JWT-secured REST API (Symfony 6.4 / API Platform 4) and a Vue 3 client, fully containerised."
+subtitle = "Web app that lets you create events and sign up for them – IUT Montpellier-Sète"
+description = "Study project: a web app to create events, sign up for them and manage them, with secure user accounts. (Symfony, Vue.js.)"
 tags = [
   "Symfony",
   "API Platform",

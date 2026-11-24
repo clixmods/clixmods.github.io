@@ -2,8 +2,8 @@
 date = "2022-01-17T00:00:00+02:00"
 draft = false
 title = "Witchable"
-subtitle = "Jeu d'alchimiste avec gestion du temps"
-description = "Jeu où vous incarnez un alchimiste devant servir rapidement les potions demandées à l'aide de différentes machines et ingrédients"
+subtitle = "Jeu où un alchimiste prépare des potions contre la montre – game jam"
+description = "Créé en 10 jours de game jam (un jeu fait en temps limité) : vous incarnez un alchimiste qui doit préparer au plus vite les potions demandées avec ses machines et ses ingrédients."
 tags = [ "Simulation", "Alchimie", "Itch.io", "Gestion", "Unity" ]
 category = "projects"
 sector = "games-gamejams"

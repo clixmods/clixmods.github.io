@@ -2,8 +2,8 @@
 date = "2023-03-31T00:00:00+02:00"
 draft = false
 title = "Bubble Wars"
-subtitle = "Remake de Geometry Wars - Itch.io Release"
-description = "Bubble Wars est un shooter inspiré de Geometry Wars, mais sous l'océan avec un décor fantastiquement bleu. Découvrez un jeu contemplatif qui révèle les beautés de la nature et du bleu lumière."
+subtitle = "Jeu de tir où l'on affronte des vagues d'ennemis sous l'océan"
+description = "Un jeu de tir en arène inspiré de Geometry Wars : des vagues d'ennemis arrivent de partout, dans un décor sous-marin bleu et apaisant. Publié sur itch.io. (Unity.)"
 tags = [
   "3D",
   "Arcade",

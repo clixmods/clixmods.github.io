@@ -3,8 +3,8 @@ date = "2024-09-01T09:00:00+02:00"
 draft = false
 title = "Personal Portfolio"
 slug = "portfolio-website"
-subtitle = "Personal website built with Hugo"
-description = "Modern portfolio with custom theme, macOS-inspired design, data-driven architecture and integrated CMS"
+subtitle = "Website that presents my projects, background and CV"
+description = "The site you are reading: my projects, background and CV, in French and English, with a custom-made visual theme and content that is easy to update. (Hugo.)"
 tags = [
   "Hugo",
   "Static Site",

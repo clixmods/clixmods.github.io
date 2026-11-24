@@ -2,8 +2,8 @@
 date: 2025-12-20T08:57:00.100Z
 draft: false
 title: "Return to Tranzit : Farm"
-subtitle: Contribution au projet Return To Tranzit
-description: Contribution au projet Return To Tranzit
+subtitle: "Participation à un remake du mode zombie TranZit : décors 3D et carte Farm"
+description: "Participation à Return to TranZit, une refonte complète d'un mode zombie de Black Ops 2 sur Black Ops 3 : décors 3D et développement de la carte Farm."
 image: /images/projects/return-to-tranzit-farm/return-tranzit-1.jpg
 tile_size: 1x1
 show_in_mosaic: true

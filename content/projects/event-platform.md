@@ -2,8 +2,8 @@
 date = "2024-12-23T10:00:00+02:00"
 draft = false
 title = "Plateforme de gestion d'événements"
-subtitle = "API Symfony/API Platform & front Vue.js - IUT Montpellier-Sète"
-description = "Projet d'étude : application web de gestion d'événements avec API REST sécurisée par JWT (Symfony 6.4 / API Platform 4) et client Vue 3, le tout conteneurisé."
+subtitle = "Application web qui permet de créer des événements et de s'y inscrire – IUT Montpellier-Sète"
+description = "Projet d'étude : une application web pour créer des événements, s'y inscrire et les gérer, avec des comptes utilisateurs sécurisés. (Symfony, Vue.js.)"
 tags = [
   "Symfony",
   "API Platform",

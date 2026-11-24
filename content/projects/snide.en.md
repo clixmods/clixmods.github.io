@@ -2,8 +2,8 @@
 date = "2022-04-08T07:00:00.000Z"
 draft = false
 title = "Snide"
-subtitle = "Experimental game with non-conventional mechanics"
-description = "Experimental game design project exploring non-conventional game mechanics"
+subtitle = "Experimental game that tries out unusual ways to play"
+description = "A small experimental game made in three weeks to try out ways of playing that break from the usual. (Unity.)"
 tags = [ "Unity", "Game Design", "Experimental", "Innovation" ]
 category = "projects"
 sector = "games-personnel"

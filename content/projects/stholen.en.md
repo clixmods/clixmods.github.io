@@ -2,8 +2,8 @@
 date = "2022-12-20T09:00:00.000Z"
 draft = false
 title = "Stholen"
-subtitle = "Cozy game"
-description = "Cozy game - Absorb everything you can with your flying saucer, from a simple carrot to dwellings"
+subtitle = "Game where you suck up everything with a flying saucer, from carrots to houses"
+description = "A calm, pressure-free game where you fly a flying saucer that sucks up everything in its path, from a single carrot to whole houses. Team project. (Unity.)"
 tags = [ "Unity", "Adventure", "Level Design", "Team Project" ]
 category = "projects"
 sector = "games-personnel"

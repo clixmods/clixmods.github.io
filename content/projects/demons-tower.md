@@ -2,8 +2,8 @@
 date = "2021-12-17T00:00:00+02:00"
 draft = false
 title = "Demon's Tower"
-subtitle = "Action-Roguelite - Itch.io Release"
-description = "Demon's Tower est un action-roguelite où vous incarnez un héros devant vaincre le donjon et le plus grand démon pour sauver le village. Attention, chaque mort vous fait perdre votre équipement !"
+subtitle = "Jeu d'action où l'on gravit un donjon, et où chaque mort fait perdre son équipement"
+description = "Un jeu d'action où vous gravissez un donjon pour vaincre le plus grand des démons et sauver le village. Chaque mort vous fait perdre votre équipement : il faut tout recommencer."
 tags = [ "Action", "Roguelite", "Donjon", "Itch.io", "Unity" ]
 category = "projects"
 sector = "games-personnel"

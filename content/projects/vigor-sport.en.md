@@ -2,8 +2,8 @@
 date = "2026-03-28T00:00:00Z"
 draft = false
 title = "Vigor Sport"
-subtitle = "WordPress showcase website for sports massage services"
-description = "WordPress showcase website designed for a practitioner specializing in sports massage and muscle recovery. A modern and reassuring interface, built to highlight the services, explain the offerings, display coverage areas and facilitate appointment booking."
+subtitle = "Showcase website that presents a sports massage therapist and makes booking easy"
+description = "A showcase website for a sports massage therapist: it presents the services and areas covered, reassures visitors and makes booking easy. (WordPress.)"
 tags = [ "Showcase Website", "WordPress", "Freelance" ]
 category = "projects"
 sector = "appsweb-professionnel"
