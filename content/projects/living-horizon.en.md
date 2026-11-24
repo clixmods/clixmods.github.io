@@ -3,8 +3,8 @@ date = "2026-10-13T10:00:00+02:00"
 draft = false
 title = "Living Horizon"
 slug = "living-horizon"
-subtitle = "Multi-loader Minecraft mod that brings the horizon to life past the render distance"
-description = "Minecraft mod for Fabric, Quilt, NeoForge and Forge, from 1.20 to 26.3 out of a single source tree built with Stonecutter: animals, villagers, birds and other players stay visible far past the render distance, on the far terrain of Voxy and Distant Horizons, with an optional data pack for servers"
+subtitle = "Minecraft mod that brings the horizon to life"
+description = "Minecraft mod that keeps animals, villagers, birds and other players visible all the way to the horizon, where the game normally makes them disappear. Over 5,500 downloads in its first week."
 tags = [
   "Java",
   "Fabric",

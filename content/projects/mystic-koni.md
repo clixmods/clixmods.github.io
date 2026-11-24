@@ -2,8 +2,8 @@
 date = "2023-01-28T22:00:00.000Z"
 draft = false
 title = "Mystic Koni"
-subtitle = "Jeu de puzzle"
-description = "Jeu de puzzle où vous incarnez une fée vivant dans un arbre sacré mourant et devez résoudre des énigmes pour le sauver"
+subtitle = "Jeu d'énigmes féerique – game jam"
+description = "Créé en deux jours lors d'une game jam (un jeu fait en temps limité) : vous incarnez une fée qui résout des énigmes pour sauver l'arbre sacré où elle vit."
 tags = [ "Puzzle", "Féerique", "Itch.io", "Aventure", "Poétique" ]
 category = "projects"
 sector = "games-gamejams"

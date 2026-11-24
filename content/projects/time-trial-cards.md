@@ -2,8 +2,8 @@
 date = "2026-01-16T22:43:13.501Z"
 draft = false
 title = "Time Trial Cards"
-subtitle = "Jeu éducatif de cartes temporelles"
-description = "Time Trial Cards est un jeu éducatif où les joueurs trient les grands événements de l'Histoire sur une frise chronologique."
+subtitle = "Jeu éducatif sur la chronologie de l'Histoire"
+description = "Jeu éducatif où l'on place les grands événements, inventions et personnages de l'Histoire au bon endroit sur une frise chronologique, en misant sur la rapidité et la justesse."
 tags = [ "Jeu Mobile", "Game Design", "Freelance" ]
 category = "projects"
 sector = "games-professionnel"

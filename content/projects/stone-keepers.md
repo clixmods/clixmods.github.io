@@ -2,8 +2,8 @@
 date = "2023-06-30T07:00:00.000Z"
 draft = false
 title = "The Lost City: Stone Keeper"
-subtitle = "Jeu isométrique d'action aventure"
-description = "Jeu isométrique d'action et aventure, réalisé en tant que projet de fin d'étude"
+subtitle = "Jeu d'action-aventure en Atlantide – e-artsup"
+description = "Projet de fin de deuxième année à e-artsup, mené en équipe en deux mois : un jeu d'action-aventure vu de haut, inspiré de Tunic, dans les ruines de l'Atlantide. (Unity.)"
 tags = [ "Adventure", "Unity", "Team Project", "Atlantis" ]
 category = "projects"
 sector = "games-personnel"

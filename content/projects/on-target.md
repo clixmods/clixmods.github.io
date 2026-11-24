@@ -2,8 +2,8 @@
 date = "2023-04-07T00:00:00+02:00"
 draft = true
 title = "On Target"
-subtitle = "Simulation de tir"
-description = "Jeu inspiré du gameplay d'Aimlab pour améliorer vos compétences de visée en ciblant des drones depuis votre plateforme"
+subtitle = "Jeu d'entraînement à la visée"
+description = "Jeu d'entraînement à la visée inspiré d'Aim Lab : depuis une plateforme, vous abattez des drones pour gagner en précision et en rapidité. Réalisé en équipe en un mois. (Unity.)"
 tags = [
   "3D",
   "aimlablike",

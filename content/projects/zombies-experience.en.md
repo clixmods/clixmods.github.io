@@ -2,8 +2,8 @@
 date = "2021-08-18T10:00:00+02:00"
 draft = false
 title = "Zombies Experience"
-subtitle = "Advanced mod extending Call of Duty Black Ops 3"
-description = "Complete modification extending Call of Duty Black Ops 3 with new multiplayer features"
+subtitle = "Mod for 8-player Zombies in Black Ops 3"
+description = "A mod that extends Black Ops 3's Zombies mode: games of up to 8 players instead of 4, new game modes, and support for community maps. Over 270,000 downloads."
 tags = [ "Modding", "C++", "Discord Integration", "Multiplayer" ]
 programming_languages = [ "lang_lua", "lang_cpp", "lang_gsc" ]
 specialties = [

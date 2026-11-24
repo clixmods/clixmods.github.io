@@ -3,8 +3,8 @@ date = "2026-10-15T10:00:00+02:00"
 draft = false
 title = "Living Horizon (site)"
 slug = "living-horizon-website"
-subtitle = "Site vitrine du mod Living Horizon : Angular, statique, alimenté par les API du projet"
-description = "Site d'une page pour le mod Minecraft Living Horizon : Angular 22 sans serveur, données tirées en direct de GitHub, CurseForge et Modrinth, comparateur avant / après et illustrations en pixel art animées sur canvas, générées à partir des modèles du jeu"
+subtitle = "Site de présentation du mod Living Horizon"
+description = "Le site d'une page du mod Living Horizon : il montre le mod en avant / après, affiche des informations toujours à jour et donne le bon fichier à télécharger. (Angular.)"
 tags = [
   "Angular",
   "TypeScript",

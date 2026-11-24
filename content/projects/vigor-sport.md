@@ -2,8 +2,8 @@
 date = "2026-03-28T00:00:00Z"
 draft = false
 title = "Vigor Sport"
-subtitle = "Site vitrine WordPress pour prestation massage sportif"
-description = "Site vitrine WordPress conçu pour un praticien spécialisé en massage sportif et récupération musculaire. Interface moderne et rassurante, pensée pour valoriser l'offre, expliquer les prestations, afficher les zones d'intervention et faciliter la prise de rendez-vous."
+subtitle = "Site vitrine pour un masseur sportif"
+description = "Site vitrine pour un praticien du massage sportif : il présente ses prestations et ses zones d'intervention, rassure les visiteurs et facilite la prise de rendez-vous. (WordPress.)"
 tags = [ "Site Vitrine", "WordPress", "Freelance" ]
 category = "projects"
 sector = "appsweb-professionnel"

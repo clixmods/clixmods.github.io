@@ -2,8 +2,8 @@
 date = "2024-10-20T10:00:00+02:00"
 draft = false
 title = "Symfony Directory"
-subtitle = "Profile Management Application - IUT Montpellier-Sète"
-description = "Directory web application built with Symfony 6.4: form-based authentication, roles and permissions, Twig forms, a JSON API and a fully containerised environment."
+subtitle = "Online profile directory – IUT Montpellier-Sète"
+description = "Study project built by a team of three: an online directory where everyone signs up, publishes a profile and chooses who can see it. (Symfony.)"
 tags = [
   "Symfony",
   "Twig",

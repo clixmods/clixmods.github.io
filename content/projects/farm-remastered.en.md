@@ -2,8 +2,8 @@
 date = "2018-06-15T10:00:00+02:00"
 draft = false
 title = "Farm"
-subtitle = "Map Remastering - Black Ops 3"
-description = "Faithful and improved recreation of Farm from Black Ops 2 on Call Of Duty: Black Ops 3"
+subtitle = "Black Ops 2 zombie map, modernised"
+description = "Farm, a map from Black Ops 2's Zombies mode (team survival against waves of zombies), rebuilt and improved in Black Ops 3. Over 170,000 downloads."
 tags = [ "Level Building", "Lighting", "Remaster", "Environment" ]
 category = "projects"
 sector = "mods"

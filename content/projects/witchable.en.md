@@ -2,8 +2,8 @@
 date = "2022-01-17T00:00:00+02:00"
 draft = false
 title = "Witchable"
-subtitle = "Alchemist game with time management"
-description = "Game where you play as an alchemist who must quickly serve the requested potions using different machines and ingredients"
+subtitle = "Potion-brewing game – game jam"
+description = "Made in 10 days at a game jam (a game built against the clock): you play an alchemist who must brew the requested potions as fast as possible with machines and ingredients."
 tags = [ "Simulation", "Alchemy", "Itch.io", "Management", "Unity" ]
 category = "projects"
 sector = "games-gamejams"

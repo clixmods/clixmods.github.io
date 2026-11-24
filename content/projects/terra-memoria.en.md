@@ -2,8 +2,8 @@
 date = "2024-03-27T09:00:00.000Z"
 draft = false
 title = "Terra Memoria"
-subtitle = "JRPG developed by Studio La Moutarde"
-description = "Participation in the end of production and post-release maintenance of a commercial multi-platform RPG"
+subtitle = "Commercial role-playing game by Studio La Moutarde"
+description = "Worked on the final stretch of production and post-launch support of Terra Memoria, a role-playing game released in 2024 on PC, Switch, Xbox and PlayStation 5."
 tags = [ "JRPG", "Commercial", "Nintendo Switch", "Multi-platform" ]
 category = "projects"
 sector = "games-professionnel"

@@ -2,8 +2,8 @@
 date = "2025-07-22T08:00:00+02:00"
 draft = true
 title = "Unity Editor Tools"
-subtitle = "Outils de développement personnalisés"
-description = "Collection d'outils Unity pour améliorer le workflow de développement"
+subtitle = "Outils maison pour le logiciel Unity"
+description = "Ensemble d'outils ajoutés à Unity, le logiciel de création de jeux, pour automatiser les tâches répétitives et s'y retrouver dans les gros projets."
 image = "/images/projects/unity-tools.jpg"
 tags = [ "Unity", "Editor", "Tools", "Productivity" ]
 category = "projects"

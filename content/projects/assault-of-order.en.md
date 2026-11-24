@@ -2,8 +2,8 @@
 date = "2022-07-01T08:00:00.000Z"
 draft = false
 title = "Assault of Order"
-subtitle = "First year end project - e-artsup"
-description = "First complete game project with UML and advanced C# development"
+subtitle = "Turn-based strategy game – e-artsup"
+description = "End-of-first-year project: a turn-based strategy game inspired by XCOM, where two teams fight square by square across a battlefield. (Unity.)"
 tags = [ "fw_unity", "First Year", "UML", "Game Development" ]
 category = "projects"
 sector = "games-personnel"
