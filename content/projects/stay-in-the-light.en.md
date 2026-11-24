@@ -2,8 +2,8 @@
 date = "2023-03-09T00:00:00+02:00"
 draft = false
 title = "Stay In The Light"
-subtitle = "Horror game where you explore an abandoned hospital with an overheating torch"
-description = "A first-person horror game: you explore an abandoned hospital with a torch that overheats, while avoiding whatever lurks in the dark. (Unity.)"
+subtitle = "Horror game where you explore an abandoned hospital with an overheating torch – e-artsup"
+description = "A first-person horror game: you explore an abandoned hospital with a torch that overheats, while avoiding whatever lurks in the dark. Second-year project at e-artsup. (Unity.)"
 tags = [ "Horror", "Survival", "Unity", "Itch.io", "Hospital" ]
 category = "projects"
 sector = "games-personnel"

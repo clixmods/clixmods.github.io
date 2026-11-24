@@ -2,8 +2,8 @@
 date = "2022-07-01T08:00:00.000Z"
 draft = false
 title = "Assault of Order"
-subtitle = "Jeu de stratégie où deux équipes s'affrontent au tour par tour – e-artsup"
-description = "Projet de fin de première année : un jeu de stratégie au tour par tour inspiré de XCOM, où deux équipes s'affrontent case par case sur un champ de bataille. (Unity.)"
+subtitle = "Jeu de stratégie au tour par tour à 2 joueurs, chacun avec une équipe de 4 personnages – e-artsup"
+description = "Projet de fin de première année : un jeu de stratégie au tour par tour à 2 joueurs, où chacun déplace ses 4 personnages pour avoir l'adversaire dans sa ligne de tir. (Unity.)"
 tags = [ "fw_unity", "First Year", "UML", "Game Development" ]
 category = "projects"
 sector = "games-personnel"

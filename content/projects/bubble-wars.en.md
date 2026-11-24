@@ -3,7 +3,7 @@ date = "2023-03-31T00:00:00+02:00"
 draft = false
 title = "Bubble Wars"
 subtitle = "Shooter where you face waves of enemies under the sea"
-description = "An arena shooter inspired by Geometry Wars: waves of enemies come from every side, in a calm, blue underwater setting. Released on itch.io. (Unity.)"
+description = "A remake of Geometry Wars set under the ocean: an arena shooter where waves of enemies come from every side and a single hit is fatal. Released on itch.io. (Unity.)"
 tags = [
   "3D",
   "Arcade",

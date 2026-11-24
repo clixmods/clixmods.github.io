@@ -2,8 +2,8 @@
 date = "2022-06-01T00:00:00+02:00"
 draft = false
 title = "Sky Shock"
-subtitle = "Jeu de tir arcade où l'on affronte des vagues d'ennemis"
-description = "Jeu de tir dans l'esprit des bornes d'arcade : vous affrontez des vagues d'ennemis dans un univers rétro et coloré. Réalisé en 10 jours, publié sur itch.io. (Unity.)"
+subtitle = "Jeu de tir où un robot affronte des vagues d'ennemis et des boss, seul ou en coopération"
+description = "Jeu d'action futuriste : vous incarnez un robot qui affronte des vagues d'ennemis et des boss, seul ou en coopération, avec un classement des scores. Réalisé en 10 jours, jouable dans le navigateur. (Unity.)"
 tags = [ "Arcade", "Shoot'em up", "Unity", "Itch.io", "Retro" ]
 category = "projects"
 sector = "games-gamejams"

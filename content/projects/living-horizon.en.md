@@ -4,7 +4,7 @@ draft = false
 title = "Living Horizon"
 slug = "living-horizon"
 subtitle = "Minecraft mod that unlocks the display distance limit for mobs and players, whatever the distance"
-description = "Minecraft mod that shows animals, villagers, birds and other players at any distance, far beyond the point where the game normally makes them disappear. Over 5,500 downloads in its first week."
+description = "Minecraft mod that shows animals, villagers, birds and other players at any distance, far beyond the point where the game normally makes them disappear. Over 46,000 downloads on CurseForge."
 tags = [
   "Java",
   "Fabric",

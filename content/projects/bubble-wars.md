@@ -3,7 +3,7 @@ date = "2023-03-31T00:00:00+02:00"
 draft = false
 title = "Bubble Wars"
 subtitle = "Jeu de tir où l'on affronte des vagues d'ennemis sous l'océan"
-description = "Un jeu de tir en arène inspiré de Geometry Wars : des vagues d'ennemis arrivent de partout, dans un décor sous-marin bleu et apaisant. Publié sur itch.io. (Unity.)"
+description = "Remake de Geometry Wars sous l'océan : un jeu de tir en arène où des vagues d'ennemis arrivent de partout et où le moindre contact est fatal. Publié sur itch.io. (Unity.)"
 tags = [
   "3D",
   "Arcade",

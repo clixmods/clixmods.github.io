@@ -2,8 +2,8 @@
 date = "2022-02-18T09:00:00.000Z"
 draft = false
 title = "Galaxian"
-subtitle = "Nouvelle version du jeu d'arcade Galaxian, où l'on abat des vaisseaux ennemis"
-description = "Remake de Galaxian, le jeu d'arcade où l'on abat des vagues de vaisseaux ennemis, avec des mécaniques modernisées. Réalisé en un mois. (Unity.)"
+subtitle = "Nouvelle version du jeu d'arcade Galaxian (1979), où l'on abat des vagues d'aliens – e-artsup"
+description = "Remake en 3D du jeu d'arcade Galaxian de 1979 : trois niveaux de vagues d'aliens à abattre, un nouveau système de points et un classement. Projet de première année à e-artsup. (Unity.)"
 tags = [ "Unity", "Arcade", "Classic Game", "Game Design" ]
 category = "projects"
 sector = "games-personnel"

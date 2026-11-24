@@ -2,8 +2,8 @@
 date = "2022-12-20T09:00:00.000Z"
 draft = false
 title = "Stholen"
-subtitle = "Game where you suck up everything with a flying saucer, from carrots to houses"
-description = "A calm, pressure-free game where you fly a flying saucer that sucks up everything in its path, from a single carrot to whole houses. Team project. (Unity.)"
+subtitle = "Game where a flying saucer sucks up everything and grows until it can swallow the Earth"
+description = "A prototype where you fly a toy flying saucer that sucks up everything around it, from carrots to houses, and grows until it can swallow the whole Earth. Team project. (Unity.)"
 tags = [ "Unity", "Adventure", "Level Design", "Team Project" ]
 category = "projects"
 sector = "games-personnel"
