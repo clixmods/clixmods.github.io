@@ -76,8 +76,10 @@ Il n'a pas besoin d'encombrer le sous-titre ni la description.
   mieux qu'un adjectif.
 - **Pas d'étiquette vide.** « commercial », « professionnel », « personnel », « complet »,
   « avancé » ne disent pas ce qu'est le projet. « Jeu de rôle commercial du studio La
-  Moutarde » ne dit rien ; « Jeu de rôle où six amis enquêtent sur la pénurie de cristaux
-  magiques » dit de quoi parle le jeu. Le cadre (studio, école) va après le tiret.
+  Moutarde » ne dit rien ; « RPG isométrique sorti sur PC et consoles (PlayStation 5,
+  Xbox Series, Nintendo Switch) » dit quel genre de jeu c'est et où y jouer. Le genre,
+  la vue et les plateformes sont des faits concrets ; un cadre (studio, école) va
+  après le tiret.
 - **Voix par endroit.** `subtitle` et `description` : tournure impersonnelle ou nominale.
   Le corps : « je » pour ce que j'ai fait, « nous / l'équipe » pour un projet d'équipe,
   « vous » pour s'adresser au joueur d'un jeu (« vous incarnez… »). En anglais : « I »,
