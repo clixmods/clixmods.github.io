@@ -2,7 +2,7 @@
 date = "2026-03-28T00:00:00Z"
 draft = false
 title = "Vigor Sport"
-subtitle = "Site vitrine pour un masseur sportif"
+subtitle = "Site vitrine qui présente un masseur sportif et facilite la prise de rendez-vous"
 description = "Site vitrine pour un praticien du massage sportif : il présente ses prestations et ses zones d'intervention, rassure les visiteurs et facilite la prise de rendez-vous. (WordPress.)"
 tags = [ "Site Vitrine", "WordPress", "Freelance" ]
 category = "projects"

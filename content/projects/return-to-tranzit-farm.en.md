@@ -2,7 +2,7 @@
 date = "2025-12-20T08:57:00.100Z"
 draft = false
 title = "Return to Tranzit: Farm"
-subtitle = "3D environments and the Farm map for a zombie remake on Black Ops 3"
+subtitle = "Work on a remake of the TranZit zombie mode: 3D environments and the Farm map"
 description = "Work on Return to TranZit, a full remake of a Black Ops 2 zombie mode in Black Ops 3: 3D environments and development of the Farm map."
 image = "/images/projects/return-to-tranzit-farm/return-tranzit-1.jpg"
 tile_size = "1x1"

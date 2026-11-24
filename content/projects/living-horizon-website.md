@@ -3,7 +3,7 @@ date = "2026-10-15T10:00:00+02:00"
 draft = false
 title = "Living Horizon (site)"
 slug = "living-horizon-website"
-subtitle = "Site de présentation du mod Living Horizon"
+subtitle = "Site qui présente le mod Living Horizon et donne le bon fichier à télécharger"
 description = "Le site d'une page du mod Living Horizon : il montre le mod en avant / après, affiche des informations toujours à jour et donne le bon fichier à télécharger. (Angular.)"
 tags = [
   "Angular",

@@ -2,7 +2,7 @@
 date = "2023-11-15T10:00:00+02:00"
 draft = false
 title = "Aspiro Shop"
-subtitle = "Site de vente en ligne – IUT Montpellier-Sète"
+subtitle = "Site de vente en ligne qui gère comptes, panier et commandes – IUT Montpellier-Sète"
 description = "Projet d'étude en équipe : un site de vente en ligne avec comptes clients, panier conservé d'une visite à l'autre et suivi des commandes. (PHP.)"
 tags = [ "lang_php", "MVC", "E-commerce", "Security", "PDO" ]
 category = "projects"

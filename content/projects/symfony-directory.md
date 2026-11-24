@@ -2,7 +2,7 @@
 date = "2024-10-20T10:00:00+02:00"
 draft = false
 title = "Annuaire Symfony"
-subtitle = "Annuaire de profils en ligne – IUT Montpellier-Sète"
+subtitle = "Annuaire en ligne où chacun publie sa fiche et choisit qui la voit – IUT Montpellier-Sète"
 description = "Projet d'étude en trinôme : un annuaire en ligne où chacun s'inscrit, publie sa fiche et choisit qui peut la voir. (Symfony.)"
 tags = [
   "Symfony",

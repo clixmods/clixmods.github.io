@@ -3,7 +3,7 @@ date = "2025-12-20T19:40:14.840Z"
 draft = false
 title = "Portfolio Personnel"
 slug = "portfolio-website"
-subtitle = "Ce site : mes projets, mon parcours et mon CV"
+subtitle = "Site qui présente mes projets, mon parcours et mon CV"
 description = "Le site que vous lisez : mes projets, mon parcours et mon CV, en français et en anglais, avec un thème graphique créé sur mesure et un contenu facile à mettre à jour. (Hugo.)"
 tags = [
   "Hugo",

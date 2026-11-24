@@ -2,7 +2,7 @@
 date = "2026-01-16T22:43:13.501Z"
 draft = false
 title = "Time Trial Cards"
-subtitle = "Educational game about the timeline of history"
+subtitle = "Educational game where you place historical events on a timeline"
 description = "An educational game where you place major events, inventions and figures from history in the right spot on a timeline, rewarding both speed and accuracy."
 tags = [ "Mobile Game", "Game Design", "Freelance" ]
 category = "projects"

@@ -2,7 +2,7 @@
 date = "2024-01-30T00:00:00+02:00"
 draft = false
 title = "Ultimate Pigeon War 3000"
-subtitle = "Multiplayer pigeon fighting game – game jam"
+subtitle = "Multiplayer game where pigeons fight each other – game jam"
 description = "A light-hearted multiplayer action game where pigeons fight each other, made at a game jam (a game built against the clock)."
 tags = [ "Action", "Multiplayer", "Game Jam", "Humor", "Itch.io" ]
 category = "projects"

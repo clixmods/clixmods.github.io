@@ -2,7 +2,7 @@
 date = "2026-03-28T00:00:00Z"
 draft = false
 title = "Vigor Sport"
-subtitle = "Showcase website for a sports massage therapist"
+subtitle = "Showcase website that presents a sports massage therapist and makes booking easy"
 description = "A showcase website for a sports massage therapist: it presents the services and areas covered, reassures visitors and makes booking easy. (WordPress.)"
 tags = [ "Showcase Website", "WordPress", "Freelance" ]
 category = "projects"

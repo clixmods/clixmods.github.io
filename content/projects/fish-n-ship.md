@@ -2,7 +2,7 @@
 date = "2023-12-01T00:00:00+02:00"
 draft = false
 title = "Fish N Ship - Cœur de Ville en Lumière"
-subtitle = "Jeu créé pour Cœur de Ville en Lumières – e-artsup"
+subtitle = "Jeu vidéo créé pour le festival Cœur de Ville en Lumières – e-artsup"
 description = "Jeu vidéo créé en équipe avec e-artsup pour Cœur de Ville en Lumières, le festival de lumières du centre-ville de Montpellier. (Unity.)"
 tags = [ "Event", "Unity", "Montpellier", "e-artsup", "Game Jam" ]
 category = "projects"

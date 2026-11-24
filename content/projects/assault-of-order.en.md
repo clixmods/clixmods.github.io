@@ -2,7 +2,7 @@
 date = "2022-07-01T08:00:00.000Z"
 draft = false
 title = "Assault of Order"
-subtitle = "Turn-based strategy game – e-artsup"
+subtitle = "Strategy game where two teams fight turn by turn – e-artsup"
 description = "End-of-first-year project: a turn-based strategy game inspired by XCOM, where two teams fight square by square across a battlefield. (Unity.)"
 tags = [ "fw_unity", "First Year", "UML", "Game Development" ]
 category = "projects"

@@ -2,7 +2,7 @@
 date = "2025-07-24T12:00:00.000Z"
 draft = false
 title = "Stone Keeper 2"
-subtitle = "Suite de Stone Keeper, jeu d'action-aventure – e-artsup"
+subtitle = "Suite de Stone Keeper qui agrandit le monde et ajoute des mécaniques – e-artsup"
 description = "Suite de Stone Keeper réalisée en équipe et à distance à e-artsup : un monde plus vaste et de nouvelles mécaniques, sur la base du premier jeu. (Unity.)"
 tags = [ "Adventure", "Unity", "Sequel", "Open World", "Atlantis" ]
 category = "projects"

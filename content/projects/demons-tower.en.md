@@ -2,7 +2,7 @@
 date = "2021-12-17T00:00:00+02:00"
 draft = false
 title = "Demon's Tower"
-subtitle = "Action game: climb a dungeon and defeat a demon"
+subtitle = "Action game where you climb a dungeon, and every death costs you your equipment"
 description = "An action game where you climb a dungeon to defeat the greatest demon and save the village. Every death costs you your equipment, so you start over."
 tags = [ "Action", "Roguelite", "Dungeon", "Itch.io", "Unity" ]
 category = "projects"

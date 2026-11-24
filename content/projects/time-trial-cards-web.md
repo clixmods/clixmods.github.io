@@ -2,7 +2,7 @@
 date = "2026-04-25T09:00:00.000Z"
 draft = false
 title = "Time Trial Cards - Plateforme Web"
-subtitle = "Tableau de bord enseignant pour un jeu éducatif"
+subtitle = "Site qui permet aux enseignants de lancer le jeu en classe et de suivre les résultats"
 description = "Site où les enseignants préparent et lancent des parties du jeu éducatif Time Trial Cards avec leurs classes, puis consultent les résultats des élèves. (Laravel.)"
 tags = [ "PHP", "Laravel", "Docker", "API REST", "Freelance" ]
 category = "projects"

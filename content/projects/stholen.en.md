@@ -2,7 +2,7 @@
 date = "2022-12-20T09:00:00.000Z"
 draft = false
 title = "Stholen"
-subtitle = "Game where you suck up everything with a flying saucer"
+subtitle = "Game where you suck up everything with a flying saucer, from carrots to houses"
 description = "A calm, pressure-free game where you fly a flying saucer that sucks up everything in its path, from a single carrot to whole houses. Team project. (Unity.)"
 tags = [ "Unity", "Adventure", "Level Design", "Team Project" ]
 category = "projects"

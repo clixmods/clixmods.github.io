@@ -2,7 +2,7 @@
 date = "2025-07-22T08:00:00+02:00"
 draft = true
 title = "Unity Editor Tools"
-subtitle = "Outils qui font gagner du temps dans Unity"
+subtitle = "Outils qui automatisent les tâches répétitives dans Unity"
 description = "Ensemble d'outils ajoutés à Unity, le logiciel de création de jeux, pour automatiser les tâches répétitives et s'y retrouver dans les gros projets."
 image = "/images/projects/unity-tools.jpg"
 tags = [ "Unity", "Editor", "Tools", "Productivity" ]

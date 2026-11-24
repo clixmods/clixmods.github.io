@@ -2,7 +2,7 @@
 date = "2026-04-25T09:00:00.000Z"
 draft = false
 title = "Time Trial Cards - Web Platform"
-subtitle = "Teacher dashboard for an educational game"
+subtitle = "Website that lets teachers run the game in class and track the results"
 description = "A website where teachers prepare and launch games of the educational game Time Trial Cards with their classes, then review their students' results. (Laravel.)"
 tags = [ "PHP", "Laravel", "Docker", "REST API", "Freelance" ]
 category = "projects"

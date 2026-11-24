@@ -2,7 +2,7 @@
 date = "2026-01-16T22:43:13.501Z"
 draft = false
 title = "Time Trial Cards"
-subtitle = "Jeu éducatif sur la chronologie de l'Histoire"
+subtitle = "Jeu éducatif où l'on place les événements de l'Histoire sur une frise chronologique"
 description = "Jeu éducatif où l'on place les grands événements, inventions et personnages de l'Histoire au bon endroit sur une frise chronologique, en misant sur la rapidité et la justesse."
 tags = [ "Jeu Mobile", "Game Design", "Freelance" ]
 category = "projects"

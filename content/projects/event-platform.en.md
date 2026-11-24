@@ -2,7 +2,7 @@
 date = "2024-12-23T10:00:00+02:00"
 draft = false
 title = "Event Management Platform"
-subtitle = "Event management app – IUT Montpellier-Sète"
+subtitle = "Web app that lets you create events and sign up for them – IUT Montpellier-Sète"
 description = "Study project: a web app to create events, sign up for them and manage them, with secure user accounts. (Symfony, Vue.js.)"
 tags = [
   "Symfony",

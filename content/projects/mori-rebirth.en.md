@@ -2,7 +2,7 @@
 date = "2022-03-18T09:00:00.000Z"
 draft = false
 title = "Mori Rebirth"
-subtitle = "Zombie map for Call of Duty: Black Ops 3"
+subtitle = "Zombie map for Black Ops 3, downloaded over 150,000 times"
 description = "A map made for Black Ops 3's Zombies mode, where players survive waves of zombies as a team. Over 150,000 downloads on Steam."
 tags = [ "Modding", "Game Systems", "C++", "Innovation" ]
 category = "projects"

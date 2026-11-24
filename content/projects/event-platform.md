@@ -2,7 +2,7 @@
 date = "2024-12-23T10:00:00+02:00"
 draft = false
 title = "Plateforme de gestion d'événements"
-subtitle = "Application de gestion d'événements – IUT Montpellier-Sète"
+subtitle = "Application web qui permet de créer des événements et de s'y inscrire – IUT Montpellier-Sète"
 description = "Projet d'étude : une application web pour créer des événements, s'y inscrire et les gérer, avec des comptes utilisateurs sécurisés. (Symfony, Vue.js.)"
 tags = [
   "Symfony",

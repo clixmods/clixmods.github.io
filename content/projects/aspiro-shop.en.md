@@ -2,7 +2,7 @@
 date = "2023-11-15T10:00:00+02:00"
 draft = false
 title = "Aspiro Shop"
-subtitle = "Online shop website – IUT Montpellier-Sète"
+subtitle = "Online shop that handles accounts, basket and orders – IUT Montpellier-Sète"
 description = "Team study project: an online shop with customer accounts, a basket kept from one visit to the next and order tracking. (PHP.)"
 tags = [ "lang_php", "MVC", "E-commerce", "Security", "PDO" ]
 category = "projects"

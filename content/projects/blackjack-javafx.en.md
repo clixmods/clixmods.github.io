@@ -2,7 +2,7 @@
 date = "2024-01-19T00:00:00+01:00"
 draft = false
 title = "Fortuna BlackJack"
-subtitle = "Desktop Blackjack game – IUT Montpellier-Sète"
+subtitle = "Desktop Blackjack game with player accounts and betting – IUT Montpellier-Sète"
 description = "Second-year project built by a team of five: a desktop Blackjack game with player accounts, chip betting and a French and English interface. (Java.)"
 tags = [
   "Academic",
