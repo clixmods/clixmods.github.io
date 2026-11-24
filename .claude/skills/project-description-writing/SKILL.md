@@ -38,7 +38,9 @@ Il n'a pas besoin d'encombrer le sous-titre ni la description.
    front matter compris, et un projet déjà réécrit pour le ton s'il en existe un.
 2. Vérifier chaque fait : ce que fait le projet, pour qui, dans quel cadre (école,
    perso, client, game jam), son état (`status`), les chiffres. Sources : le corps
-   actuel, les liens `[[actions]]`, le dépôt si l'utilisateur l'a, l'utilisateur sinon.
+   actuel, **les pages liées dans `[[actions]]` (itch.io, Steam, CurseForge, site), à ouvrir et
+   lire**, les images et vidéos du projet, le dépôt si l'utilisateur l'a. Ne demander à
+   l'utilisateur qu'après avoir lu tout cela.
    Ne jamais inventer un chiffre, un public ou une fonctionnalité.
    Pour un jeu ou un produit public (genre, style, plateformes, date de sortie),
    vérifier aussi sur le web, y compris une formulation donnée par l'utilisateur ; si
