@@ -3,7 +3,7 @@ date = "2024-09-01T09:00:00+02:00"
 draft = false
 title = "Personal Portfolio"
 slug = "portfolio-website"
-subtitle = "My portfolio, with a custom-made theme"
+subtitle = "This site: my projects, background and CV"
 description = "The site you are reading: my projects, background and CV, in French and English, with a custom-made visual theme and content that is easy to update. (Hugo.)"
 tags = [
   "Hugo",

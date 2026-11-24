@@ -3,7 +3,7 @@ date = "2026-09-29T10:00:00+02:00"
 draft = false
 title = "MC Skin Creator (mod)"
 slug = "mc-skin-creator-mod"
-subtitle = "L'éditeur MC Skin Creator, directement dans Minecraft"
+subtitle = "Mod Minecraft pour créer et changer son skin sans quitter le jeu"
 description = "Mod Minecraft qui ouvre l'éditeur MC Skin Creator dans le jeu : on compose l'apparence de son personnage pièce par pièce et on l'applique à son compte en un clic, sans quitter Minecraft."
 tags = [
   "Java",

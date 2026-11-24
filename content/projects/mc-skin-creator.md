@@ -3,7 +3,7 @@ date = "2026-09-07T10:00:00+02:00"
 draft = false
 title = "MC Skin Creator"
 slug = "mc-skin-creator"
-subtitle = "Éditeur de skins Minecraft en ligne"
+subtitle = "Site pour créer son skin Minecraft pièce par pièce"
 description = "Éditeur en ligne pour créer l'apparence de son personnage Minecraft pièce par pièce, parmi plus de 500 éléments, avec un aperçu 3D en temps réel. (Java, Spring Boot, Angular.)"
 tags = [
   "Java",

@@ -53,12 +53,17 @@ Il n'a pas besoin d'encombrer le sous-titre ni la description.
 
 ## Voix
 
+- **Dire littéralement ce que ça fait.** Pas de métaphore ni de formule d'accroche :
+  « Mod Minecraft qui fait vivre l'horizon » est joli mais ne dit rien à qui ne connaît
+  pas le projet. « Mod Minecraft qui affiche un nombre illimité de mobs, quelle que soit
+  la distance » se comprend tout de suite. Test : quelqu'un qui lit seulement cette
+  ligne peut-il expliquer à un ami ce que fait le projet ?
 - **Le résultat d'abord.** Ce que le projet permet, montre ou fait vivre, avant comment
   il est construit. « Un éditeur pour créer son skin Minecraft pièce par pièce », pas
   « API REST et moteur de composition de textures ».
-- **Concret et visuel.** Des choses qu'on peut se représenter : « les troupeaux restent
-  visibles jusqu'à l'horizon », « une soucoupe volante qui aspire tout, d'une carotte à
-  une maison ».
+- **Concret.** Des faits qu'on peut se représenter : « affiche les mobs à n'importe
+  quelle distance », « une soucoupe volante qui aspire tout, d'une carotte à une
+  maison ». Une image n'est acceptable qu'en complément, jamais à la place du fait.
 - **Résumer, ne pas énumérer.** « compatible avec les principales versions du jeu et
   plateformes de mods » plutôt que « Fabric, Quilt, NeoForge et Forge, de 1.20 à 26.3 ».
   La liste complète a sa place plus bas.
@@ -76,18 +81,21 @@ Il n'a pas besoin d'encombrer le sous-titre ni la description.
 
 ### `subtitle` — la carte
 
-Un groupe nominal de **3 à 10 mots** qui dit *ce que c'est*, éventuellement suivi du
-cadre après un tiret.
+Une ligne de **3 à 14 mots** qui dit *ce que c'est et ce que ça fait*, littéralement,
+éventuellement suivie du cadre après un tiret.
 
 ```
-<nature du projet en mots simples> – <cadre ou plateforme, si utile>
+<nature du projet> qui/pour <ce qu'il fait, concrètement> – <cadre, si utile>
 ```
 
-- Bon : « Mod Minecraft qui peuple l'horizon », « Jeu cozy en équipe – e-artsup »,
+- Bon : « Mod Minecraft qui affiche un nombre illimité de mobs, quelle que soit la
+  distance », « Mod Minecraft pour créer et changer son skin sans quitter le jeu »,
+  « Jeu où l'on aspire tout avec une soucoupe volante »,
   « Jeu de Blackjack sur ordinateur – IUT Montpellier-Sète »,
   « Carte zombie pour Call of Duty: Black Ops 3 »
-- À éviter : « API Symfony/API Platform & front Vue.js – IUT », « Map Remastering »,
-  « Jeu cozy » (trop vague seul), un nom de techno seul.
+- À éviter : « Mod Minecraft qui fait vivre l'horizon » (métaphore), « Nuketown
+  revisitée » (ne dit pas ce que c'est), « API Symfony/API Platform & front Vue.js –
+  IUT », « Map Remastering », « Jeu cozy » (trop vague seul), un nom de techno seul.
 
 ### `description` — l'aperçu de lien
 
@@ -178,8 +186,8 @@ Brouillons réels du site et ce qu'ils deviennent :
 
 | Champ | Avant | Après |
 |---|---|---|
-| Living Horizon, `subtitle` | Mod Minecraft multi-loader qui fait vivre l'horizon au-delà de la distance de rendu | Mod Minecraft qui fait vivre l'horizon |
-| Living Horizon, `description` | Mod Minecraft pour Fabric, Quilt, NeoForge et Forge, de 1.20 à 26.3 depuis un seul code source compilé avec Stonecutter : animaux, villageois, oiseaux et autres joueurs restent visibles bien au-delà de la distance de rendu… | Mod Minecraft qui garde les animaux, les villageois, les oiseaux et les autres joueurs visibles jusqu'à l'horizon, là où le jeu les fait normalement disparaître. Plus de 5 500 téléchargements la première semaine. |
+| Living Horizon, `subtitle` | Mod Minecraft multi-loader qui fait vivre l'horizon au-delà de la distance de rendu | Mod Minecraft qui affiche un nombre illimité de mobs, quelle que soit la distance |
+| Living Horizon, `description` | Mod Minecraft pour Fabric, Quilt, NeoForge et Forge, de 1.20 à 26.3 depuis un seul code source compilé avec Stonecutter : animaux, villageois, oiseaux et autres joueurs restent visibles bien au-delà de la distance de rendu… | Mod Minecraft qui affiche les animaux, les villageois, les oiseaux et les autres joueurs à n'importe quelle distance, bien au-delà de la limite où le jeu les fait disparaître. Plus de 5 500 téléchargements la première semaine. |
 | MC Skin Creator, `description` | Éditeur de skins Minecraft dans le navigateur : API REST et moteur de composition de textures en Java 21 / Spring Boot 4, front Angular 21 avec rendu 3D WebGL sur mesure, livrés dans un seul jar exécutable | Éditeur en ligne pour créer son skin Minecraft pièce par pièce, avec un aperçu 3D du personnage en temps réel. (Java, Spring Boot, Angular.) |
 | Plateforme d'événements, `subtitle` | API Symfony/API Platform & front Vue.js - IUT Montpellier-Sète | Application de gestion d'événements – IUT Montpellier-Sète |
 | Plateforme d'événements, `description` | Projet d'étude : application web de gestion d'événements avec API REST sécurisée par JWT (Symfony 6.4 / API Platform 4) et client Vue 3, le tout conteneurisé. | Projet d'étude : une application web pour créer des événements, s'y inscrire et les gérer, avec des comptes utilisateurs sécurisés. (Symfony, Vue.js.) |
@@ -189,15 +197,16 @@ Brouillons réels du site et ce qu'ils deviennent :
 Les mêmes, en anglais :
 
 ```
-subtitle    = "Minecraft mod that brings the horizon to life"
-description = "Minecraft mod that keeps animals, villagers, birds and other players visible
-               all the way to the horizon, where the game normally makes them disappear.
+subtitle    = "Minecraft mod that shows an unlimited number of mobs, at any distance"
+description = "Minecraft mod that shows animals, villagers, birds and other players at any
+               distance, far beyond the point where the game normally makes them disappear.
                Over 5,500 downloads in its first week."
 ```
 
 ## Avant de terminer
 
-- Le `subtitle` dit-il ce qu'est le projet en moins de dix mots, sans nom de techno ?
+- Le `subtitle` dit-il littéralement ce qu'est le projet et ce qu'il fait, sans
+  métaphore ni nom de techno ? Un inconnu pourrait-il le répéter à un ami ?
 - La `description` tient-elle seule, en 1–2 phrases, sous ~200 caractères, sans jargon ?
 - Le premier paragraphe du corps est-il compris par quelqu'un qui ne connaît ni le jeu ni
   le code ? Le jeu ou le domaine est-il expliqué ?

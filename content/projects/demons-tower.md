@@ -2,7 +2,7 @@
 date = "2021-12-17T00:00:00+02:00"
 draft = false
 title = "Demon's Tower"
-subtitle = "Jeu d'action dans un donjon, publié sur itch.io"
+subtitle = "Jeu d'action : gravir un donjon et vaincre un démon"
 description = "Un jeu d'action où vous gravissez un donjon pour vaincre le plus grand des démons et sauver le village. Chaque mort vous fait perdre votre équipement : il faut tout recommencer."
 tags = [ "Action", "Roguelite", "Donjon", "Itch.io", "Unity" ]
 category = "projects"

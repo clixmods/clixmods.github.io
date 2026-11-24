@@ -2,7 +2,7 @@
 date = "2020-07-29T08:00:00.000Z"
 draft = false
 title = "Nuketown Zombies"
-subtitle = "Nuketown, rebuilt for Black Ops 3"
+subtitle = "The Nuketown zombie map rebuilt for Black Ops 3, for up to 8 players"
 description = "Black Ops 2's Nuketown Zombies map rebuilt in Black Ops 3, with games of up to 8 players and computer-controlled teammates. Over 600,000 downloads."
 tags = [
   "Game Design",

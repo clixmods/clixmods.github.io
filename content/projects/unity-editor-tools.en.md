@@ -2,7 +2,7 @@
 date = "2025-07-22T08:00:00+02:00"
 draft = true
 title = "Unity Editor Tools"
-subtitle = "Custom tools for the Unity editor"
+subtitle = "Tools that save time in Unity"
 description = "A set of tools added to Unity, the game-making software, to automate repetitive tasks and find your way around large projects."
 image = "/images/projects/unity-tools.jpg"
 tags = [ "Unity", "Editor", "Tools", "Productivity" ]

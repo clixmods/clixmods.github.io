@@ -2,7 +2,7 @@
 date = "2022-02-18T09:00:00.000Z"
 draft = false
 title = "Galaxian"
-subtitle = "Remake of an arcade classic – e-artsup"
+subtitle = "Remake of the arcade game Galaxian – e-artsup"
 description = "A remake of Galaxian, the arcade game where you shoot down waves of enemy ships, with modernised mechanics. Made in one month. (Unity.)"
 tags = [ "Unity", "Arcade", "Classic Game", "Game Design" ]
 category = "projects"

@@ -3,8 +3,8 @@ date = "2026-10-13T10:00:00+02:00"
 draft = false
 title = "Living Horizon"
 slug = "living-horizon"
-subtitle = "Mod Minecraft qui fait vivre l'horizon"
-description = "Mod Minecraft qui garde les animaux, les villageois, les oiseaux et les autres joueurs visibles jusqu'à l'horizon, là où le jeu les fait normalement disparaître. Plus de 5 500 téléchargements la première semaine."
+subtitle = "Mod Minecraft qui affiche un nombre illimité de mobs, quelle que soit la distance"
+description = "Mod Minecraft qui affiche les animaux, les villageois, les oiseaux et les autres joueurs à n'importe quelle distance, bien au-delà de la limite où le jeu les fait disparaître. Plus de 5 500 téléchargements la première semaine."
 tags = [
   "Java",
   "Fabric",

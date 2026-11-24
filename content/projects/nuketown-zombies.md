@@ -2,7 +2,7 @@
 date = "2020-07-29T08:00:00.000Z"
 draft = false
 title = "Nuketown Zombies"
-subtitle = "Nuketown revisitée pour Black Ops 3"
+subtitle = "La carte zombie Nuketown refaite pour Black Ops 3, jusqu'à 8 joueurs"
 description = "La carte Nuketown Zombies de Black Ops 2 recréée sur Black Ops 3, avec des parties jusqu'à 8 joueurs et des coéquipiers contrôlés par l'ordinateur. Plus de 600 000 téléchargements."
 tags = [
   "Game Design",
