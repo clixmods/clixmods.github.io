@@ -7,11 +7,6 @@ contract_type: Permanent contract
 employment_type: contract
 location: Saint-Brès, Occitanie, France
 description: Full-stack developer on a permanent contract at Prodilys. Prodilys specialises in publishing medical software for managing healthcare facilities.
-programming_languages:
-    - lang_csharp
-    - lang_sql
-frameworks_engines:
-    - fw_net
 fmContentType: experience-content-type
 draft: false
 ---

@@ -7,11 +7,6 @@ contract_type: CDI
 employment_type: contract
 location: Saint-Brès, Occitanie, France
 description: Développeur full-stack en CDI chez Prodilys. Prodilys est spécialisée dans l'édition de logiciels médicaux de gestion des établissements de soins.
-programming_languages:
-    - lang_csharp
-    - lang_sql
-frameworks_engines:
-    - fw_net
 fmContentType: experience-content-type
 draft: false
 ---
