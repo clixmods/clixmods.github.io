@@ -2,8 +2,8 @@
 date = "2024-01-30T00:00:00+02:00"
 draft = false
 title = "Ultimate Pigeon War 3000"
-subtitle = "Jeu multijoueur où des pigeons s'affrontent – game jam"
-description = "Jeu d'action multijoueur plein d'humour où des pigeons s'affrontent, créé lors d'une game jam (un jeu fait en temps limité)."
+subtitle = "Jeu d'action humoristique où des pigeons s'affrontent – Global Game Jam 2024"
+description = "Jeu d'action plein d'humour où des pigeons s'affrontent, créé à la Global Game Jam 2024 (un jeu fait en 48 heures). Jouable dans le navigateur. (Unity.)"
 tags = [ "Action", "Multijoueur", "Game Jam", "Humour", "Itch.io" ]
 category = "projects"
 sector = "games-gamejams"

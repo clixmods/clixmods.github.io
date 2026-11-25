@@ -2,8 +2,8 @@
 date = "2025-07-24T12:00:00.000Z"
 draft = false
 title = "Stone Keeper 2"
-subtitle = "Sequel to Stone Keeper with a larger world and new mechanics – e-artsup"
-description = "The sequel to Stone Keeper, made as a remote team at e-artsup: a larger world and new mechanics, built on the first game. (Unity.)"
+subtitle = "Adventure game where you explore a ruined city and face stone guardians – e-artsup"
+description = "The sequel to Stone Keeper, a third-year project at e-artsup made in 5 months by a team of 12: exploring a ruined city, fighting stone guardians and solving puzzles. (Unity.)"
 tags = [ "Adventure", "Unity", "Sequel", "Open World", "Atlantis" ]
 category = "projects"
 sector = "games-personnel"

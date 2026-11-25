@@ -2,8 +2,8 @@
 date = "2025-07-24T12:00:00.000Z"
 draft = false
 title = "Stone Keeper 2"
-subtitle = "Suite de Stone Keeper qui agrandit le monde et ajoute des mécaniques – e-artsup"
-description = "Suite de Stone Keeper réalisée en équipe et à distance à e-artsup : un monde plus vaste et de nouvelles mécaniques, sur la base du premier jeu. (Unity.)"
+subtitle = "Jeu d'aventure où l'on explore une cité en ruines face à des gardiens de pierre – e-artsup"
+description = "Suite de Stone Keeper, projet de troisième année à e-artsup réalisé en 5 mois par une équipe de 12 : exploration d'une cité en ruines, combats contre des gardiens de pierre et énigmes. (Unity.)"
 tags = [ "Adventure", "Unity", "Sequel", "Open World", "Atlantis" ]
 category = "projects"
 sector = "games-personnel"

@@ -2,8 +2,8 @@
 date = "2022-04-08T07:00:00.000Z"
 draft = false
 title = "Snide"
-subtitle = "Experimental game that tries out unusual ways to play"
-description = "A small experimental game made in three weeks to try out ways of playing that break from the usual. (Unity.)"
+subtitle = "First-person puzzle platformer set in a lab that tests “AI-generated” games"
+description = "A funny first-person puzzle platformer: you make your way through the test rooms of a robot lab, presented as video games made by an AI. Made in three weeks. (Unity.)"
 tags = [ "Unity", "Game Design", "Experimental", "Innovation" ]
 category = "projects"
 sector = "games-personnel"

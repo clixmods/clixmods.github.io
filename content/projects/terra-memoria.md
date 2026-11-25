@@ -2,8 +2,8 @@
 date = "2024-03-27T09:00:00.000Z"
 draft = false
 title = "Terra Memoria"
-subtitle = "Jeu de rôle commercial du studio La Moutarde, sorti sur PC et consoles"
-description = "Participation à la fin de production et au suivi après sortie de Terra Memoria, un jeu de rôle sorti en 2024 sur PC, Switch, Xbox et PlayStation 5."
+subtitle = "RPG au tour par tour en pixel art, sorti sur PC et consoles (PlayStation 5, Xbox Series, Nintendo Switch)"
+description = "RPG au tour par tour en pixel art du studio La Moutarde, sorti en 2024 sur PC, PlayStation 5, Xbox Series et Nintendo Switch. Participation à la fin de production et au suivi après la sortie."
 tags = [ "JRPG", "Commercial", "Nintendo Switch", "Multi-plateformes" ]
 category = "projects"
 sector = "games-professionnel"

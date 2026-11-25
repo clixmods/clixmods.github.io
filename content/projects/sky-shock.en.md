@@ -2,8 +2,8 @@
 date = "2022-06-01T00:00:00+02:00"
 draft = false
 title = "Sky Shock"
-subtitle = "Arcade shooter where you face waves of enemies"
-description = "A shooter in the spirit of arcade cabinets: you take on waves of enemies in a colourful retro world. Made in 10 days, released on itch.io. (Unity.)"
+subtitle = "Shooter where a robot takes on waves of enemies and bosses, solo or in co-op"
+description = "A futuristic action game: you play a robot taking on waves of enemies and bosses, solo or in co-op, with a high-score leaderboard. Made in 10 days, playable in the browser. (Unity.)"
 tags = [ "Arcade", "Shoot'em up", "Unity", "Itch.io", "Retro" ]
 category = "projects"
 sector = "games-gamejams"

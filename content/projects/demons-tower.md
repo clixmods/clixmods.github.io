@@ -2,8 +2,8 @@
 date = "2021-12-17T00:00:00+02:00"
 draft = false
 title = "Demon's Tower"
-subtitle = "Jeu d'action où l'on gravit un donjon, et où chaque mort fait perdre son équipement"
-description = "Un jeu d'action où vous gravissez un donjon pour vaincre le plus grand des démons et sauver le village. Chaque mort vous fait perdre votre équipement : il faut tout recommencer."
+subtitle = "Jeu d'action en pixel art où l'on affronte les monstres d'un donjon ; chaque mort fait perdre son équipement"
+description = "Jeu d'action en pixel art, vu de dessus : vous affrontez les monstres d'un donjon jusqu'au plus grand des démons pour sauver le village. Chaque mort vous fait perdre votre équipement."
 tags = [ "Action", "Roguelite", "Donjon", "Itch.io", "Unity" ]
 category = "projects"
 sector = "games-personnel"

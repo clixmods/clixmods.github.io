@@ -2,8 +2,8 @@
 date = "2023-12-01T00:00:00+02:00"
 draft = false
 title = "Fish N Ship - Cœur de Ville en Lumière"
-subtitle = "Jeu vidéo créé pour le festival Cœur de Ville en Lumières – e-artsup"
-description = "Jeu vidéo créé en équipe avec e-artsup pour Cœur de Ville en Lumières, le festival de lumières du centre-ville de Montpellier. (Unity.)"
+subtitle = "Jeu de combat à 2 en sous-marins, dans un théâtre de Montpellier englouti – e-artsup"
+description = "Jeu de combat à deux, sur le même écran : chaque joueur pilote un sous-marin et doit faire exploser l'autre, dans le théâtre de l'Agora de Montpellier transformé en fond marin. Créé avec e-artsup pour Cœur de Ville en Lumières. (Unity.)"
 tags = [ "Event", "Unity", "Montpellier", "e-artsup", "Game Jam" ]
 category = "projects"
 sector = "games-personnel"

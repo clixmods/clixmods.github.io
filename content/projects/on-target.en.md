@@ -3,7 +3,7 @@ date = "2023-04-07T00:00:00+02:00"
 draft = true
 title = "On Target"
 subtitle = "Game that trains your aim by shooting down drones"
-description = "An aim training game inspired by Aim Lab: from a platform, you shoot down drones to get faster and more accurate. Made as a team in one month. (Unity.)"
+description = "An aim training game inspired by Aim Lab: in a futuristic setting, you shoot down target drones to get faster and more accurate. Student project made in one month. (Unity.)"
 tags = [
   "3D",
   "aimlablike",
