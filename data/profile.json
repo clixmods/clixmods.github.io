@@ -20,13 +20,13 @@
       "github": "https://github.com/clixmods",
       "discord": "clixmods",
       "location": "Montpellier",
-      "status": "Disponible pour CDD/CDI/Freelance"
+      "status": "En CDI chez Prodilys"
     },
     "availability": {
-      "status": "job_seeking",
-      "message": "Disponible immédiatement",
-      "available": true,
-      "nextAvailable": "Immédiatement"
+      "status": "employed",
+      "message": "Développeur full-stack en CDI chez Prodilys",
+      "available": false,
+      "nextAvailable": ""
     },
     "details": {
       "formation": "BUT 3 IAMSI - IUT Montpellier-Sète (Diplômé)",
@@ -39,7 +39,7 @@
         { "icon": "💼", "text": "2,5 ans d'expérience professionnelle en C# / .NET" },
         { "icon": "🎮", "text": "Contribution à Terra Memoria, jeu commercial publié sur PC & consoles" },
         { "icon": "🛠️", "text": "Modding autodidacte : +1 million de téléchargements cumulés sur Steam (Call of Duty: Black Ops III)" },
-        { "icon": "🚀", "text": "Disponible en freelance" }
+        { "icon": "🚀", "text": "Développeur full-stack en CDI chez Prodilys" }
       ]
     }
 

@@ -19,13 +19,13 @@
     "linkedin": "linkedin.com/in/clixmods",
     "github": "https://github.com/clixmods",
     "location": "Montpellier",
-    "status": "Available for permanent, fixed-term or freelance positions"
+    "status": "Permanent full-stack developer at Prodilys"
   },
   "availability": {
-    "status": "job_seeking",
-    "message": "Available immediately",
-    "available": true,
-    "nextAvailable": "Immediately"
+    "status": "employed",
+    "message": "Full-stack developer on a permanent contract at Prodilys",
+    "available": false,
+    "nextAvailable": ""
   },
   "details": {
     "formation": "BUT 3 IAMSI - IUT Montpellier-Sète (Graduated)",
