@@ -1,0 +1,47 @@
+{{- /*
+  Onglets de tous les espaces + sélecteur d'espaces. Identique pour toutes les
+  pages d'une langue : rendu via partialCached. La page courante, l'espace
+  affiché, l'ordre des onglets et l'état des dossiers sont appliqués par le
+  script inline de sidebar.html (avant le premier rendu).
+  Contexte = la slice d'espaces (partial spaces.html).
+*/ -}}
+{{- /* Nom de l'espace : hors de la zone qui défile, il reste visible. */}}
+<div class="space-heads">
+  {{- range . }}
+  <div class="space-head" data-space-head="{{ .id }}">
+    <span class="space-head-ico">{{ partial "icon.html" .icon }}</span>
+    <span class="space-head-name">{{ .name }}</span>
+  </div>
+  {{- end }}
+</div>
+<div class="side-scroll" data-side-scroll>
+  {{- range . }}
+  <section class="space-panel" data-space-panel="{{ .id }}" aria-label="{{ .name }}">
+    <nav class="tabs" data-sortable="{{ .id }}" aria-label="{{ i18n "ui_tabs" }} · {{ .name }}">
+      {{- range .entries }}
+      {{- if eq .kind "tab" }}
+      {{ partial "tab-link.html" . }}
+      {{- else }}
+      {{ partial "side-folder.html" . }}
+      {{- end }}
+      {{- end }}
+    </nav>
+  </section>
+  {{- end }}
+</div>
+
+<div class="side-foot">
+  {{- /* Bulle de découverte des espaces (main.js l'affiche jusqu'à ce que le
+         visiteur la ferme ou change d'espace ; cadre:tip-spaces). */}}
+  <div class="space-tip" data-space-tip role="status" hidden>
+    <div class="space-tip-badge">{{ i18n "tip_new" }}</div>
+    <p class="space-tip-title">{{ i18n "home_spaces_title" }}</p>
+    <p class="space-tip-text">{{ i18n "tip_spaces_text" }}</p>
+    <button type="button" class="space-tip-close" data-space-tip-close>{{ i18n "ui_got_it" }}</button>
+  </div>
+  <nav class="switch" data-sortable="spaces" data-sort-axis="x" aria-label="{{ i18n "ui_spaces" }}">
+    {{- range . }}
+    <a class="sp" href="{{ .url }}" data-space-link="{{ .id }}" data-sort-key="space:{{ .id }}" title="{{ .name }}" aria-label="{{ .name }}">{{ partial "icon.html" .icon }}</a>
+    {{- end }}
+  </nav>
+</div>

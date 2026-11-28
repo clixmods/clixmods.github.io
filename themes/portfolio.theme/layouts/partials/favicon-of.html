@@ -1,0 +1,26 @@
+{{- /*
+  Favicon d'un lien externe, pour les onglets. Contexte = l'URL.
+  Cherche static/images/favicons/<domaine>.png (domaine sans « www. »,
+  sous-domaines itch.io / Steam / PlayStation / Epic regroupés) ; sinon une
+  icône Ionicons selon le site. Retourne dict { thumb, icon }.
+*/ -}}
+{{- $h := strings.TrimPrefix "www." (urls.Parse .).Host -}}
+{{- if eq $h "youtu.be" }}{{ $h = "youtube.com" }}
+{{- else if strings.HasSuffix $h ".itch.io" }}{{ $h = "itch.io" }}
+{{- else if in (slice "steamcommunity.com" "store.steampowered.com") $h }}{{ $h = "steampowered.com" }}
+{{- else if strings.HasSuffix $h "playstation.com" }}{{ $h = "playstation.com" }}
+{{- else if strings.HasSuffix $h "epicgames.com" }}{{ $h = "epicgames.com" }}
+{{- end -}}
+{{- $icon := "globe" -}}
+{{- if strings.Contains $h "github.com" }}{{ $icon = "logo-github" }}
+{{- else if strings.Contains $h "youtube" }}{{ $icon = "logo-youtube" }}
+{{- else if strings.Contains $h "steam" }}{{ $icon = "logo-steam" }}
+{{- else if strings.Contains $h "xbox" }}{{ $icon = "logo-xbox" }}
+{{- else if strings.Contains $h "playstation" }}{{ $icon = "logo-playstation" }}
+{{- end -}}
+{{- $path := printf "/images/favicons/%s.png" $h -}}
+{{- $thumb := "" -}}
+{{- if ne $icon "logo-github" -}}
+  {{- $thumb = partialCached "tab-thumb.html" (dict "path" $path "fit" true) $path "fit" -}}
+{{- end -}}
+{{- return dict "thumb" $thumb "icon" $icon -}}

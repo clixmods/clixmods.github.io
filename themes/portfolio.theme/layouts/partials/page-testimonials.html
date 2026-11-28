@@ -1,0 +1,14 @@
+{{- /*
+  Bloc « Témoignages » d'une page formation ou expérience.
+  Contexte = dict { ids: liste de personId (front matter testimonials), sd: site-data }.
+  Affiché avant les projets.
+*/ -}}
+{{- $people := dict }}{{ range where site.RegularPages "Section" "people" }}{{ $pg := . }}{{ with .Params.id }}{{ $people = merge $people (dict . $pg) }}{{ end }}{{ end -}}
+{{- $tmap := dict }}{{ range .sd.testimonials }}{{ $tmap = merge $tmap (dict .personId .) }}{{ end -}}
+{{- $items := slice }}{{ range .ids }}{{ with index $tmap . }}{{ $items = $items | append . }}{{ end }}{{ end -}}
+{{- with $items }}
+<section class="proj-card reveal">
+  <h2 class="proj-section-title">{{ i18n "ui_testimonials" }}</h2>
+  {{ partial "testi-carousel.html" (dict "items" . "people" $people) }}
+</section>
+{{- end }}

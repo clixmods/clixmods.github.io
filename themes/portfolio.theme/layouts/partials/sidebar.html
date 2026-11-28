@@ -1,0 +1,97 @@
+{{- /*
+  Barre latérale « Cadre » (façon Arc / Zen) : barre d'adresse + langue,
+  liens épinglés, onglets de l'espace courant groupés en dossiers, sélecteur
+  d'espaces. Contexte = dict { page, sd, space, spaces }.
+*/ -}}
+{{- $page := .page -}}
+{{- $p := .sd.profile -}}
+{{- $contact := $p.contact -}}
+<aside class="side" id="side" data-side aria-label="Navigation">
+  <div class="side-top">
+    <button type="button" class="icon-btn side-toggle" data-sidebar-toggle aria-label="{{ i18n "ui_hide_sidebar" }}" title="{{ i18n "ui_hide_sidebar" }}">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg>
+    </button>
+    <a class="side-brand" href="{{ relLangURL "/" }}">
+      {{- with $p.media.profileImage }}
+      {{- $img := partial "get-optimized-image.html" (dict "imagePath" . "width" 64 "quality" 85) }}
+      <img src="{{ $img.src }}" alt="" width="22" height="22">
+      {{- end }}
+      <span>{{ $p.personal.firstName }} {{ $p.personal.lastName | lower | title }}</span>
+    </a>
+    {{- /* Précédent / suivant / actualiser, comme dans la barre de Zen. */}}
+    <div class="nav-btns">
+      <button type="button" class="icon-btn" data-nav="back" title="{{ i18n "ui_nav_back" }}" aria-label="{{ i18n "ui_nav_back" }}">{{ partial "icon.html" "arrow-back" }}</button>
+      <button type="button" class="icon-btn" data-nav="forward" title="{{ i18n "ui_nav_forward" }}" aria-label="{{ i18n "ui_nav_forward" }}">{{ partial "icon.html" "arrow-forward" }}</button>
+      <button type="button" class="icon-btn" data-nav="reload" title="{{ i18n "ui_nav_reload" }}" aria-label="{{ i18n "ui_nav_reload" }}">{{ partial "icon.html" "refresh" }}</button>
+    </div>
+  </div>
+
+  <div class="urlrow" data-urlrow>
+    {{ partial "urlbar.html" $page }}
+  </div>
+
+  <div class="favs" aria-label="{{ i18n "ui_pinned" }}">
+    {{- with $contact.github }}
+    <a class="fav fav-github" href="{{ . }}" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">{{ partial "icon.html" "logo-github" }}</a>
+    {{- end }}
+    {{- with $contact.linkedin }}
+    {{- $li := . }}{{ if not (hasPrefix $li "http") }}{{ $li = printf "https://%s" $li }}{{ end }}
+    <a class="fav fav-linkedin" href="{{ $li }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">{{ partial "icon.html" "logo-linkedin" }}</a>
+    {{- end }}
+    {{- with $p.media.resumeFile }}
+    <a class="fav fav-cv" href="{{ . | relURL }}" download title="{{ i18n "ui_download_cv" }}" aria-label="{{ i18n "ui_download_cv" }}">{{ partial "icon.html" "document-text" }}</a>
+    {{- end }}
+    {{- with $contact.email }}
+    <a class="fav fav-mail" href="mailto:{{ . }}" data-email="{{ . }}" title="{{ . }}" aria-label="{{ i18n "ui_contact_me" }}">{{ partial "icon.html" "mail" }}</a>
+    {{- end }}
+    {{- with $contact.discord }}
+    <button type="button" class="fav fav-discord" data-reveal="discord" data-reveal-value="{{ . }}" data-reveal-text="{{ i18n "ui_discord_text" }}" data-reveal-copy-label="{{ i18n "ui_copy_id" }}" data-reveal-copied="{{ i18n "ui_id_copied" }}" title="Discord" aria-label="Discord : {{ . }}" aria-haspopup="dialog">{{ partial "icon.html" "logo-discord" }}</button>
+    {{- end }}
+    {{- with $contact.phone }}
+    <button type="button" class="fav fav-phone" data-reveal="phone" data-reveal-value="{{ . }}" data-reveal-href="tel:{{ replace . " " "" }}" data-reveal-text="{{ i18n "ui_phone_text" }}" data-reveal-copy-label="{{ i18n "ui_copy_phone" }}" data-reveal-copied="{{ i18n "ui_phone_copied" }}" title="{{ i18n "ui_phone" }}" aria-label="{{ i18n "ui_phone" }} : {{ . }}" aria-haspopup="dialog">{{ partial "icon.html" "call" }}</button>
+    {{- end }}
+  </div>
+
+  {{ partialCached "sidebar-tabs.html" .spaces site.Language.Lang }}
+  <div class="side-resize" data-side-resize aria-hidden="true" title="{{ i18n "ui_resize_sidebar" }}"></div>
+</aside>
+{{- /* Appliqué avant le premier rendu : espace affiché, onglet courant, ordre
+       des onglets et dossiers ouverts (mémorisés par visiteur). */}}
+<script>
+(function () {
+  var d = document, h = d.documentElement;
+  var get = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };
+  var json = function (k) { try { return JSON.parse(get(k) || "null"); } catch (e) { return null; } };
+  var lang = h.getAttribute("data-lang") || "fr";
+  d.querySelectorAll("[data-sortable]").forEach(function (box) {
+    var kids = {}, orig = [];
+    Array.prototype.forEach.call(box.children, function (k) { if (k.dataset.sortKey) { kids[k.dataset.sortKey] = k; orig.push(k.dataset.sortKey); } });
+    box.setAttribute("data-orig", JSON.stringify(orig));
+    var order = json("cadre:order:" + lang + ":" + box.getAttribute("data-sortable"));
+    if (!order) return;
+    order.forEach(function (key) { if (kids[key]) { box.appendChild(kids[key]); delete kids[key]; } });
+  });
+  var space = h.getAttribute("data-space");
+  var cur = null;
+  d.querySelectorAll('[data-space-panel="' + space + '"] a.tab').forEach(function (a) {
+    if (!cur && a.origin === location.origin && a.pathname === location.pathname) cur = a;
+  });
+  if (cur) cur.setAttribute("aria-current", "page");
+  var saved = json("cadre:folders") || {};
+  d.querySelectorAll("[data-folder]").forEach(function (f) {
+    var id = f.getAttribute("data-folder");
+    // Par défaut : ouvert s'il est court, sauf dossier de projet (fermé).
+    var def = f.getAttribute("data-default");
+    var open = id in saved ? saved[id] : def ? def === "open" : parseInt(f.getAttribute("data-count"), 10) <= 6;
+    if (cur && f.contains(cur)) open = true;
+    f.setAttribute("data-open", open ? "true" : "false");
+    f.querySelector("[data-folder-toggle]").setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  d.querySelectorAll('[data-space-link="' + space + '"]').forEach(function (a) { a.setAttribute("aria-current", "true"); });
+  var sc = d.querySelector("[data-side-scroll]");
+  try {
+    var y = sessionStorage.getItem("cadre:scroll:" + space);
+    if (sc && y) sc.scrollTop = +y;
+  } catch (e) {}
+})();
+</script>

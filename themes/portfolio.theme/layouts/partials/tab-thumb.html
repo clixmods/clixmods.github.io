@@ -1,0 +1,26 @@
+{{- /*
+  Miniature carrée d'onglet (favicon). Contexte = dict { path, fit }.
+  fit=true : logo entier (Fit), sinon recadrage centré (Fill). SVG servis tels quels.
+  Retourne l'URL, ou "" si l'image est introuvable.
+*/ -}}
+{{- $out := "" -}}
+{{- $clean := strings.TrimPrefix "/" (.path | default "") -}}
+{{- $clean = strings.TrimPrefix "images/" $clean -}}
+{{- with and $clean (resources.Get (printf "images/%s" $clean)) -}}
+  {{- if in (slice ".svg" ".gif") (lower (path.Ext $clean)) -}}{{- $out = .RelPermalink -}}
+  {{- else -}}
+    {{- $r := dict -}}
+    {{- if $.fit }}{{ $r = try (.Fit "64x64 webp q80") }}{{ else }}{{ $r = try (.Fill "64x64 Center webp q75") }}{{ end -}}
+    {{- with $r.Value -}}
+      {{- $img := . -}}
+      {{- /* Logo entier : complété en carré transparent, pour que l'icône
+             (16 px, object-fit: cover) ne le coupe pas. */ -}}
+      {{- if and $.fit (ne $img.Width $img.Height) -}}
+        {{- $t := div (sub 64 $img.Height) 2 }}{{ $l := div (sub 64 $img.Width) 2 -}}
+        {{- with try ($img.Filter (images.Padding $t (sub (sub 64 $img.Width) $l) (sub (sub 64 $img.Height) $t) $l "#00000000")) }}{{ with .Value }}{{ $img = . }}{{ end }}{{ end -}}
+      {{- end -}}
+      {{- $out = $img.RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

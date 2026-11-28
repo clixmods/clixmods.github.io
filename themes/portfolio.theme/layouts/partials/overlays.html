@@ -1,0 +1,93 @@
+{{- /* Recherche ⌘K, menu contextuel, éditeur de thème d'espace, toast.
+       Les libellés sont passés au JS via data-* (traduits par Hugo). */ -}}
+<div class="overlays" data-overlays
+     data-l-theme="{{ i18n "ctx_theme" }}"
+     data-l-reset-order="{{ i18n "ctx_reset_order" }}"
+     data-l-new-tab="{{ i18n "ctx_new_tab" }}"
+     data-l-copy-link="{{ i18n "ctx_copy_link" }}"
+     data-l-link-copied="{{ i18n "ctx_link_copied" }}"
+     data-l-email-copied="{{ i18n "ui_email_copied" }}"
+     data-l-url-copied="{{ i18n "ui_url_copied" }}"
+     data-l-id-copied="{{ i18n "ui_id_copied" }}"
+     data-l-copy-email="{{ i18n "ui_copy_email" }}"
+     data-l-hint="{{ i18n "ctx_reorder_hint" }}"
+     data-l-hide="{{ i18n "ui_hide_sidebar" }}"
+     data-l-show="{{ i18n "ui_show_sidebar" }}">
+
+  <div class="palette-bg" data-palette hidden>
+    <div class="palette" role="dialog" aria-modal="true" aria-label="{{ i18n "ui_search" }}">
+      <div class="palette-field">
+        {{ partial "icon.html" "search" }}
+        <input id="palette-input" type="text" placeholder="{{ i18n "ui_search" }}" autocomplete="off" spellcheck="false" aria-label="{{ i18n "ui_search" }}" aria-controls="palette-list">
+        <kbd>Esc</kbd>
+      </div>
+      <ul id="palette-list" class="palette-list" role="listbox"></ul>
+      <p class="palette-empty" data-palette-empty hidden>{{ i18n "ui_search_empty" }}</p>
+    </div>
+  </div>
+
+  <div class="pop ctx-menu" data-ctx-menu role="menu" hidden></div>
+
+  <div class="pop theme-pop" data-theme-pop role="dialog" aria-label="{{ i18n "theme_title" }}" hidden>
+    <div class="theme-pop-head">
+      <span class="theme-pop-ico" data-theme-ico></span>
+      <b>{{ i18n "theme_title" }}</b>
+      <span class="theme-pop-name" data-theme-name></span>
+    </div>
+    {{- /* Comme Arc : une zone de couleur (teinte → horizontale, intensité →
+           verticale) et une pastille par couleur, à faire glisser. */}}
+    <div class="theme-pad" data-theme-pad>
+      <span class="theme-handle" data-handle="a" role="slider" tabindex="0" aria-label="{{ i18n "theme_color_a" }}"></span>
+      <span class="theme-handle" data-handle="b" role="slider" tabindex="0" aria-label="{{ i18n "theme_color_b" }}"></span>
+      <span class="theme-handle is-accent" data-handle="accent" role="slider" tabindex="0" aria-label="{{ i18n "theme_accent" }}"></span>
+    </div>
+    <div class="theme-tools">
+      <span class="theme-legend"><i data-dot="a"></i>{{ i18n "theme_color_a" }}</span>
+      <span class="theme-legend"><i data-dot="b"></i>{{ i18n "theme_color_b" }}</span>
+      <span class="theme-legend"><i data-dot="accent"></i>{{ i18n "theme_accent" }}</span>
+      <button type="button" class="theme-link" data-theme-link aria-pressed="false" title="{{ i18n "theme_link" }}" aria-label="{{ i18n "theme_link" }}">{{ partial "icon.html" "link" }}</button>
+    </div>
+    {{- /* Comme Arc / Zen : intensité de la couleur et grain du cadre. */}}
+    <div class="theme-sliders">
+      <label class="theme-slider is-intensity">
+        <span>{{ i18n "theme_intensity" }}</span>
+        <input type="range" min="0" max="200" step="1" data-theme-intensity aria-label="{{ i18n "theme_intensity" }}">
+      </label>
+      <label class="theme-slider is-grain">
+        <span>{{ i18n "theme_grain" }}</span>
+        <input type="range" min="0" max="100" step="1" data-theme-grain aria-label="{{ i18n "theme_grain" }}">
+      </label>
+    </div>
+    <div class="theme-preview" data-theme-preview></div>
+    <div class="theme-presets" data-theme-presets aria-label="{{ i18n "theme_presets" }}"></div>
+    <p class="theme-hint">{{ i18n "theme_hint" }}</p>
+    <div class="theme-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-theme-reset>{{ i18n "theme_reset" }}</button>
+      <button type="button" class="btn btn-cold btn-sm" data-theme-close>{{ i18n "theme_done" }}</button>
+    </div>
+  </div>
+
+  {{- /* Essentiels Discord et téléphone : une petite fenêtre montre la valeur
+         à copier (pseudo, numéro), et « Appeler » pour le téléphone. Contenu
+         fourni par le bouton cliqué (data-reveal-*). */}}
+  <div class="pop reveal-pop" data-reveal-pop role="dialog" hidden>
+    <span class="reveal-pop-ico" data-reveal-ico></span>
+    <p data-reveal-text></p>
+    <code class="reveal-pop-value" data-reveal-value></code>
+    <div class="reveal-pop-actions">
+      <button type="button" class="btn btn-cold btn-sm" data-reveal-copy>{{ partial "icon.html" "copy-outline" }}<span data-reveal-copy-label></span></button>
+      <a class="btn btn-ghost btn-sm" data-reveal-call hidden>{{ partial "icon.html" "call" }}<span>{{ i18n "ui_call" }}</span></a>
+    </div>
+  </div>
+
+  <div class="toast" data-toast role="status" hidden></div>
+
+  <template data-icons>
+    <span data-i="open">{{ partial "icon.html" "open" }}</span>
+    <span data-i="link">{{ partial "icon.html" "link" }}</span>
+    <span data-i="palette">{{ partial "icon.html" "color-palette" }}</span>
+    <span data-i="reset">{{ partial "icon.html" "refresh" }}</span>
+    <span data-i="mail">{{ partial "icon.html" "copy" }}</span>
+    <span data-i="ok">{{ partial "icon.html" "checkmark-circle" }}</span>
+  </template>
+</div>

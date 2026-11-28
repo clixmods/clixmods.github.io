@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{- /* Page d'un espace de créations : tous ses projets, filtrables par dossier. */ -}}
+{{- $page := .page -}}
+{{- $id := $page.Params.space -}}
+{{- $sp := dict -}}{{- range .spaces }}{{ if eq .id $id }}{{ $sp = . }}{{ end }}{{ end -}}
+{{- $order := dict "jeux" (slice "pro" "perso" "gamejam" "tools") "web" (slice "pro" "perso" "etude") "mods" (slice "minecraft" "bo3" "other") -}}
+
+{{- $projects := where (where site.RegularPages "Section" "projects") "Params.sector" "!=" "test" -}}
+{{- $byFolder := dict -}}
+{{- range $projects.ByDate.Reverse -}}
+  {{- $pl := partial "project-place.html" . -}}
+  {{- if eq $pl.space $id -}}
+    {{- $byFolder = merge $byFolder (dict $pl.folder ((index $byFolder $pl.folder | default slice) | append .)) -}}
+  {{- end -}}
+{{- end -}}
+{{- $list := slice -}}{{- $folders := slice -}}
+{{- range $f := index $order $id -}}
+  {{- with index $byFolder $f -}}
+    {{/* Projets mis en avant d'abord, puis du plus récent au plus ancien */}}
+    {{- $list = $list | append (where . "Params.featured" true) -}}
+    {{- $list = $list | append (where . "Params.featured" "!=" true) -}}
+    {{- $folders = $folders | append (dict "key" $f "n" (len .)) -}}
+  {{- end -}}
+{{- end -}}
+
+<div class="page page-space">
+  <header class="space-intro">
+    <div class="eyebrow">{{ with $sp.icon }}{{ partial "icon.html" . }}{{ end }}{{ $page.Title }}</div>
+    <h1>{{ $page.Params.headline | default $page.Title }}</h1>
+    {{- with $page.Description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="filter-bar filter-bar-compact" data-filter-bar="space-{{ $id }}" data-filter-items="[data-project]" data-filter-hash="folder">
+    <div class="filter-mains" role="group" aria-label="{{ i18n "filter_projects_label" }}" data-facet-row="folder" data-facet-default="all">
+      <button type="button" class="chip active" data-facet="folder" data-value="all">{{ i18n "cat_all" }}<span class="chip-count" data-facet-count>{{ len $list }}</span></button>
+      {{- range $folders }}
+      <button type="button" class="chip" data-facet="folder" data-value="{{ .key }}" data-folder-link="{{ $id }}-{{ .key }}">{{ i18n (printf "folder_%s" .key) }}<span class="chip-count" data-facet-count>{{ .n }}</span></button>
+      {{- end }}
+    </div>
+  </div>
+
+  <div class="projects-grid space-grid" data-filter-group="space-{{ $id }}">
+    {{- range $i, $p := $list }}
+    {{ partial "project-card.html" (dict "page" $p "folder" (partial "project-place.html" $p).folder "badge" "sub") }}
+    {{- end }}
+  </div>
+  <p class="filter-empty" data-filter-empty="space-{{ $id }}" hidden>{{ i18n "filter_no_results" }}</p>
+</div>
+{{ end }}

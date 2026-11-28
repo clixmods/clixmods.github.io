@@ -1,5 +1,6 @@
 ---
 title: Bachelor's Degree in Application Integration and Information System Management
+linkTitle: "BUT IAMSI"
 institution: IUT Montpellier-Sète
 city: Montpellier
 start_date: 2023-09-01T00:00:00.000Z

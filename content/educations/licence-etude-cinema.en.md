@@ -1,5 +1,6 @@
 ---
 title: Bachelor's Degree in Film Studies
+linkTitle: "Film Studies degree"
 institution: Paul Valéry University
 city: Montpellier
 start_date: 2020-09-01T00:00:00.000Z

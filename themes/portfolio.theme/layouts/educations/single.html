@@ -11,10 +11,6 @@
 {{- $specs := slice }}{{ range $P.specialties }}{{ $specs = $specs | append .specialty }}{{ end }}
 {{- $skills := slice }}{{ range $P.soft_skills }}{{ $skills = $skills | append .skill }}{{ end }}
 
-{{/* Maps personnes + témoignages */}}
-{{- $people := dict }}{{ range where site.RegularPages "Section" "people" }}{{ $pg := . }}{{ with .Params.id }}{{ $people = merge $people (dict . $pg) }}{{ end }}{{ end }}
-{{- $tmap := dict }}{{ range $sd.testimonials }}{{ $tmap = merge $tmap (dict .personId .) }}{{ end }}
-
 <section class="section proj">
   <div class="container">
     <a class="proj-back" href="{{ relLangURL "/educations/" }}">← {{ i18n "back_educations" }}</a>
@@ -40,6 +36,8 @@
 
     <div class="proj-layout">
       <div class="proj-main">
+        {{- with $P.testimonials }}{{ partial "page-testimonials.html" (dict "ids" . "sd" $sd) }}{{ end }}
+
         {{- with $page.Content }}<article class="proj-card reveal"><div class="prose">{{ . }}</div></article>{{ end }}
 
         {{- with $P.projects }}
@@ -54,16 +52,6 @@
         </section>
         {{- end }}
 
-        {{- with $P.testimonials }}
-        {{- $items := slice }}
-        {{- range . }}{{ with index $tmap . }}{{ $items = $items | append . }}{{ end }}{{ end }}
-        {{- with $items }}
-        <section class="proj-card reveal">
-          <h2 class="proj-section-title">{{ i18n "ui_testimonials" }}</h2>
-          {{ partial "testi-carousel.html" (dict "items" $items "people" $people) }}
-        </section>
-        {{- end }}
-        {{- end }}
       </div>
 
       <aside class="proj-aside">

@@ -1,0 +1,27 @@
+{{- /* Un dossier de la barre latérale ; peut contenir d'autres dossiers
+       (rendu récursif). Comme dans Dia : une icône de la taille d'un favicon
+       (image du projet / logo, ou pictogramme au trait), le nom, puis un
+       chevron qui pivote à l'ouverture.
+       Contexte = dict { id, folder, name, tabs, thumb, badge, closed }. */ -}}
+<div class="folder" data-folder="{{ .id }}" data-folder-key="{{ .folder | default .id }}" data-sort-key="folder:{{ .id }}" data-count="{{ len .tabs }}"{{ if .closed }} data-default="closed"{{ end }}{{ if .alt }} data-project-folder{{ end }}>
+  {{- with .alt }}{{ partial "tab-link.html" (merge . (dict "alt" true)) }}{{ end }}
+  <button type="button" class="folder-head" data-folder-toggle aria-expanded="false" title="{{ .full | default .name }}">
+    <span class="tab-ico">
+      {{- with .thumb }}<img src="{{ . }}" alt="" width="16" height="16" loading="lazy" decoding="async">
+      {{- else }}{{ partial "icon.html" (.badge | default "folder-outline") }}{{ end -}}
+    </span>
+    <span class="tab-title">{{ .name }}</span>
+    {{- partial "icon.html" (dict "name" "chevron-forward" "class" "folder-chev") -}}
+  </button>
+  <div class="folder-body">
+    <div class="folder-inner" data-sortable="{{ .id }}">
+      {{- range .tabs }}
+      {{- if eq .kind "folder" }}
+      {{ partial "side-folder.html" . }}
+      {{- else }}
+      {{ partial "tab-link.html" . }}
+      {{- end }}
+      {{- end }}
+    </div>
+  </div>
+</div>

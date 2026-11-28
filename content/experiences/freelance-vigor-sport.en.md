@@ -30,6 +30,8 @@ tools:
     - tool_visual_studio_code
 fmContentType: experience-content-type
 draft: false
+testimonials:
+  - romain-garro
 ---
 
 ## Mission Description
